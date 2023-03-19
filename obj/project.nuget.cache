@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TaqoM06ComEoL/1/tOkwSy39W3q9pQmPLnfUM75tn+EQLlEf2NZAkAWCaFHuSAz7cZTi9H1alLAn9l6t1E5jwQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rober\\OneDrive\\Documentos\\Técnicas noseque\\FutureLending\\FutureLending.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rober\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
