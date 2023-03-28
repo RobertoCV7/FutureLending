@@ -20,3 +20,25 @@ C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.pdb
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.genruntimeconfig.cache
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\ref\FutureLending.dll
+C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\FutureLending.exe
+C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\FutureLending.deps.json
+C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\FutureLending.runtimeconfig.json
+C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\FutureLending.dll
+C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\FutureLending.pdb
+C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.csproj.AssemblyReference.cache
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.Controles_personalizados.DateTimePickerPersonalizado.resources
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.Controles_personalizados.TextBoxPersonalizado.resources
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.Form1.resources
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.Properties.Resources.resources
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.csproj.GenerateResource.cache
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.AssemblyInfoInputs.cache
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.AssemblyInfo.cs
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.csproj.CoreCompileInputs.cache
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.csproj.CopyComplete
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.dll
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\refint\FutureLending.dll
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.pdb
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.genruntimeconfig.cache
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\ref\FutureLending.dll

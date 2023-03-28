@@ -6,8 +6,12 @@ namespace FutureLending
         {
             InitializeComponent();
             CollapseMenu();
+            panelDesktop.Hide();
+            panelTitleBar.Hide();
+            DateTime data = new DateTime();
+            data = DateTime.Now;
+            dateFechaInicio.Value=data;
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -44,6 +48,17 @@ namespace FutureLending
         private void btnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
+        }
+
+        private void dateFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIngresarClientes_Click(object sender, EventArgs e)
+        {
+            panelDesktop.Show();
+            panelTitleBar.Show();
         }
     }
 }

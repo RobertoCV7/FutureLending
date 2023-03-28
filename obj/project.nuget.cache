@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TaqoM06ComEoL/1/tOkwSy39W3q9pQmPLnfUM75tn+EQLlEf2NZAkAWCaFHuSAz7cZTi9H1alLAn9l6t1E5jwQ==",
+  "dgSpecHash": "t4D+mOEHQmQEEaepka7bwzrP4jNQgtWic4ZrijPSe/eFmOwoG9YyKKDjuCmDzTO/aHyZ+vLpStU7eHoAUZ4Z7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rober\\OneDrive\\Documentos\\Técnicas noseque\\FutureLending\\FutureLending.csproj",
+  "projectFilePath": "C:\\Users\\donne\\FutureLending\\FutureLending.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rober\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512"
+    "C:\\Users\\donne\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512"
   ],
   "logs": []
 }

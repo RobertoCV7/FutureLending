@@ -41,14 +41,14 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.textBoxPersonalizado1 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label4 = new System.Windows.Forms.Label();
             this.dateFechaInicio = new FutureLending.Controles_personalizados.DateTimePickerPersonalizado();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCredito = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPersonalizado1 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -176,6 +176,7 @@
             this.btnIngresarClientes.Text = "   Ingresar clientes";
             this.btnIngresarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIngresarClientes.UseVisualStyleBackColor = true;
+            this.btnIngresarClientes.Click += new System.EventHandler(this.btnIngresarClientes_Click);
             // 
             // panel1
             // 
@@ -250,6 +251,35 @@
             this.panelDesktop.Size = new System.Drawing.Size(570, 390);
             this.panelDesktop.TabIndex = 2;
             // 
+            // textBoxPersonalizado1
+            // 
+            this.textBoxPersonalizado1.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.textBoxPersonalizado1.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.textBoxPersonalizado1.BorderRadius = 0;
+            this.textBoxPersonalizado1.BorderSize = 2;
+            this.textBoxPersonalizado1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPersonalizado1.Location = new System.Drawing.Point(183, 195);
+            this.textBoxPersonalizado1.Multiline = false;
+            this.textBoxPersonalizado1.Name = "textBoxPersonalizado1";
+            this.textBoxPersonalizado1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxPersonalizado1.PasswordChar = false;
+            this.textBoxPersonalizado1.PlaceholderColor = System.Drawing.Color.Gray;
+            this.textBoxPersonalizado1.PlaceholderText = "Introduzca el nombre";
+            this.textBoxPersonalizado1.Size = new System.Drawing.Size(351, 36);
+            this.textBoxPersonalizado1.TabIndex = 7;
+            this.textBoxPersonalizado1.Texts = "";
+            this.textBoxPersonalizado1.UnderlinedStyle = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(16, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 21);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Promotor:";
+            // 
             // dateFechaInicio
             // 
             this.dateFechaInicio.BorderColor = System.Drawing.Color.DarkSlateGray;
@@ -263,6 +293,7 @@
             this.dateFechaInicio.SkinColor = System.Drawing.SystemColors.Info;
             this.dateFechaInicio.TabIndex = 5;
             this.dateFechaInicio.TextColor = System.Drawing.Color.Black;
+            this.dateFechaInicio.ValueChanged += new System.EventHandler(this.dateFechaInicio_ValueChanged);
             // 
             // label3
             // 
@@ -331,35 +362,6 @@
             this.label1.Size = new System.Drawing.Size(161, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre completo:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(16, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 21);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Promotor:";
-            // 
-            // textBoxPersonalizado1
-            // 
-            this.textBoxPersonalizado1.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.textBoxPersonalizado1.BorderFocusColor = System.Drawing.SystemColors.Info;
-            this.textBoxPersonalizado1.BorderRadius = 0;
-            this.textBoxPersonalizado1.BorderSize = 2;
-            this.textBoxPersonalizado1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPersonalizado1.Location = new System.Drawing.Point(183, 195);
-            this.textBoxPersonalizado1.Multiline = false;
-            this.textBoxPersonalizado1.Name = "textBoxPersonalizado1";
-            this.textBoxPersonalizado1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textBoxPersonalizado1.PasswordChar = false;
-            this.textBoxPersonalizado1.PlaceholderColor = System.Drawing.Color.Gray;
-            this.textBoxPersonalizado1.PlaceholderText = "Introduzca el nombre";
-            this.textBoxPersonalizado1.Size = new System.Drawing.Size(351, 36);
-            this.textBoxPersonalizado1.TabIndex = 7;
-            this.textBoxPersonalizado1.Texts = "";
-            this.textBoxPersonalizado1.UnderlinedStyle = true;
             // 
             // Form1
             // 
