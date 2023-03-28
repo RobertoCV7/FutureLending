@@ -5,6 +5,8 @@ C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\bin\Debug\net
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\bin\Debug\net6.0-windows\FutureLending.pdb
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.csproj.AssemblyReference.cache
+C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.Controles_personalizados.DateTimePickerPersonalizado.resources
+C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.Controles_personalizados.TextBoxPersonalizado.resources
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.Form1.resources
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.Properties.Resources.resources
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.csproj.GenerateResource.cache
