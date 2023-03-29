@@ -56,16 +56,21 @@
             this.txtNombre = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlListas = new System.Windows.Forms.Panel();
-            this.btnLista1 = new FutureLending.Controles_personalizados.RJButton();
-            this.rjButton1 = new FutureLending.Controles_personalizados.RJButton();
-            this.btnLista3 = new FutureLending.Controles_personalizados.RJButton();
+            this.gridListas = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLiquidados = new FutureLending.Controles_personalizados.RJButton();
+            this.btnMostrarTodos = new FutureLending.Controles_personalizados.RJButton();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnLista3 = new FutureLending.Controles_personalizados.RJButton();
+            this.rjButton1 = new FutureLending.Controles_personalizados.RJButton();
+            this.btnLista1 = new FutureLending.Controles_personalizados.RJButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.pnlClientes.SuspendLayout();
             this.pnlListas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListas)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -483,6 +488,9 @@
             // pnlListas
             // 
             this.pnlListas.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlListas.Controls.Add(this.gridListas);
+            this.pnlListas.Controls.Add(this.btnLiquidados);
+            this.pnlListas.Controls.Add(this.btnMostrarTodos);
             this.pnlListas.Controls.Add(this.label8);
             this.pnlListas.Controls.Add(this.btnLista3);
             this.pnlListas.Controls.Add(this.rjButton1);
@@ -493,43 +501,71 @@
             this.pnlListas.Size = new System.Drawing.Size(594, 471);
             this.pnlListas.TabIndex = 14;
             // 
-            // btnLista1
+            // gridListas
             // 
-            this.btnLista1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnLista1.BackgroundColor = System.Drawing.Color.DarkSlateGray;
-            this.btnLista1.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.btnLista1.BorderRadius = 15;
-            this.btnLista1.BorderSize = 2;
-            this.btnLista1.FlatAppearance.BorderSize = 0;
-            this.btnLista1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLista1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLista1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLista1.Location = new System.Drawing.Point(226, 6);
-            this.btnLista1.Name = "btnLista1";
-            this.btnLista1.Size = new System.Drawing.Size(111, 45);
-            this.btnLista1.TabIndex = 0;
-            this.btnLista1.Text = "Lista 1:\r\nIniciación";
-            this.btnLista1.TextColor = System.Drawing.Color.Transparent;
-            this.btnLista1.UseVisualStyleBackColor = false;
+            this.gridListas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridListas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID});
+            this.gridListas.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.gridListas.Location = new System.Drawing.Point(16, 117);
+            this.gridListas.Name = "gridListas";
+            this.gridListas.RowTemplate.Height = 25;
+            this.gridListas.Size = new System.Drawing.Size(566, 283);
+            this.gridListas.TabIndex = 16;
             // 
-            // rjButton1
+            // ID
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.Teal;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.Teal;
-            this.rjButton1.BorderColor = System.Drawing.Color.Teal;
-            this.rjButton1.BorderRadius = 15;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.rjButton1.Location = new System.Drawing.Point(343, 6);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(111, 45);
-            this.rjButton1.TabIndex = 1;
-            this.rjButton1.Text = "Lista 2:\r\nExtrajudicial";
-            this.rjButton1.TextColor = System.Drawing.Color.Transparent;
-            this.rjButton1.UseVisualStyleBackColor = false;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // btnLiquidados
+            // 
+            this.btnLiquidados.BackColor = System.Drawing.Color.Teal;
+            this.btnLiquidados.BackgroundColor = System.Drawing.Color.Teal;
+            this.btnLiquidados.BorderColor = System.Drawing.Color.Teal;
+            this.btnLiquidados.BorderRadius = 15;
+            this.btnLiquidados.BorderSize = 2;
+            this.btnLiquidados.FlatAppearance.BorderSize = 0;
+            this.btnLiquidados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLiquidados.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLiquidados.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLiquidados.Location = new System.Drawing.Point(468, 58);
+            this.btnLiquidados.Name = "btnLiquidados";
+            this.btnLiquidados.Size = new System.Drawing.Size(111, 45);
+            this.btnLiquidados.TabIndex = 15;
+            this.btnLiquidados.Text = "Clientes\r\nliquidados";
+            this.btnLiquidados.TextColor = System.Drawing.Color.Transparent;
+            this.btnLiquidados.UseVisualStyleBackColor = false;
+            // 
+            // btnMostrarTodos
+            // 
+            this.btnMostrarTodos.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMostrarTodos.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMostrarTodos.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMostrarTodos.BorderRadius = 15;
+            this.btnMostrarTodos.BorderSize = 2;
+            this.btnMostrarTodos.FlatAppearance.BorderSize = 0;
+            this.btnMostrarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarTodos.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMostrarTodos.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodos.Location = new System.Drawing.Point(343, 57);
+            this.btnMostrarTodos.Name = "btnMostrarTodos";
+            this.btnMostrarTodos.Size = new System.Drawing.Size(111, 45);
+            this.btnMostrarTodos.TabIndex = 14;
+            this.btnMostrarTodos.Text = "Mostrar\r\ntodos";
+            this.btnMostrarTodos.TextColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodos.UseVisualStyleBackColor = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(36, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(152, 21);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Seleccione la lista:";
             // 
             // btnLista3
             // 
@@ -551,15 +587,43 @@
             this.btnLista3.UseVisualStyleBackColor = false;
             this.btnLista3.Click += new System.EventHandler(this.rjButton2_Click);
             // 
-            // label8
+            // rjButton1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(36, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 21);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Seleccione la lista:";
+            this.rjButton1.BackColor = System.Drawing.Color.Teal;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.Teal;
+            this.rjButton1.BorderColor = System.Drawing.Color.Teal;
+            this.rjButton1.BorderRadius = 15;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rjButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.rjButton1.Location = new System.Drawing.Point(343, 6);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(111, 45);
+            this.rjButton1.TabIndex = 1;
+            this.rjButton1.Text = "Lista 2:\r\nExtrajudicial";
+            this.rjButton1.TextColor = System.Drawing.Color.Transparent;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnLista1
+            // 
+            this.btnLista1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BorderRadius = 15;
+            this.btnLista1.BorderSize = 2;
+            this.btnLista1.FlatAppearance.BorderSize = 0;
+            this.btnLista1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLista1.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLista1.Location = new System.Drawing.Point(226, 6);
+            this.btnLista1.Name = "btnLista1";
+            this.btnLista1.Size = new System.Drawing.Size(111, 45);
+            this.btnLista1.TabIndex = 0;
+            this.btnLista1.Text = "Lista 1:\r\nIniciación";
+            this.btnLista1.TextColor = System.Drawing.Color.Transparent;
+            this.btnLista1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -582,6 +646,7 @@
             this.pnlClientes.PerformLayout();
             this.pnlListas.ResumeLayout(false);
             this.pnlListas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,5 +684,9 @@
         private Controles_personalizados.RJButton btnLista3;
         private Controles_personalizados.RJButton rjButton1;
         private Label label8;
+        private Controles_personalizados.RJButton btnLiquidados;
+        private Controles_personalizados.RJButton btnMostrarTodos;
+        private DataGridView gridListas;
+        private DataGridViewTextBoxColumn ID;
     }
 }
