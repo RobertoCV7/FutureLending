@@ -41,6 +41,11 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.textBoxPersonalizado2 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label6 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBoxPersonalizado1 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.label4 = new System.Windows.Forms.Label();
             this.dateFechaInicio = new FutureLending.Controles_personalizados.DateTimePickerPersonalizado();
@@ -49,6 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -237,6 +243,12 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.SystemColors.Info;
+            this.panelDesktop.Controls.Add(this.label7);
+            this.panelDesktop.Controls.Add(this.textBoxPersonalizado2);
+            this.panelDesktop.Controls.Add(this.label6);
+            this.panelDesktop.Controls.Add(this.iconButton1);
+            this.panelDesktop.Controls.Add(this.comboBox1);
+            this.panelDesktop.Controls.Add(this.label5);
             this.panelDesktop.Controls.Add(this.textBoxPersonalizado1);
             this.panelDesktop.Controls.Add(this.label4);
             this.panelDesktop.Controls.Add(this.dateFechaInicio);
@@ -250,6 +262,71 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(570, 390);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // textBoxPersonalizado2
+            // 
+            this.textBoxPersonalizado2.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.textBoxPersonalizado2.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.textBoxPersonalizado2.BorderRadius = 0;
+            this.textBoxPersonalizado2.BorderSize = 2;
+            this.textBoxPersonalizado2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPersonalizado2.Location = new System.Drawing.Point(172, 306);
+            this.textBoxPersonalizado2.Multiline = false;
+            this.textBoxPersonalizado2.Name = "textBoxPersonalizado2";
+            this.textBoxPersonalizado2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxPersonalizado2.PasswordChar = false;
+            this.textBoxPersonalizado2.PlaceholderColor = System.Drawing.Color.Gray;
+            this.textBoxPersonalizado2.PlaceholderText = "Introduzca el nombre";
+            this.textBoxPersonalizado2.Size = new System.Drawing.Size(351, 36);
+            this.textBoxPersonalizado2.TabIndex = 12;
+            this.textBoxPersonalizado2.Texts = "";
+            this.textBoxPersonalizado2.UnderlinedStyle = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(16, 321);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Interés:";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 2;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(404, 351);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(119, 26);
+            this.iconButton1.TabIndex = 10;
+            this.iconButton1.Text = "Guardar";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Semanales",
+            "Quincenales",
+            "Mensuales"});
+            this.comboBox1.Location = new System.Drawing.Point(183, 261);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(303, 23);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(16, 261);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 21);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tipo de pago:";
             // 
             // textBoxPersonalizado1
             // 
@@ -363,6 +440,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre completo:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(72, 356);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 21);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Interés:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -407,5 +494,11 @@
         private Controles_personalizados.DateTimePickerPersonalizado dateFechaInicio;
         private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado1;
         private Label label4;
+        private Label label5;
+        private ComboBox comboBox1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private Label label6;
+        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado2;
+        private Label label7;
     }
 }
