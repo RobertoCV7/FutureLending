@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnReparar = new FontAwesome.Sharp.IconButton();
             this.btnTodosSistemas = new FontAwesome.Sharp.IconButton();
@@ -41,6 +43,19 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlClientes = new System.Windows.Forms.Panel();
+            this.txtCorreo = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtTelefono = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtNumExt = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtNumInt = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtColonia = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCalle = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnGuardar = new FutureLending.Controles_personalizados.RJButton();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbPromotor = new FutureLending.ControlesPersonalizados.RJComboBox();
@@ -64,6 +79,8 @@
             this.btnLista3 = new FutureLending.Controles_personalizados.RJButton();
             this.rjButton1 = new FutureLending.Controles_personalizados.RJButton();
             this.btnLista1 = new FutureLending.Controles_personalizados.RJButton();
+            this.btnEditar = new FutureLending.Controles_personalizados.RJButton();
+            this.btnEliminar = new FutureLending.Controles_personalizados.RJButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,7 +103,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 531);
+            this.panelMenu.Size = new System.Drawing.Size(230, 542);
             this.panelMenu.TabIndex = 0;
             // 
             // btnReparar
@@ -100,7 +117,7 @@
             this.btnReparar.IconColor = System.Drawing.Color.White;
             this.btnReparar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReparar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReparar.Location = new System.Drawing.Point(0, 477);
+            this.btnReparar.Location = new System.Drawing.Point(0, 488);
             this.btnReparar.Name = "btnReparar";
             this.btnReparar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReparar.Size = new System.Drawing.Size(230, 54);
@@ -238,7 +255,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(230, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(594, 60);
+            this.panelTitleBar.Size = new System.Drawing.Size(857, 60);
             this.panelTitleBar.TabIndex = 1;
             // 
             // lblTitle
@@ -255,6 +272,19 @@
             // pnlClientes
             // 
             this.pnlClientes.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlClientes.Controls.Add(this.txtCorreo);
+            this.pnlClientes.Controls.Add(this.label15);
+            this.pnlClientes.Controls.Add(this.txtTelefono);
+            this.pnlClientes.Controls.Add(this.label14);
+            this.pnlClientes.Controls.Add(this.txtNumExt);
+            this.pnlClientes.Controls.Add(this.label13);
+            this.pnlClientes.Controls.Add(this.txtNumInt);
+            this.pnlClientes.Controls.Add(this.label12);
+            this.pnlClientes.Controls.Add(this.txtColonia);
+            this.pnlClientes.Controls.Add(this.label11);
+            this.pnlClientes.Controls.Add(this.txtCalle);
+            this.pnlClientes.Controls.Add(this.label10);
+            this.pnlClientes.Controls.Add(this.label9);
             this.pnlClientes.Controls.Add(this.btnGuardar);
             this.pnlClientes.Controls.Add(this.label7);
             this.pnlClientes.Controls.Add(this.cmbPromotor);
@@ -272,8 +302,192 @@
             this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlClientes.Location = new System.Drawing.Point(230, 60);
             this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Size = new System.Drawing.Size(594, 471);
+            this.pnlClientes.Size = new System.Drawing.Size(857, 482);
             this.pnlClientes.TabIndex = 2;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtCorreo.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtCorreo.BorderRadius = 0;
+            this.txtCorreo.BorderSize = 2;
+            this.txtCorreo.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCorreo.Location = new System.Drawing.Point(583, 378);
+            this.txtCorreo.Multiline = false;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCorreo.PasswordChar = false;
+            this.txtCorreo.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtCorreo.PlaceholderText = "Introduzca el núm. de tel.";
+            this.txtCorreo.Size = new System.Drawing.Size(232, 36);
+            this.txtCorreo.TabIndex = 26;
+            this.txtCorreo.Texts = "";
+            this.txtCorreo.UnderlinedStyle = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(583, 354);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(157, 21);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Correo electrónico:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtTelefono.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtTelefono.BorderRadius = 0;
+            this.txtTelefono.BorderSize = 2;
+            this.txtTelefono.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTelefono.Location = new System.Drawing.Point(585, 303);
+            this.txtTelefono.Multiline = false;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtTelefono.PasswordChar = false;
+            this.txtTelefono.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtTelefono.PlaceholderText = "Introduzca el núm. de tel.";
+            this.txtTelefono.Size = new System.Drawing.Size(232, 36);
+            this.txtTelefono.TabIndex = 24;
+            this.txtTelefono.Texts = "";
+            this.txtTelefono.UnderlinedStyle = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(583, 279);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 21);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Teléfono:";
+            // 
+            // txtNumExt
+            // 
+            this.txtNumExt.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtNumExt.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtNumExt.BorderRadius = 0;
+            this.txtNumExt.BorderSize = 2;
+            this.txtNumExt.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumExt.Location = new System.Drawing.Point(720, 228);
+            this.txtNumExt.Multiline = false;
+            this.txtNumExt.Name = "txtNumExt";
+            this.txtNumExt.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNumExt.PasswordChar = false;
+            this.txtNumExt.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtNumExt.PlaceholderText = "Num. ext.";
+            this.txtNumExt.Size = new System.Drawing.Size(101, 36);
+            this.txtNumExt.TabIndex = 22;
+            this.txtNumExt.Texts = "";
+            this.txtNumExt.UnderlinedStyle = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(720, 204);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 21);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Núm. ext.:";
+            // 
+            // txtNumInt
+            // 
+            this.txtNumInt.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtNumInt.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtNumInt.BorderRadius = 0;
+            this.txtNumInt.BorderSize = 2;
+            this.txtNumInt.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumInt.Location = new System.Drawing.Point(583, 228);
+            this.txtNumInt.Multiline = false;
+            this.txtNumInt.Name = "txtNumInt";
+            this.txtNumInt.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNumInt.PasswordChar = false;
+            this.txtNumInt.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtNumInt.PlaceholderText = "Num. int.";
+            this.txtNumInt.Size = new System.Drawing.Size(101, 36);
+            this.txtNumInt.TabIndex = 20;
+            this.txtNumInt.Texts = "";
+            this.txtNumInt.UnderlinedStyle = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(585, 204);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 21);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Núm. int.:";
+            // 
+            // txtColonia
+            // 
+            this.txtColonia.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtColonia.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtColonia.BorderRadius = 0;
+            this.txtColonia.BorderSize = 2;
+            this.txtColonia.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtColonia.Location = new System.Drawing.Point(585, 153);
+            this.txtColonia.Multiline = false;
+            this.txtColonia.Name = "txtColonia";
+            this.txtColonia.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtColonia.PasswordChar = false;
+            this.txtColonia.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtColonia.PlaceholderText = "Introduzca la colonia";
+            this.txtColonia.Size = new System.Drawing.Size(232, 36);
+            this.txtColonia.TabIndex = 18;
+            this.txtColonia.Texts = "";
+            this.txtColonia.UnderlinedStyle = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(585, 129);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 21);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Colonia:";
+            // 
+            // txtCalle
+            // 
+            this.txtCalle.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtCalle.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtCalle.BorderRadius = 0;
+            this.txtCalle.BorderSize = 2;
+            this.txtCalle.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCalle.Location = new System.Drawing.Point(585, 78);
+            this.txtCalle.Multiline = false;
+            this.txtCalle.Name = "txtCalle";
+            this.txtCalle.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCalle.PasswordChar = false;
+            this.txtCalle.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtCalle.PlaceholderText = "Introduzca la calle";
+            this.txtCalle.Size = new System.Drawing.Size(232, 36);
+            this.txtCalle.TabIndex = 16;
+            this.txtCalle.Texts = "";
+            this.txtCalle.UnderlinedStyle = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(585, 54);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 21);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Calle:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(583, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 21);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Dirección:";
             // 
             // btnGuardar
             // 
@@ -286,7 +500,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(408, 403);
+            this.btnGuardar.Location = new System.Drawing.Point(686, 430);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(150, 40);
             this.btnGuardar.TabIndex = 13;
@@ -488,6 +702,8 @@
             // pnlListas
             // 
             this.pnlListas.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlListas.Controls.Add(this.btnEliminar);
+            this.pnlListas.Controls.Add(this.btnEditar);
             this.pnlListas.Controls.Add(this.gridListas);
             this.pnlListas.Controls.Add(this.btnLiquidados);
             this.pnlListas.Controls.Add(this.btnMostrarTodos);
@@ -498,26 +714,52 @@
             this.pnlListas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlListas.Location = new System.Drawing.Point(230, 60);
             this.pnlListas.Name = "pnlListas";
-            this.pnlListas.Size = new System.Drawing.Size(594, 471);
+            this.pnlListas.Size = new System.Drawing.Size(857, 482);
             this.pnlListas.TabIndex = 14;
             // 
             // gridListas
             // 
-            this.gridListas.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridListas.AllowUserToAddRows = false;
+            this.gridListas.AllowUserToDeleteRows = false;
+            this.gridListas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridListas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridListas.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.gridListas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridListas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gridListas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListas.ColumnHeadersHeight = 30;
+            this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridListas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID});
-            this.gridListas.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.gridListas.EnableHeadersVisualStyles = false;
+            this.gridListas.GridColor = System.Drawing.Color.CadetBlue;
             this.gridListas.Location = new System.Drawing.Point(16, 117);
             this.gridListas.Name = "gridListas";
+            this.gridListas.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
+            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridListas.RowTemplate.Height = 25;
-            this.gridListas.Size = new System.Drawing.Size(566, 283);
+            this.gridListas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.gridListas.Size = new System.Drawing.Size(820, 297);
             this.gridListas.TabIndex = 16;
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.Width = 46;
             // 
             // btnLiquidados
             // 
@@ -530,7 +772,7 @@
             this.btnLiquidados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLiquidados.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLiquidados.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLiquidados.Location = new System.Drawing.Point(468, 58);
+            this.btnLiquidados.Location = new System.Drawing.Point(725, 58);
             this.btnLiquidados.Name = "btnLiquidados";
             this.btnLiquidados.Size = new System.Drawing.Size(111, 45);
             this.btnLiquidados.TabIndex = 15;
@@ -549,7 +791,7 @@
             this.btnMostrarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarTodos.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMostrarTodos.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(343, 57);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(600, 57);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(111, 45);
             this.btnMostrarTodos.TabIndex = 14;
@@ -561,7 +803,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(36, 18);
+            this.label8.Location = new System.Drawing.Point(296, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(152, 21);
             this.label8.TabIndex = 13;
@@ -578,7 +820,7 @@
             this.btnLista3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLista3.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLista3.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLista3.Location = new System.Drawing.Point(460, 6);
+            this.btnLista3.Location = new System.Drawing.Point(716, 10);
             this.btnLista3.Name = "btnLista3";
             this.btnLista3.Size = new System.Drawing.Size(127, 45);
             this.btnLista3.TabIndex = 2;
@@ -598,7 +840,7 @@
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.rjButton1.Location = new System.Drawing.Point(343, 6);
+            this.rjButton1.Location = new System.Drawing.Point(599, 10);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(111, 45);
             this.rjButton1.TabIndex = 1;
@@ -617,7 +859,7 @@
             this.btnLista1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLista1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLista1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLista1.Location = new System.Drawing.Point(226, 6);
+            this.btnLista1.Location = new System.Drawing.Point(482, 10);
             this.btnLista1.Name = "btnLista1";
             this.btnLista1.Size = new System.Drawing.Size(111, 45);
             this.btnLista1.TabIndex = 0;
@@ -625,11 +867,49 @@
             this.btnLista1.TextColor = System.Drawing.Color.Transparent;
             this.btnLista1.UseVisualStyleBackColor = false;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.Teal;
+            this.btnEditar.BackgroundColor = System.Drawing.Color.Teal;
+            this.btnEditar.BorderColor = System.Drawing.Color.Teal;
+            this.btnEditar.BorderRadius = 15;
+            this.btnEditar.BorderSize = 2;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEditar.Location = new System.Drawing.Point(600, 420);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(111, 45);
+            this.btnEditar.TabIndex = 18;
+            this.btnEditar.Text = "Editar\r\ncliente\r\n";
+            this.btnEditar.TextColor = System.Drawing.Color.Transparent;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.BorderRadius = 15;
+            this.btnEliminar.BorderSize = 2;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Location = new System.Drawing.Point(725, 420);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(111, 45);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.Text = "Eliminar\r\ncliente\r\n";
+            this.btnEliminar.TextColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 531);
+            this.ClientSize = new System.Drawing.Size(1087, 542);
             this.Controls.Add(this.pnlListas);
             this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.panelTitleBar);
@@ -688,5 +968,20 @@
         private Controles_personalizados.RJButton btnMostrarTodos;
         private DataGridView gridListas;
         private DataGridViewTextBoxColumn ID;
+        private Controles_personalizados.TextBoxPersonalizado txtNumExt;
+        private Label label13;
+        private Controles_personalizados.TextBoxPersonalizado txtNumInt;
+        private Label label12;
+        private Controles_personalizados.TextBoxPersonalizado txtColonia;
+        private Label label11;
+        private Controles_personalizados.TextBoxPersonalizado txtCalle;
+        private Label label10;
+        private Label label9;
+        private Controles_personalizados.TextBoxPersonalizado txtCorreo;
+        private Label label15;
+        private Controles_personalizados.TextBoxPersonalizado txtTelefono;
+        private Label label14;
+        private Controles_personalizados.RJButton btnEliminar;
+        private Controles_personalizados.RJButton btnEditar;
     }
 }
