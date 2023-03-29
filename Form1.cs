@@ -49,6 +49,18 @@ namespace FutureLending
         private void btnIngresarClientes_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Ingresar Clientes";
+            pnlClientes.BringToFront();
+        }
+
+        private void btnListas_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Listas Completas";
+            pnlListas.BringToFront();
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

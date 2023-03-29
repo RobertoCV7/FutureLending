@@ -40,7 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.pnlClientes = new System.Windows.Forms.Panel();
             this.btnGuardar = new FutureLending.Controles_personalizados.RJButton();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbPromotor = new FutureLending.ControlesPersonalizados.RJComboBox();
@@ -55,11 +55,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlListas = new System.Windows.Forms.Panel();
+            this.btnLista1 = new FutureLending.Controles_personalizados.RJButton();
+            this.rjButton1 = new FutureLending.Controles_personalizados.RJButton();
+            this.btnLista3 = new FutureLending.Controles_personalizados.RJButton();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
+            this.pnlClientes.SuspendLayout();
+            this.pnlListas.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -161,6 +167,7 @@
             this.btnListas.Text = "  Listas completas";
             this.btnListas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnListas.UseVisualStyleBackColor = true;
+            this.btnListas.Click += new System.EventHandler(this.btnListas_Click);
             // 
             // btnIngresarClientes
             // 
@@ -240,28 +247,28 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Bienvenido";
             // 
-            // panelDesktop
+            // pnlClientes
             // 
-            this.panelDesktop.BackColor = System.Drawing.SystemColors.Info;
-            this.panelDesktop.Controls.Add(this.btnGuardar);
-            this.panelDesktop.Controls.Add(this.label7);
-            this.panelDesktop.Controls.Add(this.cmbPromotor);
-            this.panelDesktop.Controls.Add(this.label6);
-            this.panelDesktop.Controls.Add(this.cmbTipo);
-            this.panelDesktop.Controls.Add(this.label5);
-            this.panelDesktop.Controls.Add(this.txtInteres);
-            this.panelDesktop.Controls.Add(this.label4);
-            this.panelDesktop.Controls.Add(this.dateFechaInicio);
-            this.panelDesktop.Controls.Add(this.label3);
-            this.panelDesktop.Controls.Add(this.txtCredito);
-            this.panelDesktop.Controls.Add(this.label2);
-            this.panelDesktop.Controls.Add(this.txtNombre);
-            this.panelDesktop.Controls.Add(this.label1);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(230, 60);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(594, 471);
-            this.panelDesktop.TabIndex = 2;
+            this.pnlClientes.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlClientes.Controls.Add(this.btnGuardar);
+            this.pnlClientes.Controls.Add(this.label7);
+            this.pnlClientes.Controls.Add(this.cmbPromotor);
+            this.pnlClientes.Controls.Add(this.label6);
+            this.pnlClientes.Controls.Add(this.cmbTipo);
+            this.pnlClientes.Controls.Add(this.label5);
+            this.pnlClientes.Controls.Add(this.txtInteres);
+            this.pnlClientes.Controls.Add(this.label4);
+            this.pnlClientes.Controls.Add(this.dateFechaInicio);
+            this.pnlClientes.Controls.Add(this.label3);
+            this.pnlClientes.Controls.Add(this.txtCredito);
+            this.pnlClientes.Controls.Add(this.label2);
+            this.pnlClientes.Controls.Add(this.txtNombre);
+            this.pnlClientes.Controls.Add(this.label1);
+            this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlClientes.Location = new System.Drawing.Point(230, 60);
+            this.pnlClientes.Name = "pnlClientes";
+            this.pnlClientes.Size = new System.Drawing.Size(594, 471);
+            this.pnlClientes.TabIndex = 2;
             // 
             // btnGuardar
             // 
@@ -473,12 +480,94 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre completo:";
             // 
+            // pnlListas
+            // 
+            this.pnlListas.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlListas.Controls.Add(this.label8);
+            this.pnlListas.Controls.Add(this.btnLista3);
+            this.pnlListas.Controls.Add(this.rjButton1);
+            this.pnlListas.Controls.Add(this.btnLista1);
+            this.pnlListas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlListas.Location = new System.Drawing.Point(230, 60);
+            this.pnlListas.Name = "pnlListas";
+            this.pnlListas.Size = new System.Drawing.Size(594, 471);
+            this.pnlListas.TabIndex = 14;
+            // 
+            // btnLista1
+            // 
+            this.btnLista1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BorderRadius = 15;
+            this.btnLista1.BorderSize = 2;
+            this.btnLista1.FlatAppearance.BorderSize = 0;
+            this.btnLista1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLista1.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLista1.Location = new System.Drawing.Point(226, 6);
+            this.btnLista1.Name = "btnLista1";
+            this.btnLista1.Size = new System.Drawing.Size(111, 45);
+            this.btnLista1.TabIndex = 0;
+            this.btnLista1.Text = "Lista 1:\r\nIniciación";
+            this.btnLista1.TextColor = System.Drawing.Color.Transparent;
+            this.btnLista1.UseVisualStyleBackColor = false;
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.Teal;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.Teal;
+            this.rjButton1.BorderColor = System.Drawing.Color.Teal;
+            this.rjButton1.BorderRadius = 15;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rjButton1.ForeColor = System.Drawing.Color.Transparent;
+            this.rjButton1.Location = new System.Drawing.Point(343, 6);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(111, 45);
+            this.rjButton1.TabIndex = 1;
+            this.rjButton1.Text = "Lista 2:\r\nExtrajudicial";
+            this.rjButton1.TextColor = System.Drawing.Color.Transparent;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnLista3
+            // 
+            this.btnLista3.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLista3.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.btnLista3.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnLista3.BorderRadius = 15;
+            this.btnLista3.BorderSize = 2;
+            this.btnLista3.FlatAppearance.BorderSize = 0;
+            this.btnLista3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista3.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLista3.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLista3.Location = new System.Drawing.Point(460, 6);
+            this.btnLista3.Name = "btnLista3";
+            this.btnLista3.Size = new System.Drawing.Size(127, 45);
+            this.btnLista3.TabIndex = 2;
+            this.btnLista3.Text = "Lista 3:\r\nDemanda legal";
+            this.btnLista3.TextColor = System.Drawing.Color.Transparent;
+            this.btnLista3.UseVisualStyleBackColor = false;
+            this.btnLista3.Click += new System.EventHandler(this.rjButton2_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(36, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(152, 21);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Seleccione la lista:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 531);
-            this.Controls.Add(this.panelDesktop);
+            this.Controls.Add(this.pnlListas);
+            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
@@ -489,8 +578,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            this.panelDesktop.ResumeLayout(false);
-            this.panelDesktop.PerformLayout();
+            this.pnlClientes.ResumeLayout(false);
+            this.pnlClientes.PerformLayout();
+            this.pnlListas.ResumeLayout(false);
+            this.pnlListas.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -499,7 +590,7 @@
 
         private Panel panelMenu;
         private Panel panelTitleBar;
-        private Panel panelDesktop;
+        private Panel pnlClientes;
         private Panel panel1;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnMenu;
@@ -523,5 +614,10 @@
         private Label label6;
         private Label label7;
         private Controles_personalizados.RJButton btnGuardar;
+        private Panel pnlListas;
+        private Controles_personalizados.RJButton btnLista1;
+        private Controles_personalizados.RJButton btnLista3;
+        private Controles_personalizados.RJButton rjButton1;
+        private Label label8;
     }
 }
