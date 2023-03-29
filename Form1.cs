@@ -45,5 +45,10 @@ namespace FutureLending
         {
             CollapseMenu();
         }
+
+        private void btnIngresarClientes_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Ingresar Clientes";
+        }
     }
 }

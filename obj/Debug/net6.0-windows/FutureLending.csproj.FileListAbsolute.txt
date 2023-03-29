@@ -20,3 +20,4 @@ C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.pdb
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.genruntimeconfig.cache
 C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\ref\FutureLending.dll
+C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\obj\Debug\net6.0-windows\FutureLending.ControlesPersonalizados.RJComboBox.resources
