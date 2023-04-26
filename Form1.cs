@@ -62,5 +62,20 @@ namespace FutureLending
         {
 
         }
+
+        private void dateFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dateFechaInicio.Value.ToString("yyyy-MM-dd"));
+        }
+
+        private void pnlListas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
