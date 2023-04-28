@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelMenu = new Panel();
             btnReparar = new FontAwesome.Sharp.IconButton();
             btnTodosSistemas = new FontAwesome.Sharp.IconButton();
@@ -150,6 +150,7 @@
             btnTodosSistemas.Text = "Ver estado de todos los sistemas";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTodosSistemas.UseVisualStyleBackColor = true;
+            btnTodosSistemas.Click += btnTodosSistemas_Click;
             // 
             // btnEstadoPagos
             // 
@@ -789,14 +790,14 @@
             gridListas.BorderStyle = BorderStyle.None;
             gridListas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.Info;
-            dataGridViewCellStyle3.SelectionBackColor = Color.RoyalBlue;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Info;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Info;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             gridListas.ColumnHeadersHeight = 30;
             gridListas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             gridListas.Columns.AddRange(new DataGridViewColumn[] { ID });
@@ -807,12 +808,12 @@
             gridListas.Name = "gridListas";
             gridListas.RowHeadersVisible = false;
             gridListas.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Info;
-            dataGridViewCellStyle4.SelectionBackColor = Color.CadetBlue;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Info;
-            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Info;
+            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             gridListas.RowTemplate.Height = 25;
             gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
             gridListas.Size = new Size(937, 396);

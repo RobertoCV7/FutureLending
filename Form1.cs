@@ -77,5 +77,11 @@ namespace FutureLending
         {
 
         }
+
+        private void btnTodosSistemas_Click(object sender, EventArgs e)
+        {
+            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            instancia.revisarconexion();
+        }
     }
 }

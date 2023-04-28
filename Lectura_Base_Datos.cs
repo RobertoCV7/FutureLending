@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Media3D;
@@ -8,17 +10,28 @@ using Microsoft.VisualBasic.Logging;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Crypto.Tls;
+using System.Diagnostics;
 
 namespace FutureLending
 {
-    internal class Lectura_Base_Datos
+     public class Lectura_Base_Datos
     {
+        //verificador de cambio de puerto
+        public bool cambio_puerto = false;
       MySqlConnection Conector()
         {
-            //creamos la conexion
-            string connectionString = "server=localhost;database=prestamos;uid=root;password=;";
+            //creamos la conexion verificando que no se haya cambiado el puerto
+            string connectionString = "";
+            if (cambio_puerto == false)
+            {
+                 connectionString = "server=localhost;port=3306;database=prestamos;uid=root;pwd=;";
+            }
+            else
+            {
+                connectionString = "server=localhost;port=3307;database=prestamos;uid=root;pwd=;";
+            }
+           
             MySqlConnection Connection = new MySqlConnection(connectionString);
-        
             try
             {
                 //abrimos la conexion
@@ -167,6 +180,52 @@ namespace FutureLending
         }
 
 
+        public void revisarconexion()
+        {
 
+            string exePath = Assembly.GetExecutingAssembly().Location;
+            string exeDirectory = System.IO.Path.GetDirectoryName(exePath);
+            MessageBox.Show(exeDirectory);
+            string connectionString = "server=localhost;port=3306;database=prestamos;uid=root;pwd=;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            int i = 10;
+            //esta funcion reiniciara el xampp si no se puede conectar a la base de datos o cambiara el puerto de conexion
+            while(true) 
+            {
+                try
+                {
+                    connection.Open();
+                    MessageBox.Show("El programa funciona correctamente.");
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error estamos intenando reparar el programa");
+                    Process process = new Process();
+                    process.StartInfo.FileName = exeDirectory + "\\Scripts de reparacion e inicio automatico/ReiniciarXampp.bat";
+                    process.Start();
+                    process.WaitForExit();
+                    if(i==0)
+                    {
+                     MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere"); //aqui cambiamos el puerto de conexion a 3307 para ver si ese es el problema
+                        //de aqui tenemos que sacar un cambio para todos los archivos de conexion
+                        Process process2 = new Process();
+                        process2.StartInfo.FileName = exeDirectory + "\\Scripts de reparacion e inicio automatico/cambio_port.bat";
+                        process2.Start();
+                        process2.WaitForExit();
+                        cambio_puerto = true;
+                        break;
+                    }
+                    i--;
+                    continue;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+        }
+                
     }
 }
