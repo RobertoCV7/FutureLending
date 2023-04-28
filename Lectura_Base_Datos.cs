@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Crypto.Tls;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace FutureLending
 {
@@ -18,83 +19,76 @@ namespace FutureLending
     {
         //verificador de cambio de puerto
         public bool cambio_puerto = false;
-      MySqlConnection Conector()
+        MySqlConnection Conector()
         {
-            //creamos la conexion verificando que no se haya cambiado el puerto
-            string connectionString = "";
-            if (cambio_puerto == false)
-            {
-                 connectionString = "server=localhost;port=3306;database=prestamos;uid=root;pwd=;";
-            }
-            else
-            {
-                connectionString = "server=localhost;port=3307;database=prestamos;uid=root;pwd=;";
-            }
-           
-            MySqlConnection Connection = new MySqlConnection(connectionString);
+            // creamos la conexión verificando si se ha cambiado el puerto
+            string server = "localhost";
+            int port = cambio_puerto ? 3307 : 3306;
+            string database = "prestamos";
+            string uid = "root";
+            string pwd = "";
+            string connectionString = $"server={server};port={port};database={database};uid={uid};pwd={pwd};";
+
+            MySqlConnection connection = null;
+
             try
             {
-                //abrimos la conexion
-                Connection.Open();
+                // creamos la conexión
+                connection = new MySqlConnection(connectionString);
+
+                // abrimos la conexión
+                connection.Open();
             }
-            catch(Exception ex)
+            catch (MySqlException ex)
             {
-                //en caso de error nos muestra el error en la aplicacion
-                MessageBox.Show(ex.Message);
+                // en caso de error, manejamos la excepción y mostramos un mensaje al usuario
+                MessageBox.Show($"Error de conexión: {ex.Message}");
             }
 
-            return Connection;
+            // devolvemos la conexión, puede ser nula en caso de error
+            return connection;
         }
-     
-       string Lect(string tabla) 
+        string Lect(string tabla)
         {
-            //declaramos las variables que leeran la base de datos
-            string Global = "";
-            string Nombre = "", Credito = "", Fecha_inicio = "", Interes = "", Promotor = "", Calle = "", Colonia = "", Num_int = "", Num_ext = "", Telefono="", Correo="";
-            int tipo_de_pago = 0;
-            string[] fechas_pago = new string[14];
-
-            MySqlConnection Connection = Conector(); //llamamos al conector
-            MySqlCommand command = Connection.CreateCommand();
-            
-            command.CommandText = "SELECT * FROM "+tabla;//seleccionamos de donde leeremos los datos
-            MySqlDataReader reader = command.ExecuteReader();
-            //leemos los datos que nos arroja , tambien se podria usar un foreach
-            while (reader.Read())
+            List<string[]> datos = new List<string[]>();
+            using (MySqlConnection connection = Conector())
             {
-                    Nombre = reader.GetString(0);
-                    Credito = reader.GetString(1);
-                    Fecha_inicio = reader.GetString(2);
-                    Interes = reader.GetString(3);
-                    Promotor = reader.GetString(4);
-                    Calle = reader.GetString(5);
-                    Colonia = reader.GetString(6);
-                    Num_int = reader.GetString(7);
-                    Num_ext = reader.GetString(8);
-                    Telefono = reader.GetString(9);
-                    Correo = reader.GetString(10);
-                    tipo_de_pago = reader.GetInt32(11);
-                    fechas_pago[0] = reader.GetString(12);
-                    fechas_pago[1] = reader.GetString(13);
-                    fechas_pago[2] = reader.GetString(14);
-                    fechas_pago[3] = reader.GetString(15);
-                    fechas_pago[4] = reader.GetString(16);
-                    fechas_pago[5] = reader.GetString(17);
-                    fechas_pago[6] = reader.GetString(18);
-                    fechas_pago[7] = reader.GetString(19);
-                    fechas_pago[8] = reader.GetString(20);
-                    fechas_pago[9] = reader.GetString(21);
-                    fechas_pago[10] = reader.GetString(22);
-                    fechas_pago[11] = reader.GetString(23);
-                    fechas_pago[12] = reader.GetString(24);
-                    fechas_pago[13] = reader.GetString(25);
-                Global += Nombre + "." + Credito + "." + Fecha_inicio + "." + Interes + "." + Promotor + "." + Calle + "." + Colonia + "." + Num_int + "." + Num_ext + "." + Telefono + "." + Correo + "." + tipo_de_pago + "." + fechas_pago[0] + "." + fechas_pago[1] + "." + fechas_pago[2] + "." + fechas_pago[3] + "." + fechas_pago[4] + "." + fechas_pago[5] + "." + fechas_pago[6] + "." + fechas_pago[7] + "." + fechas_pago[8] + "." + fechas_pago[9] + "." + fechas_pago[10] + "." + fechas_pago[11] + "." + fechas_pago[12] + "." + fechas_pago[13]+"/n";    
+                string query = "SELECT * FROM " + tabla;
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string[] fila = new string[26];
+                            fila[0] = reader.GetString("nombre");
+                            fila[1] = reader.GetString("credito");
+                            fila[2] = reader.GetDateTime("fecha_inicio").ToString();
+                            fila[3] = reader.GetString("interes");
+                            fila[4] = reader.GetString("promotor");
+                            fila[5] = reader.GetString("calle");
+                            fila[6] = reader.GetString("colonia");
+                            fila[7] = reader.GetString("num_int");
+                            fila[8] = reader.GetString("num_ext");
+                            fila[9] = reader.GetString("telefono");
+                            fila[10] = reader.GetString("correo");
+                            fila[11] = reader.GetInt32("tipo_de_pago").ToString();
+                            for (int i = 0; i < 14; i++)
+                            {
+                                fila[i + 12] = reader.GetDateTime("fecha_pago_" + (i + 1)).ToString();
+                            }
+                            datos.Add(fila);
+                        }
+                    }
+                }
             }
-          
-            //cerramos la lectura y la conexion
-            reader.Close();
-            Connection.Close();
-            return Global;
+            StringBuilder sb = new StringBuilder();
+            foreach (string[] fila in datos)
+            {
+                sb.Append(string.Join(".", fila));
+                sb.Append(Environment.NewLine);
+            }
+            return sb.ToString();
         }
 
         int Edit()//falta agregar parametros de recibido pero hasta que la base de datos este lista
@@ -124,81 +118,75 @@ namespace FutureLending
             return filasAfectadas;
         }
 
-        void create(string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Num_int, string Num_ext, string Telefono,string Correo,int Tipo_pago)
+        void create(string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
         {
-
-            //con esto separamos la fecha en dia, mes y año que recibimos en string y lo convertimos a int
-            int[] dia = new int[3];
-            char[] delimitadores = { '-' };
-            int z= 0;
-            string[] tokens = Fecha_inicio.Split(delimitadores);
-
-            foreach (string token in tokens)
+            DateTime fechaInicio;
+            if (!DateTime.TryParseExact(Fecha_inicio, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out fechaInicio))
             {
-                dia[z]=Int32.Parse(token);
-                z++;
+                throw new ArgumentException("Fecha_inicio invalida");
             }
 
-            //declaracion de los array de las fechas de pago para automatico calcular
-            string[] dias_de_pago = new string[14];
-            string[] dias_de_pago_quincena = new string[14];
-
+            string[] dias_de_pago;
             if (Tipo_pago == 1)
             {
-                for(int i=0; i<14; i++)
-                {
-                    //pedazo de codigo que calcula los dias de pago
-                    DateTime fechaInicio = new DateTime(dia[0], dia[1], dia[2]); // Define la fecha de inicio
-                    int diasASumar = 7; // dias que se suman
-                    DateTime fechaFinal = fechaInicio.AddDays(diasASumar); // Suma los días a la fecha de inicio
-                    dias_de_pago[i] = fechaFinal.ToString();
-                }
-                MySqlConnection Connection = Conector(); //llamamos al conector 
-                string query = "INSERT INTO tabla (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Fecha1, Fecha2, Fecha3, Fecha4, Fecha5, Fecha6, Fecha7, Fecha8, Fecha9, Fecha10, Fecha11, Fecha12, Fecha13, Fecha14) VALUES ('" + Nombre + "', '" + Credito + "', '" + Fecha_inicio + "' , '" + Interes + "' , '" + Promotor + "' , '" + Calle + "' ," + Num_int + "' , '" + Num_ext + "' ," + Telefono + "' , " + Tipo_pago + "', '" + dias_de_pago[0] + "' , '" + dias_de_pago[1] + "' , '" + dias_de_pago[2] + "' , '" + dias_de_pago[3] + "' , '" + dias_de_pago[4] + "' , '" + dias_de_pago[5] + "' , '" + dias_de_pago[6] + "' , '" + dias_de_pago[7] + "' , '" + dias_de_pago[8] + "' , '" + dias_de_pago[9] + "' , ' " + dias_de_pago[10] + "' , '" + dias_de_pago[11] + "' , '" + dias_de_pago[12] + "', '" + dias_de_pago[13] + "')"; //se insertan los valores
-                MySqlCommand command = new MySqlCommand(query, Connection);
-                command.ExecuteNonQuery();
-                Connection.Close();
-
+                dias_de_pago = Enumerable.Range(0, 14)
+                    .Select(i => fechaInicio.AddDays(7 * i + 7).ToString("yyyy-MM-dd"))
+                    .ToArray();
             }
             else
             {
-                for(int i=0; i<7; i++)
-                {
-                    //pedazo de codigo que calcula los dias de pago
-                    DateTime fechaInicio = new DateTime(dia[0], dia[1], dia[2]); // Define la fecha de inicio
-                    int diasASumar = 15; // dias que se suman
-                    DateTime fechaFinal = fechaInicio.AddDays(diasASumar); // Suma los días a la fecha de inicio
-                    dias_de_pago_quincena[i] = fechaFinal.ToString();
-                }
-                MySqlConnection Connection = Conector(); //llamamos al conector 
-                string query = "INSERT INTO tabla (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Fecha1, Fecha2, Fecha3, Fecha4, Fecha5, Fecha6, Fecha7) VALUES ('" + Nombre + "', '" + Credito + "', '" + Fecha_inicio + "' , '" + Interes + "' , '" + Promotor + "' , '" + Calle + "' ," + Num_int + "' , '" + Num_ext + "' ," + Telefono + "' , " + Tipo_pago + "', '" + dias_de_pago_quincena[0] + "' , '" + dias_de_pago_quincena[1] + "' , '" + dias_de_pago_quincena[2] + "' , '" + dias_de_pago_quincena[3] + "' , '" + dias_de_pago_quincena[4] + "' , '" + dias_de_pago_quincena[5] + "' , '" + dias_de_pago_quincena[6] + "')"; //se insertan los valores
-                MySqlCommand command = new MySqlCommand(query, Connection);
-                command.ExecuteNonQuery();
-                Connection.Close();
+                dias_de_pago = Enumerable.Range(0, 7)
+                    .Select(i => fechaInicio.AddDays(15 * i + 15).ToString("yyyy-MM-dd"))
+                    .ToArray();
+            }
 
+            using (MySqlConnection connection = Conector())
+            {
+                StringBuilder queryBuilder = new StringBuilder();
+                queryBuilder.Append("INSERT INTO tabla (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago");
+                for (int i = 1; i <= dias_de_pago.Length; i++)
+                {
+                    queryBuilder.Append(", Fecha").Append(i);
+                }
+                queryBuilder.Append(") VALUES (@Nombre, @Credito, @Fecha_inicio, @Interes, @Promotor, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago");
+                for (int i = 0; i < dias_de_pago.Length; i++)
+                {
+                    queryBuilder.Append(", @Fecha").Append(i + 1);
+                }
+                queryBuilder.Append(")");
+                string query = queryBuilder.ToString();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre", Nombre);
+                    command.Parameters.AddWithValue("@Credito", Credito);
+                    command.Parameters.AddWithValue("@Fecha_inicio", Fecha_inicio);
+                    command.Parameters.AddWithValue("@Interes", Interes);
+                    command.Parameters.AddWithValue("@Promotor", Promotor);
+                    command.Parameters.AddWithValue("@Calle", Calle);
+                    command.Parameters.AddWithValue("@Colonia", Num_int);
+                    command.Parameters.AddWithValue("@Num_int", Num_int);
+                    command.Parameters.AddWithValue("@Num_ext", Num_ext);
+                    command.Parameters.AddWithValue("@Telefono", Telefono);
+                    command.Parameters.AddWithValue("@Correo", Correo);
+                    command.Parameters.AddWithValue("@Tipo_pago", Tipo_pago);
+                    for (int i = 0; i < dias_de_pago.Length; i++)
+                    {
+                        command.Parameters.AddWithValue("@Fecha" + (i + 1), dias_de_pago[i]);
+                    }
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
-
         public void revisarconexion()
         {
-
-            string exePath = Assembly.GetExecutingAssembly().Location;
-            string exeDirectory = System.IO.Path.GetDirectoryName(exePath);
-            MessageBox.Show(exeDirectory);
-            string connectionString = "";
-            if (cambio_puerto == false)
-            {
-                connectionString = "server=localhost;port=3306;database=prestamos;uid=root;pwd=;";
-            }
-            else
-            {
-                connectionString = "server=localhost;port=3307;database=prestamos;uid=root;pwd=;";
-            }
+            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string connectionString = $"server=localhost;port={(cambio_puerto ? 3307 : 3306)};database=prestamos;uid=root;pwd=;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             int i = 10;
             //esta funcion reiniciara el xampp si no se puede conectar a la base de datos o cambiara el puerto de conexion
-            while(true) 
+            while (true)
             {
                 try
                 {
@@ -209,29 +197,22 @@ namespace FutureLending
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error estamos intenando reparar el programa");
-                    Process process = new Process();
-                    process.StartInfo.FileName = exeDirectory + "\\Scripts de reparacion e inicio automatico/ReiniciarXampp.bat";
-                    process.Start();
-                    process.WaitForExit();
-                    if(i==0)
+                    Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarXampp.bat").WaitForExit();
+                    if (i == 0)
                     {
-                     MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere"); //aqui cambiamos el puerto de conexion a 3307 para ver si ese es el problema
-                        //de aqui tenemos que sacar un cambio para todos los archivos de conexion
-                        Process process2 = new Process();
-                        process2.StartInfo.FileName = exeDirectory + "\\Scripts de reparacion e inicio automatico/cambio_port.bat";
-                        process2.Start();
-                        process2.WaitForExit();
+                        MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
+                        Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat").WaitForExit();
                         cambio_puerto = true;
                         break;
                     }
                     i--;
-                    continue;
                 }
                 finally
                 {
                     connection.Close();
                 }
             }
+        
 
         }
                 
