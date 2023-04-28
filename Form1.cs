@@ -83,5 +83,26 @@ namespace FutureLending
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
             instancia.revisarconexion();
         }
+
+        private void btnLista1_Click(object sender, EventArgs e)
+        {
+            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "PROMOTOR",
+                                        "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO",
+                                        "CORREO", "TIPO DE PAGO"};
+            List<string> nombresColumnas = new List<string>();
+            nombresColumnas.AddRange(nombresString);
+
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas.Add("FECHA " + i);
+            }
+
+            gridListas.ColumnCount = 26;
+
+            for (int i = 0; i < gridListas.ColumnCount; i++)
+            {
+                gridListas.Columns[i].Name = nombresColumnas[i];
+            }
+        }
     }
 }

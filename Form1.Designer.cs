@@ -74,7 +74,6 @@
             this.btnEliminar = new FutureLending.Controles_personalizados.RJButton();
             this.btnEditar = new FutureLending.Controles_personalizados.RJButton();
             this.gridListas = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLiquidados = new FutureLending.Controles_personalizados.RJButton();
             this.btnMostrarTodos = new FutureLending.Controles_personalizados.RJButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -772,8 +771,6 @@
             this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridListas.ColumnHeadersHeight = 30;
             this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridListas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID});
             this.gridListas.EnableHeadersVisualStyles = false;
             this.gridListas.GridColor = System.Drawing.Color.CadetBlue;
             this.gridListas.Location = new System.Drawing.Point(16, 127);
@@ -790,13 +787,6 @@
             this.gridListas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.gridListas.Size = new System.Drawing.Size(820, 297);
             this.gridListas.TabIndex = 16;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 51;
             // 
             // btnLiquidados
             // 
@@ -902,6 +892,7 @@
             this.btnLista1.Text = "Lista 1:\r\nIniciación";
             this.btnLista1.TextColor = System.Drawing.Color.Transparent;
             this.btnLista1.UseVisualStyleBackColor = false;
+            this.btnLista1.Click += new System.EventHandler(this.btnLista1_Click);
             // 
             // Form1
             // 
@@ -964,7 +955,6 @@
         private Controles_personalizados.RJButton btnLiquidados;
         private Controles_personalizados.RJButton btnMostrarTodos;
         private DataGridView gridListas;
-        private DataGridViewTextBoxColumn ID;
         private Controles_personalizados.TextBoxPersonalizado txtNumExt;
         private Label label13;
         private Controles_personalizados.TextBoxPersonalizado txtNumInt;
