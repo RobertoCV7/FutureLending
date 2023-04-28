@@ -15,7 +15,7 @@ using System.Globalization;
 
 namespace FutureLending
 {
-     public class Lectura_Base_Datos
+    public class Lectura_Base_Datos
     {
         //verificador de cambio de puerto
         public bool cambio_puerto = false;
@@ -179,42 +179,61 @@ namespace FutureLending
             }
         }
 
-        public void revisarconexion()
+        public async Task CheckConnection()
         {
-            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string connectionString = $"server=localhost;port={(cambio_puerto ? 3307 : 3306)};database=prestamos;uid=root;pwd=;";
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            int i = 10;
-            //esta funcion reiniciara el xampp si no se puede conectar a la base de datos o cambiara el puerto de conexion
-            while (true)
+            string server = "localhost";
+            int port = cambio_puerto ? 3307 : 3306;
+            string database = "prestamos";
+            string username = "root";
+            string password = "";
+
+            string connectionString = $"server={server};port={port};database={database};uid={username};pwd={password}";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
-                    connection.Open();
+                    await connection.OpenAsync();
                     MessageBox.Show("El programa funciona correctamente.");
-                    break;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error estamos intenando reparar el programa");
-                    Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarXampp.bat").WaitForExit();
-                    if (i == 0)
-                    {
-                        MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
-                        Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat").WaitForExit();
-                        cambio_puerto = true;
-                        break;
-                    }
-                    i--;
+                    await RepairProgramAsync();
                 }
                 finally
                 {
                     connection.Close();
                 }
             }
-        
-
         }
-                
+        int attempts = 3;
+        private async Task RepairProgramAsync()
+        {
+            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var tcs = new TaskCompletionSource<object>();
+            var process = Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarXampp.bat");
+            process.EnableRaisingEvents = true;
+            process.Exited += (s, e) => tcs.TrySetResult(null);
+            await tcs.Task;
+            if (process.ExitCode != 0 && process.ExitCode != -1073741510)
+            {
+                attempts--;
+                while (attempts > 0)
+                {
+                    try
+                    {
+                        await CheckConnection();
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        attempts--;
+                    }
+                }
+                await Task.Run(() => Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat").WaitForExit());
+                cambio_puerto = true;
+                MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
+            }
+        }
+
     }
 }
