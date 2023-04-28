@@ -48,7 +48,7 @@ namespace FutureLending
             // devolvemos la conexión, puede ser nula en caso de error
             return connection;
         }
-        string Lect(string tabla)
+        public List<string[]> Lect(string tabla)
         {
             List<string[]> datos = new List<string[]>();
             using (MySqlConnection connection = Conector())
@@ -61,27 +61,28 @@ namespace FutureLending
                         while (reader.Read())
                         {
                             string[] fila = new string[26];
-                            fila[0] = reader.GetString("nombre");
-                            fila[1] = reader.GetString("credito");
-                            fila[2] = reader.GetDateTime("fecha_inicio").ToString();
-                            fila[3] = reader.GetString("interes");
-                            fila[4] = reader.GetString("promotor");
-                            fila[5] = reader.GetString("calle");
-                            fila[6] = reader.GetString("colonia");
-                            fila[7] = reader.GetString("num_int");
-                            fila[8] = reader.GetString("num_ext");
-                            fila[9] = reader.GetString("telefono");
-                            fila[10] = reader.GetString("correo");
-                            fila[11] = reader.GetInt32("tipo_de_pago").ToString();
+                            fila[0] = reader.GetString("Nombre_Completo");
+                            fila[1] = reader.GetString("Credito_Prestado");
+                            fila[2] = reader.GetString("Fecha_Inicio");
+                            fila[3] = reader.GetString("Interes");
+                            fila[4] = reader.GetString("Promotor");
+                            fila[5] = reader.GetString("Calle");
+                            fila[6] = reader.GetString("Colonia");
+                            fila[7] = reader.GetString("Num_int");
+                            fila[8] = reader.GetString("Num_ext");
+                            fila[9] = reader.GetString("Telefono");
+                            fila[10] = reader.GetString("Correo");
+                            fila[11] = reader.GetInt32("Tipo_pago").ToString();
                             for (int i = 0; i < 14; i++)
                             {
-                                fila[i + 12] = reader.GetDateTime("fecha_pago_" + (i + 1)).ToString();
+                                fila[i + 12] = reader.GetString("Fecha" + (i + 1));
                             }
                             datos.Add(fila);
                         }
                     }
                 }
             }
+            /*
             StringBuilder sb = new StringBuilder();
             foreach (string[] fila in datos)
             {
@@ -89,6 +90,8 @@ namespace FutureLending
                 sb.Append(Environment.NewLine);
             }
             return sb.ToString();
+            */
+            return datos;
         }
 
         int Edit()//falta agregar parametros de recibido pero hasta que la base de datos este lista

@@ -103,6 +103,18 @@ namespace FutureLending
             {
                 gridListas.Columns[i].Name = nombresColumnas[i];
             }
+
+            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            List<string[]> datos = instancia.Lect("lista1");
+
+            gridListas.RowCount = datos.Count;
+            for (int i = 0; i < gridListas.RowCount; i++)
+            {
+                for(int j = 0; j < gridListas.ColumnCount; j++)
+                {
+                    gridListas.Rows[i].Cells[j].Value = datos.ElementAt(i)[j];
+                }
+            }
         }
     }
 }
