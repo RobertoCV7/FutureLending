@@ -186,7 +186,15 @@ namespace FutureLending
             string exePath = Assembly.GetExecutingAssembly().Location;
             string exeDirectory = System.IO.Path.GetDirectoryName(exePath);
             MessageBox.Show(exeDirectory);
-            string connectionString = "server=localhost;port=3306;database=prestamos;uid=root;pwd=;";
+            string connectionString = "";
+            if (cambio_puerto == false)
+            {
+                connectionString = "server=localhost;port=3306;database=prestamos;uid=root;pwd=;";
+            }
+            else
+            {
+                connectionString = "server=localhost;port=3307;database=prestamos;uid=root;pwd=;";
+            }
             MySqlConnection connection = new MySqlConnection(connectionString);
             int i = 10;
             //esta funcion reiniciara el xampp si no se puede conectar a la base de datos o cambiara el puerto de conexion
