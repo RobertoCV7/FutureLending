@@ -113,7 +113,7 @@ namespace FutureLending
             gridListas.RowCount = datos.Count;
             for (int i = 0; i < gridListas.RowCount; i++)
             {
-                for(int j = 0; j < gridListas.ColumnCount; j++)
+                for (int j = 0; j < gridListas.ColumnCount; j++)
                 {
                     gridListas.Rows[i].Cells[j].Value = datos[i][j];
                 }
@@ -133,6 +133,44 @@ namespace FutureLending
                 }
             }
             return fechas;
+        }
+
+        private void btnEstadoPagos_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Registrar pago";
+            pnlRegPago.BringToFront();
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjButton2_Click_1(object sender, EventArgs e)
+        {
+            //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
+            //Mostramos en el form
+            lblCredito.Visible = true;
+            txtBoxCredito.Visible = true;
+            txtBoxMonto.Visible = true;
+            lblFecha.Visible = true;
+            lblMonto.Visible = true;
+            DateTime1.Visible = true;
+            btnMarcarP.Visible = true;
+            //Agregamos los datos del cliente al form
+            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            string[] datos = instancia.LectName("lista1",ComBoxName.Texts);
+            txtBoxCredito.Texts = datos[1];
+            txtBoxMonto.Texts = datos[2];//FALTA AGREGAR MONTO A LA BASE DE DATOS *PENDIENTE
+            //Validar que se encuentre esa fecha ***
+
+            //Marcar como pagada ***
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -105,6 +105,42 @@ namespace FutureLending
             return datos;
         }
 
+        //Leer por un nombre en especifico 
+        public string[] LectName(string tabla, string name)
+        {
+            string[] fila = new string[26];
+            using (MySqlConnection connection = Conector())
+            {
+                string query = "SELECT * FROM " + tabla + "WHERE NAME = " + name;
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            fila[0] = reader.GetString("Nombre_Completo");
+                            fila[1] = reader.GetString("Credito_Prestado");
+                            fila[2] = reader.GetString("Fecha_Inicio");
+                            fila[3] = reader.GetString("Interes");
+                            fila[4] = reader.GetString("Promotor");
+                            fila[5] = reader.GetString("Calle");
+                            fila[6] = reader.GetString("Colonia");
+                            fila[7] = reader.GetString("Num_int");
+                            fila[8] = reader.GetString("Num_ext");
+                            fila[9] = reader.GetString("Telefono");
+                            fila[10] = reader.GetString("Correo");
+                            fila[11] = reader.GetInt32("Tipo_pago").ToString();
+                            for (int i = 0; i < 14; i++)
+                            {
+                                fila[i + 12] = reader.GetString("Fecha" + (i + 1));
+                            }
+                        }
+                    }
+                }
+            }
+            return fila;
+        }
+
         int Edit()//falta agregar parametros de recibido pero hasta que la base de datos este lista
         {
             //creamos la conexion

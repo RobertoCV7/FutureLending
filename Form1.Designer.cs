@@ -70,10 +70,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlRegPago = new System.Windows.Forms.Panel();
+            this.btnMarcarP = new FutureLending.Controles_personalizados.RJButton();
+            this.DateTime1 = new FutureLending.Controles_personalizados.DateTimePickerPersonalizado();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.txtBoxMonto = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.lblMonto = new System.Windows.Forms.Label();
+            this.lblCredito = new System.Windows.Forms.Label();
+            this.txtBoxCredito = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.ComBoxName = new FutureLending.ControlesPersonalizados.RJComboBox();
+            this.btnBuscarC = new FutureLending.Controles_personalizados.RJButton();
+            this.label29 = new System.Windows.Forms.Label();
             this.pnlListas = new System.Windows.Forms.Panel();
+            this.gridListas = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new FutureLending.Controles_personalizados.RJButton();
             this.btnEditar = new FutureLending.Controles_personalizados.RJButton();
-            this.gridListas = new System.Windows.Forms.DataGridView();
             this.btnLiquidados = new FutureLending.Controles_personalizados.RJButton();
             this.btnMostrarTodos = new FutureLending.Controles_personalizados.RJButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -85,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.pnlClientes.SuspendLayout();
+            this.pnlRegPago.SuspendLayout();
             this.pnlListas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListas)).BeginInit();
             this.SuspendLayout();
@@ -188,7 +200,6 @@
             this.btnListas.Text = "  Listas completas";
             this.btnListas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnListas.UseVisualStyleBackColor = true;
-            this.btnListas.Click += new System.EventHandler(this.btnListas_Click);
             // 
             // btnIngresarClientes
             // 
@@ -210,7 +221,6 @@
             this.btnIngresarClientes.Text = "   Ingresar clientes";
             this.btnIngresarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIngresarClientes.UseVisualStyleBackColor = true;
-            this.btnIngresarClientes.Click += new System.EventHandler(this.btnIngresarClientes_Click);
             // 
             // panel1
             // 
@@ -235,7 +245,6 @@
             this.btnMenu.Size = new System.Drawing.Size(60, 60);
             this.btnMenu.TabIndex = 0;
             this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pictureBox1
             // 
@@ -299,9 +308,9 @@
             this.pnlClientes.Controls.Add(this.txtNombre);
             this.pnlClientes.Controls.Add(this.label1);
             this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlClientes.Location = new System.Drawing.Point(0, 0);
+            this.pnlClientes.Location = new System.Drawing.Point(230, 60);
             this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Size = new System.Drawing.Size(1087, 542);
+            this.pnlClientes.Size = new System.Drawing.Size(857, 482);
             this.pnlClientes.TabIndex = 2;
             // 
             // txtCorreo
@@ -537,7 +546,7 @@
             this.cmbPromotor.Location = new System.Drawing.Point(181, 318);
             this.cmbPromotor.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbPromotor.Name = "cmbPromotor";
-            this.cmbPromotor.Padding = new System.Windows.Forms.Padding(2);
+            this.cmbPromotor.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbPromotor.Size = new System.Drawing.Size(289, 37);
             this.cmbPromotor.TabIndex = 11;
             this.cmbPromotor.Texts = "Seleccione al promotor";
@@ -572,7 +581,7 @@
             this.cmbTipo.Location = new System.Drawing.Point(181, 254);
             this.cmbTipo.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Padding = new System.Windows.Forms.Padding(2);
+            this.cmbTipo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbTipo.Size = new System.Drawing.Size(289, 37);
             this.cmbTipo.TabIndex = 9;
             this.cmbTipo.Texts = "Seleccione un tipo de pago";
@@ -698,12 +707,189 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre completo:";
             // 
+            // pnlRegPago
+            // 
+            this.pnlRegPago.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlRegPago.Controls.Add(this.btnMarcarP);
+            this.pnlRegPago.Controls.Add(this.DateTime1);
+            this.pnlRegPago.Controls.Add(this.lblFecha);
+            this.pnlRegPago.Controls.Add(this.txtBoxMonto);
+            this.pnlRegPago.Controls.Add(this.lblMonto);
+            this.pnlRegPago.Controls.Add(this.lblCredito);
+            this.pnlRegPago.Controls.Add(this.txtBoxCredito);
+            this.pnlRegPago.Controls.Add(this.ComBoxName);
+            this.pnlRegPago.Controls.Add(this.btnBuscarC);
+            this.pnlRegPago.Controls.Add(this.label29);
+            this.pnlRegPago.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRegPago.Location = new System.Drawing.Point(230, 60);
+            this.pnlRegPago.Name = "pnlRegPago";
+            this.pnlRegPago.Size = new System.Drawing.Size(857, 482);
+            this.pnlRegPago.TabIndex = 27;
+            // 
+            // btnMarcarP
+            // 
+            this.btnMarcarP.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMarcarP.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.btnMarcarP.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMarcarP.BorderRadius = 10;
+            this.btnMarcarP.BorderSize = 2;
+            this.btnMarcarP.FlatAppearance.BorderSize = 0;
+            this.btnMarcarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMarcarP.ForeColor = System.Drawing.Color.Black;
+            this.btnMarcarP.Location = new System.Drawing.Point(228, 314);
+            this.btnMarcarP.Name = "btnMarcarP";
+            this.btnMarcarP.Size = new System.Drawing.Size(242, 40);
+            this.btnMarcarP.TabIndex = 33;
+            this.btnMarcarP.Text = "Marcar como pagada";
+            this.btnMarcarP.TextColor = System.Drawing.Color.Black;
+            this.btnMarcarP.UseVisualStyleBackColor = false;
+            this.btnMarcarP.Visible = false;
+            // 
+            // DateTime1
+            // 
+            this.DateTime1.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.DateTime1.BorderSize = 2;
+            this.DateTime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTime1.Location = new System.Drawing.Point(196, 256);
+            this.DateTime1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.DateTime1.Name = "DateTime1";
+            this.DateTime1.Size = new System.Drawing.Size(151, 35);
+            this.DateTime1.SkinColor = System.Drawing.SystemColors.Info;
+            this.DateTime1.TabIndex = 32;
+            this.DateTime1.TextColor = System.Drawing.Color.Black;
+            this.DateTime1.Visible = false;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFecha.Location = new System.Drawing.Point(16, 261);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(156, 24);
+            this.lblFecha.TabIndex = 31;
+            this.lblFecha.Text = "Fecha a registrar:";
+            this.lblFecha.Visible = false;
+            // 
+            // txtBoxMonto
+            // 
+            this.txtBoxMonto.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtBoxMonto.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtBoxMonto.BorderRadius = 0;
+            this.txtBoxMonto.BorderSize = 2;
+            this.txtBoxMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBoxMonto.Location = new System.Drawing.Point(278, 180);
+            this.txtBoxMonto.Multiline = false;
+            this.txtBoxMonto.Name = "txtBoxMonto";
+            this.txtBoxMonto.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBoxMonto.PasswordChar = false;
+            this.txtBoxMonto.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtBoxMonto.PlaceholderText = "";
+            this.txtBoxMonto.Size = new System.Drawing.Size(150, 39);
+            this.txtBoxMonto.TabIndex = 30;
+            this.txtBoxMonto.Texts = "";
+            this.txtBoxMonto.UnderlinedStyle = true;
+            this.txtBoxMonto.Visible = false;
+            // 
+            // lblMonto
+            // 
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMonto.Location = new System.Drawing.Point(16, 194);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(232, 24);
+            this.lblMonto.TabIndex = 29;
+            this.lblMonto.Text = "Monto semanal/quincenal:";
+            this.lblMonto.Visible = false;
+            // 
+            // lblCredito
+            // 
+            this.lblCredito.AutoSize = true;
+            this.lblCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCredito.Location = new System.Drawing.Point(16, 128);
+            this.lblCredito.Name = "lblCredito";
+            this.lblCredito.Size = new System.Drawing.Size(153, 24);
+            this.lblCredito.TabIndex = 28;
+            this.lblCredito.Text = "Crédito prestado:";
+            this.lblCredito.Visible = false;
+            // 
+            // txtBoxCredito
+            // 
+            this.txtBoxCredito.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtBoxCredito.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtBoxCredito.BorderRadius = 0;
+            this.txtBoxCredito.BorderSize = 2;
+            this.txtBoxCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBoxCredito.Location = new System.Drawing.Point(195, 113);
+            this.txtBoxCredito.Multiline = false;
+            this.txtBoxCredito.Name = "txtBoxCredito";
+            this.txtBoxCredito.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBoxCredito.PasswordChar = false;
+            this.txtBoxCredito.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtBoxCredito.PlaceholderText = "";
+            this.txtBoxCredito.Size = new System.Drawing.Size(232, 39);
+            this.txtBoxCredito.TabIndex = 27;
+            this.txtBoxCredito.Texts = "";
+            this.txtBoxCredito.UnderlinedStyle = true;
+            this.txtBoxCredito.Visible = false;
+            // 
+            // ComBoxName
+            // 
+            this.ComBoxName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComBoxName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ComBoxName.BackColor = System.Drawing.SystemColors.Info;
+            this.ComBoxName.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.ComBoxName.BorderSize = 2;
+            this.ComBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.ComBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComBoxName.ForeColor = System.Drawing.Color.Black;
+            this.ComBoxName.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.ComBoxName.ListBackColor = System.Drawing.SystemColors.Info;
+            this.ComBoxName.ListTextColor = System.Drawing.Color.DimGray;
+            this.ComBoxName.Location = new System.Drawing.Point(217, 39);
+            this.ComBoxName.MinimumSize = new System.Drawing.Size(200, 30);
+            this.ComBoxName.Name = "ComBoxName";
+            this.ComBoxName.Padding = new System.Windows.Forms.Padding(2);
+            this.ComBoxName.Size = new System.Drawing.Size(289, 37);
+            this.ComBoxName.TabIndex = 14;
+            this.ComBoxName.Texts = "Introduzca nombre.";
+            // 
+            // btnBuscarC
+            // 
+            this.btnBuscarC.BackColor = System.Drawing.SystemColors.Info;
+            this.btnBuscarC.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.btnBuscarC.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBuscarC.BorderRadius = 10;
+            this.btnBuscarC.BorderSize = 2;
+            this.btnBuscarC.FlatAppearance.BorderSize = 0;
+            this.btnBuscarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarC.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscarC.Location = new System.Drawing.Point(565, 40);
+            this.btnBuscarC.Name = "btnBuscarC";
+            this.btnBuscarC.Size = new System.Drawing.Size(118, 36);
+            this.btnBuscarC.TabIndex = 13;
+            this.btnBuscarC.Text = "Buscar";
+            this.btnBuscarC.TextColor = System.Drawing.Color.Black;
+            this.btnBuscarC.UseVisualStyleBackColor = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(16, 50);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(175, 24);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Nombre del cliente:";
+            // 
             // pnlListas
             // 
             this.pnlListas.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlListas.Controls.Add(this.gridListas);
             this.pnlListas.Controls.Add(this.btnEliminar);
             this.pnlListas.Controls.Add(this.btnEditar);
-            this.pnlListas.Controls.Add(this.gridListas);
             this.pnlListas.Controls.Add(this.btnLiquidados);
             this.pnlListas.Controls.Add(this.btnMostrarTodos);
             this.pnlListas.Controls.Add(this.label8);
@@ -715,6 +901,43 @@
             this.pnlListas.Name = "pnlListas";
             this.pnlListas.Size = new System.Drawing.Size(857, 482);
             this.pnlListas.TabIndex = 14;
+            // 
+            // gridListas
+            // 
+            this.gridListas.AllowUserToAddRows = false;
+            this.gridListas.AllowUserToDeleteRows = false;
+            this.gridListas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridListas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridListas.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.gridListas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridListas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gridListas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListas.ColumnHeadersHeight = 30;
+            this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridListas.EnableHeadersVisualStyles = false;
+            this.gridListas.GridColor = System.Drawing.Color.CadetBlue;
+            this.gridListas.Location = new System.Drawing.Point(16, 127);
+            this.gridListas.Name = "gridListas";
+            this.gridListas.RowHeadersVisible = false;
+            this.gridListas.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
+            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridListas.RowTemplate.Height = 25;
+            this.gridListas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.gridListas.Size = new System.Drawing.Size(820, 297);
+            this.gridListas.TabIndex = 16;
             // 
             // btnEliminar
             // 
@@ -753,43 +976,6 @@
             this.btnEditar.Text = "Editar\r\ncliente\r\n";
             this.btnEditar.TextColor = System.Drawing.Color.Transparent;
             this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // gridListas
-            // 
-            this.gridListas.AllowUserToAddRows = false;
-            this.gridListas.AllowUserToDeleteRows = false;
-            this.gridListas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.gridListas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gridListas.BackgroundColor = System.Drawing.Color.DarkCyan;
-            this.gridListas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridListas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gridListas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridListas.ColumnHeadersHeight = 30;
-            this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.gridListas.EnableHeadersVisualStyles = false;
-            this.gridListas.GridColor = System.Drawing.Color.CadetBlue;
-            this.gridListas.Location = new System.Drawing.Point(16, 127);
-            this.gridListas.Name = "gridListas";
-            this.gridListas.RowHeadersVisible = false;
-            this.gridListas.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
-            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridListas.RowTemplate.Height = 25;
-            this.gridListas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridListas.Size = new System.Drawing.Size(820, 297);
-            this.gridListas.TabIndex = 16;
             // 
             // btnLiquidados
             // 
@@ -895,17 +1081,17 @@
             this.btnLista1.Text = "Lista 1:\r\nIniciación";
             this.btnLista1.TextColor = System.Drawing.Color.Transparent;
             this.btnLista1.UseVisualStyleBackColor = false;
-            this.btnLista1.Click += new System.EventHandler(this.btnLista1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 542);
+            this.Controls.Add(this.pnlRegPago);
+            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlListas);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.pnlClientes);
             this.Name = "Form1";
             this.Text = "FutureLending";
             this.panelMenu.ResumeLayout(false);
@@ -915,6 +1101,8 @@
             this.panelTitleBar.PerformLayout();
             this.pnlClientes.ResumeLayout(false);
             this.pnlClientes.PerformLayout();
+            this.pnlRegPago.ResumeLayout(false);
+            this.pnlRegPago.PerformLayout();
             this.pnlListas.ResumeLayout(false);
             this.pnlListas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListas)).EndInit();
@@ -973,5 +1161,16 @@
         private Label label14;
         private Controles_personalizados.RJButton btnEliminar;
         private Controles_personalizados.RJButton btnEditar;
+        private Panel pnlRegPago;
+        private Controles_personalizados.RJButton btnBuscarC;
+        private Label label29;
+        private ControlesPersonalizados.RJComboBox ComBoxName;
+        private Label lblCredito;
+        private Controles_personalizados.TextBoxPersonalizado txtBoxCredito;
+        private Label lblFecha;
+        private Controles_personalizados.TextBoxPersonalizado txtBoxMonto;
+        private Label lblMonto;
+        private Controles_personalizados.RJButton btnMarcarP;
+        private Controles_personalizados.DateTimePickerPersonalizado DateTime1;
     }
 }
