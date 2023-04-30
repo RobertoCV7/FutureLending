@@ -86,53 +86,8 @@ namespace FutureLending
 
         private void btnLista1_Click(object sender, EventArgs e)
         {
-            //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "PROMOTOR",
-                                        "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO",
-                                        "CORREO", "TIPO DE PAGO"};
-            List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
-            nombresColumnas.AddRange(nombresString);
-            //Añade los strings de cada fecha a la lista
-            for (int i = 1; i <= 14; i++)
-            {
-                nombresColumnas.Add("FECHA " + i);
-            }
-
-            //Lectura de datos de la lista 1
-            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            List<string[]> datos = instancia.Lect("lista1");
-
-            //Añade las columnas correspondientes a la tabla y el nombre de cada una
-            gridListas.ColumnCount = ObtenerColumnas(datos);
-            for (int i = 0; i < gridListas.ColumnCount; i++)
-            {
-                gridListas.Columns[i].Name = nombresColumnas[i];
-            }
-
-            //Se añaden las filas y el contenido respectivo de cada celda
-            gridListas.RowCount = datos.Count;
-            for (int i = 0; i < gridListas.RowCount; i++)
-            {
-                for (int j = 0; j < gridListas.ColumnCount; j++)
-                {
-                    gridListas.Rows[i].Cells[j].Value = datos[i][j];
-                }
-            }
-        }
-
-        //Para determinar si son necesarias 26 o 19 columnas para las fechas
-        int ObtenerColumnas(List<string[]> datos)
-        {
-            int fechas = 19;
-            for (int i = 0; i < datos.Count; i++)
-            {
-                if (datos[i][11] == "Semanal")
-                {
-                    fechas = 26;
-                    return fechas;
-                }
-            }
-            return fechas;
+            string lista = "lista1";
+            MostrarTablaListas(lista);
         }
 
         private void btnEstadoPagos_Click(object sender, EventArgs e)
@@ -210,6 +165,70 @@ namespace FutureLending
                 monto_segun_tipo = monto_total / 7;
                 textBoxPersonalizado2.Texts = ("$") + monto_segun_tipo.ToString();
             }
+        }
+
+        private void btnLista2_Click(object sender, EventArgs e)
+        {
+            string lista = "lista2";
+            MostrarTablaListas(lista);
+        }
+
+        private void btnLista3_Click(object sender, EventArgs e)
+        {
+            string lista = "lista3";
+            MostrarTablaListas(lista);
+        }
+
+        //Muestra en la tabla los datos de la lista correspondiente
+        void MostrarTablaListas(string lista)
+        {
+            //Arreglo de strings con los nombres de cada columna
+            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "PROMOTOR",
+                                        "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO",
+                                        "CORREO", "TIPO DE PAGO"};
+            List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
+            nombresColumnas.AddRange(nombresString);
+            //Añade los strings de cada fecha a la lista
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas.Add("FECHA " + i);
+            }
+
+            //Lectura de datos de la lista 1
+            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            List<string[]> datos = instancia.Lect(lista);
+
+            //Añade las columnas correspondientes a la tabla y el nombre de cada una
+            gridListas.ColumnCount = ObtenerColumnas(datos);
+            for (int i = 0; i < gridListas.ColumnCount; i++)
+            {
+                gridListas.Columns[i].Name = nombresColumnas[i];
+            }
+
+            //Se añaden las filas y el contenido respectivo de cada celda
+            gridListas.RowCount = datos.Count;
+            for (int i = 0; i < gridListas.RowCount; i++)
+            {
+                for (int j = 0; j < gridListas.ColumnCount; j++)
+                {
+                    gridListas.Rows[i].Cells[j].Value = datos[i][j];
+                }
+            }
+        }
+
+        //Para determinar si son necesarias 26 o 19 columnas para las fechas
+        int ObtenerColumnas(List<string[]> datos)
+        {
+            int fechas = 19;
+            for (int i = 0; i < datos.Count; i++)
+            {
+                if (datos[i][11] == "Semanal")
+                {
+                    fechas = 26;
+                    return fechas;
+                }
+            }
+            return fechas;
         }
     }
 }
