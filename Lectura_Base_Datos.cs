@@ -58,6 +58,7 @@ namespace FutureLending
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+                        //Lee cada fila de datos en la base de datos
                         while (reader.Read())
                         {
                             string[] fila = new string[26];
@@ -72,10 +73,20 @@ namespace FutureLending
                             fila[8] = reader.GetString("Num_ext");
                             fila[9] = reader.GetString("Telefono");
                             fila[10] = reader.GetString("Correo");
-                            fila[11] = reader.GetInt32("Tipo_pago").ToString();
+                            //Verifica si el tipo de pago es semanal (1) o quincenal (2)
+                            if (reader.GetInt32("Tipo_pago") == 1)
+                            {
+                                fila[11] = "Semanal";
+                            }
+                            else
+                            {
+                                fila[11] = "Quincenal";
+                            }
                             for (int i = 0; i < 14; i++)
                             {
                                 fila[i + 12] = reader.GetString("Fecha" + (i + 1));
+                                //En caso de que sólo tenga 7 fechas
+                                if (fila[i + 12] == "") fila[i + 12] = "-";
                             }
                             datos.Add(fila);
                         }
