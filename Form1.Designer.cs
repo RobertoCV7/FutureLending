@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnReparar = new FontAwesome.Sharp.IconButton();
             this.btnTodosSistemas = new FontAwesome.Sharp.IconButton();
@@ -179,6 +179,7 @@
             this.btnEstadoPagos.Text = "  Estado de pagos";
             this.btnEstadoPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstadoPagos.UseVisualStyleBackColor = true;
+            this.btnEstadoPagos.Click += new System.EventHandler(this.btnEstadoPagos_Click);
             // 
             // btnListas
             // 
@@ -200,6 +201,7 @@
             this.btnListas.Text = "  Listas completas";
             this.btnListas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnListas.UseVisualStyleBackColor = true;
+            this.btnListas.Click += new System.EventHandler(this.btnListas_Click);
             // 
             // btnIngresarClientes
             // 
@@ -221,6 +223,7 @@
             this.btnIngresarClientes.Text = "   Ingresar clientes";
             this.btnIngresarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIngresarClientes.UseVisualStyleBackColor = true;
+            this.btnIngresarClientes.Click += new System.EventHandler(this.btnIngresarClientes_Click);
             // 
             // panel1
             // 
@@ -245,6 +248,7 @@
             this.btnMenu.Size = new System.Drawing.Size(60, 60);
             this.btnMenu.TabIndex = 0;
             this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pictureBox1
             // 
@@ -515,6 +519,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextColor = System.Drawing.Color.Black;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -546,7 +551,7 @@
             this.cmbPromotor.Location = new System.Drawing.Point(181, 318);
             this.cmbPromotor.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbPromotor.Name = "cmbPromotor";
-            this.cmbPromotor.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPromotor.Padding = new System.Windows.Forms.Padding(2);
             this.cmbPromotor.Size = new System.Drawing.Size(289, 37);
             this.cmbPromotor.TabIndex = 11;
             this.cmbPromotor.Texts = "Seleccione al promotor";
@@ -581,7 +586,7 @@
             this.cmbTipo.Location = new System.Drawing.Point(181, 254);
             this.cmbTipo.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipo.Padding = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Size = new System.Drawing.Size(289, 37);
             this.cmbTipo.TabIndex = 9;
             this.cmbTipo.Texts = "Seleccione un tipo de pago";
@@ -873,6 +878,7 @@
             this.btnBuscarC.Text = "Buscar";
             this.btnBuscarC.TextColor = System.Drawing.Color.Black;
             this.btnBuscarC.UseVisualStyleBackColor = false;
+            this.btnBuscarC.Click += new System.EventHandler(this.rjButton2_Click_1);
             // 
             // label29
             // 
@@ -912,14 +918,14 @@
             this.gridListas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridListas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridListas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridListas.ColumnHeadersHeight = 30;
             this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridListas.EnableHeadersVisualStyles = false;
@@ -928,12 +934,12 @@
             this.gridListas.Name = "gridListas";
             this.gridListas.RowHeadersVisible = false;
             this.gridListas.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
-            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Info;
+            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridListas.RowTemplate.Height = 25;
             this.gridListas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.gridListas.Size = new System.Drawing.Size(820, 297);
@@ -1081,6 +1087,7 @@
             this.btnLista1.Text = "Lista 1:\r\nIniciación";
             this.btnLista1.TextColor = System.Drawing.Color.Transparent;
             this.btnLista1.UseVisualStyleBackColor = false;
+            this.btnLista1.Click += new System.EventHandler(this.btnLista1_Click);
             // 
             // Form1
             // 
