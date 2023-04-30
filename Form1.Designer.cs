@@ -306,7 +306,7 @@
             this.iconButton1.Text = "Guardar";
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboBox1 con el que se ve los tipos de pago
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -318,7 +318,7 @@
             this.comboBox1.Size = new System.Drawing.Size(303, 23);
             this.comboBox1.TabIndex = 9;
             // 
-            // label5
+            // label5 = Tipo de Pago
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -341,7 +341,7 @@
             this.textBoxPersonalizado1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.textBoxPersonalizado1.PasswordChar = false;
             this.textBoxPersonalizado1.PlaceholderColor = System.Drawing.Color.Gray;
-            this.textBoxPersonalizado1.PlaceholderText = "Introduzca el nombre";
+            this.textBoxPersonalizado1.PlaceholderText = "Ingrese la cantidad";
             this.textBoxPersonalizado1.Size = new System.Drawing.Size(351, 36);
             this.textBoxPersonalizado1.TabIndex = 7;
             this.textBoxPersonalizado1.Texts = "";

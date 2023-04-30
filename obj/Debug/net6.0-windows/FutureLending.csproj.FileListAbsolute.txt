@@ -42,3 +42,6 @@ C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\refint\FutureLending.dll
 C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.pdb
 C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\FutureLending.genruntimeconfig.cache
 C:\Users\donne\FutureLending\obj\Debug\net6.0-windows\ref\FutureLending.dll
+C:\Users\aleja\Source\Repos\RobertoCV7\FutureLending\obj\Debug\net6.0-windows\FutureLending.dll
+C:\Users\aleja\Source\Repos\RobertoCV7\FutureLending\obj\Debug\net6.0-windows\refint\FutureLending.dll
+C:\Users\aleja\Source\Repos\RobertoCV7\FutureLending\obj\Debug\net6.0-windows\FutureLending.pdb
