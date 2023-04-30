@@ -159,7 +159,7 @@ namespace FutureLending
             btnMarcarP.Visible = true;
             //Agregamos los datos del cliente al form
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            string[] datos = instancia.LectName("lista1",ComBoxName.Texts);
+            string[] datos = instancia.LectName("lista1", ComBoxName.Texts);
             txtBoxCredito.Texts = datos[1];
             txtBoxMonto.Texts = datos[2];//FALTA AGREGAR MONTO A LA BASE DE DATOS *PENDIENTE
             //Validar que se encuentre esa fecha ***
@@ -171,6 +171,45 @@ namespace FutureLending
         private void label16_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxPersonalizado1__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPersonalizado2__TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void rjButton2_Click_2(object sender, EventArgs e)
+        {
+            String credito = txtCredito.Texts;
+            Double credito2 = Convert.ToDouble(credito);
+            String interes = txtInteres.Texts;
+            Double interes2 = Convert.ToDouble(interes);
+
+            Double tasa_interes = (interes2 * credito2) / 100;
+            Double monto_total = credito2 + tasa_interes;
+
+            textBoxPersonalizado1.Texts = ("$") + monto_total.ToString();
+            Double monto_segun_tipo = 0;
+
+            if (cmbTipo.Texts == "Semanales")
+            {
+                monto_segun_tipo = monto_total / 14;
+                textBoxPersonalizado2.Texts = ("$") + monto_segun_tipo.ToString();
+            }
+            if (cmbTipo.Texts == "Quincenales")
+            {
+                monto_segun_tipo = monto_total / 7;
+                textBoxPersonalizado2.Texts = ("$") + monto_segun_tipo.ToString();
+            }
         }
     }
 }
