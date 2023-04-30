@@ -10,7 +10,7 @@ namespace FutureLending
             panelTitleBar.Hide();
             DateTime data = new DateTime();
             data = DateTime.Now;
-            dateFechaInicio.Value=data;
+            dateFechaInicio.Value = data;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -59,6 +59,62 @@ namespace FutureLending
         {
             panelDesktop.Show();
             panelTitleBar.Show();
+        }
+
+        private void textBoxPersonalizado2__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            String cre = txtCredito.Texts;
+            Decimal credito = Convert.ToDecimal(cre);
+            String por = textBoxPersonalizado2.Texts;
+            Decimal porcentaje = Convert.ToDecimal(por);
+
+            Decimal interes_total = (porcentaje * credito) / 100;
+            Decimal monto_total = credito + interes_total;
+
+            textBoxPersonalizado4.Texts = ("$") + interes_total.ToString();
+            textBoxPersonalizado6.Texts = ("$") + monto_total.ToString();
+            Decimal monto_segun = 0;
+
+            if (comboBox1.Text == "Semanales")
+            {
+                monto_segun = monto_total / 14;
+                textBoxPersonalizado5.Texts = ("$") + monto_segun.ToString();
+            }
+            if (comboBox1.Text == "Quincenales")
+            {
+                monto_segun = monto_total / 7;
+                textBoxPersonalizado5.Texts = ("$") + monto_segun.ToString();
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,447 +29,609 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnReparar = new FontAwesome.Sharp.IconButton();
-            this.btnTodosSistemas = new FontAwesome.Sharp.IconButton();
-            this.btnEstadoPagos = new FontAwesome.Sharp.IconButton();
-            this.btnListas = new FontAwesome.Sharp.IconButton();
-            this.btnIngresarClientes = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.textBoxPersonalizado2 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
-            this.label6 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxPersonalizado1 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateFechaInicio = new FutureLending.Controles_personalizados.DateTimePickerPersonalizado();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCredito = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNombre = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panelMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelTitleBar.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
-            this.SuspendLayout();
+            panelMenu = new Panel();
+            btnReparar = new FontAwesome.Sharp.IconButton();
+            btnTodosSistemas = new FontAwesome.Sharp.IconButton();
+            btnEstadoPagos = new FontAwesome.Sharp.IconButton();
+            btnListas = new FontAwesome.Sharp.IconButton();
+            btnIngresarClientes = new FontAwesome.Sharp.IconButton();
+            panel1 = new Panel();
+            btnMenu = new FontAwesome.Sharp.IconButton();
+            pictureBox1 = new PictureBox();
+            panelTitleBar = new Panel();
+            lblTitle = new Label();
+            panelDesktop = new Panel();
+            textBoxPersonalizado6 = new Controles_personalizados.TextBoxPersonalizado();
+            label10 = new Label();
+            textBoxPersonalizado5 = new Controles_personalizados.TextBoxPersonalizado();
+            label9 = new Label();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            textBoxPersonalizado4 = new Controles_personalizados.TextBoxPersonalizado();
+            textBoxPersonalizado3 = new Controles_personalizados.TextBoxPersonalizado();
+            label8 = new Label();
+            label7 = new Label();
+            textBoxPersonalizado2 = new Controles_personalizados.TextBoxPersonalizado();
+            label6 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            comboBox1 = new ComboBox();
+            label5 = new Label();
+            textBoxPersonalizado1 = new Controles_personalizados.TextBoxPersonalizado();
+            label4 = new Label();
+            dateFechaInicio = new Controles_personalizados.DateTimePickerPersonalizado();
+            label3 = new Label();
+            txtCredito = new Controles_personalizados.TextBoxPersonalizado();
+            label2 = new Label();
+            txtNombre = new Controles_personalizados.TextBoxPersonalizado();
+            label1 = new Label();
+            panelMenu.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelTitleBar.SuspendLayout();
+            panelDesktop.SuspendLayout();
+            SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.AccessibleName = "panelMenu";
-            this.panelMenu.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panelMenu.Controls.Add(this.btnReparar);
-            this.panelMenu.Controls.Add(this.btnTodosSistemas);
-            this.panelMenu.Controls.Add(this.btnEstadoPagos);
-            this.panelMenu.Controls.Add(this.btnListas);
-            this.panelMenu.Controls.Add(this.btnIngresarClientes);
-            this.panelMenu.Controls.Add(this.panel1);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 450);
-            this.panelMenu.TabIndex = 0;
+            panelMenu.AccessibleName = "panelMenu";
+            panelMenu.BackColor = Color.DarkSlateGray;
+            panelMenu.Controls.Add(btnReparar);
+            panelMenu.Controls.Add(btnTodosSistemas);
+            panelMenu.Controls.Add(btnEstadoPagos);
+            panelMenu.Controls.Add(btnListas);
+            panelMenu.Controls.Add(btnIngresarClientes);
+            panelMenu.Controls.Add(panel1);
+            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(3, 4, 3, 4);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(263, 631);
+            panelMenu.TabIndex = 0;
             // 
             // btnReparar
             // 
-            this.btnReparar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnReparar.FlatAppearance.BorderSize = 0;
-            this.btnReparar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReparar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReparar.ForeColor = System.Drawing.Color.White;
-            this.btnReparar.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            this.btnReparar.IconColor = System.Drawing.Color.White;
-            this.btnReparar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReparar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReparar.Location = new System.Drawing.Point(0, 396);
-            this.btnReparar.Name = "btnReparar";
-            this.btnReparar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnReparar.Size = new System.Drawing.Size(230, 54);
-            this.btnReparar.TabIndex = 4;
-            this.btnReparar.Tag = "         Reparar";
-            this.btnReparar.Text = "         Reparar";
-            this.btnReparar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReparar.UseVisualStyleBackColor = true;
+            btnReparar.Dock = DockStyle.Bottom;
+            btnReparar.FlatAppearance.BorderSize = 0;
+            btnReparar.FlatStyle = FlatStyle.Flat;
+            btnReparar.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReparar.ForeColor = Color.White;
+            btnReparar.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            btnReparar.IconColor = Color.White;
+            btnReparar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReparar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReparar.Location = new Point(0, 559);
+            btnReparar.Margin = new Padding(3, 4, 3, 4);
+            btnReparar.Name = "btnReparar";
+            btnReparar.Padding = new Padding(11, 0, 0, 0);
+            btnReparar.Size = new Size(263, 72);
+            btnReparar.TabIndex = 4;
+            btnReparar.Tag = "         Reparar";
+            btnReparar.Text = "         Reparar";
+            btnReparar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReparar.UseVisualStyleBackColor = true;
             // 
             // btnTodosSistemas
             // 
-            this.btnTodosSistemas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTodosSistemas.FlatAppearance.BorderSize = 0;
-            this.btnTodosSistemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTodosSistemas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTodosSistemas.ForeColor = System.Drawing.Color.White;
-            this.btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Computer;
-            this.btnTodosSistemas.IconColor = System.Drawing.Color.White;
-            this.btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTodosSistemas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTodosSistemas.Location = new System.Drawing.Point(0, 317);
-            this.btnTodosSistemas.Name = "btnTodosSistemas";
-            this.btnTodosSistemas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnTodosSistemas.Size = new System.Drawing.Size(230, 54);
-            this.btnTodosSistemas.TabIndex = 3;
-            this.btnTodosSistemas.Tag = "Ver estado de todos los sistemas";
-            this.btnTodosSistemas.Text = "Ver estado de todos los sistemas";
-            this.btnTodosSistemas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTodosSistemas.UseVisualStyleBackColor = true;
+            btnTodosSistemas.Dock = DockStyle.Top;
+            btnTodosSistemas.FlatAppearance.BorderSize = 0;
+            btnTodosSistemas.FlatStyle = FlatStyle.Flat;
+            btnTodosSistemas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTodosSistemas.ForeColor = Color.White;
+            btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Computer;
+            btnTodosSistemas.IconColor = Color.White;
+            btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTodosSistemas.Location = new Point(0, 423);
+            btnTodosSistemas.Margin = new Padding(3, 4, 3, 4);
+            btnTodosSistemas.Name = "btnTodosSistemas";
+            btnTodosSistemas.Padding = new Padding(11, 0, 0, 0);
+            btnTodosSistemas.Size = new Size(263, 72);
+            btnTodosSistemas.TabIndex = 3;
+            btnTodosSistemas.Tag = "Ver estado de todos los sistemas";
+            btnTodosSistemas.Text = "Ver estado de todos los sistemas";
+            btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTodosSistemas.UseVisualStyleBackColor = true;
             // 
             // btnEstadoPagos
             // 
-            this.btnEstadoPagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstadoPagos.FlatAppearance.BorderSize = 0;
-            this.btnEstadoPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadoPagos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEstadoPagos.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
-            this.btnEstadoPagos.IconColor = System.Drawing.Color.White;
-            this.btnEstadoPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEstadoPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadoPagos.Location = new System.Drawing.Point(0, 263);
-            this.btnEstadoPagos.Name = "btnEstadoPagos";
-            this.btnEstadoPagos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEstadoPagos.Size = new System.Drawing.Size(230, 54);
-            this.btnEstadoPagos.TabIndex = 2;
-            this.btnEstadoPagos.Tag = "  Estado de pagos";
-            this.btnEstadoPagos.Text = "  Estado de pagos";
-            this.btnEstadoPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEstadoPagos.UseVisualStyleBackColor = true;
+            btnEstadoPagos.Dock = DockStyle.Top;
+            btnEstadoPagos.FlatAppearance.BorderSize = 0;
+            btnEstadoPagos.FlatStyle = FlatStyle.Flat;
+            btnEstadoPagos.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEstadoPagos.ForeColor = Color.White;
+            btnEstadoPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
+            btnEstadoPagos.IconColor = Color.White;
+            btnEstadoPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEstadoPagos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEstadoPagos.Location = new Point(0, 351);
+            btnEstadoPagos.Margin = new Padding(3, 4, 3, 4);
+            btnEstadoPagos.Name = "btnEstadoPagos";
+            btnEstadoPagos.Padding = new Padding(11, 0, 0, 0);
+            btnEstadoPagos.Size = new Size(263, 72);
+            btnEstadoPagos.TabIndex = 2;
+            btnEstadoPagos.Tag = "  Estado de pagos";
+            btnEstadoPagos.Text = "  Estado de pagos";
+            btnEstadoPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEstadoPagos.UseVisualStyleBackColor = true;
             // 
             // btnListas
             // 
-            this.btnListas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnListas.FlatAppearance.BorderSize = 0;
-            this.btnListas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnListas.ForeColor = System.Drawing.Color.White;
-            this.btnListas.IconChar = FontAwesome.Sharp.IconChar.List12;
-            this.btnListas.IconColor = System.Drawing.Color.White;
-            this.btnListas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnListas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListas.Location = new System.Drawing.Point(0, 209);
-            this.btnListas.Name = "btnListas";
-            this.btnListas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnListas.Size = new System.Drawing.Size(230, 54);
-            this.btnListas.TabIndex = 1;
-            this.btnListas.Tag = "  Listas completas";
-            this.btnListas.Text = "  Listas completas";
-            this.btnListas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnListas.UseVisualStyleBackColor = true;
+            btnListas.Dock = DockStyle.Top;
+            btnListas.FlatAppearance.BorderSize = 0;
+            btnListas.FlatStyle = FlatStyle.Flat;
+            btnListas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnListas.ForeColor = Color.White;
+            btnListas.IconChar = FontAwesome.Sharp.IconChar.List12;
+            btnListas.IconColor = Color.White;
+            btnListas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnListas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnListas.Location = new Point(0, 279);
+            btnListas.Margin = new Padding(3, 4, 3, 4);
+            btnListas.Name = "btnListas";
+            btnListas.Padding = new Padding(11, 0, 0, 0);
+            btnListas.Size = new Size(263, 72);
+            btnListas.TabIndex = 1;
+            btnListas.Tag = "  Listas completas";
+            btnListas.Text = "  Listas completas";
+            btnListas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnListas.UseVisualStyleBackColor = true;
             // 
             // btnIngresarClientes
             // 
-            this.btnIngresarClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnIngresarClientes.FlatAppearance.BorderSize = 0;
-            this.btnIngresarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresarClientes.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresarClientes.ForeColor = System.Drawing.Color.White;
-            this.btnIngresarClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.btnIngresarClientes.IconColor = System.Drawing.Color.White;
-            this.btnIngresarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnIngresarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresarClientes.Location = new System.Drawing.Point(0, 155);
-            this.btnIngresarClientes.Name = "btnIngresarClientes";
-            this.btnIngresarClientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnIngresarClientes.Size = new System.Drawing.Size(230, 54);
-            this.btnIngresarClientes.TabIndex = 0;
-            this.btnIngresarClientes.Tag = "   Ingresar clientes";
-            this.btnIngresarClientes.Text = "   Ingresar clientes";
-            this.btnIngresarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnIngresarClientes.UseVisualStyleBackColor = true;
-            this.btnIngresarClientes.Click += new System.EventHandler(this.btnIngresarClientes_Click);
+            btnIngresarClientes.Dock = DockStyle.Top;
+            btnIngresarClientes.FlatAppearance.BorderSize = 0;
+            btnIngresarClientes.FlatStyle = FlatStyle.Flat;
+            btnIngresarClientes.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnIngresarClientes.ForeColor = Color.White;
+            btnIngresarClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            btnIngresarClientes.IconColor = Color.White;
+            btnIngresarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnIngresarClientes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnIngresarClientes.Location = new Point(0, 207);
+            btnIngresarClientes.Margin = new Padding(3, 4, 3, 4);
+            btnIngresarClientes.Name = "btnIngresarClientes";
+            btnIngresarClientes.Padding = new Padding(11, 0, 0, 0);
+            btnIngresarClientes.Size = new Size(263, 72);
+            btnIngresarClientes.TabIndex = 0;
+            btnIngresarClientes.Tag = "   Ingresar clientes";
+            btnIngresarClientes.Text = "   Ingresar clientes";
+            btnIngresarClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnIngresarClientes.UseVisualStyleBackColor = true;
+            btnIngresarClientes.Click += btnIngresarClientes_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 155);
-            this.panel1.TabIndex = 0;
+            panel1.Controls.Add(btnMenu);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(263, 207);
+            panel1.TabIndex = 0;
             // 
             // btnMenu
             // 
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.btnMenu.IconColor = System.Drawing.Color.White;
-            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMenu.IconSize = 30;
-            this.btnMenu.Location = new System.Drawing.Point(169, 51);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(60, 60);
-            this.btnMenu.TabIndex = 0;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            btnMenu.FlatAppearance.BorderSize = 0;
+            btnMenu.FlatStyle = FlatStyle.Flat;
+            btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            btnMenu.IconColor = Color.White;
+            btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMenu.IconSize = 30;
+            btnMenu.Location = new Point(193, 68);
+            btnMenu.Margin = new Padding(3, 4, 3, 4);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(69, 80);
+            btnMenu.TabIndex = 0;
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(161, 146);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(184, 195);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.Thistle;
-            this.panelTitleBar.Controls.Add(this.lblTitle);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(230, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(570, 60);
-            this.panelTitleBar.TabIndex = 1;
+            panelTitleBar.BackColor = Color.Thistle;
+            panelTitleBar.Controls.Add(lblTitle);
+            panelTitleBar.Dock = DockStyle.Top;
+            panelTitleBar.Location = new Point(263, 0);
+            panelTitleBar.Margin = new Padding(3, 4, 3, 4);
+            panelTitleBar.Name = "panelTitleBar";
+            panelTitleBar.Size = new Size(651, 80);
+            panelTitleBar.TabIndex = 1;
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Elephant", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblTitle.Location = new System.Drawing.Point(40, 7);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(341, 47);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Ingresar Clientes";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Elephant", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.ForeColor = SystemColors.Desktop;
+            lblTitle.Location = new Point(46, 9);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(433, 60);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Ingresar Clientes";
             // 
             // panelDesktop
             // 
-            this.panelDesktop.BackColor = System.Drawing.SystemColors.Info;
-            this.panelDesktop.Controls.Add(this.label7);
-            this.panelDesktop.Controls.Add(this.textBoxPersonalizado2);
-            this.panelDesktop.Controls.Add(this.label6);
-            this.panelDesktop.Controls.Add(this.iconButton1);
-            this.panelDesktop.Controls.Add(this.comboBox1);
-            this.panelDesktop.Controls.Add(this.label5);
-            this.panelDesktop.Controls.Add(this.textBoxPersonalizado1);
-            this.panelDesktop.Controls.Add(this.label4);
-            this.panelDesktop.Controls.Add(this.dateFechaInicio);
-            this.panelDesktop.Controls.Add(this.label3);
-            this.panelDesktop.Controls.Add(this.txtCredito);
-            this.panelDesktop.Controls.Add(this.label2);
-            this.panelDesktop.Controls.Add(this.txtNombre);
-            this.panelDesktop.Controls.Add(this.label1);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(230, 60);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(570, 390);
-            this.panelDesktop.TabIndex = 2;
+            panelDesktop.BackColor = SystemColors.Info;
+            panelDesktop.Controls.Add(textBoxPersonalizado6);
+            panelDesktop.Controls.Add(label10);
+            panelDesktop.Controls.Add(textBoxPersonalizado5);
+            panelDesktop.Controls.Add(label9);
+            panelDesktop.Controls.Add(iconButton2);
+            panelDesktop.Controls.Add(textBoxPersonalizado4);
+            panelDesktop.Controls.Add(textBoxPersonalizado3);
+            panelDesktop.Controls.Add(label8);
+            panelDesktop.Controls.Add(label7);
+            panelDesktop.Controls.Add(textBoxPersonalizado2);
+            panelDesktop.Controls.Add(label6);
+            panelDesktop.Controls.Add(iconButton1);
+            panelDesktop.Controls.Add(comboBox1);
+            panelDesktop.Controls.Add(label5);
+            panelDesktop.Controls.Add(textBoxPersonalizado1);
+            panelDesktop.Controls.Add(label4);
+            panelDesktop.Controls.Add(dateFechaInicio);
+            panelDesktop.Controls.Add(label3);
+            panelDesktop.Controls.Add(txtCredito);
+            panelDesktop.Controls.Add(label2);
+            panelDesktop.Controls.Add(txtNombre);
+            panelDesktop.Controls.Add(label1);
+            panelDesktop.Dock = DockStyle.Fill;
+            panelDesktop.Location = new Point(263, 80);
+            panelDesktop.Margin = new Padding(3, 4, 3, 4);
+            panelDesktop.Name = "panelDesktop";
+            panelDesktop.Size = new Size(651, 551);
+            panelDesktop.TabIndex = 2;
+            panelDesktop.Paint += panelDesktop_Paint;
             // 
-            // textBoxPersonalizado2
+            // textBoxPersonalizado6
             // 
-            this.textBoxPersonalizado2.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.textBoxPersonalizado2.BorderFocusColor = System.Drawing.SystemColors.Info;
-            this.textBoxPersonalizado2.BorderRadius = 0;
-            this.textBoxPersonalizado2.BorderSize = 2;
-            this.textBoxPersonalizado2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPersonalizado2.Location = new System.Drawing.Point(172, 306);
-            this.textBoxPersonalizado2.Multiline = false;
-            this.textBoxPersonalizado2.Name = "textBoxPersonalizado2";
-            this.textBoxPersonalizado2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textBoxPersonalizado2.PasswordChar = false;
-            this.textBoxPersonalizado2.PlaceholderColor = System.Drawing.Color.Gray;
-            this.textBoxPersonalizado2.PlaceholderText = "Introduzca el nombre";
-            this.textBoxPersonalizado2.Size = new System.Drawing.Size(351, 36);
-            this.textBoxPersonalizado2.TabIndex = 12;
-            this.textBoxPersonalizado2.Texts = "";
-            this.textBoxPersonalizado2.UnderlinedStyle = true;
+            textBoxPersonalizado6.BorderColor = Color.DarkSlateGray;
+            textBoxPersonalizado6.BorderFocusColor = SystemColors.Info;
+            textBoxPersonalizado6.BorderRadius = 0;
+            textBoxPersonalizado6.BorderSize = 2;
+            textBoxPersonalizado6.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPersonalizado6.Location = new Point(381, 416);
+            textBoxPersonalizado6.Margin = new Padding(3, 4, 3, 4);
+            textBoxPersonalizado6.Multiline = false;
+            textBoxPersonalizado6.Name = "textBoxPersonalizado6";
+            textBoxPersonalizado6.Padding = new Padding(11, 9, 11, 9);
+            textBoxPersonalizado6.PasswordChar = false;
+            textBoxPersonalizado6.PlaceholderColor = Color.Gray;
+            textBoxPersonalizado6.PlaceholderText = "Monto + Interés";
+            textBoxPersonalizado6.Size = new Size(147, 39);
+            textBoxPersonalizado6.TabIndex = 20;
+            textBoxPersonalizado6.Texts = "";
+            textBoxPersonalizado6.UnderlinedStyle = true;
             // 
-            // label6
+            // label10
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(16, 321);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Interés:";
+            label10.AutoSize = true;
+            label10.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(347, 429);
+            label10.Name = "label10";
+            label10.Size = new Size(28, 26);
+            label10.TabIndex = 19;
+            label10.Text = " =";
             // 
-            // iconButton1
+            // textBoxPersonalizado5
             // 
-            this.iconButton1.FlatAppearance.BorderSize = 2;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(404, 351);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(119, 26);
-            this.iconButton1.TabIndex = 10;
-            this.iconButton1.Text = "Guardar";
-            this.iconButton1.UseVisualStyleBackColor = true;
+            textBoxPersonalizado5.BorderColor = Color.DarkSlateGray;
+            textBoxPersonalizado5.BorderFocusColor = SystemColors.Info;
+            textBoxPersonalizado5.BorderRadius = 0;
+            textBoxPersonalizado5.BorderSize = 2;
+            textBoxPersonalizado5.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPersonalizado5.Location = new Point(297, 482);
+            textBoxPersonalizado5.Margin = new Padding(3, 4, 3, 4);
+            textBoxPersonalizado5.Multiline = false;
+            textBoxPersonalizado5.Name = "textBoxPersonalizado5";
+            textBoxPersonalizado5.Padding = new Padding(11, 9, 11, 9);
+            textBoxPersonalizado5.PasswordChar = false;
+            textBoxPersonalizado5.PlaceholderColor = Color.Gray;
+            textBoxPersonalizado5.PlaceholderText = "";
+            textBoxPersonalizado5.Size = new Size(126, 39);
+            textBoxPersonalizado5.TabIndex = 18;
+            textBoxPersonalizado5.Texts = "";
+            textBoxPersonalizado5.UnderlinedStyle = true;
             // 
-            // comboBox1 con el que se ve los tipos de pago
+            // label9
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Semanales",
-            "Quincenales",
-            "Mensuales"});
-            this.comboBox1.Location = new System.Drawing.Point(183, 261);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(303, 23);
-            this.comboBox1.TabIndex = 9;
+            label9.AutoSize = true;
+            label9.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(18, 495);
+            label9.Name = "label9";
+            label9.Size = new Size(278, 26);
+            label9.TabIndex = 17;
+            label9.Text = "Monto segun tipo de pago:";
+            label9.Click += label9_Click;
             // 
-            // label5 = Tipo de Pago
+            // iconButton2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(16, 261);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 21);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Tipo de pago:";
+            iconButton2.FlatAppearance.BorderSize = 2;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton2.IconColor = Color.Black;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.Location = new Point(537, 421);
+            iconButton2.Margin = new Padding(3, 4, 3, 4);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(84, 33);
+            iconButton2.TabIndex = 16;
+            iconButton2.Text = "Calcular";
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
             // 
-            // textBoxPersonalizado1
+            // textBoxPersonalizado4
             // 
-            this.textBoxPersonalizado1.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.textBoxPersonalizado1.BorderFocusColor = System.Drawing.SystemColors.Info;
-            this.textBoxPersonalizado1.BorderRadius = 0;
-            this.textBoxPersonalizado1.BorderSize = 2;
-            this.textBoxPersonalizado1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPersonalizado1.Location = new System.Drawing.Point(183, 195);
-            this.textBoxPersonalizado1.Multiline = false;
-            this.textBoxPersonalizado1.Name = "textBoxPersonalizado1";
-            this.textBoxPersonalizado1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textBoxPersonalizado1.PasswordChar = false;
-            this.textBoxPersonalizado1.PlaceholderColor = System.Drawing.Color.Gray;
-            this.textBoxPersonalizado1.PlaceholderText = "Ingrese la cantidad";
-            this.textBoxPersonalizado1.Size = new System.Drawing.Size(351, 36);
-            this.textBoxPersonalizado1.TabIndex = 7;
-            this.textBoxPersonalizado1.Texts = "";
-            this.textBoxPersonalizado1.UnderlinedStyle = true;
+            textBoxPersonalizado4.BorderColor = Color.DarkSlateGray;
+            textBoxPersonalizado4.BorderFocusColor = SystemColors.Info;
+            textBoxPersonalizado4.BorderRadius = 0;
+            textBoxPersonalizado4.BorderSize = 2;
+            textBoxPersonalizado4.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPersonalizado4.Location = new Point(244, 415);
+            textBoxPersonalizado4.Margin = new Padding(3, 4, 3, 4);
+            textBoxPersonalizado4.Multiline = false;
+            textBoxPersonalizado4.Name = "textBoxPersonalizado4";
+            textBoxPersonalizado4.Padding = new Padding(11, 9, 11, 9);
+            textBoxPersonalizado4.PasswordChar = false;
+            textBoxPersonalizado4.PlaceholderColor = Color.Gray;
+            textBoxPersonalizado4.PlaceholderText = "Interés";
+            textBoxPersonalizado4.Size = new Size(97, 39);
+            textBoxPersonalizado4.TabIndex = 15;
+            textBoxPersonalizado4.Texts = "";
+            textBoxPersonalizado4.UnderlinedStyle = true;
             // 
-            // label4
+            // textBoxPersonalizado3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(16, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 21);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Promotor:";
+            textBoxPersonalizado3.BorderColor = Color.DarkSlateGray;
+            textBoxPersonalizado3.BorderFocusColor = SystemColors.Info;
+            textBoxPersonalizado3.BorderRadius = 0;
+            textBoxPersonalizado3.BorderSize = 2;
+            textBoxPersonalizado3.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPersonalizado3.Location = new Point(209, 260);
+            textBoxPersonalizado3.Margin = new Padding(3, 4, 3, 4);
+            textBoxPersonalizado3.Multiline = false;
+            textBoxPersonalizado3.Name = "textBoxPersonalizado3";
+            textBoxPersonalizado3.Padding = new Padding(11, 9, 11, 9);
+            textBoxPersonalizado3.PasswordChar = false;
+            textBoxPersonalizado3.PlaceholderColor = Color.Gray;
+            textBoxPersonalizado3.PlaceholderText = "Ingrese el nombre";
+            textBoxPersonalizado3.Size = new Size(401, 45);
+            textBoxPersonalizado3.TabIndex = 7;
+            textBoxPersonalizado3.Texts = "";
+            textBoxPersonalizado3.UnderlinedStyle = true;
             // 
-            // dateFechaInicio
+            // label8
             // 
-            this.dateFechaInicio.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.dateFechaInicio.BorderSize = 2;
-            this.dateFechaInicio.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaInicio.Location = new System.Drawing.Point(183, 135);
-            this.dateFechaInicio.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dateFechaInicio.Name = "dateFechaInicio";
-            this.dateFechaInicio.Size = new System.Drawing.Size(287, 35);
-            this.dateFechaInicio.SkinColor = System.Drawing.SystemColors.Info;
-            this.dateFechaInicio.TabIndex = 5;
-            this.dateFechaInicio.TextColor = System.Drawing.Color.Black;
-            this.dateFechaInicio.ValueChanged += new System.EventHandler(this.dateFechaInicio_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(16, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 21);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Fecha de inicio:";
-            // 
-            // txtCredito
-            // 
-            this.txtCredito.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.txtCredito.BorderFocusColor = System.Drawing.SystemColors.Info;
-            this.txtCredito.BorderRadius = 0;
-            this.txtCredito.BorderSize = 2;
-            this.txtCredito.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCredito.Location = new System.Drawing.Point(183, 75);
-            this.txtCredito.Multiline = false;
-            this.txtCredito.Name = "txtCredito";
-            this.txtCredito.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtCredito.PasswordChar = false;
-            this.txtCredito.PlaceholderColor = System.Drawing.Color.Gray;
-            this.txtCredito.PlaceholderText = "Introduzca monto total";
-            this.txtCredito.Size = new System.Drawing.Size(351, 36);
-            this.txtCredito.TabIndex = 3;
-            this.txtCredito.Texts = "";
-            this.txtCredito.UnderlinedStyle = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(16, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Crédito prestado:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.txtNombre.BorderFocusColor = System.Drawing.SystemColors.Info;
-            this.txtNombre.BorderRadius = 0;
-            this.txtNombre.BorderSize = 2;
-            this.txtNombre.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombre.Location = new System.Drawing.Point(183, 15);
-            this.txtNombre.Multiline = false;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtNombre.PasswordChar = false;
-            this.txtNombre.PlaceholderColor = System.Drawing.Color.Gray;
-            this.txtNombre.PlaceholderText = "Introduzca el nombre";
-            this.txtNombre.Size = new System.Drawing.Size(351, 36);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.Texts = "";
-            this.txtNombre.UnderlinedStyle = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(16, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre completo:";
+            label8.AutoSize = true;
+            label8.BackColor = Color.Indigo;
+            label8.Location = new Point(198, 475);
+            label8.Name = "label8";
+            label8.Size = new Size(0, 20);
+            label8.TabIndex = 14;
+            label8.Click += label8_Click;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(72, 356);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 21);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Interés:";
+            label7.AutoSize = true;
+            label7.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(210, 428);
+            label7.Name = "label7";
+            label7.Size = new Size(28, 26);
+            label7.TabIndex = 13;
+            label7.Text = " =";
+            label7.Click += label7_Click;
+            // 
+            // textBoxPersonalizado2
+            // 
+            textBoxPersonalizado2.BorderColor = Color.DarkSlateGray;
+            textBoxPersonalizado2.BorderFocusColor = SystemColors.Info;
+            textBoxPersonalizado2.BorderRadius = 0;
+            textBoxPersonalizado2.BorderSize = 2;
+            textBoxPersonalizado2.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPersonalizado2.Location = new Point(100, 415);
+            textBoxPersonalizado2.Margin = new Padding(3, 4, 3, 4);
+            textBoxPersonalizado2.Multiline = false;
+            textBoxPersonalizado2.Name = "textBoxPersonalizado2";
+            textBoxPersonalizado2.Padding = new Padding(11, 9, 11, 9);
+            textBoxPersonalizado2.PasswordChar = false;
+            textBoxPersonalizado2.PlaceholderColor = Color.Gray;
+            textBoxPersonalizado2.PlaceholderText = "Porcentaje";
+            textBoxPersonalizado2.Size = new Size(104, 39);
+            textBoxPersonalizado2.TabIndex = 12;
+            textBoxPersonalizado2.Texts = "";
+            textBoxPersonalizado2.UnderlinedStyle = true;
+            textBoxPersonalizado2._TextChanged += textBoxPersonalizado2__TextChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(18, 428);
+            label6.Name = "label6";
+            label6.Size = new Size(83, 26);
+            label6.TabIndex = 11;
+            label6.Text = "Interés:";
+            // 
+            // iconButton1
+            // 
+            iconButton1.FlatAppearance.BorderSize = 2;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(512, 500);
+            iconButton1.Margin = new Padding(3, 4, 3, 4);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(136, 35);
+            iconButton1.TabIndex = 10;
+            iconButton1.Text = "Guardar";
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Semanales", "Quincenales" });
+            comboBox1.Location = new Point(209, 348);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(346, 28);
+            comboBox1.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(18, 348);
+            label5.Name = "label5";
+            label5.Size = new Size(148, 26);
+            label5.TabIndex = 8;
+            label5.Text = "Tipo de pago:";
+            // 
+            // textBoxPersonalizado1
+            // 
+            textBoxPersonalizado1.BorderColor = Color.DarkSlateGray;
+            textBoxPersonalizado1.BorderFocusColor = SystemColors.Info;
+            textBoxPersonalizado1.BorderRadius = 0;
+            textBoxPersonalizado1.BorderSize = 2;
+            textBoxPersonalizado1.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPersonalizado1.Location = new Point(209, 260);
+            textBoxPersonalizado1.Margin = new Padding(3, 4, 3, 4);
+            textBoxPersonalizado1.Multiline = false;
+            textBoxPersonalizado1.Name = "textBoxPersonalizado1";
+            textBoxPersonalizado1.Padding = new Padding(11, 9, 11, 9);
+            textBoxPersonalizado1.PasswordChar = false;
+            textBoxPersonalizado1.PlaceholderColor = Color.Gray;
+            textBoxPersonalizado1.PlaceholderText = "Ingrese el nombre";
+            textBoxPersonalizado1.Size = new Size(401, 45);
+            textBoxPersonalizado1.TabIndex = 7;
+            textBoxPersonalizado1.Texts = "";
+            textBoxPersonalizado1.UnderlinedStyle = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(18, 268);
+            label4.Name = "label4";
+            label4.Size = new Size(112, 26);
+            label4.TabIndex = 6;
+            label4.Text = "Promotor:";
+            // 
+            // dateFechaInicio
+            // 
+            dateFechaInicio.BorderColor = Color.DarkSlateGray;
+            dateFechaInicio.BorderSize = 2;
+            dateFechaInicio.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dateFechaInicio.Format = DateTimePickerFormat.Short;
+            dateFechaInicio.Location = new Point(209, 180);
+            dateFechaInicio.Margin = new Padding(3, 4, 3, 4);
+            dateFechaInicio.MinimumSize = new Size(4, 35);
+            dateFechaInicio.Name = "dateFechaInicio";
+            dateFechaInicio.Size = new Size(327, 35);
+            dateFechaInicio.SkinColor = SystemColors.Info;
+            dateFechaInicio.TabIndex = 5;
+            dateFechaInicio.TextColor = Color.Black;
+            dateFechaInicio.ValueChanged += dateFechaInicio_ValueChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(18, 188);
+            label3.Name = "label3";
+            label3.Size = new Size(164, 26);
+            label3.TabIndex = 4;
+            label3.Text = "Fecha de inicio:";
+            // 
+            // txtCredito
+            // 
+            txtCredito.BorderColor = Color.DarkSlateGray;
+            txtCredito.BorderFocusColor = SystemColors.Info;
+            txtCredito.BorderRadius = 0;
+            txtCredito.BorderSize = 2;
+            txtCredito.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCredito.Location = new Point(209, 100);
+            txtCredito.Margin = new Padding(3, 4, 3, 4);
+            txtCredito.Multiline = false;
+            txtCredito.Name = "txtCredito";
+            txtCredito.Padding = new Padding(11, 9, 11, 9);
+            txtCredito.PasswordChar = false;
+            txtCredito.PlaceholderColor = Color.Gray;
+            txtCredito.PlaceholderText = "Introduzca monto total";
+            txtCredito.Size = new Size(401, 45);
+            txtCredito.TabIndex = 3;
+            txtCredito.Texts = "";
+            txtCredito.UnderlinedStyle = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(18, 108);
+            label2.Name = "label2";
+            label2.Size = new Size(183, 26);
+            label2.TabIndex = 2;
+            label2.Text = "Crédito prestado:";
+            // 
+            // txtNombre
+            // 
+            txtNombre.BorderColor = Color.DarkSlateGray;
+            txtNombre.BorderFocusColor = SystemColors.Info;
+            txtNombre.BorderRadius = 0;
+            txtNombre.BorderSize = 2;
+            txtNombre.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(209, 20);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Multiline = false;
+            txtNombre.Name = "txtNombre";
+            txtNombre.Padding = new Padding(11, 9, 11, 9);
+            txtNombre.PasswordChar = false;
+            txtNombre.PlaceholderColor = Color.Gray;
+            txtNombre.PlaceholderText = "Introduzca el nombre";
+            txtNombre.Size = new Size(401, 45);
+            txtNombre.TabIndex = 1;
+            txtNombre.Texts = "";
+            txtNombre.UnderlinedStyle = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Berlin Sans FB", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(18, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 26);
+            label1.TabIndex = 0;
+            label1.Text = "Nombre completo:";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelDesktop);
-            this.Controls.Add(this.panelTitleBar);
-            this.Controls.Add(this.panelMenu);
-            this.Name = "Form1";
-            this.Text = "FutureLending";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panelMenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
-            this.panelDesktop.ResumeLayout(false);
-            this.panelDesktop.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(914, 631);
+            Controls.Add(panelDesktop);
+            Controls.Add(panelTitleBar);
+            Controls.Add(panelMenu);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form1";
+            Text = "FutureLending";
+            Load += Form1_Load;
+            panelMenu.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelTitleBar.ResumeLayout(false);
+            panelTitleBar.PerformLayout();
+            panelDesktop.ResumeLayout(false);
+            panelDesktop.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -500,5 +662,13 @@
         private Label label6;
         private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado2;
         private Label label7;
+        private Label label8;
+        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado3;
+        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado4;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private Label label9;
+        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado5;
+        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado6;
+        private Label label10;
     }
 }
