@@ -58,24 +58,9 @@ namespace FutureLending
             pnlListas.BringToFront();
         }
 
-        private void rjButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateFechaInicio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             MessageBox.Show(dateFechaInicio.Value.ToString("yyyy-MM-dd"));
-        }
-
-        private void pnlListas_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnTodosSistemas_Click(object sender, EventArgs e)
@@ -96,12 +81,7 @@ namespace FutureLending
             pnlRegPago.BringToFront();
         }
 
-        private void label29_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rjButton2_Click_1(object sender, EventArgs e)
+        private void btnBuscarC_Click(object sender, EventArgs e)
         {
             //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
             //Mostramos en el form
@@ -123,26 +103,7 @@ namespace FutureLending
 
         }
 
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxPersonalizado1__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxPersonalizado2__TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void rjButton2_Click_2(object sender, EventArgs e)
+        private void btnCalcular_Click(object sender, EventArgs e)
         {
             String credito = txtCredito.Texts;
             Double credito2 = Convert.ToDouble(credito);

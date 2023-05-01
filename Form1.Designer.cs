@@ -94,7 +94,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxPersonalizado2 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
             this.pnlClientes = new System.Windows.Forms.Panel();
-            this.rjButton2 = new FutureLending.Controles_personalizados.RJButton();
+            this.btnCalcular = new FutureLending.Controles_personalizados.RJButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -452,7 +452,7 @@
             this.btnBuscarC.Text = "Buscar";
             this.btnBuscarC.TextColor = System.Drawing.Color.Black;
             this.btnBuscarC.UseVisualStyleBackColor = false;
-            this.btnBuscarC.Click += new System.EventHandler(this.rjButton2_Click_1);
+            this.btnBuscarC.Click += new System.EventHandler(this.btnBuscarC_Click);
             // 
             // label29
             // 
@@ -1113,7 +1113,7 @@
             // pnlClientes
             // 
             this.pnlClientes.BackColor = System.Drawing.SystemColors.Info;
-            this.pnlClientes.Controls.Add(this.rjButton2);
+            this.pnlClientes.Controls.Add(this.btnCalcular);
             this.pnlClientes.Controls.Add(this.textBoxPersonalizado2);
             this.pnlClientes.Controls.Add(this.label16);
             this.pnlClientes.Controls.Add(this.textBoxPersonalizado1);
@@ -1150,34 +1150,34 @@
             this.pnlClientes.Size = new System.Drawing.Size(857, 502);
             this.pnlClientes.TabIndex = 2;
             // 
-            // rjButton2
+            // btnCalcular
             // 
-            this.rjButton2.BackColor = System.Drawing.SystemColors.Info;
-            this.rjButton2.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.rjButton2.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.rjButton2.BorderRadius = 10;
-            this.rjButton2.BorderSize = 2;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton2.ForeColor = System.Drawing.Color.Black;
-            this.rjButton2.Location = new System.Drawing.Point(319, 448);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(132, 30);
-            this.rjButton2.TabIndex = 30;
-            this.rjButton2.Text = "Calcular";
-            this.rjButton2.TextColor = System.Drawing.Color.Black;
-            this.rjButton2.UseVisualStyleBackColor = false;
-            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click_2);
+            this.btnCalcular.BackColor = System.Drawing.SystemColors.Info;
+            this.btnCalcular.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.btnCalcular.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCalcular.BorderRadius = 10;
+            this.btnCalcular.BorderSize = 2;
+            this.btnCalcular.FlatAppearance.BorderSize = 0;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCalcular.ForeColor = System.Drawing.Color.Black;
+            this.btnCalcular.Location = new System.Drawing.Point(319, 448);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(132, 30);
+            this.btnCalcular.TabIndex = 30;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.TextColor = System.Drawing.Color.Black;
+            this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 562);
-            this.Controls.Add(this.pnlListas);
-            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlRegPago);
+            this.Controls.Add(this.pnlClientes);
+            this.Controls.Add(this.pnlListas);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
@@ -1262,7 +1262,7 @@
         private Label label16;
         private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado2;
         private Panel pnlClientes;
-        private Controles_personalizados.RJButton rjButton2;
+        private Controles_personalizados.RJButton btnCalcular;
         private DataGridView gridListas;
     }
 }
