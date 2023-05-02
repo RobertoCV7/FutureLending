@@ -376,6 +376,7 @@
             btnMarcarP.TextColor = Color.Black;
             btnMarcarP.UseVisualStyleBackColor = false;
             btnMarcarP.Visible = false;
+            btnMarcarP.Click += btnMarcarP_Click;
             // 
             // DateTimeReg
             // 

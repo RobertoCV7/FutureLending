@@ -140,7 +140,6 @@ namespace FutureLending
             }
             return fila;
         }
-
         int Edit()//falta agregar parametros de recibido pero hasta que la base de datos este lista
         {
             //creamos la conexion

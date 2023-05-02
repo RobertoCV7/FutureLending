@@ -117,9 +117,6 @@ namespace FutureLending
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
             txtBoxCredito.Texts = datos[1];
             txtBoxMonto.Texts = datos[2];
-            //Validar que se encuentre esa fecha ***
-
-            //Marcar como pagada ***
 
         }
 
@@ -183,9 +180,43 @@ namespace FutureLending
 
         private void DateTime1_ValueChanged(object sender, EventArgs e)
         {
-            //Obtener el valor seleccionado
+
+        }
+
+        private void btnMarcarP_Click(object sender, EventArgs e)
+        {
+            //Validar que se encuentre esa fecha
+            bool band = false;
+            //Obtener el valor seleccionado de fecha 
             string fecha = Convert.ToString(DateTimeReg.Value.ToShortDateString());
             label18.Text = fecha;
+            //Leer las fechas registradas 
+            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            string list;
+            if (CombBoxLista.Texts == "Lista 1")
+            {
+                list = "lista1";
+            }
+            else { list = "lista2"; }
+            string[] datos = instancia.LectName(list, ComBoxName.Texts);
+            for(int i = 12;  i < datos.Length; i++)
+            {
+                if (datos[i] == fecha)
+                {
+                    band = true;
+                }
+            }
+            if (!band) {MessageBox.Show("El cliente no cuenta con esa fecha."); }
+            //Marcar como pagada ***
+            if(band)
+            {
+                fecha += " - PAGADA";
+                label18.Text = fecha;
+                //Agregarlo a la base de datos modificado *** FALTA
+
+            }
+            //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
+            //Si no pagan a tiempo el interes crece *** FALTA
         }
     }
 }
