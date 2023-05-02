@@ -232,7 +232,7 @@ namespace FutureLending
         public async Task CheckConnection()
         {
             DateTime fechaActual = DateTime.Now;
-            string fechaActualStr = fechaActual.ToString("dd-MM-yyyy");
+            string fechaActualStr = fechaActual.ToString("dd/MM/yyyy");
             MessageBox.Show(fechaActualStr);
 
 
