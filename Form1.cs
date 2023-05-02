@@ -79,6 +79,20 @@ namespace FutureLending
         {
             lblTitle.Text = "Registrar pago";
             pnlRegPago.BringToFront();
+            //Colocar en el ComBoxName a todas las personas que se pueden buscar 
+            ComBoxName.Items.Clear();
+            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            List<string[]> lista1 = instancia.Lect("lista1");
+            List<string[]> lista2 = instancia.Lect("lista2");
+            //Agregamos los nombres de las dos listas
+            for (int i = 0; i < lista1.Count; i++)
+            {
+                ComBoxName.Items.Add(lista1[i][0]);
+            }
+            for (int i = 0; i < lista2.Count; i++)
+            {
+                ComBoxName.Items.Add(lista2[i][0]);
+            }
         }
 
         private void btnBuscarC_Click(object sender, EventArgs e)
@@ -90,13 +104,19 @@ namespace FutureLending
             txtBoxMonto.Visible = true;
             lblFecha.Visible = true;
             lblMonto.Visible = true;
-            DateTime1.Visible = true;
+            DateTimeReg.Visible = true;
             btnMarcarP.Visible = true;
             //Agregamos los datos del cliente al form
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            string[] datos = instancia.LectName("lista1", ComBoxName.Texts);
+            string list;
+            if (CombBoxLista.Texts == "Lista 1")
+            {
+                list = "lista1";
+            }
+            else { list = "lista2"; }
+            string[] datos = instancia.LectName(list, ComBoxName.Texts);
             txtBoxCredito.Texts = datos[1];
-            txtBoxMonto.Texts = datos[2];//FALTA AGREGAR MONTO A LA BASE DE DATOS *PENDIENTE
+            txtBoxMonto.Texts = datos[2];
             //Validar que se encuentre esa fecha ***
 
             //Marcar como pagada ***
@@ -149,6 +169,23 @@ namespace FutureLending
         {
             string tabla = "liquidados";
             TablaClientes.MostrarTablaListas(tabla, gridListas);
+        }
+
+        private void ComBoxName_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CombBoxLista_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateTime1_ValueChanged(object sender, EventArgs e)
+        {
+            //Obtener el valor seleccionado
+            string fecha = Convert.ToString(DateTimeReg.Value.ToShortDateString());
+            label18.Text = fecha;
         }
     }
 }

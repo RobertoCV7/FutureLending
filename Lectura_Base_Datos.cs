@@ -111,7 +111,7 @@ namespace FutureLending
             string[] fila = new string[26];
             using (MySqlConnection connection = Conector())
             {
-                string query = "SELECT * FROM " + tabla + "WHERE NAME = " + name;
+                string query = "SELECT * FROM " + tabla + " WHERE Nombre_Completo = '" + name + "'";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
