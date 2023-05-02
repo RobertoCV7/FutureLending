@@ -170,19 +170,19 @@ namespace FutureLending
         void create(string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
         {
             DateTime fechaInicio = DateTime.Now;
-            string fechainicio = fechaInicio.ToString("yyyy-MM-dd");
+            string fechainicio = fechaInicio.ToString("dd/MM/yyyy");
 
             string[] dias_de_pago;
             if (Tipo_pago == 1)
             {
                 dias_de_pago = Enumerable.Range(0, 14)
-                    .Select(i => fechaInicio.AddDays(7 * i + 7).ToString("yyyy-MM-dd"))
+                    .Select(i => fechaInicio.AddDays(7 * i + 7).ToString("dd/MM/yyyy"))
                     .ToArray();
             }
             else
             {
                 dias_de_pago = Enumerable.Range(0, 7)
-                    .Select(i => fechaInicio.AddDays(15 * i + 15).ToString("yyyy-MM-dd"))
+                    .Select(i => fechaInicio.AddDays(15 * i + 15).ToString("dd/MM/yyyy"))
                     .ToArray();
             }
 
@@ -230,12 +230,6 @@ namespace FutureLending
 
         public async Task CheckConnection()
         {
-            DateTime fechaActual = DateTime.Now;
-            string fechaActualStr = fechaActual.ToString("dd/MM/yyyy");
-            MessageBox.Show(fechaActualStr);
-
-
-
             string server = "localhost";
             int port = cambio_puerto ? 3307 : 3306;
             string database = "prestamos";
