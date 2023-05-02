@@ -170,11 +170,8 @@ namespace FutureLending
 
         void create(string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
         {
-            DateTime fechaInicio;
-            if (!DateTime.TryParseExact(Fecha_inicio, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out fechaInicio))
-            {
-                throw new ArgumentException("Fecha_inicio invalida");
-            }
+            DateTime fechaInicio = DateTime.Now;
+            string fechainicio = fechaInicio.ToString("yyyy-MM-dd");
 
             string[] dias_de_pago;
             if (Tipo_pago == 1)
@@ -229,8 +226,17 @@ namespace FutureLending
             }
         }
 
+        
+
+
         public async Task CheckConnection()
         {
+            DateTime fechaActual = DateTime.Now;
+            string fechaActualStr = fechaActual.ToString("dd-MM-yyyy");
+            MessageBox.Show(fechaActualStr);
+
+
+
             string server = "localhost";
             int port = cambio_puerto ? 3307 : 3306;
             string database = "prestamos";
