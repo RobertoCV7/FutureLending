@@ -60,7 +60,12 @@ namespace FutureLending
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dateFechaInicio.Value.ToString("yyyy-MM-dd"));
+            Lectura_Base_Datos obj = new Lectura_Base_Datos();
+
+            obj.create("lista1", txtNombre.ToString(), txtCredito.ToString(), dateFechaInicio.ToString(), txtInteres.ToString(), cmbPromotor.ToString(), txtCalle.ToString(), txtNumInt.ToString(), txtNumExt.ToString(), txtTelefono.ToString(), txtCorreo.ToString(), Int32.Parse(cmbTipo.ToString()));
+
+
+
         }
 
         private void btnTodosSistemas_Click(object sender, EventArgs e)
@@ -199,16 +204,16 @@ namespace FutureLending
             }
             else { list = "lista2"; }
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
-            for(int i = 12;  i < datos.Length; i++)
+            for (int i = 12; i < datos.Length; i++)
             {
                 if (datos[i] == fecha)
                 {
                     band = true;
                 }
             }
-            if (!band) {MessageBox.Show("El cliente no cuenta con esa fecha."); }
+            if (!band) { MessageBox.Show("El cliente no cuenta con esa fecha."); }
             //Marcar como pagada ***
-            if(band)
+            if (band)
             {
                 fecha += " - PAGADA";
                 label18.Text = fecha;

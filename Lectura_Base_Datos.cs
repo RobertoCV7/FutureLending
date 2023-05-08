@@ -167,7 +167,7 @@ namespace FutureLending
             return filasAfectadas;
         }
 
-        void create(string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
+        public void create(string lista ,string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
         {
             DateTime fechaInicio = DateTime.Now;
             string fechainicio = fechaInicio.ToString("dd/MM/yyyy");
@@ -185,11 +185,11 @@ namespace FutureLending
                     .Select(i => fechaInicio.AddDays(15 * i + 15).ToString("dd/MM/yyyy"))
                     .ToArray();
             }
-
+            
             using (MySqlConnection connection = Conector())
             {
                 StringBuilder queryBuilder = new StringBuilder();
-                queryBuilder.Append("INSERT INTO tabla (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago");
+                queryBuilder.Append("INSERT INTO "+lista+" (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago");
                 for (int i = 1; i <= dias_de_pago.Length; i++)
                 {
                     queryBuilder.Append(", Fecha").Append(i);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QAr8yqqj+PU+yIKpyTE9CF/ML0EcU1+okq12pHi3ONNM8BcEmPTRdBIyWiSIS9EF+HI6SQHgzDeRmc5czH3qng==",
+  "dgSpecHash": "KUx6hHkf6aW0V6cfXsVGtXVwcxY/Y09kv70bI6teIQPB5l1Vxj4NGj030KANkIG5FAZM/32PxaOzmuqDNCRx5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\donne\\Proyecto_Rosy\\FutureLending.csproj",
+  "projectFilePath": "C:\\Users\\donne\\FutureLending\\FutureLending.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\donne\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512",
     "C:\\Users\\donne\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
