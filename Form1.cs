@@ -61,12 +61,9 @@ namespace FutureLending
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos obj = new Lectura_Base_Datos();
+            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, Convert.ToString(dateFechaInicio.Value.ToShortDateString()), txtInteres.Texts, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex);
 
-            obj.create("lista1", txtNombre.ToString(), txtCredito.ToString(), dateFechaInicio.ToString(), txtInteres.ToString(), cmbPromotor.ToString(), txtCalle.ToString(), txtNumInt.ToString(), txtNumExt.ToString(), txtTelefono.ToString(), txtCorreo.ToString(), Int32.Parse(cmbTipo.ToString()));
-
-
-
-        }
+          }
 
         private void btnTodosSistemas_Click(object sender, EventArgs e)
         {
@@ -222,6 +219,11 @@ namespace FutureLending
             }
             //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
             //Si no pagan a tiempo el interes crece *** FALTA
+        }
+
+        private void dateFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

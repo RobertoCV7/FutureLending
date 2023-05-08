@@ -167,13 +167,13 @@ namespace FutureLending
             return filasAfectadas;
         }
 
-        public void create(string lista ,string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
+        public void create(string lista,string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
         {
             DateTime fechaInicio = DateTime.Now;
             string fechainicio = fechaInicio.ToString("dd/MM/yyyy");
 
             string[] dias_de_pago;
-            if (Tipo_pago == 1)
+            if (Tipo_pago == 0)
             {
                 dias_de_pago = Enumerable.Range(0, 14)
                     .Select(i => fechaInicio.AddDays(7 * i + 7).ToString("dd/MM/yyyy"))
@@ -210,7 +210,7 @@ namespace FutureLending
                     command.Parameters.AddWithValue("@Interes", Interes);
                     command.Parameters.AddWithValue("@Promotor", Promotor);
                     command.Parameters.AddWithValue("@Calle", Calle);
-                    command.Parameters.AddWithValue("@Colonia", Num_int);
+                    command.Parameters.AddWithValue("@Colonia", Colonia);
                     command.Parameters.AddWithValue("@Num_int", Num_int);
                     command.Parameters.AddWithValue("@Num_ext", Num_ext);
                     command.Parameters.AddWithValue("@Telefono", Telefono);
