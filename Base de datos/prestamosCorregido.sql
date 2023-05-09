@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2023 a las 19:25:10
+-- Tiempo de generación: 09-05-2023 a las 23:24:10
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -114,6 +114,7 @@ CREATE TABLE `lista2` (
   `Num_ext` varchar(100) NOT NULL,
   `Telefono` varchar(12) NOT NULL,
   `Correo` varchar(30) NOT NULL,
+  `Tipo_pago` int(2) NOT NULL,
   `Monto_Pagado` varchar(100) NOT NULL,
   `Monto_Restante` varchar(100) NOT NULL,
   `Fecha_Limite` varchar(30) NOT NULL
@@ -123,8 +124,8 @@ CREATE TABLE `lista2` (
 -- Volcado de datos para la tabla `lista2`
 --
 
-INSERT INTO `lista2` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Monto_Pagado`, `Monto_Restante`, `Fecha_Limite`) VALUES
-('q', 'q', 'q', 'q', '', 'q', 'q', 'q', 'q', 'q', 'q', 'q', '', '', '-');
+INSERT INTO `lista2` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Pagado`, `Monto_Restante`, `Fecha_Limite`) VALUES
+('q', 'q', 'q', 'q', '', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 0, '', '', '-');
 
 -- --------------------------------------------------------
 

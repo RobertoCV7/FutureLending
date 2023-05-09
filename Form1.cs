@@ -84,8 +84,7 @@ namespace FutureLending
 
         private void btnLista1_Click(object sender, EventArgs e)
         {
-            string lista = "lista1";
-            TablaClientes.MostrarTablaListas(lista, gridListas);
+            TablaClientes.MostrarLista1(gridListas);
         }
 
         private void btnEstadoPagos_Click(object sender, EventArgs e)
@@ -95,8 +94,8 @@ namespace FutureLending
             //Colocar en el ComBoxName a todas las personas que se pueden buscar 
             ComBoxName.Items.Clear();
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            List<string[]> lista1 = instancia.Lect("lista1");
-            List<string[]> lista2 = instancia.Lect("lista2");
+            List<string[]> lista1 = instancia.LectLista1();
+            List<string[]> lista2 = instancia.LectLista2();
             //Agregamos los nombres de las dos listas
             for (int i = 0; i < lista1.Count; i++)
             {
@@ -160,14 +159,12 @@ namespace FutureLending
 
         private void btnLista2_Click(object sender, EventArgs e)
         {
-            string lista = "lista2";
-            TablaClientes.MostrarTablaListas(lista, gridListas);
+            TablaClientes.MostrarLista2(gridListas);
         }
 
         private void btnLista3_Click(object sender, EventArgs e)
         {
-            string lista = "lista3";
-            TablaClientes.MostrarTablaListas(lista, gridListas);
+            TablaClientes.MostrarLista3(gridListas);
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -177,8 +174,7 @@ namespace FutureLending
 
         private void btnLiquidados_Click(object sender, EventArgs e)
         {
-            string tabla = "liquidados";
-            TablaClientes.MostrarTablaListas(tabla, gridListas);
+            TablaClientes.MostrarLiquidados(gridListas);
         }
 
         private void btnMarcarP_Click(object sender, EventArgs e)
