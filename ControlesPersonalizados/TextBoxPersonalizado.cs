@@ -338,7 +338,7 @@ namespace FutureLending.Controles_personalizados
         private void textBox1_Leave(object sender, EventArgs e)
         {
             isFocused = false;
-            //this.Invalidate();
+            this.Invalidate();
             SetPlaceholder();
         }
 

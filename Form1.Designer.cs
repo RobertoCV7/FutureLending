@@ -29,1199 +29,1196 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            panelMenu = new Panel();
-            btnTodosSistemas = new FontAwesome.Sharp.IconButton();
-            btnEstadoPagos = new FontAwesome.Sharp.IconButton();
-            btnListas = new FontAwesome.Sharp.IconButton();
-            btnIngresarClientes = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
-            btnMenu = new FontAwesome.Sharp.IconButton();
-            pictureBox1 = new PictureBox();
-            panelTitleBar = new Panel();
-            lblTitle = new Label();
-            pnlRegPago = new Panel();
-            label18 = new Label();
-            CombBoxLista = new ControlesPersonalizados.RJComboBox();
-            label17 = new Label();
-            btnMarcarP = new Controles_personalizados.RJButton();
-            DateTimeReg = new Controles_personalizados.DateTimePickerPersonalizado();
-            lblFecha = new Label();
-            txtBoxMonto = new Controles_personalizados.TextBoxPersonalizado();
-            lblMonto = new Label();
-            lblCredito = new Label();
-            txtBoxCredito = new Controles_personalizados.TextBoxPersonalizado();
-            ComBoxName = new ControlesPersonalizados.RJComboBox();
-            btnBuscarC = new Controles_personalizados.RJButton();
-            label29 = new Label();
-            pnlListas = new Panel();
-            gridListas = new DataGridView();
-            btnEliminar = new Controles_personalizados.RJButton();
-            btnEditar = new Controles_personalizados.RJButton();
-            btnLiquidados = new Controles_personalizados.RJButton();
-            btnMostrarTodos = new Controles_personalizados.RJButton();
-            label8 = new Label();
-            btnLista3 = new Controles_personalizados.RJButton();
-            btnLista2 = new Controles_personalizados.RJButton();
-            btnLista1 = new Controles_personalizados.RJButton();
-            label1 = new Label();
-            txtNombre = new Controles_personalizados.TextBoxPersonalizado();
-            label2 = new Label();
-            txtCredito = new Controles_personalizados.TextBoxPersonalizado();
-            label3 = new Label();
-            dateFechaInicio = new Controles_personalizados.DateTimePickerPersonalizado();
-            label4 = new Label();
-            txtInteres = new Controles_personalizados.TextBoxPersonalizado();
-            label5 = new Label();
-            cmbTipo = new ControlesPersonalizados.RJComboBox();
-            label6 = new Label();
-            cmbPromotor = new ControlesPersonalizados.RJComboBox();
-            label7 = new Label();
-            btnGuardar = new Controles_personalizados.RJButton();
-            label9 = new Label();
-            label10 = new Label();
-            txtCalle = new Controles_personalizados.TextBoxPersonalizado();
-            label11 = new Label();
-            txtColonia = new Controles_personalizados.TextBoxPersonalizado();
-            label12 = new Label();
-            txtNumInt = new Controles_personalizados.TextBoxPersonalizado();
-            label13 = new Label();
-            txtNumExt = new Controles_personalizados.TextBoxPersonalizado();
-            label14 = new Label();
-            txtTelefono = new Controles_personalizados.TextBoxPersonalizado();
-            label15 = new Label();
-            txtCorreo = new Controles_personalizados.TextBoxPersonalizado();
-            textBoxPersonalizado1 = new Controles_personalizados.TextBoxPersonalizado();
-            label16 = new Label();
-            textBoxPersonalizado2 = new Controles_personalizados.TextBoxPersonalizado();
-            pnlClientes = new Panel();
-            btnCalcular = new Controles_personalizados.RJButton();
-            panelMenu.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panelTitleBar.SuspendLayout();
-            pnlRegPago.SuspendLayout();
-            pnlListas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridListas).BeginInit();
-            pnlClientes.SuspendLayout();
-            SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnTodosSistemas = new FontAwesome.Sharp.IconButton();
+            this.btnEstadoPagos = new FontAwesome.Sharp.IconButton();
+            this.btnListas = new FontAwesome.Sharp.IconButton();
+            this.btnIngresarClientes = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlRegPago = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.CombBoxLista = new FutureLending.ControlesPersonalizados.RJComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnMarcarP = new FutureLending.Controles_personalizados.RJButton();
+            this.DateTimeReg = new FutureLending.Controles_personalizados.DateTimePickerPersonalizado();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.txtBoxMonto = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.lblMonto = new System.Windows.Forms.Label();
+            this.lblCredito = new System.Windows.Forms.Label();
+            this.txtBoxCredito = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.ComBoxName = new FutureLending.ControlesPersonalizados.RJComboBox();
+            this.btnBuscarC = new FutureLending.Controles_personalizados.RJButton();
+            this.label29 = new System.Windows.Forms.Label();
+            this.pnlListas = new System.Windows.Forms.Panel();
+            this.gridListas = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new FutureLending.Controles_personalizados.RJButton();
+            this.btnEditar = new FutureLending.Controles_personalizados.RJButton();
+            this.btnLiquidados = new FutureLending.Controles_personalizados.RJButton();
+            this.btnMostrarTodos = new FutureLending.Controles_personalizados.RJButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnLista3 = new FutureLending.Controles_personalizados.RJButton();
+            this.btnLista2 = new FutureLending.Controles_personalizados.RJButton();
+            this.btnLista1 = new FutureLending.Controles_personalizados.RJButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNombre = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCredito = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateFechaInicio = new FutureLending.Controles_personalizados.DateTimePickerPersonalizado();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbTipo = new FutureLending.ControlesPersonalizados.RJComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbPromotor = new FutureLending.ControlesPersonalizados.RJComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnGuardar = new FutureLending.Controles_personalizados.RJButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCalle = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtColonia = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtNumInt = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtNumExt = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtTelefono = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtCorreo = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.textBoxPersonalizado1 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxPersonalizado2 = new FutureLending.Controles_personalizados.TextBoxPersonalizado();
+            this.pnlClientes = new System.Windows.Forms.Panel();
+            this.cmbInteres = new FutureLending.ControlesPersonalizados.RJComboBox();
+            this.btnCalcular = new FutureLending.Controles_personalizados.RJButton();
+            this.panelMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelTitleBar.SuspendLayout();
+            this.pnlRegPago.SuspendLayout();
+            this.pnlListas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListas)).BeginInit();
+            this.pnlClientes.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panelMenu
             // 
-            panelMenu.AccessibleName = "panelMenu";
-            panelMenu.BackColor = Color.DarkSlateGray;
-            panelMenu.Controls.Add(btnTodosSistemas);
-            panelMenu.Controls.Add(btnEstadoPagos);
-            panelMenu.Controls.Add(btnListas);
-            panelMenu.Controls.Add(btnIngresarClientes);
-            panelMenu.Controls.Add(panel1);
-            panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 0);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(230, 562);
-            panelMenu.TabIndex = 0;
+            this.panelMenu.AccessibleName = "panelMenu";
+            this.panelMenu.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panelMenu.Controls.Add(this.btnTodosSistemas);
+            this.panelMenu.Controls.Add(this.btnEstadoPagos);
+            this.panelMenu.Controls.Add(this.btnListas);
+            this.panelMenu.Controls.Add(this.btnIngresarClientes);
+            this.panelMenu.Controls.Add(this.panel1);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(230, 562);
+            this.panelMenu.TabIndex = 0;
             // 
             // btnTodosSistemas
             // 
-            btnTodosSistemas.Dock = DockStyle.Top;
-            btnTodosSistemas.FlatAppearance.BorderSize = 0;
-            btnTodosSistemas.FlatStyle = FlatStyle.Flat;
-            btnTodosSistemas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTodosSistemas.ForeColor = Color.White;
-            btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Computer;
-            btnTodosSistemas.IconColor = Color.White;
-            btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(0, 317);
-            btnTodosSistemas.Name = "btnTodosSistemas";
-            btnTodosSistemas.Padding = new Padding(10, 0, 0, 0);
-            btnTodosSistemas.Size = new Size(230, 61);
-            btnTodosSistemas.TabIndex = 3;
-            btnTodosSistemas.Tag = "Ver estado de todos los sistemas";
-            btnTodosSistemas.Text = "Ver estado de todos los sistemas";
-            btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTodosSistemas.UseVisualStyleBackColor = true;
-            btnTodosSistemas.Click += btnTodosSistemas_Click;
+            this.btnTodosSistemas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTodosSistemas.FlatAppearance.BorderSize = 0;
+            this.btnTodosSistemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTodosSistemas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTodosSistemas.ForeColor = System.Drawing.Color.White;
+            this.btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Computer;
+            this.btnTodosSistemas.IconColor = System.Drawing.Color.White;
+            this.btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTodosSistemas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTodosSistemas.Location = new System.Drawing.Point(0, 317);
+            this.btnTodosSistemas.Name = "btnTodosSistemas";
+            this.btnTodosSistemas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnTodosSistemas.Size = new System.Drawing.Size(230, 61);
+            this.btnTodosSistemas.TabIndex = 3;
+            this.btnTodosSistemas.Tag = "Ver estado de todos los sistemas";
+            this.btnTodosSistemas.Text = "Ver estado de todos los sistemas";
+            this.btnTodosSistemas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTodosSistemas.UseVisualStyleBackColor = true;
             // 
             // btnEstadoPagos
             // 
-            btnEstadoPagos.Dock = DockStyle.Top;
-            btnEstadoPagos.FlatAppearance.BorderSize = 0;
-            btnEstadoPagos.FlatStyle = FlatStyle.Flat;
-            btnEstadoPagos.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEstadoPagos.ForeColor = Color.White;
-            btnEstadoPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
-            btnEstadoPagos.IconColor = Color.White;
-            btnEstadoPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEstadoPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEstadoPagos.Location = new Point(0, 263);
-            btnEstadoPagos.Name = "btnEstadoPagos";
-            btnEstadoPagos.Padding = new Padding(10, 0, 0, 0);
-            btnEstadoPagos.Size = new Size(230, 54);
-            btnEstadoPagos.TabIndex = 2;
-            btnEstadoPagos.Tag = "  Estado de pagos";
-            btnEstadoPagos.Text = "  Estado de pagos";
-            btnEstadoPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEstadoPagos.UseVisualStyleBackColor = true;
-            btnEstadoPagos.Click += btnEstadoPagos_Click;
+            this.btnEstadoPagos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstadoPagos.FlatAppearance.BorderSize = 0;
+            this.btnEstadoPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadoPagos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEstadoPagos.ForeColor = System.Drawing.Color.White;
+            this.btnEstadoPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
+            this.btnEstadoPagos.IconColor = System.Drawing.Color.White;
+            this.btnEstadoPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstadoPagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadoPagos.Location = new System.Drawing.Point(0, 263);
+            this.btnEstadoPagos.Name = "btnEstadoPagos";
+            this.btnEstadoPagos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEstadoPagos.Size = new System.Drawing.Size(230, 54);
+            this.btnEstadoPagos.TabIndex = 2;
+            this.btnEstadoPagos.Tag = "  Estado de pagos";
+            this.btnEstadoPagos.Text = "  Estado de pagos";
+            this.btnEstadoPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstadoPagos.UseVisualStyleBackColor = true;
             // 
             // btnListas
             // 
-            btnListas.Dock = DockStyle.Top;
-            btnListas.FlatAppearance.BorderSize = 0;
-            btnListas.FlatStyle = FlatStyle.Flat;
-            btnListas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnListas.ForeColor = Color.White;
-            btnListas.IconChar = FontAwesome.Sharp.IconChar.List12;
-            btnListas.IconColor = Color.White;
-            btnListas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnListas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnListas.Location = new Point(0, 209);
-            btnListas.Name = "btnListas";
-            btnListas.Padding = new Padding(10, 0, 0, 0);
-            btnListas.Size = new Size(230, 54);
-            btnListas.TabIndex = 1;
-            btnListas.Tag = "  Listas completas";
-            btnListas.Text = "  Listas completas";
-            btnListas.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnListas.UseVisualStyleBackColor = true;
-            btnListas.Click += btnListas_Click;
+            this.btnListas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnListas.FlatAppearance.BorderSize = 0;
+            this.btnListas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnListas.ForeColor = System.Drawing.Color.White;
+            this.btnListas.IconChar = FontAwesome.Sharp.IconChar.List12;
+            this.btnListas.IconColor = System.Drawing.Color.White;
+            this.btnListas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnListas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListas.Location = new System.Drawing.Point(0, 209);
+            this.btnListas.Name = "btnListas";
+            this.btnListas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnListas.Size = new System.Drawing.Size(230, 54);
+            this.btnListas.TabIndex = 1;
+            this.btnListas.Tag = "  Listas completas";
+            this.btnListas.Text = "  Listas completas";
+            this.btnListas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnListas.UseVisualStyleBackColor = true;
             // 
             // btnIngresarClientes
             // 
-            btnIngresarClientes.Dock = DockStyle.Top;
-            btnIngresarClientes.FlatAppearance.BorderSize = 0;
-            btnIngresarClientes.FlatStyle = FlatStyle.Flat;
-            btnIngresarClientes.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnIngresarClientes.ForeColor = Color.White;
-            btnIngresarClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            btnIngresarClientes.IconColor = Color.White;
-            btnIngresarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnIngresarClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIngresarClientes.Location = new Point(0, 155);
-            btnIngresarClientes.Name = "btnIngresarClientes";
-            btnIngresarClientes.Padding = new Padding(10, 0, 0, 0);
-            btnIngresarClientes.Size = new Size(230, 54);
-            btnIngresarClientes.TabIndex = 0;
-            btnIngresarClientes.Tag = "   Ingresar clientes";
-            btnIngresarClientes.Text = "   Ingresar clientes";
-            btnIngresarClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnIngresarClientes.UseVisualStyleBackColor = true;
-            btnIngresarClientes.Click += btnIngresarClientes_Click;
+            this.btnIngresarClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIngresarClientes.FlatAppearance.BorderSize = 0;
+            this.btnIngresarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarClientes.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresarClientes.ForeColor = System.Drawing.Color.White;
+            this.btnIngresarClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnIngresarClientes.IconColor = System.Drawing.Color.White;
+            this.btnIngresarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnIngresarClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIngresarClientes.Location = new System.Drawing.Point(0, 155);
+            this.btnIngresarClientes.Name = "btnIngresarClientes";
+            this.btnIngresarClientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnIngresarClientes.Size = new System.Drawing.Size(230, 54);
+            this.btnIngresarClientes.TabIndex = 0;
+            this.btnIngresarClientes.Tag = "   Ingresar clientes";
+            this.btnIngresarClientes.Text = "   Ingresar clientes";
+            this.btnIngresarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnIngresarClientes.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnMenu);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(230, 155);
-            panel1.TabIndex = 0;
+            this.panel1.Controls.Add(this.btnMenu);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(230, 155);
+            this.panel1.TabIndex = 0;
             // 
             // btnMenu
             // 
-            btnMenu.FlatAppearance.BorderSize = 0;
-            btnMenu.FlatStyle = FlatStyle.Flat;
-            btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            btnMenu.IconColor = Color.White;
-            btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMenu.IconSize = 30;
-            btnMenu.Location = new Point(169, 51);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(60, 60);
-            btnMenu.TabIndex = 0;
-            btnMenu.UseVisualStyleBackColor = true;
-            btnMenu.Click += btnMenu_Click;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btnMenu.IconColor = System.Drawing.Color.White;
+            this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMenu.IconSize = 30;
+            this.btnMenu.Location = new System.Drawing.Point(169, 51);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(60, 60);
+            this.btnMenu.TabIndex = 0;
+            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(161, 146);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(161, 146);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panelTitleBar
             // 
-            panelTitleBar.BackColor = Color.DarkCyan;
-            panelTitleBar.Controls.Add(lblTitle);
-            panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(230, 0);
-            panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(857, 60);
-            panelTitleBar.TabIndex = 1;
+            this.panelTitleBar.BackColor = System.Drawing.Color.DarkCyan;
+            this.panelTitleBar.Controls.Add(this.lblTitle);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(230, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(857, 60);
+            this.panelTitleBar.TabIndex = 1;
             // 
             // lblTitle
             // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Georgia", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.ForeColor = SystemColors.Desktop;
-            lblTitle.Location = new Point(36, 9);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(237, 43);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "Bienvenido";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Georgia", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblTitle.Location = new System.Drawing.Point(36, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(237, 43);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Bienvenido";
             // 
             // pnlRegPago
             // 
-            pnlRegPago.BackColor = SystemColors.Info;
-            pnlRegPago.Controls.Add(label18);
-            pnlRegPago.Controls.Add(CombBoxLista);
-            pnlRegPago.Controls.Add(label17);
-            pnlRegPago.Controls.Add(btnMarcarP);
-            pnlRegPago.Controls.Add(DateTimeReg);
-            pnlRegPago.Controls.Add(lblFecha);
-            pnlRegPago.Controls.Add(txtBoxMonto);
-            pnlRegPago.Controls.Add(lblMonto);
-            pnlRegPago.Controls.Add(lblCredito);
-            pnlRegPago.Controls.Add(txtBoxCredito);
-            pnlRegPago.Controls.Add(ComBoxName);
-            pnlRegPago.Controls.Add(btnBuscarC);
-            pnlRegPago.Controls.Add(label29);
-            pnlRegPago.Dock = DockStyle.Fill;
-            pnlRegPago.Location = new Point(230, 60);
-            pnlRegPago.Name = "pnlRegPago";
-            pnlRegPago.Size = new Size(857, 502);
-            pnlRegPago.TabIndex = 27;
+            this.pnlRegPago.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlRegPago.Controls.Add(this.label18);
+            this.pnlRegPago.Controls.Add(this.CombBoxLista);
+            this.pnlRegPago.Controls.Add(this.label17);
+            this.pnlRegPago.Controls.Add(this.btnMarcarP);
+            this.pnlRegPago.Controls.Add(this.DateTimeReg);
+            this.pnlRegPago.Controls.Add(this.lblFecha);
+            this.pnlRegPago.Controls.Add(this.txtBoxMonto);
+            this.pnlRegPago.Controls.Add(this.lblMonto);
+            this.pnlRegPago.Controls.Add(this.lblCredito);
+            this.pnlRegPago.Controls.Add(this.txtBoxCredito);
+            this.pnlRegPago.Controls.Add(this.ComBoxName);
+            this.pnlRegPago.Controls.Add(this.btnBuscarC);
+            this.pnlRegPago.Controls.Add(this.label29);
+            this.pnlRegPago.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRegPago.Location = new System.Drawing.Point(230, 60);
+            this.pnlRegPago.Name = "pnlRegPago";
+            this.pnlRegPago.Size = new System.Drawing.Size(857, 502);
+            this.pnlRegPago.TabIndex = 27;
             // 
             // label18
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(460, 305);
-            label18.Name = "label18";
-            label18.Size = new Size(116, 24);
-            label18.TabIndex = 36;
-            label18.Text = "Tipo de lista:";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(460, 305);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(116, 24);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "Tipo de lista:";
             // 
             // CombBoxLista
             // 
-            CombBoxLista.AutoCompleteMode = AutoCompleteMode.Suggest;
-            CombBoxLista.AutoCompleteSource = AutoCompleteSource.ListItems;
-            CombBoxLista.BackColor = SystemColors.Info;
-            CombBoxLista.BorderColor = Color.DarkSlateGray;
-            CombBoxLista.BorderSize = 2;
-            CombBoxLista.DropDownStyle = ComboBoxStyle.DropDown;
-            CombBoxLista.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            CombBoxLista.ForeColor = Color.Black;
-            CombBoxLista.IconColor = Color.DarkSlateGray;
-            CombBoxLista.Items.AddRange(new object[] { "Lista 1", "Lista 2" });
-            CombBoxLista.ListBackColor = SystemColors.Info;
-            CombBoxLista.ListTextColor = Color.DimGray;
-            CombBoxLista.Location = new Point(164, 86);
-            CombBoxLista.MinimumSize = new Size(200, 30);
-            CombBoxLista.Name = "CombBoxLista";
-            CombBoxLista.Padding = new Padding(2);
-            CombBoxLista.Size = new Size(289, 47);
-            CombBoxLista.TabIndex = 35;
-            CombBoxLista.Texts = "Introduzca lista";
-            CombBoxLista.OnSelectedIndexChanged += CombBoxLista_OnSelectedIndexChanged;
+            this.CombBoxLista.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CombBoxLista.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CombBoxLista.BackColor = System.Drawing.SystemColors.Info;
+            this.CombBoxLista.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.CombBoxLista.BorderSize = 2;
+            this.CombBoxLista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CombBoxLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CombBoxLista.ForeColor = System.Drawing.Color.Black;
+            this.CombBoxLista.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.CombBoxLista.Items.AddRange(new object[] {
+            "Lista 1",
+            "Lista 2"});
+            this.CombBoxLista.ListBackColor = System.Drawing.SystemColors.Info;
+            this.CombBoxLista.ListTextColor = System.Drawing.Color.DimGray;
+            this.CombBoxLista.Location = new System.Drawing.Point(164, 86);
+            this.CombBoxLista.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CombBoxLista.Name = "CombBoxLista";
+            this.CombBoxLista.Padding = new System.Windows.Forms.Padding(2);
+            this.CombBoxLista.Size = new System.Drawing.Size(289, 47);
+            this.CombBoxLista.TabIndex = 35;
+            this.CombBoxLista.Texts = "Introduzca lista";
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(16, 100);
-            label17.Name = "label17";
-            label17.Size = new Size(116, 24);
-            label17.TabIndex = 34;
-            label17.Text = "Tipo de lista:";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(16, 100);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(116, 24);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Tipo de lista:";
             // 
             // btnMarcarP
             // 
-            btnMarcarP.BackColor = SystemColors.Info;
-            btnMarcarP.BackgroundColor = SystemColors.Info;
-            btnMarcarP.BorderColor = Color.DarkSlateGray;
-            btnMarcarP.BorderRadius = 10;
-            btnMarcarP.BorderSize = 2;
-            btnMarcarP.FlatAppearance.BorderSize = 0;
-            btnMarcarP.FlatStyle = FlatStyle.Flat;
-            btnMarcarP.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMarcarP.ForeColor = Color.Black;
-            btnMarcarP.Location = new Point(227, 360);
-            btnMarcarP.Name = "btnMarcarP";
-            btnMarcarP.Size = new Size(242, 40);
-            btnMarcarP.TabIndex = 33;
-            btnMarcarP.Text = "Marcar como pagada";
-            btnMarcarP.TextColor = Color.Black;
-            btnMarcarP.UseVisualStyleBackColor = false;
-            btnMarcarP.Visible = false;
-            btnMarcarP.Click += btnMarcarP_Click;
+            this.btnMarcarP.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMarcarP.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.btnMarcarP.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMarcarP.BorderRadius = 10;
+            this.btnMarcarP.BorderSize = 2;
+            this.btnMarcarP.FlatAppearance.BorderSize = 0;
+            this.btnMarcarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMarcarP.ForeColor = System.Drawing.Color.Black;
+            this.btnMarcarP.Location = new System.Drawing.Point(227, 360);
+            this.btnMarcarP.Name = "btnMarcarP";
+            this.btnMarcarP.Size = new System.Drawing.Size(242, 40);
+            this.btnMarcarP.TabIndex = 33;
+            this.btnMarcarP.Text = "Marcar como pagada";
+            this.btnMarcarP.TextColor = System.Drawing.Color.Black;
+            this.btnMarcarP.UseVisualStyleBackColor = false;
+            this.btnMarcarP.Visible = false;
             // 
             // DateTimeReg
             // 
-            DateTimeReg.BorderColor = Color.DarkSlateGray;
-            DateTimeReg.BorderSize = 2;
-            DateTimeReg.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            DateTimeReg.Format = DateTimePickerFormat.Short;
-            DateTimeReg.Location = new Point(195, 301);
-            DateTimeReg.MinimumSize = new Size(4, 35);
-            DateTimeReg.Name = "DateTimeReg";
-            DateTimeReg.Size = new Size(151, 35);
-            DateTimeReg.SkinColor = SystemColors.Info;
-            DateTimeReg.TabIndex = 32;
-            DateTimeReg.TextColor = Color.Black;
-            DateTimeReg.Visible = false;
-            DateTimeReg.ValueChanged += DateTime1_ValueChanged;
+            this.DateTimeReg.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.DateTimeReg.BorderSize = 2;
+            this.DateTimeReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DateTimeReg.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateTimeReg.Location = new System.Drawing.Point(195, 301);
+            this.DateTimeReg.MinimumSize = new System.Drawing.Size(4, 35);
+            this.DateTimeReg.Name = "DateTimeReg";
+            this.DateTimeReg.Size = new System.Drawing.Size(151, 35);
+            this.DateTimeReg.SkinColor = System.Drawing.SystemColors.Info;
+            this.DateTimeReg.TabIndex = 32;
+            this.DateTimeReg.TextColor = System.Drawing.Color.Black;
+            this.DateTimeReg.Visible = false;
             // 
             // lblFecha
             // 
-            lblFecha.AutoSize = true;
-            lblFecha.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFecha.Location = new Point(16, 304);
-            lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(156, 24);
-            lblFecha.TabIndex = 31;
-            lblFecha.Text = "Fecha a registrar:";
-            lblFecha.Visible = false;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFecha.Location = new System.Drawing.Point(16, 304);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(156, 24);
+            this.lblFecha.TabIndex = 31;
+            this.lblFecha.Text = "Fecha a registrar:";
+            this.lblFecha.Visible = false;
             // 
             // txtBoxMonto
             // 
-            txtBoxMonto.BorderColor = Color.DarkSlateGray;
-            txtBoxMonto.BorderFocusColor = SystemColors.Info;
-            txtBoxMonto.BorderRadius = 0;
-            txtBoxMonto.BorderSize = 2;
-            txtBoxMonto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxMonto.Location = new Point(278, 228);
-            txtBoxMonto.Multiline = false;
-            txtBoxMonto.Name = "txtBoxMonto";
-            txtBoxMonto.Padding = new Padding(10, 7, 10, 7);
-            txtBoxMonto.PasswordChar = false;
-            txtBoxMonto.PlaceholderColor = Color.DimGray;
-            txtBoxMonto.PlaceholderText = "";
-            txtBoxMonto.Size = new Size(150, 39);
-            txtBoxMonto.TabIndex = 30;
-            txtBoxMonto.Texts = "";
-            txtBoxMonto.UnderlinedStyle = true;
-            txtBoxMonto.Visible = false;
+            this.txtBoxMonto.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtBoxMonto.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtBoxMonto.BorderRadius = 0;
+            this.txtBoxMonto.BorderSize = 2;
+            this.txtBoxMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBoxMonto.Location = new System.Drawing.Point(278, 228);
+            this.txtBoxMonto.Multiline = false;
+            this.txtBoxMonto.Name = "txtBoxMonto";
+            this.txtBoxMonto.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBoxMonto.PasswordChar = false;
+            this.txtBoxMonto.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtBoxMonto.PlaceholderText = "";
+            this.txtBoxMonto.Size = new System.Drawing.Size(150, 39);
+            this.txtBoxMonto.TabIndex = 30;
+            this.txtBoxMonto.Texts = "";
+            this.txtBoxMonto.UnderlinedStyle = true;
+            this.txtBoxMonto.Visible = false;
             // 
             // lblMonto
             // 
-            lblMonto.AutoSize = true;
-            lblMonto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMonto.Location = new Point(16, 243);
-            lblMonto.Name = "lblMonto";
-            lblMonto.Size = new Size(232, 24);
-            lblMonto.TabIndex = 29;
-            lblMonto.Text = "Monto semanal/quincenal:";
-            lblMonto.Visible = false;
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMonto.Location = new System.Drawing.Point(16, 243);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(232, 24);
+            this.lblMonto.TabIndex = 29;
+            this.lblMonto.Text = "Monto semanal/quincenal:";
+            this.lblMonto.Visible = false;
             // 
             // lblCredito
             // 
-            lblCredito.AutoSize = true;
-            lblCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCredito.Location = new Point(17, 182);
-            lblCredito.Name = "lblCredito";
-            lblCredito.Size = new Size(153, 24);
-            lblCredito.TabIndex = 28;
-            lblCredito.Text = "Crédito prestado:";
-            lblCredito.Visible = false;
+            this.lblCredito.AutoSize = true;
+            this.lblCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCredito.Location = new System.Drawing.Point(17, 182);
+            this.lblCredito.Name = "lblCredito";
+            this.lblCredito.Size = new System.Drawing.Size(153, 24);
+            this.lblCredito.TabIndex = 28;
+            this.lblCredito.Text = "Crédito prestado:";
+            this.lblCredito.Visible = false;
             // 
             // txtBoxCredito
             // 
-            txtBoxCredito.BorderColor = Color.DarkSlateGray;
-            txtBoxCredito.BorderFocusColor = SystemColors.Info;
-            txtBoxCredito.BorderRadius = 0;
-            txtBoxCredito.BorderSize = 2;
-            txtBoxCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxCredito.Location = new Point(196, 167);
-            txtBoxCredito.Multiline = false;
-            txtBoxCredito.Name = "txtBoxCredito";
-            txtBoxCredito.Padding = new Padding(10, 7, 10, 7);
-            txtBoxCredito.PasswordChar = false;
-            txtBoxCredito.PlaceholderColor = Color.DimGray;
-            txtBoxCredito.PlaceholderText = "";
-            txtBoxCredito.Size = new Size(232, 39);
-            txtBoxCredito.TabIndex = 27;
-            txtBoxCredito.Texts = "";
-            txtBoxCredito.UnderlinedStyle = true;
-            txtBoxCredito.Visible = false;
+            this.txtBoxCredito.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtBoxCredito.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtBoxCredito.BorderRadius = 0;
+            this.txtBoxCredito.BorderSize = 2;
+            this.txtBoxCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBoxCredito.Location = new System.Drawing.Point(196, 167);
+            this.txtBoxCredito.Multiline = false;
+            this.txtBoxCredito.Name = "txtBoxCredito";
+            this.txtBoxCredito.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBoxCredito.PasswordChar = false;
+            this.txtBoxCredito.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtBoxCredito.PlaceholderText = "";
+            this.txtBoxCredito.Size = new System.Drawing.Size(232, 39);
+            this.txtBoxCredito.TabIndex = 27;
+            this.txtBoxCredito.Texts = "";
+            this.txtBoxCredito.UnderlinedStyle = true;
+            this.txtBoxCredito.Visible = false;
             // 
             // ComBoxName
             // 
-            ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ComBoxName.BackColor = SystemColors.Info;
-            ComBoxName.BorderColor = Color.DarkSlateGray;
-            ComBoxName.BorderSize = 2;
-            ComBoxName.DropDownStyle = ComboBoxStyle.DropDown;
-            ComBoxName.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ComBoxName.ForeColor = Color.Black;
-            ComBoxName.IconColor = Color.DarkSlateGray;
-            ComBoxName.ListBackColor = SystemColors.Info;
-            ComBoxName.ListTextColor = Color.DimGray;
-            ComBoxName.Location = new Point(213, 31);
-            ComBoxName.MinimumSize = new Size(200, 30);
-            ComBoxName.Name = "ComBoxName";
-            ComBoxName.Padding = new Padding(2);
-            ComBoxName.Size = new Size(333, 49);
-            ComBoxName.TabIndex = 14;
-            ComBoxName.Texts = "Introduzca nombre";
-            ComBoxName.OnSelectedIndexChanged += ComBoxName_OnSelectedIndexChanged;
+            this.ComBoxName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComBoxName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ComBoxName.BackColor = System.Drawing.SystemColors.Info;
+            this.ComBoxName.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.ComBoxName.BorderSize = 2;
+            this.ComBoxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.ComBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComBoxName.ForeColor = System.Drawing.Color.Black;
+            this.ComBoxName.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.ComBoxName.ListBackColor = System.Drawing.SystemColors.Info;
+            this.ComBoxName.ListTextColor = System.Drawing.Color.DimGray;
+            this.ComBoxName.Location = new System.Drawing.Point(213, 31);
+            this.ComBoxName.MinimumSize = new System.Drawing.Size(200, 30);
+            this.ComBoxName.Name = "ComBoxName";
+            this.ComBoxName.Padding = new System.Windows.Forms.Padding(2);
+            this.ComBoxName.Size = new System.Drawing.Size(333, 49);
+            this.ComBoxName.TabIndex = 14;
+            this.ComBoxName.Texts = "Introduzca nombre";
             // 
             // btnBuscarC
             // 
-            btnBuscarC.BackColor = SystemColors.Info;
-            btnBuscarC.BackgroundColor = SystemColors.Info;
-            btnBuscarC.BorderColor = Color.DarkSlateGray;
-            btnBuscarC.BorderRadius = 10;
-            btnBuscarC.BorderSize = 2;
-            btnBuscarC.FlatAppearance.BorderSize = 0;
-            btnBuscarC.FlatStyle = FlatStyle.Flat;
-            btnBuscarC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarC.ForeColor = Color.Black;
-            btnBuscarC.Location = new Point(585, 68);
-            btnBuscarC.Name = "btnBuscarC";
-            btnBuscarC.Size = new Size(118, 36);
-            btnBuscarC.TabIndex = 13;
-            btnBuscarC.Text = "Buscar";
-            btnBuscarC.TextColor = Color.Black;
-            btnBuscarC.UseVisualStyleBackColor = false;
-            btnBuscarC.Click += btnBuscarC_Click;
+            this.btnBuscarC.BackColor = System.Drawing.SystemColors.Info;
+            this.btnBuscarC.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.btnBuscarC.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBuscarC.BorderRadius = 10;
+            this.btnBuscarC.BorderSize = 2;
+            this.btnBuscarC.FlatAppearance.BorderSize = 0;
+            this.btnBuscarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarC.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscarC.Location = new System.Drawing.Point(585, 68);
+            this.btnBuscarC.Name = "btnBuscarC";
+            this.btnBuscarC.Size = new System.Drawing.Size(118, 36);
+            this.btnBuscarC.TabIndex = 13;
+            this.btnBuscarC.Text = "Buscar";
+            this.btnBuscarC.TextColor = System.Drawing.Color.Black;
+            this.btnBuscarC.UseVisualStyleBackColor = false;
             // 
             // label29
             // 
-            label29.AutoSize = true;
-            label29.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label29.Location = new Point(16, 50);
-            label29.Name = "label29";
-            label29.Size = new Size(175, 24);
-            label29.TabIndex = 0;
-            label29.Text = "Nombre del cliente:";
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(16, 50);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(175, 24);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Nombre del cliente:";
             // 
             // pnlListas
             // 
-            pnlListas.BackColor = SystemColors.Info;
-            pnlListas.Controls.Add(gridListas);
-            pnlListas.Controls.Add(btnEliminar);
-            pnlListas.Controls.Add(btnEditar);
-            pnlListas.Controls.Add(btnLiquidados);
-            pnlListas.Controls.Add(btnMostrarTodos);
-            pnlListas.Controls.Add(label8);
-            pnlListas.Controls.Add(btnLista3);
-            pnlListas.Controls.Add(btnLista2);
-            pnlListas.Controls.Add(btnLista1);
-            pnlListas.Dock = DockStyle.Fill;
-            pnlListas.Location = new Point(230, 60);
-            pnlListas.Name = "pnlListas";
-            pnlListas.Size = new Size(857, 502);
-            pnlListas.TabIndex = 14;
+            this.pnlListas.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlListas.Controls.Add(this.gridListas);
+            this.pnlListas.Controls.Add(this.btnEliminar);
+            this.pnlListas.Controls.Add(this.btnEditar);
+            this.pnlListas.Controls.Add(this.btnLiquidados);
+            this.pnlListas.Controls.Add(this.btnMostrarTodos);
+            this.pnlListas.Controls.Add(this.label8);
+            this.pnlListas.Controls.Add(this.btnLista3);
+            this.pnlListas.Controls.Add(this.btnLista2);
+            this.pnlListas.Controls.Add(this.btnLista1);
+            this.pnlListas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlListas.Location = new System.Drawing.Point(230, 60);
+            this.pnlListas.Name = "pnlListas";
+            this.pnlListas.Size = new System.Drawing.Size(857, 502);
+            this.pnlListas.TabIndex = 14;
             // 
             // gridListas
             // 
-            gridListas.AllowUserToAddRows = false;
-            gridListas.AllowUserToDeleteRows = false;
-            gridListas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            gridListas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            gridListas.BackgroundColor = Color.DarkCyan;
-            gridListas.BorderStyle = BorderStyle.None;
-            gridListas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Info;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            gridListas.ColumnHeadersHeight = 30;
-            gridListas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            gridListas.EnableHeadersVisualStyles = false;
-            gridListas.GridColor = Color.CadetBlue;
-            gridListas.Location = new Point(16, 127);
-            gridListas.Name = "gridListas";
-            gridListas.RowHeadersVisible = false;
-            gridListas.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = Color.CadetBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Info;
-            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            gridListas.RowTemplate.Height = 25;
-            gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridListas.Size = new Size(820, 297);
-            gridListas.TabIndex = 16;
+            this.gridListas.AllowUserToAddRows = false;
+            this.gridListas.AllowUserToDeleteRows = false;
+            this.gridListas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridListas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridListas.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.gridListas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridListas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gridListas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListas.ColumnHeadersHeight = 30;
+            this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridListas.EnableHeadersVisualStyles = false;
+            this.gridListas.GridColor = System.Drawing.Color.CadetBlue;
+            this.gridListas.Location = new System.Drawing.Point(16, 127);
+            this.gridListas.Name = "gridListas";
+            this.gridListas.RowHeadersVisible = false;
+            this.gridListas.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
+            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridListas.RowTemplate.Height = 25;
+            this.gridListas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.gridListas.Size = new System.Drawing.Size(820, 297);
+            this.gridListas.TabIndex = 16;
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.SteelBlue;
-            btnEliminar.BackgroundColor = Color.SteelBlue;
-            btnEliminar.BorderColor = Color.SteelBlue;
-            btnEliminar.BorderRadius = 15;
-            btnEliminar.BorderSize = 2;
-            btnEliminar.FlatAppearance.BorderSize = 0;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.Transparent;
-            btnEliminar.Location = new Point(725, 428);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(111, 50);
-            btnEliminar.TabIndex = 19;
-            btnEliminar.Text = "Eliminar\r\ncliente\r\n";
-            btnEliminar.TextColor = Color.Transparent;
-            btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminar.BorderRadius = 15;
+            this.btnEliminar.BorderSize = 2;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Location = new System.Drawing.Point(725, 428);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(111, 50);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.Text = "Eliminar\r\ncliente\r\n";
+            this.btnEliminar.TextColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnEditar
             // 
-            btnEditar.BackColor = Color.Teal;
-            btnEditar.BackgroundColor = Color.Teal;
-            btnEditar.BorderColor = Color.Teal;
-            btnEditar.BorderRadius = 15;
-            btnEditar.BorderSize = 2;
-            btnEditar.FlatAppearance.BorderSize = 0;
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.ForeColor = Color.Transparent;
-            btnEditar.Location = new Point(600, 428);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(111, 51);
-            btnEditar.TabIndex = 18;
-            btnEditar.Text = "Editar\r\ncliente\r\n";
-            btnEditar.TextColor = Color.Transparent;
-            btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.BackColor = System.Drawing.Color.Teal;
+            this.btnEditar.BackgroundColor = System.Drawing.Color.Teal;
+            this.btnEditar.BorderColor = System.Drawing.Color.Teal;
+            this.btnEditar.BorderRadius = 15;
+            this.btnEditar.BorderSize = 2;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEditar.Location = new System.Drawing.Point(600, 428);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(111, 51);
+            this.btnEditar.TabIndex = 18;
+            this.btnEditar.Text = "Editar\r\ncliente\r\n";
+            this.btnEditar.TextColor = System.Drawing.Color.Transparent;
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // btnLiquidados
             // 
-            btnLiquidados.BackColor = Color.Teal;
-            btnLiquidados.BackgroundColor = Color.Teal;
-            btnLiquidados.BorderColor = Color.Teal;
-            btnLiquidados.BorderRadius = 15;
-            btnLiquidados.BorderSize = 2;
-            btnLiquidados.FlatAppearance.BorderSize = 0;
-            btnLiquidados.FlatStyle = FlatStyle.Flat;
-            btnLiquidados.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLiquidados.ForeColor = Color.Transparent;
-            btnLiquidados.Location = new Point(724, 68);
-            btnLiquidados.Name = "btnLiquidados";
-            btnLiquidados.Size = new Size(111, 53);
-            btnLiquidados.TabIndex = 15;
-            btnLiquidados.Text = "Clientes\r\nliquidados";
-            btnLiquidados.TextColor = Color.Transparent;
-            btnLiquidados.UseVisualStyleBackColor = false;
-            btnLiquidados.Click += btnLiquidados_Click;
+            this.btnLiquidados.BackColor = System.Drawing.Color.Teal;
+            this.btnLiquidados.BackgroundColor = System.Drawing.Color.Teal;
+            this.btnLiquidados.BorderColor = System.Drawing.Color.Teal;
+            this.btnLiquidados.BorderRadius = 15;
+            this.btnLiquidados.BorderSize = 2;
+            this.btnLiquidados.FlatAppearance.BorderSize = 0;
+            this.btnLiquidados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLiquidados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLiquidados.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLiquidados.Location = new System.Drawing.Point(724, 68);
+            this.btnLiquidados.Name = "btnLiquidados";
+            this.btnLiquidados.Size = new System.Drawing.Size(111, 53);
+            this.btnLiquidados.TabIndex = 15;
+            this.btnLiquidados.Text = "Clientes\r\nliquidados";
+            this.btnLiquidados.TextColor = System.Drawing.Color.Transparent;
+            this.btnLiquidados.UseVisualStyleBackColor = false;
             // 
             // btnMostrarTodos
             // 
-            btnMostrarTodos.BackColor = Color.DarkSlateGray;
-            btnMostrarTodos.BackgroundColor = Color.DarkSlateGray;
-            btnMostrarTodos.BorderColor = Color.DarkSlateGray;
-            btnMostrarTodos.BorderRadius = 15;
-            btnMostrarTodos.BorderSize = 2;
-            btnMostrarTodos.FlatAppearance.BorderSize = 0;
-            btnMostrarTodos.FlatStyle = FlatStyle.Flat;
-            btnMostrarTodos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMostrarTodos.ForeColor = Color.Transparent;
-            btnMostrarTodos.Location = new Point(600, 66);
-            btnMostrarTodos.Name = "btnMostrarTodos";
-            btnMostrarTodos.Size = new Size(111, 56);
-            btnMostrarTodos.TabIndex = 14;
-            btnMostrarTodos.Text = "Mostrar\r\ntodos";
-            btnMostrarTodos.TextColor = Color.Transparent;
-            btnMostrarTodos.UseVisualStyleBackColor = false;
-            btnMostrarTodos.Click += btnMostrarTodos_Click;
+            this.btnMostrarTodos.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMostrarTodos.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMostrarTodos.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMostrarTodos.BorderRadius = 15;
+            this.btnMostrarTodos.BorderSize = 2;
+            this.btnMostrarTodos.FlatAppearance.BorderSize = 0;
+            this.btnMostrarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMostrarTodos.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodos.Location = new System.Drawing.Point(600, 66);
+            this.btnMostrarTodos.Name = "btnMostrarTodos";
+            this.btnMostrarTodos.Size = new System.Drawing.Size(111, 56);
+            this.btnMostrarTodos.TabIndex = 14;
+            this.btnMostrarTodos.Text = "Mostrar\r\ntodos";
+            this.btnMostrarTodos.TextColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodos.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(296, 22);
-            label8.Name = "label8";
-            label8.Size = new Size(165, 24);
-            label8.TabIndex = 13;
-            label8.Text = "Seleccione la lista:";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(296, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(165, 24);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Seleccione la lista:";
             // 
             // btnLista3
             // 
-            btnLista3.BackColor = Color.SteelBlue;
-            btnLista3.BackgroundColor = Color.SteelBlue;
-            btnLista3.BorderColor = Color.SteelBlue;
-            btnLista3.BorderRadius = 15;
-            btnLista3.BorderSize = 2;
-            btnLista3.FlatAppearance.BorderSize = 0;
-            btnLista3.FlatStyle = FlatStyle.Flat;
-            btnLista3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLista3.ForeColor = Color.Transparent;
-            btnLista3.Location = new Point(716, 10);
-            btnLista3.Name = "btnLista3";
-            btnLista3.Size = new Size(127, 55);
-            btnLista3.TabIndex = 2;
-            btnLista3.Text = "Lista 3:\r\nDemanda legal";
-            btnLista3.TextColor = Color.Transparent;
-            btnLista3.UseVisualStyleBackColor = false;
-            btnLista3.Click += btnLista3_Click;
+            this.btnLista3.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLista3.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.btnLista3.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnLista3.BorderRadius = 15;
+            this.btnLista3.BorderSize = 2;
+            this.btnLista3.FlatAppearance.BorderSize = 0;
+            this.btnLista3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLista3.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLista3.Location = new System.Drawing.Point(716, 10);
+            this.btnLista3.Name = "btnLista3";
+            this.btnLista3.Size = new System.Drawing.Size(127, 55);
+            this.btnLista3.TabIndex = 2;
+            this.btnLista3.Text = "Lista 3:\r\nDemanda legal";
+            this.btnLista3.TextColor = System.Drawing.Color.Transparent;
+            this.btnLista3.UseVisualStyleBackColor = false;
             // 
             // btnLista2
             // 
-            btnLista2.BackColor = Color.Teal;
-            btnLista2.BackgroundColor = Color.Teal;
-            btnLista2.BorderColor = Color.Teal;
-            btnLista2.BorderRadius = 15;
-            btnLista2.BorderSize = 2;
-            btnLista2.FlatAppearance.BorderSize = 0;
-            btnLista2.FlatStyle = FlatStyle.Flat;
-            btnLista2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLista2.ForeColor = Color.Transparent;
-            btnLista2.Location = new Point(599, 10);
-            btnLista2.Name = "btnLista2";
-            btnLista2.Size = new Size(111, 55);
-            btnLista2.TabIndex = 1;
-            btnLista2.Text = "Lista 2:\r\nExtrajudicial";
-            btnLista2.TextColor = Color.Transparent;
-            btnLista2.UseVisualStyleBackColor = false;
-            btnLista2.Click += btnLista2_Click;
+            this.btnLista2.BackColor = System.Drawing.Color.Teal;
+            this.btnLista2.BackgroundColor = System.Drawing.Color.Teal;
+            this.btnLista2.BorderColor = System.Drawing.Color.Teal;
+            this.btnLista2.BorderRadius = 15;
+            this.btnLista2.BorderSize = 2;
+            this.btnLista2.FlatAppearance.BorderSize = 0;
+            this.btnLista2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLista2.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLista2.Location = new System.Drawing.Point(599, 10);
+            this.btnLista2.Name = "btnLista2";
+            this.btnLista2.Size = new System.Drawing.Size(111, 55);
+            this.btnLista2.TabIndex = 1;
+            this.btnLista2.Text = "Lista 2:\r\nExtrajudicial";
+            this.btnLista2.TextColor = System.Drawing.Color.Transparent;
+            this.btnLista2.UseVisualStyleBackColor = false;
             // 
             // btnLista1
             // 
-            btnLista1.BackColor = Color.DarkSlateGray;
-            btnLista1.BackgroundColor = Color.DarkSlateGray;
-            btnLista1.BorderColor = Color.DarkSlateGray;
-            btnLista1.BorderRadius = 15;
-            btnLista1.BorderSize = 2;
-            btnLista1.FlatAppearance.BorderSize = 0;
-            btnLista1.FlatStyle = FlatStyle.Flat;
-            btnLista1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLista1.ForeColor = Color.Transparent;
-            btnLista1.Location = new Point(482, 10);
-            btnLista1.Name = "btnLista1";
-            btnLista1.Size = new Size(111, 55);
-            btnLista1.TabIndex = 0;
-            btnLista1.Text = "Lista 1:\r\nIniciación";
-            btnLista1.TextColor = Color.Transparent;
-            btnLista1.UseVisualStyleBackColor = false;
-            btnLista1.Click += btnLista1_Click;
+            this.btnLista1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnLista1.BorderRadius = 15;
+            this.btnLista1.BorderSize = 2;
+            this.btnLista1.FlatAppearance.BorderSize = 0;
+            this.btnLista1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLista1.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLista1.Location = new System.Drawing.Point(482, 10);
+            this.btnLista1.Name = "btnLista1";
+            this.btnLista1.Size = new System.Drawing.Size(111, 55);
+            this.btnLista1.TabIndex = 0;
+            this.btnLista1.Text = "Lista 1:\r\nIniciación";
+            this.btnLista1.TextColor = System.Drawing.Color.Transparent;
+            this.btnLista1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(16, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(167, 24);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre completo:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(16, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre completo:";
             // 
             // txtNombre
             // 
-            txtNombre.BorderColor = Color.DarkSlateGray;
-            txtNombre.BorderFocusColor = SystemColors.Info;
-            txtNombre.BorderRadius = 0;
-            txtNombre.BorderSize = 2;
-            txtNombre.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(196, 22);
-            txtNombre.Multiline = false;
-            txtNombre.Name = "txtNombre";
-            txtNombre.Padding = new Padding(10, 7, 10, 7);
-            txtNombre.PasswordChar = false;
-            txtNombre.PlaceholderColor = Color.DimGray;
-            txtNombre.PlaceholderText = "Introduzca el nombre";
-            txtNombre.Size = new Size(351, 39);
-            txtNombre.TabIndex = 1;
-            txtNombre.Texts = "";
-            txtNombre.UnderlinedStyle = true;
+            this.txtNombre.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtNombre.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtNombre.BorderRadius = 0;
+            this.txtNombre.BorderSize = 2;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombre.Location = new System.Drawing.Point(196, 29);
+            this.txtNombre.Multiline = false;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNombre.PasswordChar = false;
+            this.txtNombre.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtNombre.PlaceholderText = "Introduzca el nombre";
+            this.txtNombre.Size = new System.Drawing.Size(351, 39);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.Texts = "";
+            this.txtNombre.UnderlinedStyle = true;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(16, 82);
-            label2.Name = "label2";
-            label2.Size = new Size(153, 24);
-            label2.TabIndex = 2;
-            label2.Text = "Crédito prestado:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(16, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Crédito prestado:";
             // 
             // txtCredito
             // 
-            txtCredito.BorderColor = Color.DarkSlateGray;
-            txtCredito.BorderFocusColor = SystemColors.Info;
-            txtCredito.BorderRadius = 0;
-            txtCredito.BorderSize = 2;
-            txtCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCredito.Location = new Point(196, 70);
-            txtCredito.Multiline = false;
-            txtCredito.Name = "txtCredito";
-            txtCredito.Padding = new Padding(10, 7, 10, 7);
-            txtCredito.PasswordChar = false;
-            txtCredito.PlaceholderColor = Color.DimGray;
-            txtCredito.PlaceholderText = "Introduzca monto total";
-            txtCredito.Size = new Size(355, 39);
-            txtCredito.TabIndex = 3;
-            txtCredito.Texts = "";
-            txtCredito.UnderlinedStyle = true;
+            this.txtCredito.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtCredito.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtCredito.BorderRadius = 0;
+            this.txtCredito.BorderSize = 2;
+            this.txtCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCredito.Location = new System.Drawing.Point(196, 83);
+            this.txtCredito.Multiline = false;
+            this.txtCredito.Name = "txtCredito";
+            this.txtCredito.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCredito.PasswordChar = false;
+            this.txtCredito.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtCredito.PlaceholderText = "Introduzca monto total";
+            this.txtCredito.Size = new System.Drawing.Size(355, 39);
+            this.txtCredito.TabIndex = 2;
+            this.txtCredito.Texts = "";
+            this.txtCredito.UnderlinedStyle = true;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(16, 143);
-            label3.Name = "label3";
-            label3.Size = new Size(145, 24);
-            label3.TabIndex = 4;
-            label3.Text = "Fecha de inicio:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(16, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Fecha de inicio:";
             // 
             // dateFechaInicio
             // 
-            dateFechaInicio.BorderColor = Color.DarkSlateGray;
-            dateFechaInicio.BorderSize = 2;
-            dateFechaInicio.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateFechaInicio.Format = DateTimePickerFormat.Short;
-            dateFechaInicio.Location = new Point(195, 140);
-            dateFechaInicio.MinimumSize = new Size(4, 35);
-            dateFechaInicio.Name = "dateFechaInicio";
-            dateFechaInicio.Size = new Size(287, 35);
-            dateFechaInicio.SkinColor = SystemColors.Info;
-            dateFechaInicio.TabIndex = 5;
-            dateFechaInicio.TextColor = Color.Black;
-            dateFechaInicio.ValueChanged += dateFechaInicio_ValueChanged;
+            this.dateFechaInicio.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.dateFechaInicio.BorderSize = 2;
+            this.dateFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaInicio.Location = new System.Drawing.Point(196, 139);
+            this.dateFechaInicio.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dateFechaInicio.Name = "dateFechaInicio";
+            this.dateFechaInicio.Size = new System.Drawing.Size(287, 35);
+            this.dateFechaInicio.SkinColor = System.Drawing.SystemColors.Info;
+            this.dateFechaInicio.TabIndex = 3;
+            this.dateFechaInicio.TextColor = System.Drawing.Color.Black;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(16, 204);
-            label4.Name = "label4";
-            label4.Size = new Size(71, 24);
-            label4.TabIndex = 6;
-            label4.Text = "Interés:";
-            // 
-            // txtInteres
-            // 
-            txtInteres.BorderColor = Color.DarkSlateGray;
-            txtInteres.BorderFocusColor = SystemColors.Info;
-            txtInteres.BorderRadius = 0;
-            txtInteres.BorderSize = 2;
-            txtInteres.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtInteres.Location = new Point(183, 194);
-            txtInteres.Multiline = false;
-            txtInteres.Name = "txtInteres";
-            txtInteres.Padding = new Padding(10, 7, 10, 7);
-            txtInteres.PasswordChar = false;
-            txtInteres.PlaceholderColor = Color.DimGray;
-            txtInteres.PlaceholderText = "Introduzca la tasa de interés";
-            txtInteres.Size = new Size(351, 39);
-            txtInteres.TabIndex = 7;
-            txtInteres.Texts = "";
-            txtInteres.UnderlinedStyle = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(16, 198);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 24);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Interés:";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(16, 265);
-            label5.Name = "label5";
-            label5.Size = new Size(128, 24);
-            label5.TabIndex = 8;
-            label5.Text = "Tipo de pago:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(16, 252);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 24);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tipo de pago:";
             // 
             // cmbTipo
             // 
-            cmbTipo.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbTipo.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbTipo.BackColor = SystemColors.Info;
-            cmbTipo.BorderColor = Color.DarkSlateGray;
-            cmbTipo.BorderSize = 2;
-            cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTipo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbTipo.ForeColor = Color.Black;
-            cmbTipo.IconColor = Color.DarkSlateGray;
-            cmbTipo.Items.AddRange(new object[] { "Semanales", "Quincenales" });
-            cmbTipo.ListBackColor = SystemColors.Info;
-            cmbTipo.ListTextColor = Color.DimGray;
-            cmbTipo.Location = new Point(181, 254);
-            cmbTipo.MinimumSize = new Size(200, 30);
-            cmbTipo.Name = "cmbTipo";
-            cmbTipo.Padding = new Padding(2);
-            cmbTipo.Size = new Size(316, 41);
-            cmbTipo.TabIndex = 9;
-            cmbTipo.Texts = "Seleccione un tipo de pago";
+            this.cmbTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTipo.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbTipo.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbTipo.BorderSize = 2;
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbTipo.ForeColor = System.Drawing.Color.Black;
+            this.cmbTipo.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "Semanales",
+            "Quincenales"});
+            this.cmbTipo.ListBackColor = System.Drawing.SystemColors.Info;
+            this.cmbTipo.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbTipo.Location = new System.Drawing.Point(196, 244);
+            this.cmbTipo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Padding = new System.Windows.Forms.Padding(2);
+            this.cmbTipo.Size = new System.Drawing.Size(316, 41);
+            this.cmbTipo.TabIndex = 5;
+            this.cmbTipo.Texts = "Seleccione un tipo de pago";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(16, 326);
-            label6.Name = "label6";
-            label6.Size = new Size(92, 24);
-            label6.TabIndex = 10;
-            label6.Text = "Promotor:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(16, 306);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 24);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Promotor:";
             // 
             // cmbPromotor
             // 
-            cmbPromotor.AutoCompleteCustomSource.AddRange(new string[] { "Ramona-la-nalgona", "Yael-el-licenciado" });
-            cmbPromotor.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbPromotor.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbPromotor.BackColor = SystemColors.Info;
-            cmbPromotor.BorderColor = Color.DarkSlateGray;
-            cmbPromotor.BorderSize = 2;
-            cmbPromotor.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbPromotor.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbPromotor.ForeColor = Color.Black;
-            cmbPromotor.IconColor = Color.DarkSlateGray;
-            cmbPromotor.Items.AddRange(new object[] { "Roberto la nalgona", "Ramona la vergiona" });
-            cmbPromotor.ListBackColor = SystemColors.Info;
-            cmbPromotor.ListTextColor = Color.DimGray;
-            cmbPromotor.Location = new Point(181, 318);
-            cmbPromotor.MinimumSize = new Size(200, 30);
-            cmbPromotor.Name = "cmbPromotor";
-            cmbPromotor.Padding = new Padding(2);
-            cmbPromotor.Size = new Size(316, 40);
-            cmbPromotor.TabIndex = 11;
-            cmbPromotor.Texts = "Seleccione al promotor";
+            this.cmbPromotor.AutoCompleteCustomSource.AddRange(new string[] {
+            "Ramona-la-nalgona",
+            "Yael-el-licenciado"});
+            this.cmbPromotor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbPromotor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbPromotor.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbPromotor.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbPromotor.BorderSize = 2;
+            this.cmbPromotor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPromotor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbPromotor.ForeColor = System.Drawing.Color.Black;
+            this.cmbPromotor.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbPromotor.Items.AddRange(new object[] {
+            "Roberto la nalgona",
+            "Ramona la vergiona"});
+            this.cmbPromotor.ListBackColor = System.Drawing.SystemColors.Info;
+            this.cmbPromotor.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbPromotor.Location = new System.Drawing.Point(196, 298);
+            this.cmbPromotor.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbPromotor.Name = "cmbPromotor";
+            this.cmbPromotor.Padding = new System.Windows.Forms.Padding(2);
+            this.cmbPromotor.Size = new System.Drawing.Size(316, 40);
+            this.cmbPromotor.TabIndex = 6;
+            this.cmbPromotor.Texts = "Seleccione al promotor";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(16, 378);
-            label7.Name = "label7";
-            label7.Size = new Size(204, 24);
-            label7.TabIndex = 12;
-            label7.Text = "Monto total con interés:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(16, 360);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(204, 24);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Monto total con interés:";
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = SystemColors.Info;
-            btnGuardar.BackgroundColor = SystemColors.Info;
-            btnGuardar.BorderColor = Color.DarkSlateGray;
-            btnGuardar.BorderRadius = 10;
-            btnGuardar.BorderSize = 2;
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.ForeColor = Color.Black;
-            btnGuardar.Location = new Point(626, 440);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(150, 40);
-            btnGuardar.TabIndex = 13;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.TextColor = Color.Black;
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
+            this.btnGuardar.BackColor = System.Drawing.SystemColors.Info;
+            this.btnGuardar.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.btnGuardar.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnGuardar.BorderRadius = 10;
+            this.btnGuardar.BorderSize = 2;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardar.Location = new System.Drawing.Point(626, 440);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(150, 40);
+            this.btnGuardar.TabIndex = 14;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextColor = System.Drawing.Color.Black;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(573, 22);
-            label9.Name = "label9";
-            label9.Size = new Size(95, 24);
-            label9.TabIndex = 14;
-            label9.Text = "Dirección:";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(573, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 24);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Dirección:";
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(573, 54);
-            label10.Name = "label10";
-            label10.Size = new Size(57, 24);
-            label10.TabIndex = 15;
-            label10.Text = "Calle:";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(573, 54);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(57, 24);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Calle:";
             // 
             // txtCalle
             // 
-            txtCalle.BorderColor = Color.DarkSlateGray;
-            txtCalle.BorderFocusColor = SystemColors.Info;
-            txtCalle.BorderRadius = 0;
-            txtCalle.BorderSize = 2;
-            txtCalle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCalle.Location = new Point(573, 79);
-            txtCalle.Multiline = false;
-            txtCalle.Name = "txtCalle";
-            txtCalle.Padding = new Padding(10, 7, 10, 7);
-            txtCalle.PasswordChar = false;
-            txtCalle.PlaceholderColor = Color.DimGray;
-            txtCalle.PlaceholderText = "Introduzca la calle";
-            txtCalle.Size = new Size(232, 39);
-            txtCalle.TabIndex = 16;
-            txtCalle.Texts = "";
-            txtCalle.UnderlinedStyle = true;
+            this.txtCalle.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtCalle.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtCalle.BorderRadius = 0;
+            this.txtCalle.BorderSize = 2;
+            this.txtCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCalle.Location = new System.Drawing.Point(573, 79);
+            this.txtCalle.Multiline = false;
+            this.txtCalle.Name = "txtCalle";
+            this.txtCalle.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCalle.PasswordChar = false;
+            this.txtCalle.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtCalle.PlaceholderText = "Introduzca la calle";
+            this.txtCalle.Size = new System.Drawing.Size(232, 39);
+            this.txtCalle.TabIndex = 8;
+            this.txtCalle.Texts = "";
+            this.txtCalle.UnderlinedStyle = true;
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(570, 129);
-            label11.Name = "label11";
-            label11.Size = new Size(79, 24);
-            label11.TabIndex = 17;
-            label11.Text = "Colonia:";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(570, 129);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 24);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Colonia:";
             // 
             // txtColonia
             // 
-            txtColonia.BorderColor = Color.DarkSlateGray;
-            txtColonia.BorderFocusColor = SystemColors.Info;
-            txtColonia.BorderRadius = 0;
-            txtColonia.BorderSize = 2;
-            txtColonia.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtColonia.Location = new Point(570, 154);
-            txtColonia.Multiline = false;
-            txtColonia.Name = "txtColonia";
-            txtColonia.Padding = new Padding(10, 7, 10, 7);
-            txtColonia.PasswordChar = false;
-            txtColonia.PlaceholderColor = Color.DimGray;
-            txtColonia.PlaceholderText = "Introduzca la colonia";
-            txtColonia.Size = new Size(232, 39);
-            txtColonia.TabIndex = 18;
-            txtColonia.Texts = "";
-            txtColonia.UnderlinedStyle = true;
+            this.txtColonia.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtColonia.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtColonia.BorderRadius = 0;
+            this.txtColonia.BorderSize = 2;
+            this.txtColonia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtColonia.Location = new System.Drawing.Point(570, 154);
+            this.txtColonia.Multiline = false;
+            this.txtColonia.Name = "txtColonia";
+            this.txtColonia.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtColonia.PasswordChar = false;
+            this.txtColonia.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtColonia.PlaceholderText = "Introduzca la colonia";
+            this.txtColonia.Size = new System.Drawing.Size(232, 39);
+            this.txtColonia.TabIndex = 9;
+            this.txtColonia.Texts = "";
+            this.txtColonia.UnderlinedStyle = true;
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(570, 203);
-            label12.Name = "label12";
-            label12.Size = new Size(90, 24);
-            label12.TabIndex = 19;
-            label12.Text = "Núm. int.:";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(570, 203);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(90, 24);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Núm. int.:";
             // 
             // txtNumInt
             // 
-            txtNumInt.BorderColor = Color.DarkSlateGray;
-            txtNumInt.BorderFocusColor = SystemColors.Info;
-            txtNumInt.BorderRadius = 0;
-            txtNumInt.BorderSize = 2;
-            txtNumInt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNumInt.Location = new Point(570, 228);
-            txtNumInt.Multiline = false;
-            txtNumInt.Name = "txtNumInt";
-            txtNumInt.Padding = new Padding(10, 7, 10, 7);
-            txtNumInt.PasswordChar = false;
-            txtNumInt.PlaceholderColor = Color.DimGray;
-            txtNumInt.PlaceholderText = "Num. int.";
-            txtNumInt.Size = new Size(101, 39);
-            txtNumInt.TabIndex = 20;
-            txtNumInt.Texts = "";
-            txtNumInt.UnderlinedStyle = true;
+            this.txtNumInt.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtNumInt.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtNumInt.BorderRadius = 0;
+            this.txtNumInt.BorderSize = 2;
+            this.txtNumInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumInt.Location = new System.Drawing.Point(570, 228);
+            this.txtNumInt.Multiline = false;
+            this.txtNumInt.Name = "txtNumInt";
+            this.txtNumInt.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNumInt.PasswordChar = false;
+            this.txtNumInt.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtNumInt.PlaceholderText = "Num. int.";
+            this.txtNumInt.Size = new System.Drawing.Size(101, 39);
+            this.txtNumInt.TabIndex = 10;
+            this.txtNumInt.Texts = "";
+            this.txtNumInt.UnderlinedStyle = true;
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(720, 204);
-            label13.Name = "label13";
-            label13.Size = new Size(96, 24);
-            label13.TabIndex = 21;
-            label13.Text = "Núm. ext.:";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(720, 204);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 24);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Núm. ext.:";
             // 
             // txtNumExt
             // 
-            txtNumExt.BorderColor = Color.DarkSlateGray;
-            txtNumExt.BorderFocusColor = SystemColors.Info;
-            txtNumExt.BorderRadius = 0;
-            txtNumExt.BorderSize = 2;
-            txtNumExt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNumExt.Location = new Point(720, 228);
-            txtNumExt.Multiline = false;
-            txtNumExt.Name = "txtNumExt";
-            txtNumExt.Padding = new Padding(10, 7, 10, 7);
-            txtNumExt.PasswordChar = false;
-            txtNumExt.PlaceholderColor = Color.DimGray;
-            txtNumExt.PlaceholderText = "Num. ext.";
-            txtNumExt.Size = new Size(101, 39);
-            txtNumExt.TabIndex = 22;
-            txtNumExt.Texts = "";
-            txtNumExt.UnderlinedStyle = true;
+            this.txtNumExt.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtNumExt.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtNumExt.BorderRadius = 0;
+            this.txtNumExt.BorderSize = 2;
+            this.txtNumExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNumExt.Location = new System.Drawing.Point(720, 228);
+            this.txtNumExt.Multiline = false;
+            this.txtNumExt.Name = "txtNumExt";
+            this.txtNumExt.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNumExt.PasswordChar = false;
+            this.txtNumExt.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtNumExt.PlaceholderText = "Num. ext.";
+            this.txtNumExt.Size = new System.Drawing.Size(101, 39);
+            this.txtNumExt.TabIndex = 11;
+            this.txtNumExt.Texts = "";
+            this.txtNumExt.UnderlinedStyle = true;
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(573, 278);
-            label14.Name = "label14";
-            label14.Size = new Size(90, 24);
-            label14.TabIndex = 23;
-            label14.Text = "Teléfono:";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(573, 278);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 24);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Teléfono:";
             // 
             // txtTelefono
             // 
-            txtTelefono.BorderColor = Color.DarkSlateGray;
-            txtTelefono.BorderFocusColor = SystemColors.Info;
-            txtTelefono.BorderRadius = 0;
-            txtTelefono.BorderSize = 2;
-            txtTelefono.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTelefono.Location = new Point(570, 303);
-            txtTelefono.Multiline = false;
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Padding = new Padding(10, 7, 10, 7);
-            txtTelefono.PasswordChar = false;
-            txtTelefono.PlaceholderColor = Color.DimGray;
-            txtTelefono.PlaceholderText = "Introduzca el núm. de tel.";
-            txtTelefono.Size = new Size(248, 39);
-            txtTelefono.TabIndex = 24;
-            txtTelefono.Texts = "";
-            txtTelefono.UnderlinedStyle = true;
+            this.txtTelefono.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtTelefono.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtTelefono.BorderRadius = 0;
+            this.txtTelefono.BorderSize = 2;
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTelefono.Location = new System.Drawing.Point(570, 303);
+            this.txtTelefono.Multiline = false;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtTelefono.PasswordChar = false;
+            this.txtTelefono.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtTelefono.PlaceholderText = "Introduzca el núm. de tel.";
+            this.txtTelefono.Size = new System.Drawing.Size(248, 39);
+            this.txtTelefono.TabIndex = 12;
+            this.txtTelefono.Texts = "";
+            this.txtTelefono.UnderlinedStyle = true;
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(570, 354);
-            label15.Name = "label15";
-            label15.Size = new Size(171, 24);
-            label15.TabIndex = 25;
-            label15.Text = "Correo electrónico:";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(570, 354);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(171, 24);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Correo electrónico:";
             // 
             // txtCorreo
             // 
-            txtCorreo.BorderColor = Color.DarkSlateGray;
-            txtCorreo.BorderFocusColor = SystemColors.Info;
-            txtCorreo.BorderRadius = 0;
-            txtCorreo.BorderSize = 2;
-            txtCorreo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCorreo.Location = new Point(570, 379);
-            txtCorreo.Multiline = false;
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Padding = new Padding(10, 7, 10, 7);
-            txtCorreo.PasswordChar = false;
-            txtCorreo.PlaceholderColor = Color.DimGray;
-            txtCorreo.PlaceholderText = "Introduzca el correo";
-            txtCorreo.Size = new Size(248, 39);
-            txtCorreo.TabIndex = 26;
-            txtCorreo.Texts = "";
-            txtCorreo.UnderlinedStyle = true;
+            this.txtCorreo.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txtCorreo.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.txtCorreo.BorderRadius = 0;
+            this.txtCorreo.BorderSize = 2;
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCorreo.Location = new System.Drawing.Point(570, 379);
+            this.txtCorreo.Multiline = false;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCorreo.PasswordChar = false;
+            this.txtCorreo.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtCorreo.PlaceholderText = "Introduzca el correo";
+            this.txtCorreo.Size = new System.Drawing.Size(248, 39);
+            this.txtCorreo.TabIndex = 13;
+            this.txtCorreo.Texts = "";
+            this.txtCorreo.UnderlinedStyle = true;
             // 
             // textBoxPersonalizado1
             // 
-            textBoxPersonalizado1.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado1.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado1.BorderRadius = 0;
-            textBoxPersonalizado1.BorderSize = 2;
-            textBoxPersonalizado1.Enabled = false;
-            textBoxPersonalizado1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado1.Location = new Point(249, 364);
-            textBoxPersonalizado1.Multiline = false;
-            textBoxPersonalizado1.Name = "textBoxPersonalizado1";
-            textBoxPersonalizado1.Padding = new Padding(10, 7, 10, 7);
-            textBoxPersonalizado1.PasswordChar = false;
-            textBoxPersonalizado1.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado1.PlaceholderText = "";
-            textBoxPersonalizado1.Size = new Size(234, 39);
-            textBoxPersonalizado1.TabIndex = 27;
-            textBoxPersonalizado1.Texts = "";
-            textBoxPersonalizado1.UnderlinedStyle = true;
+            this.textBoxPersonalizado1.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.textBoxPersonalizado1.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.textBoxPersonalizado1.BorderRadius = 0;
+            this.textBoxPersonalizado1.BorderSize = 2;
+            this.textBoxPersonalizado1.Enabled = false;
+            this.textBoxPersonalizado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPersonalizado1.Location = new System.Drawing.Point(258, 353);
+            this.textBoxPersonalizado1.Multiline = false;
+            this.textBoxPersonalizado1.Name = "textBoxPersonalizado1";
+            this.textBoxPersonalizado1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxPersonalizado1.PasswordChar = false;
+            this.textBoxPersonalizado1.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.textBoxPersonalizado1.PlaceholderText = "";
+            this.textBoxPersonalizado1.Size = new System.Drawing.Size(139, 39);
+            this.textBoxPersonalizado1.TabIndex = 27;
+            this.textBoxPersonalizado1.Texts = "";
+            this.textBoxPersonalizado1.UnderlinedStyle = true;
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(16, 417);
-            label16.Name = "label16";
-            label16.Size = new Size(236, 24);
-            label16.TabIndex = 28;
-            label16.Text = "Monto segun tipo de pago:";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(16, 414);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(236, 24);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Monto segun tipo de pago:";
             // 
             // textBoxPersonalizado2
             // 
-            textBoxPersonalizado2.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado2.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado2.BorderRadius = 0;
-            textBoxPersonalizado2.BorderSize = 2;
-            textBoxPersonalizado2.Enabled = false;
-            textBoxPersonalizado2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado2.Location = new Point(278, 406);
-            textBoxPersonalizado2.Multiline = false;
-            textBoxPersonalizado2.Name = "textBoxPersonalizado2";
-            textBoxPersonalizado2.Padding = new Padding(10, 7, 10, 7);
-            textBoxPersonalizado2.PasswordChar = false;
-            textBoxPersonalizado2.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado2.PlaceholderText = "";
-            textBoxPersonalizado2.Size = new Size(205, 39);
-            textBoxPersonalizado2.TabIndex = 29;
-            textBoxPersonalizado2.Texts = "";
-            textBoxPersonalizado2.UnderlinedStyle = true;
+            this.textBoxPersonalizado2.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.textBoxPersonalizado2.BorderFocusColor = System.Drawing.SystemColors.Info;
+            this.textBoxPersonalizado2.BorderRadius = 0;
+            this.textBoxPersonalizado2.BorderSize = 2;
+            this.textBoxPersonalizado2.Enabled = false;
+            this.textBoxPersonalizado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPersonalizado2.Location = new System.Drawing.Point(258, 406);
+            this.textBoxPersonalizado2.Multiline = false;
+            this.textBoxPersonalizado2.Name = "textBoxPersonalizado2";
+            this.textBoxPersonalizado2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textBoxPersonalizado2.PasswordChar = false;
+            this.textBoxPersonalizado2.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.textBoxPersonalizado2.PlaceholderText = "";
+            this.textBoxPersonalizado2.Size = new System.Drawing.Size(139, 39);
+            this.textBoxPersonalizado2.TabIndex = 29;
+            this.textBoxPersonalizado2.Texts = "";
+            this.textBoxPersonalizado2.UnderlinedStyle = true;
             // 
             // pnlClientes
             // 
-            pnlClientes.BackColor = SystemColors.Info;
-            pnlClientes.Controls.Add(btnCalcular);
-            pnlClientes.Controls.Add(textBoxPersonalizado2);
-            pnlClientes.Controls.Add(label16);
-            pnlClientes.Controls.Add(textBoxPersonalizado1);
-            pnlClientes.Controls.Add(txtCorreo);
-            pnlClientes.Controls.Add(label15);
-            pnlClientes.Controls.Add(txtTelefono);
-            pnlClientes.Controls.Add(label14);
-            pnlClientes.Controls.Add(txtNumExt);
-            pnlClientes.Controls.Add(label13);
-            pnlClientes.Controls.Add(txtNumInt);
-            pnlClientes.Controls.Add(label12);
-            pnlClientes.Controls.Add(txtColonia);
-            pnlClientes.Controls.Add(label11);
-            pnlClientes.Controls.Add(txtCalle);
-            pnlClientes.Controls.Add(label10);
-            pnlClientes.Controls.Add(label9);
-            pnlClientes.Controls.Add(btnGuardar);
-            pnlClientes.Controls.Add(label7);
-            pnlClientes.Controls.Add(cmbPromotor);
-            pnlClientes.Controls.Add(label6);
-            pnlClientes.Controls.Add(cmbTipo);
-            pnlClientes.Controls.Add(label5);
-            pnlClientes.Controls.Add(txtInteres);
-            pnlClientes.Controls.Add(label4);
-            pnlClientes.Controls.Add(dateFechaInicio);
-            pnlClientes.Controls.Add(label3);
-            pnlClientes.Controls.Add(txtCredito);
-            pnlClientes.Controls.Add(label2);
-            pnlClientes.Controls.Add(txtNombre);
-            pnlClientes.Controls.Add(label1);
-            pnlClientes.Dock = DockStyle.Fill;
-            pnlClientes.Location = new Point(0, 0);
-            pnlClientes.Name = "pnlClientes";
-            pnlClientes.Size = new Size(1087, 562);
-            pnlClientes.TabIndex = 2;
+            this.pnlClientes.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlClientes.Controls.Add(this.cmbInteres);
+            this.pnlClientes.Controls.Add(this.btnCalcular);
+            this.pnlClientes.Controls.Add(this.textBoxPersonalizado2);
+            this.pnlClientes.Controls.Add(this.label16);
+            this.pnlClientes.Controls.Add(this.textBoxPersonalizado1);
+            this.pnlClientes.Controls.Add(this.txtCorreo);
+            this.pnlClientes.Controls.Add(this.label15);
+            this.pnlClientes.Controls.Add(this.txtTelefono);
+            this.pnlClientes.Controls.Add(this.label14);
+            this.pnlClientes.Controls.Add(this.txtNumExt);
+            this.pnlClientes.Controls.Add(this.label13);
+            this.pnlClientes.Controls.Add(this.txtNumInt);
+            this.pnlClientes.Controls.Add(this.label12);
+            this.pnlClientes.Controls.Add(this.txtColonia);
+            this.pnlClientes.Controls.Add(this.label11);
+            this.pnlClientes.Controls.Add(this.txtCalle);
+            this.pnlClientes.Controls.Add(this.label10);
+            this.pnlClientes.Controls.Add(this.label9);
+            this.pnlClientes.Controls.Add(this.btnGuardar);
+            this.pnlClientes.Controls.Add(this.label7);
+            this.pnlClientes.Controls.Add(this.cmbPromotor);
+            this.pnlClientes.Controls.Add(this.label6);
+            this.pnlClientes.Controls.Add(this.cmbTipo);
+            this.pnlClientes.Controls.Add(this.label5);
+            this.pnlClientes.Controls.Add(this.label4);
+            this.pnlClientes.Controls.Add(this.dateFechaInicio);
+            this.pnlClientes.Controls.Add(this.label3);
+            this.pnlClientes.Controls.Add(this.txtCredito);
+            this.pnlClientes.Controls.Add(this.label2);
+            this.pnlClientes.Controls.Add(this.txtNombre);
+            this.pnlClientes.Controls.Add(this.label1);
+            this.pnlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlClientes.Location = new System.Drawing.Point(230, 60);
+            this.pnlClientes.Name = "pnlClientes";
+            this.pnlClientes.Size = new System.Drawing.Size(857, 502);
+            this.pnlClientes.TabIndex = 2;
+            // 
+            // cmbInteres
+            // 
+            this.cmbInteres.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbInteres.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbInteres.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbInteres.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbInteres.BorderSize = 2;
+            this.cmbInteres.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbInteres.ForeColor = System.Drawing.Color.Black;
+            this.cmbInteres.IconColor = System.Drawing.Color.DarkSlateGray;
+            this.cmbInteres.Items.AddRange(new object[] {
+            "7%",
+            "8%",
+            "10%"});
+            this.cmbInteres.ListBackColor = System.Drawing.SystemColors.Info;
+            this.cmbInteres.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbInteres.Location = new System.Drawing.Point(196, 190);
+            this.cmbInteres.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbInteres.Name = "cmbInteres";
+            this.cmbInteres.Padding = new System.Windows.Forms.Padding(2);
+            this.cmbInteres.Size = new System.Drawing.Size(316, 41);
+            this.cmbInteres.TabIndex = 4;
+            this.cmbInteres.Texts = "Seleccione un interés";
             // 
             // btnCalcular
             // 
-            btnCalcular.BackColor = SystemColors.Info;
-            btnCalcular.BackgroundColor = SystemColors.Info;
-            btnCalcular.BorderColor = Color.DarkSlateGray;
-            btnCalcular.BorderRadius = 10;
-            btnCalcular.BorderSize = 2;
-            btnCalcular.FlatAppearance.BorderSize = 0;
-            btnCalcular.FlatStyle = FlatStyle.Flat;
-            btnCalcular.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCalcular.ForeColor = Color.Black;
-            btnCalcular.Location = new Point(319, 448);
-            btnCalcular.Name = "btnCalcular";
-            btnCalcular.Size = new Size(132, 30);
-            btnCalcular.TabIndex = 30;
-            btnCalcular.Text = "Calcular";
-            btnCalcular.TextColor = Color.Black;
-            btnCalcular.UseVisualStyleBackColor = false;
-            btnCalcular.Click += btnCalcular_Click;
+            this.btnCalcular.BackColor = System.Drawing.SystemColors.Info;
+            this.btnCalcular.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.btnCalcular.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCalcular.BorderRadius = 10;
+            this.btnCalcular.BorderSize = 2;
+            this.btnCalcular.FlatAppearance.BorderSize = 0;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCalcular.ForeColor = System.Drawing.Color.Black;
+            this.btnCalcular.Location = new System.Drawing.Point(403, 445);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(132, 30);
+            this.btnCalcular.TabIndex = 7;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.TextColor = System.Drawing.Color.Black;
+            this.btnCalcular.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1087, 562);
-            Controls.Add(pnlRegPago);
-            Controls.Add(pnlListas);
-            Controls.Add(panelTitleBar);
-            Controls.Add(panelMenu);
-            Controls.Add(pnlClientes);
-            Name = "Form1";
-            Text = "FutureLending";
-            panelMenu.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panelTitleBar.ResumeLayout(false);
-            panelTitleBar.PerformLayout();
-            pnlRegPago.ResumeLayout(false);
-            pnlRegPago.PerformLayout();
-            pnlListas.ResumeLayout(false);
-            pnlListas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gridListas).EndInit();
-            pnlClientes.ResumeLayout(false);
-            pnlClientes.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1087, 562);
+            this.Controls.Add(this.pnlClientes);
+            this.Controls.Add(this.pnlRegPago);
+            this.Controls.Add(this.pnlListas);
+            this.Controls.Add(this.panelTitleBar);
+            this.Controls.Add(this.panelMenu);
+            this.Name = "Form1";
+            this.Text = "FutureLending";
+            this.panelMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
+            this.pnlRegPago.ResumeLayout(false);
+            this.pnlRegPago.PerformLayout();
+            this.pnlListas.ResumeLayout(false);
+            this.pnlListas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListas)).EndInit();
+            this.pnlClientes.ResumeLayout(false);
+            this.pnlClientes.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -1263,7 +1260,6 @@
         private Label label3;
         private Controles_personalizados.DateTimePickerPersonalizado dateFechaInicio;
         private Label label4;
-        private Controles_personalizados.TextBoxPersonalizado txtInteres;
         private Label label5;
         private ControlesPersonalizados.RJComboBox cmbTipo;
         private Label label6;
@@ -1292,5 +1288,6 @@
         private ControlesPersonalizados.RJComboBox CombBoxLista;
         private Label label17;
         private Label label18;
+        private ControlesPersonalizados.RJComboBox cmbInteres;
     }
 }

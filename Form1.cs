@@ -61,12 +61,12 @@ namespace FutureLending
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos obj = new Lectura_Base_Datos();
-            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, Convert.ToString(dateFechaInicio.Value.ToShortDateString()), txtInteres.Texts, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
+            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, Convert.ToString(dateFechaInicio.Value.ToShortDateString()), cmbInteres.Texts, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
             //Borrar datos para poder agregar de nuevo 
             txtNombre.Texts = "";
             txtCredito.Texts = "";
             dateFechaInicio.Value = DateTime.Now;
-            txtInteres.Texts = "";
+            cmbInteres.Texts = "";
             cmbTipo.Texts = "Seleccione un tipo de pago";
             cmbPromotor.Texts = "Seleccione al promotor";
             textBoxPersonalizado1.Texts = "";
@@ -142,7 +142,7 @@ namespace FutureLending
         {
             String credito = txtCredito.Texts;
             Double credito2 = Convert.ToDouble(credito);
-            String interes = txtInteres.Texts;
+            String interes = cmbInteres.Texts;
             Double interes2 = Convert.ToDouble(interes);
 
             Double tasa_interes = (interes2 * credito2) / 100;
