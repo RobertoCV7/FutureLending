@@ -61,7 +61,23 @@ namespace FutureLending
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos obj = new Lectura_Base_Datos();
-            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, Convert.ToString(dateFechaInicio.Value.ToShortDateString()), txtInteres.Texts, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex);
+            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, Convert.ToString(dateFechaInicio.Value.ToShortDateString()), txtInteres.Texts, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex,"0");
+            //Borrar datos para poder agregar de nuevo 
+            txtNombre.Texts = "";
+            txtCredito.Texts = "";
+            dateFechaInicio.Value = DateTime.Now;
+            txtInteres.Texts = "";
+            cmbTipo.Texts = "Seleccione un tipo de pago";
+            cmbPromotor.Texts = "Seleccione al promotor";
+            textBoxPersonalizado1.Texts = "";
+            textBoxPersonalizado2.Texts = "";
+            txtCalle.Texts = "";
+            txtColonia.Texts = "";
+            txtNumExt.Texts = "";
+            txtNumInt.Texts = "";
+            txtTelefono.Texts = "";
+            txtCorreo.Texts = "";
+
 
           }
 

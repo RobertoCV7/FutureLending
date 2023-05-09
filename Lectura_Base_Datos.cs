@@ -74,7 +74,7 @@ namespace FutureLending
                             fila[9] = reader.GetString("Telefono");
                             fila[10] = reader.GetString("Correo");
                             //Verifica si el tipo de pago es semanal (1) o quincenal (2)
-                            if (reader.GetInt32("Tipo_pago") == 1)
+                            if (reader.GetInt32("Tipo_pago") == 0)
                             {
                                 fila[11] = "Semanal";
                             }
@@ -167,7 +167,7 @@ namespace FutureLending
             return filasAfectadas;
         }
 
-        public void create(string lista,string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago)
+        public void create(string lista,string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Pagado)
         {
             DateTime fechaInicio = DateTime.Now;
             string fechainicio = fechaInicio.ToString("dd/MM/yyyy");
@@ -189,12 +189,12 @@ namespace FutureLending
             using (MySqlConnection connection = Conector())
             {
                 StringBuilder queryBuilder = new StringBuilder();
-                queryBuilder.Append("INSERT INTO "+lista+" (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago");
+                queryBuilder.Append("INSERT INTO "+lista+" (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Pagado");
                 for (int i = 1; i <= dias_de_pago.Length; i++)
                 {
                     queryBuilder.Append(", Fecha").Append(i);
                 }
-                queryBuilder.Append(") VALUES (@Nombre, @Credito, @Fecha_inicio, @Interes, @Promotor, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago");
+                queryBuilder.Append(") VALUES (@Nombre, @Credito, @Fecha_inicio, @Interes, @Promotor, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago, @Monto_Pagado");
                 for (int i = 0; i < dias_de_pago.Length; i++)
                 {
                     queryBuilder.Append(", @Fecha").Append(i + 1);
@@ -216,6 +216,7 @@ namespace FutureLending
                     command.Parameters.AddWithValue("@Telefono", Telefono);
                     command.Parameters.AddWithValue("@Correo", Correo);
                     command.Parameters.AddWithValue("@Tipo_pago", Tipo_pago);
+                    command.Parameters.AddWithValue("@Monto_Pagado", Monto_Pagado);
                     for (int i = 0; i < dias_de_pago.Length; i++)
                     {
                         command.Parameters.AddWithValue("@Fecha" + (i + 1), dias_de_pago[i]);
