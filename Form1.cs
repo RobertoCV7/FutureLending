@@ -8,11 +8,6 @@ namespace FutureLending
             CollapseMenu();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void CollapseMenu()
         {
             if (this.panelMenu.Width > 200) //Collapse menu
@@ -186,21 +181,6 @@ namespace FutureLending
             TablaClientes.MostrarTablaListas(tabla, gridListas);
         }
 
-        private void ComBoxName_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CombBoxLista_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateTime1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnMarcarP_Click(object sender, EventArgs e)
         {
             //Validar que se encuentre esa fecha
@@ -235,11 +215,6 @@ namespace FutureLending
             }
             //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
             //Si no pagan a tiempo el interes crece *** FALTA
-        }
-
-        private void dateFechaInicio_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

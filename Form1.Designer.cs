@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnTodosSistemas = new FontAwesome.Sharp.IconButton();
             this.btnEstadoPagos = new FontAwesome.Sharp.IconButton();
@@ -124,16 +124,16 @@
             // 
             // btnTodosSistemas
             // 
-            this.btnTodosSistemas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTodosSistemas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnTodosSistemas.FlatAppearance.BorderSize = 0;
             this.btnTodosSistemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTodosSistemas.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTodosSistemas.ForeColor = System.Drawing.Color.White;
-            this.btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Computer;
+            this.btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Wrench;
             this.btnTodosSistemas.IconColor = System.Drawing.Color.White;
             this.btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTodosSistemas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTodosSistemas.Location = new System.Drawing.Point(0, 317);
+            this.btnTodosSistemas.Location = new System.Drawing.Point(0, 501);
             this.btnTodosSistemas.Name = "btnTodosSistemas";
             this.btnTodosSistemas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTodosSistemas.Size = new System.Drawing.Size(230, 61);
@@ -142,6 +142,7 @@
             this.btnTodosSistemas.Text = "Ver estado de todos los sistemas";
             this.btnTodosSistemas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTodosSistemas.UseVisualStyleBackColor = true;
+            this.btnTodosSistemas.Click += new System.EventHandler(this.btnTodosSistemas_Click);
             // 
             // btnEstadoPagos
             // 
@@ -163,6 +164,7 @@
             this.btnEstadoPagos.Text = "  Estado de pagos";
             this.btnEstadoPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstadoPagos.UseVisualStyleBackColor = true;
+            this.btnEstadoPagos.Click += new System.EventHandler(this.btnEstadoPagos_Click);
             // 
             // btnListas
             // 
@@ -184,6 +186,7 @@
             this.btnListas.Text = "  Listas completas";
             this.btnListas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnListas.UseVisualStyleBackColor = true;
+            this.btnListas.Click += new System.EventHandler(this.btnListas_Click);
             // 
             // btnIngresarClientes
             // 
@@ -205,6 +208,7 @@
             this.btnIngresarClientes.Text = "   Ingresar clientes";
             this.btnIngresarClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIngresarClientes.UseVisualStyleBackColor = true;
+            this.btnIngresarClientes.Click += new System.EventHandler(this.btnIngresarClientes_Click);
             // 
             // panel1
             // 
@@ -229,6 +233,7 @@
             this.btnMenu.Size = new System.Drawing.Size(60, 60);
             this.btnMenu.TabIndex = 0;
             this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pictureBox1
             // 
@@ -287,7 +292,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(460, 305);
+            this.label18.Location = new System.Drawing.Point(599, 350);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(116, 24);
             this.label18.TabIndex = 36;
@@ -309,7 +314,7 @@
             "Lista 2"});
             this.CombBoxLista.ListBackColor = System.Drawing.SystemColors.Info;
             this.CombBoxLista.ListTextColor = System.Drawing.Color.DimGray;
-            this.CombBoxLista.Location = new System.Drawing.Point(164, 86);
+            this.CombBoxLista.Location = new System.Drawing.Point(258, 114);
             this.CombBoxLista.MinimumSize = new System.Drawing.Size(200, 30);
             this.CombBoxLista.Name = "CombBoxLista";
             this.CombBoxLista.Padding = new System.Windows.Forms.Padding(2);
@@ -321,7 +326,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(16, 100);
+            this.label17.Location = new System.Drawing.Point(16, 125);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(116, 24);
             this.label17.TabIndex = 34;
@@ -338,7 +343,7 @@
             this.btnMarcarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMarcarP.ForeColor = System.Drawing.Color.Black;
-            this.btnMarcarP.Location = new System.Drawing.Point(227, 360);
+            this.btnMarcarP.Location = new System.Drawing.Point(305, 405);
             this.btnMarcarP.Name = "btnMarcarP";
             this.btnMarcarP.Size = new System.Drawing.Size(242, 40);
             this.btnMarcarP.TabIndex = 33;
@@ -346,6 +351,7 @@
             this.btnMarcarP.TextColor = System.Drawing.Color.Black;
             this.btnMarcarP.UseVisualStyleBackColor = false;
             this.btnMarcarP.Visible = false;
+            this.btnMarcarP.Click += new System.EventHandler(this.btnMarcarP_Click);
             // 
             // DateTimeReg
             // 
@@ -353,7 +359,7 @@
             this.DateTimeReg.BorderSize = 2;
             this.DateTimeReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DateTimeReg.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimeReg.Location = new System.Drawing.Point(195, 301);
+            this.DateTimeReg.Location = new System.Drawing.Point(258, 345);
             this.DateTimeReg.MinimumSize = new System.Drawing.Size(4, 35);
             this.DateTimeReg.Name = "DateTimeReg";
             this.DateTimeReg.Size = new System.Drawing.Size(151, 35);
@@ -366,7 +372,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFecha.Location = new System.Drawing.Point(16, 304);
+            this.lblFecha.Location = new System.Drawing.Point(16, 350);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(156, 24);
             this.lblFecha.TabIndex = 31;
@@ -380,7 +386,7 @@
             this.txtBoxMonto.BorderRadius = 0;
             this.txtBoxMonto.BorderSize = 2;
             this.txtBoxMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBoxMonto.Location = new System.Drawing.Point(278, 228);
+            this.txtBoxMonto.Location = new System.Drawing.Point(258, 268);
             this.txtBoxMonto.Multiline = false;
             this.txtBoxMonto.Name = "txtBoxMonto";
             this.txtBoxMonto.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -397,7 +403,7 @@
             // 
             this.lblMonto.AutoSize = true;
             this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMonto.Location = new System.Drawing.Point(16, 243);
+            this.lblMonto.Location = new System.Drawing.Point(16, 275);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(232, 24);
             this.lblMonto.TabIndex = 29;
@@ -408,7 +414,7 @@
             // 
             this.lblCredito.AutoSize = true;
             this.lblCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCredito.Location = new System.Drawing.Point(17, 182);
+            this.lblCredito.Location = new System.Drawing.Point(16, 200);
             this.lblCredito.Name = "lblCredito";
             this.lblCredito.Size = new System.Drawing.Size(153, 24);
             this.lblCredito.TabIndex = 28;
@@ -422,7 +428,7 @@
             this.txtBoxCredito.BorderRadius = 0;
             this.txtBoxCredito.BorderSize = 2;
             this.txtBoxCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBoxCredito.Location = new System.Drawing.Point(196, 167);
+            this.txtBoxCredito.Location = new System.Drawing.Point(258, 193);
             this.txtBoxCredito.Multiline = false;
             this.txtBoxCredito.Name = "txtBoxCredito";
             this.txtBoxCredito.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -448,7 +454,7 @@
             this.ComBoxName.IconColor = System.Drawing.Color.DarkSlateGray;
             this.ComBoxName.ListBackColor = System.Drawing.SystemColors.Info;
             this.ComBoxName.ListTextColor = System.Drawing.Color.DimGray;
-            this.ComBoxName.Location = new System.Drawing.Point(213, 31);
+            this.ComBoxName.Location = new System.Drawing.Point(258, 38);
             this.ComBoxName.MinimumSize = new System.Drawing.Size(200, 30);
             this.ComBoxName.Name = "ComBoxName";
             this.ComBoxName.Padding = new System.Windows.Forms.Padding(2);
@@ -467,13 +473,14 @@
             this.btnBuscarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBuscarC.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscarC.Location = new System.Drawing.Point(585, 68);
+            this.btnBuscarC.Location = new System.Drawing.Point(655, 119);
             this.btnBuscarC.Name = "btnBuscarC";
             this.btnBuscarC.Size = new System.Drawing.Size(118, 36);
             this.btnBuscarC.TabIndex = 13;
             this.btnBuscarC.Text = "Buscar";
             this.btnBuscarC.TextColor = System.Drawing.Color.Black;
             this.btnBuscarC.UseVisualStyleBackColor = false;
+            this.btnBuscarC.Click += new System.EventHandler(this.btnBuscarC_Click);
             // 
             // label29
             // 
@@ -513,14 +520,14 @@
             this.gridListas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridListas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridListas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.gridListas.ColumnHeadersHeight = 30;
             this.gridListas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridListas.EnableHeadersVisualStyles = false;
@@ -529,12 +536,12 @@
             this.gridListas.Name = "gridListas";
             this.gridListas.RowHeadersVisible = false;
             this.gridListas.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
-            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.Info;
+            this.gridListas.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.gridListas.RowTemplate.Height = 25;
             this.gridListas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.gridListas.Size = new System.Drawing.Size(820, 297);
@@ -596,6 +603,7 @@
             this.btnLiquidados.Text = "Clientes\r\nliquidados";
             this.btnLiquidados.TextColor = System.Drawing.Color.Transparent;
             this.btnLiquidados.UseVisualStyleBackColor = false;
+            this.btnLiquidados.Click += new System.EventHandler(this.btnLiquidados_Click);
             // 
             // btnMostrarTodos
             // 
@@ -615,6 +623,7 @@
             this.btnMostrarTodos.Text = "Mostrar\r\ntodos";
             this.btnMostrarTodos.TextColor = System.Drawing.Color.Transparent;
             this.btnMostrarTodos.UseVisualStyleBackColor = false;
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // label8
             // 
@@ -644,6 +653,7 @@
             this.btnLista3.Text = "Lista 3:\r\nDemanda legal";
             this.btnLista3.TextColor = System.Drawing.Color.Transparent;
             this.btnLista3.UseVisualStyleBackColor = false;
+            this.btnLista3.Click += new System.EventHandler(this.btnLista3_Click);
             // 
             // btnLista2
             // 
@@ -663,6 +673,7 @@
             this.btnLista2.Text = "Lista 2:\r\nExtrajudicial";
             this.btnLista2.TextColor = System.Drawing.Color.Transparent;
             this.btnLista2.UseVisualStyleBackColor = false;
+            this.btnLista2.Click += new System.EventHandler(this.btnLista2_Click);
             // 
             // btnLista1
             // 
@@ -682,6 +693,7 @@
             this.btnLista1.Text = "Lista 1:\r\nIniciación";
             this.btnLista1.TextColor = System.Drawing.Color.Transparent;
             this.btnLista1.UseVisualStyleBackColor = false;
+            this.btnLista1.Click += new System.EventHandler(this.btnLista1_Click);
             // 
             // label1
             // 
@@ -874,6 +886,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextColor = System.Drawing.Color.Black;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label9
             // 
@@ -1192,15 +1205,16 @@
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.TextColor = System.Drawing.Color.Black;
             this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 562);
-            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.pnlListas);
+            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
