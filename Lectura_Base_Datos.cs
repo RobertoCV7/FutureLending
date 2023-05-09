@@ -260,10 +260,20 @@ namespace FutureLending
         {
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var tcs = new TaskCompletionSource<object>();
-            var process = Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarXampp.bat");
+            var processStartInfo = new ProcessStartInfo
+            {
+                FileName = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarMysql.bat",
+                CreateNoWindow = true,
+                UseShellExecute = false
+            };
+            var process = Process.Start(processStartInfo);
             process.EnableRaisingEvents = true;
             process.Exited += (s, e) => tcs.TrySetResult(null);
-            await tcs.Task;
+            await Task.WhenAny(tcs.Task, Task.Delay(3000)); // Espera hasta que se complete la tarea o hasta 3 segundos
+            if (!process.HasExited) // Si el proceso aún no se ha cerrado después de esperar 3 segundos
+            {
+                process.Kill(); // Forzar la finalización del proceso
+            }
             if (process.ExitCode != 0 && process.ExitCode != -1073741510)
             {
                 attempts--;
@@ -279,11 +289,12 @@ namespace FutureLending
                         attempts--;
                     }
                 }
+                MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
                 await Task.Run(() => Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat").WaitForExit());
                 cambio_puerto = true;
-                MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
             }
         }
+
 
     }
 }
