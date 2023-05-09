@@ -290,7 +290,14 @@ namespace FutureLending
                     }
                 }
                 MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
-                await Task.Run(() => Process.Start($"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat").WaitForExit());
+                var processStartInfo2 = new ProcessStartInfo
+                {
+                    FileName = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat",
+                    CreateNoWindow = true,
+                    UseShellExecute = false
+                };
+
+                await Task.Run(() => Process.Start(processStartInfo2));
                 cambio_puerto = true;
             }
         }
