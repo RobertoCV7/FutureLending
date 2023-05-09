@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2023 a las 23:24:10
+-- Tiempo de generación: 10-05-2023 a las 00:01:01
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -93,7 +93,8 @@ CREATE TABLE `lista1` (
 --
 
 INSERT INTO `lista1` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Pagado`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
-('x', 'x', 'x', 'x', '', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 2, '', 'x', 'x', 'x', 'x', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-');
+('x', 'x', 'x', 'x', '', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 2, 'x', 'x-x', 'x-x', 'x-x', 'x-x', 'x-x', 'x-x', 'x-x', '-', '-', '-', '-', '-', '-', '-'),
+('y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 0, 'y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-z', 'y-z', 'y-z', 'y-z', 'y-z', 'y-z', 'y-z');
 
 -- --------------------------------------------------------
 
@@ -146,6 +147,7 @@ CREATE TABLE `lista3` (
   `Num_ext` varchar(100) NOT NULL,
   `Telefono` varchar(12) NOT NULL,
   `Correo` varchar(30) NOT NULL,
+  `Tipo_pago` int(2) NOT NULL,
   `Monto_Pagado` varchar(100) NOT NULL,
   `Monto_Restante` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -154,8 +156,8 @@ CREATE TABLE `lista3` (
 -- Volcado de datos para la tabla `lista3`
 --
 
-INSERT INTO `lista3` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Monto_Pagado`, `Monto_Restante`) VALUES
-('b', 'b', 'b', 'b', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', '0', '0');
+INSERT INTO `lista3` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Pagado`, `Monto_Restante`) VALUES
+('b', 'b', 'b', 'b', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 0, '0', '0');
 
 --
 -- Índices para tablas volcadas
