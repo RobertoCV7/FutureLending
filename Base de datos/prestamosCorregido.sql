@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2023 a las 19:49:04
+-- Tiempo de generación: 09-05-2023 a las 19:25:10
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -33,6 +33,7 @@ CREATE TABLE `liquidados` (
   `Fecha_Inicio` varchar(100) NOT NULL,
   `Fecha_Ultimo_Pago` varchar(100) NOT NULL,
   `Interes` varchar(2) NOT NULL,
+  `Monto_Total` varchar(100) NOT NULL,
   `Promotor` varchar(100) NOT NULL,
   `Calle` varchar(100) NOT NULL,
   `Colonia` varchar(100) NOT NULL,
@@ -47,8 +48,8 @@ CREATE TABLE `liquidados` (
 -- Volcado de datos para la tabla `liquidados`
 --
 
-INSERT INTO `liquidados` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Fecha_Ultimo_Pago`, `Interes`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`) VALUES
-('b', 'b', 'b', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 2);
+INSERT INTO `liquidados` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Fecha_Ultimo_Pago`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`) VALUES
+('b', 'b', 'b', '', 'b', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 2);
 
 -- --------------------------------------------------------
 
@@ -61,6 +62,7 @@ CREATE TABLE `lista1` (
   `Credito_Prestado` varchar(100) NOT NULL,
   `Fecha_Inicio` varchar(100) NOT NULL,
   `Interes` varchar(2) NOT NULL,
+  `Monto_Total` varchar(100) NOT NULL,
   `Promotor` varchar(100) NOT NULL,
   `Calle` varchar(100) NOT NULL,
   `Colonia` varchar(100) NOT NULL,
@@ -90,8 +92,8 @@ CREATE TABLE `lista1` (
 -- Volcado de datos para la tabla `lista1`
 --
 
-INSERT INTO `lista1` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Pagado`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
-('x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 2, '', 'x', 'x', 'x', 'x', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-');
+INSERT INTO `lista1` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Pagado`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
+('x', 'x', 'x', 'x', '', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 2, '', 'x', 'x', 'x', 'x', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -104,6 +106,7 @@ CREATE TABLE `lista2` (
   `Credito_Prestado` varchar(100) NOT NULL,
   `Fecha_Inicio` varchar(100) NOT NULL,
   `Interes` varchar(2) NOT NULL,
+  `Monto_Total` varchar(100) NOT NULL,
   `Promotor` varchar(100) NOT NULL,
   `Calle` varchar(100) NOT NULL,
   `Colonia` varchar(100) NOT NULL,
@@ -120,8 +123,8 @@ CREATE TABLE `lista2` (
 -- Volcado de datos para la tabla `lista2`
 --
 
-INSERT INTO `lista2` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Monto_Pagado`, `Monto_Restante`, `Fecha_Limite`) VALUES
-('q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', '', '', '-');
+INSERT INTO `lista2` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Monto_Pagado`, `Monto_Restante`, `Fecha_Limite`) VALUES
+('q', 'q', 'q', 'q', '', 'q', 'q', 'q', 'q', 'q', 'q', 'q', '', '', '-');
 
 -- --------------------------------------------------------
 
@@ -134,6 +137,7 @@ CREATE TABLE `lista3` (
   `Credito_Prestado` varchar(100) NOT NULL,
   `Fecha_Inicio` varchar(100) NOT NULL,
   `Interes` varchar(2) NOT NULL,
+  `Monto_Total` varchar(100) NOT NULL,
   `Promotor` varchar(100) NOT NULL,
   `Calle` varchar(100) NOT NULL,
   `Colonia` varchar(100) NOT NULL,
@@ -149,8 +153,8 @@ CREATE TABLE `lista3` (
 -- Volcado de datos para la tabla `lista3`
 --
 
-INSERT INTO `lista3` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Monto_Pagado`, `Monto_Restante`) VALUES
-('b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', '0', '0');
+INSERT INTO `lista3` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Monto_Pagado`, `Monto_Restante`) VALUES
+('b', 'b', 'b', 'b', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', '0', '0');
 
 --
 -- Índices para tablas volcadas
