@@ -1,3 +1,3 @@
 @echo off
-cd /d D:\Aplicaciones\Xampp
+cd /d C:\Xampp
 call mysql_start.bat

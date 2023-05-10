@@ -58,28 +58,27 @@ namespace FutureLending
             Lectura_Base_Datos obj = new Lectura_Base_Datos();
             obj.create("lista1", txtNombre.Texts, txtCredito.Texts, Convert.ToString(dateFechaInicio.Value.ToShortDateString()), cmbInteres.Texts, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
             //Borrar datos para poder agregar de nuevo 
-            txtNombre.Texts = "";
-            txtCredito.Texts = "";
+            txtNombre.Text = "";
+            txtCredito.Text = "";
             dateFechaInicio.Value = DateTime.Now;
-            cmbInteres.Texts = "";
-            cmbTipo.Texts = "Seleccione un tipo de pago";
-            cmbPromotor.Texts = "Seleccione al promotor";
-            textBoxPersonalizado1.Texts = "";
-            textBoxPersonalizado2.Texts = "";
-            txtCalle.Texts = "";
-            txtColonia.Texts = "";
-            txtNumExt.Texts = "";
-            txtNumInt.Texts = "";
-            txtTelefono.Texts = "";
-            txtCorreo.Texts = "";
-
-
+            cmbInteres.SelectedIndex = -1;
+            cmbTipo.SelectedIndex = -1;
+            cmbPromotor.SelectedIndex = -1;
+            textBoxPersonalizado1.Text = "";
+            textBoxPersonalizado2.Text = "";
+            txtCalle.Text = "";
+            txtColonia.Text = "";
+            txtNumExt.Text = "";
+            txtNumInt.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
         }
 
         private void btnTodosSistemas_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            _ = instancia.CheckConnection();
+            instancia.reacomodo_de_scripts();
+            instancia.CheckConnection();
         }
 
         private void btnLista1_Click(object sender, EventArgs e)
@@ -137,24 +136,23 @@ namespace FutureLending
             String credito = txtCredito.Texts;
             Double credito2 = Convert.ToDouble(credito);
             String interes = cmbInteres.Texts;
-            Double interes2 = Convert.ToDouble(interes);
-
-            Double tasa_interes = (interes2 * credito2) / 100;
-            Double monto_total = credito2 + tasa_interes;
-
-            textBoxPersonalizado1.Texts = ("$") + monto_total.ToString();
-            Double monto_segun_tipo = 0;
-
-            if (cmbTipo.Texts == "Semanales")
+            string nuevoString = interes.Replace("%", ""); // Elimina los % para poder calcular
+            Double interes2 = Convert.ToDouble(nuevoString);
+            double tasa_interes = interes2 * credito2 / 100;
+            double monto_total = credito2 + tasa_interes;
+            textBoxPersonalizado1.Texts = $"${monto_total}";
+            double monto_segun_tipo = 0;
+            string tipo = cmbTipo.Texts;
+            if (tipo == "Semanales")
             {
                 monto_segun_tipo = monto_total / 14;
-                textBoxPersonalizado2.Texts = ("$") + monto_segun_tipo.ToString();
             }
-            if (cmbTipo.Texts == "Quincenales")
+            else if (tipo == "Quincenales")
             {
                 monto_segun_tipo = monto_total / 7;
-                textBoxPersonalizado2.Texts = ("$") + monto_segun_tipo.ToString();
             }
+            string total = monto_segun_tipo.ToString("N2");
+            textBoxPersonalizado2.Texts = $"${total}";
         }
 
         private void btnLista2_Click(object sender, EventArgs e)

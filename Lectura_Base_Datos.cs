@@ -12,6 +12,8 @@ using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Crypto.Tls;
 using System.Diagnostics;
 using System.Globalization;
+using System.Configuration;
+using Microsoft.Win32;
 
 namespace FutureLending
 {
@@ -25,12 +27,11 @@ namespace FutureLending
             string server = "localhost";
             int port = cambio_puerto ? 3307 : 3306;
             string database = "prestamos";
-            string uid = "root";
-            string pwd = "";
+            //mejora de seguridad
+            string uid = Properties.Settings1.Default.Usuario;
+            string pwd = Properties.Settings1.Default.Contraseña;
             string connectionString = $"server={server};port={port};database={database};uid={uid};pwd={pwd};";
-
             MySqlConnection connection = null;
-
             try
             {
                 // creamos la conexión
@@ -41,8 +42,7 @@ namespace FutureLending
             }
             catch (MySqlException ex)
             {
-                // en caso de error, manejamos la excepción y mostramos un mensaje al usuario
-                MessageBox.Show($"Error de conexión: {ex.Message}");
+                registro_errores(ex.ToString());
             }
 
             // devolvemos la conexión, puede ser nula en caso de error
@@ -52,112 +52,110 @@ namespace FutureLending
         public List<string[]> LectLista1()
         {
             List<string[]> datos = new List<string[]>();
+
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM lista1";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    try
                     {
-                        //Lee cada fila de datos en la base de datos
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            string[] fila = new string[42];
-                            fila[0] = reader.GetString("Nombre_Completo");
-                            fila[1] = reader.GetString("Credito_Prestado");
-                            fila[2] = reader.GetString("Fecha_Inicio");
-                            fila[3] = reader.GetString("Interes");
-                            fila[4] = reader.GetString("Monto_Total");
-                            fila[5] = reader.GetString("Promotor");
-                            fila[6] = reader.GetString("Calle");
-                            fila[7] = reader.GetString("Colonia");
-                            fila[8] = reader.GetString("Num_int");
-                            fila[9] = reader.GetString("Num_ext");
-                            fila[10] = reader.GetString("Telefono");
-                            fila[11] = reader.GetString("Correo");
-                            //Verifica si el tipo de pago es semanal (0) o quincenal (1)
-                            if (reader.GetInt32("Tipo_pago") == 0)
+                            while (reader.Read())
                             {
-                                fila[12] = "Semanal";
-                            }
-                            else
-                            {
-                                fila[12] = "Quincenal";
-                            }
-                            fila[13] = reader.GetString("Monto_Pagado");
-                            for (int i = 0; i < 14; i++)
-                            {
-                                string[] fechaYPago = reader.GetString("Fecha" + (i + 1)).Split("-");
-                                fila[14 + i * 2] = fechaYPago[0];
-                                fila[15 + i * 2] = fechaYPago[1];
-                                //En caso de que sólo tenga 7 fechas
-                                if (fila[14 + i * 2] == "")
+                                List<string> fila = new List<string>();
+
+                                fila.Add(reader.GetString("Nombre_Completo"));
+                                fila.Add(reader.GetString("Credito_Prestado"));
+                                fila.Add(reader.GetDateTime("Fecha_Inicio").ToShortDateString());
+                                fila.Add(reader.GetString("Interes"));
+                                fila.Add(reader.GetString("Monto_Total"));
+                                fila.Add(reader.GetString("Promotor"));
+                                fila.Add(reader.GetString("Calle"));
+                                fila.Add(reader.GetString("Colonia"));
+                                fila.Add(reader.GetString("Num_int"));
+                                fila.Add(reader.GetString("Num_ext"));
+                                fila.Add(reader.GetString("Telefono"));
+                                fila.Add(reader.GetString("Correo"));
+
+                                int tipoPago = reader.GetInt32("Tipo_pago");
+                                fila.Add((tipoPago == 0) ? "Semanal" : "Quincenal");
+
+                                fila.Add(reader.GetString("Monto_Pagado"));
+
+                                for (int i = 0; i < 7; i++)
                                 {
-                                    fila[14 + i * 2] = "-";
-                                    fila[15 + i * 2] = "-";
+                                    string fechaPago = reader.GetString("Fecha" + (i + 1));
+                                    string[] fechaYPago = fechaPago.Split("-");
+
+                                    fila.Add(fechaYPago[0]);
+                                    fila.Add(fechaYPago[1]);
+
+                                    if (string.IsNullOrEmpty(fila[fila.Count - 2]))
+                                    {
+                                        fila[fila.Count - 2] = "-";
+                                        fila[fila.Count - 1] = "-";
+                                    }
                                 }
+
+                                datos.Add(fila.ToArray());
                             }
-                            datos.Add(fila);
                         }
+                    }
+                    catch (Exception ex)
+                    {
+                        registro_errores(ex.ToString());
                     }
                 }
             }
-            /*
-            StringBuilder sb = new StringBuilder();
-            foreach (string[] fila in datos)
-            {
-                sb.Append(string.Join(".", fila));
-                sb.Append(Environment.NewLine);
-            }
-            return sb.ToString();
-            */
+
             return datos;
         }
 
         public List<string[]> LectLista2()
         {
             List<string[]> datos = new List<string[]>();
+
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM lista2";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    try
                     {
-                        //Lee cada fila de datos en la base de datos
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            string[] fila = new string[16];
-                            fila[0] = reader.GetString("Nombre_Completo");
-                            fila[1] = reader.GetString("Credito_Prestado");
-                            fila[2] = reader.GetString("Fecha_Inicio");
-                            fila[3] = reader.GetString("Interes");
-                            fila[4] = reader.GetString("Monto_Total");
-                            fila[5] = reader.GetString("Promotor");
-                            fila[6] = reader.GetString("Calle");
-                            fila[7] = reader.GetString("Colonia");
-                            fila[8] = reader.GetString("Num_int");
-                            fila[9] = reader.GetString("Num_ext");
-                            fila[10] = reader.GetString("Telefono");
-                            fila[11] = reader.GetString("Correo");
-                            //Verifica si el tipo de pago es semanal (0) o quincenal (1)
-                            if (reader.GetInt32("Tipo_pago") == 0)
+                            while (reader.Read())
                             {
-                                fila[12] = "Semanal";
+                                string[] fila = new string[16];
+                                fila[0] = reader.GetString("Nombre_Completo");
+                                fila[1] = reader.GetString("Credito_Prestado");
+                                fila[2] = reader.GetString("Fecha_Inicio");
+                                fila[3] = reader.GetString("Interes");
+                                fila[4] = reader.GetString("Monto_Total");
+                                fila[5] = reader.GetString("Promotor");
+                                fila[6] = reader.GetString("Calle");
+                                fila[7] = reader.GetString("Colonia");
+                                fila[8] = reader.GetString("Num_int");
+                                fila[9] = reader.GetString("Num_ext");
+                                fila[10] = reader.GetString("Telefono");
+                                fila[11] = reader.GetString("Correo");
+                                fila[12] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+                                fila[13] = reader.GetString("Monto_Pagado");
+                                fila[14] = reader.GetString("Monto_Restante");
+                                fila[15] = reader.GetString("Fecha_Limite");
+                                datos.Add(fila);
                             }
-                            else
-                            {
-                                fila[12] = "Quincenal";
-                            }
-                            fila[13] = reader.GetString("Monto_Pagado");
-                            fila[14] = reader.GetString("Monto_Restante");
-                            fila[15] = reader.GetString("Fecha_Limite");
-                            
-                            datos.Add(fila);
                         }
+                    }
+                    catch (Exception ex)
+                    {
+                        registro_errores(ex.ToString());
                     }
                 }
             }
+
             return datos;
         }
 
@@ -169,38 +167,38 @@ namespace FutureLending
                 string query = "SELECT * FROM lista3";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    try
                     {
-                        //Lee cada fila de datos en la base de datos
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            string[] fila = new string[15];
-                            fila[0] = reader.GetString("Nombre_Completo");
-                            fila[1] = reader.GetString("Credito_Prestado");
-                            fila[2] = reader.GetString("Fecha_Inicio");
-                            fila[3] = reader.GetString("Interes");
-                            fila[4] = reader.GetString("Monto_Total");
-                            fila[5] = reader.GetString("Promotor");
-                            fila[6] = reader.GetString("Calle");
-                            fila[7] = reader.GetString("Colonia");
-                            fila[8] = reader.GetString("Num_int");
-                            fila[9] = reader.GetString("Num_ext");
-                            fila[10] = reader.GetString("Telefono");
-                            fila[11] = reader.GetString("Correo");
-                            //Verifica si el tipo de pago es semanal (0) o quincenal (1)
-                            if (reader.GetInt32("Tipo_pago") == 0)
+                            //Lee cada fila de datos en la base de datos
+                            while (reader.Read())
                             {
-                                fila[12] = "Semanal";
-                            }
-                            else
-                            {
-                                fila[12] = "Quincenal";
-                            }
-                            fila[13] = reader.GetString("Monto_Pagado");
-                            fila[14] = reader.GetString("Monto_Restante");
+                                string[] fila = new string[15];
+                                fila[0] = reader.GetString("Nombre_Completo");
+                                fila[1] = reader.GetString("Credito_Prestado");
+                                fila[2] = reader.GetString("Fecha_Inicio");
+                                fila[3] = reader.GetString("Interes");
+                                fila[4] = reader.GetString("Monto_Total");
+                                fila[5] = reader.GetString("Promotor");
+                                fila[6] = reader.GetString("Calle");
+                                fila[7] = reader.GetString("Colonia");
+                                fila[8] = reader.GetString("Num_int");
+                                fila[9] = reader.GetString("Num_ext");
+                                fila[10] = reader.GetString("Telefono");
+                                fila[11] = reader.GetString("Correo");
+                                //Verifica si el tipo de pago es semanal (0) o quincenal (1)
+                                fila[12] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+                                fila[13] = reader.GetString("Monto_Pagado");
+                                fila[14] = reader.GetString("Monto_Restante");
 
-                            datos.Add(fila);
+                                datos.Add(fila);
+                            }
                         }
+                    }
+                    catch (Exception ex)
+                    {
+                        registro_errores(ex.ToString());
                     }
                 }
             }
@@ -215,120 +213,122 @@ namespace FutureLending
                 string query = "SELECT * FROM liquidados";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    try
                     {
-                        //Lee cada fila de datos en la base de datos
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            string[] fila = new string[14];
-                            fila[0] = reader.GetString("Nombre_Completo");
-                            fila[1] = reader.GetString("Credito_Prestado");
-                            fila[2] = reader.GetString("Fecha_Inicio");
-                            fila[3] = reader.GetString("Fecha_Ultimo_Pago");
-                            fila[4] = reader.GetString("Interes");
-                            fila[5] = reader.GetString("Monto_Total");
-                            fila[6] = reader.GetString("Promotor");
-                            fila[7] = reader.GetString("Calle");
-                            fila[8] = reader.GetString("Colonia");
-                            fila[9] = reader.GetString("Num_int");
-                            fila[10] = reader.GetString("Num_ext");
-                            fila[11] = reader.GetString("Telefono");
-                            fila[12] = reader.GetString("Correo");
-                            //Verifica si el tipo de pago es semanal (0) o quincenal (1)
-                            if (reader.GetInt32("Tipo_pago") == 0)
+                            //Lee cada fila de datos en la base de datos
+                            while (reader.Read())
                             {
-                                fila[13] = "Semanal";
+                                string[] fila = new string[14];
+                                fila[0] = reader.GetString("Nombre_Completo");
+                                fila[1] = reader.GetString("Credito_Prestado");
+                                fila[2] = reader.GetString("Fecha_Inicio");
+                                fila[3] = reader.GetString("Fecha_Ultimo_Pago");
+                                fila[4] = reader.GetString("Interes");
+                                fila[5] = reader.GetString("Monto_Total");
+                                fila[6] = reader.GetString("Promotor");
+                                fila[7] = reader.GetString("Calle");
+                                fila[8] = reader.GetString("Colonia");
+                                fila[9] = reader.GetString("Num_int");
+                                fila[10] = reader.GetString("Num_ext");
+                                fila[11] = reader.GetString("Telefono");
+                                fila[12] = reader.GetString("Correo");
+                                //Verifica si el tipo de pago es semanal (0) o quincenal (1)
+                                fila[13] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+                                datos.Add(fila);
                             }
-                            else
-                            {
-                                fila[13] = "Quincenal";
-                            }
-
-                            datos.Add(fila);
                         }
+                    }
+                    catch (Exception ex)
+                    {
+                        registro_errores(ex.ToString());
                     }
                 }
             }
             return datos;
         }
-
         public List<string[]> LectTodos(string tabla, string lista)
         {
             List<string[]> datos = new List<string[]>();
             using (MySqlConnection connection = Conector())
             {
-                //En la lista 1
-                string query = "SELECT * FROM " + tabla;
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                try
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    string query = "SELECT * FROM " + tabla;
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        //Lee cada fila de datos en la base de datos
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            string[] fila = new string[14];
-                            fila[0] = lista;
-                            fila[1] = reader.GetString("Nombre_Completo");
-                            fila[2] = reader.GetString("Credito_Prestado");
-                            fila[3] = reader.GetString("Fecha_Inicio");
-                            fila[4] = reader.GetString("Interes");
-                            fila[5] = reader.GetString("Monto_Total");
-                            fila[6] = reader.GetString("Promotor");
-                            fila[7] = reader.GetString("Calle");
-                            fila[8] = reader.GetString("Colonia");
-                            fila[9] = reader.GetString("Num_int");
-                            fila[10] = reader.GetString("Num_ext");
-                            fila[11] = reader.GetString("Telefono");
-                            fila[12] = reader.GetString("Correo");
-                            //Verifica si el tipo de pago es semanal (0) o quincenal (1)
-                            if (reader.GetInt32("Tipo_pago") == 0)
+                            //Lee cada fila de datos en la base de datos
+                            while (reader.Read())
                             {
-                                fila[13] = "Semanal";
+                                string[] fila = new string[14];
+                                fila[0] = lista;
+                                fila[1] = reader.GetString("Nombre_Completo");
+                                fila[2] = reader.GetString("Credito_Prestado");
+                                fila[3] = reader.GetString("Fecha_Inicio");
+                                fila[4] = reader.GetString("Interes");
+                                fila[5] = reader.GetString("Monto_Total");
+                                fila[6] = reader.GetString("Promotor");
+                                fila[7] = reader.GetString("Calle");
+                                fila[8] = reader.GetString("Colonia");
+                                fila[9] = reader.GetString("Num_int");
+                                fila[10] = reader.GetString("Num_ext");
+                                fila[11] = reader.GetString("Telefono");
+                                fila[12] = reader.GetString("Correo");
+                                //Verifica si el tipo de pago es semanal (0) o quincenal (1)
+                                fila[13] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+                                datos.Add(fila);
                             }
-                            else
-                            {
-                                fila[13] = "Quincenal";
-                            }
-
-                            datos.Add(fila);
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    registro_errores(ex.ToString());
                 }
             }
             return datos;
         }
-
         //Leer por un nombre en especifico 
         public string[] LectName(string tabla, string name)
         {
             string[] fila = new string[26];
             using (MySqlConnection connection = Conector())
             {
-                string query = "SELECT * FROM " + tabla + " WHERE Nombre_Completo = '" + name + "'";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                try
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    string query = "SELECT * FROM " + tabla + " WHERE Nombre_Completo = '" + name + "'";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            fila[0] = reader.GetString("Nombre_Completo");
-                            fila[1] = reader.GetString("Credito_Prestado");
-                            fila[2] = reader.GetString("Fecha_Inicio");
-                            fila[3] = reader.GetString("Interes");
-                            fila[4] = reader.GetString("Promotor");
-                            fila[5] = reader.GetString("Calle");
-                            fila[6] = reader.GetString("Colonia");
-                            fila[7] = reader.GetString("Num_int");
-                            fila[8] = reader.GetString("Num_ext");
-                            fila[9] = reader.GetString("Telefono");
-                            fila[10] = reader.GetString("Correo");
-                            fila[11] = reader.GetInt32("Tipo_pago").ToString();
-                            for (int i = 0; i < 14; i++)
+                            while (reader.Read())
                             {
-                                fila[i + 12] = reader.GetString("Fecha" + (i + 1));
+                                fila[0] = reader.GetString("Nombre_Completo");
+                                fila[1] = reader.GetString("Credito_Prestado");
+                                fila[2] = reader.GetString("Fecha_Inicio");
+                                fila[3] = reader.GetString("Interes");
+                                fila[4] = reader.GetString("Promotor");
+                                fila[5] = reader.GetString("Calle");
+                                fila[6] = reader.GetString("Colonia");
+                                fila[7] = reader.GetString("Num_int");
+                                fila[8] = reader.GetString("Num_ext");
+                                fila[9] = reader.GetString("Telefono");
+                                fila[10] = reader.GetString("Correo");
+                                fila[11] = reader.GetInt32("Tipo_pago").ToString();
+                                for (int i = 0; i < 14; i++)
+                                {
+                                    fila[i + 12] = reader.GetString("Fecha" + (i + 1));
+                                }
                             }
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    registro_errores(ex.ToString());
                 }
             }
             return fila;
@@ -360,7 +360,7 @@ namespace FutureLending
             return filasAfectadas;
         }
 
-        public void create(string lista,string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Pagado)
+        public void create(string lista, string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Pagado)
         {
             DateTime fechaInicio = DateTime.Now;
             string fechainicio = fechaInicio.ToString("dd/MM/yyyy");
@@ -378,11 +378,11 @@ namespace FutureLending
                     .Select(i => fechaInicio.AddDays(15 * i + 15).ToString("dd/MM/yyyy"))
                     .ToArray();
             }
-            
+
             using (MySqlConnection connection = Conector())
             {
                 StringBuilder queryBuilder = new StringBuilder();
-                queryBuilder.Append("INSERT INTO "+lista+" (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Pagado");
+                queryBuilder.Append("INSERT INTO " + lista + " (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Pagado");
                 for (int i = 1; i <= dias_de_pago.Length; i++)
                 {
                     queryBuilder.Append(", Fecha").Append(i);
@@ -414,12 +414,20 @@ namespace FutureLending
                     {
                         command.Parameters.AddWithValue("@Fecha" + (i + 1), dias_de_pago[i]);
                     }
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }catch(Exception ex)
+                    {
+                        registro_errores(ex.ToString());
+                    }
+                   
+                   
                 }
             }
         }
 
-        
+
 
 
         public async Task CheckConnection()
@@ -480,6 +488,7 @@ namespace FutureLending
                     catch (Exception ex)
                     {
                         attempts--;
+                        registro_errores(ex.ToString());
                     }
                 }
                 MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
@@ -495,6 +504,93 @@ namespace FutureLending
             }
         }
 
+       public void reacomodo_de_scripts()
+        {
+            string path = encontrar_xampp();
+            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string filePath = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarMysql.bat";
+            // Lee el contenido del archivo .bat
+            string contenido = File.ReadAllText(filePath);
+            // Verifica si el valor ya está presente en el archivo .bat
+            if (contenido.Contains("cd /d " + path))
+            {
+                Console.WriteLine("El valor ya está presente en el archivo .bat. No se realizaron modificaciones.");
+                return;
+            }
+            // Realiza las modificaciones necesarias
+            contenido = contenido.Replace("cd /d E:\\Xampp", "cd /d " + path);
+            // Guarda los cambios en el archivo
+            File.WriteAllText(filePath, contenido);
+        }
+
+        public string encontrar_xampp()
+        {
+            string xamppPath = GetXamppInstallationPath();
+            if (!string.IsNullOrEmpty(xamppPath))
+            {
+                return xamppPath;
+            }
+            else
+            {
+                return "c:/Xampp";
+            }
+        }
+
+        static string GetXamppInstallationPath()
+        {
+            string xamppRegistryPath = @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\XAMPP";
+
+            using (RegistryKey key = Registry.LocalMachine.OpenSubKey(xamppRegistryPath))
+            {
+                if (key != null)
+                {
+                    string installLocation = key.GetValue("InstallLocation") as string;
+                    if (!string.IsNullOrEmpty(installLocation))
+                    {
+                        return installLocation;
+                    }
+                }
+            }
+
+            // Buscar en todas las unidades en caso de no encontrar en el Registro
+            DriveInfo[] drives = DriveInfo.GetDrives();
+            foreach (DriveInfo drive in drives)
+            {
+                if (drive.DriveType == DriveType.Fixed && drive.IsReady)
+                {
+                    string drivePath = Path.Combine(drive.RootDirectory.FullName, "Xampp");
+                    if (Directory.Exists(drivePath))
+                    {
+                        return drivePath;
+                        
+                    }
+                }
+            }
+
+            return null;
+        }
+       private void registro_errores(string error)
+        {
+            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string logFilePath = $"{exeDirectory}\\Registro de Errores\\Errores.log";
+            try
+            {
+                // Crea un StreamWriter para escribir en el archivo de registro
+                using (StreamWriter writer = new StreamWriter(logFilePath, true))
+                {
+                    // Escribe la información del error en el archivo
+                    writer.WriteLine($"[{DateTime.Now}] Error: {error}");
+                }
+            }
+            catch (Exception ex)
+            {
+           
+            }
+
+        }
+    }
+
+
+   
 
     }
-}
