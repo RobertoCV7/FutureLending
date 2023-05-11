@@ -315,7 +315,7 @@
             CombBoxLista.Location = new Point(258, 114);
             CombBoxLista.MinimumSize = new Size(200, 30);
             CombBoxLista.Name = "CombBoxLista";
-            CombBoxLista.Padding = new Padding(2, 2, 2, 2);
+            CombBoxLista.Padding = new Padding(2);
             CombBoxLista.Size = new Size(298, 47);
             CombBoxLista.TabIndex = 35;
             CombBoxLista.Texts = "Introduzca lista";
@@ -457,7 +457,7 @@
             ComBoxName.Location = new Point(258, 38);
             ComBoxName.MinimumSize = new Size(200, 30);
             ComBoxName.Name = "ComBoxName";
-            ComBoxName.Padding = new Padding(2, 2, 2, 2);
+            ComBoxName.Padding = new Padding(2);
             ComBoxName.Size = new Size(337, 49);
             ComBoxName.TabIndex = 14;
             ComBoxName.Texts = "Introduzca nombre";
@@ -723,6 +723,7 @@
             txtNombre.TabIndex = 1;
             txtNombre.Texts = "";
             txtNombre.UnderlinedStyle = true;
+            txtNombre._TextChanged += ActivarBtnGuardar;
             // 
             // label2
             // 
@@ -752,7 +753,8 @@
             txtCredito.TabIndex = 2;
             txtCredito.Texts = "";
             txtCredito.UnderlinedStyle = true;
-            txtCredito.KeyPress += txtCredito_KeyPress;
+            txtCredito._TextChanged += ActivarBtnCalcular;
+            txtCredito.KeyPress += SoloNumerosDecimal;
             // 
             // label3
             // 
@@ -815,11 +817,12 @@
             cmbTipo.Location = new Point(196, 244);
             cmbTipo.MinimumSize = new Size(200, 30);
             cmbTipo.Name = "cmbTipo";
-            cmbTipo.Padding = new Padding(2, 2, 2, 2);
+            cmbTipo.Padding = new Padding(2);
             cmbTipo.Size = new Size(316, 41);
             cmbTipo.TabIndex = 5;
             cmbTipo.Tag = "Selecciones un tipo de pago";
             cmbTipo.Texts = "Seleccione un tipo de pago";
+            cmbTipo.OnSelectedIndexChanged += ActivarBtnCalcular;
             // 
             // label6
             // 
@@ -849,11 +852,12 @@
             cmbPromotor.Location = new Point(196, 298);
             cmbPromotor.MinimumSize = new Size(200, 30);
             cmbPromotor.Name = "cmbPromotor";
-            cmbPromotor.Padding = new Padding(2, 2, 2, 2);
+            cmbPromotor.Padding = new Padding(2);
             cmbPromotor.Size = new Size(316, 40);
             cmbPromotor.TabIndex = 6;
             cmbPromotor.Tag = "Seleccione al promotor";
             cmbPromotor.Texts = "Seleccione al promotor";
+            cmbPromotor.OnSelectedIndexChanged += ActivarBtnGuardar;
             // 
             // label7
             // 
@@ -872,6 +876,7 @@
             btnGuardar.BorderColor = Color.DarkSlateGray;
             btnGuardar.BorderRadius = 10;
             btnGuardar.BorderSize = 2;
+            btnGuardar.Enabled = false;
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -923,6 +928,7 @@
             txtCalle.TabIndex = 8;
             txtCalle.Texts = "";
             txtCalle.UnderlinedStyle = true;
+            txtCalle._TextChanged += ActivarBtnGuardar;
             // 
             // label11
             // 
@@ -952,6 +958,7 @@
             txtColonia.TabIndex = 9;
             txtColonia.Texts = "";
             txtColonia.UnderlinedStyle = true;
+            txtColonia._TextChanged += ActivarBtnGuardar;
             // 
             // label12
             // 
@@ -981,6 +988,8 @@
             txtNumInt.TabIndex = 10;
             txtNumInt.Texts = "";
             txtNumInt.UnderlinedStyle = true;
+            txtNumInt._TextChanged += ActivarBtnGuardar;
+            txtNumInt.KeyPress += SoloNumerosEnteros;
             // 
             // label13
             // 
@@ -1010,6 +1019,8 @@
             txtNumExt.TabIndex = 11;
             txtNumExt.Texts = "";
             txtNumExt.UnderlinedStyle = true;
+            txtNumExt._TextChanged += ActivarBtnGuardar;
+            txtNumExt.KeyPress += SoloNumerosEnteros;
             // 
             // label14
             // 
@@ -1039,6 +1050,8 @@
             txtTelefono.TabIndex = 12;
             txtTelefono.Texts = "";
             txtTelefono.UnderlinedStyle = true;
+            txtTelefono._TextChanged += ActivarBtnGuardar;
+            txtTelefono.KeyPress += SoloNumerosEnteros;
             // 
             // label15
             // 
@@ -1068,6 +1081,7 @@
             txtCorreo.TabIndex = 13;
             txtCorreo.Texts = "";
             txtCorreo.UnderlinedStyle = true;
+            txtCorreo._TextChanged += ActivarBtnGuardar;
             // 
             // txtTotal
             // 
@@ -1088,6 +1102,7 @@
             txtTotal.TabIndex = 27;
             txtTotal.Texts = "";
             txtTotal.UnderlinedStyle = true;
+            txtTotal._TextChanged += ActivarBtnGuardar;
             // 
             // label16
             // 
@@ -1118,6 +1133,7 @@
             txtTotal_I.TabIndex = 29;
             txtTotal_I.Texts = "";
             txtTotal_I.UnderlinedStyle = true;
+            txtTotal_I._TextChanged += ActivarBtnGuardar;
             // 
             // pnlClientes
             // 
@@ -1177,11 +1193,12 @@
             cmbInteres.Location = new Point(196, 190);
             cmbInteres.MinimumSize = new Size(200, 30);
             cmbInteres.Name = "cmbInteres";
-            cmbInteres.Padding = new Padding(2, 2, 2, 2);
+            cmbInteres.Padding = new Padding(2);
             cmbInteres.Size = new Size(316, 41);
             cmbInteres.TabIndex = 4;
             cmbInteres.Tag = "Seleccione un interés";
             cmbInteres.Texts = "Seleccione un interés";
+            cmbInteres.OnSelectedIndexChanged += ActivarBtnCalcular;
             // 
             // btnCalcular
             // 
@@ -1190,6 +1207,7 @@
             btnCalcular.BorderColor = Color.DarkSlateGray;
             btnCalcular.BorderRadius = 10;
             btnCalcular.BorderSize = 2;
+            btnCalcular.Enabled = false;
             btnCalcular.FlatAppearance.BorderSize = 0;
             btnCalcular.FlatStyle = FlatStyle.Flat;
             btnCalcular.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);

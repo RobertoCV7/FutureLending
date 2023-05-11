@@ -222,7 +222,9 @@ namespace FutureLending
 
         }
 
-        private void txtCredito_KeyPress(object sender, KeyPressEventArgs e)
+        #region Llenado de datos y verificación *Ingresar clientes*
+
+        private void SoloNumerosDecimal(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
@@ -231,6 +233,14 @@ namespace FutureLending
 
             // solo 1 punto decimal
             if ((e.KeyChar == '.') && ((sender as Controles_personalizados.TextBoxPersonalizado).Texts.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SoloNumerosEnteros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -254,7 +264,7 @@ namespace FutureLending
             foreach (ControlesPersonalizados.RJComboBox cmbDato in
                 pnlClientes.Controls.OfType<ControlesPersonalizados.RJComboBox>())
             {
-                if (cmbDato.Texts == cmbDato.Tag.ToString())
+                if (cmbDato.SelectedIndex == -1)
                 {
                     activar = false;
                     return activar;
@@ -263,7 +273,7 @@ namespace FutureLending
             return activar;
         }
 
-        private void ActivarBtnGuardar()
+        private void ActivarBtnGuardar(object sender, EventArgs e)
         {
             btnGuardar.Enabled = VerificarLlenadoGuardar();
         }
@@ -279,8 +289,8 @@ namespace FutureLending
                 return activar;
             }
             //ComboBox
-            if (cmbInteres.Texts == cmbInteres.Tag.ToString() &&
-                cmbTipo.Texts == cmbTipo.Tag.ToString())
+            if (cmbInteres.SelectedIndex == -1 ||
+                cmbTipo.SelectedIndex == -1)
             {
                 activar = false;
                 return activar;
@@ -288,9 +298,11 @@ namespace FutureLending
             return activar;
         }
 
-        private void ActivarBtnCalcular()
+        private void ActivarBtnCalcular(object sender, EventArgs e)
         {
             btnCalcular.Enabled = VerificarLlenadoCalcular();
         }
+
+        #endregion
     }
 }
