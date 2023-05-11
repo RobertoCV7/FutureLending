@@ -1,3 +1,5 @@
+using Org.BouncyCastle.Utilities;
+
 namespace FutureLending
 {
     public partial class Form1 : Form
@@ -56,22 +58,24 @@ namespace FutureLending
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos obj = new Lectura_Base_Datos();
-            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, Convert.ToString(dateFechaInicio.Value.ToShortDateString()), cmbInteres.Texts, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
+            string Interes = cmbInteres.Texts.Replace("%", "");
+            string MontoTotal = txtTotal.Texts.Replace("$", "");
+            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
             //Borrar datos para poder agregar de nuevo 
-            txtNombre.Text = "";
-            txtCredito.Text = "";
+            txtNombre.Texts = "";
+            txtCredito.Texts = "";
             dateFechaInicio.Value = DateTime.Now;
-            cmbInteres.SelectedIndex = -1;
-            cmbTipo.SelectedIndex = -1;
-            cmbPromotor.SelectedIndex = -1;
-            textBoxPersonalizado1.Text = "";
-            textBoxPersonalizado2.Text = "";
-            txtCalle.Text = "";
-            txtColonia.Text = "";
-            txtNumExt.Text = "";
-            txtNumInt.Text = "";
-            txtTelefono.Text = "";
-            txtCorreo.Text = "";
+            cmbInteres.Texts = "Seleccione un interés";
+            cmbTipo.Texts = "Seleccione un tipo de pago";
+            cmbPromotor.Texts = "Seleccione al promotor";
+            txtTotal.Texts = "";
+            txtTotal_I.Texts = "";
+            txtCalle.Texts = "";
+            txtColonia.Texts = "";
+            txtNumExt.Texts = "";
+            txtNumInt.Texts = "";
+            txtTelefono.Texts = "";
+            txtCorreo.Texts = "";
         }
 
         private void btnTodosSistemas_Click(object sender, EventArgs e)
@@ -140,7 +144,7 @@ namespace FutureLending
             Double interes2 = Convert.ToDouble(nuevoString);
             double tasa_interes = interes2 * credito2 / 100;
             double monto_total = credito2 + tasa_interes;
-            textBoxPersonalizado1.Texts = $"${monto_total}";
+            txtTotal.Texts = $"${monto_total}";
             double monto_segun_tipo = 0;
             string tipo = cmbTipo.Texts;
             if (tipo == "Semanales")
@@ -152,7 +156,7 @@ namespace FutureLending
                 monto_segun_tipo = monto_total / 7;
             }
             string total = monto_segun_tipo.ToString("N2");
-            textBoxPersonalizado2.Texts = $"${total}";
+            txtTotal_I.Texts = $"${total}";
         }
 
         private void btnLista2_Click(object sender, EventArgs e)
@@ -209,6 +213,11 @@ namespace FutureLending
             }
             //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
             //Si no pagan a tiempo el interes crece *** FALTA
+        }
+
+        private void pnlClientes_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

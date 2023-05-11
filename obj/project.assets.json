@@ -1738,23 +1738,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\donne\\.nuget\\packages\\": {},
-    "E:\\Visual studio\\cosas\\NuGetPackages": {}
+    "C:\\Users\\yarel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\donne\\FutureLending\\FutureLending.csproj",
+      "projectUniqueName": "C:\\Users\\yarel\\FutureLending\\FutureLending.csproj",
       "projectName": "FutureLending",
-      "projectPath": "C:\\Users\\donne\\FutureLending\\FutureLending.csproj",
-      "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\donne\\FutureLending\\obj\\",
+      "projectPath": "C:\\Users\\yarel\\FutureLending\\FutureLending.csproj",
+      "packagesPath": "C:\\Users\\yarel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yarel\\FutureLending\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Visual studio\\cosas\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\donne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yarel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1763,6 +1763,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1809,7 +1810,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

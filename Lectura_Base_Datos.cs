@@ -64,42 +64,41 @@ namespace FutureLending
                         {
                             while (reader.Read())
                             {
-                                List<string> fila = new List<string>();
 
-                                fila.Add(reader.GetString("Nombre_Completo"));
-                                fila.Add(reader.GetString("Credito_Prestado"));
-                                fila.Add(reader.GetDateTime("Fecha_Inicio").ToShortDateString());
-                                fila.Add(reader.GetString("Interes"));
-                                fila.Add(reader.GetString("Monto_Total"));
-                                fila.Add(reader.GetString("Promotor"));
-                                fila.Add(reader.GetString("Calle"));
-                                fila.Add(reader.GetString("Colonia"));
-                                fila.Add(reader.GetString("Num_int"));
-                                fila.Add(reader.GetString("Num_ext"));
-                                fila.Add(reader.GetString("Telefono"));
-                                fila.Add(reader.GetString("Correo"));
+                                string[] fila = new string[42];
+                                fila[0] = reader.GetString("Nombre_Completo");
+                                fila[1] = reader.GetString("Credito_Prestado");
+                                fila[2] = reader.GetString("Fecha_Inicio");
+                                fila[3] = reader.GetString("Interes");
+                                fila[4] = reader.GetString("Monto_Total");
+                                fila[5] = reader.GetString("Promotor");
+                                fila[6] = reader.GetString("Calle");
+                                fila[7] = reader.GetString("Colonia");
+                                fila[8] = reader.GetString("Num_int");
+                                fila[9] = reader.GetString("Num_ext");
+                                fila[10] = reader.GetString("Telefono");
+                                fila[11] = reader.GetString("Correo");
 
+                                //Verifica si el tipo de pago es semanal (0) o quincenal (1)
                                 int tipoPago = reader.GetInt32("Tipo_pago");
-                                fila.Add((tipoPago == 0) ? "Semanal" : "Quincenal");
+                                fila[12] = ((tipoPago == 0) ? "Semanal" : "Quincenal");
 
-                                fila.Add(reader.GetString("Monto_Pagado"));
+                                fila[13] = (reader.GetString("Monto_Pagado"));
 
-                                for (int i = 0; i < 7; i++)
+                                for (int i = 0; i < 14; i++)
                                 {
-                                    string fechaPago = reader.GetString("Fecha" + (i + 1));
-                                    string[] fechaYPago = fechaPago.Split("-");
-
-                                    fila.Add(fechaYPago[0]);
-                                    fila.Add(fechaYPago[1]);
-
-                                    if (string.IsNullOrEmpty(fila[fila.Count - 2]))
+                                    string[] fechaYPago = reader.GetString("Fecha" + (i + 1)).Split("-");
+                                    fila[14 + i * 2] = fechaYPago[0];
+                                    fila[15 + i * 2] = fechaYPago[1];
+                                    //En caso de que sólo tenga 7 fechas
+                                    if (fila[14 + i * 2] == "")
                                     {
-                                        fila[fila.Count - 2] = "-";
-                                        fila[fila.Count - 1] = "-";
+                                        fila[14 + i * 2] = "-";
+                                        fila[15 + i * 2] = "-";
                                     }
                                 }
 
-                                datos.Add(fila.ToArray());
+                                datos.Add(fila);
                             }
                         }
                     }
@@ -360,9 +359,9 @@ namespace FutureLending
             return filasAfectadas;
         }
 
-        public void create(string lista, string Nombre, string Credito, string Fecha_inicio, string Interes, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Pagado)
+        public void create(string lista, string Nombre, string Credito, DateTime Fecha_inicio, string Interes, string Monto_Total, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Pagado)
         {
-            DateTime fechaInicio = DateTime.Now;
+            DateTime fechaInicio = Fecha_inicio;
             string fechainicio = fechaInicio.ToString("dd/MM/yyyy");
 
             string[] dias_de_pago;
@@ -382,25 +381,25 @@ namespace FutureLending
             using (MySqlConnection connection = Conector())
             {
                 StringBuilder queryBuilder = new StringBuilder();
-                queryBuilder.Append("INSERT INTO " + lista + " (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Pagado");
-                for (int i = 1; i <= dias_de_pago.Length; i++)
+                queryBuilder.Append("INSERT INTO " + lista + " (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Pagado");
+                for (int i = 1; i <= 14; i++)
                 {
                     queryBuilder.Append(", Fecha").Append(i);
                 }
-                queryBuilder.Append(") VALUES (@Nombre, @Credito, @Fecha_inicio, @Interes, @Promotor, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago, @Monto_Pagado");
-                for (int i = 0; i < dias_de_pago.Length; i++)
+                queryBuilder.Append(") VALUES (@Nombre, @Credito, @Fecha_inicio, @Interes, @Monto_Total, @Promotor, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago, @Monto_Pagado");
+                for (int i = 0; i < 14; i++)
                 {
                     queryBuilder.Append(", @Fecha").Append(i + 1);
                 }
                 queryBuilder.Append(")");
                 string query = queryBuilder.ToString();
-
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Nombre", Nombre);
                     command.Parameters.AddWithValue("@Credito", Credito);
-                    command.Parameters.AddWithValue("@Fecha_inicio", Fecha_inicio);
+                    command.Parameters.AddWithValue("@Fecha_inicio", fechainicio);
                     command.Parameters.AddWithValue("@Interes", Interes);
+                    command.Parameters.AddWithValue("@Monto_Total", Monto_Total);
                     command.Parameters.AddWithValue("@Promotor", Promotor);
                     command.Parameters.AddWithValue("@Calle", Calle);
                     command.Parameters.AddWithValue("@Colonia", Colonia);
@@ -412,7 +411,14 @@ namespace FutureLending
                     command.Parameters.AddWithValue("@Monto_Pagado", Monto_Pagado);
                     for (int i = 0; i < dias_de_pago.Length; i++)
                     {
-                        command.Parameters.AddWithValue("@Fecha" + (i + 1), dias_de_pago[i]);
+                        command.Parameters.AddWithValue("@Fecha" + (i + 1), dias_de_pago[i] + "-");
+                    }
+                    if(Tipo_pago == 1)
+                    {
+                        for(int i = 7; i < 14; i++)
+                        {
+                            command.Parameters.AddWithValue("@Fecha" + (i + 1), "-");
+                        }
                     }
                     try
                     {

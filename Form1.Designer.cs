@@ -91,9 +91,9 @@
             txtTelefono = new Controles_personalizados.TextBoxPersonalizado();
             label15 = new Label();
             txtCorreo = new Controles_personalizados.TextBoxPersonalizado();
-            textBoxPersonalizado1 = new Controles_personalizados.TextBoxPersonalizado();
+            txtTotal = new Controles_personalizados.TextBoxPersonalizado();
             label16 = new Label();
-            textBoxPersonalizado2 = new Controles_personalizados.TextBoxPersonalizado();
+            txtTotal_I = new Controles_personalizados.TextBoxPersonalizado();
             pnlClientes = new Panel();
             cmbInteres = new ControlesPersonalizados.RJComboBox();
             btnCalcular = new Controles_personalizados.RJButton();
@@ -396,8 +396,9 @@
             txtBoxMonto.BorderFocusColor = SystemColors.Info;
             txtBoxMonto.BorderRadius = 0;
             txtBoxMonto.BorderSize = 2;
+            txtBoxMonto.Enabled = false;
             txtBoxMonto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxMonto.Location = new Point(295, 357);
+            txtBoxMonto.Location = new Point(311, 352);
             txtBoxMonto.Margin = new Padding(3, 4, 3, 4);
             txtBoxMonto.Multiline = false;
             txtBoxMonto.Name = "txtBoxMonto";
@@ -439,8 +440,9 @@
             txtBoxCredito.BorderFocusColor = SystemColors.Info;
             txtBoxCredito.BorderRadius = 0;
             txtBoxCredito.BorderSize = 2;
+            txtBoxCredito.Enabled = false;
             txtBoxCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxCredito.Location = new Point(295, 257);
+            txtBoxCredito.Location = new Point(311, 253);
             txtBoxCredito.Margin = new Padding(3, 4, 3, 4);
             txtBoxCredito.Multiline = false;
             txtBoxCredito.Name = "txtBoxCredito";
@@ -1102,26 +1104,26 @@
             txtCorreo.Texts = "";
             txtCorreo.UnderlinedStyle = true;
             // 
-            // textBoxPersonalizado1
+            // txtTotal
             // 
-            textBoxPersonalizado1.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado1.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado1.BorderRadius = 0;
-            textBoxPersonalizado1.BorderSize = 2;
-            textBoxPersonalizado1.Enabled = false;
-            textBoxPersonalizado1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado1.Location = new Point(295, 471);
-            textBoxPersonalizado1.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado1.Multiline = false;
-            textBoxPersonalizado1.Name = "textBoxPersonalizado1";
-            textBoxPersonalizado1.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado1.PasswordChar = false;
-            textBoxPersonalizado1.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado1.PlaceholderText = "";
-            textBoxPersonalizado1.Size = new Size(159, 48);
-            textBoxPersonalizado1.TabIndex = 27;
-            textBoxPersonalizado1.Texts = "";
-            textBoxPersonalizado1.UnderlinedStyle = true;
+            txtTotal.BorderColor = Color.DarkSlateGray;
+            txtTotal.BorderFocusColor = SystemColors.Info;
+            txtTotal.BorderRadius = 0;
+            txtTotal.BorderSize = 2;
+            txtTotal.Enabled = false;
+            txtTotal.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTotal.Location = new Point(323, 472);
+            txtTotal.Margin = new Padding(3, 4, 3, 4);
+            txtTotal.Multiline = false;
+            txtTotal.Name = "txtTotal";
+            txtTotal.Padding = new Padding(11, 9, 11, 9);
+            txtTotal.PasswordChar = false;
+            txtTotal.PlaceholderColor = Color.DimGray;
+            txtTotal.PlaceholderText = "";
+            txtTotal.Size = new Size(159, 48);
+            txtTotal.TabIndex = 27;
+            txtTotal.Texts = "";
+            txtTotal.UnderlinedStyle = true;
             // 
             // label16
             // 
@@ -1133,35 +1135,35 @@
             label16.TabIndex = 28;
             label16.Text = "Monto segun tipo de pago:";
             // 
-            // textBoxPersonalizado2
+            // txtTotal_I
             // 
-            textBoxPersonalizado2.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado2.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado2.BorderRadius = 0;
-            textBoxPersonalizado2.BorderSize = 2;
-            textBoxPersonalizado2.Enabled = false;
-            textBoxPersonalizado2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado2.Location = new Point(295, 541);
-            textBoxPersonalizado2.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado2.Multiline = false;
-            textBoxPersonalizado2.Name = "textBoxPersonalizado2";
-            textBoxPersonalizado2.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado2.PasswordChar = false;
-            textBoxPersonalizado2.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado2.PlaceholderText = "";
-            textBoxPersonalizado2.Size = new Size(159, 48);
-            textBoxPersonalizado2.TabIndex = 29;
-            textBoxPersonalizado2.Texts = "";
-            textBoxPersonalizado2.UnderlinedStyle = true;
+            txtTotal_I.BorderColor = Color.DarkSlateGray;
+            txtTotal_I.BorderFocusColor = SystemColors.Info;
+            txtTotal_I.BorderRadius = 0;
+            txtTotal_I.BorderSize = 2;
+            txtTotal_I.Enabled = false;
+            txtTotal_I.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTotal_I.Location = new Point(323, 540);
+            txtTotal_I.Margin = new Padding(3, 4, 3, 4);
+            txtTotal_I.Multiline = false;
+            txtTotal_I.Name = "txtTotal_I";
+            txtTotal_I.Padding = new Padding(11, 9, 11, 9);
+            txtTotal_I.PasswordChar = false;
+            txtTotal_I.PlaceholderColor = Color.DimGray;
+            txtTotal_I.PlaceholderText = "";
+            txtTotal_I.Size = new Size(159, 48);
+            txtTotal_I.TabIndex = 29;
+            txtTotal_I.Texts = "";
+            txtTotal_I.UnderlinedStyle = true;
             // 
             // pnlClientes
             // 
             pnlClientes.BackColor = SystemColors.Info;
             pnlClientes.Controls.Add(cmbInteres);
             pnlClientes.Controls.Add(btnCalcular);
-            pnlClientes.Controls.Add(textBoxPersonalizado2);
+            pnlClientes.Controls.Add(txtTotal_I);
             pnlClientes.Controls.Add(label16);
-            pnlClientes.Controls.Add(textBoxPersonalizado1);
+            pnlClientes.Controls.Add(txtTotal);
             pnlClientes.Controls.Add(txtCorreo);
             pnlClientes.Controls.Add(label15);
             pnlClientes.Controls.Add(txtTelefono);
@@ -1189,11 +1191,12 @@
             pnlClientes.Controls.Add(label1);
             pnlClientes.Controls.Add(cmbPromotor);
             pnlClientes.Dock = DockStyle.Fill;
-            pnlClientes.Location = new Point(0, 0);
+            pnlClientes.Location = new Point(263, 80);
             pnlClientes.Margin = new Padding(3, 4, 3, 4);
             pnlClientes.Name = "pnlClientes";
-            pnlClientes.Size = new Size(1242, 749);
+            pnlClientes.Size = new Size(979, 669);
             pnlClientes.TabIndex = 2;
+            pnlClientes.Paint += pnlClientes_Paint;
             // 
             // cmbInteres
             // 
@@ -1244,11 +1247,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1242, 749);
+            Controls.Add(pnlClientes);
             Controls.Add(pnlRegPago);
             Controls.Add(pnlListas);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
-            Controls.Add(pnlClientes);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "FutureLending";
@@ -1325,9 +1328,9 @@
         private Controles_personalizados.TextBoxPersonalizado txtTelefono;
         private Label label15;
         private Controles_personalizados.TextBoxPersonalizado txtCorreo;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado1;
+        private Controles_personalizados.TextBoxPersonalizado txtTotal;
         private Label label16;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado2;
+        private Controles_personalizados.TextBoxPersonalizado txtTotal_I;
         private Panel pnlClientes;
         private Controles_personalizados.RJButton btnCalcular;
         private DataGridView gridListas;

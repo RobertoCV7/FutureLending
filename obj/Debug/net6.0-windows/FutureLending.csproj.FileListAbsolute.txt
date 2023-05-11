@@ -265,3 +265,4 @@ C:\Users\donne\FuturoNuevo\obj\Debug\net6.0-windows\FutureLending.pdb
 C:\Users\donne\FuturoNuevo\obj\Debug\net6.0-windows\FutureLending.genruntimeconfig.cache
 C:\Users\donne\FuturoNuevo\obj\Debug\net6.0-windows\ref\FutureLending.dll
 C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\FutureLending.dll.config
+C:\Users\yarel\FutureLending\bin\Debug\net6.0-windows\FutureLending.dll.config

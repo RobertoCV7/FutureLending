@@ -1,0 +1,61 @@
+[5/10/2023 7:42:22 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
+   at MySql.Data.Types.MySqlDateTime.GetDateTime()
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
+[5/10/2023 7:42:26 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
+   at MySql.Data.Types.MySqlDateTime.GetDateTime()
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
+[5/10/2023 7:45:26 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
+   at MySql.Data.Types.MySqlDateTime.GetDateTime()
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
+[5/10/2023 7:45:28 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
+   at MySql.Data.Types.MySqlDateTime.GetDateTime()
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
+[5/10/2023 7:53:06 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
+   at MySql.Data.Types.MySqlDateTime.GetDateTime()
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
+[5/10/2023 8:21:11 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:21:23 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:21:23 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:28:05 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:28:10 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:28:14 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:28:15 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:32:12 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:35:17 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:39:11 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 8:45:13 PM] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution.
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@Fecha1' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameterAsync(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex, Boolean execAsync)
+   at MySql.Data.MySqlClient.Statement.InternalBindParametersAsync(String sql, MySqlParameterCollection parameters, MySqlPacket packet, Boolean execAsync)
+   at MySql.Data.MySqlClient.Statement.BindParametersAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.Statement.ExecuteAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.PreparableStatement.ExecuteAsync(Boolean execAsync)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at FutureLending.Lectura_Base_Datos.create(String lista, String Nombre, String Credito, DateTime Fecha_inicio, String Interes, String Monto_Total, String Promotor, String Calle, String Colonia, String Num_int, String Num_ext, String Telefono, String Correo, Int32 Tipo_pago, String Monto_Pagado) in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 419
+[5/10/2023 8:46:53 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 9:04:06 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 9:04:09 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
+[5/10/2023 9:04:11 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
