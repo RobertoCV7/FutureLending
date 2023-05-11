@@ -222,11 +222,6 @@ namespace FutureLending
 
         }
 
-        private void txtCredito__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtCredito_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -241,12 +236,61 @@ namespace FutureLending
             }
         }
 
-        private void VerificarLlenado()
+        private bool VerificarLlenadoGuardar()
         {
-            foreach (Controles_personalizados.TextBoxPersonalizado textBoxs in pnlClientes.Controls.OfType<Controles_personalizados.TextBoxPersonalizado>())
+            //Verificar que están los datos llenos para activar los botones
+            bool activar = true;
+            //TextBox
+            foreach (Controles_personalizados.TextBoxPersonalizado txtDato in
+                pnlClientes.Controls.OfType<Controles_personalizados.TextBoxPersonalizado>())
             {
-
+                if (string.IsNullOrEmpty(txtDato.Texts))
+                {
+                    activar = false;
+                    return activar;
+                }
             }
+            //ComboBox
+            foreach (ControlesPersonalizados.RJComboBox cmbDato in
+                pnlClientes.Controls.OfType<ControlesPersonalizados.RJComboBox>())
+            {
+                if (cmbDato.Texts == cmbDato.Tag.ToString())
+                {
+                    activar = false;
+                    return activar;
+                }
+            }
+            return activar;
+        }
+
+        private void ActivarBtnGuardar()
+        {
+            btnGuardar.Enabled = VerificarLlenadoGuardar();
+        }
+
+        private bool VerificarLlenadoCalcular()
+        {
+            //Verificar que están los datos llenos para activar los botones
+            bool activar = true;
+            //TextBox
+            if (string.IsNullOrEmpty(txtCredito.Texts))
+            {
+                activar = false;
+                return activar;
+            }
+            //ComboBox
+            if (cmbInteres.Texts == cmbInteres.Tag.ToString() &&
+                cmbTipo.Texts == cmbTipo.Tag.ToString())
+            {
+                activar = false;
+                return activar;
+            }
+            return activar;
+        }
+
+        private void ActivarBtnCalcular()
+        {
+            btnCalcular.Enabled = VerificarLlenadoCalcular();
         }
     }
 }
