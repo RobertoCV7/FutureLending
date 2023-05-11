@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            textBox1 = new TextBox();
+            SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(10, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 16);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
-            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
+            textBox1.BackColor = SystemColors.Info;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Location = new Point(10, 7);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(230, 20);
+            textBox1.TabIndex = 0;
+            textBox1.Click += textBox1_Click;
+            textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.Enter += textBox1_Enter;
+            textBox1.KeyPress += textBox1_KeyPress;
+            textBox1.Leave += textBox1_Leave;
+            textBox1.MouseEnter += textBox1_MouseEnter;
+            textBox1.MouseLeave += textBox1_MouseLeave;
             // 
             // TextBoxPersonalizado
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.textBox1);
-            this.Name = "TextBoxPersonalizado";
-            this.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.Size = new System.Drawing.Size(250, 30);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.None;
+            Controls.Add(textBox1);
+            Name = "TextBoxPersonalizado";
+            Padding = new Padding(10, 7, 10, 7);
+            Size = new Size(250, 30);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -1,4 +1,6 @@
 using Org.BouncyCastle.Utilities;
+using System.Runtime.CompilerServices;
+using System.Windows.Automation;
 
 namespace FutureLending
 {
@@ -218,6 +220,33 @@ namespace FutureLending
         private void pnlClientes_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtCredito__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCredito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as Controles_personalizados.TextBoxPersonalizado).Texts.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void VerificarLlenado()
+        {
+            foreach (Controles_personalizados.TextBoxPersonalizado textBoxs in pnlClientes.Controls.OfType<Controles_personalizados.TextBoxPersonalizado>())
+            {
+
+            }
         }
     }
 }

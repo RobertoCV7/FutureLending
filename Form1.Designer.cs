@@ -780,6 +780,7 @@
             txtCredito.TabIndex = 2;
             txtCredito.Texts = "";
             txtCredito.UnderlinedStyle = true;
+            txtCredito.KeyPress += txtCredito_KeyPress;
             // 
             // label3
             // 
