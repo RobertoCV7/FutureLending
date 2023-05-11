@@ -84,7 +84,7 @@ namespace FutureLending
         {
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
             instancia.reacomodo_de_scripts();
-            instancia.CheckConnection();
+            _ = instancia.CheckConnection();
         }
 
         private void btnLista1_Click(object sender, EventArgs e)
@@ -199,8 +199,10 @@ namespace FutureLending
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
             for (int i = 12; i < datos.Length; i++)
             {
-                if (datos[i] == fecha)
+                string datos2 = datos[i].Replace("-", "");
+                if (datos2 == fecha)
                 {
+                   
                     band = true;
                 }
             }
@@ -208,7 +210,7 @@ namespace FutureLending
             //Marcar como pagada ***
             if (band)
             {
-                fecha += " - PAGADA";
+                fecha += " -> PAGADA";
                 label18.Text = fecha;
                 //Agregarlo a la base de datos modificado *** FALTA
 
@@ -232,7 +234,7 @@ namespace FutureLending
             }
 
             // solo 1 punto decimal
-            if ((e.KeyChar == '.') && ((sender as Controles_personalizados.TextBoxPersonalizado).Texts.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && (((Controles_personalizados.TextBoxPersonalizado)sender).Texts.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -251,14 +253,26 @@ namespace FutureLending
             //Verificar que están los datos llenos para activar los botones
             bool activar = true;
             //TextBox
-            foreach (Controles_personalizados.TextBoxPersonalizado txtDato in
-                pnlClientes.Controls.OfType<Controles_personalizados.TextBoxPersonalizado>())
+            foreach (Controles_personalizados.TextBoxPersonalizado txtDato in pnlClientes.Controls.OfType<Controles_personalizados.TextBoxPersonalizado>())
             {
+                // Omitir la verificación para ciertos controles
+                if (txtDato.Name == "txtNumInt" || txtDato.Name == "txtNumExt")
+                {
+                    continue; // Saltar a la siguiente iteración del bucle e ignora esos controles
+                }
+
                 if (string.IsNullOrEmpty(txtDato.Texts))
                 {
                     activar = false;
                     return activar;
                 }
+            }
+
+            // Verificar si los campos "txtNumInt" y "txtNumExt" están vacíos si ambos lo estan no activa el boton
+            if (string.IsNullOrEmpty(txtNumInt.Texts) && string.IsNullOrEmpty(txtNumExt.Texts))
+            {
+                activar = false;
+                return activar;
             }
             //ComboBox
             foreach (ControlesPersonalizados.RJComboBox cmbDato in
@@ -304,5 +318,10 @@ namespace FutureLending
         }
 
         #endregion
+
+        private void pnlRegPago_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

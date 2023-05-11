@@ -31,7 +31,7 @@ namespace FutureLending
             string uid = Properties.Settings1.Default.Usuario;
             string pwd = Properties.Settings1.Default.Contraseña;
             string connectionString = $"server={server};port={port};database={database};uid={uid};pwd={pwd};";
-            MySqlConnection connection = null;
+            MySqlConnection? connection = null;
             try
             {
                 // creamos la conexión
@@ -46,7 +46,9 @@ namespace FutureLending
             }
 
             // devolvemos la conexión, puede ser nula en caso de error
+#pragma warning disable CS8603 // Posible tipo de valor devuelto de referencia nulo
             return connection;
+#pragma warning restore CS8603 // Posible tipo de valor devuelto de referencia nulo
         }
 
         public List<string[]> LectLista1()
@@ -298,12 +300,13 @@ namespace FutureLending
             {
                 try
                 {
-                    string query = "SELECT * FROM " + tabla + " WHERE Nombre_Completo = '" + name + "'";
+                    string query = "SELECT * FROM " + tabla + " WHERE Nombre_Completo = @name";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@name", name);
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (reader.Read())
                             {
                                 fila[0] = reader.GetString("Nombre_Completo");
                                 fila[1] = reader.GetString("Credito_Prestado");
@@ -316,10 +319,14 @@ namespace FutureLending
                                 fila[8] = reader.GetString("Num_ext");
                                 fila[9] = reader.GetString("Telefono");
                                 fila[10] = reader.GetString("Correo");
-                                fila[11] = reader.GetInt32("Tipo_pago").ToString();
-                                for (int i = 0; i < 14; i++)
+                                fila[11] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+
+                                int fechaStartIndex = 12;
+                                int fechaCount = fila[11] == "Semanal" ? 14 : 7;
+
+                                for (int i = 0; i < fechaCount; i++)
                                 {
-                                    fila[i + 12] = reader.GetString("Fecha" + (i + 1));
+                                    fila[i + fechaStartIndex] = reader.GetString("Fecha" + (i + 1));
                                 }
                             }
                         }
@@ -454,6 +461,7 @@ namespace FutureLending
                 }
                 catch (Exception ex)
                 {
+                    registro_errores(ex.ToString());
                     await RepairProgramAsync();
                 }
                 finally
@@ -465,7 +473,9 @@ namespace FutureLending
         int attempts = 3;
         private async Task RepairProgramAsync()
         {
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             var tcs = new TaskCompletionSource<object>();
             var processStartInfo = new ProcessStartInfo
             {
@@ -474,8 +484,12 @@ namespace FutureLending
                 UseShellExecute = false
             };
             var process = Process.Start(processStartInfo);
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
             process.EnableRaisingEvents = true;
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+#pragma warning disable CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
             process.Exited += (s, e) => tcs.TrySetResult(null);
+#pragma warning restore CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
             await Task.WhenAny(tcs.Task, Task.Delay(3000)); // Espera hasta que se complete la tarea o hasta 3 segundos
             if (!process.HasExited) // Si el proceso aún no se ha cerrado después de esperar 3 segundos
             {
@@ -513,7 +527,9 @@ namespace FutureLending
        public void reacomodo_de_scripts()
         {
             string path = encontrar_xampp();
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string filePath = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarMysql.bat";
             // Lee el contenido del archivo .bat
             string contenido = File.ReadAllText(filePath);
@@ -531,7 +547,9 @@ namespace FutureLending
 
         public string encontrar_xampp()
         {
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string xamppPath = GetXamppInstallationPath();
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             if (!string.IsNullOrEmpty(xamppPath))
             {
                 return xamppPath;
@@ -542,10 +560,11 @@ namespace FutureLending
             }
         }
 
-        static string GetXamppInstallationPath()
+        static string? GetXamppInstallationPath()
         {
             string xamppRegistryPath = @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\XAMPP";
 
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             using (RegistryKey key = Registry.LocalMachine.OpenSubKey(xamppRegistryPath))
             {
                 if (key != null)
@@ -557,6 +576,7 @@ namespace FutureLending
                     }
                 }
             }
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
 
             // Buscar en todas las unidades en caso de no encontrar en el Registro
             DriveInfo[] drives = DriveInfo.GetDrives();
@@ -577,7 +597,9 @@ namespace FutureLending
         }
        private void registro_errores(string error)
         {
+#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string logFilePath = $"{exeDirectory}\\Registro de Errores\\Errores.log";
             try
             {
@@ -590,6 +612,7 @@ namespace FutureLending
             }
             catch (Exception ex)
             {
+                registro_errores(ex.ToString());
            
             }
 
