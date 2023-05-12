@@ -1,3 +1,4 @@
+using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Utilities;
 using System.Runtime.CompilerServices;
 using System.Windows.Automation;
@@ -133,7 +134,7 @@ namespace FutureLending
             else { list = "lista2"; }
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
             txtBoxCredito.Texts = datos[1];
-            txtBoxMonto.Texts = datos[2];
+
 
         }
 
@@ -185,9 +186,12 @@ namespace FutureLending
         {
             //Validar que se encuentre esa fecha
             bool band = false;
+            int index = 0;
             //Obtener el valor seleccionado de fecha 
-            string fecha = Convert.ToString(DateTimeReg.Value.ToShortDateString());
-            label18.Text = fecha;
+            DateTime fecha =DateTimeReg.Value;
+            string Fecha = fecha.ToString("dd/MM/yyyy");
+            //string fecha = Convert.ToString(DateTimeReg.Value.ToShortDateString());
+            label18.Text = Fecha;
             //Leer las fechas registradas 
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
             string list;
@@ -197,21 +201,28 @@ namespace FutureLending
             }
             else { list = "lista2"; }
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
-            for (int i = 12; i < datos.Length; i++)
+            for (int i = 14; i < datos.Length; i++)
             {
-                string datos2 = datos[i].Replace("-", "");
-                if (datos2 == fecha)
-                {
-                   
-                    band = true;
+                if (datos[i] != null) {
+
+                    string datos2 = datos[i].Replace("-", "");
+                    if (datos2 == Fecha)
+                    {
+                        band = true;
+                        index = i;
+                    }
                 }
+                
             }
             if (!band) { MessageBox.Show("El cliente no cuenta con esa fecha."); }
             //Marcar como pagada ***
             if (band)
             {
-                fecha += " -> PAGADA";
-                label18.Text = fecha;
+                Fecha += "-" + txtBoxMonto.Texts;
+                string update = "Fecha" + index + " = '" + Fecha + "'"; 
+                Lectura_Base_Datos instancia2 = new Lectura_Base_Datos();
+                instancia2.Edit(list,ComBoxName.Texts, update);
+                label18.Text = Fecha;
                 //Agregarlo a la base de datos modificado *** FALTA
 
             }

@@ -312,21 +312,22 @@ namespace FutureLending
                                 fila[1] = reader.GetString("Credito_Prestado");
                                 fila[2] = reader.GetString("Fecha_Inicio");
                                 fila[3] = reader.GetString("Interes");
-                                fila[4] = reader.GetString("Promotor");
-                                fila[5] = reader.GetString("Calle");
-                                fila[6] = reader.GetString("Colonia");
-                                fila[7] = reader.GetString("Num_int");
-                                fila[8] = reader.GetString("Num_ext");
-                                fila[9] = reader.GetString("Telefono");
-                                fila[10] = reader.GetString("Correo");
-                                fila[11] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+                                fila[4] = reader.GetString("Monto_Total");
+                                fila[5] = reader.GetString("Promotor");
+                                fila[6] = reader.GetString("Calle");
+                                fila[7] = reader.GetString("Colonia");
+                                fila[8] = reader.GetString("Num_int");
+                                fila[9] = reader.GetString("Num_ext");
+                                fila[10] = reader.GetString("Telefono");
+                                fila[11] = reader.GetString("Correo");
+                                fila[12] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+                                fila[13] = reader.GetString("Monto_Pagado");
 
-                                int fechaStartIndex = 12;
-                                int fechaCount = fila[11] == "Semanal" ? 14 : 7;
+                                int fechaCount = fila[12] == "Semanal" ? 14 : 7;
 
                                 for (int i = 0; i < fechaCount; i++)
                                 {
-                                    fila[i + fechaStartIndex] = reader.GetString("Fecha" + (i + 1));
+                                    fila[i + 14] = reader.GetString("Fecha" + (i + 1));
                                 }
                             }
                         }
@@ -339,18 +340,31 @@ namespace FutureLending
             }
             return fila;
         }
-        int Edit()//falta agregar parametros de recibido pero hasta que la base de datos este lista
+        //Editar por un nombre especifico
+        public void Edit(string tabla, string name, string datos)//falta agregar parametros de recibido pero hasta que la base de datos este lista
         {
             //creamos la conexion
-            MySqlConnection Connection = Conector(); //llamamos al conector
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "UPDATE nombre_tabla SET columna1='valor1', columna2='valor2' WHERE id=1"; //simplemente se editan los parametros
+            using(MySqlConnection Connection = Conector())
+            {
+                try
+                {
+                    string query = "UPDATE " + tabla + " SET "+ datos + "WHERE Nombre_Completo = @name";
+                    using(MySqlCommand command = new MySqlCommand(query, Connection))
+                    {
+                        command.Parameters.AddWithValue("@name",name) ;
+                        
 
-            //esto nos devuelve el numero de filas que edito
-            int filasAfectadas = command.ExecuteNonQuery();
-            //cerramos la conexion
-            Connection.Close();
-            return filasAfectadas;
+                        //esto nos devuelve el numero de filas que edito
+                        command.ExecuteNonQuery();
+                        //cerramos la conexion
+                        Connection.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    registro_errores(ex.ToString());
+                }
+            }
         }
 
         int erase()//falta agregar parametros de recibido pero hasta que la base de datos este lista
