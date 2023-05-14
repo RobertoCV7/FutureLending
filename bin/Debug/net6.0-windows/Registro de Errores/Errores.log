@@ -1,86 +1,24 @@
-[5/10/2023 7:42:22 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
-   at MySql.Data.Types.MySqlDateTime.GetDateTime()
-   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
-[5/10/2023 7:42:26 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
-   at MySql.Data.Types.MySqlDateTime.GetDateTime()
-   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
-[5/10/2023 7:45:26 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
-   at MySql.Data.Types.MySqlDateTime.GetDateTime()
-   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
-[5/10/2023 7:45:28 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
-   at MySql.Data.Types.MySqlDateTime.GetDateTime()
-   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
-[5/10/2023 7:53:06 PM] Error: System.ArgumentOutOfRangeException: Year, Month, and Day parameters describe an un-representable DateTime.
-   at MySql.Data.Types.MySqlDateTime.GetDateTime()
-   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 71
-[5/10/2023 8:21:11 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:21:23 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:21:23 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:28:05 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:28:10 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:28:14 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:28:15 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:32:12 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:35:17 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:39:11 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 8:45:13 PM] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution.
- ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@Fecha1' must be defined.
-   at MySql.Data.MySqlClient.Statement.SerializeParameterAsync(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex, Boolean execAsync)
-   at MySql.Data.MySqlClient.Statement.InternalBindParametersAsync(String sql, MySqlParameterCollection parameters, MySqlPacket packet, Boolean execAsync)
-   at MySql.Data.MySqlClient.Statement.BindParametersAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.Statement.ExecuteAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.PreparableStatement.ExecuteAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
-   at FutureLending.Lectura_Base_Datos.create(String lista, String Nombre, String Credito, DateTime Fecha_inicio, String Interes, String Monto_Total, String Promotor, String Calle, String Colonia, String Num_int, String Num_ext, String Telefono, String Correo, Int32 Tipo_pago, String Monto_Pagado) in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 419
-[5/10/2023 8:46:53 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 9:04:06 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 9:04:09 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/10/2023 9:04:11 PM] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 92
-[5/12/2023 11:27:53 AM] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution.
- ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@tabla' must be defined.
-   at MySql.Data.MySqlClient.Statement.SerializeParameterAsync(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex, Boolean execAsync)
-   at MySql.Data.MySqlClient.Statement.InternalBindParametersAsync(String sql, MySqlParameterCollection parameters, MySqlPacket packet, Boolean execAsync)
-   at MySql.Data.MySqlClient.Statement.BindParametersAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.Statement.ExecuteAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.PreparableStatement.ExecuteAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
-   at FutureLending.Lectura_Base_Datos.Edit(String tabla, String name, String datos) in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 358
-[5/13/2023 2:01:18 PM] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
- ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+
+[13/05/2023 08:37:49 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 94
+[13/05/2023 08:42:49 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 94
+[13/05/2023 09:01:48 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:01:52 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:01:59 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:05:54 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
    at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
 --- End of stack trace from previous location ---
    at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
-   at MySql.Data.MySqlClient.NativeDriver.<>c.<OpenAsync>b__38_0(Exception ex)
-   at System.AggregateException.Handle(Func`2 predicate)
+   at MySql.Data.Common.StreamCreator.GetTcpStreamAsync(MySqlConnectionStringBuilder settings, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.Common.StreamCreator.GetStreamAsync(MySqlConnectionStringBuilder settings, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
@@ -90,23 +28,17 @@
    at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlConnection.Open()
-   at FutureLending.Lectura_Base_Datos.Conector() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 41
-[5/13/2023 2:01:18 PM] Error: System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 65
-[5/13/2023 2:01:21 PM] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
- ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at FutureLending.Lectura_Base_Datos.CheckConnection() in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 473
+[13/05/2023 09:06:42 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
    at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
    at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
 --- End of stack trace from previous location ---
    at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
-   at MySql.Data.MySqlClient.NativeDriver.<>c.<OpenAsync>b__38_0(Exception ex)
-   at System.AggregateException.Handle(Func`2 predicate)
+   at MySql.Data.Common.StreamCreator.GetTcpStreamAsync(MySqlConnectionStringBuilder settings, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.Common.StreamCreator.GetStreamAsync(MySqlConnectionStringBuilder settings, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
@@ -116,11 +48,18 @@
    at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlConnection.Open()
-   at FutureLending.Lectura_Base_Datos.Conector() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 41
-[5/13/2023 2:01:21 PM] Error: System.InvalidOperationException: Connection must be valid and open.
-   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
-   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
-   at FutureLending.Lectura_Base_Datos.LectLista2() in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 128
+   at FutureLending.Lectura_Base_Datos.CheckConnection() in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 473
+[13/05/2023 09:06:52 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:16:19 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:17:09 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:19:53 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:20:09 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:25:57 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[13/05/2023 09:26:01 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330

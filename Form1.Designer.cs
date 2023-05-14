@@ -1313,8 +1313,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1242, 742);
-            Controls.Add(pnlClientes);
             Controls.Add(pnlRegPago);
+            Controls.Add(pnlClientes);
             Controls.Add(pnlListas);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);

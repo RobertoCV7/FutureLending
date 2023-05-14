@@ -118,13 +118,7 @@ namespace FutureLending
         {
             //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
             //Mostramos en el form
-            lblCredito.Visible = true;
-            txtBoxCredito.Visible = true;
-            txtBoxMonto.Visible = true;
-            lblFecha.Visible = true;
-            lblMonto.Visible = true;
-            DateTimeReg.Visible = true;
-            btnMarcarP.Visible = true;
+           
             //Agregamos los datos del cliente al form
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
             string list;
@@ -134,7 +128,22 @@ namespace FutureLending
             }
             else { list = "lista2"; }
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
-            txtBoxCredito.Texts = datos[1];
+            if (datos[1] == null)
+            {
+                MessageBox.Show("No se encontro al usuario en esa Lista");
+            }
+            else
+            {
+                lblCredito.Visible = true;
+                txtBoxCredito.Visible = true;
+                txtBoxMonto.Visible = true;
+                lblFecha.Visible = true;
+                lblMonto.Visible = true;
+                DateTimeReg.Visible = true;
+                btnMarcarP.Visible = true;
+                txtBoxCredito.Texts = datos[1];
+            }
+            
 
 
         }
@@ -222,21 +231,21 @@ namespace FutureLending
                 string update = "Fecha" + index + "='" + Fecha + "'";
                 Lectura_Base_Datos instancia2 = new Lectura_Base_Datos();
                 instancia2.Edit(list, ComBoxName.Texts, update);
-
+                //Resetear valores 
+                ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
+                CombBoxLista.SelectedIndex = -1; CombBoxLista.Texts = "Introduzca lista";
+                btnBuscarC.Enabled = false;
+                txtBoxCredito.Visible = false;
+                txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
+                lblCredito.Visible = false;
+                lblMonto.Visible = false;
+                lblFecha.Visible = false;
+                DateTimeReg.Visible = false;
+                btnMarcarP.Visible = false;
             }
             //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
 
-            //Resetear valores 
-            ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
-            CombBoxLista.SelectedIndex = -1; CombBoxLista.Texts = "Introduzca lista";
-            btnBuscarC.Enabled = false;
-            txtBoxCredito.Visible = false;
-            txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
-            lblCredito.Visible = false;
-            lblMonto.Visible = false;
-            lblFecha.Visible = false;
-            DateTimeReg.Visible = false;
-            btnMarcarP.Visible = false;
+
         }
 
         private void pnlClientes_Paint(object sender, PaintEventArgs e)
