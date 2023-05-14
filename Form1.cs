@@ -1,5 +1,6 @@
 using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Utilities;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Automation;
 
@@ -97,20 +98,35 @@ namespace FutureLending
         {
             lblTitle.Text = "Registrar pago";
             pnlRegPago.BringToFront();
-            //Colocar en el ComBoxName a todas las personas que se pueden buscar 
-            ComBoxName.Items.Clear();
+
+            // Iniciar el hilo de fondo
+            BackgroundWorker worker = new BackgroundWorker();
+#pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
+            worker.DoWork += Worker_DoWork;
+#pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
+            worker.RunWorkerAsync();
+        }
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            // Operaciones intensivas (lectura de datos, procesamiento, etc.)
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
             List<string[]> lista1 = instancia.LectLista1();
             List<string[]> lista2 = instancia.LectLista2();
-            //Agregamos los nombres de las dos listas
-            for (int i = 0; i < lista1.Count; i++)
+
+            // Unir las listas en una sola lista
+            List<string[]> listaTotal = new List<string[]>(lista1);
+            listaTotal.AddRange(lista2);
+
+            // Agregar los nombres a ComBoxName
+            // Acceder a los controles se realiza en el hilo de interfaz de usuario principal
+            ComBoxName.BeginInvoke((MethodInvoker)delegate
             {
-                ComBoxName.Items.Add(lista1[i][0]);
-            }
-            for (int i = 0; i < lista2.Count; i++)
-            {
-                ComBoxName.Items.Add(lista2[i][0]);
-            }
+                ComBoxName.Items.Clear();
+                foreach (string[] item in listaTotal)
+                {
+                    ComBoxName.Items.Add(item[0]);
+                }
+            });
         }
 
         private void btnBuscarC_Click(object sender, EventArgs e)
@@ -173,27 +189,27 @@ namespace FutureLending
 
         private void btnLista1_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarLista1(gridListas);
+            TablaClientes.MostrarTodos(gridListas, 1);
         }
 
         private void btnLista2_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarLista2(gridListas);
+            TablaClientes.MostrarTodos(gridListas, 2);
         }
 
         private void btnLista3_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarLista3(gridListas);
+            TablaClientes.MostrarTodos(gridListas, 3);
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarTodos(gridListas);
+            TablaClientes.MostrarTodos(gridListas, 4);
         }
 
         private void btnLiquidados_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarLiquidados(gridListas);
+            TablaClientes.MostrarTodos(gridListas, 5);
         }
 
         private void btnMarcarP_Click(object sender, EventArgs e)
@@ -251,11 +267,6 @@ namespace FutureLending
 
 
         }
-
-        private void pnlClientes_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
         #region Llenado de datos y verificación *Ingresar clientes*
 
         private void SoloNumerosDecimal(object sender, KeyPressEventArgs e)
@@ -377,19 +388,11 @@ namespace FutureLending
 
         #endregion
 
-        private void pnlRegPago_Paint(object sender, PaintEventArgs e)
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

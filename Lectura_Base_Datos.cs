@@ -14,43 +14,65 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Configuration;
 using Microsoft.Win32;
+using System.Data;
 
 namespace FutureLending
 {
     public class Lectura_Base_Datos
     {
+        private MySqlConnection conexion;
+        private static readonly object lockObj = new object();
+        #region Conexion
         //verificador de cambio de puerto
         public bool cambio_puerto = false;
+ 
+
         MySqlConnection Conector()
         {
-            // creamos la conexión verificando si se ha cambiado el puerto
+            // Creamos la conexión verificando si se ha cambiado el puerto
             string server = "localhost";
             int port = cambio_puerto ? 3307 : 3306;
             string database = "prestamos";
-            //mejora de seguridad
+            // Mejora de seguridad
             string uid = Properties.Settings1.Default.Usuario;
             string pwd = Properties.Settings1.Default.Contraseña;
             string connectionString = $"server={server};port={port};database={database};uid={uid};pwd={pwd};";
             MySqlConnection? connection = null;
-            try
-            {
-                // creamos la conexión
-                connection = new MySqlConnection(connectionString);
 
-                // abrimos la conexión
-                connection.Open();
-            }
-            catch (MySqlException ex)
+            lock (lockObj) // Bloqueo para asegurar el acceso exclusivo
             {
-                registro_errores(ex.ToString());
+                try
+                {
+                    // Creamos la conexión
+                    connection = new MySqlConnection(connectionString);
+
+                    // Abrimos la conexión
+                    connection.Open();
+                }
+                catch (MySqlException ex)
+                {
+                    registro_errores(ex.ToString());
+                }
             }
 
-            // devolvemos la conexión, puede ser nula en caso de error
-#pragma warning disable CS8603 // Posible tipo de valor devuelto de referencia nulo
+            // Devolvemos la conexión, que puede ser nula en caso de error
             return connection;
-#pragma warning restore CS8603 // Posible tipo de valor devuelto de referencia nulo
+        }
+        public void CerrarConexion()
+        {
+    
+            if (conexion != null && conexion.State == ConnectionState.Open)
+            {
+                conexion.Close();
+                conexion.Dispose();
+            }
+
         }
 
+
+        #endregion
+
+        #region Lectura
         public List<string[]> LectLista1()
         {
             List<string[]> datos = new List<string[]>();
@@ -341,6 +363,9 @@ namespace FutureLending
             return fila;
         }
         //Editar por un nombre especifico
+        #endregion
+
+        #region editar, borrar y crear
         public void Edit(string tabla, string name, string datos)//falta agregar parametros de recibido pero hasta que la base de datos este lista
         {
             //creamos la conexion
@@ -453,10 +478,9 @@ namespace FutureLending
                 }
             }
         }
+        #endregion
 
-
-
-
+        #region reparar conexion
         public async Task CheckConnection()
         {
             string server = "localhost";
@@ -609,7 +633,10 @@ namespace FutureLending
 
             return null;
         }
-       private void registro_errores(string error)
+        #endregion
+
+        #region registro fallas
+        private void registro_errores(string error)
         {
 #pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -631,9 +658,7 @@ namespace FutureLending
             }
 
         }
-    }
-
-
-   
+        #endregion
 
     }
+}

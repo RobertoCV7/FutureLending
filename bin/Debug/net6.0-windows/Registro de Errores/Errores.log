@@ -129,3 +129,23 @@
    at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\Lectura_Base_Datos.cs:line 94
 [14/05/2023 01:04:58 a. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
    at FutureLending.Lectura_Base_Datos.LectLista1() in C:\Users\rober\OneDrive\Documentos\Técnicas noseque\FutureLending\Lectura_Base_Datos.cs:line 94
+[14/05/2023 05:11:47 a. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Fecha1
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[14/05/2023 05:11:51 a. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Fecha1
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[14/05/2023 05:11:56 a. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[14/05/2023 05:11:56 a. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[14/05/2023 05:11:58 a. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[14/05/2023 05:12:02 a. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 330
+[14/05/2023 06:43:52 a. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 352
+[14/05/2023 06:44:00 a. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 352
