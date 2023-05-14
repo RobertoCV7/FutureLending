@@ -12,6 +12,10 @@ namespace FutureLending
             InitializeComponent();
             CollapseMenu();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            //Para una visualización más rápida de los datos mediante virtualización
+            gridListas.VirtualMode = true;
+            TablaClientes.AñadirEvento(gridListas);
         }
 
         private void CollapseMenu()
@@ -89,11 +93,6 @@ namespace FutureLending
             _ = instancia.CheckConnection();
         }
 
-        private void btnLista1_Click(object sender, EventArgs e)
-        {
-            TablaClientes.MostrarLista1(gridListas);
-        }
-
         private void btnEstadoPagos_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Registrar pago";
@@ -118,7 +117,7 @@ namespace FutureLending
         {
             //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
             //Mostramos en el form
-           
+
             //Agregamos los datos del cliente al form
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
             string list;
@@ -143,7 +142,7 @@ namespace FutureLending
                 btnMarcarP.Visible = true;
                 txtBoxCredito.Texts = datos[1];
             }
-            
+
 
 
         }
@@ -170,6 +169,11 @@ namespace FutureLending
             }
             string total = monto_segun_tipo.ToString("N2");
             txtTotal_I.Texts = $"${total}";
+        }
+
+        private void btnLista1_Click(object sender, EventArgs e)
+        {
+            TablaClientes.MostrarLista1(gridListas);
         }
 
         private void btnLista2_Click(object sender, EventArgs e)

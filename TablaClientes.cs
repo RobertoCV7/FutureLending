@@ -4,14 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FutureLending
 {
     internal class TablaClientes
     {
+        //Aquí se guardan los datos de todas las consultas
+        private static List<string[]> datos = new List<string[]>();
+
         //Muestra en la tabla los datos de la lista 1
         public static void MostrarLista1(DataGridView gridListas)
         {
+            //Se borran los registros
+            LimpiarTabla(gridListas);
+
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                                         "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO", 
@@ -27,16 +34,20 @@ namespace FutureLending
 
             //Lectura de datos de la lista correspondiente
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            List<string[]> datos = instancia.LectLista1();
+            datos.Clear();
+            datos = instancia.LectLista1();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
-            gridListas.ColumnCount = ObtenerColumnas(datos);
-            AñadirDatos(nombresColumnas, gridListas, datos);
+            gridListas.ColumnCount = ObtenerColumnas();
+            AñadirDatos(nombresColumnas, gridListas);
         }
 
         //Muestra en la tabla los datos de la lista 2
         public static void MostrarLista2(DataGridView gridListas)
         {
+            //Se borran los registros
+            LimpiarTabla(gridListas);
+
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                                         "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
@@ -46,16 +57,20 @@ namespace FutureLending
 
             //Lectura de datos de la lista correspondiente
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            List<string[]> datos = instancia.LectLista2();
+            datos.Clear();
+            datos = instancia.LectLista2();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 16;
-            AñadirDatos(nombresColumnas, gridListas, datos);
+            AñadirDatos(nombresColumnas, gridListas);
         }
 
         //Muestra en la tabla los datos de la lista 3
         public static void MostrarLista3(DataGridView gridListas)
         {
+            //Se borran los registros
+            LimpiarTabla(gridListas);
+
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                                         "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
@@ -65,16 +80,20 @@ namespace FutureLending
 
             //Lectura de datos de la lista correspondiente
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            List<string[]> datos = instancia.LectLista3();
+            datos.Clear();
+            datos = instancia.LectLista3();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 15;
-            AñadirDatos(nombresColumnas, gridListas, datos);
+            AñadirDatos(nombresColumnas, gridListas);
         }
 
         //Muestra en la tabla los datos de la liquidados
         public static void MostrarLiquidados(DataGridView gridListas)
         {
+            //Se borran los registros
+            LimpiarTabla(gridListas);
+
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES", 
                                       "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", 
@@ -84,16 +103,20 @@ namespace FutureLending
 
             //Lectura de datos de la lista correspondiente
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            List<string[]> datos = instancia.LectLiquidados();
+            datos.Clear();
+            datos = instancia.LectLista2();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 14;
-            AñadirDatos(nombresColumnas, gridListas, datos);
+            AñadirDatos(nombresColumnas, gridListas);
         }
 
         //Muestra en la tabla los datos de todos los clientes y su lista perteneciente
         public static void MostrarTodos(DataGridView gridListas)
         {
+            //Se borran los registros
+            LimpiarTabla(gridListas);
+
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"LISTA", "NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL",
                                         "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
@@ -103,7 +126,8 @@ namespace FutureLending
 
             //Lectura de datos comunes de todas las listas y clientes liquidados
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            List<string[]> datos = instancia.LectTodos("lista1", "1");
+            datos.Clear();
+            datos = instancia.LectTodos("lista1", "1");
             datos.AddRange(instancia.LectTodos("lista2", "2"));
             datos.AddRange(instancia.LectTodos("lista3", "3"));
             datos.AddRange(instancia.LectTodos("liquidados", "Liquidados"));
@@ -111,11 +135,11 @@ namespace FutureLending
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             //Se añade uno por la columna de lista
             gridListas.ColumnCount = 14;
-            AñadirDatos(nombresColumnas, gridListas, datos);
+            AñadirDatos(nombresColumnas, gridListas);
         }
 
         //Para determinar si son necesarias 26 o 19 columnas para las fechas
-        static int ObtenerColumnas(List<string[]> datos)
+        static int ObtenerColumnas()
         {
             int fechas = 28;
             for (int i = 0; i < datos.Count; i++)
@@ -130,22 +154,33 @@ namespace FutureLending
         }
 
         //Añade los datos en cualquier tabla
-        static void AñadirDatos(List<string> nombresColumnas, DataGridView gridListas, List<string[]> datos)
+        static void AñadirDatos(List<string> nombresColumnas, DataGridView gridListas)
         {
             for (int i = 0; i < gridListas.ColumnCount; i++)
             {
                 gridListas.Columns[i].Name = nombresColumnas[i];
             }
 
-            //Se añaden las filas y el contenido respectivo de cada celda
+            //Se añaden las filas
             gridListas.RowCount = datos.Count;
-            for (int i = 0; i < gridListas.RowCount; i++)
-            {
-                for (int j = 0; j < gridListas.ColumnCount; j++)
-                {
-                    gridListas.Rows[i].Cells[j].Value = datos[i][j];
-                }
-            }
+        }
+
+        //Borra el contenido de la tabla
+        static void LimpiarTabla(DataGridView gridListas)
+        {
+            gridListas.Rows.Clear();
+            gridListas.Columns.Clear();
+        }
+
+        public static void AñadirEvento(DataGridView gridListas)
+        {
+            //Se encarga del evento para la virtualización e immpresión de datos en la tabla
+            gridListas.CellValueNeeded += new DataGridViewCellValueEventHandler(gridListas_CellValueNeeded);
+        }
+
+        private static void gridListas_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            e.Value = datos[e.RowIndex][e.ColumnIndex];
         }
     }
 }

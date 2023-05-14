@@ -93,7 +93,7 @@ namespace FutureLending
                                     fila[14 + i * 2] = fechaYPago[0];
                                     fila[15 + i * 2] = fechaYPago[1];
                                     //En caso de que sólo tenga 7 fechas
-                                    if (fila[14 + i * 2] == "")
+                                    if (string.IsNullOrWhiteSpace(fila[14 + i * 2]))
                                     {
                                         fila[14 + i * 2] = "-";
                                         fila[15 + i * 2] = "-";
