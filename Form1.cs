@@ -11,6 +11,7 @@ namespace FutureLending
         {
             InitializeComponent();
             CollapseMenu();
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void CollapseMenu()
@@ -188,10 +189,8 @@ namespace FutureLending
             bool band = false;
             int index = 0;
             //Obtener el valor seleccionado de fecha 
-            DateTime fecha =DateTimeReg.Value;
+            DateTime fecha = DateTimeReg.Value;
             string Fecha = fecha.ToString("dd/MM/yyyy");
-            //string fecha = Convert.ToString(DateTimeReg.Value.ToShortDateString());
-            label18.Text = Fecha;
             //Leer las fechas registradas 
             Lectura_Base_Datos instancia = new Lectura_Base_Datos();
             string list;
@@ -203,36 +202,45 @@ namespace FutureLending
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
             for (int i = 14; i < datos.Length; i++)
             {
-                if (datos[i] != null) {
+                if (datos[i] != null)
+                {
 
                     string datos2 = datos[i].Replace("-", "");
                     if (datos2 == Fecha)
                     {
                         band = true;
-                        index = i;
+                        index = i - 13;
                     }
                 }
-                
+
             }
             if (!band) { MessageBox.Show("El cliente no cuenta con esa fecha."); }
-            //Marcar como pagada ***
+            //Marcar como pagada en la base de datos
             if (band)
             {
                 Fecha += "-" + txtBoxMonto.Texts;
-                string update = "Fecha" + index + " = '" + Fecha + "'"; 
+                string update = "Fecha" + index + "='" + Fecha + "'";
                 Lectura_Base_Datos instancia2 = new Lectura_Base_Datos();
-                instancia2.Edit(list,ComBoxName.Texts, update);
-                label18.Text = Fecha;
-                //Agregarlo a la base de datos modificado *** FALTA
+                instancia2.Edit(list, ComBoxName.Texts, update);
 
             }
             //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
-            //Si no pagan a tiempo el interes crece *** FALTA
+
+            //Resetear valores 
+            ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
+            CombBoxLista.SelectedIndex = -1; CombBoxLista.Texts = "Introduzca lista";
+            btnBuscarC.Enabled = false;
+            txtBoxCredito.Visible = false;
+            txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
+            lblCredito.Visible = false;
+            lblMonto.Visible = false;
+            lblFecha.Visible = false;
+            DateTimeReg.Visible = false;
+            btnMarcarP.Visible = false;
         }
 
         private void pnlClientes_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         #region Llenado de datos y verificación *Ingresar clientes*
@@ -328,9 +336,45 @@ namespace FutureLending
             btnCalcular.Enabled = VerificarLlenadoCalcular();
         }
 
+        private bool VerificarLlenadoBuscar()
+        {
+            //Verificar que están los datos llenos para activar los botones
+            bool activar = true;
+            //ComboBox
+            if (CombBoxLista.SelectedIndex == -1 || ComBoxName.SelectedIndex == -1)
+            {
+                activar = false;
+                return activar;
+            }
+            return activar;
+        }
+        private void ActivarBtnBuscar(object sender, EventArgs e)
+        {
+            btnBuscarC.Enabled = VerificarLlenadoBuscar();
+        }
+
+        private void ActivarBtnMarcar(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBoxMonto.Texts))
+            {
+                btnMarcarP.Enabled = false;
+            }
+            else { btnMarcarP.Enabled = true; }
+        }
+
         #endregion
 
         private void pnlRegPago_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
