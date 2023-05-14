@@ -11,7 +11,7 @@ namespace FutureLending
     internal class TablaClientes
     {
         //Aquí se guardan los datos de todas las consultas
-        private static List<string[]> datos = new List<string[]>();
+        private static readonly List<string[]> datos = new();
 
         //Muestra en la tabla los datos de todos los clientes y su lista perteneciente
         public static async Task MostrarTodos(DataGridView gridListas, int a)
@@ -23,13 +23,13 @@ namespace FutureLending
             string[] nombresString = {"LISTA", "NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL",
                                 "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                                 "TELÉFONO", "CORREO", "TIPO DE PAGO"};
-            List<string> nombresColumnas = new List<string>(nombresString);
+            List<string> nombresColumnas = new(nombresString);
 
             // Lectura de datos comunes de todas las listas y clientes liquidados
             datos.Clear();
 
             // Lista de tareas para la lectura de datos
-            List<Task<List<string[]>>> tasks = new List<Task<List<string[]>>>();
+            List<Task<List<string[]>>> tasks = new();
             if(a== 4)
             {
                 tasks.Add(LecturaAsync("lista1", "1"));
@@ -70,25 +70,10 @@ namespace FutureLending
             AñadirDatos(nombresColumnas, gridListas);
         }
 
-        static async Task<List<string[]>> LecturaAsync(string lista, string listaNombre)
+        static Task<List<string[]>> LecturaAsync(string lista, string listaNombre)
         {
-            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            return instancia.LectTodos(lista, listaNombre);
-        }
-
-        // Para determinar si son necesarias 26 o 19 columnas para las fechas
-        static int ObtenerColumnas()
-        {
-            int fechas = 28;
-            for (int i = 0; i < datos.Count; i++)
-            {
-                if (datos[i][12] == "Semanal")
-                {
-                    fechas = 42;
-                    return fechas;
-                }
-            }
-            return fechas;
+            Lectura_Base_Datos instancia = new();
+            return Task.FromResult(instancia.LectTodos(lista, listaNombre));
         }
 
         // Añade los datos en cualquier tabla
@@ -113,10 +98,12 @@ namespace FutureLending
         public static void AñadirEvento(DataGridView gridListas)
         {
             //Se encarga del evento para la virtualización e immpresión de datos en la tabla
-            gridListas.CellValueNeeded += new DataGridViewCellValueEventHandler(gridListas_CellValueNeeded);
+#pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
+            gridListas.CellValueNeeded += new DataGridViewCellValueEventHandler(GridListas_CellValueNeeded);
+#pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
         }
 
-        private static void gridListas_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        private static void GridListas_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
             e.Value = datos[e.RowIndex][e.ColumnIndex];
         }

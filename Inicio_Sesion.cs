@@ -17,12 +17,12 @@ namespace FutureLending
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             string usuario = Properties.Settings1.Default.Usuario;
             string contra = Properties.Settings1.Default.Contraseña;
@@ -32,7 +32,7 @@ namespace FutureLending
             if (usuario.Equals(usuariop) && contra.Equals(contrap))
             {
                 // Crear e iniciar el nuevo formulario
-               Form1 form2 = new Form1();
+                Form1 form2 = new();
                 form2.Show();
                 this.Hide();
             }
@@ -40,11 +40,21 @@ namespace FutureLending
             {
                 Mensaje.Text = "Usuario o Contraseña incorrectos ";
             }
-            if(cerrar == true)
+            if (cerrar == true)
             {
                 this.Close();
             }
 
+
+        }
+
+        private void Inicio_Sesion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextContra_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

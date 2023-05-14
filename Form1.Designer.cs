@@ -147,7 +147,7 @@
             btnTodosSistemas.Text = "Ver estado de todos los sistemas";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTodosSistemas.UseVisualStyleBackColor = true;
-            btnTodosSistemas.Click += btnTodosSistemas_Click;
+            btnTodosSistemas.Click += BtnTodosSistemas_Click;
             // 
             // btnEstadoPagos
             // 
@@ -170,7 +170,7 @@
             btnEstadoPagos.Text = "  Estado de pagos";
             btnEstadoPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEstadoPagos.UseVisualStyleBackColor = true;
-            btnEstadoPagos.Click += btnEstadoPagos_Click;
+            btnEstadoPagos.Click += BtnEstadoPagos_Click;
             // 
             // btnListas
             // 
@@ -193,7 +193,7 @@
             btnListas.Text = "  Listas completas";
             btnListas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnListas.UseVisualStyleBackColor = true;
-            btnListas.Click += btnListas_Click;
+            btnListas.Click += BtnListas_Click;
             // 
             // btnIngresarClientes
             // 
@@ -216,7 +216,7 @@
             btnIngresarClientes.Text = "   Ingresar clientes";
             btnIngresarClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnIngresarClientes.UseVisualStyleBackColor = true;
-            btnIngresarClientes.Click += btnIngresarClientes_Click;
+            btnIngresarClientes.Click += BtnIngresarClientes_Click;
             // 
             // panel1
             // 
@@ -243,7 +243,7 @@
             btnMenu.Size = new Size(69, 80);
             btnMenu.TabIndex = 0;
             btnMenu.UseVisualStyleBackColor = true;
-            btnMenu.Click += btnMenu_Click;
+            btnMenu.Click += BtnMenu_Click;
             // 
             // pictureBox1
             // 
@@ -377,7 +377,7 @@
             btnBuscarC.Text = "Buscar";
             btnBuscarC.TextColor = Color.Black;
             btnBuscarC.UseVisualStyleBackColor = false;
-            btnBuscarC.Click += btnBuscarC_Click;
+            btnBuscarC.Click += BtnBuscarC_Click;
             // 
             // label17
             // 
@@ -478,7 +478,7 @@
             btnMarcarP.TextColor = Color.Black;
             btnMarcarP.UseVisualStyleBackColor = false;
             btnMarcarP.Visible = false;
-            btnMarcarP.Click += btnMarcarP_Click;
+            btnMarcarP.Click += BtnMarcarP_Click;
             // 
             // lblMonto
             // 
@@ -594,7 +594,7 @@
             btnCalcular.Text = "Calcular";
             btnCalcular.TextColor = Color.Black;
             btnCalcular.UseVisualStyleBackColor = false;
-            btnCalcular.Click += btnCalcular_Click;
+            btnCalcular.Click += BtnCalcular_Click;
             // 
             // txtTotal_I
             // 
@@ -883,7 +883,7 @@
             btnGuardar.Text = "Guardar";
             btnGuardar.TextColor = Color.Black;
             btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
+            btnGuardar.Click += BtnGuardar_Click;
             // 
             // label7
             // 
@@ -1164,7 +1164,7 @@
             btnLista1.Text = "Lista 1:\r\nIniciación";
             btnLista1.TextColor = Color.Transparent;
             btnLista1.UseVisualStyleBackColor = false;
-            btnLista1.Click += btnLista1_Click;
+            btnLista1.Click += BtnLista1_Click;
             // 
             // btnLista2
             // 
@@ -1186,7 +1186,7 @@
             btnLista2.Text = "Lista 2:\r\nExtrajudicial";
             btnLista2.TextColor = Color.Transparent;
             btnLista2.UseVisualStyleBackColor = false;
-            btnLista2.Click += btnLista2_Click;
+            btnLista2.Click += BtnLista2_Click;
             // 
             // btnLista3
             // 
@@ -1208,7 +1208,7 @@
             btnLista3.Text = "Lista 3:\r\nDemanda legal";
             btnLista3.TextColor = Color.Transparent;
             btnLista3.UseVisualStyleBackColor = false;
-            btnLista3.Click += btnLista3_Click;
+            btnLista3.Click += BtnLista3_Click;
             // 
             // btnMostrarTodos
             // 
@@ -1230,7 +1230,7 @@
             btnMostrarTodos.Text = "Mostrar\r\ntodos";
             btnMostrarTodos.TextColor = Color.Transparent;
             btnMostrarTodos.UseVisualStyleBackColor = false;
-            btnMostrarTodos.Click += btnMostrarTodos_Click;
+            btnMostrarTodos.Click += BtnMostrarTodos_Click;
             // 
             // btnLiquidados
             // 
@@ -1252,7 +1252,7 @@
             btnLiquidados.Text = "Clientes\r\nliquidados";
             btnLiquidados.TextColor = Color.Transparent;
             btnLiquidados.UseVisualStyleBackColor = false;
-            btnLiquidados.Click += btnLiquidados_Click;
+            btnLiquidados.Click += BtnLiquidados_Click;
             // 
             // gridListas
             // 
@@ -1315,7 +1315,6 @@
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Controls.Add(pnlRegPago);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;

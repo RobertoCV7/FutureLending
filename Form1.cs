@@ -47,33 +47,33 @@ namespace FutureLending
             }
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
         }
 
-        private void btnIngresarClientes_Click(object sender, EventArgs e)
+        private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Ingresar Clientes";
             pnlClientes.BringToFront();
         }
 
-        private void btnListas_Click(object sender, EventArgs e)
+        private void BtnListas_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Listas Completas";
             pnlListas.BringToFront();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            Lectura_Base_Datos obj = new Lectura_Base_Datos();
+            Lectura_Base_Datos obj = new();
             string Interes = cmbInteres.Texts.Replace("%", "");
             string MontoTotal = txtTotal.Texts.Replace("$", "");
-            obj.create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
+            obj.Create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
             //Borrar datos para poder agregar de nuevo 
             txtNombre.Texts = "";
             txtCredito.Texts = "";
-            dateFechaInicio.Value = DateTime.Now;
+            dateFechaInicio.Value = new DateTime(2023, 5, 14, 16, 8, 19, 357);
             cmbInteres.Texts = "Seleccione un interés";
             cmbTipo.Texts = "Seleccione un tipo de pago";
             cmbPromotor.Texts = "Seleccione al promotor";
@@ -87,20 +87,20 @@ namespace FutureLending
             txtCorreo.Texts = "";
         }
 
-        private void btnTodosSistemas_Click(object sender, EventArgs e)
+        private void BtnTodosSistemas_Click(object sender, EventArgs e)
         {
-            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-            instancia.reacomodo_de_scripts();
+            Lectura_Base_Datos instancia = new();
+            Lectura_Base_Datos.ReacomodoDeScripts();
             _ = instancia.CheckConnection();
         }
 
-        private void btnEstadoPagos_Click(object sender, EventArgs e)
+        private void BtnEstadoPagos_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Registrar pago";
             pnlRegPago.BringToFront();
 
             // Iniciar el hilo de fondo
-            BackgroundWorker worker = new BackgroundWorker();
+            BackgroundWorker worker = new();
 #pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
             worker.DoWork += Worker_DoWork;
 #pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
@@ -109,12 +109,12 @@ namespace FutureLending
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             // Operaciones intensivas (lectura de datos, procesamiento, etc.)
-            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            Lectura_Base_Datos instancia = new();
             List<string[]> lista1 = instancia.LectLista1();
             List<string[]> lista2 = instancia.LectLista2();
 
             // Unir las listas en una sola lista
-            List<string[]> listaTotal = new List<string[]>(lista1);
+            List<string[]> listaTotal = new(lista1);
             listaTotal.AddRange(lista2);
 
             // Agregar los nombres a ComBoxName
@@ -129,13 +129,13 @@ namespace FutureLending
             });
         }
 
-        private void btnBuscarC_Click(object sender, EventArgs e)
+        private void BtnBuscarC_Click(object sender, EventArgs e)
         {
             //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
             //Mostramos en el form
 
             //Agregamos los datos del cliente al form
-            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            Lectura_Base_Datos instancia = new();
             string list;
             if (CombBoxLista.Texts == "Lista 1")
             {
@@ -163,7 +163,7 @@ namespace FutureLending
 
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e)
+        private void BtnCalcular_Click(object sender, EventArgs e)
         {
             String credito = txtCredito.Texts;
             Double credito2 = Convert.ToDouble(credito);
@@ -187,32 +187,32 @@ namespace FutureLending
             txtTotal_I.Texts = $"${total}";
         }
 
-        private void btnLista1_Click(object sender, EventArgs e)
+        private void BtnLista1_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarTodos(gridListas, 1);
+            _ = TablaClientes.MostrarTodos(gridListas, 1);
         }
 
-        private void btnLista2_Click(object sender, EventArgs e)
+        private void BtnLista2_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarTodos(gridListas, 2);
+            _ = TablaClientes.MostrarTodos(gridListas, 2);
         }
 
-        private void btnLista3_Click(object sender, EventArgs e)
+        private void BtnLista3_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarTodos(gridListas, 3);
+            _ = TablaClientes.MostrarTodos(gridListas, 3);
         }
 
-        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        private void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarTodos(gridListas, 4);
+            _ = TablaClientes.MostrarTodos(gridListas, 4);
         }
 
-        private void btnLiquidados_Click(object sender, EventArgs e)
+        private void BtnLiquidados_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarTodos(gridListas, 5);
+            _ = TablaClientes.MostrarTodos(gridListas, 5);
         }
 
-        private void btnMarcarP_Click(object sender, EventArgs e)
+        private void BtnMarcarP_Click(object sender, EventArgs e)
         {
             //Validar que se encuentre esa fecha
             bool band = false;
@@ -221,7 +221,7 @@ namespace FutureLending
             DateTime fecha = DateTimeReg.Value;
             string Fecha = fecha.ToString("dd/MM/yyyy");
             //Leer las fechas registradas 
-            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            Lectura_Base_Datos instancia = new();
             string list;
             if (CombBoxLista.Texts == "Lista 1")
             {
@@ -249,7 +249,7 @@ namespace FutureLending
             {
                 Fecha += "-" + txtBoxMonto.Texts;
                 string update = "Fecha" + index + "='" + Fecha + "'";
-                Lectura_Base_Datos instancia2 = new Lectura_Base_Datos();
+                Lectura_Base_Datos instancia2 = new();
                 instancia2.Edit(list, ComBoxName.Texts, update);
                 //Resetear valores 
                 ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
@@ -393,6 +393,6 @@ namespace FutureLending
             Application.Exit();
         }
 
-        
+
     }
 }
