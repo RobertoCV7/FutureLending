@@ -5727,23 +5727,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\donne\\.nuget\\packages\\": {},
-    "E:\\Visual studio\\cosas\\NuGetPackages": {}
+    "C:\\Users\\rober\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\donne\\FutureLending\\FutureLending.csproj",
+      "projectUniqueName": "C:\\Users\\rober\\OneDrive\\Documentos\\Técnicas noseque\\FutureLending\\FutureLending.csproj",
       "projectName": "FutureLending",
-      "projectPath": "C:\\Users\\donne\\FutureLending\\FutureLending.csproj",
-      "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\donne\\FutureLending\\obj\\",
+      "projectPath": "C:\\Users\\rober\\OneDrive\\Documentos\\Técnicas noseque\\FutureLending\\FutureLending.csproj",
+      "packagesPath": "C:\\Users\\rober\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rober\\OneDrive\\Documentos\\Técnicas noseque\\FutureLending\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Visual studio\\cosas\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\donne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rober\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

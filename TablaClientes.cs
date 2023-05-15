@@ -55,8 +55,9 @@ namespace FutureLending
                 }
             });
         }
+
         //Muestra en la tabla los datos de la lista 2
-        public static void MostrarLista2(DataGridView gridListas)
+        public static async Task MostrarLista2(DataGridView gridListas)
         {
             //Se borran los registros
             LimpiarTabla(gridListas);
@@ -68,24 +69,19 @@ namespace FutureLending
             List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
-            //Lectura de datos de la lista correspondiente en un hilo separado
-            List<string[]>? datosList = null;
-            Thread readThread = new Thread(() =>
+            // Lectura de datos de la lista correspondiente en un hilo separado
+            List<string[]> datosList = await Task.Run(() =>
             {
                 Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-                datosList = instancia.LectLista2();
+                return instancia.LectLista2();
             });
-            readThread.Start();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 16;
             AñadirDatos(nombresColumnas, gridListas);
 
-            //Espera a que termine la lectura antes de agregar los datos al DataGridView
-            readThread.Join();
-
-            //Agrega los datos al DataGridView en un hilo separado
-            Thread writeThread = new Thread(() =>
+            // Agrega los datos al DataGridView en un hilo separado
+            await Task.Run(() =>
             {
 #pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
                 foreach (string[] row in datosList)
@@ -95,13 +91,12 @@ namespace FutureLending
                         gridListas.Rows.Add(row);
                     }));
                 }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
             });
-            writeThread.Start();
         }
 
         //Muestra en la tabla los datos de la lista 3
-        public static void MostrarLista3(DataGridView gridListas)
+        public static async Task MostrarLista3(DataGridView gridListas)
         {
             //Se borran los registros
             LimpiarTabla(gridListas);
@@ -113,24 +108,19 @@ namespace FutureLending
             List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
-            //Lectura de datos de la lista correspondiente en un hilo separado
-            List<string[]> datosList = null;
-            Thread readThread = new Thread(() =>
+            // Lectura de datos de la lista correspondiente en un hilo separado
+            List<string[]> datosList = await Task.Run(() =>
             {
                 Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-                datosList = instancia.LectLista3();
+                return instancia.LectLista3();
             });
-            readThread.Start();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 15;
             AñadirDatos(nombresColumnas, gridListas);
 
-            //Espera a que termine la lectura antes de agregar los datos al DataGridView
-            readThread.Join();
-
-            //Agrega los datos al DataGridView en un hilo separado
-            Thread writeThread = new Thread(() =>
+            // Agrega los datos al DataGridView en un hilo separado
+            await Task.Run(() =>
             {
 #pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
                 foreach (string[] row in datosList)
@@ -140,13 +130,12 @@ namespace FutureLending
                         gridListas.Rows.Add(row);
                     }));
                 }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
             });
-            writeThread.Start();
         }
 
         //Muestra en la tabla los datos de la liquidados
-        public static void MostrarLiquidados(DataGridView gridListas)
+        public static async Task MostrarLiquidados(DataGridView gridListas)
         {
             //Se borran los registros
             LimpiarTabla(gridListas);
@@ -158,24 +147,19 @@ namespace FutureLending
             List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
-            //Lectura de datos de la lista correspondiente en un hilo separado
-            List<string[]> datosList = null;
-            Thread readThread = new Thread(() =>
+            // Lectura de datos de la lista correspondiente en un hilo separado
+            List<string[]> datosList = await Task.Run(() =>
             {
                 Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-                datosList = instancia.LectLista2();
+                return instancia.LectLiquidados();
             });
-            readThread.Start();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 14;
             AñadirDatos(nombresColumnas, gridListas);
 
-            //Espera a que termine la lectura antes de agregar los datos al DataGridView
-            readThread.Join();
-
-            //Agrega los datos al DataGridView en un hilo separado
-            Thread writeThread = new Thread(() =>
+            // Agrega los datos al DataGridView en un hilo separado
+            await Task.Run(() =>
             {
 #pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
                 foreach (string[] row in datosList)
@@ -185,13 +169,12 @@ namespace FutureLending
                         gridListas.Rows.Add(row);
                     }));
                 }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
             });
-            writeThread.Start();
         }
 
         //Muestra en la tabla los datos de todos los clientes y su lista perteneciente
-        public static void MostrarTodos(DataGridView gridListas)
+        public static async Task MostrarTodos(DataGridView gridListas)
         {
             //Se borran los registros
             LimpiarTabla(gridListas);
@@ -204,28 +187,24 @@ namespace FutureLending
             nombresColumnas.AddRange(nombresString);
 
             //Lectura de datos comunes de todas las listas y clientes liquidados en un hilo separado
-            List<string[]> datosList = null;
-            Thread readThread = new Thread(() =>
+            List<string[]> datosList = await Task.Run(() =>
             {
                 Lectura_Base_Datos instancia = new Lectura_Base_Datos();
-                datosList = new List<string[]>();
-                datosList.AddRange(instancia.LectTodos("lista1", "1"));
-                datosList.AddRange(instancia.LectTodos("lista2", "2"));
-                datosList.AddRange(instancia.LectTodos("lista3", "3"));
-                datosList.AddRange(instancia.LectTodos("liquidados", "Liquidados"));
+                List<string[]> todas = instancia.LectTodos("lista1", "1");
+                todas.AddRange(instancia.LectTodos("lista2", "2"));
+                todas.AddRange(instancia.LectTodos("lista2", "2"));
+                todas.AddRange(instancia.LectTodos("lista3", "3"));
+                todas.AddRange(instancia.LectTodos("liquidados", "Liquidados"));
+                return todas;
             });
-            readThread.Start();
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             //Se añade uno por la columna de lista
             gridListas.ColumnCount = 14;
             AñadirDatos(nombresColumnas, gridListas);
 
-            //Espera a que termine la lectura antes de agregar los datos al DataGridView
-            readThread.Join();
-
-            //Agrega los datos al DataGridView en un hilo separado
-            Thread writeThread = new Thread(() =>
+            // Agrega los datos al DataGridView en un hilo separado
+            await Task.Run(() =>
             {
 #pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
                 foreach (string[] row in datosList)
@@ -235,10 +214,10 @@ namespace FutureLending
                         gridListas.Rows.Add(row);
                     }));
                 }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
             });
-            writeThread.Start();
         }
+
         //Para determinar si son necesarias 26 o 19 columnas para las fechas
         static int ObtenerColumnas()
         {

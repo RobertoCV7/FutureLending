@@ -187,30 +187,84 @@ namespace FutureLending
             txtTotal_I.Texts = $"${total}";
         }
 
-        private void BtnLista1_Click(object sender, EventArgs e)
+        #region Mostrar tablas en DataGridView
+
+        private async void BtnLista1_Click(object sender, EventArgs e)
         {
-            _ = TablaClientes.MostrarLista1(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLista1(gridListas);
+
+            while(!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarBotones();
         }
 
-        private void BtnLista2_Click(object sender, EventArgs e)
+        private async void BtnLista2_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarLista2(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLista2(gridListas);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarBotones();
         }
 
-        private void BtnLista3_Click(object sender, EventArgs e)
+        private async void BtnLista3_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarLista3(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLista3(gridListas);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarBotones();
         }
 
-        private void BtnMostrarTodos_Click(object sender, EventArgs e)
+        private async void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarTodos(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarTodos(gridListas);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarBotones();
         }
 
-        private void BtnLiquidados_Click(object sender, EventArgs e)
+        private async void BtnLiquidados_Click(object sender, EventArgs e)
         {
-            TablaClientes.MostrarLiquidados(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarBotones();
         }
+
+        //Para desactivar los botones mientras se imprime una tabla
+        private void DesactivarBotones()
+        {
+            btnLista1.Enabled = false;
+            btnLista2.Enabled = false;
+            btnLista3.Enabled = false;
+            btnMostrarTodos.Enabled = false;
+            btnLiquidados.Enabled = false;
+        }
+        //Se reactivan los botones una vez se imprime la tabla
+        private void ActivarBotones()
+        {
+            btnLista1.Enabled = true;
+            btnLista2.Enabled = true;
+            btnLista3.Enabled = true;
+            btnMostrarTodos.Enabled = true;
+            btnLiquidados.Enabled = true;
+        }
+
+        #endregion
 
         private void BtnMarcarP_Click(object sender, EventArgs e)
         {
