@@ -1179,6 +1179,7 @@
             btnEditar.Text = "Editar\r\ncliente\r\n";
             btnEditar.TextColor = Color.Transparent;
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 

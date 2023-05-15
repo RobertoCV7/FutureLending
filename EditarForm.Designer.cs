@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarForm));
             panelTitleBar = new Panel();
             lblTitle = new Label();
             pnlEditar = new Panel();
             groupBox1 = new GroupBox();
+            btnMover = new Controles_personalizados.RJButton();
+            cmbLista = new ControlesPersonalizados.RJComboBox();
             txtCorreo = new Controles_personalizados.TextBoxPersonalizado();
             label15 = new Label();
             txtTelefono = new Controles_personalizados.TextBoxPersonalizado();
@@ -93,19 +96,17 @@
             label18 = new Label();
             label17 = new Label();
             label8 = new Label();
-            cmbLista = new ControlesPersonalizados.RJComboBox();
-            btnMover = new Controles_personalizados.RJButton();
             pnlGuardar = new Panel();
             pnlLista2y3 = new Panel();
-            label31 = new Label();
-            txtPagado = new Controles_personalizados.TextBoxPersonalizado();
-            lblFechaLimite = new Label();
-            dateFechaLimite = new Controles_personalizados.DateTimePickerPersonalizado();
-            label33 = new Label();
             txtRestante = new Controles_personalizados.TextBoxPersonalizado();
+            label33 = new Label();
+            dateFechaLimite = new Controles_personalizados.DateTimePickerPersonalizado();
+            lblFechaLimite = new Label();
+            txtPagado = new Controles_personalizados.TextBoxPersonalizado();
+            label31 = new Label();
             pnlLiquidados = new Panel();
-            label32 = new Label();
             dateTimePickerPersonalizado1 = new Controles_personalizados.DateTimePickerPersonalizado();
+            label32 = new Label();
             panelTitleBar.SuspendLayout();
             pnlEditar.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -188,6 +189,49 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Mover a";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // btnMover
+            // 
+            btnMover.Anchor = AnchorStyles.Bottom;
+            btnMover.BackColor = SystemColors.Info;
+            btnMover.BackgroundColor = SystemColors.Info;
+            btnMover.BorderColor = Color.DarkSlateGray;
+            btnMover.BorderRadius = 10;
+            btnMover.BorderSize = 2;
+            btnMover.Enabled = false;
+            btnMover.FlatAppearance.BorderSize = 0;
+            btnMover.FlatStyle = FlatStyle.Flat;
+            btnMover.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMover.ForeColor = Color.Black;
+            btnMover.Location = new Point(232, 33);
+            btnMover.Name = "btnMover";
+            btnMover.Size = new Size(132, 30);
+            btnMover.TabIndex = 44;
+            btnMover.Text = "Mover";
+            btnMover.TextColor = Color.Black;
+            btnMover.UseVisualStyleBackColor = false;
+            // 
+            // cmbLista
+            // 
+            cmbLista.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbLista.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbLista.BackColor = SystemColors.Info;
+            cmbLista.BorderColor = Color.DarkSlateGray;
+            cmbLista.BorderSize = 2;
+            cmbLista.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbLista.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbLista.ForeColor = Color.Black;
+            cmbLista.IconColor = Color.DarkSlateGray;
+            cmbLista.ListBackColor = SystemColors.Info;
+            cmbLista.ListTextColor = Color.DimGray;
+            cmbLista.Location = new Point(6, 28);
+            cmbLista.MinimumSize = new Size(200, 30);
+            cmbLista.Name = "cmbLista";
+            cmbLista.Padding = new Padding(2);
+            cmbLista.Size = new Size(220, 41);
+            cmbLista.TabIndex = 44;
+            cmbLista.Tag = "Selecciones un tipo de pago";
+            cmbLista.Texts = "Seleccione una lista";
             // 
             // txtCorreo
             // 
@@ -1124,49 +1168,6 @@
             label8.TabIndex = 44;
             label8.Text = "Pagos";
             // 
-            // cmbLista
-            // 
-            cmbLista.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbLista.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbLista.BackColor = SystemColors.Info;
-            cmbLista.BorderColor = Color.DarkSlateGray;
-            cmbLista.BorderSize = 2;
-            cmbLista.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbLista.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbLista.ForeColor = Color.Black;
-            cmbLista.IconColor = Color.DarkSlateGray;
-            cmbLista.ListBackColor = SystemColors.Info;
-            cmbLista.ListTextColor = Color.DimGray;
-            cmbLista.Location = new Point(6, 28);
-            cmbLista.MinimumSize = new Size(200, 30);
-            cmbLista.Name = "cmbLista";
-            cmbLista.Padding = new Padding(2);
-            cmbLista.Size = new Size(220, 41);
-            cmbLista.TabIndex = 44;
-            cmbLista.Tag = "Selecciones un tipo de pago";
-            cmbLista.Texts = "Seleccione una lista";
-            // 
-            // btnMover
-            // 
-            btnMover.Anchor = AnchorStyles.Bottom;
-            btnMover.BackColor = SystemColors.Info;
-            btnMover.BackgroundColor = SystemColors.Info;
-            btnMover.BorderColor = Color.DarkSlateGray;
-            btnMover.BorderRadius = 10;
-            btnMover.BorderSize = 2;
-            btnMover.Enabled = false;
-            btnMover.FlatAppearance.BorderSize = 0;
-            btnMover.FlatStyle = FlatStyle.Flat;
-            btnMover.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMover.ForeColor = Color.Black;
-            btnMover.Location = new Point(232, 33);
-            btnMover.Name = "btnMover";
-            btnMover.Size = new Size(132, 30);
-            btnMover.TabIndex = 44;
-            btnMover.Text = "Mover";
-            btnMover.TextColor = Color.Black;
-            btnMover.UseVisualStyleBackColor = false;
-            // 
             // pnlGuardar
             // 
             pnlGuardar.BackColor = SystemColors.Info;
@@ -1192,69 +1193,6 @@
             pnlLista2y3.Size = new Size(394, 438);
             pnlLista2y3.TabIndex = 72;
             // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label31.Location = new Point(25, 61);
-            label31.Name = "label31";
-            label31.Size = new Size(137, 24);
-            label31.TabIndex = 44;
-            label31.Text = "Monto pagado:";
-            // 
-            // txtPagado
-            // 
-            txtPagado.BorderColor = Color.DarkSlateGray;
-            txtPagado.BorderFocusColor = SystemColors.Info;
-            txtPagado.BorderRadius = 0;
-            txtPagado.BorderSize = 2;
-            txtPagado.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPagado.Location = new Point(27, 88);
-            txtPagado.Multiline = false;
-            txtPagado.Name = "txtPagado";
-            txtPagado.Padding = new Padding(10, 7, 10, 7);
-            txtPagado.PasswordChar = false;
-            txtPagado.PlaceholderColor = Color.DimGray;
-            txtPagado.PlaceholderText = "Introduzca monto total";
-            txtPagado.Size = new Size(355, 39);
-            txtPagado.TabIndex = 44;
-            txtPagado.Texts = "";
-            txtPagado.UnderlinedStyle = true;
-            // 
-            // lblFechaLimite
-            // 
-            lblFechaLimite.AutoSize = true;
-            lblFechaLimite.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFechaLimite.Location = new Point(25, 313);
-            lblFechaLimite.Name = "lblFechaLimite";
-            lblFechaLimite.Size = new Size(117, 24);
-            lblFechaLimite.TabIndex = 45;
-            lblFechaLimite.Text = "Fecha límite:";
-            // 
-            // dateFechaLimite
-            // 
-            dateFechaLimite.BorderColor = Color.DarkSlateGray;
-            dateFechaLimite.BorderSize = 2;
-            dateFechaLimite.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateFechaLimite.Format = DateTimePickerFormat.Short;
-            dateFechaLimite.Location = new Point(25, 340);
-            dateFechaLimite.MinimumSize = new Size(4, 35);
-            dateFechaLimite.Name = "dateFechaLimite";
-            dateFechaLimite.Size = new Size(287, 35);
-            dateFechaLimite.SkinColor = SystemColors.Info;
-            dateFechaLimite.TabIndex = 44;
-            dateFechaLimite.TextColor = Color.Black;
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label33.Location = new Point(25, 187);
-            label33.Name = "label33";
-            label33.Size = new Size(139, 24);
-            label33.TabIndex = 47;
-            label33.Text = "Monto restante:";
-            // 
             // txtRestante
             // 
             txtRestante.BorderColor = Color.DarkSlateGray;
@@ -1275,6 +1213,69 @@
             txtRestante.Texts = "";
             txtRestante.UnderlinedStyle = true;
             // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label33.Location = new Point(25, 187);
+            label33.Name = "label33";
+            label33.Size = new Size(139, 24);
+            label33.TabIndex = 47;
+            label33.Text = "Monto restante:";
+            // 
+            // dateFechaLimite
+            // 
+            dateFechaLimite.BorderColor = Color.DarkSlateGray;
+            dateFechaLimite.BorderSize = 2;
+            dateFechaLimite.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dateFechaLimite.Format = DateTimePickerFormat.Short;
+            dateFechaLimite.Location = new Point(25, 340);
+            dateFechaLimite.MinimumSize = new Size(4, 35);
+            dateFechaLimite.Name = "dateFechaLimite";
+            dateFechaLimite.Size = new Size(287, 35);
+            dateFechaLimite.SkinColor = SystemColors.Info;
+            dateFechaLimite.TabIndex = 44;
+            dateFechaLimite.TextColor = Color.Black;
+            // 
+            // lblFechaLimite
+            // 
+            lblFechaLimite.AutoSize = true;
+            lblFechaLimite.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFechaLimite.Location = new Point(25, 313);
+            lblFechaLimite.Name = "lblFechaLimite";
+            lblFechaLimite.Size = new Size(117, 24);
+            lblFechaLimite.TabIndex = 45;
+            lblFechaLimite.Text = "Fecha límite:";
+            // 
+            // txtPagado
+            // 
+            txtPagado.BorderColor = Color.DarkSlateGray;
+            txtPagado.BorderFocusColor = SystemColors.Info;
+            txtPagado.BorderRadius = 0;
+            txtPagado.BorderSize = 2;
+            txtPagado.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPagado.Location = new Point(27, 88);
+            txtPagado.Multiline = false;
+            txtPagado.Name = "txtPagado";
+            txtPagado.Padding = new Padding(10, 7, 10, 7);
+            txtPagado.PasswordChar = false;
+            txtPagado.PlaceholderColor = Color.DimGray;
+            txtPagado.PlaceholderText = "Introduzca monto total";
+            txtPagado.Size = new Size(355, 39);
+            txtPagado.TabIndex = 44;
+            txtPagado.Texts = "";
+            txtPagado.UnderlinedStyle = true;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(25, 61);
+            label31.Name = "label31";
+            label31.Size = new Size(137, 24);
+            label31.TabIndex = 44;
+            label31.Text = "Monto pagado:";
+            // 
             // pnlLiquidados
             // 
             pnlLiquidados.BackColor = SystemColors.Info;
@@ -1284,16 +1285,6 @@
             pnlLiquidados.Name = "pnlLiquidados";
             pnlLiquidados.Size = new Size(394, 438);
             pnlLiquidados.TabIndex = 48;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label32.Location = new Point(25, 197);
-            label32.Name = "label32";
-            label32.Size = new Size(199, 24);
-            label32.TabIndex = 44;
-            label32.Text = "Fecha de último pago:";
             // 
             // dateTimePickerPersonalizado1
             // 
@@ -1309,6 +1300,16 @@
             dateTimePickerPersonalizado1.TabIndex = 44;
             dateTimePickerPersonalizado1.TextColor = Color.Black;
             // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(25, 197);
+            label32.Name = "label32";
+            label32.Size = new Size(199, 24);
+            label32.TabIndex = 44;
+            label32.Text = "Fecha de último pago:";
+            // 
             // EditarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1320,9 +1321,10 @@
             Controls.Add(pnlLista1);
             Controls.Add(pnlEditar);
             Controls.Add(panelTitleBar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditarForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EditarForm";
+            Text = "Editar Cliente ";
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
             pnlEditar.ResumeLayout(false);

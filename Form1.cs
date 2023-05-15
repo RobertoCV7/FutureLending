@@ -275,6 +275,12 @@ namespace FutureLending
             }
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            using EditarForm editarForm = new EditarForm();
+            editarForm.ShowDialog();
+        }
+
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos instancia = new();
