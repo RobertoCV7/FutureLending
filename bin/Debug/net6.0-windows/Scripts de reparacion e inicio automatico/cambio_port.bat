@@ -5,7 +5,7 @@ set mysql_path=%xampp_path%\mysql
 set mysql_bin_path=%mysql_path%\bin
 set my_ini_path=%mysql_path%\bin\my.ini
 
-set  new_port=3307
+set /p new_port=Ingrese el nuevo número de puerto para MySQL:
 
 echo Modificando el archivo my.ini...
 echo [mysqld] >> %my_ini_path%

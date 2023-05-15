@@ -1,3 +1,6 @@
+using Bunifu.Framework.UI;
+using Bunifu.UI.WinForms;
+using FutureLending.ControlesPersonalizados;
 using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Utilities;
 using System.ComponentModel;
@@ -16,8 +19,13 @@ namespace FutureLending
         {
             InitializeComponent();
             CollapseMenu();
+            rjButton1.Enabled = false;
+            rjComboBox2.Enabled = true;
+            cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
             //Para una visualización más rápida de los datos mediante virtualización
             gridListas.VirtualMode = false;
             TablaClientes.AñadirEvento(gridListas);
@@ -39,7 +47,7 @@ namespace FutureLending
             }
             else
             { //Expand menu
-                panelMenu.Width = 230;
+                panelMenu.Width = 250;
                 pictureBox1.Visible = true;
                 btnMenu.Dock = DockStyle.None;
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
@@ -94,7 +102,6 @@ namespace FutureLending
         private void BtnTodosSistemas_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos instancia = new();
-            Lectura_Base_Datos.ReacomodoDeScripts();
             _ = instancia.CheckConnection();
         }
 
@@ -258,9 +265,9 @@ namespace FutureLending
             listaActual = "liquidados";
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            Lectura_Base_Datos instancia = new();
             instancia.Erase(cmbCliente.Texts, listaActual);
 
             //Verifica de cuál lista se eliminó y la recarga
@@ -486,13 +493,68 @@ namespace FutureLending
             Application.Exit();
         }
 
-        private void gridListas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void RjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            if (rjComboBox2.SelectedIndex == -1)
+            {
+                rjButton1.Enabled = false;
+            }
+            else
+            {
+                rjButton1.Enabled = true;
+            }
 
         }
-
-        private void cmbCliente_OnSelectedIndexChanged(object sender, EventArgs e)
+        public static void MessageB(string Mensaje, string titulo,int tipo)
         {
+            Form2 a1 = new(Mensaje, titulo, tipo);
+            a1.ShowDialog();
+        }
+
+
+        private void RjButton1_Click(object sender, EventArgs e)
+        {
+            ExportarExcel e2 = new();
+            SaveFileDialog saveFileDialog = new()
+            {
+                Filter = "Archivos de Excel (*.xlsx)|*.xlsx|Todos los archivos (*.*)|*.*",
+                Title = "Guardar archivo"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = saveFileDialog.FileName;
+                switch (rjComboBox2.SelectedIndex)
+                {
+                    case 0:
+                        e2.ExportarLista1AExcel(rutaArchivo);
+                        break;
+                    case 1:
+                        e2.ExportarTabla2(rutaArchivo);
+                        break;
+
+                    case 2:
+                        e2.ExportarTabla3(rutaArchivo);
+                        break;
+
+                    case 3:
+                        e2.ExportarTablaLiquidados(rutaArchivo);
+                        break;
+
+                    case 4:
+                        e2.ExportarTodasLasTablas(rutaArchivo);
+                        break;
+                }
+
+
+
+
+            }
+
+
+
+
+
 
         }
     }

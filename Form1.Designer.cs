@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
@@ -87,6 +88,9 @@
             label1 = new Label();
             cmbPromotor = new ControlesPersonalizados.RJComboBox();
             pnlListas = new Panel();
+            rjButton1 = new Controles_personalizados.RJButton();
+            rjComboBox2 = new ControlesPersonalizados.RJComboBox();
+            label18 = new Label();
             flowLayoutPanel3 = new FlowLayoutPanel();
             cmbCliente = new ControlesPersonalizados.RJComboBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
@@ -100,6 +104,7 @@
             btnLiquidados = new Controles_personalizados.RJButton();
             gridListas = new DataGridView();
             label8 = new Label();
+            bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -124,8 +129,9 @@
             panelMenu.Controls.Add(panel1);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(3, 4, 3, 4);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(230, 556);
+            panelMenu.Size = new Size(263, 741);
             panelMenu.TabIndex = 0;
             // 
             // btnTodosSistemas
@@ -139,13 +145,14 @@
             btnTodosSistemas.IconColor = Color.White;
             btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(0, 495);
+            btnTodosSistemas.Location = new Point(0, 660);
+            btnTodosSistemas.Margin = new Padding(3, 4, 3, 4);
             btnTodosSistemas.Name = "btnTodosSistemas";
-            btnTodosSistemas.Padding = new Padding(10, 0, 0, 0);
-            btnTodosSistemas.Size = new Size(230, 61);
+            btnTodosSistemas.Padding = new Padding(11, 0, 0, 0);
+            btnTodosSistemas.Size = new Size(263, 81);
             btnTodosSistemas.TabIndex = 3;
             btnTodosSistemas.Tag = "Ver estado de todos los sistemas";
-            btnTodosSistemas.Text = "Ver estado de todos los sistemas";
+            btnTodosSistemas.Text = "Reparar";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTodosSistemas.UseVisualStyleBackColor = true;
             btnTodosSistemas.Click += BtnTodosSistemas_Click;
@@ -161,10 +168,11 @@
             btnEstadoPagos.IconColor = Color.White;
             btnEstadoPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEstadoPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEstadoPagos.Location = new Point(0, 263);
+            btnEstadoPagos.Location = new Point(0, 351);
+            btnEstadoPagos.Margin = new Padding(3, 4, 3, 4);
             btnEstadoPagos.Name = "btnEstadoPagos";
-            btnEstadoPagos.Padding = new Padding(10, 0, 0, 0);
-            btnEstadoPagos.Size = new Size(230, 54);
+            btnEstadoPagos.Padding = new Padding(11, 0, 0, 0);
+            btnEstadoPagos.Size = new Size(263, 72);
             btnEstadoPagos.TabIndex = 2;
             btnEstadoPagos.Tag = "  Estado de pagos";
             btnEstadoPagos.Text = "  Estado de pagos";
@@ -183,10 +191,11 @@
             btnListas.IconColor = Color.White;
             btnListas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnListas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnListas.Location = new Point(0, 209);
+            btnListas.Location = new Point(0, 279);
+            btnListas.Margin = new Padding(3, 4, 3, 4);
             btnListas.Name = "btnListas";
-            btnListas.Padding = new Padding(10, 0, 0, 0);
-            btnListas.Size = new Size(230, 54);
+            btnListas.Padding = new Padding(11, 0, 0, 0);
+            btnListas.Size = new Size(263, 72);
             btnListas.TabIndex = 1;
             btnListas.Tag = "  Listas completas";
             btnListas.Text = "  Listas completas";
@@ -205,10 +214,11 @@
             btnIngresarClientes.IconColor = Color.White;
             btnIngresarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnIngresarClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIngresarClientes.Location = new Point(0, 155);
+            btnIngresarClientes.Location = new Point(0, 207);
+            btnIngresarClientes.Margin = new Padding(3, 4, 3, 4);
             btnIngresarClientes.Name = "btnIngresarClientes";
-            btnIngresarClientes.Padding = new Padding(10, 0, 0, 0);
-            btnIngresarClientes.Size = new Size(230, 54);
+            btnIngresarClientes.Padding = new Padding(11, 0, 0, 0);
+            btnIngresarClientes.Size = new Size(263, 72);
             btnIngresarClientes.TabIndex = 0;
             btnIngresarClientes.Tag = "   Ingresar clientes";
             btnIngresarClientes.Text = "   Ingresar clientes";
@@ -222,8 +232,9 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(230, 155);
+            panel1.Size = new Size(263, 207);
             panel1.TabIndex = 0;
             // 
             // btnMenu
@@ -234,9 +245,10 @@
             btnMenu.IconColor = Color.White;
             btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMenu.IconSize = 30;
-            btnMenu.Location = new Point(169, 51);
+            btnMenu.Location = new Point(193, 68);
+            btnMenu.Margin = new Padding(3, 4, 3, 4);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(60, 60);
+            btnMenu.Size = new Size(69, 80);
             btnMenu.TabIndex = 0;
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += BtnMenu_Click;
@@ -244,9 +256,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(9, 4);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(161, 146);
+            pictureBox1.Size = new Size(184, 195);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -256,9 +269,10 @@
             panelTitleBar.BackColor = Color.DarkCyan;
             panelTitleBar.Controls.Add(lblTitle);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(230, 0);
+            panelTitleBar.Location = new Point(263, 0);
+            panelTitleBar.Margin = new Padding(3, 4, 3, 4);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(857, 60);
+            panelTitleBar.Size = new Size(979, 80);
             panelTitleBar.TabIndex = 1;
             // 
             // lblTitle
@@ -266,9 +280,9 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Georgia", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = SystemColors.Desktop;
-            lblTitle.Location = new Point(36, 9);
+            lblTitle.Location = new Point(41, 12);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(237, 43);
+            lblTitle.Size = new Size(299, 54);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Bienvenido";
             // 
@@ -288,9 +302,10 @@
             pnlRegPago.Controls.Add(lblMonto);
             pnlRegPago.Controls.Add(DateTimeReg);
             pnlRegPago.Dock = DockStyle.Fill;
-            pnlRegPago.Location = new Point(0, 0);
+            pnlRegPago.Location = new Point(263, 80);
+            pnlRegPago.Margin = new Padding(3, 4, 3, 4);
             pnlRegPago.Name = "pnlRegPago";
-            pnlRegPago.Size = new Size(1087, 556);
+            pnlRegPago.Size = new Size(979, 661);
             pnlRegPago.TabIndex = 27;
             // 
             // ComBoxName
@@ -306,11 +321,12 @@
             ComBoxName.IconColor = Color.DarkSlateGray;
             ComBoxName.ListBackColor = SystemColors.Info;
             ComBoxName.ListTextColor = Color.DimGray;
-            ComBoxName.Location = new Point(270, 36);
-            ComBoxName.MinimumSize = new Size(200, 30);
+            ComBoxName.Location = new Point(309, 48);
+            ComBoxName.Margin = new Padding(3, 4, 3, 4);
+            ComBoxName.MinimumSize = new Size(229, 40);
             ComBoxName.Name = "ComBoxName";
-            ComBoxName.Padding = new Padding(2);
-            ComBoxName.Size = new Size(342, 49);
+            ComBoxName.Padding = new Padding(2, 3, 2, 3);
+            ComBoxName.Size = new Size(391, 65);
             ComBoxName.TabIndex = 14;
             ComBoxName.Texts = "Introduzca nombre";
             ComBoxName.OnSelectedIndexChanged += ActivarBtnBuscar;
@@ -329,11 +345,12 @@
             CombBoxLista.Items.AddRange(new object[] { "Lista 1", "Lista 2" });
             CombBoxLista.ListBackColor = SystemColors.Info;
             CombBoxLista.ListTextColor = Color.DimGray;
-            CombBoxLista.Location = new Point(270, 104);
-            CombBoxLista.MinimumSize = new Size(200, 30);
+            CombBoxLista.Location = new Point(309, 139);
+            CombBoxLista.Margin = new Padding(3, 4, 3, 4);
+            CombBoxLista.MinimumSize = new Size(229, 40);
             CombBoxLista.Name = "CombBoxLista";
-            CombBoxLista.Padding = new Padding(2);
-            CombBoxLista.Size = new Size(303, 47);
+            CombBoxLista.Padding = new Padding(2, 3, 2, 3);
+            CombBoxLista.Size = new Size(346, 63);
             CombBoxLista.TabIndex = 35;
             CombBoxLista.Texts = "Introduzca lista";
             CombBoxLista.OnSelectedIndexChanged += ActivarBtnBuscar;
@@ -342,9 +359,9 @@
             // 
             label29.AutoSize = true;
             label29.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label29.Location = new Point(36, 58);
+            label29.Location = new Point(41, 77);
             label29.Name = "label29";
-            label29.Size = new Size(175, 24);
+            label29.Size = new Size(224, 29);
             label29.TabIndex = 0;
             label29.Text = "Nombre del cliente:";
             // 
@@ -360,9 +377,10 @@
             btnBuscarC.FlatStyle = FlatStyle.Flat;
             btnBuscarC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnBuscarC.ForeColor = Color.Black;
-            btnBuscarC.Location = new Point(699, 82);
+            btnBuscarC.Location = new Point(799, 109);
+            btnBuscarC.Margin = new Padding(3, 4, 3, 4);
             btnBuscarC.Name = "btnBuscarC";
-            btnBuscarC.Size = new Size(118, 36);
+            btnBuscarC.Size = new Size(135, 48);
             btnBuscarC.TabIndex = 13;
             btnBuscarC.Text = "Buscar";
             btnBuscarC.TextColor = Color.Black;
@@ -373,9 +391,9 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(36, 129);
+            label17.Location = new Point(41, 172);
             label17.Name = "label17";
-            label17.Size = new Size(116, 24);
+            label17.Size = new Size(152, 29);
             label17.TabIndex = 34;
             label17.Text = "Tipo de lista:";
             // 
@@ -383,9 +401,9 @@
             // 
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFecha.Location = new Point(36, 402);
+            lblFecha.Location = new Point(41, 536);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(156, 24);
+            lblFecha.Size = new Size(200, 29);
             lblFecha.TabIndex = 31;
             lblFecha.Text = "Fecha a registrar:";
             lblFecha.Visible = false;
@@ -398,14 +416,15 @@
             txtBoxCredito.BorderSize = 2;
             txtBoxCredito.Enabled = false;
             txtBoxCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxCredito.Location = new Point(270, 198);
+            txtBoxCredito.Location = new Point(309, 264);
+            txtBoxCredito.Margin = new Padding(3, 4, 3, 4);
             txtBoxCredito.Multiline = false;
             txtBoxCredito.Name = "txtBoxCredito";
-            txtBoxCredito.Padding = new Padding(10, 7, 10, 7);
+            txtBoxCredito.Padding = new Padding(11, 9, 11, 9);
             txtBoxCredito.PasswordChar = false;
             txtBoxCredito.PlaceholderColor = Color.DimGray;
             txtBoxCredito.PlaceholderText = "";
-            txtBoxCredito.Size = new Size(232, 39);
+            txtBoxCredito.Size = new Size(265, 48);
             txtBoxCredito.TabIndex = 27;
             txtBoxCredito.Texts = "";
             txtBoxCredito.UnderlinedStyle = true;
@@ -415,9 +434,9 @@
             // 
             lblCredito.AutoSize = true;
             lblCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCredito.Location = new Point(36, 219);
+            lblCredito.Location = new Point(41, 292);
             lblCredito.Name = "lblCredito";
-            lblCredito.Size = new Size(153, 24);
+            lblCredito.Size = new Size(199, 29);
             lblCredito.TabIndex = 28;
             lblCredito.Text = "Crédito prestado:";
             lblCredito.Visible = false;
@@ -429,14 +448,15 @@
             txtBoxMonto.BorderRadius = 0;
             txtBoxMonto.BorderSize = 2;
             txtBoxMonto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxMonto.Location = new Point(270, 291);
+            txtBoxMonto.Location = new Point(309, 388);
+            txtBoxMonto.Margin = new Padding(3, 4, 3, 4);
             txtBoxMonto.Multiline = false;
             txtBoxMonto.Name = "txtBoxMonto";
-            txtBoxMonto.Padding = new Padding(10, 7, 10, 7);
+            txtBoxMonto.Padding = new Padding(11, 9, 11, 9);
             txtBoxMonto.PasswordChar = false;
             txtBoxMonto.PlaceholderColor = Color.DimGray;
             txtBoxMonto.PlaceholderText = "";
-            txtBoxMonto.Size = new Size(150, 39);
+            txtBoxMonto.Size = new Size(171, 48);
             txtBoxMonto.TabIndex = 30;
             txtBoxMonto.Texts = "";
             txtBoxMonto.UnderlinedStyle = true;
@@ -457,9 +477,10 @@
             btnMarcarP.FlatStyle = FlatStyle.Flat;
             btnMarcarP.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnMarcarP.ForeColor = Color.Black;
-            btnMarcarP.Location = new Point(419, 500);
+            btnMarcarP.Location = new Point(479, 587);
+            btnMarcarP.Margin = new Padding(3, 4, 3, 4);
             btnMarcarP.Name = "btnMarcarP";
-            btnMarcarP.Size = new Size(242, 40);
+            btnMarcarP.Size = new Size(277, 53);
             btnMarcarP.TabIndex = 33;
             btnMarcarP.Text = "Marcar como pagada";
             btnMarcarP.TextColor = Color.Black;
@@ -471,9 +492,9 @@
             // 
             lblMonto.AutoSize = true;
             lblMonto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMonto.Location = new Point(36, 314);
+            lblMonto.Location = new Point(41, 419);
             lblMonto.Name = "lblMonto";
-            lblMonto.Size = new Size(165, 24);
+            lblMonto.Size = new Size(212, 29);
             lblMonto.TabIndex = 29;
             lblMonto.Text = "Monto a depositar:";
             lblMonto.Visible = false;
@@ -484,10 +505,11 @@
             DateTimeReg.BorderSize = 2;
             DateTimeReg.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             DateTimeReg.Format = DateTimePickerFormat.Short;
-            DateTimeReg.Location = new Point(269, 396);
+            DateTimeReg.Location = new Point(307, 528);
+            DateTimeReg.Margin = new Padding(3, 4, 3, 4);
             DateTimeReg.MinimumSize = new Size(4, 35);
             DateTimeReg.Name = "DateTimeReg";
-            DateTimeReg.Size = new Size(151, 35);
+            DateTimeReg.Size = new Size(172, 35);
             DateTimeReg.SkinColor = SystemColors.Info;
             DateTimeReg.TabIndex = 32;
             DateTimeReg.TextColor = Color.Black;
@@ -528,9 +550,10 @@
             pnlClientes.Controls.Add(label1);
             pnlClientes.Controls.Add(cmbPromotor);
             pnlClientes.Dock = DockStyle.Fill;
-            pnlClientes.Location = new Point(230, 60);
+            pnlClientes.Location = new Point(263, 80);
+            pnlClientes.Margin = new Padding(3, 4, 3, 4);
             pnlClientes.Name = "pnlClientes";
-            pnlClientes.Size = new Size(857, 496);
+            pnlClientes.Size = new Size(979, 661);
             pnlClientes.TabIndex = 2;
             // 
             // cmbInteres
@@ -547,11 +570,12 @@
             cmbInteres.Items.AddRange(new object[] { "7%", "8%", "10%" });
             cmbInteres.ListBackColor = SystemColors.Info;
             cmbInteres.ListTextColor = Color.DimGray;
-            cmbInteres.Location = new Point(196, 190);
-            cmbInteres.MinimumSize = new Size(200, 30);
+            cmbInteres.Location = new Point(224, 253);
+            cmbInteres.Margin = new Padding(3, 4, 3, 4);
+            cmbInteres.MinimumSize = new Size(229, 40);
             cmbInteres.Name = "cmbInteres";
-            cmbInteres.Padding = new Padding(2);
-            cmbInteres.Size = new Size(316, 41);
+            cmbInteres.Padding = new Padding(2, 3, 2, 3);
+            cmbInteres.Size = new Size(361, 55);
             cmbInteres.TabIndex = 4;
             cmbInteres.Tag = "Seleccione un interés";
             cmbInteres.Texts = "Seleccione un interés";
@@ -570,9 +594,10 @@
             btnCalcular.FlatStyle = FlatStyle.Flat;
             btnCalcular.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnCalcular.ForeColor = Color.Black;
-            btnCalcular.Location = new Point(187, 450);
+            btnCalcular.Location = new Point(214, 600);
+            btnCalcular.Margin = new Padding(3, 4, 3, 4);
             btnCalcular.Name = "btnCalcular";
-            btnCalcular.Size = new Size(132, 30);
+            btnCalcular.Size = new Size(151, 40);
             btnCalcular.TabIndex = 7;
             btnCalcular.Text = "Calcular";
             btnCalcular.TextColor = Color.Black;
@@ -587,14 +612,15 @@
             txtTotal_I.BorderSize = 2;
             txtTotal_I.Enabled = false;
             txtTotal_I.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTotal_I.Location = new Point(283, 405);
+            txtTotal_I.Location = new Point(323, 540);
+            txtTotal_I.Margin = new Padding(3, 4, 3, 4);
             txtTotal_I.Multiline = false;
             txtTotal_I.Name = "txtTotal_I";
-            txtTotal_I.Padding = new Padding(10, 7, 10, 7);
+            txtTotal_I.Padding = new Padding(11, 9, 11, 9);
             txtTotal_I.PasswordChar = false;
             txtTotal_I.PlaceholderColor = Color.DimGray;
             txtTotal_I.PlaceholderText = "";
-            txtTotal_I.Size = new Size(139, 39);
+            txtTotal_I.Size = new Size(159, 48);
             txtTotal_I.TabIndex = 29;
             txtTotal_I.Texts = "";
             txtTotal_I.UnderlinedStyle = true;
@@ -604,9 +630,9 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(16, 414);
+            label16.Location = new Point(18, 552);
             label16.Name = "label16";
-            label16.Size = new Size(236, 24);
+            label16.Size = new Size(299, 29);
             label16.TabIndex = 28;
             label16.Text = "Monto segun tipo de pago:";
             // 
@@ -618,14 +644,15 @@
             txtTotal.BorderSize = 2;
             txtTotal.Enabled = false;
             txtTotal.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTotal.Location = new Point(283, 354);
+            txtTotal.Location = new Point(323, 472);
+            txtTotal.Margin = new Padding(3, 4, 3, 4);
             txtTotal.Multiline = false;
             txtTotal.Name = "txtTotal";
-            txtTotal.Padding = new Padding(10, 7, 10, 7);
+            txtTotal.Padding = new Padding(11, 9, 11, 9);
             txtTotal.PasswordChar = false;
             txtTotal.PlaceholderColor = Color.DimGray;
             txtTotal.PlaceholderText = "";
-            txtTotal.Size = new Size(139, 39);
+            txtTotal.Size = new Size(159, 48);
             txtTotal.TabIndex = 27;
             txtTotal.Texts = "";
             txtTotal.UnderlinedStyle = true;
@@ -639,14 +666,15 @@
             txtCorreo.BorderRadius = 0;
             txtCorreo.BorderSize = 2;
             txtCorreo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCorreo.Location = new Point(588, 379);
+            txtCorreo.Location = new Point(672, 505);
+            txtCorreo.Margin = new Padding(3, 4, 3, 4);
             txtCorreo.Multiline = false;
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Padding = new Padding(10, 7, 10, 7);
+            txtCorreo.Padding = new Padding(11, 9, 11, 9);
             txtCorreo.PasswordChar = false;
             txtCorreo.PlaceholderColor = Color.DimGray;
             txtCorreo.PlaceholderText = "Introduzca el correo";
-            txtCorreo.Size = new Size(248, 39);
+            txtCorreo.Size = new Size(283, 48);
             txtCorreo.TabIndex = 13;
             txtCorreo.Texts = "";
             txtCorreo.UnderlinedStyle = true;
@@ -657,9 +685,9 @@
             label15.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(588, 354);
+            label15.Location = new Point(672, 472);
             label15.Name = "label15";
-            label15.Size = new Size(171, 24);
+            label15.Size = new Size(219, 29);
             label15.TabIndex = 25;
             label15.Text = "Correo electrónico:";
             // 
@@ -671,14 +699,15 @@
             txtTelefono.BorderRadius = 0;
             txtTelefono.BorderSize = 2;
             txtTelefono.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTelefono.Location = new Point(588, 303);
+            txtTelefono.Location = new Point(672, 404);
+            txtTelefono.Margin = new Padding(3, 4, 3, 4);
             txtTelefono.Multiline = false;
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Padding = new Padding(10, 7, 10, 7);
+            txtTelefono.Padding = new Padding(11, 9, 11, 9);
             txtTelefono.PasswordChar = false;
             txtTelefono.PlaceholderColor = Color.DimGray;
             txtTelefono.PlaceholderText = "Introduzca el núm. de tel.";
-            txtTelefono.Size = new Size(248, 39);
+            txtTelefono.Size = new Size(283, 48);
             txtTelefono.TabIndex = 12;
             txtTelefono.Texts = "";
             txtTelefono.UnderlinedStyle = true;
@@ -690,9 +719,9 @@
             label14.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(608, 278);
+            label14.Location = new Point(695, 371);
             label14.Name = "label14";
-            label14.Size = new Size(90, 24);
+            label14.Size = new Size(116, 29);
             label14.TabIndex = 23;
             label14.Text = "Teléfono:";
             // 
@@ -704,14 +733,15 @@
             txtNumExt.BorderRadius = 0;
             txtNumExt.BorderSize = 2;
             txtNumExt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNumExt.Location = new Point(737, 227);
+            txtNumExt.Location = new Point(842, 303);
+            txtNumExt.Margin = new Padding(3, 4, 3, 4);
             txtNumExt.Multiline = false;
             txtNumExt.Name = "txtNumExt";
-            txtNumExt.Padding = new Padding(10, 7, 10, 7);
+            txtNumExt.Padding = new Padding(11, 9, 11, 9);
             txtNumExt.PasswordChar = false;
             txtNumExt.PlaceholderColor = Color.DimGray;
             txtNumExt.PlaceholderText = "Num. ext.";
-            txtNumExt.Size = new Size(101, 39);
+            txtNumExt.Size = new Size(115, 48);
             txtNumExt.TabIndex = 11;
             txtNumExt.Texts = "";
             txtNumExt.UnderlinedStyle = true;
@@ -723,9 +753,9 @@
             label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label13.AutoSize = true;
             label13.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(737, 203);
+            label13.Location = new Point(842, 271);
             label13.Name = "label13";
-            label13.Size = new Size(96, 24);
+            label13.Size = new Size(119, 29);
             label13.TabIndex = 21;
             label13.Text = "Núm. ext.:";
             // 
@@ -737,14 +767,15 @@
             txtNumInt.BorderRadius = 0;
             txtNumInt.BorderSize = 2;
             txtNumInt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNumInt.Location = new Point(586, 227);
+            txtNumInt.Location = new Point(670, 303);
+            txtNumInt.Margin = new Padding(3, 4, 3, 4);
             txtNumInt.Multiline = false;
             txtNumInt.Name = "txtNumInt";
-            txtNumInt.Padding = new Padding(10, 7, 10, 7);
+            txtNumInt.Padding = new Padding(11, 9, 11, 9);
             txtNumInt.PasswordChar = false;
             txtNumInt.PlaceholderColor = Color.DimGray;
             txtNumInt.PlaceholderText = "Num. int.";
-            txtNumInt.Size = new Size(101, 39);
+            txtNumInt.Size = new Size(115, 48);
             txtNumInt.TabIndex = 10;
             txtNumInt.Texts = "";
             txtNumInt.UnderlinedStyle = true;
@@ -756,9 +787,9 @@
             label12.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(586, 202);
+            label12.Location = new Point(670, 269);
             label12.Name = "label12";
-            label12.Size = new Size(90, 24);
+            label12.Size = new Size(113, 29);
             label12.TabIndex = 19;
             label12.Text = "Núm. int.:";
             // 
@@ -770,14 +801,15 @@
             txtColonia.BorderRadius = 0;
             txtColonia.BorderSize = 2;
             txtColonia.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtColonia.Location = new Point(586, 153);
+            txtColonia.Location = new Point(670, 204);
+            txtColonia.Margin = new Padding(3, 4, 3, 4);
             txtColonia.Multiline = false;
             txtColonia.Name = "txtColonia";
-            txtColonia.Padding = new Padding(10, 7, 10, 7);
+            txtColonia.Padding = new Padding(11, 9, 11, 9);
             txtColonia.PasswordChar = false;
             txtColonia.PlaceholderColor = Color.DimGray;
             txtColonia.PlaceholderText = "Introduzca la colonia";
-            txtColonia.Size = new Size(232, 39);
+            txtColonia.Size = new Size(265, 48);
             txtColonia.TabIndex = 9;
             txtColonia.Texts = "";
             txtColonia.UnderlinedStyle = true;
@@ -788,9 +820,9 @@
             label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(586, 128);
+            label11.Location = new Point(670, 171);
             label11.Name = "label11";
-            label11.Size = new Size(79, 24);
+            label11.Size = new Size(102, 29);
             label11.TabIndex = 17;
             label11.Text = "Colonia:";
             // 
@@ -802,14 +834,15 @@
             txtCalle.BorderRadius = 0;
             txtCalle.BorderSize = 2;
             txtCalle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCalle.Location = new Point(590, 78);
+            txtCalle.Location = new Point(674, 104);
+            txtCalle.Margin = new Padding(3, 4, 3, 4);
             txtCalle.Multiline = false;
             txtCalle.Name = "txtCalle";
-            txtCalle.Padding = new Padding(10, 7, 10, 7);
+            txtCalle.Padding = new Padding(11, 9, 11, 9);
             txtCalle.PasswordChar = false;
             txtCalle.PlaceholderColor = Color.DimGray;
             txtCalle.PlaceholderText = "Introduzca la calle";
-            txtCalle.Size = new Size(232, 39);
+            txtCalle.Size = new Size(265, 48);
             txtCalle.TabIndex = 8;
             txtCalle.Texts = "";
             txtCalle.UnderlinedStyle = true;
@@ -820,9 +853,9 @@
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(590, 53);
+            label10.Location = new Point(674, 71);
             label10.Name = "label10";
-            label10.Size = new Size(57, 24);
+            label10.Size = new Size(75, 29);
             label10.TabIndex = 15;
             label10.Text = "Calle:";
             // 
@@ -831,9 +864,9 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(590, 21);
+            label9.Location = new Point(674, 28);
             label9.Name = "label9";
-            label9.Size = new Size(95, 24);
+            label9.Size = new Size(121, 29);
             label9.TabIndex = 14;
             label9.Text = "Dirección:";
             // 
@@ -850,9 +883,10 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnGuardar.ForeColor = Color.Black;
-            btnGuardar.Location = new Point(626, 435);
+            btnGuardar.Location = new Point(715, 580);
+            btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(150, 40);
+            btnGuardar.Size = new Size(171, 53);
             btnGuardar.TabIndex = 14;
             btnGuardar.Text = "Guardar";
             btnGuardar.TextColor = Color.Black;
@@ -863,9 +897,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(16, 360);
+            label7.Location = new Point(18, 480);
             label7.Name = "label7";
-            label7.Size = new Size(204, 24);
+            label7.Size = new Size(261, 29);
             label7.TabIndex = 12;
             label7.Text = "Monto total con interés:";
             // 
@@ -873,9 +907,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(16, 306);
+            label6.Location = new Point(18, 408);
             label6.Name = "label6";
-            label6.Size = new Size(92, 24);
+            label6.Size = new Size(119, 29);
             label6.TabIndex = 10;
             label6.Text = "Promotor:";
             // 
@@ -893,11 +927,12 @@
             cmbTipo.Items.AddRange(new object[] { "Semanales", "Quincenales" });
             cmbTipo.ListBackColor = SystemColors.Info;
             cmbTipo.ListTextColor = Color.DimGray;
-            cmbTipo.Location = new Point(196, 244);
-            cmbTipo.MinimumSize = new Size(200, 30);
+            cmbTipo.Location = new Point(224, 325);
+            cmbTipo.Margin = new Padding(3, 4, 3, 4);
+            cmbTipo.MinimumSize = new Size(229, 40);
             cmbTipo.Name = "cmbTipo";
-            cmbTipo.Padding = new Padding(2);
-            cmbTipo.Size = new Size(316, 41);
+            cmbTipo.Padding = new Padding(2, 3, 2, 3);
+            cmbTipo.Size = new Size(361, 55);
             cmbTipo.TabIndex = 5;
             cmbTipo.Tag = "Selecciones un tipo de pago";
             cmbTipo.Texts = "Seleccione un tipo de pago";
@@ -907,9 +942,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(16, 252);
+            label5.Location = new Point(18, 336);
             label5.Name = "label5";
-            label5.Size = new Size(128, 24);
+            label5.Size = new Size(164, 29);
             label5.TabIndex = 8;
             label5.Text = "Tipo de pago:";
             // 
@@ -917,9 +952,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(16, 198);
+            label4.Location = new Point(18, 264);
             label4.Name = "label4";
-            label4.Size = new Size(71, 24);
+            label4.Size = new Size(92, 29);
             label4.TabIndex = 6;
             label4.Text = "Interés:";
             // 
@@ -929,10 +964,11 @@
             dateFechaInicio.BorderSize = 2;
             dateFechaInicio.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             dateFechaInicio.Format = DateTimePickerFormat.Short;
-            dateFechaInicio.Location = new Point(196, 139);
+            dateFechaInicio.Location = new Point(224, 185);
+            dateFechaInicio.Margin = new Padding(3, 4, 3, 4);
             dateFechaInicio.MinimumSize = new Size(4, 35);
             dateFechaInicio.Name = "dateFechaInicio";
-            dateFechaInicio.Size = new Size(287, 35);
+            dateFechaInicio.Size = new Size(327, 35);
             dateFechaInicio.SkinColor = SystemColors.Info;
             dateFechaInicio.TabIndex = 3;
             dateFechaInicio.TextColor = Color.Black;
@@ -941,9 +977,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(16, 144);
+            label3.Location = new Point(18, 192);
             label3.Name = "label3";
-            label3.Size = new Size(145, 24);
+            label3.Size = new Size(183, 29);
             label3.TabIndex = 4;
             label3.Text = "Fecha de inicio:";
             // 
@@ -954,14 +990,15 @@
             txtCredito.BorderRadius = 0;
             txtCredito.BorderSize = 2;
             txtCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCredito.Location = new Point(196, 83);
+            txtCredito.Location = new Point(224, 111);
+            txtCredito.Margin = new Padding(3, 4, 3, 4);
             txtCredito.Multiline = false;
             txtCredito.Name = "txtCredito";
-            txtCredito.Padding = new Padding(10, 7, 10, 7);
+            txtCredito.Padding = new Padding(11, 9, 11, 9);
             txtCredito.PasswordChar = false;
             txtCredito.PlaceholderColor = Color.DimGray;
             txtCredito.PlaceholderText = "Introduzca monto total";
-            txtCredito.Size = new Size(355, 39);
+            txtCredito.Size = new Size(406, 48);
             txtCredito.TabIndex = 2;
             txtCredito.Texts = "";
             txtCredito.UnderlinedStyle = true;
@@ -972,9 +1009,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(16, 90);
+            label2.Location = new Point(18, 120);
             label2.Name = "label2";
-            label2.Size = new Size(153, 24);
+            label2.Size = new Size(199, 29);
             label2.TabIndex = 2;
             label2.Text = "Crédito prestado:";
             // 
@@ -985,14 +1022,15 @@
             txtNombre.BorderRadius = 0;
             txtNombre.BorderSize = 2;
             txtNombre.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(196, 29);
+            txtNombre.Location = new Point(224, 39);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Multiline = false;
             txtNombre.Name = "txtNombre";
-            txtNombre.Padding = new Padding(10, 7, 10, 7);
+            txtNombre.Padding = new Padding(11, 9, 11, 9);
             txtNombre.PasswordChar = false;
             txtNombre.PlaceholderColor = Color.DimGray;
             txtNombre.PlaceholderText = "Introduzca el nombre";
-            txtNombre.Size = new Size(351, 39);
+            txtNombre.Size = new Size(401, 48);
             txtNombre.TabIndex = 1;
             txtNombre.Texts = "";
             txtNombre.UnderlinedStyle = true;
@@ -1002,9 +1040,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(16, 36);
+            label1.Location = new Point(18, 48);
             label1.Name = "label1";
-            label1.Size = new Size(167, 24);
+            label1.Size = new Size(213, 29);
             label1.TabIndex = 0;
             label1.Text = "Nombre completo:";
             // 
@@ -1020,14 +1058,15 @@
             cmbPromotor.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmbPromotor.ForeColor = Color.Black;
             cmbPromotor.IconColor = Color.DarkSlateGray;
-            cmbPromotor.Items.AddRange(new object[] { "Roberto la nalgona", "Ramona la vergiona" });
+            cmbPromotor.Items.AddRange(new object[] { "Roberto", "Ramon" });
             cmbPromotor.ListBackColor = SystemColors.Info;
             cmbPromotor.ListTextColor = Color.DimGray;
-            cmbPromotor.Location = new Point(196, 298);
-            cmbPromotor.MinimumSize = new Size(200, 30);
+            cmbPromotor.Location = new Point(224, 397);
+            cmbPromotor.Margin = new Padding(3, 4, 3, 4);
+            cmbPromotor.MinimumSize = new Size(229, 40);
             cmbPromotor.Name = "cmbPromotor";
-            cmbPromotor.Padding = new Padding(2);
-            cmbPromotor.Size = new Size(316, 40);
+            cmbPromotor.Padding = new Padding(2, 3, 2, 3);
+            cmbPromotor.Size = new Size(361, 53);
             cmbPromotor.TabIndex = 6;
             cmbPromotor.Tag = "Seleccione al promotor";
             cmbPromotor.Texts = "Seleccione al promotor";
@@ -1036,60 +1075,123 @@
             // pnlListas
             // 
             pnlListas.BackColor = SystemColors.Info;
+            pnlListas.Controls.Add(rjButton1);
+            pnlListas.Controls.Add(rjComboBox2);
+            pnlListas.Controls.Add(label18);
             pnlListas.Controls.Add(flowLayoutPanel3);
             pnlListas.Controls.Add(flowLayoutPanel2);
             pnlListas.Controls.Add(flowLayoutPanel1);
             pnlListas.Controls.Add(gridListas);
             pnlListas.Controls.Add(label8);
             pnlListas.Dock = DockStyle.Fill;
-            pnlListas.Location = new Point(230, 60);
+            pnlListas.Location = new Point(263, 80);
+            pnlListas.Margin = new Padding(3, 4, 3, 4);
             pnlListas.Name = "pnlListas";
-            pnlListas.Size = new Size(857, 496);
+            pnlListas.Size = new Size(979, 661);
             pnlListas.TabIndex = 14;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.DodgerBlue;
+            rjButton1.BackgroundColor = Color.DodgerBlue;
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 20;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.Location = new Point(43, 109);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(188, 50);
+            rjButton1.TabIndex = 25;
+            rjButton1.Text = "Exportar";
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += RjButton1_Click;
+            // 
+            // rjComboBox2
+            // 
+            rjComboBox2.AllowDrop = true;
+            rjComboBox2.AutoCompleteCustomSource.AddRange(new string[] { "Ramona-la-nalgona", "Yael-el-licenciado" });
+            rjComboBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
+            rjComboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
+            rjComboBox2.BackColor = SystemColors.Info;
+            rjComboBox2.BorderColor = Color.DarkSlateGray;
+            rjComboBox2.BorderSize = 2;
+            rjComboBox2.DropDownStyle = ComboBoxStyle.DropDown;
+            rjComboBox2.Enabled = false;
+            rjComboBox2.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            rjComboBox2.ForeColor = Color.Black;
+            rjComboBox2.IconColor = Color.DarkSlateGray;
+            rjComboBox2.Items.AddRange(new object[] { "Lista 1", "Lista 2", "Lista 3", "Lista Liquidados", "Todas las Listas" });
+            rjComboBox2.ListBackColor = SystemColors.Info;
+            rjComboBox2.ListTextColor = Color.DimGray;
+            rjComboBox2.Location = new Point(18, 41);
+            rjComboBox2.Margin = new Padding(3, 4, 3, 4);
+            rjComboBox2.MinimumSize = new Size(229, 40);
+            rjComboBox2.Name = "rjComboBox2";
+            rjComboBox2.Padding = new Padding(2, 3, 2, 3);
+            rjComboBox2.Size = new Size(261, 53);
+            rjComboBox2.TabIndex = 23;
+            rjComboBox2.Tag = "Seleccione un cliente";
+            rjComboBox2.Texts = "Seleccione una Lista";
+            rjComboBox2.OnSelectedIndexChanged += RjComboBox2_OnSelectedIndexChanged;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Location = new Point(44, 4);
+            label18.Name = "label18";
+            label18.Size = new Size(179, 28);
+            label18.TabIndex = 24;
+            label18.Text = "Exportar a Excel";
             // 
             // flowLayoutPanel3
             // 
             flowLayoutPanel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             flowLayoutPanel3.Controls.Add(cmbCliente);
-            flowLayoutPanel3.Location = new Point(277, 437);
+            flowLayoutPanel3.Location = new Point(216, 580);
+            flowLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(325, 45);
+            flowLayoutPanel3.Size = new Size(371, 60);
             flowLayoutPanel3.TabIndex = 23;
             // 
             // cmbCliente
             // 
+            cmbCliente.AllowDrop = true;
             cmbCliente.AutoCompleteCustomSource.AddRange(new string[] { "Ramona-la-nalgona", "Yael-el-licenciado" });
             cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbCliente.BackColor = SystemColors.Info;
             cmbCliente.BorderColor = Color.DarkSlateGray;
             cmbCliente.BorderSize = 2;
-            cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCliente.DropDownStyle = ComboBoxStyle.DropDown;
             cmbCliente.Enabled = false;
             cmbCliente.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmbCliente.ForeColor = Color.Black;
             cmbCliente.IconColor = Color.DarkSlateGray;
             cmbCliente.ListBackColor = SystemColors.Info;
             cmbCliente.ListTextColor = Color.DimGray;
-            cmbCliente.Location = new Point(3, 3);
-            cmbCliente.MinimumSize = new Size(200, 30);
+            cmbCliente.Location = new Point(3, 4);
+            cmbCliente.Margin = new Padding(3, 4, 3, 4);
+            cmbCliente.MinimumSize = new Size(229, 40);
             cmbCliente.Name = "cmbCliente";
-            cmbCliente.Padding = new Padding(2);
-            cmbCliente.Size = new Size(316, 40);
+            cmbCliente.Padding = new Padding(2, 3, 2, 3);
+            cmbCliente.Size = new Size(361, 53);
             cmbCliente.TabIndex = 22;
             cmbCliente.Tag = "Seleccione un cliente";
             cmbCliente.Texts = "Seleccione un cliente";
-            cmbCliente.OnSelectedIndexChanged += cmbCliente_OnSelectedIndexChanged;
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             flowLayoutPanel2.Controls.Add(btnEditar);
             flowLayoutPanel2.Controls.Add(btnEliminar);
-            flowLayoutPanel2.Location = new Point(608, 431);
-            flowLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel2.Location = new Point(695, 575);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(238, 56);
+            flowLayoutPanel2.Size = new Size(272, 75);
             flowLayoutPanel2.TabIndex = 21;
             // 
             // btnEditar
@@ -1105,9 +1207,10 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnEditar.ForeColor = Color.Transparent;
-            btnEditar.Location = new Point(3, 3);
+            btnEditar.Location = new Point(3, 4);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(111, 51);
+            btnEditar.Size = new Size(127, 68);
             btnEditar.TabIndex = 18;
             btnEditar.Text = "Editar\r\ncliente\r\n";
             btnEditar.TextColor = Color.Transparent;
@@ -1126,14 +1229,15 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnEliminar.ForeColor = Color.Transparent;
-            btnEliminar.Location = new Point(120, 4);
+            btnEliminar.Location = new Point(136, 5);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(111, 50);
+            btnEliminar.Size = new Size(127, 67);
             btnEliminar.TabIndex = 19;
             btnEliminar.Text = "Eliminar\r\ncliente\r\n";
             btnEliminar.TextColor = Color.Transparent;
             btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
+            btnEliminar.Click += BtnEliminar_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -1143,10 +1247,9 @@
             flowLayoutPanel1.Controls.Add(btnLista3);
             flowLayoutPanel1.Controls.Add(btnMostrarTodos);
             flowLayoutPanel1.Controls.Add(btnLiquidados);
-            flowLayoutPanel1.Location = new Point(484, 2);
-            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel1.Location = new Point(553, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(370, 119);
+            flowLayoutPanel1.Size = new Size(423, 159);
             flowLayoutPanel1.TabIndex = 20;
             // 
             // btnLista1
@@ -1162,9 +1265,10 @@
             btnLista1.FlatStyle = FlatStyle.Flat;
             btnLista1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLista1.ForeColor = Color.Transparent;
-            btnLista1.Location = new Point(3, 3);
+            btnLista1.Location = new Point(3, 4);
+            btnLista1.Margin = new Padding(3, 4, 3, 4);
             btnLista1.Name = "btnLista1";
-            btnLista1.Size = new Size(111, 55);
+            btnLista1.Size = new Size(127, 73);
             btnLista1.TabIndex = 0;
             btnLista1.Text = "Lista 1:\r\nIniciación";
             btnLista1.TextColor = Color.Transparent;
@@ -1183,9 +1287,10 @@
             btnLista2.FlatStyle = FlatStyle.Flat;
             btnLista2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLista2.ForeColor = Color.Transparent;
-            btnLista2.Location = new Point(120, 3);
+            btnLista2.Location = new Point(136, 4);
+            btnLista2.Margin = new Padding(3, 4, 3, 4);
             btnLista2.Name = "btnLista2";
-            btnLista2.Size = new Size(111, 55);
+            btnLista2.Size = new Size(127, 73);
             btnLista2.TabIndex = 1;
             btnLista2.Text = "Lista 2:\r\nExtrajudicial";
             btnLista2.TextColor = Color.Transparent;
@@ -1204,9 +1309,10 @@
             btnLista3.FlatStyle = FlatStyle.Flat;
             btnLista3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLista3.ForeColor = Color.Transparent;
-            btnLista3.Location = new Point(237, 3);
+            btnLista3.Location = new Point(269, 4);
+            btnLista3.Margin = new Padding(3, 4, 3, 4);
             btnLista3.Name = "btnLista3";
-            btnLista3.Size = new Size(127, 55);
+            btnLista3.Size = new Size(145, 73);
             btnLista3.TabIndex = 2;
             btnLista3.Text = "Lista 3:\r\nDemanda legal";
             btnLista3.TextColor = Color.Transparent;
@@ -1225,9 +1331,10 @@
             btnMostrarTodos.FlatStyle = FlatStyle.Flat;
             btnMostrarTodos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnMostrarTodos.ForeColor = Color.Transparent;
-            btnMostrarTodos.Location = new Point(3, 64);
+            btnMostrarTodos.Location = new Point(3, 85);
+            btnMostrarTodos.Margin = new Padding(3, 4, 3, 4);
             btnMostrarTodos.Name = "btnMostrarTodos";
-            btnMostrarTodos.Size = new Size(111, 56);
+            btnMostrarTodos.Size = new Size(127, 75);
             btnMostrarTodos.TabIndex = 14;
             btnMostrarTodos.Text = "Mostrar\r\ntodos";
             btnMostrarTodos.TextColor = Color.Transparent;
@@ -1246,9 +1353,10 @@
             btnLiquidados.FlatStyle = FlatStyle.Flat;
             btnLiquidados.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLiquidados.ForeColor = Color.Transparent;
-            btnLiquidados.Location = new Point(120, 64);
+            btnLiquidados.Location = new Point(136, 85);
+            btnLiquidados.Margin = new Padding(3, 4, 3, 4);
             btnLiquidados.Name = "btnLiquidados";
-            btnLiquidados.Size = new Size(111, 53);
+            btnLiquidados.Size = new Size(127, 71);
             btnLiquidados.TabIndex = 15;
             btnLiquidados.Text = "Clientes\r\nliquidados";
             btnLiquidados.TextColor = Color.Transparent;
@@ -1278,7 +1386,8 @@
             gridListas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             gridListas.EnableHeadersVisualStyles = false;
             gridListas.GridColor = Color.CadetBlue;
-            gridListas.Location = new Point(16, 127);
+            gridListas.Location = new Point(18, 169);
+            gridListas.Margin = new Padding(3, 4, 3, 4);
             gridListas.Name = "gridListas";
             gridListas.ReadOnly = true;
             gridListas.RowHeadersVisible = false;
@@ -1291,31 +1400,38 @@
             gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             gridListas.RowTemplate.Height = 25;
             gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridListas.Size = new Size(820, 292);
+            gridListas.Size = new Size(937, 389);
             gridListas.TabIndex = 16;
-            gridListas.CellContentClick += gridListas_CellContentClick;
             // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(283, 14);
+            label8.Location = new Point(323, 19);
             label8.Name = "label8";
-            label8.Size = new Size(165, 24);
+            label8.Size = new Size(214, 29);
             label8.TabIndex = 13;
             label8.Text = "Seleccione la lista:";
             // 
+            // bunifuElipse1
+            // 
+            bunifuElipse1.ElipseRadius = 40;
+            bunifuElipse1.TargetControl = pictureBox1;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1087, 556);
-            Controls.Add(pnlListas);
+            ClientSize = new Size(1242, 741);
             Controls.Add(pnlClientes);
+            Controls.Add(pnlRegPago);
+            Controls.Add(pnlListas);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
-            Controls.Add(pnlRegPago);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FutureLending";
@@ -1409,5 +1525,9 @@
         private Controles_personalizados.RJButton btnEditar;
         private Controles_personalizados.RJButton btnEliminar;
         private FlowLayoutPanel flowLayoutPanel3;
+        private Controles_personalizados.RJButton rjButton1;
+        private ControlesPersonalizados.RJComboBox rjComboBox2;
+        private Label label18;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

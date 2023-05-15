@@ -4,23 +4,19 @@ using System.Linq;
 using System.Reflection;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Media3D;
-using Microsoft.VisualBasic.Logging;
 using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
-using Org.BouncyCastle.Crypto.Tls;
 using System.Diagnostics;
-using System.Globalization;
-using System.Configuration;
 using Microsoft.Win32;
 using System.Data;
+using Bunifu.Framework.UI;
 
 namespace FutureLending
 {
     public class Lectura_Base_Datos
     {
+#pragma warning disable CS0649 // El campo 'Lectura_Base_Datos.conexion' nunca se asigna y siempre tendrá el valor predeterminado null
         private readonly MySqlConnection? conexion;
+#pragma warning restore CS0649 // El campo 'Lectura_Base_Datos.conexion' nunca se asigna y siempre tendrá el valor predeterminado null
         private static readonly object lockObj = new();
         #region Conexion
         //verificador de cambio de puerto
@@ -371,35 +367,32 @@ namespace FutureLending
         public void Erase(string nombre, string tabla)
         {
             //Llamamos al conector
-            using (MySqlConnection Connection = Conector())
+            using MySqlConnection Connection = Conector();
+            using MySqlCommand command = Connection.CreateCommand();
+            try
             {
-                using MySqlCommand command = Connection.CreateCommand();
-                try
-                {
-                    command.CommandText = "DELETE FROM " + tabla + " WHERE Nombre_Completo = '" + nombre + "'";
+                command.CommandText = "DELETE FROM " + tabla + " WHERE Nombre_Completo = '" + nombre + "'";
 
-                    //esto nos devuelve el numero de filas que edito
-                    int filasAfectadas = command.ExecuteNonQuery();
-                    //cerramos la conexion
-                    Connection.Close();
-                    
-                    //Muestra si fue posible borrar el registro
-                    if (filasAfectadas > 0)
-                    {
-                        MessageBox.Show(nombre + " fue eliminado con éxito", "Eliminación exitosa",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hubo un problema al eliminar al cliente", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
+                //esto nos devuelve el numero de filas que edito
+                int filasAfectadas = command.ExecuteNonQuery();
+                //cerramos la conexion
+                Connection.Close();
+
+                //Muestra si fue posible borrar el registro
+                if (filasAfectadas > 0)
                 {
-                    Registro_errores(ex.ToString());
+                    MessageBox.Show(nombre + " fue eliminado con éxito", "Eliminación exitosa",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
+                else
+                {
+                    MessageBox.Show("Hubo un problema al eliminar al cliente", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Registro_errores(ex.ToString());
             }
         }
 
@@ -476,6 +469,7 @@ namespace FutureLending
         #region reparar conexion
         public async Task CheckConnection()
         {
+            ReacomodoDeScripts();
             string server = "localhost";
             int port = cambio_puerto ? 3307 : 3306;
             string database = "prestamos";
@@ -487,7 +481,7 @@ namespace FutureLending
             try
             {
                 await connection.OpenAsync();
-                MessageBox.Show("El programa funciona correctamente.");
+                Form1.MessageB("La Aplicacion Funciona Correctamente","Funcionando",1);
             }
             catch (Exception ex)
             {
@@ -543,7 +537,7 @@ namespace FutureLending
                         Registro_errores(ex.ToString());
                     }
                 }
-                MessageBox.Show("No se pudo reparar de manera ordinaria, cambiaremos el puerto de conexion porfavor espere");
+                Form1.MessageB("Cambiando de Puerto", "Cambio de Puerto", 2);
                 var processStartInfo2 = new ProcessStartInfo
                 {
                     FileName = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat",
@@ -556,7 +550,7 @@ namespace FutureLending
             }
         }
 
-       public static void ReacomodoDeScripts()
+        public static void ReacomodoDeScripts()
         {
             string path = EncontrarXampp();
 #pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
@@ -568,7 +562,6 @@ namespace FutureLending
             // Verifica si el valor ya está presente en el archivo .bat
             if (contenido.Contains("cd /d " + path))
             {
-                Console.WriteLine("El valor ya está presente en el archivo .bat. No se realizaron modificaciones.");
                 return;
             }
             // Realiza las modificaciones necesarias
@@ -620,7 +613,7 @@ namespace FutureLending
                     if (Directory.Exists(drivePath))
                     {
                         return drivePath;
-                        
+
                     }
                 }
             }
@@ -632,9 +625,7 @@ namespace FutureLending
         #region registro fallas
         private void Registro_errores(string error)
         {
-#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string logFilePath = $"{exeDirectory}\\Registro de Errores\\Errores.log";
             try
             {

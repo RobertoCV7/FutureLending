@@ -11,7 +11,7 @@ namespace FutureLending
     internal class TablaClientes
     {
         //Aquí se guardan los datos de todas las consultas
-        private static List<string[]> datos = new List<string[]>();
+        private static readonly List<string[]> datos = new();
 
         //Muestra en la tabla los datos de la lista 1
         public static async Task MostrarLista1(DataGridView gridListas, 
@@ -26,7 +26,7 @@ namespace FutureLending
                               "TIPO DE PAGO", "MONTO PAGADO"};
 
             // Añade los strings de cada fecha y pago a la lista
-            List<string> nombresColumnas = new List<string>(nombresString);
+            List<string> nombresColumnas = new(nombresString);
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
@@ -36,7 +36,7 @@ namespace FutureLending
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+                Lectura_Base_Datos instancia = new();
                 return instancia.LectLista1();
             });
 
@@ -59,13 +59,13 @@ namespace FutureLending
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                                 "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE", "FECHA LÍMITE"};
-            List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
+            List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+                Lectura_Base_Datos instancia = new();
                 return instancia.LectLista2();
             });
 
@@ -88,13 +88,13 @@ namespace FutureLending
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                                 "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE"};
-            List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
+            List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+                Lectura_Base_Datos instancia = new();
                 return instancia.LectLista3();
             });
 
@@ -117,13 +117,13 @@ namespace FutureLending
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
                               "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                               "TELÉFONO", "CORREO", "TIPO DE PAGO"};
-            List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
+            List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+                Lectura_Base_Datos instancia = new();
                 return instancia.LectLiquidados();
             });
 
@@ -146,13 +146,13 @@ namespace FutureLending
             string[] nombresString = {"LISTA", "NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL",
                             "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                             "TELÉFONO", "CORREO", "TIPO DE PAGO"};
-            List<string> nombresColumnas = new List<string>(); //Lista con los nombres de las columnas
+            List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
             //Lectura de datos comunes de todas las listas y clientes liquidados en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+                Lectura_Base_Datos instancia = new();
                 List<string[]> todas = instancia.LectTodos("lista1", "1");
                 todas.AddRange(instancia.LectTodos("lista2", "2"));
                 todas.AddRange(instancia.LectTodos("lista3", "3"));
@@ -232,11 +232,11 @@ namespace FutureLending
         {
             //Se encarga del evento para la virtualización e immpresión de datos en la tabla
 #pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
-            gridListas.CellValueNeeded += new DataGridViewCellValueEventHandler(gridListas_CellValueNeeded);
+            gridListas.CellValueNeeded += new DataGridViewCellValueEventHandler(GridListas_CellValueNeeded);
 #pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
         }
 
-        private static void gridListas_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        private static void GridListas_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
             e.Value = datos[e.RowIndex][e.ColumnIndex];
         }

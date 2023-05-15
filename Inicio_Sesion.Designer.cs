@@ -42,6 +42,11 @@
             button1 = new Button();
             Mensaje = new Label();
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(components);
+            bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -51,9 +56,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 12);
+            pictureBox1.Location = new Point(42, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(636, 539);
+            pictureBox1.Size = new Size(554, 574);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -61,9 +66,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 2);
+            pictureBox2.Location = new Point(0, 1);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 37);
+            pictureBox2.Size = new Size(36, 34);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -83,7 +88,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(657, 140);
+            label2.Location = new Point(657, 118);
             label2.Name = "label2";
             label2.Size = new Size(91, 28);
             label2.TabIndex = 3;
@@ -93,7 +98,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(657, 260);
+            label3.Location = new Point(657, 265);
             label3.Name = "label3";
             label3.Size = new Size(130, 28);
             label3.TabIndex = 4;
@@ -112,7 +117,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(657, 291);
+            pictureBox4.Location = new Point(657, 314);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(312, 65);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -125,7 +130,7 @@
             TextUsuario.BorderStyle = BorderStyle.None;
             TextUsuario.Font = new Font("Consolas", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             TextUsuario.ForeColor = Color.White;
-            TextUsuario.Location = new Point(663, 190);
+            TextUsuario.Location = new Point(677, 188);
             TextUsuario.Name = "TextUsuario";
             TextUsuario.Size = new Size(281, 32);
             TextUsuario.TabIndex = 7;
@@ -135,7 +140,7 @@
             TextContra.BackColor = Color.FromArgb(28, 41, 86);
             TextContra.BorderStyle = BorderStyle.None;
             TextContra.Font = new Font("Consolas", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            TextContra.Location = new Point(663, 308);
+            TextContra.Location = new Point(677, 334);
             TextContra.Name = "TextContra";
             TextContra.Size = new Size(281, 32);
             TextContra.TabIndex = 8;
@@ -148,7 +153,7 @@
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(657, 407);
+            button1.Location = new Point(657, 430);
             button1.Name = "button1";
             button1.Size = new Size(312, 65);
             button1.TabIndex = 9;
@@ -168,8 +173,33 @@
             // 
             // bunifuElipse1
             // 
-            bunifuElipse1.ElipseRadius = 5;
+            bunifuElipse1.ElipseRadius = 35;
             bunifuElipse1.TargetControl = this;
+            // 
+            // bunifuElipse2
+            // 
+            bunifuElipse2.ElipseRadius = 30;
+            bunifuElipse2.TargetControl = pictureBox1;
+            // 
+            // bunifuElipse3
+            // 
+            bunifuElipse3.ElipseRadius = 15;
+            bunifuElipse3.TargetControl = pictureBox2;
+            // 
+            // bunifuElipse4
+            // 
+            bunifuElipse4.ElipseRadius = 30;
+            bunifuElipse4.TargetControl = button1;
+            // 
+            // bunifuElipse5
+            // 
+            bunifuElipse5.ElipseRadius = 30;
+            bunifuElipse5.TargetControl = pictureBox3;
+            // 
+            // bunifuElipse6
+            // 
+            bunifuElipse6.ElipseRadius = 30;
+            bunifuElipse6.TargetControl = pictureBox4;
             // 
             // Inicio_Sesion
             // 
@@ -177,7 +207,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 74);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1035, 563);
+            ClientSize = new Size(1035, 598);
             ControlBox = false;
             Controls.Add(Mensaje);
             Controls.Add(button1);
@@ -224,5 +254,10 @@
         private Button button1;
         private Label Mensaje;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
     }
 }
