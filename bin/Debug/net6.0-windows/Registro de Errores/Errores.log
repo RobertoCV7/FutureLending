@@ -687,3 +687,7 @@
    at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
    at FutureLending.Lectura_Base_Datos.CheckConnection() in C:\Users\donne\FutureLeanding2\Lectura_Base_Datos.cs:line 483
+[14/05/2023 04:14:57 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLeanding2\Lectura_Base_Datos.cs:line 330
+[14/05/2023 04:14:57 p. m.] Error: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLeanding2\Lectura_Base_Datos.cs:line 330

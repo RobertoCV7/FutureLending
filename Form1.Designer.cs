@@ -549,7 +549,6 @@
             pnlClientes.Controls.Add(txtNombre);
             pnlClientes.Controls.Add(label1);
             pnlClientes.Controls.Add(cmbPromotor);
-            pnlClientes.Dock = DockStyle.Fill;
             pnlClientes.Location = new Point(263, 80);
             pnlClientes.Margin = new Padding(3, 4, 3, 4);
             pnlClientes.Name = "pnlClientes";
@@ -1424,9 +1423,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1242, 741);
+            Controls.Add(pnlListas);
             Controls.Add(pnlClientes);
             Controls.Add(pnlRegPago);
-            Controls.Add(pnlListas);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -1435,6 +1434,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FutureLending";
+            MaximumSizeChanged += Form1_MaximumSizeChanged;
             FormClosed += Form1_FormClosed;
             panelMenu.ResumeLayout(false);
             panel1.ResumeLayout(false);

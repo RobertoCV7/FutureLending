@@ -499,9 +499,7 @@ namespace FutureLending
 
         private async Task RepairProgramAsync()
         {
-#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             var tcs = new TaskCompletionSource<object>();
             var processStartInfo = new ProcessStartInfo
             {
@@ -553,9 +551,7 @@ namespace FutureLending
         public static void ReacomodoDeScripts()
         {
             string path = EncontrarXampp();
-#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string filePath = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarMysql.bat";
             // Lee el contenido del archivo .bat
             string contenido = File.ReadAllText(filePath);
@@ -572,9 +568,7 @@ namespace FutureLending
 
         public static string EncontrarXampp()
         {
-#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             string xamppPath = GetXamppInstallationPath();
-#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             if (!string.IsNullOrEmpty(xamppPath))
             {
                 return xamppPath;
@@ -588,8 +582,6 @@ namespace FutureLending
         static string? GetXamppInstallationPath()
         {
             string xamppRegistryPath = @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\XAMPP";
-
-#pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
             using (RegistryKey key = Registry.LocalMachine.OpenSubKey(xamppRegistryPath))
             {
                 if (key != null)
@@ -601,7 +593,6 @@ namespace FutureLending
                     }
                 }
             }
-#pragma warning restore CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL
 
             // Buscar en todas las unidades en caso de no encontrar en el Registro
             DriveInfo[] drives = DriveInfo.GetDrives();

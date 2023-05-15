@@ -288,6 +288,8 @@ namespace FutureLending
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
             cmbCliente.Enabled = false;
+            rjComboBox2.Enabled = false;
+            rjButton1.Enabled = false;
         }
 
         //Se reactivan los botones una vez se imprime la tabla
@@ -298,6 +300,8 @@ namespace FutureLending
             btnLista3.Enabled = true;
             btnMostrarTodos.Enabled = true;
             btnLiquidados.Enabled = true;
+            rjComboBox2.Enabled = true;
+            rjButton1.Enabled = true;
         }
 
         private void ActivarEditar()
@@ -505,7 +509,7 @@ namespace FutureLending
             }
 
         }
-        public static void MessageB(string Mensaje, string titulo,int tipo)
+        public static void MessageB(string Mensaje, string titulo, int tipo)
         {
             Form2 a1 = new(Mensaje, titulo, tipo);
             a1.ShowDialog();
@@ -545,15 +549,12 @@ namespace FutureLending
                         e2.ExportarTodasLasTablas(rutaArchivo);
                         break;
                 }
-
-
-
-
             }
 
+        }
 
-
-
+        private void Form1_MaximumSizeChanged(object sender, EventArgs e) //evento dond se maximiza la ventana
+        {
 
 
         }
