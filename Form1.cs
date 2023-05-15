@@ -8,6 +8,10 @@ namespace FutureLending
 {
     public partial class Form1 : Form
     {
+
+        //Variable que se utiliza a la hora de borrar o editar un registro
+        private string listaActual = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -187,7 +191,7 @@ namespace FutureLending
             txtTotal_I.Texts = $"${total}";
         }
 
-        #region Mostrar tablas en DataGridView
+        #region Mostrar tablas en DataGridView y editar/eliminar registros
 
         private async void BtnLista1_Click(object sender, EventArgs e)
         {
@@ -200,6 +204,7 @@ namespace FutureLending
             }
             ActivarListas();
             ActivarEditar();
+            listaActual = "lista1";
         }
 
         private async void BtnLista2_Click(object sender, EventArgs e)
@@ -212,6 +217,7 @@ namespace FutureLending
             }
             ActivarListas();
             ActivarEditar();
+            listaActual = "lista2";
         }
 
         private async void BtnLista3_Click(object sender, EventArgs e)
@@ -224,6 +230,7 @@ namespace FutureLending
             }
             ActivarListas();
             ActivarEditar();
+            listaActual = "lista3";
         }
 
         private async void BtnMostrarTodos_Click(object sender, EventArgs e)
@@ -248,6 +255,19 @@ namespace FutureLending
             }
             ActivarListas();
             ActivarEditar();
+            listaActual = "liquidados";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Lectura_Base_Datos instancia = new Lectura_Base_Datos();
+            instancia.Erase(cmbCliente.Texts, listaActual);
+
+            //Verifica de cuál lista se eliminó y la recarga
+            if (listaActual == "lista1") btnLista1.PerformClick();
+            else if (listaActual == "lista2") btnLista2.PerformClick();
+            else if (listaActual == "lista3") btnLista3.PerformClick();
+            else if (listaActual == "liquidados") btnLiquidados.PerformClick();
         }
 
         //Para desactivar los botones mientras se imprime una tabla

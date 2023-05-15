@@ -368,20 +368,41 @@ namespace FutureLending
             }
         }
 
-        /*
-        int Erase()//falta agregar parametros de recibido pero hasta que la base de datos este lista
+        public void Erase(string nombre, string tabla)
         {
-            MySqlConnection Connection = Conector(); //llamamos al conector
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "DELETE FROM nombre_tabla WHERE columna1='valor1' AND columna2='valor2'"; //solo se edita
+            //Llamamos al conector
+            using (MySqlConnection Connection = Conector())
+            {
+                using MySqlCommand command = Connection.CreateCommand();
+                try
+                {
+                    command.CommandText = "DELETE FROM " + tabla + " WHERE Nombre_Completo = '" + nombre + "'";
 
-            //esto nos devuelve el numero de filas que edito
-            int filasAfectadas = command.ExecuteNonQuery();
-            //cerramos la conexion
-            Connection.Close();
-            return filasAfectadas;
+                    //esto nos devuelve el numero de filas que edito
+                    int filasAfectadas = command.ExecuteNonQuery();
+                    //cerramos la conexion
+                    Connection.Close();
+                    
+                    //Muestra si fue posible borrar el registro
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show(nombre + " fue eliminado con éxito", "Eliminación exitosa",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un problema al eliminar al cliente", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
+                }
+                
+            }
         }
-        */
+
         public void Create(string lista, string Nombre, string Credito, DateTime Fecha_inicio, string Interes, string Monto_Total, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Pagado)
         {
             DateTime fechaInicio = Fecha_inicio;

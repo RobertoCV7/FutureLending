@@ -1133,6 +1133,7 @@
             btnEliminar.Text = "Eliminar\r\ncliente\r\n";
             btnEliminar.TextColor = Color.Transparent;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // flowLayoutPanel1
             // 

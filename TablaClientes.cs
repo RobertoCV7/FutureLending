@@ -155,7 +155,6 @@ namespace FutureLending
                 Lectura_Base_Datos instancia = new Lectura_Base_Datos();
                 List<string[]> todas = instancia.LectTodos("lista1", "1");
                 todas.AddRange(instancia.LectTodos("lista2", "2"));
-                todas.AddRange(instancia.LectTodos("lista2", "2"));
                 todas.AddRange(instancia.LectTodos("lista3", "3"));
                 todas.AddRange(instancia.LectTodos("liquidados", "Liquidados"));
                 return todas;
