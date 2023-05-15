@@ -95,10 +95,20 @@
             label8 = new Label();
             cmbLista = new ControlesPersonalizados.RJComboBox();
             btnMover = new Controles_personalizados.RJButton();
+            pnlGuardar = new Panel();
+            pnlLista2y3 = new Panel();
+            label31 = new Label();
+            txtPagado = new Controles_personalizados.TextBoxPersonalizado();
+            lblFechaLimite = new Label();
+            dateFechaLimite = new Controles_personalizados.DateTimePickerPersonalizado();
+            label33 = new Label();
+            txtRestante = new Controles_personalizados.TextBoxPersonalizado();
             panelTitleBar.SuspendLayout();
             pnlEditar.SuspendLayout();
             groupBox1.SuspendLayout();
             pnlLista1.SuspendLayout();
+            pnlGuardar.SuspendLayout();
+            pnlLista2y3.SuspendLayout();
             SuspendLayout();
             // 
             // panelTitleBar
@@ -648,7 +658,7 @@
             btnGuardarCambio.FlatStyle = FlatStyle.Flat;
             btnGuardarCambio.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnGuardarCambio.ForeColor = Color.Black;
-            btnGuardarCambio.Location = new Point(125, 444);
+            btnGuardarCambio.Location = new Point(125, 19);
             btnGuardarCambio.Name = "btnGuardarCambio";
             btnGuardarCambio.Size = new Size(150, 59);
             btnGuardarCambio.TabIndex = 43;
@@ -688,11 +698,9 @@
             pnlLista1.Controls.Add(label18);
             pnlLista1.Controls.Add(label17);
             pnlLista1.Controls.Add(label8);
-            pnlLista1.Controls.Add(btnGuardarCambio);
-            pnlLista1.Dock = DockStyle.Fill;
             pnlLista1.Location = new Point(872, 60);
             pnlLista1.Name = "pnlLista1";
-            pnlLista1.Size = new Size(394, 528);
+            pnlLista1.Size = new Size(394, 438);
             pnlLista1.TabIndex = 4;
             // 
             // label30
@@ -1123,7 +1131,6 @@
             cmbLista.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmbLista.ForeColor = Color.Black;
             cmbLista.IconColor = Color.DarkSlateGray;
-            cmbLista.Items.AddRange(new object[] { "Semanales", "Quincenales" });
             cmbLista.ListBackColor = SystemColors.Info;
             cmbLista.ListTextColor = Color.DimGray;
             cmbLista.Location = new Point(6, 28);
@@ -1156,11 +1163,121 @@
             btnMover.TextColor = Color.Black;
             btnMover.UseVisualStyleBackColor = false;
             // 
+            // pnlGuardar
+            // 
+            pnlGuardar.BackColor = SystemColors.Info;
+            pnlGuardar.Controls.Add(btnGuardarCambio);
+            pnlGuardar.Dock = DockStyle.Bottom;
+            pnlGuardar.Location = new Point(872, 497);
+            pnlGuardar.Name = "pnlGuardar";
+            pnlGuardar.Size = new Size(394, 91);
+            pnlGuardar.TabIndex = 72;
+            // 
+            // pnlLista2y3
+            // 
+            pnlLista2y3.BackColor = SystemColors.Info;
+            pnlLista2y3.Controls.Add(txtRestante);
+            pnlLista2y3.Controls.Add(label33);
+            pnlLista2y3.Controls.Add(dateFechaLimite);
+            pnlLista2y3.Controls.Add(lblFechaLimite);
+            pnlLista2y3.Controls.Add(txtPagado);
+            pnlLista2y3.Controls.Add(label31);
+            pnlLista2y3.Dock = DockStyle.Top;
+            pnlLista2y3.Location = new Point(872, 60);
+            pnlLista2y3.Name = "pnlLista2y3";
+            pnlLista2y3.Size = new Size(394, 438);
+            pnlLista2y3.TabIndex = 72;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(25, 61);
+            label31.Name = "label31";
+            label31.Size = new Size(137, 24);
+            label31.TabIndex = 44;
+            label31.Text = "Monto pagado:";
+            // 
+            // txtPagado
+            // 
+            txtPagado.BorderColor = Color.DarkSlateGray;
+            txtPagado.BorderFocusColor = SystemColors.Info;
+            txtPagado.BorderRadius = 0;
+            txtPagado.BorderSize = 2;
+            txtPagado.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPagado.Location = new Point(27, 88);
+            txtPagado.Multiline = false;
+            txtPagado.Name = "txtPagado";
+            txtPagado.Padding = new Padding(10, 7, 10, 7);
+            txtPagado.PasswordChar = false;
+            txtPagado.PlaceholderColor = Color.DimGray;
+            txtPagado.PlaceholderText = "Introduzca monto total";
+            txtPagado.Size = new Size(355, 39);
+            txtPagado.TabIndex = 44;
+            txtPagado.Texts = "";
+            txtPagado.UnderlinedStyle = true;
+            // 
+            // lblFechaLimite
+            // 
+            lblFechaLimite.AutoSize = true;
+            lblFechaLimite.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFechaLimite.Location = new Point(25, 313);
+            lblFechaLimite.Name = "lblFechaLimite";
+            lblFechaLimite.Size = new Size(117, 24);
+            lblFechaLimite.TabIndex = 45;
+            lblFechaLimite.Text = "Fecha límite:";
+            // 
+            // dateFechaLimite
+            // 
+            dateFechaLimite.BorderColor = Color.DarkSlateGray;
+            dateFechaLimite.BorderSize = 2;
+            dateFechaLimite.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dateFechaLimite.Format = DateTimePickerFormat.Short;
+            dateFechaLimite.Location = new Point(25, 340);
+            dateFechaLimite.MinimumSize = new Size(4, 35);
+            dateFechaLimite.Name = "dateFechaLimite";
+            dateFechaLimite.Size = new Size(287, 35);
+            dateFechaLimite.SkinColor = SystemColors.Info;
+            dateFechaLimite.TabIndex = 44;
+            dateFechaLimite.TextColor = Color.Black;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label33.Location = new Point(25, 187);
+            label33.Name = "label33";
+            label33.Size = new Size(139, 24);
+            label33.TabIndex = 47;
+            label33.Text = "Monto restante:";
+            // 
+            // txtRestante
+            // 
+            txtRestante.BorderColor = Color.DarkSlateGray;
+            txtRestante.BorderFocusColor = SystemColors.Info;
+            txtRestante.BorderRadius = 0;
+            txtRestante.BorderSize = 2;
+            txtRestante.Enabled = false;
+            txtRestante.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRestante.Location = new Point(25, 214);
+            txtRestante.Multiline = false;
+            txtRestante.Name = "txtRestante";
+            txtRestante.Padding = new Padding(10, 7, 10, 7);
+            txtRestante.PasswordChar = false;
+            txtRestante.PlaceholderColor = Color.DimGray;
+            txtRestante.PlaceholderText = "";
+            txtRestante.Size = new Size(139, 39);
+            txtRestante.TabIndex = 44;
+            txtRestante.Texts = "";
+            txtRestante.UnderlinedStyle = true;
+            // 
             // EditarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 588);
+            Controls.Add(pnlLista2y3);
+            Controls.Add(pnlGuardar);
             Controls.Add(pnlLista1);
             Controls.Add(pnlEditar);
             Controls.Add(panelTitleBar);
@@ -1174,6 +1291,9 @@
             groupBox1.ResumeLayout(false);
             pnlLista1.ResumeLayout(false);
             pnlLista1.PerformLayout();
+            pnlGuardar.ResumeLayout(false);
+            pnlLista2y3.ResumeLayout(false);
+            pnlLista2y3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1246,5 +1366,13 @@
         private GroupBox groupBox1;
         private Controles_personalizados.RJButton btnMover;
         private ControlesPersonalizados.RJComboBox cmbLista;
+        private Panel pnlGuardar;
+        private Panel pnlLista2y3;
+        private Controles_personalizados.DateTimePickerPersonalizado dateFechaLimite;
+        private Label lblFechaLimite;
+        private Controles_personalizados.TextBoxPersonalizado txtPagado;
+        private Label label31;
+        private Controles_personalizados.TextBoxPersonalizado txtRestante;
+        private Label label33;
     }
 }
