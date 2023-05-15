@@ -151,7 +151,7 @@
             btnTodosSistemas.Padding = new Padding(11, 0, 0, 0);
             btnTodosSistemas.Size = new Size(263, 81);
             btnTodosSistemas.TabIndex = 3;
-            btnTodosSistemas.Tag = "Ver estado de todos los sistemas";
+            btnTodosSistemas.Tag = "Reparar";
             btnTodosSistemas.Text = "Reparar";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTodosSistemas.UseVisualStyleBackColor = true;
