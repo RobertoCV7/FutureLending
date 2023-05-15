@@ -14,10 +14,11 @@ namespace FutureLending
         private static List<string[]> datos = new List<string[]>();
 
         //Muestra en la tabla los datos de la lista 1
-        public static async Task MostrarLista1(DataGridView gridListas)
+        public static async Task MostrarLista1(DataGridView gridListas, 
+            ControlesPersonalizados.RJComboBox cmbCliente)
         {
             // Se borran los registros
-            LimpiarTabla(gridListas);
+            LimpiarDatos(gridListas, cmbCliente);
 
             // Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
@@ -41,26 +42,18 @@ namespace FutureLending
 
             // Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = ObtenerColumnas();
-            AñadirDatos(nombresColumnas, gridListas);
+            AñadirEncabezado(nombresColumnas, gridListas);
 
-            // Agrega los datos al DataGridView en un hilo separado
-            await Task.Run(() =>
-            {
-                foreach (string[] row in datosList)
-                {
-                    gridListas.Invoke(new Action(() =>
-                    {
-                        gridListas.Rows.Add(row);
-                    }));
-                }
-            });
+            // Agrega los datos al DataGridView en un hilo separado y los nombres al ComboBox
+            await AñadirDatos(datosList, gridListas, cmbCliente, false);
         }
 
         //Muestra en la tabla los datos de la lista 2
-        public static async Task MostrarLista2(DataGridView gridListas)
+        public static async Task MostrarLista2(DataGridView gridListas,
+            ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
-            LimpiarTabla(gridListas);
+            LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
@@ -78,28 +71,18 @@ namespace FutureLending
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 16;
-            AñadirDatos(nombresColumnas, gridListas);
+            AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
-            await Task.Run(() =>
-            {
-#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
-                foreach (string[] row in datosList)
-                {
-                    gridListas.Invoke(new Action(() =>
-                    {
-                        gridListas.Rows.Add(row);
-                    }));
-                }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
-            });
+            await AñadirDatos(datosList, gridListas, cmbCliente,  false);
         }
 
         //Muestra en la tabla los datos de la lista 3
-        public static async Task MostrarLista3(DataGridView gridListas)
+        public static async Task MostrarLista3(DataGridView gridListas,
+            ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
-            LimpiarTabla(gridListas);
+            LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
@@ -117,28 +100,18 @@ namespace FutureLending
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 15;
-            AñadirDatos(nombresColumnas, gridListas);
+            AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
-            await Task.Run(() =>
-            {
-#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
-                foreach (string[] row in datosList)
-                {
-                    gridListas.Invoke(new Action(() =>
-                    {
-                        gridListas.Rows.Add(row);
-                    }));
-                }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
-            });
+            await AñadirDatos(datosList, gridListas, cmbCliente, false);
         }
 
         //Muestra en la tabla los datos de la liquidados
-        public static async Task MostrarLiquidados(DataGridView gridListas)
+        public static async Task MostrarLiquidados(DataGridView gridListas, 
+            ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
-            LimpiarTabla(gridListas);
+            LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
@@ -156,28 +129,18 @@ namespace FutureLending
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = 14;
-            AñadirDatos(nombresColumnas, gridListas);
+            AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
-            await Task.Run(() =>
-            {
-#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
-                foreach (string[] row in datosList)
-                {
-                    gridListas.Invoke(new Action(() =>
-                    {
-                        gridListas.Rows.Add(row);
-                    }));
-                }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
-            });
+            await AñadirDatos(datosList, gridListas, cmbCliente, false);
         }
 
         //Muestra en la tabla los datos de todos los clientes y su lista perteneciente
-        public static async Task MostrarTodos(DataGridView gridListas)
+        public static async Task MostrarTodos(DataGridView gridListas,
+            ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
-            LimpiarTabla(gridListas);
+            LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"LISTA", "NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL",
@@ -201,21 +164,10 @@ namespace FutureLending
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             //Se añade uno por la columna de lista
             gridListas.ColumnCount = 14;
-            AñadirDatos(nombresColumnas, gridListas);
+            AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
-            await Task.Run(() =>
-            {
-#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
-                foreach (string[] row in datosList)
-                {
-                    gridListas.Invoke(new Action(() =>
-                    {
-                        gridListas.Rows.Add(row);
-                    }));
-                }
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL
-            });
+            await AñadirDatos(datosList, gridListas, cmbCliente, true);
         }
 
         //Para determinar si son necesarias 26 o 19 columnas para las fechas
@@ -234,22 +186,47 @@ namespace FutureLending
         }
 
         //Añade los datos en cualquier tabla
-        static void AñadirDatos(List<string> nombresColumnas, DataGridView gridListas)
+        static void AñadirEncabezado(List<string> nombresColumnas, DataGridView gridListas)
         {
             for (int i = 0; i < gridListas.ColumnCount; i++)
             {
                 gridListas.Columns[i].Name = nombresColumnas[i];
             }
-
-            //Se añaden las filas
-            gridListas.RowCount = datos.Count;
         }
 
         //Borra el contenido de la tabla
-        static void LimpiarTabla(DataGridView gridListas)
+        static void LimpiarDatos(DataGridView gridListas,
+            ControlesPersonalizados.RJComboBox cmbCliente)
         {
             gridListas.Rows.Clear();
             gridListas.Columns.Clear();
+            cmbCliente.Items.Clear();
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+            cmbCliente.Texts = cmbCliente.Tag.ToString();
+#pragma warning restore CS8601 // Posible asignación de referencia nula
+        }
+
+        //Añade los datos a la tabla y ComboBox
+        static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas,
+            ControlesPersonalizados.RJComboBox cmbCliente, bool todos)
+        {
+            await Task.Run(() =>
+            {
+                foreach (string[] row in datosList)
+                {
+                    gridListas.Invoke(new Action(() =>
+                    {
+                        gridListas.Rows.Add(row);
+                    }));
+                    if (!todos)
+                    {
+                        cmbCliente.Invoke(new Action(() =>
+                        {
+                            cmbCliente.Items.Add(row[0]);
+                        }));
+                    }
+                }
+            });
         }
 
         public static void AñadirEvento(DataGridView gridListas)

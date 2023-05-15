@@ -257,6 +257,7 @@ namespace FutureLending
             }
             return datos;
         }
+
         public List<string[]> LectTodos(string tabla, string lista)
         {
             List<string[]> datos = new();
@@ -296,6 +297,7 @@ namespace FutureLending
             }
             return datos;
         }
+
         //Leer por un nombre en especifico 
         public string[] LectName(string tabla, string name)
         {

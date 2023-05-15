@@ -191,58 +191,63 @@ namespace FutureLending
 
         private async void BtnLista1_Click(object sender, EventArgs e)
         {
-            var mostrarListaTask = TablaClientes.MostrarLista1(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLista1(gridListas, cmbCliente);
 
-            while(!mostrarListaTask.IsCompleted)
+            while (!mostrarListaTask.IsCompleted)
             {
                 DesactivarBotones();
                 await Task.Delay(100);
             }
-            ActivarBotones();
+            ActivarListas();
+            ActivarEditar();
         }
 
         private async void BtnLista2_Click(object sender, EventArgs e)
         {
-            var mostrarListaTask = TablaClientes.MostrarLista2(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLista2(gridListas, cmbCliente);
             while (!mostrarListaTask.IsCompleted)
             {
                 DesactivarBotones();
                 await Task.Delay(100);
             }
-            ActivarBotones();
+            ActivarListas();
+            ActivarEditar();
         }
 
         private async void BtnLista3_Click(object sender, EventArgs e)
         {
-            var mostrarListaTask = TablaClientes.MostrarLista3(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLista3(gridListas, cmbCliente);
             while (!mostrarListaTask.IsCompleted)
             {
                 DesactivarBotones();
                 await Task.Delay(100);
             }
-            ActivarBotones();
+            ActivarListas();
+            ActivarEditar();
         }
 
         private async void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
-            var mostrarListaTask = TablaClientes.MostrarTodos(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarTodos(gridListas, cmbCliente);
             while (!mostrarListaTask.IsCompleted)
             {
                 DesactivarBotones();
                 await Task.Delay(100);
             }
-            ActivarBotones();
+            //En este no se activa para editar
+            ActivarListas();
         }
 
         private async void BtnLiquidados_Click(object sender, EventArgs e)
         {
-            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas);
+            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente);
             while (!mostrarListaTask.IsCompleted)
             {
                 DesactivarBotones();
                 await Task.Delay(100);
             }
-            ActivarBotones();
+            ActivarListas();
+            ActivarEditar();
         }
 
         //Para desactivar los botones mientras se imprime una tabla
@@ -253,15 +258,29 @@ namespace FutureLending
             btnLista3.Enabled = false;
             btnMostrarTodos.Enabled = false;
             btnLiquidados.Enabled = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            cmbCliente.Enabled = false;
         }
+
         //Se reactivan los botones una vez se imprime la tabla
-        private void ActivarBotones()
+        private void ActivarListas()
         {
             btnLista1.Enabled = true;
             btnLista2.Enabled = true;
             btnLista3.Enabled = true;
             btnMostrarTodos.Enabled = true;
             btnLiquidados.Enabled = true;
+        }
+
+        private void ActivarEditar()
+        {
+            if (gridListas.Rows.Count > 0)
+            {
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+                cmbCliente.Enabled = true;
+            }
         }
 
         #endregion
@@ -448,6 +467,11 @@ namespace FutureLending
         }
 
         private void gridListas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmbCliente_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
