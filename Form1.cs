@@ -265,6 +265,16 @@ namespace FutureLending
             listaActual = "liquidados";
         }
 
+        //Activa los botones de editar y eliminar hasta que seleccione un cliente
+        private void cmbCliente_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCliente.SelectedIndex != -1)
+            {
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
+        }
+
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos instancia = new();
@@ -308,8 +318,6 @@ namespace FutureLending
         {
             if (gridListas.Rows.Count > 0)
             {
-                btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
                 cmbCliente.Enabled = true;
             }
         }

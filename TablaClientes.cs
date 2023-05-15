@@ -200,6 +200,7 @@ namespace FutureLending
             gridListas.Rows.Clear();
             gridListas.Columns.Clear();
             cmbCliente.Items.Clear();
+            cmbCliente.SelectedItem = -1;
 #pragma warning disable CS8601 // Posible asignación de referencia nula
             cmbCliente.Texts = cmbCliente.Tag.ToString();
 #pragma warning restore CS8601 // Posible asignación de referencia nula
