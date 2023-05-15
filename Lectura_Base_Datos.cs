@@ -63,10 +63,10 @@ namespace FutureLending
         public void CerrarConexion()
         {
     
-            if (conexion != null && conexion.State == ConnectionState.Open)
+            if (Conexion != null && Conexion.State == ConnectionState.Open)
             {
-                conexion.Close();
-                conexion.Dispose();
+                Conexion.Close();
+                Conexion.Dispose();
             }
 
         }
@@ -477,6 +477,9 @@ namespace FutureLending
             }
         }
         int attempts = 3;
+
+        public MySqlConnection? Conexion => conexion;
+
         private async Task RepairProgramAsync()
         {
 #pragma warning disable CS8600 // Se va a convertir un literal nulo o un posible valor nulo en un tipo que no acepta valores NULL

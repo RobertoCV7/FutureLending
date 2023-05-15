@@ -15,7 +15,7 @@ namespace FutureLending
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             //Para una visualización más rápida de los datos mediante virtualización
-            gridListas.VirtualMode = true;
+            gridListas.VirtualMode = false;
             TablaClientes.AñadirEvento(gridListas);
         }
 
@@ -189,27 +189,27 @@ namespace FutureLending
 
         private void BtnLista1_Click(object sender, EventArgs e)
         {
-            _ = TablaClientes.MostrarTodos(gridListas, 1);
+            _ = TablaClientes.MostrarLista1(gridListas);
         }
 
         private void BtnLista2_Click(object sender, EventArgs e)
         {
-            _ = TablaClientes.MostrarTodos(gridListas, 2);
+            TablaClientes.MostrarLista2(gridListas);
         }
 
         private void BtnLista3_Click(object sender, EventArgs e)
         {
-            _ = TablaClientes.MostrarTodos(gridListas, 3);
+            TablaClientes.MostrarLista3(gridListas);
         }
 
         private void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
-            _ = TablaClientes.MostrarTodos(gridListas, 4);
+            TablaClientes.MostrarTodos(gridListas);
         }
 
         private void BtnLiquidados_Click(object sender, EventArgs e)
         {
-            _ = TablaClientes.MostrarTodos(gridListas, 5);
+            TablaClientes.MostrarLiquidados(gridListas);
         }
 
         private void BtnMarcarP_Click(object sender, EventArgs e)
@@ -393,6 +393,9 @@ namespace FutureLending
             Application.Exit();
         }
 
+        private void gridListas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

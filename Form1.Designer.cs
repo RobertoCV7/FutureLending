@@ -1293,6 +1293,7 @@
             gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
             gridListas.Size = new Size(937, 389);
             gridListas.TabIndex = 16;
+            gridListas.CellContentClick += gridListas_CellContentClick;
             // 
             // label8
             // 
