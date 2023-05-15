@@ -103,12 +103,16 @@
             dateFechaLimite = new Controles_personalizados.DateTimePickerPersonalizado();
             label33 = new Label();
             txtRestante = new Controles_personalizados.TextBoxPersonalizado();
+            pnlLiquidados = new Panel();
+            label32 = new Label();
+            dateTimePickerPersonalizado1 = new Controles_personalizados.DateTimePickerPersonalizado();
             panelTitleBar.SuspendLayout();
             pnlEditar.SuspendLayout();
             groupBox1.SuspendLayout();
             pnlLista1.SuspendLayout();
             pnlGuardar.SuspendLayout();
             pnlLista2y3.SuspendLayout();
+            pnlLiquidados.SuspendLayout();
             SuspendLayout();
             // 
             // panelTitleBar
@@ -1271,11 +1275,46 @@
             txtRestante.Texts = "";
             txtRestante.UnderlinedStyle = true;
             // 
+            // pnlLiquidados
+            // 
+            pnlLiquidados.BackColor = SystemColors.Info;
+            pnlLiquidados.Controls.Add(dateTimePickerPersonalizado1);
+            pnlLiquidados.Controls.Add(label32);
+            pnlLiquidados.Location = new Point(872, 60);
+            pnlLiquidados.Name = "pnlLiquidados";
+            pnlLiquidados.Size = new Size(394, 438);
+            pnlLiquidados.TabIndex = 48;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(25, 197);
+            label32.Name = "label32";
+            label32.Size = new Size(199, 24);
+            label32.TabIndex = 44;
+            label32.Text = "Fecha de último pago:";
+            // 
+            // dateTimePickerPersonalizado1
+            // 
+            dateTimePickerPersonalizado1.BorderColor = Color.DarkSlateGray;
+            dateTimePickerPersonalizado1.BorderSize = 2;
+            dateTimePickerPersonalizado1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerPersonalizado1.Format = DateTimePickerFormat.Short;
+            dateTimePickerPersonalizado1.Location = new Point(25, 225);
+            dateTimePickerPersonalizado1.MinimumSize = new Size(4, 35);
+            dateTimePickerPersonalizado1.Name = "dateTimePickerPersonalizado1";
+            dateTimePickerPersonalizado1.Size = new Size(287, 35);
+            dateTimePickerPersonalizado1.SkinColor = SystemColors.Info;
+            dateTimePickerPersonalizado1.TabIndex = 44;
+            dateTimePickerPersonalizado1.TextColor = Color.Black;
+            // 
             // EditarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 588);
+            Controls.Add(pnlLiquidados);
             Controls.Add(pnlLista2y3);
             Controls.Add(pnlGuardar);
             Controls.Add(pnlLista1);
@@ -1294,6 +1333,8 @@
             pnlGuardar.ResumeLayout(false);
             pnlLista2y3.ResumeLayout(false);
             pnlLista2y3.PerformLayout();
+            pnlLiquidados.ResumeLayout(false);
+            pnlLiquidados.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1374,5 +1415,8 @@
         private Label label31;
         private Controles_personalizados.TextBoxPersonalizado txtRestante;
         private Label label33;
+        private Panel pnlLiquidados;
+        private Controles_personalizados.DateTimePickerPersonalizado dateTimePickerPersonalizado1;
+        private Label label32;
     }
 }
