@@ -23,7 +23,7 @@ namespace FutureLending
             // Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                              "TIPO DE PAGO", "MONTO PAGADO"};
+                              "TIPO DE PAGO", "MONTO RESTANTE"};
 
             // Añade los strings de cada fecha y pago a la lista
             List<string> nombresColumnas = new(nombresString);

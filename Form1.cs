@@ -81,7 +81,7 @@ namespace FutureLending
             Lectura_Base_Datos obj = new();
             string Interes = cmbInteres.Texts.Replace("%", "");
             string MontoTotal = txtTotal.Texts.Replace("$", "");
-            obj.Create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, "0");
+            obj.Create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, MontoTotal);
             //Borrar datos para poder agregar de nuevo 
             txtNombre.Texts = "";
             txtCredito.Texts = "";
@@ -365,8 +365,10 @@ namespace FutureLending
             //Marcar como pagada en la base de datos
             if (band)
             {
+                //Restar el nuevo pago al monto restante 
+                double totRes = (Convert.ToDouble(datos[13])) - (Convert.ToDouble(txtBoxMonto.Texts));
                 Fecha += "-" + txtBoxMonto.Texts;
-                string update = "Fecha" + index + "='" + Fecha + "'";
+                string update = "Fecha" + index + "='" + Fecha + "'" + ", Monto_Restante='" + Convert.ToString(totRes) + "'";
                 Lectura_Base_Datos instancia2 = new();
                 instancia2.Edit(list, ComBoxName.Texts, update);
                 //Resetear valores 

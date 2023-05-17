@@ -103,7 +103,7 @@ namespace FutureLending
                         int tipoPago = reader.GetInt32("Tipo_pago");
                         fila[12] = ((tipoPago == 0) ? "Semanal" : "Quincenal");
 
-                        fila[13] = (reader.GetString("Monto_Pagado"));
+                        fila[13] = (reader.GetString("Monto_Restante"));
 
                         for (int i = 0; i < 14; i++)
                         {
@@ -321,7 +321,7 @@ namespace FutureLending
                         fila[10] = reader.GetString("Telefono");
                         fila[11] = reader.GetString("Correo");
                         fila[12] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
-                        fila[13] = reader.GetString("Monto_Pagado");
+                        fila[13] = reader.GetString("Monto_Restante");
 
                         int fechaCount = fila[12] == "Semanal" ? 14 : 7;
 
@@ -396,7 +396,7 @@ namespace FutureLending
             }
         }
 
-        public void Create(string lista, string Nombre, string Credito, DateTime Fecha_inicio, string Interes, string Monto_Total, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Pagado)
+        public void Create(string lista, string Nombre, string Credito, DateTime Fecha_inicio, string Interes, string Monto_Total, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Restante)
         {
             DateTime fechaInicio = Fecha_inicio;
             string fechainicio = fechaInicio.ToString("dd/MM/yyyy");
@@ -417,12 +417,12 @@ namespace FutureLending
 
             using MySqlConnection connection = Conector();
             StringBuilder queryBuilder = new();
-            queryBuilder.Append("INSERT INTO " + lista + " (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Pagado");
+            queryBuilder.Append("INSERT INTO " + lista + " (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante");
             for (int i = 1; i <= 14; i++)
             {
                 queryBuilder.Append(", Fecha").Append(i);
             }
-            queryBuilder.Append(") VALUES (@Nombre, @Credito, @Fecha_inicio, @Interes, @Monto_Total, @Promotor, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago, @Monto_Pagado");
+            queryBuilder.Append(") VALUES (@Nombre, @Credito, @Fecha_inicio, @Interes, @Monto_Total, @Promotor, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago, @Monto_Restante");
             for (int i = 0; i < 14; i++)
             {
                 queryBuilder.Append(", @Fecha").Append(i + 1);
@@ -443,7 +443,7 @@ namespace FutureLending
             command.Parameters.AddWithValue("@Telefono", Telefono);
             command.Parameters.AddWithValue("@Correo", Correo);
             command.Parameters.AddWithValue("@Tipo_pago", Tipo_pago);
-            command.Parameters.AddWithValue("@Monto_Pagado", Monto_Pagado);
+            command.Parameters.AddWithValue("@Monto_Restante", Monto_Restante);
             for (int i = 0; i < dias_de_pago.Length; i++)
             {
                 command.Parameters.AddWithValue("@Fecha" + (i + 1), dias_de_pago[i] + "-");
