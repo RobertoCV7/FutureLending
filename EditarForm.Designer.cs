@@ -188,7 +188,7 @@
             groupBox1.TabIndex = 43;
             groupBox1.TabStop = false;
             groupBox1.Text = "Mover a";
-            groupBox1.Enter += groupBox1_Enter;
+            groupBox1.Enter += GroupBox1_Enter;
             // 
             // btnMover
             // 
@@ -798,7 +798,7 @@
             txtPago10.TabIndex = 69;
             txtPago10.Texts = "";
             txtPago10.UnderlinedStyle = true;
-            txtPago10._TextChanged += textBoxPersonalizado9__TextChanged;
+            txtPago10._TextChanged += TextBoxPersonalizado9__TextChanged;
             // 
             // txtPago12
             // 

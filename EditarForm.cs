@@ -17,12 +17,12 @@ namespace FutureLending
             InitializeComponent();
         }
 
-        private void textBoxPersonalizado9__TextChanged(object sender, EventArgs e)
+        private void TextBoxPersonalizado9__TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void GroupBox1_Enter(object sender, EventArgs e)
         {
 
         }

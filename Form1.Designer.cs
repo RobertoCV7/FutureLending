@@ -1183,7 +1183,7 @@
             cmbCliente.TabIndex = 22;
             cmbCliente.Tag = "Seleccione un cliente";
             cmbCliente.Texts = "Seleccione un cliente";
-            cmbCliente.OnSelectedIndexChanged += cmbCliente_OnSelectedIndexChanged;
+            cmbCliente.OnSelectedIndexChanged += CmbCliente_OnSelectedIndexChanged;
             // 
             // flowLayoutPanel2
             // 
@@ -1216,7 +1216,7 @@
             btnEditar.Text = "Editar\r\ncliente\r\n";
             btnEditar.TextColor = Color.Transparent;
             btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
+            btnEditar.Click += BtnEditar_Click;
             // 
             // btnEliminar
             // 

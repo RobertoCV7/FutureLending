@@ -21,12 +21,6 @@ namespace FutureLending
             if (situacion == 1)
             {
                 this.Icon = new Icon(rutaAplicacion + "\\Resources\\Correcto.ico");
-                Image gif = Image.FromFile(rutaAplicacion + "\\Resources\\bailando.gif");
-                pictureBox1.Image = gif;
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-#pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
-                ImageAnimator.Animate(gif, OnFrameChanged);
-#pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
             }
             else if (situacion == 2)
             {
@@ -36,13 +30,6 @@ namespace FutureLending
             {
                 this.Icon = new Icon(rutaAplicacion + "\\Resources\\TodoMal.ico");
             }
-
-
-        }
-        private void OnFrameChanged(object sender, EventArgs e)
-        {
-            // Actualizar el PictureBox para mostrar el nuevo fotograma
-            pictureBox1.Invalidate();
         }
         private void RjButton1_Click(object sender, EventArgs e)
         {

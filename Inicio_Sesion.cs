@@ -24,15 +24,14 @@ namespace FutureLending
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string usuario = Properties.Settings1.Default.Usuario;
-            string contra = Properties.Settings1.Default.Contraseña;
             string usuariop = TextUsuario.Text.ToString();
             string contrap = TextContra.Text.ToString();
-            bool cerrar = false;
-            if (usuario.Equals(usuariop) && contra.Equals(contrap))
+            bool cerrar;
+            cerrar= Accesos.Accesar(usuariop, contrap);
+            if (cerrar== true)
             {
                 // Crear e iniciar el nuevo formulario
-                Form1 form2 = new();
+                Form1 form2 = new Form1();
                 form2.Show();
                 this.Hide();
             }
@@ -40,14 +39,7 @@ namespace FutureLending
             {
                 Mensaje.Text = "Usuario o Contraseña incorrectos ";
             }
-            if (cerrar == true)
-            {
-                this.Close();
-            }
-
-
         }
-
         private void Inicio_Sesion_Load(object sender, EventArgs e)
         {
 

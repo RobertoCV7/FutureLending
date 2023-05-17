@@ -33,8 +33,6 @@
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             Texto = new Label();
             rjButton1 = new Controles_personalizados.RJButton();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // bunifuElipse1
@@ -45,11 +43,11 @@
             // Texto
             // 
             Texto.AutoSize = true;
-            Texto.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Texto.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             Texto.ForeColor = SystemColors.Highlight;
-            Texto.Location = new Point(27, 29);
+            Texto.Location = new Point(29, 39);
             Texto.Name = "Texto";
-            Texto.Size = new Size(476, 34);
+            Texto.Size = new Size(506, 32);
             Texto.TabIndex = 0;
             Texto.Text = "El programa funciona correctamente";
             // 
@@ -62,9 +60,9 @@
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(142, 131);
+            rjButton1.Location = new Point(153, 108);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(212, 50);
             rjButton1.TabIndex = 1;
@@ -73,21 +71,12 @@
             rjButton1.UseVisualStyleBackColor = false;
             rjButton1.Click += RjButton1_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(12, 66);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(115, 142);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Snow;
-            ClientSize = new Size(541, 209);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(547, 202);
             Controls.Add(rjButton1);
             Controls.Add(Texto);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -97,7 +86,6 @@
             MinimizeBox = false;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -107,6 +95,5 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Controles_personalizados.RJButton rjButton1;
         private Label Texto;
-        private PictureBox pictureBox1;
     }
 }

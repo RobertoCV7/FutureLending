@@ -156,7 +156,8 @@ namespace FutureLending
             string[] datos = instancia.LectName(list, ComBoxName.Texts);
             if (datos[1] == null)
             {
-                MessageBox.Show("No se encontro al usuario en esa Lista");
+                Form2 a = new("No se encontro al usuario en esa Lista", "Advertencia", 2);
+                a.ShowDialog();
             }
             else
             {
@@ -266,7 +267,7 @@ namespace FutureLending
         }
 
         //Activa los botones de editar y eliminar hasta que seleccione un cliente
-        private void cmbCliente_OnSelectedIndexChanged(object sender, EventArgs e)
+        private void CmbCliente_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbCliente.SelectedIndex != -1)
             {
@@ -275,9 +276,9 @@ namespace FutureLending
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
-            using EditarForm editarForm = new EditarForm();
+            using EditarForm editarForm = new();
             editarForm.ShowDialog();
         }
 
@@ -361,16 +362,29 @@ namespace FutureLending
                 }
 
             }
-            if (!band) { MessageBox.Show("El cliente no cuenta con esa fecha."); }
+           
+            if (!band) { Form2 a = new("El cliente no cuenta con esa fecha", "Advertencia", 2);
+                a.ShowDialog();
+            }
             //Marcar como pagada en la base de datos
             if (band)
             {
                 //Restar el nuevo pago al monto restante 
                 double totRes = (Convert.ToDouble(datos[13])) - (Convert.ToDouble(txtBoxMonto.Texts));
-                Fecha += "-" + txtBoxMonto.Texts;
-                string update = "Fecha" + index + "='" + Fecha + "'" + ", Monto_Restante='" + Convert.ToString(totRes) + "'";
-                Lectura_Base_Datos instancia2 = new();
-                instancia2.Edit(list, ComBoxName.Texts, update);
+                //Si el monto restante es 0, entonces se pasa a liquidados 
+                if(totRes == 0)
+                {
+                    Lectura_Base_Datos obj = new();
+                    obj.CreateLiquidados(1,datos); //Agregarlo en liquidados
+                    obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                }
+                else
+                {
+                    Fecha += "-" + txtBoxMonto.Texts;
+                    string update = "Fecha" + index + "='" + Fecha + "'" + ", Monto_Restante='" + Convert.ToString(totRes) + "'";
+                    Lectura_Base_Datos instancia2 = new();
+                    instancia2.Edit(list, ComBoxName.Texts, update);
+                }
                 //Resetear valores 
                 ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
                 CombBoxLista.SelectedIndex = -1; CombBoxLista.Texts = "Introduzca lista";
