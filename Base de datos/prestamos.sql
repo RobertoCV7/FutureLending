@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2023 a las 00:01:01
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 17-05-2023 a las 05:28:15
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,7 @@ CREATE TABLE `liquidados` (
   `Telefono` varchar(12) NOT NULL,
   `Correo` varchar(30) NOT NULL,
   `Tipo_pago` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `liquidados`
@@ -71,7 +71,7 @@ CREATE TABLE `lista1` (
   `Telefono` varchar(12) NOT NULL,
   `Correo` varchar(30) NOT NULL,
   `Tipo_pago` int(2) NOT NULL,
-  `Monto_Pagado` varchar(100) NOT NULL,
+  `Monto_Restante` varchar(100) NOT NULL,
   `Fecha1` varchar(30) NOT NULL,
   `Fecha2` varchar(30) NOT NULL,
   `Fecha3` varchar(30) NOT NULL,
@@ -86,15 +86,14 @@ CREATE TABLE `lista1` (
   `Fecha12` varchar(30) NOT NULL,
   `Fecha13` varchar(30) NOT NULL,
   `Fecha14` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `lista1`
 --
 
-INSERT INTO `lista1` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Pagado`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
-('x', 'x', 'x', 'x', '', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 2, 'x', 'x-x', 'x-x', 'x-x', 'x-x', 'x-x', 'x-x', 'x-x', '-', '-', '-', '-', '-', '-', '-'),
-('y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 0, 'y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-y', 'y-z', 'y-z', 'y-z', 'y-z', 'y-z', 'y-z', 'y-z');
+INSERT INTO `lista1` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
+('Yarely ', '1200', '16/05/2023', '8', '1296', 'Roberto', 'Bustamante ', 'Centro ', '', '123', '2233344443', 'yarely@hotmail.com', 0, '1096', '23/05/2023-200', '30/05/2023-', '06/06/2023-', '13/06/2023-', '20/06/2023-', '27/06/2023-', '04/07/2023-', '11/07/2023-', '18/07/2023-', '25/07/2023-', '01/08/2023-', '08/08/2023-', '15/08/2023-', '22/08/2023-');
 
 -- --------------------------------------------------------
 
@@ -119,7 +118,7 @@ CREATE TABLE `lista2` (
   `Monto_Pagado` varchar(100) NOT NULL,
   `Monto_Restante` varchar(100) NOT NULL,
   `Fecha_Limite` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `lista2`
@@ -150,7 +149,7 @@ CREATE TABLE `lista3` (
   `Tipo_pago` int(2) NOT NULL,
   `Monto_Pagado` varchar(100) NOT NULL,
   `Monto_Restante` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `lista3`
