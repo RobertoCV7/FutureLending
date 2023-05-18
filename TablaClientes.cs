@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace FutureLending
             });
 
             // Añade las columnas correspondientes a la tabla y el nombre de cada una
-            gridListas.ColumnCount = ObtenerColumnas();
+            gridListas.ColumnCount = nombresColumnas.Count;
             AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado y los nombres al ComboBox
@@ -56,21 +57,20 @@ namespace FutureLending
             LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
+            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE", "FECHA LÍMITE"};
+                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE"};
             List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
-
+         
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
                 Lectura_Base_Datos instancia = new();
                 return instancia.LectLista2();
             });
-
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
-            gridListas.ColumnCount = 16;
+            gridListas.ColumnCount = nombresColumnas.Count;
             AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
@@ -85,9 +85,9 @@ namespace FutureLending
             LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
+            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE"};
+                                "TIPO DE PAGO","MONTO RESTANTE"};
             List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
@@ -99,7 +99,7 @@ namespace FutureLending
             });
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
-            gridListas.ColumnCount = 15;
+            gridListas.ColumnCount = nombresColumnas.Count;
             AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
@@ -128,7 +128,7 @@ namespace FutureLending
             });
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
-            gridListas.ColumnCount = 14;
+            gridListas.ColumnCount = nombresColumnas.Count;
             AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
@@ -162,7 +162,7 @@ namespace FutureLending
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
             //Se añade uno por la columna de lista
-            gridListas.ColumnCount = 14;
+            gridListas.ColumnCount = nombresColumnas.Count;
             AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado

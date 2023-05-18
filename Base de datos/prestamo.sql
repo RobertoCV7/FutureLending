@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2023 a las 07:46:29
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 18-05-2023 a las 02:31:52
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,8 +49,7 @@ CREATE TABLE `liquidados` (
 --
 
 INSERT INTO `liquidados` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Fecha_Ultimo_Pago`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`) VALUES
-('b', 'b', 'b', '', 'b', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 2),
-('Yarely ', '1200', '16/05/2023', '04/07/2023-', '8', '1296', 'Roberto', 'Bustamante ', 'Centro ', '', '123', '2233344443', 'yarely@hotmail.com', 1);
+('Yarely117', '1500', '16/05/2023', '04/07/2023', 'Se', '1296', 'Yael', 'Yael', 'Roberto', 'Bustamante ', 'Centro ', '', '123', 1);
 
 -- --------------------------------------------------------
 
@@ -89,6 +88,14 @@ CREATE TABLE `lista1` (
   `Fecha14` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `lista1`
+--
+
+INSERT INTO `lista1` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
+('guatefuck', '121212', '14/05/2023', '10', '133333.2', 'Roberto', 'asasa', 'asas', '12', '', '1212122', '32232asa', 1, '133333.2', '21/05/2023-', '28/05/2023-', '04/06/2023-', '11/06/2023-', '18/06/2023-', '25/06/2023-', '02/07/2023-', '09/07/2023-', '16/07/2023-', '23/07/2023-', '30/07/2023-', '06/08/2023-', '13/08/2023-', '20/08/2023-'),
+('Yarely Bomnita2', '1265', '17/05/2023', 'Se', '1366.2', 'Roberto', 'asass', 'asas', '1212', '', '121212', 'asasas', 1, '1366.2', '01/06/2023-', '16/06/2023-', '01/07/2023-', '16/07/2023-', '31/07/2023-', '15/08/2023-', '30/08/2023-', '-', '-', '-', '-', '-', '-', '-');
+
 -- --------------------------------------------------------
 
 --
@@ -118,7 +125,7 @@ CREATE TABLE `lista2` (
 --
 
 INSERT INTO `lista2` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`, `Fecha_Limite`) VALUES
-('q', 'q', 'q', 'q', '', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 0, '', '-');
+('Yarely3', '1234', '17/05/2023', '8%', '121212', 'Yael', 'asas', 'asas', '12', '', '1231212', 'asasasas', 1, '1212', '17/05/2023');
 
 -- --------------------------------------------------------
 
@@ -148,7 +155,7 @@ CREATE TABLE `lista3` (
 --
 
 INSERT INTO `lista3` (`Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Interes`, `Monto_Total`, `Promotor`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`) VALUES
-('b', 'b', 'b', 'b', '', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 0, '0');
+('Yarely117', '1200', '10/05/2023', '8%', '1212', 'Yael', 'asas', 'asas', '12', '', '121212', 'asasas', 1, '121212');
 
 --
 -- Índices para tablas volcadas

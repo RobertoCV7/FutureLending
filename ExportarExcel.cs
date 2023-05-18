@@ -15,9 +15,9 @@ namespace FutureLending
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             // Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
+            string[] nombresString =  {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                              "TIPO DE PAGO", "MONTO PAGADO"};
+                              "TIPO DE PAGO", "MONTO RESTANTE"};
 
             // Añade los strings de cada fecha y pago a la lista
             List<string> nombresColumnas = new (nombresString);
@@ -61,18 +61,16 @@ namespace FutureLending
             FileInfo file = new(rutaArchivo);
             package.SaveAs(file);
         }
-
         public void ExportarTabla2(string ruta)
         {
             List<string[]> datos = a.LectLista2();
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             // Nombres de las columnas
-            string[] nombresString2 = {
-        "NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
-        "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-        "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE", "FECHA LÍMITE"
-    };
+            string[] nombresString2 ={"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE"};
+        
 
             // Crea un nuevo archivo Excel
             using var package = new ExcelPackage();
@@ -112,11 +110,9 @@ namespace FutureLending
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             // Nombres de las columnas
-            string[] nombresString3 = {
-        "NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
-        "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-        "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE"
-    };
+            string[] nombresString3 ={"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO","MONTO RESTANTE"};
 
             // Crea un nuevo archivo Excel
             using var package = new ExcelPackage();
@@ -149,9 +145,6 @@ namespace FutureLending
             // Guarda el archivo Excel en el disco
             package.SaveAs(ruta);
         }
-
-
-
         public void ExportarTablaLiquidados(string ruta)
         {
             List<string[]> datos = a.LectLiquidados();
@@ -159,11 +152,9 @@ namespace FutureLending
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             // Nombres de las columnas
-            string[] nombresString4 = {
-        "NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
-        "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
-        "TELÉFONO", "CORREO", "TIPO DE PAGO"
-    };
+            string[] nombresString4 ={"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
+                              "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+                              "TELÉFONO", "CORREO", "TIPO DE PAGO"};
 
             // Crea un nuevo archivo Excel
             using var package = new ExcelPackage();
@@ -207,17 +198,16 @@ namespace FutureLending
 
             string[] nombresString1 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                              "TIPO DE PAGO", "MONTO PAGADO"};
-            string[] nombresString2 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
-                            "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                            "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE", "FECHA LÍMITE"};
-            string[] nombresString3 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
-                            "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                            "TIPO DE PAGO", "MONTO PAGADO", "MONTO RESTANTE"};
-            string[] nombresString4 = {"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
+                              "TIPO DE PAGO", "MONTO RESTANTE"};
+            string[] nombresString2 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE"};
+            string[] nombresString3 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO","MONTO RESTANTE"};
+            string[] nombresString4 =  {"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
                               "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                               "TELÉFONO", "CORREO", "TIPO DE PAGO"};
-
 
             // Crea un nuevo archivo Excel
 
@@ -262,9 +252,32 @@ namespace FutureLending
                 }
             }
 
-            // Aplica formato a los datos en el archivo Excel
+            // Ajusta automáticamente el ancho de las columnas
             worksheet.Cells.AutoFitColumns();
-            worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+
+            // Establece el formato de las celdas para los datos numéricos
+            for (int col = 0; col < nombresColumnas.Length; col++)
+            {
+                string columnName = GetExcelColumnName(col + 1);
+                var columnCells = worksheet.Cells[$"{columnName}2:{columnName}{datos.Count + 1}"];
+                columnCells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+            }
+        }
+
+        // Función auxiliar para obtener el nombre de la columna de Excel en función del índice
+        private static string GetExcelColumnName(int columnIndex)
+        {
+            int dividend = columnIndex;
+            string columnName = string.Empty;
+
+            while (dividend > 0)
+            {
+                int modulo = (dividend - 1) % 26;
+                columnName = Convert.ToChar(65 + modulo) + columnName;
+                dividend = (dividend - modulo) / 26;
+            }
+
+            return columnName;
         }
     }
 }

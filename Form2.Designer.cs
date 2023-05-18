@@ -45,11 +45,12 @@
             Texto.AutoSize = true;
             Texto.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             Texto.ForeColor = SystemColors.Highlight;
-            Texto.Location = new Point(29, 39);
+            Texto.Location = new Point(12, 38);
             Texto.Name = "Texto";
             Texto.Size = new Size(506, 32);
             Texto.TabIndex = 0;
             Texto.Text = "El programa funciona correctamente";
+            Texto.TextAlign = ContentAlignment.TopCenter;
             // 
             // rjButton1
             // 
@@ -62,9 +63,9 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(153, 108);
+            rjButton1.Location = new Point(145, 134);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(212, 50);
+            rjButton1.Size = new Size(230, 68);
             rjButton1.TabIndex = 1;
             rjButton1.Text = "Aceptar";
             rjButton1.TextColor = Color.White;
@@ -75,8 +76,8 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Snow;
-            ClientSize = new Size(547, 202);
+            BackColor = Color.Wheat;
+            ClientSize = new Size(567, 214);
             Controls.Add(rjButton1);
             Controls.Add(Texto);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);

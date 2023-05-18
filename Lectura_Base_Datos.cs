@@ -22,7 +22,7 @@ namespace FutureLending
         #region Conexion
         //verificador de cambio de puerto
         public bool cambio_puerto = false;
- 
+
 
         MySqlConnection Conector()
         {
@@ -158,9 +158,8 @@ namespace FutureLending
                         fila[10] = reader.GetString("Telefono");
                         fila[11] = reader.GetString("Correo");
                         fila[12] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
-                        fila[13] = reader.GetString("Monto_Pagado");
-                        fila[14] = reader.GetString("Monto_Restante");
-                        fila[15] = reader.GetString("Fecha_Limite");
+                        fila[13] = reader.GetString("Monto_Restante");
+                        fila[14] = reader.GetString("Fecha_Limite");
                         datos.Add(fila);
                     }
                 }
@@ -201,8 +200,7 @@ namespace FutureLending
                         fila[11] = reader.GetString("Correo");
                         //Verifica si el tipo de pago es semanal (0) o quincenal (1)
                         fila[12] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
-                        fila[13] = reader.GetString("Monto_Pagado");
-                        fila[14] = reader.GetString("Monto_Restante");
+                        fila[13] = reader.GetString("Monto_Restante");
 
                         datos.Add(fila);
                     }
@@ -339,7 +337,134 @@ namespace FutureLending
             }
             return fila;
         }
-        //Editar por un nombre especifico
+        public string[]? LectName2(string nombre)
+        {
+            string query = "SELECT * FROM lista2 WHERE Nombre_Completo = @nombre";
+            using MySqlConnection connection = Conector();
+            using MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@nombre", nombre);
+
+            try
+            {
+                using MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Obtener los valores de las columnas del registro encontrado
+                    string[] datos = new string[15];
+                    datos[0] = reader["Nombre_Completo"].ToString();
+                    datos[1] = reader["Credito_Prestado"].ToString();
+                    datos[2] = reader["Fecha_Inicio"].ToString();
+                    datos[3] = reader["Interes"].ToString();
+                    datos[4] = reader["Monto_Total"].ToString();
+                    datos[5] = reader["Promotor"].ToString();
+                    datos[6] = reader["Calle"].ToString();
+                    datos[7] = reader["Colonia"].ToString();
+                    datos[8] = reader["Num_int"].ToString();
+                    datos[9] = reader["Num_ext"].ToString();
+                    datos[10] = reader["Telefono"].ToString();
+                    datos[11] = reader["Correo"].ToString();
+                    datos[12] = reader["Tipo_pago"].ToString();
+                    datos[13] = reader["Monto_Restante"].ToString();
+                    datos[14] = reader["Fecha_Limite"].ToString();
+                    return datos;
+                }
+            }
+            catch (Exception ex)
+            {
+                Registro_errores("Error al obtener el registro: " + ex.Message);
+            }
+
+            return null;
+        }
+        public string[]? LectName3(string nombre)
+        {
+            string query = "SELECT * FROM lista3 WHERE Nombre_Completo = @nombre";
+
+            using (MySqlConnection connection = Conector())
+            {
+                using MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", nombre);
+
+                try
+                {
+                    using MySqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        // Obtener los valores de las columnas del registro encontrado
+                        string[] datos = new string[14];
+                        datos[0] = reader.GetString("Nombre_Completo");
+                        datos[1] = reader.GetString("Credito_Prestado");
+                        datos[2] = reader.GetString("Fecha_Inicio");
+                        datos[3] = reader.GetString("Interes");
+                        datos[4] = reader.GetString("Monto_Total");
+                        datos[5] = reader.GetString("Promotor");
+                        datos[6] = reader.GetString("Calle");
+                        datos[7] = reader.GetString("Colonia");
+                        datos[8] = reader.GetString("Num_int");
+                        datos[9] = reader.GetString("Num_ext");
+                        datos[10] = reader.GetString("Telefono");
+                        datos[11] = reader.GetString("Correo");
+                        datos[12] = reader.GetInt32("Tipo_pago").ToString();
+                        datos[13] = reader.GetString("Monto_Restante");
+
+                        return datos;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores("Error al obtener el registro: " + ex.Message);
+                }
+            }
+            return null;
+        }
+        public string[]? LectName4(string nombre)
+        {
+            string query = "SELECT * FROM liquidados WHERE Nombre_Completo = @nombre";
+
+            using (MySqlConnection connection = Conector())
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@nombre", nombre);
+
+                    try
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string[] datos = new string[14];
+                                datos[0] = reader.GetString("Nombre_Completo");
+                                datos[1] = reader.GetString("Credito_Prestado");
+                                datos[2] = reader.GetString("Fecha_Inicio");
+                                datos[3] = reader.GetString("Fecha_Ultimo_Pago");
+                                datos[4] = reader.GetString("Interes");
+                                datos[5] = reader.GetString("Monto_Total");
+                                datos[6] = reader.GetString("Promotor");
+                                datos[7] = reader.GetString("Calle");
+                                datos[8] = reader.GetString("Colonia");
+                                datos[9] = reader.GetString("Num_int");
+                                datos[10] = reader.GetString("Num_ext");
+                                datos[11] = reader.GetString("Telefono");
+                                datos[12] = reader.GetString("Correo");
+                                datos[13] = reader.GetInt32("Tipo_pago").ToString();
+
+                                return datos;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Registro_errores("Error al obtener el registro: " + ex.Message);
+                    }
+                }
+            }
+
+            return null;
+        }
+
         #endregion
 
         #region editar, borrar y crear
@@ -406,11 +531,10 @@ namespace FutureLending
             command.Parameters.AddWithValue("@Nombre", datos[28]);
             try
             {
-                connection.Open();
-            }
-            catch (MySqlException ex)
+                command.ExecuteNonQuery();
+            }catch(Exception ex) 
             {
-                Registro_errores(ex.ToString());
+            Registro_errores(ex.ToString());
             }
         }
         public void EditarLista2(string[] datos)
@@ -445,17 +569,11 @@ namespace FutureLending
                     command.Parameters.AddWithValue("@NuevoMontoRestante", datos[13]);
                     command.Parameters.AddWithValue("@NuevaFechaLimite", datos[14]);
                     command.Parameters.AddWithValue("@Nombre", datos[15]);
-
                     try
                     {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            Console.WriteLine("Registro actualizado correctamente.");
-                        }
+                        command.ExecuteNonQuery();
                     }
-                    catch (MySqlException ex)
+                    catch (Exception ex)
                     {
                         Registro_errores(ex.ToString());
                     }
@@ -472,62 +590,15 @@ namespace FutureLending
 
             string nombreTabla = "lista3"; 
 
-            string query = $"UPDATE {nombreTabla} SET Credito_Prestado = @NuevoCredito, Fecha_Inicio = @NuevaFechaInicio, Interes = @NuevoInteres, Monto_Total = @NuevoMonto, Promotor = @NuevoPromotor, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_pago = @NuevoTipoPago, Monto_Restante = @NuevoMontoRestante WHERE Nombre_Completo = @Nombre";
+            string query = $"UPDATE {nombreTabla} SET Nombre_Completo =@NuevoNombre,Credito_Prestado = @NuevoCredito, Fecha_Inicio = @NuevaFechaInicio, Interes = @NuevoInteres, Monto_Total = @NuevoMonto, Promotor = @NuevoPromotor, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_pago = @NuevoTipoPago, Monto_Restante = @NuevoMontoRestante WHERE Nombre_Completo = @Nombre";
 
             using (MySqlConnection connection = Conector())
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@NuevoCredito", datos[0]);
-                    command.Parameters.AddWithValue("@NuevaFechaInicio", datos[1]);
-                    command.Parameters.AddWithValue("@NuevoInteres", datos[2]);
-                    command.Parameters.AddWithValue("@NuevoMonto", datos[3]);
-                    command.Parameters.AddWithValue("@NuevoPromotor", datos[4]);
-                    command.Parameters.AddWithValue("@NuevaCalle", datos[5]);
-                    command.Parameters.AddWithValue("@NuevaColonia", datos[6]);
-                    command.Parameters.AddWithValue("@NuevoNumInt", datos[7]);
-                    command.Parameters.AddWithValue("@NuevoNumExt", datos[8]);
-                    command.Parameters.AddWithValue("@NuevoTelefono", datos[9]);
-                    command.Parameters.AddWithValue("@NuevoCorreo", datos[10]);
-                    command.Parameters.AddWithValue("@NuevoTipoPago", int.Parse(datos[11]));
-                    command.Parameters.AddWithValue("@NuevoMontoRestante", datos[12]);
-                    command.Parameters.AddWithValue("@Nombre", datos[13]);
-
-                    try
-                    {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            Console.WriteLine("Registro actualizado correctamente.");
-                        }
-                    }
-                    catch (MySqlException ex)
-                    {
-                        Registro_errores(ex.ToString());
-                    }
-                }
-            }
-        }
-        public void EditarListaLiquidados(string[] datos)
-        {
-            if (datos.Length != 14)
-            {
-                Registro_errores("Error: El arreglo de datos no tiene la longitud esperada.");
-                return;
-            }
-
-            string nombreTabla = "liquidados";
-
-            string query = $"UPDATE {nombreTabla} SET Credito_Prestado = @NuevoCredito, Fecha_Inicio = @NuevaFechaInicio, Fecha_Ultimo_Pago = @NuevaFechaUltimoPago, Interes = @NuevoInteres, Monto_Total = @NuevoMonto, Promotor = @NuevoPromotor, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_pago = @NuevoTipoPago WHERE Nombre_Completo = @Nombre";
-
-            using (MySqlConnection connection = Conector())
-            {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@NuevoCredito", datos[0]);
-                    command.Parameters.AddWithValue("@NuevaFechaInicio", datos[1]);
-                    command.Parameters.AddWithValue("@NuevaFechaUltimoPago", datos[2]);
+                    command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
+                    command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
+                    command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
                     command.Parameters.AddWithValue("@NuevoInteres", datos[3]);
                     command.Parameters.AddWithValue("@NuevoMonto", datos[4]);
                     command.Parameters.AddWithValue("@NuevoPromotor", datos[5]);
@@ -538,15 +609,62 @@ namespace FutureLending
                     command.Parameters.AddWithValue("@NuevoTelefono", datos[10]);
                     command.Parameters.AddWithValue("@NuevoCorreo", datos[11]);
                     command.Parameters.AddWithValue("@NuevoTipoPago", int.Parse(datos[12]));
-                    command.Parameters.AddWithValue("@Nombre", datos[13]);
+                    command.Parameters.AddWithValue("@NuevoMontoRestante", datos[13]);
+                    command.Parameters.AddWithValue("@Nombre", datos[14]);
 
                     try
                     {
-                        connection.Open();
+                       command.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Registro_errores(ex.ToString());
+                    }
+                }
+            }
+        }
+        public void EditarListaLiquidados(string[] datos)
+        {
+            if (datos.Length != 15)
+            {
+                Registro_errores("Error: El arreglo de datos no tiene la longitud esperada.");
+                return;
+            }
+
+            string nombreTabla = "liquidados";
+
+            string query = $"UPDATE {nombreTabla} SET Nombre_Completo=@NuevoNombre,Credito_Prestado = @NuevoCredito, Fecha_Inicio = @NuevaFechaInicio, Fecha_Ultimo_Pago = @NuevaFechaUltimoPago, Interes = @NuevoInteres, Monto_Total = @NuevoMonto, Promotor = @NuevoPromotor, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_pago = @NuevoTipoPago WHERE Nombre_Completo = @Nombre";
+
+            using (MySqlConnection connection = Conector())
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
+                    command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
+                    command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
+                    command.Parameters.AddWithValue("@NuevaFechaUltimoPago", datos[3]);
+                    command.Parameters.AddWithValue("@NuevoInteres", datos[4]);
+                    command.Parameters.AddWithValue("@NuevoMonto", datos[5]);
+                    command.Parameters.AddWithValue("@NuevoPromotor", datos[6]);
+                    command.Parameters.AddWithValue("@NuevaCalle", datos[7]);
+                    command.Parameters.AddWithValue("@NuevaColonia", datos[8]);
+                    command.Parameters.AddWithValue("@NuevoNumInt", datos[9]);
+                    command.Parameters.AddWithValue("@NuevoNumExt", datos[10]);
+                    command.Parameters.AddWithValue("@NuevoTelefono", datos[11]);
+                    command.Parameters.AddWithValue("@NuevoCorreo", datos[12]);
+                    command.Parameters.AddWithValue("@NuevoTipoPago", datos[13]);
+                    command.Parameters.AddWithValue("@Nombre", datos[14]);
+
+                    try
+                    {                                   
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            Console.WriteLine("Registro actualizado correctamente.");
+                            Console.WriteLine("Datos actualizados correctamente.");
+                        }
+                        else
+                        {
+                            Registro_errores("No se encontró ningún registro para actualizar.");
                         }
                     }
                     catch (MySqlException ex)
@@ -899,7 +1017,7 @@ namespace FutureLending
                 // Crea un StreamWriter para escribir en el archivo de registro
                 using StreamWriter writer = new(logFilePath, true);
                 // Escribe la información del error en el archivo
-                writer.WriteLine($"[{new DateTime(2023, 5, 14, 16, 14, 57, 143)}] Error: {error}");
+                writer.WriteLine($"[{DateTime.Now}] Error: {error}");
             }
             catch (Exception ex)
             {
@@ -917,7 +1035,7 @@ namespace FutureLending
                 // Crea un StreamWriter para escribir en el archivo de registro
                 using StreamWriter writer = new(logFilePath, true);
                 // Escribe la información del error en el archivo
-                writer.WriteLine($"[{new DateTime(2023, 5, 14, 16, 14, 57, 143)}] Acceso este usuario: {acceso}");
+                writer.WriteLine($"[{DateTime.Now}] Acceso este usuario: {acceso}");
             }
             catch (Exception ex)
             {
