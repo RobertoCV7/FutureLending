@@ -26,13 +26,23 @@ namespace FutureLending
 
         MySqlConnection Conector()
         {
-            // Creamos la conexión verificando si se ha cambiado el puerto
-            string server = "localhost";
-            int port = cambio_puerto ? 3307 : 3306;
-            string database = "prestamos";
-            // Mejora de seguridad
+
+            // Creamos la conexión verificando si se ha cambiado el puerto usando el archivo de configuración
+            string server = Properties.Settings1.Default.Servidor;
+            int port;
+            if (cambio_puerto == false)
+            {
+                port = Properties.Settings1.Default.Puerto;
+            }
+            else
+            {
+                Properties.Settings1.Default.Puerto = 3307;
+                port = Properties.Settings1.Default.Puerto;
+            }
+            string database = Properties.Settings1.Default.Base_de_datos;
             string uid = Properties.Settings1.Default.Usuario;
             string pwd = Properties.Settings1.Default.Contraseña;
+
             string connectionString = $"server={server};port={port};database={database};uid={uid};pwd={pwd};";
             MySqlConnection? connection = null;
 
@@ -72,6 +82,7 @@ namespace FutureLending
         #endregion
 
         #region Lectura
+        #region Lectura de Listas general
         public List<string[]> LectLista1()
         {
             List<string[]> datos = new();
@@ -292,9 +303,9 @@ namespace FutureLending
             }
             return datos;
         }
-
-        //Leer por un nombre en especifico 
-        public string[] LectName(string tabla, string name)
+        #endregion
+        #region Lectura de datos especificos
+        public string[] LectName(string tabla, string name) //Lectura de lista 1
         {
             string[] fila = new string[28];
             using (MySqlConnection connection = Conector())
@@ -337,7 +348,7 @@ namespace FutureLending
             }
             return fila;
         }
-        public string[]? LectName2(string nombre)
+        public string[]? LectName2(string nombre)//Lectura de lista 2
         {
             string query = "SELECT * FROM lista2 WHERE Nombre_Completo = @nombre";
             using MySqlConnection connection = Conector();
@@ -377,7 +388,7 @@ namespace FutureLending
 
             return null;
         }
-        public string[]? LectName3(string nombre)
+        public string[]? LectName3(string nombre)//Lectura de lista 3
         {
             string query = "SELECT * FROM lista3 WHERE Nombre_Completo = @nombre";
 
@@ -419,7 +430,7 @@ namespace FutureLending
             }
             return null;
         }
-        public string[]? LectName4(string nombre)
+        public string[]? LectName4(string nombre)//Lectura de lista 4
         {
             string query = "SELECT * FROM liquidados WHERE Nombre_Completo = @nombre";
 
@@ -464,10 +475,11 @@ namespace FutureLending
 
             return null;
         }
-
+        #endregion
         #endregion
 
         #region editar, borrar y crear
+        #region editar por nombre 
         public void Edit(string tabla, string name, string datos)//falta agregar parametros de recibido pero hasta que la base de datos este lista
         {
             //creamos la conexion
@@ -674,68 +686,9 @@ namespace FutureLending
                 }
             }
         }
-        private void InsertarRegistro(string tablaOrigen, string tablaDestino, string nombreCompleto, string creditoPrestado, string fechaInicio, string interes, string montoTotal, string promotor, string calle, string colonia, string numInt, string numExt, string telefono, string correo, int tipoPago)
-        {
-        
-            // Consulta SQL para insertar el registro en la tabla de destino
-            string insertQuery = "INSERT INTO " + tablaDestino + " (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante) " +
-                                "VALUES (@NombreCompleto, @CreditoPrestado, @FechaInicio, @Interes, @MontoTotal, @Promotor, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @MontoRestante)";
-
-            // Consulta SQL para eliminar el registro de la tabla de origen
-            string deleteQuery = "DELETE FROM " + tablaOrigen + " WHERE Nombre_Completo = @NombreCompleto";
-            using (MySqlConnection connection = Conector())
-
-            // Iniciar una transacción para garantizar la atomicidad de las operaciones
-            using (MySqlTransaction transaction = connection.BeginTransaction())
-                {
-                    try
-                    {
-                        // Crear un comando para la inserción en la tabla de destino y asignar los parámetros
-                        using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection, transaction))
-                        {
-                            insertCommand.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
-                            insertCommand.Parameters.AddWithValue("@CreditoPrestado", creditoPrestado);
-                            insertCommand.Parameters.AddWithValue("@FechaInicio", fechaInicio);
-                            insertCommand.Parameters.AddWithValue("@Interes", interes);
-                            insertCommand.Parameters.AddWithValue("@MontoTotal", montoTotal);
-                            insertCommand.Parameters.AddWithValue("@Promotor", promotor);
-                            insertCommand.Parameters.AddWithValue("@Calle", calle);
-                            insertCommand.Parameters.AddWithValue("@Colonia", colonia);
-                            insertCommand.Parameters.AddWithValue("@NumInt", numInt);
-                            insertCommand.Parameters.AddWithValue("@NumExt", numExt);
-                            insertCommand.Parameters.AddWithValue("@Telefono", telefono);
-                            insertCommand.Parameters.AddWithValue("@Correo", correo);
-                            insertCommand.Parameters.AddWithValue("@TipoPago", tipoPago);
-                            insertCommand.Parameters.AddWithValue("@MontoRestante", montoTotal);
-
-                            // Ejecutar la consulta de inserción
-                            insertCommand.ExecuteNonQuery();
-                        }
-
-                        // Crear un comando para la eliminación en la tabla de origen y asignar el parámetro
-                        using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection, transaction))
-                        {
-                            deleteCommand.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
-
-                            // Ejecutar la consulta de eliminación
-                            deleteCommand.ExecuteNonQuery();
-                        }
-
-                        // Confirmar la transacción si todas las consultas se ejecutaron correctamente
-                        transaction.Commit();
-                    }
-                    catch (Exception ex)
-                    {
-                        // Ocurrió un error, deshacer la trans
-        transaction.Rollback();
-                        Console.WriteLine("Error: " + ex.Message);
-                        throw;
-                    }
-                conexion.Close();
-                }
-        }
-
-
+        #endregion
+  
+        #region Borrar General
         public void Erase(string nombre, string tabla)
         {
             //Llamamos al conector
@@ -755,7 +708,8 @@ namespace FutureLending
                 Registro_errores(ex.ToString());
             }
         }
-
+        #endregion
+        #region Crear registros, solo en la lista 1 y liquidados
         public void Create(string lista, string Nombre, string Credito, DateTime Fecha_inicio, string Interes, string Monto_Total, string Promotor, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, int Tipo_pago, string Monto_Restante)
         {
             DateTime fechaInicio = Fecha_inicio;
@@ -824,7 +778,6 @@ namespace FutureLending
                 Registro_errores(ex.ToString());
             }
         }
-
         public void CreateLiquidados(int lista, string[] datos)
         {
             using MySqlConnection connection = Conector();
@@ -858,29 +811,156 @@ namespace FutureLending
                 Registro_errores(ex.ToString());
             }
         }
+        public void InsertarLiquidados(string[] datos)
+        {
+            using MySqlConnection connection = Conector();
+            StringBuilder queryBuilder = new StringBuilder();
+            queryBuilder.Append("INSERT INTO liquidados (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Fecha_Ultimo_Pago, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago)");
+            queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaI, @FechaUP, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumI, @NumE, @Telefono, @Correo, @TipoP)");
+            string query = queryBuilder.ToString();
+
+            using MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Nombre", datos[0]);
+            command.Parameters.AddWithValue("@Credito", datos[1]);
+            command.Parameters.AddWithValue("@FechaI", datos[2]);
+            command.Parameters.AddWithValue("@FechaUP", datos[3]);
+            command.Parameters.AddWithValue("@Interes", datos[4]);
+            command.Parameters.AddWithValue("@Monto", datos[5]);
+            command.Parameters.AddWithValue("@Promotor", datos[6]);
+            command.Parameters.AddWithValue("@Calle", datos[7]);
+            command.Parameters.AddWithValue("@Colonia", datos[8]);
+            command.Parameters.AddWithValue("@NumI", datos[9]);
+            command.Parameters.AddWithValue("@NumE", datos[10]);
+            command.Parameters.AddWithValue("@Telefono", datos[11]);
+            command.Parameters.AddWithValue("@Correo", datos[12]);
+            command.Parameters.AddWithValue("@TipoP", datos[13]);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Registro_errores(ex.ToString());
+            }
+        }
+        public void InsertarLista2(string[] valores)
+        {
+            using MySqlConnection connection = Conector();
+            StringBuilder queryBuilder = new StringBuilder();
+            queryBuilder.Append("INSERT INTO lista2 (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante, Fecha_Limite)");
+            queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaInicio, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @MontoRestante, @FechaLimite)");
+            string query = queryBuilder.ToString();
+
+            using MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Nombre", valores[0]);
+            command.Parameters.AddWithValue("@Credito", valores[1]);
+            command.Parameters.AddWithValue("@FechaInicio", valores[2]);
+            command.Parameters.AddWithValue("@Interes", valores[3]);
+            command.Parameters.AddWithValue("@Monto", valores[4]);
+            command.Parameters.AddWithValue("@Promotor", valores[5]);
+            command.Parameters.AddWithValue("@Calle", valores[6]);
+            command.Parameters.AddWithValue("@Colonia", valores[7]);
+            command.Parameters.AddWithValue("@NumInt", valores[8]);
+            command.Parameters.AddWithValue("@NumExt", valores[9]);
+            command.Parameters.AddWithValue("@Telefono", valores[10]);
+            command.Parameters.AddWithValue("@Correo", valores[11]);
+            command.Parameters.AddWithValue("@TipoPago", valores[12]);
+            command.Parameters.AddWithValue("@MontoRestante", valores[13]);
+            command.Parameters.AddWithValue("@FechaLimite", valores[14]);
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Registro_errores(ex.ToString());
+            }
+        }
+        public void InsertarLista3(string[] valores)
+        {
+            using MySqlConnection connection = Conector();
+            StringBuilder queryBuilder = new StringBuilder();
+            queryBuilder.Append("INSERT INTO lista3 (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante)");
+            queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaInicio, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @MontoRestante)");
+            string query = queryBuilder.ToString();
+
+            using MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@Nombre", valores[0]);
+            command.Parameters.AddWithValue("@Credito", valores[1]);
+            command.Parameters.AddWithValue("@FechaInicio", valores[2]);
+            command.Parameters.AddWithValue("@Interes", valores[3]);
+            command.Parameters.AddWithValue("@Monto", valores[4]);
+            command.Parameters.AddWithValue("@Promotor", valores[5]);
+            command.Parameters.AddWithValue("@Calle", valores[6]);
+            command.Parameters.AddWithValue("@Colonia", valores[7]);
+            command.Parameters.AddWithValue("@NumInt", valores[8]);
+            command.Parameters.AddWithValue("@NumExt", valores[9]);
+            command.Parameters.AddWithValue("@Telefono", valores[10]);
+            command.Parameters.AddWithValue("@Correo", valores[11]);
+            command.Parameters.AddWithValue("@TipoPago", valores[12]);
+            command.Parameters.AddWithValue("@MontoRestante", valores[13]);
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Registro_errores(ex.ToString());
+            }
+        }
+
+
+
+        #endregion
         #endregion
 
         #region reparar conexion
-        public async Task CheckConnection()
+        public async Task CheckConnection(bool revisador)
         {
+            Form1 a = new();
             ReacomodoDeScripts();
-            string server = "localhost";
-            int port = cambio_puerto ? 3307 : 3306;
-            string database = "prestamos";
-            string username = "root";
-            string password = "";
-
+            string server = Properties.Settings1.Default.Servidor;
+            int port;
+            if (cambio_puerto == false)
+            {
+                port = Properties.Settings1.Default.Puerto;
+            }
+            else
+            {
+                Properties.Settings1.Default.Puerto = 3307;
+                port = Properties.Settings1.Default.Puerto;
+            }
+            string database = Properties.Settings1.Default.Base_de_datos;
+            string username = Properties.Settings1.Default.Usuario;
+            string password = Properties.Settings1.Default.Contraseña;
             string connectionString = $"server={server};port={port};database={database};uid={username};pwd={password}";
             using MySqlConnection connection = new(connectionString);
             try
             {
                 await connection.OpenAsync();
-                Form1.MessageB("La Aplicacion Funciona Correctamente","Funcionando",1);
+                if(revisador == false)
+                {
+                    Form1.MessageB("La Aplicacion Funciona Correctamente", "Funcionando", 1);
+                }
+                else
+                {
+                    a.conect = true;
+                }
             }
             catch (Exception ex)
             {
-                Registro_errores(ex.ToString());
-                await RepairProgramAsync();
+                if(revisador == false)
+                {
+                    Registro_errores(ex.ToString());
+                    await RepairProgramAsync();
+                }
+                else
+                {
+                    return;
+                }
+       
             }
             finally
             {
@@ -920,7 +1000,7 @@ namespace FutureLending
                 {
                     try
                     {
-                        await CheckConnection();
+                        await CheckConnection(false);
                         return;
                     }
                     catch (Exception ex)

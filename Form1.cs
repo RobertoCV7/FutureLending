@@ -31,6 +31,7 @@ namespace FutureLending
             TablaClientes.AñadirEvento(gridListas);
         }
 
+        #region Animacion de menu
         private void CollapseMenu()
         {
             if (this.panelMenu.Width > 200) //Collapse menu
@@ -63,118 +64,17 @@ namespace FutureLending
         {
             CollapseMenu();
         }
+        #endregion
+
+        #region Botones centrales del menu
+
+        #region Ingresar Clientes
 
         private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Ingresar Clientes";
             pnlClientes.BringToFront();
         }
-
-        private void BtnListas_Click(object sender, EventArgs e)
-        {
-            lblTitle.Text = "Listas Completas";
-            pnlListas.BringToFront();
-        }
-
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            Lectura_Base_Datos obj = new();
-            string Interes = cmbInteres.Texts.Replace("%", "");
-            string MontoTotal = txtTotal.Texts.Replace("$", "");
-            obj.Create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, MontoTotal);
-            //Borrar datos para poder agregar de nuevo 
-            txtNombre.Texts = "";
-            txtCredito.Texts = "";
-            dateFechaInicio.Value = new DateTime(2023, 5, 14, 16, 8, 19, 357);
-            cmbInteres.Texts = "Seleccione un interés";
-            cmbTipo.Texts = "Seleccione un tipo de pago";
-            cmbPromotor.Texts = "Seleccione al promotor";
-            txtTotal.Texts = "";
-            txtTotal_I.Texts = "";
-            txtCalle.Texts = "";
-            txtColonia.Texts = "";
-            txtNumExt.Texts = "";
-            txtNumInt.Texts = "";
-            txtTelefono.Texts = "";
-            txtCorreo.Texts = "";
-        }
-
-        private void BtnTodosSistemas_Click(object sender, EventArgs e)
-        {
-            Lectura_Base_Datos instancia = new();
-            _ = instancia.CheckConnection();
-        }
-
-        private void BtnEstadoPagos_Click(object sender, EventArgs e)
-        {
-            lblTitle.Text = "Registrar pago";
-            pnlRegPago.BringToFront();
-
-            // Iniciar el hilo de fondo
-            BackgroundWorker worker = new();
-#pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
-            worker.DoWork += Worker_DoWork;
-#pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
-            worker.RunWorkerAsync();
-        }
-        private void Worker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            // Operaciones intensivas (lectura de datos, procesamiento, etc.)
-            Lectura_Base_Datos instancia = new();
-            List<string[]> lista1 = instancia.LectLista1();
-            List<string[]> lista2 = instancia.LectLista2();
-
-            // Unir las listas en una sola lista
-            List<string[]> listaTotal = new(lista1);
-            listaTotal.AddRange(lista2);
-
-            // Agregar los nombres a ComBoxName
-            // Acceder a los controles se realiza en el hilo de interfaz de usuario principal
-            ComBoxName.BeginInvoke((MethodInvoker)delegate
-            {
-                ComBoxName.Items.Clear();
-                foreach (string[] item in listaTotal)
-                {
-                    ComBoxName.Items.Add(item[0]);
-                }
-            });
-        }
-
-        private void BtnBuscarC_Click(object sender, EventArgs e)
-        {
-            //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
-            //Mostramos en el form
-
-            //Agregamos los datos del cliente al form
-            Lectura_Base_Datos instancia = new();
-            string list;
-            if (CombBoxLista.Texts == "Lista 1")
-            {
-                list = "lista1";
-            }
-            else { list = "lista2"; }
-            string[] datos = instancia.LectName(list, ComBoxName.Texts);
-            if (datos[1] == null)
-            {
-                Form2 a = new("No se encontro al usuario en esa Lista", "Advertencia", 2);
-                a.ShowDialog();
-            }
-            else
-            {
-                lblCredito.Visible = true;
-                txtBoxCredito.Visible = true;
-                txtBoxMonto.Visible = true;
-                lblFecha.Visible = true;
-                lblMonto.Visible = true;
-                DateTimeReg.Visible = true;
-                btnMarcarP.Visible = true;
-                txtBoxCredito.Texts = datos[1];
-            }
-
-
-
-        }
-
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
             String credito = txtCredito.Texts;
@@ -198,476 +98,28 @@ namespace FutureLending
             string total = monto_segun_tipo.ToString("N2");
             txtTotal_I.Texts = $"${total}";
         }
-
-        #region Mostrar tablas en DataGridView y editar/eliminar registros
-        int ListaEstado;
-        private async void BtnLista1_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            ListaEstado = 0;
-            var mostrarListaTask = TablaClientes.MostrarLista1(gridListas, cmbCliente);
-
-            while (!mostrarListaTask.IsCompleted)
-            {
-                DesactivarBotones();
-                await Task.Delay(100);
-            }
-            ActivarListas();
-            ActivarEditar();
-            listaActual = "lista1";
+            Lectura_Base_Datos obj = new();
+            string Interes = cmbInteres.Texts.Replace("%", "");
+            string MontoTotal = txtTotal.Texts.Replace("$", "");
+            obj.Create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, MontoTotal);
+            //Borrar datos para poder agregar de nuevo 
+            txtNombre.Texts = "";
+            txtCredito.Texts = "";
+            dateFechaInicio.Value = new DateTime(2023, 5, 14, 16, 8, 19, 357);
+            cmbInteres.Texts = "Seleccione un interés";
+            cmbTipo.Texts = "Seleccione un tipo de pago";
+            cmbPromotor.Texts = "Seleccione al promotor";
+            txtTotal.Texts = "";
+            txtTotal_I.Texts = "";
+            txtCalle.Texts = "";
+            txtColonia.Texts = "";
+            txtNumExt.Texts = "";
+            txtNumInt.Texts = "";
+            txtTelefono.Texts = "";
+            txtCorreo.Texts = "";
         }
-
-        private async void BtnLista2_Click(object sender, EventArgs e)
-        {
-            ListaEstado = 1;
-            var mostrarListaTask = TablaClientes.MostrarLista2(gridListas, cmbCliente);
-            while (!mostrarListaTask.IsCompleted)
-            {
-                DesactivarBotones();
-                await Task.Delay(100);
-            }
-            ActivarListas();
-            ActivarEditar();
-            listaActual = "lista2";
-        }
-
-        private async void BtnLista3_Click(object sender, EventArgs e)
-        {
-            ListaEstado = 2;
-            var mostrarListaTask = TablaClientes.MostrarLista3(gridListas, cmbCliente);
-            while (!mostrarListaTask.IsCompleted)
-            {
-                DesactivarBotones();
-                await Task.Delay(100);
-            }
-            ActivarListas();
-            ActivarEditar();
-            listaActual = "lista3";
-        }
-
-        private async void BtnMostrarTodos_Click(object sender, EventArgs e)
-        {
-            var mostrarListaTask = TablaClientes.MostrarTodos(gridListas, cmbCliente);
-            while (!mostrarListaTask.IsCompleted)
-            {
-                DesactivarBotones();
-                await Task.Delay(100);
-            }
-            //En este no se activa para editar
-            ActivarListas();
-        }
-
-        private async void BtnLiquidados_Click(object sender, EventArgs e)
-        {
-            ListaEstado = 3;
-            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente);
-            while (!mostrarListaTask.IsCompleted)
-            {
-                DesactivarBotones();
-                await Task.Delay(100);
-            }
-            ActivarListas();
-            ActivarEditar();
-            listaActual = "liquidados";
-        }
-
-        //Activa los botones de editar y eliminar hasta que seleccione un cliente
-        private void CmbCliente_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbCliente.SelectedIndex != -1)
-            {
-                btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
-            }
-        }
-        string[] informacion = new string[28];
-        string[] informacion3 = new string[15];
-        string Cliente;
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-
-
-            Lectura_Base_Datos a = new();
-
-            string pertenece = "";
-            string lista = "";
-            LabelLimite.Hide();
-            dateTimeLimite.Hide();
-            if (ListaEstado == 0)
-            {
-                PanelEditar.BringToFront();
-                pertenece = "Lista 1";
-                lista = "lista1";
-                cmbLista.Items.AddRange(new string[] { "Lista 2", "Lista 3", "Liquidados" });
-                LblPerte.Text = pertenece;
-                Cliente = cmbCliente.Texts;
-                textBoxPersonalizado10.Texts = Cliente;
-                //Empieza
-                informacion = a.LectName(lista, Cliente);
-                textBoxPersonalizado9.Texts = informacion[1];
-                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion[2]);
-                switch (informacion[3])
-                {
-                    case "7":
-                        rjComboBox1.SelectedIndex = 0;
-                        break;
-                    case "8":
-                        rjComboBox1.SelectedIndex = 1;
-                        break;
-                    case "10":
-                        rjComboBox1.SelectedIndex = 2;
-                        break;
-                }
-                textBoxPersonalizado8.Texts = informacion[4];
-                if (informacion[12] == "0")
-                {
-                    rjComboBox2.SelectedIndex = 0;
-                }
-                else
-                {
-                    rjComboBox2.SelectedIndex = 1;
-                }
-
-                if (informacion[5] == "Ramon")
-                {
-                    rjComboBox3.SelectedIndex = 0;
-                }
-                else if (informacion[5] == "Roberto")
-                {
-                    rjComboBox3.SelectedIndex = 1;
-                }
-                else
-                {
-                    rjComboBox3.SelectedIndex = 2;
-                }
-                textBoxPersonalizado7.Texts = informacion[13];
-                textBoxPersonalizado6.Texts = informacion[6];
-                textBoxPersonalizado5.Texts = informacion[7];
-                textBoxPersonalizado4.Texts = informacion[8];
-                textBoxPersonalizado3.Texts = informacion[9];
-                textBoxPersonalizado2.Texts = informacion[10];
-                textBoxPersonalizado1.Texts = informacion[11];
-            }
-            else if (ListaEstado == 1)
-            {
-                PanelEditar.BringToFront();
-                Cliente = cmbCliente.Texts;
-                LabelLimite.Show();
-                dateTimeLimite.Show();
-                pertenece = "Lista 2";
-                lista = "lista2";
-                cmbLista.Items.AddRange(new string[] { "Lista 1", "Lista 3", "Liquidados" });
-                informacion3 = a.LectName2(Cliente);
-                textBoxPersonalizado10.Texts = informacion3[0];
-                textBoxPersonalizado9.Texts = informacion3[1];
-                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
-                switch (informacion3[3])
-                {
-                    case "7":
-                        rjComboBox1.SelectedIndex = 0;
-                        break;
-                    case "8":
-                        rjComboBox1.SelectedIndex = 1;
-                        break;
-                    case "10":
-                        rjComboBox1.SelectedIndex = 2;
-                        break;
-                }
-                textBoxPersonalizado8.Texts = informacion3[4];
-                if (informacion3[12] == "0")
-                {
-                    rjComboBox2.SelectedIndex = 0;
-                }
-                else
-                {
-                    rjComboBox2.SelectedIndex = 1;
-                }
-                if (informacion3[5] == "Ramon")
-                {
-                    rjComboBox3.SelectedIndex = 0;
-                }
-                else if (informacion[5] == "Roberto")
-                {
-                    rjComboBox3.SelectedIndex = 1;
-                }
-                else
-                {
-                    rjComboBox3.SelectedIndex = 2;
-                }
-                textBoxPersonalizado6.Texts = informacion3[6];
-                textBoxPersonalizado5.Texts = informacion3[7];
-                textBoxPersonalizado4.Texts = informacion3[8];
-                textBoxPersonalizado3.Texts = informacion3[9];
-                textBoxPersonalizado2.Texts = informacion3[10];
-                textBoxPersonalizado1.Texts = informacion3[11];
-                textBoxPersonalizado7.Texts = informacion3[13];
-                if (DateTime.TryParse(informacion[14], out DateTime parsedDate))
-                {
-                    dateTimeLimite.Value = parsedDate;
-                }
-                else
-                {
-                    dateTimeLimite.Value = DateTime.Now;
-                }
-
-
-
-
-
-
-
-
-
-            }
-            else if (ListaEstado == 2)
-            {
-                LabelLimite.Hide();
-                dateTimeLimite.Hide();
-                pertenece = "Lista 3";
-                lista = "lista3";
-                cmbLista.Items.AddRange(new string[] { "Lista 1", "Lista 2", "Liquidados" });
-                PanelEditar.BringToFront();
-                Cliente = cmbCliente.Texts;
-                pertenece = "Lista 2";
-                lista = "lista2";
-                cmbLista.Items.AddRange(new string[] { "Lista 1", "Lista 3", "Liquidados" });
-                informacion3 = a.LectName3(Cliente);
-                textBoxPersonalizado10.Texts = informacion3[0];
-                textBoxPersonalizado9.Texts = informacion3[1];
-                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
-                switch (informacion3[3])
-                {
-                    case "7":
-                        rjComboBox1.SelectedIndex = 0;
-                        break;
-                    case "8":
-                        rjComboBox1.SelectedIndex = 1;
-                        break;
-                    case "10":
-                        rjComboBox1.SelectedIndex = 2;
-                        break;
-                }
-                textBoxPersonalizado8.Texts = informacion3[4];
-                if (informacion3[12] == "0")
-                {
-                    rjComboBox2.SelectedIndex = 0;
-                }
-                else
-                {
-                    rjComboBox2.SelectedIndex = 1;
-                }
-                if (informacion3[5] == "Ramon")
-                {
-                    rjComboBox3.SelectedIndex = 0;
-                }
-                else if (informacion[5] == "Roberto")
-                {
-                    rjComboBox3.SelectedIndex = 1;
-                }
-                else
-                {
-                    rjComboBox3.SelectedIndex = 2;
-                }
-                textBoxPersonalizado6.Texts = informacion3[6];
-                textBoxPersonalizado5.Texts = informacion3[7];
-                textBoxPersonalizado4.Texts = informacion3[8];
-                textBoxPersonalizado3.Texts = informacion3[9];
-                textBoxPersonalizado2.Texts = informacion3[10];
-                textBoxPersonalizado1.Texts = informacion3[11];
-                textBoxPersonalizado7.Texts = informacion3[13];
-
-            }
-            else if (ListaEstado == 3)
-            {
-
-                Cliente = cmbCliente.Texts;
-                informacion3 = a.LectName4(Cliente);
-                PanelEditar.BringToFront();
-                LabelLimite.Text = "Fecha Ultimo";
-                label25.Hide();
-
-                textBoxPersonalizado7.Hide();
-                pertenece = "Lista Liquidados";
-                lista = "liquidados";
-                LblPerte.Text = pertenece;
-                cmbLista.Items.AddRange(new string[] { "Lista 1", "Lista 2", "Lista 3" });
-                textBoxPersonalizado10.Texts = informacion3[0];
-                textBoxPersonalizado9.Texts = informacion3[1];
-                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
-                string intervalo = informacion3[3].Split('-')[0];
-                dateTimeLimite.Value = DateTime.Parse(intervalo);
-                switch (informacion3[4])
-                {
-                    case "7":
-                        rjComboBox1.SelectedIndex = 0;
-                        break;
-                    case "8":
-                        rjComboBox1.SelectedIndex = 1;
-                        break;
-                    case "10":
-                        rjComboBox1.SelectedIndex = 2;
-                        break;
-                }
-                textBoxPersonalizado8.Texts = informacion3[5];
-                if (informacion3[13] == "0")
-                {
-                    rjComboBox2.SelectedIndex = 0;
-                }
-                else
-                {
-                    rjComboBox2.SelectedIndex = 1;
-                }
-                if (informacion3[6] == "Ramon")
-                {
-                    rjComboBox3.SelectedIndex = 0;
-                }
-                else if (informacion[6] == "Roberto")
-                {
-                    rjComboBox3.SelectedIndex = 1;
-                }
-                else
-                {
-                    rjComboBox3.SelectedIndex = 2;
-                }
-                textBoxPersonalizado6.Texts = informacion3[7];
-                textBoxPersonalizado5.Texts = informacion3[8];
-                textBoxPersonalizado4.Texts = informacion3[9];
-                textBoxPersonalizado3.Texts = informacion3[10];
-                textBoxPersonalizado2.Texts = informacion3[11];
-                textBoxPersonalizado1.Texts = informacion3[12];
-            }
-
-
-
-
-
-
-        }
-        private void btnMover_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            Lectura_Base_Datos instancia = new();
-            instancia.Erase(cmbCliente.Texts, listaActual);
-
-            //Verifica de cuál lista se eliminó y la recarga
-            if (listaActual == "lista1") btnLista1.PerformClick();
-            else if (listaActual == "lista2") btnLista2.PerformClick();
-            else if (listaActual == "lista3") btnLista3.PerformClick();
-            else if (listaActual == "liquidados") btnLiquidados.PerformClick();
-        }
-
-        //Para desactivar los botones mientras se imprime una tabla
-        private void DesactivarBotones()
-        {
-            btnLista1.Enabled = false;
-            btnLista2.Enabled = false;
-            btnLista3.Enabled = false;
-            btnMostrarTodos.Enabled = false;
-            btnLiquidados.Enabled = false;
-            btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
-            cmbCliente.Enabled = false;
-            rjButton1.Enabled = false;
-        }
-
-        //Se reactivan los botones una vez se imprime la tabla
-        private void ActivarListas()
-        {
-            btnLista1.Enabled = true;
-            btnLista2.Enabled = true;
-            btnLista3.Enabled = true;
-            btnMostrarTodos.Enabled = true;
-            btnLiquidados.Enabled = true;
-            rjButton1.Enabled = true;
-        }
-
-        private void ActivarEditar()
-        {
-            if (gridListas.Rows.Count > 0)
-            {
-                cmbCliente.Enabled = true;
-            }
-        }
-
-        #endregion
-
-        private void BtnMarcarP_Click(object sender, EventArgs e)
-        {
-            //Validar que se encuentre esa fecha
-            bool band = false;
-            int index = 0;
-            //Obtener el valor seleccionado de fecha 
-            DateTime fecha = DateTimeReg.Value;
-            string Fecha = fecha.ToString("dd/MM/yyyy");
-            //Leer las fechas registradas 
-            Lectura_Base_Datos instancia = new();
-            string list;
-            if (CombBoxLista.Texts == "Lista 1")
-            {
-                list = "lista1";
-            }
-            else { list = "lista2"; }
-            string[] datos = instancia.LectName(list, ComBoxName.Texts);
-            for (int i = 14; i < datos.Length; i++)
-            {
-                if (datos[i] != null)
-                {
-
-                    string datos2 = datos[i].Replace("-", "");
-                    if (datos2 == Fecha)
-                    {
-                        band = true;
-                        index = i - 13;
-                    }
-                }
-
-            }
-
-            if (!band)
-            {
-                Form2 a = new("El cliente no cuenta con esa fecha", "Advertencia", 2);
-                a.ShowDialog();
-            }
-            //Marcar como pagada en la base de datos
-            if (band)
-            {
-                //Restar el nuevo pago al monto restante 
-                double totRes = (Convert.ToDouble(datos[13])) - (Convert.ToDouble(txtBoxMonto.Texts));
-                //Si el monto restante es 0, entonces se pasa a liquidados 
-                if (totRes == 0)
-                {
-                    Lectura_Base_Datos obj = new();
-                    obj.CreateLiquidados(1, datos); //Agregarlo en liquidados
-                    obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
-                }
-                else
-                {
-                    Fecha += "-" + txtBoxMonto.Texts;
-                    string update = "Fecha" + index + "='" + Fecha + "'" + ", Monto_Restante='" + Convert.ToString(totRes) + "'";
-                    Lectura_Base_Datos instancia2 = new();
-                    instancia2.Edit(list, ComBoxName.Texts, update);
-                }
-                //Resetear valores 
-                ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
-                CombBoxLista.SelectedIndex = -1; CombBoxLista.Texts = "Introduzca lista";
-                btnBuscarC.Enabled = false;
-                txtBoxCredito.Visible = false;
-                txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
-                lblCredito.Visible = false;
-                lblMonto.Visible = false;
-                lblFecha.Visible = false;
-                DateTimeReg.Visible = false;
-                btnMarcarP.Visible = false;
-            }
-            //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
-
-
-        }
-        #region Llenado de datos y verificación *Ingresar clientes*
-
         private void SoloNumerosDecimal(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -784,32 +236,14 @@ namespace FutureLending
             }
             else { btnMarcarP.Enabled = true; }
         }
-
         #endregion
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        #region Listas
+        private void BtnListas_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            lblTitle.Text = "Listas Completas";
+            pnlListas.BringToFront();
         }
-
-
-        public static void MessageB(string Mensaje, string titulo, int tipo)
-        {
-            Form2 a1 = new(Mensaje, titulo, tipo);
-            a1.ShowDialog();
-        }
-
-        private void PanelBien_SizeChanged(object sender, EventArgs e)
-        {
-            label19.Height = PanelBien.Height; // Ajusta la altura del Label al tamaño del Panel
-        }
-
-        private void rjButton1_Click_1(object sender, EventArgs e)
-        {
-            Exportar_Excel a = new();
-            a.ShowDialog();
-        }
-
         private void btnGuardarCambio_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos a = new();
@@ -949,16 +383,569 @@ namespace FutureLending
             }
 
         }
+        private void rjButton1_Click_1(object sender, EventArgs e)
+        {
+            Exportar_Excel a = new();
+            a.ShowDialog();
+        }
+        #region Mostrar tablas en DataGridView y editar/eliminar registros
+        int ListaEstado;
+        private async void BtnLista1_Click(object sender, EventArgs e)
+        {
+            ListaEstado = 0;
+            var mostrarListaTask = TablaClientes.MostrarLista1(gridListas, cmbCliente);
+
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarListas();
+            ActivarEditar();
+            listaActual = "lista1";
+        }
+
+        private async void BtnLista2_Click(object sender, EventArgs e)
+        {
+            ListaEstado = 1;
+            var mostrarListaTask = TablaClientes.MostrarLista2(gridListas, cmbCliente);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarListas();
+            ActivarEditar();
+            listaActual = "lista2";
+        }
+
+        private async void BtnLista3_Click(object sender, EventArgs e)
+        {
+            ListaEstado = 2;
+            var mostrarListaTask = TablaClientes.MostrarLista3(gridListas, cmbCliente);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarListas();
+            ActivarEditar();
+            listaActual = "lista3";
+        }
+
+        private async void BtnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            var mostrarListaTask = TablaClientes.MostrarTodos(gridListas, cmbCliente);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            //En este no se activa para editar
+            ActivarListas();
+        }
+
+        private async void BtnLiquidados_Click(object sender, EventArgs e)
+        {
+            ListaEstado = 3;
+            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente);
+            while (!mostrarListaTask.IsCompleted)
+            {
+                DesactivarBotones();
+                await Task.Delay(100);
+            }
+            ActivarListas();
+            ActivarEditar();
+            listaActual = "liquidados";
+        }
+
+        //Activa los botones de editar y eliminar hasta que seleccione un cliente
+        private void CmbCliente_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCliente.SelectedIndex != -1)
+            {
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
+        }
+        string[] informacion = new string[28];
+        string[] informacion3 = new string[15];
+        string Cliente;
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+
+
+            Lectura_Base_Datos a = new();
+
+            string pertenece = "";
+            string lista = "";
+            LabelLimite.Hide();
+            dateTimeLimite.Hide();
+            if (ListaEstado == 0)
+            {
+                cmbLista.Items.Clear();
+                cmbLista.Enabled = true;
+                PanelEditar.BringToFront();
+                pertenece = "Lista 1";
+                lista = "lista1";
+                cmbLista.Items.AddRange(new string[] { "Lista 2", "Lista 3", "Liquidados" });
+                LblPerte.Text = pertenece;
+                Cliente = cmbCliente.Texts;
+                textBoxPersonalizado10.Texts = Cliente;
+                //Empieza
+                informacion = a.LectName(lista, Cliente);
+                textBoxPersonalizado9.Texts = informacion[1];
+                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion[2]);
+                switch (informacion[3])
+                {
+                    case "7":
+                        rjComboBox1.SelectedIndex = 0;
+                        break;
+                    case "8":
+                        rjComboBox1.SelectedIndex = 1;
+                        break;
+                    case "10":
+                        rjComboBox1.SelectedIndex = 2;
+                        break;
+                }
+                textBoxPersonalizado8.Texts = informacion[4];
+                if (informacion[12] == "0")
+                {
+                    rjComboBox2.SelectedIndex = 0;
+                }
+                else
+                {
+                    rjComboBox2.SelectedIndex = 1;
+                }
+
+                if (informacion[5] == "Ramon")
+                {
+                    rjComboBox3.SelectedIndex = 0;
+                }
+                else if (informacion[5] == "Roberto")
+                {
+                    rjComboBox3.SelectedIndex = 1;
+                }
+                else
+                {
+                    rjComboBox3.SelectedIndex = 2;
+                }
+                textBoxPersonalizado7.Texts = informacion[13];
+                textBoxPersonalizado6.Texts = informacion[6];
+                textBoxPersonalizado5.Texts = informacion[7];
+                textBoxPersonalizado4.Texts = informacion[8];
+                textBoxPersonalizado3.Texts = informacion[9];
+                textBoxPersonalizado2.Texts = informacion[10];
+                textBoxPersonalizado1.Texts = informacion[11];
+            }
+            else if (ListaEstado == 1)
+            {
+                cmbLista.Items.Clear();
+                cmbLista.Enabled = true;
+                PanelEditar.BringToFront();
+                Cliente = cmbCliente.Texts;
+                LabelLimite.Show();
+                dateTimeLimite.Show();
+                pertenece = "Lista 2";
+                lista = "lista2";
+                LblPerte.Text = pertenece;
+                cmbLista.Items.AddRange(new string[] { "Lista 3", "Liquidados" });
+                informacion3 = a.LectName2(Cliente);
+                textBoxPersonalizado10.Texts = informacion3[0];
+                textBoxPersonalizado9.Texts = informacion3[1];
+                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
+                switch (informacion3[3])
+                {
+                    case "7":
+                        rjComboBox1.SelectedIndex = 0;
+                        break;
+                    case "8":
+                        rjComboBox1.SelectedIndex = 1;
+                        break;
+                    case "10":
+                        rjComboBox1.SelectedIndex = 2;
+                        break;
+                }
+                textBoxPersonalizado8.Texts = informacion3[4];
+                if (informacion3[12] == "0")
+                {
+                    rjComboBox2.SelectedIndex = 0;
+                }
+                else
+                {
+                    rjComboBox2.SelectedIndex = 1;
+                }
+                if (informacion3[5] == "Ramon")
+                {
+                    rjComboBox3.SelectedIndex = 0;
+                }
+                else if (informacion[5] == "Roberto")
+                {
+                    rjComboBox3.SelectedIndex = 1;
+                }
+                else
+                {
+                    rjComboBox3.SelectedIndex = 2;
+                }
+                textBoxPersonalizado6.Texts = informacion3[6];
+                textBoxPersonalizado5.Texts = informacion3[7];
+                textBoxPersonalizado4.Texts = informacion3[8];
+                textBoxPersonalizado3.Texts = informacion3[9];
+                textBoxPersonalizado2.Texts = informacion3[10];
+                textBoxPersonalizado1.Texts = informacion3[11];
+                textBoxPersonalizado7.Texts = informacion3[13];
+                if (DateTime.TryParse(informacion[14], out DateTime parsedDate))
+                {
+                    dateTimeLimite.Value = parsedDate;
+                }
+                else
+                {
+                    dateTimeLimite.Value = DateTime.Now;
+                }
+
+
+
+
+
+
+
+
+
+            }
+            else if (ListaEstado == 2)
+            {
+                cmbLista.Items.Clear();
+                cmbLista.Enabled = true;
+                PanelEditar.BringToFront();
+                LabelLimite.Hide();
+                dateTimeLimite.Hide();
+                pertenece = "Lista 3";
+                lista = "lista3";
+                LblPerte.Text = pertenece;
+                cmbLista.Items.AddRange(new string[] { "Liquidados" });
+                Cliente = cmbCliente.Texts;
+                informacion3 = a.LectName3(Cliente);
+                textBoxPersonalizado10.Texts = informacion3[0];
+                textBoxPersonalizado9.Texts = informacion3[1];
+                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
+                switch (informacion3[3])
+                {
+                    case "7":
+                        rjComboBox1.SelectedIndex = 0;
+                        break;
+                    case "8":
+                        rjComboBox1.SelectedIndex = 1;
+                        break;
+                    case "10":
+                        rjComboBox1.SelectedIndex = 2;
+                        break;
+                }
+                textBoxPersonalizado8.Texts = informacion3[4];
+                if (informacion3[12] == "0")
+                {
+                    rjComboBox2.SelectedIndex = 0;
+                }
+                else
+                {
+                    rjComboBox2.SelectedIndex = 1;
+                }
+                if (informacion3[5] == "Ramon")
+                {
+                    rjComboBox3.SelectedIndex = 0;
+                }
+                else if (informacion[5] == "Roberto")
+                {
+                    rjComboBox3.SelectedIndex = 1;
+                }
+                else
+                {
+                    rjComboBox3.SelectedIndex = 2;
+                }
+                textBoxPersonalizado6.Texts = informacion3[6];
+                textBoxPersonalizado5.Texts = informacion3[7];
+                textBoxPersonalizado4.Texts = informacion3[8];
+                textBoxPersonalizado3.Texts = informacion3[9];
+                textBoxPersonalizado2.Texts = informacion3[10];
+                textBoxPersonalizado1.Texts = informacion3[11];
+                textBoxPersonalizado7.Texts = informacion3[13];
+
+            }
+            else if (ListaEstado == 3)
+            {
+                cmbLista.Items.Clear();
+                Cliente = cmbCliente.Texts;
+                informacion3 = a.LectName4(Cliente);
+                PanelEditar.BringToFront();
+                LabelLimite.Text = "Fecha Ultimo";
+                label25.Hide();
+                textBoxPersonalizado7.Hide();
+                pertenece = "Lista Liquidados";
+                lista = "liquidados";
+                LblPerte.Text = pertenece;
+                cmbLista.Enabled = false;
+                textBoxPersonalizado10.Texts = informacion3[0];
+                textBoxPersonalizado9.Texts = informacion3[1];
+                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
+                string intervalo = informacion3[3].Split('-')[0];
+                dateTimeLimite.Value = DateTime.Parse(intervalo);
+                switch (informacion3[4])
+                {
+                    case "7":
+                        rjComboBox1.SelectedIndex = 0;
+                        break;
+                    case "8":
+                        rjComboBox1.SelectedIndex = 1;
+                        break;
+                    case "10":
+                        rjComboBox1.SelectedIndex = 2;
+                        break;
+                }
+                textBoxPersonalizado8.Texts = informacion3[5];
+                if (informacion3[13] == "0")
+                {
+                    rjComboBox2.SelectedIndex = 0;
+                }
+                else
+                {
+                    rjComboBox2.SelectedIndex = 1;
+                }
+                if (informacion3[6] == "Ramon")
+                {
+                    rjComboBox3.SelectedIndex = 0;
+                }
+                else if (informacion[6] == "Roberto")
+                {
+                    rjComboBox3.SelectedIndex = 1;
+                }
+                else
+                {
+                    rjComboBox3.SelectedIndex = 2;
+                }
+                textBoxPersonalizado6.Texts = informacion3[7];
+                textBoxPersonalizado5.Texts = informacion3[8];
+                textBoxPersonalizado4.Texts = informacion3[9];
+                textBoxPersonalizado3.Texts = informacion3[10];
+                textBoxPersonalizado2.Texts = informacion3[11];
+                textBoxPersonalizado1.Texts = informacion3[12];
+            }
+        }
+
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Lectura_Base_Datos instancia = new();
+            instancia.Erase(cmbCliente.Texts, listaActual);
+
+            //Verifica de cuál lista se eliminó y la recarga
+            if (listaActual == "lista1") btnLista1.PerformClick();
+            else if (listaActual == "lista2") btnLista2.PerformClick();
+            else if (listaActual == "lista3") btnLista3.PerformClick();
+            else if (listaActual == "liquidados") btnLiquidados.PerformClick();
+        }
+
+        //Para desactivar los botones mientras se imprime una tabla
+        private void DesactivarBotones()
+        {
+            btnLista1.Enabled = false;
+            btnLista2.Enabled = false;
+            btnLista3.Enabled = false;
+            btnMostrarTodos.Enabled = false;
+            btnLiquidados.Enabled = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            cmbCliente.Enabled = false;
+            rjButton1.Enabled = false;
+        }
+
+        //Se reactivan los botones una vez se imprime la tabla
+        private void ActivarListas()
+        {
+            btnLista1.Enabled = true;
+            btnLista2.Enabled = true;
+            btnLista3.Enabled = true;
+            btnMostrarTodos.Enabled = true;
+            btnLiquidados.Enabled = true;
+            rjButton1.Enabled = true;
+        }
+
+        private void ActivarEditar()
+        {
+            if (gridListas.Rows.Count > 0)
+            {
+                cmbCliente.Enabled = true;
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Reparacion
+        private void BtnTodosSistemas_Click(object sender, EventArgs e)
+        {
+            Lectura_Base_Datos instancia = new();
+            _ = instancia.CheckConnection(false);
+        }
+        #endregion
+
+        #region Estado de Pagos
+        private void BtnEstadoPagos_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Registrar pago";
+            pnlRegPago.BringToFront();
+
+            // Iniciar el hilo de fondo
+            BackgroundWorker worker = new();
+#pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
+            worker.DoWork += Worker_DoWork;
+#pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
+            worker.RunWorkerAsync();
+        }
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            // Operaciones intensivas (lectura de datos, procesamiento, etc.)
+            Lectura_Base_Datos instancia = new();
+            List<string[]> lista1 = instancia.LectLista1();
+            List<string[]> lista2 = instancia.LectLista2();
+
+            // Unir las listas en una sola lista
+            List<string[]> listaTotal = new(lista1);
+            listaTotal.AddRange(lista2);
+
+            // Agregar los nombres a ComBoxName
+            // Acceder a los controles se realiza en el hilo de interfaz de usuario principal
+            ComBoxName.BeginInvoke((MethodInvoker)delegate
+            {
+                ComBoxName.Items.Clear();
+                foreach (string[] item in listaTotal)
+                {
+                    ComBoxName.Items.Add(item[0]);
+                }
+            });
+        }
+        private void BtnBuscarC_Click(object sender, EventArgs e)
+        {
+            //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
+            //Mostramos en el form
+
+            //Agregamos los datos del cliente al form
+            Lectura_Base_Datos instancia = new();
+            string list;
+            if (CombBoxLista.Texts == "Lista 1")
+            {
+                list = "lista1";
+            }
+            else { list = "lista2"; }
+            string[] datos = instancia.LectName(list, ComBoxName.Texts);
+            if (datos[1] == null)
+            {
+                Form2 a = new("No se encontro al usuario en esa Lista", "Advertencia", 2);
+                a.ShowDialog();
+            }
+            else
+            {
+                lblCredito.Visible = true;
+                txtBoxCredito.Visible = true;
+                txtBoxMonto.Visible = true;
+                lblFecha.Visible = true;
+                lblMonto.Visible = true;
+                DateTimeReg.Visible = true;
+                btnMarcarP.Visible = true;
+                txtBoxCredito.Texts = datos[1];
+            }
+
+
+
+        }
+        private void BtnMarcarP_Click(object sender, EventArgs e)
+        {
+            //Validar que se encuentre esa fecha
+            bool band = false;
+            int index = 0;
+            //Obtener el valor seleccionado de fecha 
+            DateTime fecha = DateTimeReg.Value;
+            string Fecha = fecha.ToString("dd/MM/yyyy");
+            //Leer las fechas registradas 
+            Lectura_Base_Datos instancia = new();
+            string list;
+            if (CombBoxLista.Texts == "Lista 1")
+            {
+                list = "lista1";
+            }
+            else { list = "lista2"; }
+            string[] datos = instancia.LectName(list, ComBoxName.Texts);
+            for (int i = 14; i < datos.Length; i++)
+            {
+                if (datos[i] != null)
+                {
+
+                    string datos2 = datos[i].Replace("-", "");
+                    if (datos2 == Fecha)
+                    {
+                        band = true;
+                        index = i - 13;
+                    }
+                }
+
+            }
+
+            if (!band)
+            {
+                Form2 a = new("El cliente no cuenta con esa fecha", "Advertencia", 2);
+                a.ShowDialog();
+            }
+            //Marcar como pagada en la base de datos
+            if (band)
+            {
+                //Restar el nuevo pago al monto restante 
+                double totRes = (Convert.ToDouble(datos[13])) - (Convert.ToDouble(txtBoxMonto.Texts));
+                //Si el monto restante es 0, entonces se pasa a liquidados 
+                if (totRes == 0)
+                {
+                    Lectura_Base_Datos obj = new();
+                    obj.CreateLiquidados(1, datos); //Agregarlo en liquidados
+                    obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                }
+                else
+                {
+                    Fecha += "-" + txtBoxMonto.Texts;
+                    string update = "Fecha" + index + "='" + Fecha + "'" + ", Monto_Restante='" + Convert.ToString(totRes) + "'";
+                    Lectura_Base_Datos instancia2 = new();
+                    instancia2.Edit(list, ComBoxName.Texts, update);
+                }
+                //Resetear valores 
+                ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
+                CombBoxLista.SelectedIndex = -1; CombBoxLista.Texts = "Introduzca lista";
+                btnBuscarC.Enabled = false;
+                txtBoxCredito.Visible = false;
+                txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
+                lblCredito.Visible = false;
+                lblMonto.Visible = false;
+                lblFecha.Visible = false;
+                DateTimeReg.Visible = false;
+                btnMarcarP.Visible = false;
+            }
+            //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
+
+
+        }
+
+
+
+
+        #endregion
+        #region Configuracion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            lblTitle.Text = "Usuarios";
+            lblTitle.Text = "Configuracion";
             Accesos a = new();
             panel2.BringToFront();
             string[] usuarios = a.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
         }
+
         private bool changingCheckedState = false;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -1074,5 +1061,289 @@ namespace FutureLending
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
         }
+
+        #region Edicion conexion sql
+
+        public bool conect;
+        public bool revisador = true;
+        private async void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Lectura_Base_Datos a = new();
+            if (tabControl1.SelectedIndex == 0)
+            {
+                Accesos a2 = new();
+                string[] usuarios = a2.CargarUsuarios().ToArray();
+                comboBox1.Items.Clear();
+                comboBox1.Items.AddRange(usuarios);
+            }
+            else
+            {
+                TextServer.Text = Properties.Settings1.Default.Servidor;
+                TextPuerto.Text = Properties.Settings1.Default.Puerto.ToString();
+                TextBase.Text = Properties.Settings1.Default.Base_de_datos;
+                TextUsuario.Text = Properties.Settings1.Default.Usuario;
+                TextContra.Text = Properties.Settings1.Default.Contraseña;
+                await a.CheckConnection(true);
+                revisador = true;
+                if (conect)
+                {
+                    LabelEstado.Text = "Inactivo";
+                    LabelEstado.ForeColor = Color.Red;
+                }
+                else
+                {
+                    LabelEstado.Text = "Activo";
+                    LabelEstado.ForeColor = Color.Green;
+                }
+            }
+        }
+        private bool check = false;
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!check)
+            {
+                check = true;
+                if (check == true)
+                {
+                    TextContra.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    TextContra.UseSystemPasswordChar = true;
+                }
+            }
+            check = false;
+        }
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            string server = TextServer.Text.ToString();
+            string puerto = TextPuerto.Text.ToString();
+            string base_de_datos = TextBase.Text.ToString();
+            string usuario = TextUsuario.Text.ToString();
+            string contraseña = TextContra.Text.ToString();
+
+            if (string.IsNullOrEmpty(server) || string.IsNullOrEmpty(puerto) || string.IsNullOrEmpty(base_de_datos) || string.IsNullOrEmpty(usuario))
+            {
+                MessageB("No puede haber nada vacio", "Error", 2);
+            }
+            else
+            {
+                Properties.Settings1.Default.Servidor = server;
+                Properties.Settings1.Default.Puerto = Convert.ToInt32(puerto);
+                Properties.Settings1.Default.Base_de_datos = base_de_datos;
+                Properties.Settings1.Default.Usuario = usuario;
+                Properties.Settings1.Default.Contraseña = contraseña;
+                Properties.Settings1.Default.Save();
+                MessageB("Se guardaron los cambios", "Exito", 1);
+            }
+        }
+        private async void rjButton3_ClickAsync(object sender, EventArgs e)
+        {
+            Lectura_Base_Datos a = new();
+            revisador = false;
+            await a.CheckConnection(true);
+            revisador = true;
+            if (conect)
+            {
+                LabelEstado.Text = "Inactivo";
+                LabelEstado.ForeColor = Color.Red;
+            }
+            else
+            {
+                LabelEstado.Text = "Activo";
+                LabelEstado.ForeColor = Color.Green;
+            }
+        }
+        #endregion
+        #endregion
+        #endregion
+
+        #region Cosas Generales
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+        public static void MessageB(string Mensaje, string titulo, int tipo)
+        {
+            Form2 a1 = new(Mensaje, titulo, tipo);
+            a1.ShowDialog();
+        }
+
+        private void PanelBien_SizeChanged(object sender, EventArgs e)
+        {
+            label19.Height = PanelBien.Height; // Ajusta la altura del Label al tamaño del Panel
+        }
+
+        #endregion
+
+
+
+
+        #region Cambio de listas
+        private void cmbLista_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbLista.SelectedIndex != -1)
+            {
+                btnMover.Enabled = true;
+            }
+            else
+            {
+                btnMover.Enabled = false;
+            }
+
+        }
+        private void btnMover_Click(object sender, EventArgs e) //boton para mover
+        {
+            
+            string proviene = LblPerte.Text;
+            if (proviene == "Lista 1")
+            {
+                proviene = "lista1";
+            }
+            else if (proviene == "Lista 2")
+            {
+                proviene = "lista2";
+            }
+            else if (proviene == "Lista 3")
+            {
+                proviene = "lista3";
+            }
+            string Nombre = textBoxPersonalizado10.Texts;
+            string Credito = textBoxPersonalizado9.Texts;
+            string Fecha_Inicio = dateTimePickerPersonalizado1.Value.ToString("dd/MM/yyyy");
+            string Interes = rjComboBox1.SelectedItem.ToString().Split("%")[0];
+            string Monto = textBoxPersonalizado8.Texts;
+            string promotor = rjComboBox3.SelectedItem.ToString();
+            string calle = textBoxPersonalizado6.Texts;
+            string colonia = textBoxPersonalizado5.Texts;
+            string num_int = textBoxPersonalizado4.Texts;
+            string num_ext = textBoxPersonalizado3.Texts;
+            string telefono = textBoxPersonalizado2.Texts;
+            string correo = textBoxPersonalizado1.Texts;
+            int tipo_pago;
+            if (rjComboBox2.SelectedItem.ToString() == "Semanales")
+            {
+                tipo_pago = 0;
+            }
+            else
+            {
+                tipo_pago = 1;
+            }
+            Lectura_Base_Datos lec = new();
+
+            switch (cmbLista.SelectedItem.ToString())
+            {
+                case "Lista 2": //lista2
+                    MessageBox.Show("Entre a lista2");
+                    LabelLimite.Text = "Fecha Limite";
+                    string Fecha_Ultimo1 = dateTimeLimite.Value.ToString("dd/MM/yyyy");
+                    string Monto_Restante = textBoxPersonalizado7.Texts;
+                    string[] datos1 = new string[]{
+    Nombre,
+    Credito,
+    Fecha_Inicio,
+    Interes,
+    Monto,
+    promotor,
+    calle,
+    colonia,
+    num_int,
+    num_ext,
+    telefono,
+    correo
+};
+                    string[] arrayCompleto1 = datos1.Concat(new string[] { tipo_pago.ToString() }).ToArray();
+                    string[] arrayCompleto2 = arrayCompleto1.Concat(new string[] { Monto_Restante, Fecha_Ultimo1 }).ToArray();
+                    lec.Erase(Nombre, proviene);
+                    lec.InsertarLista2(arrayCompleto2);
+                    pnlListas.BringToFront();
+                    break;
+                case "Lista 3": //lista 3
+                    MessageBox.Show("Entre a lista 3");
+                    string Monto_Restante2 = textBoxPersonalizado7.Texts;
+                    string[] datitos = new string[]
+                    {
+                        Nombre,
+                        Credito,
+                        Fecha_Inicio,
+                        Interes,
+                        Monto,
+                        promotor,
+                        calle,
+                        colonia,
+                        num_int,
+                        num_ext,
+                        telefono,
+                        correo
+                    };
+                    string[] completito = datitos.Concat(new string[] { tipo_pago.ToString(), Monto_Restante2 }).ToArray();
+                    lec.Erase(Nombre, proviene);
+                    lec.InsertarLista3(completito);
+                    pnlListas.BringToFront();
+                    break;
+                case "Liquidados": //lista liquidados
+                    MessageBox.Show("Entre a liquidados");
+                    string Fecha_Ultimo = dateTimeLimite.Value.ToString("dd/MM/yyyy");
+                    string[] datos = new string[]{
+    Nombre,
+    Credito,
+    Fecha_Inicio,
+    Fecha_Ultimo,
+    Interes,
+    Monto,
+    promotor,
+    calle,
+    colonia,
+    num_int,
+    num_ext,
+    telefono,
+    correo
+};
+                    string[] arrayCompleto = datos.Concat(new string[] { tipo_pago.ToString() }).ToArray();
+                    lec.Erase(Nombre, proviene);
+                    lec.InsertarLiquidados(arrayCompleto);
+                    pnlListas.BringToFront();
+                    break;
+            }
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

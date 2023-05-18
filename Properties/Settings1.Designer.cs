@@ -23,21 +23,63 @@ namespace FutureLending.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("root")]
         public string Usuario {
             get {
                 return ((string)(this["Usuario"]));
             }
+            set {
+                this["Usuario"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Contraseña {
             get {
                 return ((string)(this["Contraseña"]));
+            }
+            set {
+                this["Contraseña"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string Servidor {
+            get {
+                return ((string)(this["Servidor"]));
+            }
+            set {
+                this["Servidor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
+        public int Puerto {
+            get {
+                return ((int)(this["Puerto"]));
+            }
+            set {
+                this["Puerto"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("prestamos")]
+        public string Base_de_datos {
+            get {
+                return ((string)(this["Base_de_datos"]));
+            }
+            set {
+                this["Base_de_datos"] = value;
             }
         }
     }

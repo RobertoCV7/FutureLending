@@ -144,6 +144,8 @@
             PanelBien = new Panel();
             label19 = new Label();
             panel2 = new Panel();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanel4 = new FlowLayoutPanel();
             label35 = new Label();
@@ -169,6 +171,25 @@
             panel3 = new Panel();
             button2 = new Button();
             button3 = new Button();
+            Conexion_Sql = new TabPage();
+            rjButton3 = new Controles_personalizados.RJButton();
+            LabelEstado = new Label();
+            label51 = new Label();
+            rjButton2 = new Controles_personalizados.RJButton();
+            checkBox3 = new CheckBox();
+            label50 = new Label();
+            label49 = new Label();
+            TextContra = new TextBox();
+            TextUsuario = new TextBox();
+            TextBase = new TextBox();
+            TextPuerto = new TextBox();
+            TextServer = new TextBox();
+            label48 = new Label();
+            label47 = new Label();
+            label46 = new Label();
+            label45 = new Label();
+            label44 = new Label();
+            label43 = new Label();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -184,10 +205,13 @@
             groupBox1.SuspendLayout();
             PanelBien.SuspendLayout();
             panel2.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel4.SuspendLayout();
             flowLayoutPanel5.SuspendLayout();
             panel3.SuspendLayout();
+            Conexion_Sql.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
@@ -224,8 +248,8 @@
             iconButton1.Padding = new Padding(11, 0, 0, 0);
             iconButton1.Size = new Size(263, 72);
             iconButton1.TabIndex = 4;
-            iconButton1.Tag = "Usuarios";
-            iconButton1.Text = "Usuarios";
+            iconButton1.Tag = "Configuración";
+            iconButton1.Text = "Configuración";
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
@@ -1555,7 +1579,7 @@
             textBoxPersonalizado7.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado7.PasswordChar = false;
             textBoxPersonalizado7.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado7.PlaceholderText = "Introduzca el correo";
+            textBoxPersonalizado7.PlaceholderText = "";
             textBoxPersonalizado7.Size = new Size(283, 48);
             textBoxPersonalizado7.TabIndex = 82;
             textBoxPersonalizado7.Texts = "";
@@ -1607,9 +1631,8 @@
             LblPerte.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             LblPerte.Location = new Point(213, 12);
             LblPerte.Name = "LblPerte";
-            LblPerte.Size = new Size(116, 28);
+            LblPerte.Size = new Size(0, 28);
             LblPerte.TabIndex = 77;
-            LblPerte.Text = "labelperte";
             // 
             // label26
             // 
@@ -1702,6 +1725,7 @@
             cmbLista.TabIndex = 44;
             cmbLista.Tag = "Selecciones un tipo de pago";
             cmbLista.Texts = "Seleccione una lista";
+            cmbLista.OnSelectedIndexChanged += cmbLista_OnSelectedIndexChanged;
             // 
             // textBoxPersonalizado1
             // 
@@ -1718,7 +1742,7 @@
             textBoxPersonalizado1.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado1.PasswordChar = false;
             textBoxPersonalizado1.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado1.PlaceholderText = "Introduzca el correo";
+            textBoxPersonalizado1.PlaceholderText = "";
             textBoxPersonalizado1.Size = new Size(283, 48);
             textBoxPersonalizado1.TabIndex = 66;
             textBoxPersonalizado1.Texts = "";
@@ -1750,7 +1774,7 @@
             textBoxPersonalizado2.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado2.PasswordChar = false;
             textBoxPersonalizado2.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado2.PlaceholderText = "Introduzca el núm. de tel.";
+            textBoxPersonalizado2.PlaceholderText = "";
             textBoxPersonalizado2.Size = new Size(283, 48);
             textBoxPersonalizado2.TabIndex = 65;
             textBoxPersonalizado2.Texts = "";
@@ -1782,7 +1806,7 @@
             textBoxPersonalizado3.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado3.PasswordChar = false;
             textBoxPersonalizado3.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado3.PlaceholderText = "Num. ext.";
+            textBoxPersonalizado3.PlaceholderText = "";
             textBoxPersonalizado3.Size = new Size(115, 48);
             textBoxPersonalizado3.TabIndex = 64;
             textBoxPersonalizado3.Texts = "";
@@ -1814,7 +1838,7 @@
             textBoxPersonalizado4.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado4.PasswordChar = false;
             textBoxPersonalizado4.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado4.PlaceholderText = "Num. int.";
+            textBoxPersonalizado4.PlaceholderText = "";
             textBoxPersonalizado4.Size = new Size(115, 48);
             textBoxPersonalizado4.TabIndex = 63;
             textBoxPersonalizado4.Texts = "";
@@ -1846,7 +1870,7 @@
             textBoxPersonalizado5.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado5.PasswordChar = false;
             textBoxPersonalizado5.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado5.PlaceholderText = "Introduzca la colonia";
+            textBoxPersonalizado5.PlaceholderText = "";
             textBoxPersonalizado5.Size = new Size(265, 48);
             textBoxPersonalizado5.TabIndex = 62;
             textBoxPersonalizado5.Texts = "";
@@ -1878,7 +1902,7 @@
             textBoxPersonalizado6.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado6.PasswordChar = false;
             textBoxPersonalizado6.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado6.PlaceholderText = "Introduzca la calle";
+            textBoxPersonalizado6.PlaceholderText = "";
             textBoxPersonalizado6.Size = new Size(265, 48);
             textBoxPersonalizado6.TabIndex = 61;
             textBoxPersonalizado6.Texts = "";
@@ -2012,7 +2036,7 @@
             textBoxPersonalizado9.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado9.PasswordChar = false;
             textBoxPersonalizado9.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado9.PlaceholderText = "Introduzca monto total";
+            textBoxPersonalizado9.PlaceholderText = "";
             textBoxPersonalizado9.Size = new Size(406, 48);
             textBoxPersonalizado9.TabIndex = 47;
             textBoxPersonalizado9.Texts = "";
@@ -2042,7 +2066,7 @@
             textBoxPersonalizado10.Padding = new Padding(11, 9, 11, 9);
             textBoxPersonalizado10.PasswordChar = false;
             textBoxPersonalizado10.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado10.PlaceholderText = "Introduzca el nombre";
+            textBoxPersonalizado10.PlaceholderText = "";
             textBoxPersonalizado10.Size = new Size(386, 48);
             textBoxPersonalizado10.TabIndex = 45;
             textBoxPersonalizado10.Texts = "";
@@ -2112,12 +2136,34 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.Info;
-            panel2.Controls.Add(tableLayoutPanel1);
+            panel2.Controls.Add(tabControl1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(263, 80);
             panel2.Name = "panel2";
             panel2.Size = new Size(979, 661);
             panel2.TabIndex = 24;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(Conexion_Sql);
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(970, 661);
+            tabControl1.TabIndex = 21;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = SystemColors.Info;
+            tabPage1.Controls.Add(tableLayoutPanel1);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(962, 628);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Usuarios";
             // 
             // tableLayoutPanel1
             // 
@@ -2126,7 +2172,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(flowLayoutPanel4, 0, 0);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel5, 1, 0);
-            tableLayoutPanel1.Location = new Point(2, 0);
+            tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -2435,15 +2481,238 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // Conexion_Sql
+            // 
+            Conexion_Sql.BackColor = SystemColors.Info;
+            Conexion_Sql.Controls.Add(rjButton3);
+            Conexion_Sql.Controls.Add(LabelEstado);
+            Conexion_Sql.Controls.Add(label51);
+            Conexion_Sql.Controls.Add(rjButton2);
+            Conexion_Sql.Controls.Add(checkBox3);
+            Conexion_Sql.Controls.Add(label50);
+            Conexion_Sql.Controls.Add(label49);
+            Conexion_Sql.Controls.Add(TextContra);
+            Conexion_Sql.Controls.Add(TextUsuario);
+            Conexion_Sql.Controls.Add(TextBase);
+            Conexion_Sql.Controls.Add(TextPuerto);
+            Conexion_Sql.Controls.Add(TextServer);
+            Conexion_Sql.Controls.Add(label48);
+            Conexion_Sql.Controls.Add(label47);
+            Conexion_Sql.Controls.Add(label46);
+            Conexion_Sql.Controls.Add(label45);
+            Conexion_Sql.Controls.Add(label44);
+            Conexion_Sql.Controls.Add(label43);
+            Conexion_Sql.Location = new Point(4, 29);
+            Conexion_Sql.Name = "Conexion_Sql";
+            Conexion_Sql.Padding = new Padding(3);
+            Conexion_Sql.Size = new Size(962, 628);
+            Conexion_Sql.TabIndex = 1;
+            Conexion_Sql.Text = "Conexion Sql";
+            // 
+            // rjButton3
+            // 
+            rjButton3.BackColor = Color.Violet;
+            rjButton3.BackgroundColor = Color.Violet;
+            rjButton3.BorderColor = Color.PaleVioletRed;
+            rjButton3.BorderRadius = 20;
+            rjButton3.BorderSize = 0;
+            rjButton3.FlatAppearance.BorderSize = 0;
+            rjButton3.FlatStyle = FlatStyle.Flat;
+            rjButton3.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton3.ForeColor = Color.White;
+            rjButton3.Location = new Point(707, 192);
+            rjButton3.Name = "rjButton3";
+            rjButton3.Size = new Size(188, 50);
+            rjButton3.TabIndex = 17;
+            rjButton3.Text = "Revisar";
+            rjButton3.TextColor = Color.White;
+            rjButton3.UseVisualStyleBackColor = false;
+            rjButton3.Click += rjButton3_ClickAsync;
+            // 
+            // LabelEstado
+            // 
+            LabelEstado.AutoSize = true;
+            LabelEstado.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelEstado.ForeColor = Color.Red;
+            LabelEstado.Location = new Point(732, 121);
+            LabelEstado.Name = "LabelEstado";
+            LabelEstado.Size = new Size(125, 37);
+            LabelEstado.TabIndex = 16;
+            LabelEstado.Text = "Inactivo";
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label51.Location = new Point(660, 64);
+            label51.Name = "label51";
+            label51.Size = new Size(255, 34);
+            label51.TabIndex = 15;
+            label51.Text = "Estado del servidor";
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.MediumSlateBlue;
+            rjButton2.BackgroundColor = Color.MediumSlateBlue;
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 20;
+            rjButton2.BorderSize = 0;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.Font = new Font("Roboto", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton2.ForeColor = Color.White;
+            rjButton2.Location = new Point(227, 486);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(256, 73);
+            rjButton2.TabIndex = 14;
+            rjButton2.Text = "Aplicar";
+            rjButton2.TextColor = Color.White;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox3.Location = new Point(590, 423);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(168, 28);
+            checkBox3.TabIndex = 13;
+            checkBox3.Text = "Ver contraseña";
+            checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label50.ForeColor = Color.Red;
+            label50.Location = new Point(416, 597);
+            label50.Name = "label50";
+            label50.Size = new Size(67, 28);
+            label50.TabIndex = 12;
+            label50.Text = "Nota:";
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label49.Location = new Point(489, 599);
+            label49.Name = "label49";
+            label49.Size = new Size(449, 24);
+            label49.TabIndex = 11;
+            label49.Text = "Si no esta seguro de que ingresar no lo modifique";
+            // 
+            // TextContra
+            // 
+            TextContra.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TextContra.Location = new Point(308, 416);
+            TextContra.Name = "TextContra";
+            TextContra.Size = new Size(207, 40);
+            TextContra.TabIndex = 10;
+            TextContra.UseSystemPasswordChar = true;
+            // 
+            // TextUsuario
+            // 
+            TextUsuario.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TextUsuario.Location = new Point(305, 344);
+            TextUsuario.Name = "TextUsuario";
+            TextUsuario.Size = new Size(210, 40);
+            TextUsuario.TabIndex = 9;
+            // 
+            // TextBase
+            // 
+            TextBase.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TextBase.Location = new Point(343, 274);
+            TextBase.Name = "TextBase";
+            TextBase.Size = new Size(172, 40);
+            TextBase.TabIndex = 8;
+            // 
+            // TextPuerto
+            // 
+            TextPuerto.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TextPuerto.Location = new Point(319, 213);
+            TextPuerto.Name = "TextPuerto";
+            TextPuerto.Size = new Size(196, 40);
+            TextPuerto.TabIndex = 7;
+            // 
+            // TextServer
+            // 
+            TextServer.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TextServer.Location = new Point(308, 132);
+            TextServer.Name = "TextServer";
+            TextServer.Size = new Size(196, 40);
+            TextServer.TabIndex = 6;
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label48.Location = new Point(112, 274);
+            label48.Name = "label48";
+            label48.Size = new Size(213, 37);
+            label48.TabIndex = 5;
+            label48.Text = "Base de datos:";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label47.Location = new Point(112, 205);
+            label47.Name = "label47";
+            label47.Size = new Size(116, 37);
+            label47.TabIndex = 4;
+            label47.Text = "Puerto:";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label46.Location = new Point(119, 406);
+            label46.Name = "label46";
+            label46.Size = new Size(180, 37);
+            label46.TabIndex = 3;
+            label46.Text = "Contraseña:";
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label45.Location = new Point(112, 336);
+            label45.Name = "label45";
+            label45.Size = new Size(129, 37);
+            label45.TabIndex = 2;
+            label45.Text = "Usuario:";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label44.Location = new Point(111, 133);
+            label44.Name = "label44";
+            label44.Size = new Size(138, 37);
+            label44.TabIndex = 1;
+            label44.Text = "Servidor:";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Roboto", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label43.Location = new Point(67, 10);
+            label43.Name = "label43";
+            label43.Size = new Size(284, 44);
+            label43.TabIndex = 0;
+            label43.Text = "Editar Conexion";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1242, 741);
-            Controls.Add(PanelBien);
-            Controls.Add(panel2);
-            Controls.Add(pnlListas);
             Controls.Add(PanelEditar);
+            Controls.Add(pnlListas);
+            Controls.Add(panel2);
+            Controls.Add(PanelBien);
             Controls.Add(pnlClientes);
             Controls.Add(pnlRegPago);
             Controls.Add(panelTitleBar);
@@ -2476,12 +2745,16 @@
             PanelBien.ResumeLayout(false);
             PanelBien.PerformLayout();
             panel2.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel4.ResumeLayout(false);
             flowLayoutPanel4.PerformLayout();
             flowLayoutPanel5.ResumeLayout(false);
             flowLayoutPanel5.PerformLayout();
             panel3.ResumeLayout(false);
+            Conexion_Sql.ResumeLayout(false);
+            Conexion_Sql.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2624,5 +2897,26 @@
         private Panel panel3;
         private Button button2;
         private Button button3;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage Conexion_Sql;
+        private Label LabelEstado;
+        private Label label51;
+        private Controles_personalizados.RJButton rjButton2;
+        private CheckBox checkBox3;
+        private Label label50;
+        private Label label49;
+        private TextBox TextContra;
+        private TextBox TextUsuario;
+        private TextBox TextBase;
+        private TextBox TextPuerto;
+        private TextBox TextServer;
+        private Label label48;
+        private Label label47;
+        private Label label46;
+        private Label label45;
+        private Label label44;
+        private Label label43;
+        private Controles_personalizados.RJButton rjButton3;
     }
 }
