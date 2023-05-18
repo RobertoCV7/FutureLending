@@ -166,7 +166,7 @@
             Mensaje.AutoSize = true;
             Mensaje.Font = new Font("Roboto Medium", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(657, 430);
+            Mensaje.Location = new Point(657, 522);
             Mensaje.Name = "Mensaje";
             Mensaje.Size = new Size(0, 22);
             Mensaje.TabIndex = 10;

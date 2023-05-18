@@ -27,8 +27,8 @@ namespace FutureLending
             string usuariop = TextUsuario.Text.ToString();
             string contrap = TextContra.Text.ToString();
             bool cerrar;
-            cerrar= Accesos.Accesar(usuariop, contrap);
-            if (cerrar== true)
+            cerrar = Accesos.Accesar(usuariop, contrap);
+            if (cerrar == true)
             {
                 // Crear e iniciar el nuevo formulario
                 Form1 form2 = new Form1();

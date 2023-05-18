@@ -38,13 +38,20 @@ namespace FutureLending
 #endregion
 
         #region AgregarUsuario
+
+
+
+
+
+
+
         public class Usuario
         {
             public string? Usuario1 { get; set; }
             public string? Contraseña1 { get; set; }
         }
 
-        public static  bool AgregarUsuario(string nuevoUsuario, string nuevaContraseña)
+        public  bool AgregarUsuario(string nuevoUsuario, string nuevaContraseña)
         {
             Lectura_Base_Datos a = new();
             string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -76,7 +83,7 @@ namespace FutureLending
 
         #region EditarUsuarios
         //funcion que carga al combobox los usuarios que existen
-        public static void CargarUsuarios()
+        public List<string>  CargarUsuarios()
         {
             Lectura_Base_Datos a = new();
             string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -96,15 +103,16 @@ namespace FutureLending
                 }
 
                 // Agregar los nombres de usuario al ComboBox
-               // comboBox1.DataSource = nombresUsuarios;
+                return nombresUsuarios;
             }
             catch (Exception ex)
             {
                 a.Registro_errores(ex.ToString());
             }
+            return null;
         }
         //funcion que edita el usuario recibiendo 2 parametros
-        public static void EditarUsuarioContraseña(string usuario, string nuevaContraseña)
+        public  void EditarUsuarioContraseña(string usuario, string nuevaContraseña)
         {
             Lectura_Base_Datos a = new();
             string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -129,8 +137,6 @@ namespace FutureLending
 
                 // Guardar los cambios en el archivo JSON
                 File.WriteAllText(jsonFilePath, usuarios.ToString());
-                //AvisoVacio2.Text = "Cambiado con éxito";
-               // AvisoVacio2.Show(); // Mostrar el mensaje de éxito
             }
             catch (Exception ex)
             {
@@ -138,5 +144,54 @@ namespace FutureLending
             }
         }
         #endregion
+
+        #region EliminarUsuario
+        public bool EliminarUsuario(string nombreUsuario)
+        {
+            Lectura_Base_Datos a = new();
+            string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
+            string jsonFilePath = directorioProyecto + "\\Usuarios.json";
+
+            try
+            {
+                // Leer el archivo JSON
+                JArray jsonArray = JArray.Parse(File.ReadAllText(jsonFilePath));
+
+                // Buscar el usuario por nombre
+                JObject usuarioObj = jsonArray.FirstOrDefault(u => u["Usuario1"].ToString() == nombreUsuario) as JObject;
+
+                // Verificar si se encontró el usuario
+                if (usuarioObj != null)
+                {
+                    // Eliminar el usuario del arreglo JSON
+                    jsonArray.Remove(usuarioObj);
+
+                    // Serializar el objeto contenedor a JSON
+                    string nuevoJson = jsonArray.ToString();
+
+                    // Guardar el JSON actualizado en el archivo
+                    File.WriteAllText(jsonFilePath, nuevoJson);
+                    return true;
+                }
+                else
+                {
+                    // El usuario no existe
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                a.Registro_errores(ex.ToString());
+            }
+
+            return false;
         }
+
+
+
+
+        #endregion
+
+
+    }
 }

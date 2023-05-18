@@ -33,6 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelMenu = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             btnTodosSistemas = new FontAwesome.Sharp.IconButton();
             btnEstadoPagos = new FontAwesome.Sharp.IconButton();
             btnListas = new FontAwesome.Sharp.IconButton();
@@ -142,6 +143,32 @@
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             PanelBien = new Panel();
             label19 = new Label();
+            panel2 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            label35 = new Label();
+            label36 = new Label();
+            textBox1 = new TextBox();
+            label37 = new Label();
+            TextboxContr = new TextBox();
+            label38 = new Label();
+            TextboxConfirm = new TextBox();
+            checkBox1 = new CheckBox();
+            button1 = new Button();
+            AvisoVacio = new Label();
+            flowLayoutPanel5 = new FlowLayoutPanel();
+            label39 = new Label();
+            label40 = new Label();
+            comboBox1 = new ComboBox();
+            label41 = new Label();
+            textBox2 = new TextBox();
+            label42 = new Label();
+            textBox3 = new TextBox();
+            checkBox2 = new CheckBox();
+            AvisoVacio2 = new Label();
+            panel3 = new Panel();
+            button2 = new Button();
+            button3 = new Button();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -156,12 +183,18 @@
             PanelEditar.SuspendLayout();
             groupBox1.SuspendLayout();
             PanelBien.SuspendLayout();
+            panel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            flowLayoutPanel4.SuspendLayout();
+            flowLayoutPanel5.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
             // 
             panelMenu.AccessibleName = "panelMenu";
             panelMenu.BackColor = Color.DarkSlateGray;
+            panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnTodosSistemas);
             panelMenu.Controls.Add(btnEstadoPagos);
             panelMenu.Controls.Add(btnListas);
@@ -173,6 +206,29 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(263, 741);
             panelMenu.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            iconButton1.Dock = DockStyle.Top;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.ForeColor = Color.White;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.CodeMerge;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(0, 423);
+            iconButton1.Margin = new Padding(3, 4, 3, 4);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(11, 0, 0, 0);
+            iconButton1.Size = new Size(263, 72);
+            iconButton1.TabIndex = 4;
+            iconButton1.Tag = "Usuarios";
+            iconButton1.Text = "Usuarios";
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // btnTodosSistemas
             // 
@@ -2053,14 +2109,341 @@
             label19.TabIndex = 0;
             label19.Text = "Porfavor selecciona una opcion del panel de la izquierda";
             // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.Info;
+            panel2.Controls.Add(tableLayoutPanel1);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(263, 80);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(979, 661);
+            panel2.TabIndex = 24;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel4, 0, 0);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel5, 1, 0);
+            tableLayoutPanel1.Location = new Point(2, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(977, 661);
+            tableLayoutPanel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.Controls.Add(label35);
+            flowLayoutPanel4.Controls.Add(label36);
+            flowLayoutPanel4.Controls.Add(textBox1);
+            flowLayoutPanel4.Controls.Add(label37);
+            flowLayoutPanel4.Controls.Add(TextboxContr);
+            flowLayoutPanel4.Controls.Add(label38);
+            flowLayoutPanel4.Controls.Add(TextboxConfirm);
+            flowLayoutPanel4.Controls.Add(checkBox1);
+            flowLayoutPanel4.Controls.Add(button1);
+            flowLayoutPanel4.Controls.Add(AvisoVacio);
+            flowLayoutPanel4.Dock = DockStyle.Fill;
+            flowLayoutPanel4.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel4.Location = new Point(3, 3);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(482, 655);
+            flowLayoutPanel4.TabIndex = 0;
+            // 
+            // label35
+            // 
+            label35.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label35.ForeColor = SystemColors.ActiveCaption;
+            label35.Location = new Point(150, 3);
+            label35.Margin = new Padding(150, 3, 40, 20);
+            label35.Name = "label35";
+            label35.Size = new Size(184, 37);
+            label35.TabIndex = 12;
+            label35.Text = "Agregar";
+            // 
+            // label36
+            // 
+            label36.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label36.Location = new Point(40, 60);
+            label36.Margin = new Padding(40, 0, 3, 15);
+            label36.Name = "label36";
+            label36.Size = new Size(331, 37);
+            label36.TabIndex = 13;
+            label36.Text = "Usuario";
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.Location = new Point(40, 115);
+            textBox1.Margin = new Padding(40, 3, 3, 20);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(331, 32);
+            textBox1.TabIndex = 11;
+            // 
+            // label37
+            // 
+            label37.Dock = DockStyle.Fill;
+            label37.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label37.Location = new Point(40, 170);
+            label37.Margin = new Padding(40, 3, 3, 20);
+            label37.Name = "label37";
+            label37.Size = new Size(331, 37);
+            label37.TabIndex = 14;
+            label37.Text = "Contraseña";
+            // 
+            // TextboxContr
+            // 
+            TextboxContr.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            TextboxContr.Location = new Point(40, 230);
+            TextboxContr.Margin = new Padding(40, 3, 3, 20);
+            TextboxContr.MaxLength = 18;
+            TextboxContr.Name = "TextboxContr";
+            TextboxContr.Size = new Size(331, 32);
+            TextboxContr.TabIndex = 15;
+            TextboxContr.UseSystemPasswordChar = true;
+            // 
+            // label38
+            // 
+            label38.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label38.Location = new Point(40, 285);
+            label38.Margin = new Padding(40, 3, 3, 20);
+            label38.Name = "label38";
+            label38.Size = new Size(331, 37);
+            label38.TabIndex = 17;
+            label38.Text = "Confirma la contraseña";
+            // 
+            // TextboxConfirm
+            // 
+            TextboxConfirm.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            TextboxConfirm.Location = new Point(40, 345);
+            TextboxConfirm.Margin = new Padding(40, 3, 3, 20);
+            TextboxConfirm.MaxLength = 18;
+            TextboxConfirm.Name = "TextboxConfirm";
+            TextboxConfirm.Size = new Size(331, 32);
+            TextboxConfirm.TabIndex = 16;
+            TextboxConfirm.UseSystemPasswordChar = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox1.Location = new Point(40, 400);
+            checkBox1.Margin = new Padding(40, 3, 3, 20);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(331, 26);
+            checkBox1.TabIndex = 19;
+            checkBox1.Text = "Ver contraseñas";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // button1
+            // 
+            button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            button1.FlatAppearance.BorderColor = Color.MediumBlue;
+            button1.FlatAppearance.BorderSize = 4;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(100, 449);
+            button1.Margin = new Padding(100, 3, 3, 20);
+            button1.Name = "button1";
+            button1.Size = new Size(271, 65);
+            button1.TabIndex = 18;
+            button1.Text = "Guardar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // AvisoVacio
+            // 
+            AvisoVacio.AutoSize = true;
+            AvisoVacio.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AvisoVacio.ForeColor = Color.Red;
+            AvisoVacio.Location = new Point(100, 534);
+            AvisoVacio.Margin = new Padding(100, 0, 3, 0);
+            AvisoVacio.Name = "AvisoVacio";
+            AvisoVacio.Size = new Size(0, 26);
+            AvisoVacio.TabIndex = 20;
+            // 
+            // flowLayoutPanel5
+            // 
+            flowLayoutPanel5.Controls.Add(label39);
+            flowLayoutPanel5.Controls.Add(label40);
+            flowLayoutPanel5.Controls.Add(comboBox1);
+            flowLayoutPanel5.Controls.Add(label41);
+            flowLayoutPanel5.Controls.Add(textBox2);
+            flowLayoutPanel5.Controls.Add(label42);
+            flowLayoutPanel5.Controls.Add(textBox3);
+            flowLayoutPanel5.Controls.Add(checkBox2);
+            flowLayoutPanel5.Controls.Add(AvisoVacio2);
+            flowLayoutPanel5.Controls.Add(panel3);
+            flowLayoutPanel5.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel5.Location = new Point(491, 3);
+            flowLayoutPanel5.Name = "flowLayoutPanel5";
+            flowLayoutPanel5.Size = new Size(483, 655);
+            flowLayoutPanel5.TabIndex = 1;
+            // 
+            // label39
+            // 
+            label39.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label39.AutoSize = true;
+            label39.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label39.ForeColor = SystemColors.ActiveCaption;
+            label39.Location = new Point(150, 3);
+            label39.Margin = new Padding(150, 3, 40, 20);
+            label39.Name = "label39";
+            label39.Size = new Size(234, 37);
+            label39.TabIndex = 21;
+            label39.Text = "Editar";
+            // 
+            // label40
+            // 
+            label40.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label40.AutoSize = true;
+            label40.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label40.Location = new Point(40, 60);
+            label40.Margin = new Padding(40, 0, 3, 20);
+            label40.Name = "label40";
+            label40.Size = new Size(381, 37);
+            label40.TabIndex = 23;
+            label40.Text = "Selecciona al usuario";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(40, 120);
+            comboBox1.Margin = new Padding(40, 3, 3, 20);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(381, 30);
+            comboBox1.TabIndex = 22;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label41
+            // 
+            label41.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label41.AutoSize = true;
+            label41.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label41.Location = new Point(40, 170);
+            label41.Margin = new Padding(40, 0, 3, 20);
+            label41.Name = "label41";
+            label41.Size = new Size(381, 37);
+            label41.TabIndex = 24;
+            label41.Text = "Usuario";
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox2.Enabled = false;
+            textBox2.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox2.Location = new Point(40, 230);
+            textBox2.Margin = new Padding(40, 3, 3, 20);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(381, 32);
+            textBox2.TabIndex = 25;
+            // 
+            // label42
+            // 
+            label42.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label42.AutoSize = true;
+            label42.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label42.Location = new Point(40, 282);
+            label42.Margin = new Padding(40, 0, 3, 20);
+            label42.Name = "label42";
+            label42.Size = new Size(381, 37);
+            label42.TabIndex = 26;
+            label42.Text = "Contraseña";
+            // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox3.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox3.Location = new Point(40, 342);
+            textBox3.Margin = new Padding(40, 3, 3, 20);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(381, 32);
+            textBox3.TabIndex = 27;
+            textBox3.UseSystemPasswordChar = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox2.Location = new Point(40, 397);
+            checkBox2.Margin = new Padding(40, 3, 3, 20);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(165, 26);
+            checkBox2.TabIndex = 29;
+            checkBox2.Text = "Ver contraseñas";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            // 
+            // AvisoVacio2
+            // 
+            AvisoVacio2.AutoSize = true;
+            AvisoVacio2.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            AvisoVacio2.Location = new Point(40, 443);
+            AvisoVacio2.Margin = new Padding(40, 0, 3, 0);
+            AvisoVacio2.Name = "AvisoVacio2";
+            AvisoVacio2.Size = new Size(0, 24);
+            AvisoVacio2.TabIndex = 30;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button3);
+            panel3.Location = new Point(3, 470);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(418, 177);
+            panel3.TabIndex = 32;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button2.FlatAppearance.BorderColor = Color.MediumBlue;
+            button2.FlatAppearance.BorderSize = 4;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(2, 5);
+            button2.Margin = new Padding(100, 3, 3, 20);
+            button2.Name = "button2";
+            button2.Size = new Size(170, 98);
+            button2.TabIndex = 32;
+            button2.Text = "Editar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button3.FlatAppearance.BorderColor = Color.MediumBlue;
+            button3.FlatAppearance.BorderSize = 4;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(227, 7);
+            button3.Margin = new Padding(100, 3, 3, 20);
+            button3.Name = "button3";
+            button3.Size = new Size(158, 96);
+            button3.TabIndex = 33;
+            button3.Text = "Borrar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1242, 741);
+            Controls.Add(PanelBien);
+            Controls.Add(panel2);
             Controls.Add(pnlListas);
             Controls.Add(PanelEditar);
-            Controls.Add(PanelBien);
             Controls.Add(pnlClientes);
             Controls.Add(pnlRegPago);
             Controls.Add(panelTitleBar);
@@ -2092,6 +2475,13 @@
             groupBox1.ResumeLayout(false);
             PanelBien.ResumeLayout(false);
             PanelBien.PerformLayout();
+            panel2.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel4.ResumeLayout(false);
+            flowLayoutPanel4.PerformLayout();
+            flowLayoutPanel5.ResumeLayout(false);
+            flowLayoutPanel5.PerformLayout();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -2207,5 +2597,32 @@
         private Label label25;
         private Controles_personalizados.DateTimePickerPersonalizado dateTimeLimite;
         private Label LabelLimite;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private Panel panel2;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private Label label35;
+        private Label label36;
+        private TextBox textBox1;
+        private Label label37;
+        private TextBox TextboxContr;
+        private Label label38;
+        private TextBox TextboxConfirm;
+        private CheckBox checkBox1;
+        private Button button1;
+        private FlowLayoutPanel flowLayoutPanel5;
+        private Label label39;
+        private Label label40;
+        private ComboBox comboBox1;
+        private Label label41;
+        private TextBox textBox2;
+        private Label label42;
+        private TextBox textBox3;
+        private CheckBox checkBox2;
+        private Label AvisoVacio2;
+        private Label AvisoVacio;
+        private Panel panel3;
+        private Button button2;
+        private Button button3;
     }
 }

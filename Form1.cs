@@ -950,5 +950,128 @@ namespace FutureLending
 
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Accesos a = new();
+            panel2.BringToFront();
+            string[] usuarios = a.CargarUsuarios().ToArray();
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(usuarios);
+        }
+        private bool changingCheckedState = false;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!changingCheckedState)
+            {
+                changingCheckedState = true;
+
+                if (checkBox1.Checked)
+                {
+                    // Desactivar el uso de contraseña
+                    TextboxContr.UseSystemPasswordChar = false;
+                    TextboxConfirm.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    // Activar el uso de contraseña
+                    TextboxContr.UseSystemPasswordChar = true;
+                    TextboxConfirm.UseSystemPasswordChar = true;
+                }
+
+                changingCheckedState = false;
+            }
+        }
+        private bool changingCheckedState2 = false;
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!changingCheckedState2)
+            {
+                changingCheckedState2 = true;
+
+                if (checkBox2.Checked)
+                {
+                    // Desactivar el uso de contraseña
+                    textBox3.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    // Activar el uso de contraseña
+                    textBox3.UseSystemPasswordChar = true;
+                }
+
+                changingCheckedState2 = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool mensaje;
+            Accesos a = new();
+            string User = textBox1.Text.ToString();
+            string password = TextboxContr.Text.ToString();
+            if (string.IsNullOrEmpty(User))
+            {
+                AvisoVacio.Text = "No puede haber nada vacio";
+            }
+            else
+            {
+                mensaje = a.AgregarUsuario(User, password);
+                if (mensaje == true)
+                {
+                    textBox1.Text = "";
+                    TextboxContr.Text = "";
+                    TextboxConfirm.Text = "";
+                    AvisoVacio.Text = "";
+                }
+                else
+                {
+                    AvisoVacio.Text = "El usuario ya existe. No se pudo agregar";
+                }
+            }
+            Accesos a2 = new();
+            panel2.BringToFront();
+            string[] usuarios = a2.CargarUsuarios().ToArray();
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(usuarios);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == -1)
+            {
+                textBox2.Text = "";
+            }
+            else
+            {
+                textBox2.Text = comboBox1.SelectedItem.ToString();
+            }
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string usuario = comboBox1.SelectedItem.ToString();
+            Accesos a = new();
+            a.EliminarUsuario(usuario);
+            comboBox1.SelectedIndex = -1;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+            Accesos a = new();
+            string user = textBox2.Text.ToString();
+            string pass = textBox3.Text.ToString();
+            a.EditarUsuarioContraseña(user, pass);
+            textBox2.Text = "";
+            textBox3.Text = "";
+            AvisoVacio2.Text = "";
+            comboBox1.SelectedIndex = -1;
+
+            panel2.BringToFront();
+            string[] usuarios = a.CargarUsuarios().ToArray();
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(usuarios);
+        }
     }
 }
