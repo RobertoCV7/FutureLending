@@ -51,7 +51,7 @@ namespace FutureLending
             public string? Contraseña1 { get; set; }
         }
 
-        public  bool AgregarUsuario(string nuevoUsuario, string nuevaContraseña)
+        public static bool AgregarUsuario(string nuevoUsuario, string nuevaContraseña)
         {
             Lectura_Base_Datos a = new();
             string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -83,7 +83,7 @@ namespace FutureLending
 
         #region EditarUsuarios
         //funcion que carga al combobox los usuarios que existen
-        public List<string>  CargarUsuarios()
+        public static List<string>? CargarUsuarios()
         {
             Lectura_Base_Datos a = new();
             string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -112,7 +112,7 @@ namespace FutureLending
             return null;
         }
         //funcion que edita el usuario recibiendo 2 parametros
-        public  void EditarUsuarioContraseña(string usuario, string nuevaContraseña)
+        public static void EditarUsuarioContraseña(string usuario, string nuevoUsuario, string nuevaContraseña)
         {
             Lectura_Base_Datos a = new();
             string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -129,7 +129,8 @@ namespace FutureLending
                     string nombreUsuario = usuarioObj["Usuario1"].ToString();
                     if (nombreUsuario.Equals(usuario))
                     {
-                        // Actualizar la contraseña
+                        // Actualizar el nombre de usuario y la contraseña
+                        usuarioObj["Usuario1"] = nuevoUsuario;
                         usuarioObj["Contraseña1"] = nuevaContraseña;
                         break;
                     }
@@ -146,7 +147,7 @@ namespace FutureLending
         #endregion
 
         #region EliminarUsuario
-        public bool EliminarUsuario(string nombreUsuario)
+        public static bool EliminarUsuario(string nombreUsuario)
         {
             Lectura_Base_Datos a = new();
             string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
@@ -158,10 +159,9 @@ namespace FutureLending
                 JArray jsonArray = JArray.Parse(File.ReadAllText(jsonFilePath));
 
                 // Buscar el usuario por nombre
-                JObject usuarioObj = jsonArray.FirstOrDefault(u => u["Usuario1"].ToString() == nombreUsuario) as JObject;
 
                 // Verificar si se encontró el usuario
-                if (usuarioObj != null)
+                if (jsonArray.FirstOrDefault(u => u["Usuario1"].ToString() == nombreUsuario) is JObject usuarioObj)
                 {
                     // Eliminar el usuario del arreglo JSON
                     jsonArray.Remove(usuarioObj);

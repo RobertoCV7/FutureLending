@@ -28,2734 +28,3021 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            panelMenu = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnTodosSistemas = new FontAwesome.Sharp.IconButton();
-            btnEstadoPagos = new FontAwesome.Sharp.IconButton();
-            btnListas = new FontAwesome.Sharp.IconButton();
-            btnIngresarClientes = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
-            btnMenu = new FontAwesome.Sharp.IconButton();
-            pictureBox1 = new PictureBox();
-            panelTitleBar = new Panel();
-            lblTitle = new Label();
-            pnlRegPago = new Panel();
-            ComBoxName = new ControlesPersonalizados.RJComboBox();
-            CombBoxLista = new ControlesPersonalizados.RJComboBox();
-            label29 = new Label();
-            btnBuscarC = new Controles_personalizados.RJButton();
-            label17 = new Label();
-            lblFecha = new Label();
-            txtBoxCredito = new Controles_personalizados.TextBoxPersonalizado();
-            lblCredito = new Label();
-            txtBoxMonto = new Controles_personalizados.TextBoxPersonalizado();
-            btnMarcarP = new Controles_personalizados.RJButton();
-            lblMonto = new Label();
-            DateTimeReg = new Controles_personalizados.DateTimePickerPersonalizado();
-            pnlClientes = new Panel();
-            cmbInteres = new ControlesPersonalizados.RJComboBox();
-            btnCalcular = new Controles_personalizados.RJButton();
-            txtTotal_I = new Controles_personalizados.TextBoxPersonalizado();
-            label16 = new Label();
-            txtTotal = new Controles_personalizados.TextBoxPersonalizado();
-            txtCorreo = new Controles_personalizados.TextBoxPersonalizado();
-            label15 = new Label();
-            txtTelefono = new Controles_personalizados.TextBoxPersonalizado();
-            label14 = new Label();
-            txtNumExt = new Controles_personalizados.TextBoxPersonalizado();
-            label13 = new Label();
-            txtNumInt = new Controles_personalizados.TextBoxPersonalizado();
-            label12 = new Label();
-            txtColonia = new Controles_personalizados.TextBoxPersonalizado();
-            label11 = new Label();
-            txtCalle = new Controles_personalizados.TextBoxPersonalizado();
-            label10 = new Label();
-            label9 = new Label();
-            btnGuardar = new Controles_personalizados.RJButton();
-            label7 = new Label();
-            label6 = new Label();
-            cmbTipo = new ControlesPersonalizados.RJComboBox();
-            label5 = new Label();
-            label4 = new Label();
-            dateFechaInicio = new Controles_personalizados.DateTimePickerPersonalizado();
-            label3 = new Label();
-            txtCredito = new Controles_personalizados.TextBoxPersonalizado();
-            label2 = new Label();
-            txtNombre = new Controles_personalizados.TextBoxPersonalizado();
-            label1 = new Label();
-            cmbPromotor = new ControlesPersonalizados.RJComboBox();
-            pnlListas = new Panel();
-            flowLayoutPanel3 = new FlowLayoutPanel();
-            cmbCliente = new ControlesPersonalizados.RJComboBox();
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            btnEditar = new Controles_personalizados.RJButton();
-            btnEliminar = new Controles_personalizados.RJButton();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            btnLista1 = new Controles_personalizados.RJButton();
-            btnLista2 = new Controles_personalizados.RJButton();
-            btnLista3 = new Controles_personalizados.RJButton();
-            btnMostrarTodos = new Controles_personalizados.RJButton();
-            btnLiquidados = new Controles_personalizados.RJButton();
-            rjButton1 = new Controles_personalizados.RJButton();
-            gridListas = new DataGridView();
-            label8 = new Label();
-            PanelEditar = new Panel();
-            dateTimeLimite = new Controles_personalizados.DateTimePickerPersonalizado();
-            LabelLimite = new Label();
-            textBoxPersonalizado7 = new Controles_personalizados.TextBoxPersonalizado();
-            label25 = new Label();
-            textBoxPersonalizado8 = new Controles_personalizados.TextBoxPersonalizado();
-            label27 = new Label();
-            LblPerte = new Label();
-            label26 = new Label();
-            btnGuardarCambio = new Controles_personalizados.RJButton();
-            groupBox1 = new GroupBox();
-            btnMover = new Controles_personalizados.RJButton();
-            cmbLista = new ControlesPersonalizados.RJComboBox();
-            textBoxPersonalizado1 = new Controles_personalizados.TextBoxPersonalizado();
-            label18 = new Label();
-            textBoxPersonalizado2 = new Controles_personalizados.TextBoxPersonalizado();
-            label20 = new Label();
-            textBoxPersonalizado3 = new Controles_personalizados.TextBoxPersonalizado();
-            label21 = new Label();
-            textBoxPersonalizado4 = new Controles_personalizados.TextBoxPersonalizado();
-            label22 = new Label();
-            textBoxPersonalizado5 = new Controles_personalizados.TextBoxPersonalizado();
-            label23 = new Label();
-            textBoxPersonalizado6 = new Controles_personalizados.TextBoxPersonalizado();
-            label24 = new Label();
-            rjComboBox1 = new ControlesPersonalizados.RJComboBox();
-            label28 = new Label();
-            rjComboBox2 = new ControlesPersonalizados.RJComboBox();
-            label30 = new Label();
-            label31 = new Label();
-            dateTimePickerPersonalizado1 = new Controles_personalizados.DateTimePickerPersonalizado();
-            label32 = new Label();
-            textBoxPersonalizado9 = new Controles_personalizados.TextBoxPersonalizado();
-            label33 = new Label();
-            textBoxPersonalizado10 = new Controles_personalizados.TextBoxPersonalizado();
-            label34 = new Label();
-            rjComboBox3 = new ControlesPersonalizados.RJComboBox();
-            bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
-            PanelBien = new Panel();
-            label19 = new Label();
-            panel2 = new Panel();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            flowLayoutPanel4 = new FlowLayoutPanel();
-            label35 = new Label();
-            label36 = new Label();
-            textBox1 = new TextBox();
-            label37 = new Label();
-            TextboxContr = new TextBox();
-            label38 = new Label();
-            TextboxConfirm = new TextBox();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
-            AvisoVacio = new Label();
-            flowLayoutPanel5 = new FlowLayoutPanel();
-            label39 = new Label();
-            label40 = new Label();
-            comboBox1 = new ComboBox();
-            label41 = new Label();
-            textBox2 = new TextBox();
-            label42 = new Label();
-            textBox3 = new TextBox();
-            checkBox2 = new CheckBox();
-            AvisoVacio2 = new Label();
-            panel3 = new Panel();
-            button2 = new Button();
-            button3 = new Button();
-            Conexion_Sql = new TabPage();
-            rjButton3 = new Controles_personalizados.RJButton();
-            LabelEstado = new Label();
-            label51 = new Label();
-            rjButton2 = new Controles_personalizados.RJButton();
-            checkBox3 = new CheckBox();
-            label50 = new Label();
-            label49 = new Label();
-            TextContra = new TextBox();
-            TextUsuario = new TextBox();
-            TextBase = new TextBox();
-            TextPuerto = new TextBox();
-            TextServer = new TextBox();
-            label48 = new Label();
-            label47 = new Label();
-            label46 = new Label();
-            label45 = new Label();
-            label44 = new Label();
-            label43 = new Label();
-            panelMenu.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panelTitleBar.SuspendLayout();
-            pnlRegPago.SuspendLayout();
-            pnlClientes.SuspendLayout();
-            pnlListas.SuspendLayout();
-            flowLayoutPanel3.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridListas).BeginInit();
-            PanelEditar.SuspendLayout();
-            groupBox1.SuspendLayout();
-            PanelBien.SuspendLayout();
-            panel2.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            flowLayoutPanel4.SuspendLayout();
-            flowLayoutPanel5.SuspendLayout();
-            panel3.SuspendLayout();
-            Conexion_Sql.SuspendLayout();
-            SuspendLayout();
+            this.components = (new global::System.ComponentModel.Container());
+            global::System.ComponentModel.ComponentResourceManager resources = new global::System.ComponentModel.ComponentResourceManager(typeof(global::FutureLending.Form1));
+            global::System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new global::System.Windows.Forms.DataGridViewCellStyle();
+            global::System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new global::System.Windows.Forms.DataGridViewCellStyle();
+            this.panelMenu = (new global::System.Windows.Forms.Panel());
+            this.iconButton1 = (new global::FontAwesome.Sharp.IconButton());
+            this.btnTodosSistemas = (new global::FontAwesome.Sharp.IconButton());
+            this.btnEstadoPagos = (new global::FontAwesome.Sharp.IconButton());
+            this.btnListas = (new global::FontAwesome.Sharp.IconButton());
+            this.btnIngresarClientes = (new global::FontAwesome.Sharp.IconButton());
+            this.panel1 = (new global::System.Windows.Forms.Panel());
+            this.btnMenu = (new global::FontAwesome.Sharp.IconButton());
+            this.pictureBox1 = (new global::System.Windows.Forms.PictureBox());
+            this.panelTitleBar = (new global::System.Windows.Forms.Panel());
+            this.lblTitle = (new global::System.Windows.Forms.Label());
+            this.pnlRegPago = (new global::System.Windows.Forms.Panel());
+            this.ComBoxName = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.CombBoxLista = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.label29 = (new global::System.Windows.Forms.Label());
+            this.btnBuscarC = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.label17 = (new global::System.Windows.Forms.Label());
+            this.lblFecha = (new global::System.Windows.Forms.Label());
+            this.txtBoxCredito = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.lblCredito = (new global::System.Windows.Forms.Label());
+            this.txtBoxMonto = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.btnMarcarP = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.lblMonto = (new global::System.Windows.Forms.Label());
+            this.DateTimeReg = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
+            this.pnlClientes = (new global::System.Windows.Forms.Panel());
+            this.cmbInteres = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.btnCalcular = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.txtTotal_I = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label16 = (new global::System.Windows.Forms.Label());
+            this.txtTotal = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.txtCorreo = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label15 = (new global::System.Windows.Forms.Label());
+            this.txtTelefono = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label14 = (new global::System.Windows.Forms.Label());
+            this.txtNumExt = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label13 = (new global::System.Windows.Forms.Label());
+            this.txtNumInt = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label12 = (new global::System.Windows.Forms.Label());
+            this.txtColonia = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label11 = (new global::System.Windows.Forms.Label());
+            this.txtCalle = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label10 = (new global::System.Windows.Forms.Label());
+            this.label9 = (new global::System.Windows.Forms.Label());
+            this.btnGuardar = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.label7 = (new global::System.Windows.Forms.Label());
+            this.label6 = (new global::System.Windows.Forms.Label());
+            this.cmbTipo = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.label5 = (new global::System.Windows.Forms.Label());
+            this.label4 = (new global::System.Windows.Forms.Label());
+            this.dateFechaInicio = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
+            this.label3 = (new global::System.Windows.Forms.Label());
+            this.txtCredito = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label2 = (new global::System.Windows.Forms.Label());
+            this.txtNombre = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label1 = (new global::System.Windows.Forms.Label());
+            this.cmbPromotor = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.pnlListas = (new global::System.Windows.Forms.Panel());
+            this.flowLayoutPanel3 = (new global::System.Windows.Forms.FlowLayoutPanel());
+            this.cmbCliente = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.flowLayoutPanel2 = (new global::System.Windows.Forms.FlowLayoutPanel());
+            this.btnEditar = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.btnEliminar = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.flowLayoutPanel1 = (new global::System.Windows.Forms.FlowLayoutPanel());
+            this.btnLista1 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.btnLista2 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.btnLista3 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.btnMostrarTodos = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.btnLiquidados = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.rjButton1 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.gridListas = (new global::System.Windows.Forms.DataGridView());
+            this.label8 = (new global::System.Windows.Forms.Label());
+            this.PanelEditar = (new global::System.Windows.Forms.Panel());
+            this.dateTimeLimite = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
+            this.LabelLimite = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado7 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label25 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado8 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label27 = (new global::System.Windows.Forms.Label());
+            this.LblPerte = (new global::System.Windows.Forms.Label());
+            this.label26 = (new global::System.Windows.Forms.Label());
+            this.btnGuardarCambio = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.groupBox1 = (new global::System.Windows.Forms.GroupBox());
+            this.btnMover = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.cmbLista = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.textBoxPersonalizado1 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label18 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado2 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label20 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado3 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label21 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado4 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label22 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado5 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label23 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado6 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label24 = (new global::System.Windows.Forms.Label());
+            this.rjComboBox1 = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.label28 = (new global::System.Windows.Forms.Label());
+            this.rjComboBox2 = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.label30 = (new global::System.Windows.Forms.Label());
+            this.label31 = (new global::System.Windows.Forms.Label());
+            this.dateTimePickerPersonalizado1 = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
+            this.label32 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado9 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label33 = (new global::System.Windows.Forms.Label());
+            this.textBoxPersonalizado10 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label34 = (new global::System.Windows.Forms.Label());
+            this.rjComboBox3 = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.bunifuElipse1 = (new global::Bunifu.Framework.UI.BunifuElipse(this.components));
+            this.PanelBien = (new global::System.Windows.Forms.Panel());
+            this.label58 = (new global::System.Windows.Forms.Label());
+            this.label57 = (new global::System.Windows.Forms.Label());
+            this.label56 = (new global::System.Windows.Forms.Label());
+            this.label55 = (new global::System.Windows.Forms.Label());
+            this.label54 = (new global::System.Windows.Forms.Label());
+            this.label53 = (new global::System.Windows.Forms.Label());
+            this.label52 = (new global::System.Windows.Forms.Label());
+            this.label19 = (new global::System.Windows.Forms.Label());
+            this.panel2 = (new global::System.Windows.Forms.Panel());
+            this.tabControl1 = (new global::System.Windows.Forms.TabControl());
+            this.tabPage1 = (new global::System.Windows.Forms.TabPage());
+            this.tableLayoutPanel1 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.flowLayoutPanel4 = (new global::System.Windows.Forms.FlowLayoutPanel());
+            this.label35 = (new global::System.Windows.Forms.Label());
+            this.label36 = (new global::System.Windows.Forms.Label());
+            this.textBox1 = (new global::System.Windows.Forms.TextBox());
+            this.label37 = (new global::System.Windows.Forms.Label());
+            this.TextboxContr = (new global::System.Windows.Forms.TextBox());
+            this.label38 = (new global::System.Windows.Forms.Label());
+            this.TextboxConfirm = (new global::System.Windows.Forms.TextBox());
+            this.checkBox1 = (new global::System.Windows.Forms.CheckBox());
+            this.button1 = (new global::System.Windows.Forms.Button());
+            this.AvisoVacio = (new global::System.Windows.Forms.Label());
+            this.flowLayoutPanel5 = (new global::System.Windows.Forms.FlowLayoutPanel());
+            this.label39 = (new global::System.Windows.Forms.Label());
+            this.label40 = (new global::System.Windows.Forms.Label());
+            this.comboBox1 = (new global::System.Windows.Forms.ComboBox());
+            this.label41 = (new global::System.Windows.Forms.Label());
+            this.textBox2 = (new global::System.Windows.Forms.TextBox());
+            this.label42 = (new global::System.Windows.Forms.Label());
+            this.textBox3 = (new global::System.Windows.Forms.TextBox());
+            this.checkBox2 = (new global::System.Windows.Forms.CheckBox());
+            this.AvisoVacio2 = (new global::System.Windows.Forms.Label());
+            this.panel3 = (new global::System.Windows.Forms.Panel());
+            this.button2 = (new global::System.Windows.Forms.Button());
+            this.button3 = (new global::System.Windows.Forms.Button());
+            this.Conexion_Sql = (new global::System.Windows.Forms.TabPage());
+            this.rjButton3 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.LabelEstado = (new global::System.Windows.Forms.Label());
+            this.label51 = (new global::System.Windows.Forms.Label());
+            this.rjButton2 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.checkBox3 = (new global::System.Windows.Forms.CheckBox());
+            this.label50 = (new global::System.Windows.Forms.Label());
+            this.label49 = (new global::System.Windows.Forms.Label());
+            this.TextContra = (new global::System.Windows.Forms.TextBox());
+            this.TextUsuario = (new global::System.Windows.Forms.TextBox());
+            this.TextBase = (new global::System.Windows.Forms.TextBox());
+            this.TextPuerto = (new global::System.Windows.Forms.TextBox());
+            this.TextServer = (new global::System.Windows.Forms.TextBox());
+            this.label48 = (new global::System.Windows.Forms.Label());
+            this.label47 = (new global::System.Windows.Forms.Label());
+            this.label46 = (new global::System.Windows.Forms.Label());
+            this.label45 = (new global::System.Windows.Forms.Label());
+            this.label44 = (new global::System.Windows.Forms.Label());
+            this.label43 = (new global::System.Windows.Forms.Label());
+            this.tabPage2 = (new global::System.Windows.Forms.TabPage());
+            this.rjButton6 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.rjButton5 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.rjButton4 = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.label64 = (new global::System.Windows.Forms.Label());
+            this.textBox5 = (new global::System.Windows.Forms.TextBox());
+            this.rjComboBox4 = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.label62 = (new global::System.Windows.Forms.Label());
+            this.label63 = (new global::System.Windows.Forms.Label());
+            this.textBox4 = (new global::System.Windows.Forms.TextBox());
+            this.label61 = (new global::System.Windows.Forms.Label());
+            this.label60 = (new global::System.Windows.Forms.Label());
+            this.label59 = (new global::System.Windows.Forms.Label());
+            this.panelMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((global::System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelTitleBar.SuspendLayout();
+            this.pnlRegPago.SuspendLayout();
+            this.pnlClientes.SuspendLayout();
+            this.pnlListas.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((global::System.ComponentModel.ISupportInitialize)(this.gridListas)).BeginInit();
+            this.PanelEditar.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.PanelBien.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.Conexion_Sql.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panelMenu
             // 
-            panelMenu.AccessibleName = "panelMenu";
-            panelMenu.BackColor = Color.DarkSlateGray;
-            panelMenu.Controls.Add(iconButton1);
-            panelMenu.Controls.Add(btnTodosSistemas);
-            panelMenu.Controls.Add(btnEstadoPagos);
-            panelMenu.Controls.Add(btnListas);
-            panelMenu.Controls.Add(btnIngresarClientes);
-            panelMenu.Controls.Add(panel1);
-            panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 0);
-            panelMenu.Margin = new Padding(3, 4, 3, 4);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(263, 741);
-            panelMenu.TabIndex = 0;
+            this.panelMenu.AccessibleName = ("panelMenu");
+            this.panelMenu.BackColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.btnTodosSistemas);
+            this.panelMenu.Controls.Add(this.btnEstadoPagos);
+            this.panelMenu.Controls.Add(this.btnListas);
+            this.panelMenu.Controls.Add(this.btnIngresarClientes);
+            this.panelMenu.Controls.Add(this.panel1);
+            this.panelMenu.Dock = (global::System.Windows.Forms.DockStyle.Left);
+            this.panelMenu.Location = (new global::System.Drawing.Point(0, 0));
+            this.panelMenu.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.panelMenu.Name = ("panelMenu");
+            this.panelMenu.Size = (new global::System.Drawing.Size(263, 741));
+            this.panelMenu.TabIndex = (0);
             // 
             // iconButton1
             // 
-            iconButton1.Dock = DockStyle.Top;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.CodeMerge;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 423);
-            iconButton1.Margin = new Padding(3, 4, 3, 4);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(11, 0, 0, 0);
-            iconButton1.Size = new Size(263, 72);
-            iconButton1.TabIndex = 4;
-            iconButton1.Tag = "Configuración";
-            iconButton1.Text = "Configuración";
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
+            this.iconButton1.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.iconButton1.FlatAppearance.BorderSize = (0);
+            this.iconButton1.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.iconButton1.Font = (new global::System.Drawing.Font("Verdana", 11.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.iconButton1.ForeColor = (global::System.Drawing.Color.White);
+            this.iconButton1.IconChar = (global::FontAwesome.Sharp.IconChar.CodeMerge);
+            this.iconButton1.IconColor = (global::System.Drawing.Color.White);
+            this.iconButton1.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
+            this.iconButton1.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
+            this.iconButton1.Location = (new global::System.Drawing.Point(0, 423));
+            this.iconButton1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.iconButton1.Name = ("iconButton1");
+            this.iconButton1.Padding = (new global::System.Windows.Forms.Padding(11, 0, 0, 0));
+            this.iconButton1.Size = (new global::System.Drawing.Size(263, 72));
+            this.iconButton1.TabIndex = (4);
+            this.iconButton1.Tag = ("Configuración");
+            this.iconButton1.Text = ("Configuración");
+            this.iconButton1.TextImageRelation = (global::System.Windows.Forms.TextImageRelation.ImageBeforeText);
+            this.iconButton1.UseVisualStyleBackColor = (true);
+            this.iconButton1.Click += (this.IconButton1_Click);
             // 
             // btnTodosSistemas
             // 
-            btnTodosSistemas.Dock = DockStyle.Bottom;
-            btnTodosSistemas.FlatAppearance.BorderSize = 0;
-            btnTodosSistemas.FlatStyle = FlatStyle.Flat;
-            btnTodosSistemas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTodosSistemas.ForeColor = Color.White;
-            btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            btnTodosSistemas.IconColor = Color.White;
-            btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(0, 660);
-            btnTodosSistemas.Margin = new Padding(3, 4, 3, 4);
-            btnTodosSistemas.Name = "btnTodosSistemas";
-            btnTodosSistemas.Padding = new Padding(11, 0, 0, 0);
-            btnTodosSistemas.Size = new Size(263, 81);
-            btnTodosSistemas.TabIndex = 3;
-            btnTodosSistemas.Tag = "Reparar";
-            btnTodosSistemas.Text = "Reparar";
-            btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTodosSistemas.UseVisualStyleBackColor = true;
-            btnTodosSistemas.Click += BtnTodosSistemas_Click;
+            this.btnTodosSistemas.Dock = (global::System.Windows.Forms.DockStyle.Bottom);
+            this.btnTodosSistemas.FlatAppearance.BorderSize = (0);
+            this.btnTodosSistemas.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnTodosSistemas.Font = (new global::System.Drawing.Font("Verdana", 11.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnTodosSistemas.ForeColor = (global::System.Drawing.Color.White);
+            this.btnTodosSistemas.IconChar = (global::FontAwesome.Sharp.IconChar.Wrench);
+            this.btnTodosSistemas.IconColor = (global::System.Drawing.Color.White);
+            this.btnTodosSistemas.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
+            this.btnTodosSistemas.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
+            this.btnTodosSistemas.Location = (new global::System.Drawing.Point(0, 660));
+            this.btnTodosSistemas.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnTodosSistemas.Name = ("btnTodosSistemas");
+            this.btnTodosSistemas.Padding = (new global::System.Windows.Forms.Padding(11, 0, 0, 0));
+            this.btnTodosSistemas.Size = (new global::System.Drawing.Size(263, 81));
+            this.btnTodosSistemas.TabIndex = (3);
+            this.btnTodosSistemas.Tag = ("Reparar");
+            this.btnTodosSistemas.Text = ("Reparar");
+            this.btnTodosSistemas.TextImageRelation = (global::System.Windows.Forms.TextImageRelation.ImageBeforeText);
+            this.btnTodosSistemas.UseVisualStyleBackColor = (true);
+            this.btnTodosSistemas.Click += (this.BtnTodosSistemas_Click);
             // 
             // btnEstadoPagos
             // 
-            btnEstadoPagos.Dock = DockStyle.Top;
-            btnEstadoPagos.FlatAppearance.BorderSize = 0;
-            btnEstadoPagos.FlatStyle = FlatStyle.Flat;
-            btnEstadoPagos.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEstadoPagos.ForeColor = Color.White;
-            btnEstadoPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
-            btnEstadoPagos.IconColor = Color.White;
-            btnEstadoPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEstadoPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEstadoPagos.Location = new Point(0, 351);
-            btnEstadoPagos.Margin = new Padding(3, 4, 3, 4);
-            btnEstadoPagos.Name = "btnEstadoPagos";
-            btnEstadoPagos.Padding = new Padding(11, 0, 0, 0);
-            btnEstadoPagos.Size = new Size(263, 72);
-            btnEstadoPagos.TabIndex = 2;
-            btnEstadoPagos.Tag = "  Estado de pagos";
-            btnEstadoPagos.Text = "  Estado de pagos";
-            btnEstadoPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEstadoPagos.UseVisualStyleBackColor = true;
-            btnEstadoPagos.Click += BtnEstadoPagos_Click;
+            this.btnEstadoPagos.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.btnEstadoPagos.FlatAppearance.BorderSize = (0);
+            this.btnEstadoPagos.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnEstadoPagos.Font = (new global::System.Drawing.Font("Verdana", 11.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnEstadoPagos.ForeColor = (global::System.Drawing.Color.White);
+            this.btnEstadoPagos.IconChar = (global::FontAwesome.Sharp.IconChar.MoneyCheckAlt);
+            this.btnEstadoPagos.IconColor = (global::System.Drawing.Color.White);
+            this.btnEstadoPagos.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
+            this.btnEstadoPagos.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
+            this.btnEstadoPagos.Location = (new global::System.Drawing.Point(0, 351));
+            this.btnEstadoPagos.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnEstadoPagos.Name = ("btnEstadoPagos");
+            this.btnEstadoPagos.Padding = (new global::System.Windows.Forms.Padding(11, 0, 0, 0));
+            this.btnEstadoPagos.Size = (new global::System.Drawing.Size(263, 72));
+            this.btnEstadoPagos.TabIndex = (2);
+            this.btnEstadoPagos.Tag = ("  Estado de pagos");
+            this.btnEstadoPagos.Text = ("  Estado de pagos");
+            this.btnEstadoPagos.TextImageRelation = (global::System.Windows.Forms.TextImageRelation.ImageBeforeText);
+            this.btnEstadoPagos.UseVisualStyleBackColor = (true);
+            this.btnEstadoPagos.Click += (this.BtnEstadoPagos_Click);
             // 
             // btnListas
             // 
-            btnListas.Dock = DockStyle.Top;
-            btnListas.FlatAppearance.BorderSize = 0;
-            btnListas.FlatStyle = FlatStyle.Flat;
-            btnListas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnListas.ForeColor = Color.White;
-            btnListas.IconChar = FontAwesome.Sharp.IconChar.List12;
-            btnListas.IconColor = Color.White;
-            btnListas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnListas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnListas.Location = new Point(0, 279);
-            btnListas.Margin = new Padding(3, 4, 3, 4);
-            btnListas.Name = "btnListas";
-            btnListas.Padding = new Padding(11, 0, 0, 0);
-            btnListas.Size = new Size(263, 72);
-            btnListas.TabIndex = 1;
-            btnListas.Tag = "  Listas completas";
-            btnListas.Text = "  Listas completas";
-            btnListas.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnListas.UseVisualStyleBackColor = true;
-            btnListas.Click += BtnListas_Click;
+            this.btnListas.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.btnListas.FlatAppearance.BorderSize = (0);
+            this.btnListas.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnListas.Font = (new global::System.Drawing.Font("Verdana", 11.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnListas.ForeColor = (global::System.Drawing.Color.White);
+            this.btnListas.IconChar = (global::FontAwesome.Sharp.IconChar.List12);
+            this.btnListas.IconColor = (global::System.Drawing.Color.White);
+            this.btnListas.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
+            this.btnListas.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
+            this.btnListas.Location = (new global::System.Drawing.Point(0, 279));
+            this.btnListas.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnListas.Name = ("btnListas");
+            this.btnListas.Padding = (new global::System.Windows.Forms.Padding(11, 0, 0, 0));
+            this.btnListas.Size = (new global::System.Drawing.Size(263, 72));
+            this.btnListas.TabIndex = (1);
+            this.btnListas.Tag = ("  Listas completas");
+            this.btnListas.Text = ("  Listas completas");
+            this.btnListas.TextImageRelation = (global::System.Windows.Forms.TextImageRelation.ImageBeforeText);
+            this.btnListas.UseVisualStyleBackColor = (true);
+            this.btnListas.Click += (this.BtnListas_Click);
             // 
             // btnIngresarClientes
             // 
-            btnIngresarClientes.Dock = DockStyle.Top;
-            btnIngresarClientes.FlatAppearance.BorderSize = 0;
-            btnIngresarClientes.FlatStyle = FlatStyle.Flat;
-            btnIngresarClientes.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnIngresarClientes.ForeColor = Color.White;
-            btnIngresarClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            btnIngresarClientes.IconColor = Color.White;
-            btnIngresarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnIngresarClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIngresarClientes.Location = new Point(0, 207);
-            btnIngresarClientes.Margin = new Padding(3, 4, 3, 4);
-            btnIngresarClientes.Name = "btnIngresarClientes";
-            btnIngresarClientes.Padding = new Padding(11, 0, 0, 0);
-            btnIngresarClientes.Size = new Size(263, 72);
-            btnIngresarClientes.TabIndex = 0;
-            btnIngresarClientes.Tag = "   Ingresar clientes";
-            btnIngresarClientes.Text = "   Ingresar clientes";
-            btnIngresarClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnIngresarClientes.UseVisualStyleBackColor = true;
-            btnIngresarClientes.Click += BtnIngresarClientes_Click;
+            this.btnIngresarClientes.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.btnIngresarClientes.FlatAppearance.BorderSize = (0);
+            this.btnIngresarClientes.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnIngresarClientes.Font = (new global::System.Drawing.Font("Verdana", 11.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnIngresarClientes.ForeColor = (global::System.Drawing.Color.White);
+            this.btnIngresarClientes.IconChar = (global::FontAwesome.Sharp.IconChar.AddressCard);
+            this.btnIngresarClientes.IconColor = (global::System.Drawing.Color.White);
+            this.btnIngresarClientes.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
+            this.btnIngresarClientes.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
+            this.btnIngresarClientes.Location = (new global::System.Drawing.Point(0, 207));
+            this.btnIngresarClientes.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnIngresarClientes.Name = ("btnIngresarClientes");
+            this.btnIngresarClientes.Padding = (new global::System.Windows.Forms.Padding(11, 0, 0, 0));
+            this.btnIngresarClientes.Size = (new global::System.Drawing.Size(263, 72));
+            this.btnIngresarClientes.TabIndex = (0);
+            this.btnIngresarClientes.Tag = ("   Ingresar clientes");
+            this.btnIngresarClientes.Text = ("   Ingresar clientes");
+            this.btnIngresarClientes.TextImageRelation = (global::System.Windows.Forms.TextImageRelation.ImageBeforeText);
+            this.btnIngresarClientes.UseVisualStyleBackColor = (true);
+            this.btnIngresarClientes.Click += (this.BtnIngresarClientes_Click);
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnMenu);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(263, 207);
-            panel1.TabIndex = 0;
+            this.panel1.Controls.Add(this.btnMenu);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.panel1.Location = (new global::System.Drawing.Point(0, 0));
+            this.panel1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.panel1.Name = ("panel1");
+            this.panel1.Size = (new global::System.Drawing.Size(263, 207));
+            this.panel1.TabIndex = (0);
             // 
             // btnMenu
             // 
-            btnMenu.FlatAppearance.BorderSize = 0;
-            btnMenu.FlatStyle = FlatStyle.Flat;
-            btnMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            btnMenu.IconColor = Color.White;
-            btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMenu.IconSize = 30;
-            btnMenu.Location = new Point(193, 68);
-            btnMenu.Margin = new Padding(3, 4, 3, 4);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(69, 80);
-            btnMenu.TabIndex = 0;
-            btnMenu.UseVisualStyleBackColor = true;
-            btnMenu.Click += BtnMenu_Click;
+            this.btnMenu.FlatAppearance.BorderSize = (0);
+            this.btnMenu.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnMenu.IconChar = (global::FontAwesome.Sharp.IconChar.Bars);
+            this.btnMenu.IconColor = (global::System.Drawing.Color.White);
+            this.btnMenu.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
+            this.btnMenu.IconSize = (30);
+            this.btnMenu.Location = (new global::System.Drawing.Point(193, 68));
+            this.btnMenu.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnMenu.Name = ("btnMenu");
+            this.btnMenu.Size = (new global::System.Drawing.Size(69, 80));
+            this.btnMenu.TabIndex = (0);
+            this.btnMenu.UseVisualStyleBackColor = (true);
+            this.btnMenu.Click += (this.BtnMenu_Click);
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(9, 4);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(184, 195);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((global::System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = (new global::System.Drawing.Point(9, 4));
+            this.pictureBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pictureBox1.Name = ("pictureBox1");
+            this.pictureBox1.Size = (new global::System.Drawing.Size(184, 195));
+            this.pictureBox1.SizeMode = (global::System.Windows.Forms.PictureBoxSizeMode.StretchImage);
+            this.pictureBox1.TabIndex = (0);
+            this.pictureBox1.TabStop = (false);
             // 
             // panelTitleBar
             // 
-            panelTitleBar.BackColor = Color.DarkCyan;
-            panelTitleBar.Controls.Add(lblTitle);
-            panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(263, 0);
-            panelTitleBar.Margin = new Padding(3, 4, 3, 4);
-            panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(979, 80);
-            panelTitleBar.TabIndex = 1;
+            this.panelTitleBar.BackColor = (global::System.Drawing.Color.DarkCyan);
+            this.panelTitleBar.Controls.Add(this.lblTitle);
+            this.panelTitleBar.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.panelTitleBar.Location = (new global::System.Drawing.Point(263, 0));
+            this.panelTitleBar.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.panelTitleBar.Name = ("panelTitleBar");
+            this.panelTitleBar.Size = (new global::System.Drawing.Size(979, 80));
+            this.panelTitleBar.TabIndex = (1);
             // 
             // lblTitle
             // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Georgia", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.ForeColor = SystemColors.Desktop;
-            lblTitle.Location = new Point(41, 12);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(299, 54);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "Bienvenido";
+            this.lblTitle.AutoSize = (true);
+            this.lblTitle.Font = (new global::System.Drawing.Font("Georgia", 27.75F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.lblTitle.ForeColor = (global::System.Drawing.SystemColors.Desktop);
+            this.lblTitle.Location = (new global::System.Drawing.Point(41, 12));
+            this.lblTitle.Name = ("lblTitle");
+            this.lblTitle.Size = (new global::System.Drawing.Size(299, 54));
+            this.lblTitle.TabIndex = (0);
+            this.lblTitle.Text = ("Bienvenido");
             // 
             // pnlRegPago
             // 
-            pnlRegPago.BackColor = SystemColors.Info;
-            pnlRegPago.Controls.Add(ComBoxName);
-            pnlRegPago.Controls.Add(CombBoxLista);
-            pnlRegPago.Controls.Add(label29);
-            pnlRegPago.Controls.Add(btnBuscarC);
-            pnlRegPago.Controls.Add(label17);
-            pnlRegPago.Controls.Add(lblFecha);
-            pnlRegPago.Controls.Add(txtBoxCredito);
-            pnlRegPago.Controls.Add(lblCredito);
-            pnlRegPago.Controls.Add(txtBoxMonto);
-            pnlRegPago.Controls.Add(btnMarcarP);
-            pnlRegPago.Controls.Add(lblMonto);
-            pnlRegPago.Controls.Add(DateTimeReg);
-            pnlRegPago.Dock = DockStyle.Fill;
-            pnlRegPago.Location = new Point(263, 80);
-            pnlRegPago.Margin = new Padding(3, 4, 3, 4);
-            pnlRegPago.Name = "pnlRegPago";
-            pnlRegPago.Size = new Size(979, 661);
-            pnlRegPago.TabIndex = 27;
+            this.pnlRegPago.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.pnlRegPago.Controls.Add(this.ComBoxName);
+            this.pnlRegPago.Controls.Add(this.CombBoxLista);
+            this.pnlRegPago.Controls.Add(this.label29);
+            this.pnlRegPago.Controls.Add(this.btnBuscarC);
+            this.pnlRegPago.Controls.Add(this.label17);
+            this.pnlRegPago.Controls.Add(this.lblFecha);
+            this.pnlRegPago.Controls.Add(this.txtBoxCredito);
+            this.pnlRegPago.Controls.Add(this.lblCredito);
+            this.pnlRegPago.Controls.Add(this.txtBoxMonto);
+            this.pnlRegPago.Controls.Add(this.btnMarcarP);
+            this.pnlRegPago.Controls.Add(this.lblMonto);
+            this.pnlRegPago.Controls.Add(this.DateTimeReg);
+            this.pnlRegPago.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pnlRegPago.Location = (new global::System.Drawing.Point(263, 80));
+            this.pnlRegPago.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pnlRegPago.Name = ("pnlRegPago");
+            this.pnlRegPago.Size = (new global::System.Drawing.Size(979, 661));
+            this.pnlRegPago.TabIndex = (27);
             // 
             // ComBoxName
             // 
-            ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ComBoxName.BackColor = SystemColors.Info;
-            ComBoxName.BorderColor = Color.DarkSlateGray;
-            ComBoxName.BorderSize = 2;
-            ComBoxName.DropDownStyle = ComboBoxStyle.DropDown;
-            ComBoxName.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ComBoxName.ForeColor = Color.Black;
-            ComBoxName.IconColor = Color.DarkSlateGray;
-            ComBoxName.ListBackColor = SystemColors.Info;
-            ComBoxName.ListTextColor = Color.DimGray;
-            ComBoxName.Location = new Point(309, 48);
-            ComBoxName.Margin = new Padding(3, 4, 3, 4);
-            ComBoxName.MinimumSize = new Size(229, 40);
-            ComBoxName.Name = "ComBoxName";
-            ComBoxName.Padding = new Padding(2, 3, 2, 3);
-            ComBoxName.Size = new Size(391, 65);
-            ComBoxName.TabIndex = 14;
-            ComBoxName.Texts = "Introduzca nombre";
-            ComBoxName.OnSelectedIndexChanged += ActivarBtnBuscar;
+            this.ComBoxName.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.ComBoxName.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.ComBoxName.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.ComBoxName.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.ComBoxName.BorderSize = (2);
+            this.ComBoxName.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDown);
+            this.ComBoxName.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.ComBoxName.ForeColor = (global::System.Drawing.Color.Black);
+            this.ComBoxName.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.ComBoxName.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.ComBoxName.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.ComBoxName.Location = (new global::System.Drawing.Point(309, 48));
+            this.ComBoxName.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.ComBoxName.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.ComBoxName.Name = ("ComBoxName");
+            this.ComBoxName.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.ComBoxName.Size = (new global::System.Drawing.Size(391, 65));
+            this.ComBoxName.TabIndex = (14);
+            this.ComBoxName.Texts = ("Introduzca nombre");
+            this.ComBoxName.OnSelectedIndexChanged += (this.ActivarBtnBuscar);
             // 
             // CombBoxLista
             // 
-            CombBoxLista.AutoCompleteMode = AutoCompleteMode.Suggest;
-            CombBoxLista.AutoCompleteSource = AutoCompleteSource.ListItems;
-            CombBoxLista.BackColor = SystemColors.Info;
-            CombBoxLista.BorderColor = Color.DarkSlateGray;
-            CombBoxLista.BorderSize = 2;
-            CombBoxLista.DropDownStyle = ComboBoxStyle.DropDown;
-            CombBoxLista.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            CombBoxLista.ForeColor = Color.Black;
-            CombBoxLista.IconColor = Color.DarkSlateGray;
-            CombBoxLista.Items.AddRange(new object[] { "Lista 1", "Lista 2" });
-            CombBoxLista.ListBackColor = SystemColors.Info;
-            CombBoxLista.ListTextColor = Color.DimGray;
-            CombBoxLista.Location = new Point(309, 139);
-            CombBoxLista.Margin = new Padding(3, 4, 3, 4);
-            CombBoxLista.MinimumSize = new Size(229, 40);
-            CombBoxLista.Name = "CombBoxLista";
-            CombBoxLista.Padding = new Padding(2, 3, 2, 3);
-            CombBoxLista.Size = new Size(346, 63);
-            CombBoxLista.TabIndex = 35;
-            CombBoxLista.Texts = "Introduzca lista";
-            CombBoxLista.OnSelectedIndexChanged += ActivarBtnBuscar;
+            this.CombBoxLista.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.CombBoxLista.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.CombBoxLista.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.CombBoxLista.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.CombBoxLista.BorderSize = (2);
+            this.CombBoxLista.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDown);
+            this.CombBoxLista.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.CombBoxLista.ForeColor = (global::System.Drawing.Color.Black);
+            this.CombBoxLista.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.CombBoxLista.Items.AddRange(new global::System.Object[] { "Lista 1", "Lista 2" });
+            this.CombBoxLista.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.CombBoxLista.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.CombBoxLista.Location = (new global::System.Drawing.Point(309, 139));
+            this.CombBoxLista.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.CombBoxLista.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.CombBoxLista.Name = ("CombBoxLista");
+            this.CombBoxLista.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.CombBoxLista.Size = (new global::System.Drawing.Size(346, 63));
+            this.CombBoxLista.TabIndex = (35);
+            this.CombBoxLista.Texts = ("Introduzca lista");
+            this.CombBoxLista.OnSelectedIndexChanged += (this.ActivarBtnBuscar);
             // 
             // label29
             // 
-            label29.AutoSize = true;
-            label29.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label29.Location = new Point(41, 77);
-            label29.Name = "label29";
-            label29.Size = new Size(224, 29);
-            label29.TabIndex = 0;
-            label29.Text = "Nombre del cliente:";
+            this.label29.AutoSize = (true);
+            this.label29.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label29.Location = (new global::System.Drawing.Point(41, 77));
+            this.label29.Name = ("label29");
+            this.label29.Size = (new global::System.Drawing.Size(224, 29));
+            this.label29.TabIndex = (0);
+            this.label29.Text = ("Nombre del cliente:");
             // 
             // btnBuscarC
             // 
-            btnBuscarC.BackColor = SystemColors.Info;
-            btnBuscarC.BackgroundColor = SystemColors.Info;
-            btnBuscarC.BorderColor = Color.DarkSlateGray;
-            btnBuscarC.BorderRadius = 10;
-            btnBuscarC.BorderSize = 2;
-            btnBuscarC.Enabled = false;
-            btnBuscarC.FlatAppearance.BorderSize = 0;
-            btnBuscarC.FlatStyle = FlatStyle.Flat;
-            btnBuscarC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarC.ForeColor = Color.Black;
-            btnBuscarC.Location = new Point(799, 109);
-            btnBuscarC.Margin = new Padding(3, 4, 3, 4);
-            btnBuscarC.Name = "btnBuscarC";
-            btnBuscarC.Size = new Size(135, 48);
-            btnBuscarC.TabIndex = 13;
-            btnBuscarC.Text = "Buscar";
-            btnBuscarC.TextColor = Color.Black;
-            btnBuscarC.UseVisualStyleBackColor = false;
-            btnBuscarC.Click += BtnBuscarC_Click;
+            this.btnBuscarC.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.btnBuscarC.BackgroundColor = (global::System.Drawing.SystemColors.Info);
+            this.btnBuscarC.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnBuscarC.BorderRadius = (10);
+            this.btnBuscarC.BorderSize = (2);
+            this.btnBuscarC.Enabled = (false);
+            this.btnBuscarC.FlatAppearance.BorderSize = (0);
+            this.btnBuscarC.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnBuscarC.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnBuscarC.ForeColor = (global::System.Drawing.Color.Black);
+            this.btnBuscarC.Location = (new global::System.Drawing.Point(799, 109));
+            this.btnBuscarC.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnBuscarC.Name = ("btnBuscarC");
+            this.btnBuscarC.Size = (new global::System.Drawing.Size(135, 48));
+            this.btnBuscarC.TabIndex = (13);
+            this.btnBuscarC.Text = ("Buscar");
+            this.btnBuscarC.TextColor = (global::System.Drawing.Color.Black);
+            this.btnBuscarC.UseVisualStyleBackColor = (false);
+            this.btnBuscarC.Click += (this.BtnBuscarC_Click);
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(41, 172);
-            label17.Name = "label17";
-            label17.Size = new Size(152, 29);
-            label17.TabIndex = 34;
-            label17.Text = "Tipo de lista:";
+            this.label17.AutoSize = (true);
+            this.label17.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label17.Location = (new global::System.Drawing.Point(41, 172));
+            this.label17.Name = ("label17");
+            this.label17.Size = (new global::System.Drawing.Size(152, 29));
+            this.label17.TabIndex = (34);
+            this.label17.Text = ("Tipo de lista:");
             // 
             // lblFecha
             // 
-            lblFecha.AutoSize = true;
-            lblFecha.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFecha.Location = new Point(41, 536);
-            lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(200, 29);
-            lblFecha.TabIndex = 31;
-            lblFecha.Text = "Fecha a registrar:";
-            lblFecha.Visible = false;
+            this.lblFecha.AutoSize = (true);
+            this.lblFecha.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.lblFecha.Location = (new global::System.Drawing.Point(41, 536));
+            this.lblFecha.Name = ("lblFecha");
+            this.lblFecha.Size = (new global::System.Drawing.Size(200, 29));
+            this.lblFecha.TabIndex = (31);
+            this.lblFecha.Text = ("Fecha a registrar:");
+            this.lblFecha.Visible = (false);
             // 
             // txtBoxCredito
             // 
-            txtBoxCredito.BorderColor = Color.DarkSlateGray;
-            txtBoxCredito.BorderFocusColor = SystemColors.Info;
-            txtBoxCredito.BorderRadius = 0;
-            txtBoxCredito.BorderSize = 2;
-            txtBoxCredito.Enabled = false;
-            txtBoxCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxCredito.Location = new Point(309, 264);
-            txtBoxCredito.Margin = new Padding(3, 4, 3, 4);
-            txtBoxCredito.Multiline = false;
-            txtBoxCredito.Name = "txtBoxCredito";
-            txtBoxCredito.Padding = new Padding(11, 9, 11, 9);
-            txtBoxCredito.PasswordChar = false;
-            txtBoxCredito.PlaceholderColor = Color.DimGray;
-            txtBoxCredito.PlaceholderText = "";
-            txtBoxCredito.Size = new Size(265, 48);
-            txtBoxCredito.TabIndex = 27;
-            txtBoxCredito.Texts = "";
-            txtBoxCredito.UnderlinedStyle = true;
-            txtBoxCredito.Visible = false;
+            this.txtBoxCredito.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtBoxCredito.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtBoxCredito.BorderRadius = (0);
+            this.txtBoxCredito.BorderSize = (2);
+            this.txtBoxCredito.Enabled = (false);
+            this.txtBoxCredito.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtBoxCredito.Location = (new global::System.Drawing.Point(309, 264));
+            this.txtBoxCredito.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtBoxCredito.Multiline = (false);
+            this.txtBoxCredito.Name = ("txtBoxCredito");
+            this.txtBoxCredito.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtBoxCredito.PasswordChar = (false);
+            this.txtBoxCredito.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtBoxCredito.PlaceholderText = ("");
+            this.txtBoxCredito.Size = (new global::System.Drawing.Size(265, 48));
+            this.txtBoxCredito.TabIndex = (27);
+            this.txtBoxCredito.Texts = ("");
+            this.txtBoxCredito.UnderlinedStyle = (true);
+            this.txtBoxCredito.Visible = (false);
             // 
             // lblCredito
             // 
-            lblCredito.AutoSize = true;
-            lblCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCredito.Location = new Point(41, 292);
-            lblCredito.Name = "lblCredito";
-            lblCredito.Size = new Size(199, 29);
-            lblCredito.TabIndex = 28;
-            lblCredito.Text = "Crédito prestado:";
-            lblCredito.Visible = false;
+            this.lblCredito.AutoSize = (true);
+            this.lblCredito.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.lblCredito.Location = (new global::System.Drawing.Point(41, 292));
+            this.lblCredito.Name = ("lblCredito");
+            this.lblCredito.Size = (new global::System.Drawing.Size(199, 29));
+            this.lblCredito.TabIndex = (28);
+            this.lblCredito.Text = ("Crédito prestado:");
+            this.lblCredito.Visible = (false);
             // 
             // txtBoxMonto
             // 
-            txtBoxMonto.BorderColor = Color.DarkSlateGray;
-            txtBoxMonto.BorderFocusColor = SystemColors.Info;
-            txtBoxMonto.BorderRadius = 0;
-            txtBoxMonto.BorderSize = 2;
-            txtBoxMonto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBoxMonto.Location = new Point(309, 388);
-            txtBoxMonto.Margin = new Padding(3, 4, 3, 4);
-            txtBoxMonto.Multiline = false;
-            txtBoxMonto.Name = "txtBoxMonto";
-            txtBoxMonto.Padding = new Padding(11, 9, 11, 9);
-            txtBoxMonto.PasswordChar = false;
-            txtBoxMonto.PlaceholderColor = Color.DimGray;
-            txtBoxMonto.PlaceholderText = "";
-            txtBoxMonto.Size = new Size(171, 48);
-            txtBoxMonto.TabIndex = 30;
-            txtBoxMonto.Texts = "";
-            txtBoxMonto.UnderlinedStyle = true;
-            txtBoxMonto.Visible = false;
-            txtBoxMonto._TextChanged += ActivarBtnMarcar;
-            txtBoxMonto.KeyPress += SoloNumerosDecimal;
+            this.txtBoxMonto.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtBoxMonto.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtBoxMonto.BorderRadius = (0);
+            this.txtBoxMonto.BorderSize = (2);
+            this.txtBoxMonto.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtBoxMonto.Location = (new global::System.Drawing.Point(309, 388));
+            this.txtBoxMonto.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtBoxMonto.Multiline = (false);
+            this.txtBoxMonto.Name = ("txtBoxMonto");
+            this.txtBoxMonto.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtBoxMonto.PasswordChar = (false);
+            this.txtBoxMonto.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtBoxMonto.PlaceholderText = ("");
+            this.txtBoxMonto.Size = (new global::System.Drawing.Size(171, 48));
+            this.txtBoxMonto.TabIndex = (30);
+            this.txtBoxMonto.Texts = ("");
+            this.txtBoxMonto.UnderlinedStyle = (true);
+            this.txtBoxMonto.Visible = (false);
+            this.txtBoxMonto._TextChanged += (this.ActivarBtnMarcar);
+            this.txtBoxMonto.KeyPress += (this.SoloNumerosDecimal);
             // 
             // btnMarcarP
             // 
-            btnMarcarP.Anchor = AnchorStyles.Bottom;
-            btnMarcarP.BackColor = SystemColors.Info;
-            btnMarcarP.BackgroundColor = SystemColors.Info;
-            btnMarcarP.BorderColor = Color.DarkSlateGray;
-            btnMarcarP.BorderRadius = 10;
-            btnMarcarP.BorderSize = 2;
-            btnMarcarP.Enabled = false;
-            btnMarcarP.FlatAppearance.BorderSize = 0;
-            btnMarcarP.FlatStyle = FlatStyle.Flat;
-            btnMarcarP.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMarcarP.ForeColor = Color.Black;
-            btnMarcarP.Location = new Point(466, 587);
-            btnMarcarP.Margin = new Padding(3, 4, 3, 4);
-            btnMarcarP.Name = "btnMarcarP";
-            btnMarcarP.Size = new Size(277, 53);
-            btnMarcarP.TabIndex = 33;
-            btnMarcarP.Text = "Marcar como pagada";
-            btnMarcarP.TextColor = Color.Black;
-            btnMarcarP.UseVisualStyleBackColor = false;
-            btnMarcarP.Visible = false;
-            btnMarcarP.Click += BtnMarcarP_Click;
+            this.btnMarcarP.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom);
+            this.btnMarcarP.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.btnMarcarP.BackgroundColor = (global::System.Drawing.SystemColors.Info);
+            this.btnMarcarP.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnMarcarP.BorderRadius = (10);
+            this.btnMarcarP.BorderSize = (2);
+            this.btnMarcarP.Enabled = (false);
+            this.btnMarcarP.FlatAppearance.BorderSize = (0);
+            this.btnMarcarP.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnMarcarP.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnMarcarP.ForeColor = (global::System.Drawing.Color.Black);
+            this.btnMarcarP.Location = (new global::System.Drawing.Point(466, 587));
+            this.btnMarcarP.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnMarcarP.Name = ("btnMarcarP");
+            this.btnMarcarP.Size = (new global::System.Drawing.Size(277, 53));
+            this.btnMarcarP.TabIndex = (33);
+            this.btnMarcarP.Text = ("Marcar como pagada");
+            this.btnMarcarP.TextColor = (global::System.Drawing.Color.Black);
+            this.btnMarcarP.UseVisualStyleBackColor = (false);
+            this.btnMarcarP.Visible = (false);
+            this.btnMarcarP.Click += (this.BtnMarcarP_Click);
             // 
             // lblMonto
             // 
-            lblMonto.AutoSize = true;
-            lblMonto.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMonto.Location = new Point(41, 419);
-            lblMonto.Name = "lblMonto";
-            lblMonto.Size = new Size(212, 29);
-            lblMonto.TabIndex = 29;
-            lblMonto.Text = "Monto a depositar:";
-            lblMonto.Visible = false;
+            this.lblMonto.AutoSize = (true);
+            this.lblMonto.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.lblMonto.Location = (new global::System.Drawing.Point(41, 419));
+            this.lblMonto.Name = ("lblMonto");
+            this.lblMonto.Size = (new global::System.Drawing.Size(212, 29));
+            this.lblMonto.TabIndex = (29);
+            this.lblMonto.Text = ("Monto a depositar:");
+            this.lblMonto.Visible = (false);
             // 
             // DateTimeReg
             // 
-            DateTimeReg.BorderColor = Color.DarkSlateGray;
-            DateTimeReg.BorderSize = 2;
-            DateTimeReg.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            DateTimeReg.Format = DateTimePickerFormat.Short;
-            DateTimeReg.Location = new Point(307, 528);
-            DateTimeReg.Margin = new Padding(3, 4, 3, 4);
-            DateTimeReg.MinimumSize = new Size(4, 35);
-            DateTimeReg.Name = "DateTimeReg";
-            DateTimeReg.Size = new Size(172, 35);
-            DateTimeReg.SkinColor = SystemColors.Info;
-            DateTimeReg.TabIndex = 32;
-            DateTimeReg.TextColor = Color.Black;
-            DateTimeReg.Visible = false;
+            this.DateTimeReg.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.DateTimeReg.BorderSize = (2);
+            this.DateTimeReg.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.DateTimeReg.Format = (global::System.Windows.Forms.DateTimePickerFormat.Short);
+            this.DateTimeReg.Location = (new global::System.Drawing.Point(307, 528));
+            this.DateTimeReg.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.DateTimeReg.MinimumSize = (new global::System.Drawing.Size(4, 35));
+            this.DateTimeReg.Name = ("DateTimeReg");
+            this.DateTimeReg.Size = (new global::System.Drawing.Size(172, 35));
+            this.DateTimeReg.SkinColor = (global::System.Drawing.SystemColors.Info);
+            this.DateTimeReg.TabIndex = (32);
+            this.DateTimeReg.TextColor = (global::System.Drawing.Color.Black);
+            this.DateTimeReg.Visible = (false);
             // 
             // pnlClientes
             // 
-            pnlClientes.BackColor = SystemColors.Info;
-            pnlClientes.Controls.Add(cmbInteres);
-            pnlClientes.Controls.Add(btnCalcular);
-            pnlClientes.Controls.Add(txtTotal_I);
-            pnlClientes.Controls.Add(label16);
-            pnlClientes.Controls.Add(txtTotal);
-            pnlClientes.Controls.Add(txtCorreo);
-            pnlClientes.Controls.Add(label15);
-            pnlClientes.Controls.Add(txtTelefono);
-            pnlClientes.Controls.Add(label14);
-            pnlClientes.Controls.Add(txtNumExt);
-            pnlClientes.Controls.Add(label13);
-            pnlClientes.Controls.Add(txtNumInt);
-            pnlClientes.Controls.Add(label12);
-            pnlClientes.Controls.Add(txtColonia);
-            pnlClientes.Controls.Add(label11);
-            pnlClientes.Controls.Add(txtCalle);
-            pnlClientes.Controls.Add(label10);
-            pnlClientes.Controls.Add(label9);
-            pnlClientes.Controls.Add(btnGuardar);
-            pnlClientes.Controls.Add(label7);
-            pnlClientes.Controls.Add(label6);
-            pnlClientes.Controls.Add(cmbTipo);
-            pnlClientes.Controls.Add(label5);
-            pnlClientes.Controls.Add(label4);
-            pnlClientes.Controls.Add(dateFechaInicio);
-            pnlClientes.Controls.Add(label3);
-            pnlClientes.Controls.Add(txtCredito);
-            pnlClientes.Controls.Add(label2);
-            pnlClientes.Controls.Add(txtNombre);
-            pnlClientes.Controls.Add(label1);
-            pnlClientes.Controls.Add(cmbPromotor);
-            pnlClientes.Dock = DockStyle.Fill;
-            pnlClientes.Location = new Point(263, 80);
-            pnlClientes.Margin = new Padding(3, 4, 3, 4);
-            pnlClientes.Name = "pnlClientes";
-            pnlClientes.Size = new Size(979, 661);
-            pnlClientes.TabIndex = 2;
+            this.pnlClientes.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.pnlClientes.Controls.Add(this.cmbInteres);
+            this.pnlClientes.Controls.Add(this.btnCalcular);
+            this.pnlClientes.Controls.Add(this.txtTotal_I);
+            this.pnlClientes.Controls.Add(this.label16);
+            this.pnlClientes.Controls.Add(this.txtTotal);
+            this.pnlClientes.Controls.Add(this.txtCorreo);
+            this.pnlClientes.Controls.Add(this.label15);
+            this.pnlClientes.Controls.Add(this.txtTelefono);
+            this.pnlClientes.Controls.Add(this.label14);
+            this.pnlClientes.Controls.Add(this.txtNumExt);
+            this.pnlClientes.Controls.Add(this.label13);
+            this.pnlClientes.Controls.Add(this.txtNumInt);
+            this.pnlClientes.Controls.Add(this.label12);
+            this.pnlClientes.Controls.Add(this.txtColonia);
+            this.pnlClientes.Controls.Add(this.label11);
+            this.pnlClientes.Controls.Add(this.txtCalle);
+            this.pnlClientes.Controls.Add(this.label10);
+            this.pnlClientes.Controls.Add(this.label9);
+            this.pnlClientes.Controls.Add(this.btnGuardar);
+            this.pnlClientes.Controls.Add(this.label7);
+            this.pnlClientes.Controls.Add(this.label6);
+            this.pnlClientes.Controls.Add(this.cmbTipo);
+            this.pnlClientes.Controls.Add(this.label5);
+            this.pnlClientes.Controls.Add(this.label4);
+            this.pnlClientes.Controls.Add(this.dateFechaInicio);
+            this.pnlClientes.Controls.Add(this.label3);
+            this.pnlClientes.Controls.Add(this.txtCredito);
+            this.pnlClientes.Controls.Add(this.label2);
+            this.pnlClientes.Controls.Add(this.txtNombre);
+            this.pnlClientes.Controls.Add(this.label1);
+            this.pnlClientes.Controls.Add(this.cmbPromotor);
+            this.pnlClientes.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pnlClientes.Location = (new global::System.Drawing.Point(263, 80));
+            this.pnlClientes.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pnlClientes.Name = ("pnlClientes");
+            this.pnlClientes.Size = (new global::System.Drawing.Size(979, 661));
+            this.pnlClientes.TabIndex = (2);
             // 
             // cmbInteres
             // 
-            cmbInteres.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbInteres.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbInteres.BackColor = SystemColors.Info;
-            cmbInteres.BorderColor = Color.DarkSlateGray;
-            cmbInteres.BorderSize = 2;
-            cmbInteres.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbInteres.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbInteres.ForeColor = Color.Black;
-            cmbInteres.IconColor = Color.DarkSlateGray;
-            cmbInteres.Items.AddRange(new object[] { "7%", "8%", "10%" });
-            cmbInteres.ListBackColor = SystemColors.Info;
-            cmbInteres.ListTextColor = Color.DimGray;
-            cmbInteres.Location = new Point(224, 253);
-            cmbInteres.Margin = new Padding(3, 4, 3, 4);
-            cmbInteres.MinimumSize = new Size(229, 40);
-            cmbInteres.Name = "cmbInteres";
-            cmbInteres.Padding = new Padding(2, 3, 2, 3);
-            cmbInteres.Size = new Size(361, 55);
-            cmbInteres.TabIndex = 4;
-            cmbInteres.Tag = "Seleccione un interés";
-            cmbInteres.Texts = "Seleccione un interés";
-            cmbInteres.OnSelectedIndexChanged += ActivarBtnCalcular;
+            this.cmbInteres.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.cmbInteres.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.cmbInteres.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbInteres.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbInteres.BorderSize = (2);
+            this.cmbInteres.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.cmbInteres.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.cmbInteres.ForeColor = (global::System.Drawing.Color.Black);
+            this.cmbInteres.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbInteres.Items.AddRange(new global::System.Object[] { "7%", "8%", "10%" });
+            this.cmbInteres.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbInteres.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.cmbInteres.Location = (new global::System.Drawing.Point(224, 253));
+            this.cmbInteres.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.cmbInteres.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.cmbInteres.Name = ("cmbInteres");
+            this.cmbInteres.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.cmbInteres.Size = (new global::System.Drawing.Size(361, 55));
+            this.cmbInteres.TabIndex = (4);
+            this.cmbInteres.Tag = ("Seleccione un interés");
+            this.cmbInteres.Texts = ("Seleccione un interés");
+            this.cmbInteres.OnSelectedIndexChanged += (this.ActivarBtnCalcular);
             // 
             // btnCalcular
             // 
-            btnCalcular.Anchor = AnchorStyles.Bottom;
-            btnCalcular.BackColor = SystemColors.Info;
-            btnCalcular.BackgroundColor = SystemColors.Info;
-            btnCalcular.BorderColor = Color.DarkSlateGray;
-            btnCalcular.BorderRadius = 10;
-            btnCalcular.BorderSize = 2;
-            btnCalcular.Enabled = false;
-            btnCalcular.FlatAppearance.BorderSize = 0;
-            btnCalcular.FlatStyle = FlatStyle.Flat;
-            btnCalcular.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCalcular.ForeColor = Color.Black;
-            btnCalcular.Location = new Point(201, 600);
-            btnCalcular.Margin = new Padding(3, 4, 3, 4);
-            btnCalcular.Name = "btnCalcular";
-            btnCalcular.Size = new Size(151, 40);
-            btnCalcular.TabIndex = 7;
-            btnCalcular.Text = "Calcular";
-            btnCalcular.TextColor = Color.Black;
-            btnCalcular.UseVisualStyleBackColor = false;
-            btnCalcular.Click += BtnCalcular_Click;
+            this.btnCalcular.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom);
+            this.btnCalcular.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.btnCalcular.BackgroundColor = (global::System.Drawing.SystemColors.Info);
+            this.btnCalcular.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnCalcular.BorderRadius = (10);
+            this.btnCalcular.BorderSize = (2);
+            this.btnCalcular.Enabled = (false);
+            this.btnCalcular.FlatAppearance.BorderSize = (0);
+            this.btnCalcular.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnCalcular.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnCalcular.ForeColor = (global::System.Drawing.Color.Black);
+            this.btnCalcular.Location = (new global::System.Drawing.Point(201, 600));
+            this.btnCalcular.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnCalcular.Name = ("btnCalcular");
+            this.btnCalcular.Size = (new global::System.Drawing.Size(151, 40));
+            this.btnCalcular.TabIndex = (7);
+            this.btnCalcular.Text = ("Calcular");
+            this.btnCalcular.TextColor = (global::System.Drawing.Color.Black);
+            this.btnCalcular.UseVisualStyleBackColor = (false);
+            this.btnCalcular.Click += (this.BtnCalcular_Click);
             // 
             // txtTotal_I
             // 
-            txtTotal_I.BorderColor = Color.DarkSlateGray;
-            txtTotal_I.BorderFocusColor = SystemColors.Info;
-            txtTotal_I.BorderRadius = 0;
-            txtTotal_I.BorderSize = 2;
-            txtTotal_I.Enabled = false;
-            txtTotal_I.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTotal_I.Location = new Point(323, 540);
-            txtTotal_I.Margin = new Padding(3, 4, 3, 4);
-            txtTotal_I.Multiline = false;
-            txtTotal_I.Name = "txtTotal_I";
-            txtTotal_I.Padding = new Padding(11, 9, 11, 9);
-            txtTotal_I.PasswordChar = false;
-            txtTotal_I.PlaceholderColor = Color.DimGray;
-            txtTotal_I.PlaceholderText = "";
-            txtTotal_I.Size = new Size(159, 48);
-            txtTotal_I.TabIndex = 29;
-            txtTotal_I.Texts = "";
-            txtTotal_I.UnderlinedStyle = true;
-            txtTotal_I._TextChanged += ActivarBtnGuardar;
+            this.txtTotal_I.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtTotal_I.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtTotal_I.BorderRadius = (0);
+            this.txtTotal_I.BorderSize = (2);
+            this.txtTotal_I.Enabled = (false);
+            this.txtTotal_I.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtTotal_I.Location = (new global::System.Drawing.Point(323, 540));
+            this.txtTotal_I.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtTotal_I.Multiline = (false);
+            this.txtTotal_I.Name = ("txtTotal_I");
+            this.txtTotal_I.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtTotal_I.PasswordChar = (false);
+            this.txtTotal_I.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtTotal_I.PlaceholderText = ("");
+            this.txtTotal_I.Size = (new global::System.Drawing.Size(159, 48));
+            this.txtTotal_I.TabIndex = (29);
+            this.txtTotal_I.Texts = ("");
+            this.txtTotal_I.UnderlinedStyle = (true);
+            this.txtTotal_I._TextChanged += (this.ActivarBtnGuardar);
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(18, 552);
-            label16.Name = "label16";
-            label16.Size = new Size(299, 29);
-            label16.TabIndex = 28;
-            label16.Text = "Monto segun tipo de pago:";
+            this.label16.AutoSize = (true);
+            this.label16.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label16.Location = (new global::System.Drawing.Point(18, 552));
+            this.label16.Name = ("label16");
+            this.label16.Size = (new global::System.Drawing.Size(299, 29));
+            this.label16.TabIndex = (28);
+            this.label16.Text = ("Monto segun tipo de pago:");
             // 
             // txtTotal
             // 
-            txtTotal.BorderColor = Color.DarkSlateGray;
-            txtTotal.BorderFocusColor = SystemColors.Info;
-            txtTotal.BorderRadius = 0;
-            txtTotal.BorderSize = 2;
-            txtTotal.Enabled = false;
-            txtTotal.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTotal.Location = new Point(323, 472);
-            txtTotal.Margin = new Padding(3, 4, 3, 4);
-            txtTotal.Multiline = false;
-            txtTotal.Name = "txtTotal";
-            txtTotal.Padding = new Padding(11, 9, 11, 9);
-            txtTotal.PasswordChar = false;
-            txtTotal.PlaceholderColor = Color.DimGray;
-            txtTotal.PlaceholderText = "";
-            txtTotal.Size = new Size(159, 48);
-            txtTotal.TabIndex = 27;
-            txtTotal.Texts = "";
-            txtTotal.UnderlinedStyle = true;
-            txtTotal._TextChanged += ActivarBtnGuardar;
+            this.txtTotal.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtTotal.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtTotal.BorderRadius = (0);
+            this.txtTotal.BorderSize = (2);
+            this.txtTotal.Enabled = (false);
+            this.txtTotal.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtTotal.Location = (new global::System.Drawing.Point(323, 472));
+            this.txtTotal.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtTotal.Multiline = (false);
+            this.txtTotal.Name = ("txtTotal");
+            this.txtTotal.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtTotal.PasswordChar = (false);
+            this.txtTotal.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtTotal.PlaceholderText = ("");
+            this.txtTotal.Size = (new global::System.Drawing.Size(159, 48));
+            this.txtTotal.TabIndex = (27);
+            this.txtTotal.Texts = ("");
+            this.txtTotal.UnderlinedStyle = (true);
+            this.txtTotal._TextChanged += (this.ActivarBtnGuardar);
             // 
             // txtCorreo
             // 
-            txtCorreo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtCorreo.BorderColor = Color.DarkSlateGray;
-            txtCorreo.BorderFocusColor = SystemColors.Info;
-            txtCorreo.BorderRadius = 0;
-            txtCorreo.BorderSize = 2;
-            txtCorreo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCorreo.Location = new Point(649, 505);
-            txtCorreo.Margin = new Padding(3, 4, 3, 4);
-            txtCorreo.Multiline = false;
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Padding = new Padding(11, 9, 11, 9);
-            txtCorreo.PasswordChar = false;
-            txtCorreo.PlaceholderColor = Color.DimGray;
-            txtCorreo.PlaceholderText = "Introduzca el correo";
-            txtCorreo.Size = new Size(283, 48);
-            txtCorreo.TabIndex = 13;
-            txtCorreo.Texts = "";
-            txtCorreo.UnderlinedStyle = true;
-            txtCorreo._TextChanged += ActivarBtnGuardar;
+            this.txtCorreo.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCorreo.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtCorreo.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtCorreo.BorderRadius = (0);
+            this.txtCorreo.BorderSize = (2);
+            this.txtCorreo.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtCorreo.Location = (new global::System.Drawing.Point(649, 505));
+            this.txtCorreo.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtCorreo.Multiline = (false);
+            this.txtCorreo.Name = ("txtCorreo");
+            this.txtCorreo.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtCorreo.PasswordChar = (false);
+            this.txtCorreo.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtCorreo.PlaceholderText = ("Introduzca el correo");
+            this.txtCorreo.Size = (new global::System.Drawing.Size(283, 48));
+            this.txtCorreo.TabIndex = (13);
+            this.txtCorreo.Texts = ("");
+            this.txtCorreo.UnderlinedStyle = (true);
+            this.txtCorreo._TextChanged += (this.ActivarBtnGuardar);
             // 
             // label15
             // 
-            label15.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label15.AutoSize = true;
-            label15.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(649, 472);
-            label15.Name = "label15";
-            label15.Size = new Size(219, 29);
-            label15.TabIndex = 25;
-            label15.Text = "Correo electrónico:";
+            this.label15.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = (true);
+            this.label15.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label15.Location = (new global::System.Drawing.Point(649, 472));
+            this.label15.Name = ("label15");
+            this.label15.Size = (new global::System.Drawing.Size(219, 29));
+            this.label15.TabIndex = (25);
+            this.label15.Text = ("Correo electrónico:");
             // 
             // txtTelefono
             // 
-            txtTelefono.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtTelefono.BorderColor = Color.DarkSlateGray;
-            txtTelefono.BorderFocusColor = SystemColors.Info;
-            txtTelefono.BorderRadius = 0;
-            txtTelefono.BorderSize = 2;
-            txtTelefono.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTelefono.Location = new Point(649, 404);
-            txtTelefono.Margin = new Padding(3, 4, 3, 4);
-            txtTelefono.Multiline = false;
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Padding = new Padding(11, 9, 11, 9);
-            txtTelefono.PasswordChar = false;
-            txtTelefono.PlaceholderColor = Color.DimGray;
-            txtTelefono.PlaceholderText = "Introduzca el núm. de tel.";
-            txtTelefono.Size = new Size(283, 48);
-            txtTelefono.TabIndex = 12;
-            txtTelefono.Texts = "";
-            txtTelefono.UnderlinedStyle = true;
-            txtTelefono._TextChanged += ActivarBtnGuardar;
-            txtTelefono.KeyPress += SoloNumerosEnteros;
+            this.txtTelefono.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTelefono.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtTelefono.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtTelefono.BorderRadius = (0);
+            this.txtTelefono.BorderSize = (2);
+            this.txtTelefono.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtTelefono.Location = (new global::System.Drawing.Point(649, 404));
+            this.txtTelefono.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtTelefono.Multiline = (false);
+            this.txtTelefono.Name = ("txtTelefono");
+            this.txtTelefono.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtTelefono.PasswordChar = (false);
+            this.txtTelefono.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtTelefono.PlaceholderText = ("Introduzca el núm. de tel.");
+            this.txtTelefono.Size = (new global::System.Drawing.Size(283, 48));
+            this.txtTelefono.TabIndex = (12);
+            this.txtTelefono.Texts = ("");
+            this.txtTelefono.UnderlinedStyle = (true);
+            this.txtTelefono._TextChanged += (this.ActivarBtnGuardar);
+            this.txtTelefono.KeyPress += (this.SoloNumerosEnteros);
             // 
             // label14
             // 
-            label14.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label14.AutoSize = true;
-            label14.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(649, 371);
-            label14.Name = "label14";
-            label14.Size = new Size(116, 29);
-            label14.TabIndex = 23;
-            label14.Text = "Teléfono:";
+            this.label14.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = (true);
+            this.label14.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label14.Location = (new global::System.Drawing.Point(649, 371));
+            this.label14.Name = ("label14");
+            this.label14.Size = (new global::System.Drawing.Size(116, 29));
+            this.label14.TabIndex = (23);
+            this.label14.Text = ("Teléfono:");
             // 
             // txtNumExt
             // 
-            txtNumExt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtNumExt.BorderColor = Color.DarkSlateGray;
-            txtNumExt.BorderFocusColor = SystemColors.Info;
-            txtNumExt.BorderRadius = 0;
-            txtNumExt.BorderSize = 2;
-            txtNumExt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNumExt.Location = new Point(817, 303);
-            txtNumExt.Margin = new Padding(3, 4, 3, 4);
-            txtNumExt.Multiline = false;
-            txtNumExt.Name = "txtNumExt";
-            txtNumExt.Padding = new Padding(11, 9, 11, 9);
-            txtNumExt.PasswordChar = false;
-            txtNumExt.PlaceholderColor = Color.DimGray;
-            txtNumExt.PlaceholderText = "Num. ext.";
-            txtNumExt.Size = new Size(115, 48);
-            txtNumExt.TabIndex = 11;
-            txtNumExt.Texts = "";
-            txtNumExt.UnderlinedStyle = true;
-            txtNumExt._TextChanged += ActivarBtnGuardar;
-            txtNumExt.KeyPress += SoloNumerosEnteros;
+            this.txtNumExt.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumExt.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtNumExt.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtNumExt.BorderRadius = (0);
+            this.txtNumExt.BorderSize = (2);
+            this.txtNumExt.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtNumExt.Location = (new global::System.Drawing.Point(817, 303));
+            this.txtNumExt.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtNumExt.Multiline = (false);
+            this.txtNumExt.Name = ("txtNumExt");
+            this.txtNumExt.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtNumExt.PasswordChar = (false);
+            this.txtNumExt.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtNumExt.PlaceholderText = ("Num. ext.");
+            this.txtNumExt.Size = (new global::System.Drawing.Size(115, 48));
+            this.txtNumExt.TabIndex = (11);
+            this.txtNumExt.Texts = ("");
+            this.txtNumExt.UnderlinedStyle = (true);
+            this.txtNumExt._TextChanged += (this.ActivarBtnGuardar);
+            this.txtNumExt.KeyPress += (this.SoloNumerosEnteros);
             // 
             // label13
             // 
-            label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label13.AutoSize = true;
-            label13.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(817, 271);
-            label13.Name = "label13";
-            label13.Size = new Size(119, 29);
-            label13.TabIndex = 21;
-            label13.Text = "Núm. ext.:";
+            this.label13.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = (true);
+            this.label13.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label13.Location = (new global::System.Drawing.Point(817, 271));
+            this.label13.Name = ("label13");
+            this.label13.Size = (new global::System.Drawing.Size(119, 29));
+            this.label13.TabIndex = (21);
+            this.label13.Text = ("Núm. ext.:");
             // 
             // txtNumInt
             // 
-            txtNumInt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtNumInt.BorderColor = Color.DarkSlateGray;
-            txtNumInt.BorderFocusColor = SystemColors.Info;
-            txtNumInt.BorderRadius = 0;
-            txtNumInt.BorderSize = 2;
-            txtNumInt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNumInt.Location = new Point(649, 303);
-            txtNumInt.Margin = new Padding(3, 4, 3, 4);
-            txtNumInt.Multiline = false;
-            txtNumInt.Name = "txtNumInt";
-            txtNumInt.Padding = new Padding(11, 9, 11, 9);
-            txtNumInt.PasswordChar = false;
-            txtNumInt.PlaceholderColor = Color.DimGray;
-            txtNumInt.PlaceholderText = "Num. int.";
-            txtNumInt.Size = new Size(115, 48);
-            txtNumInt.TabIndex = 10;
-            txtNumInt.Texts = "";
-            txtNumInt.UnderlinedStyle = true;
-            txtNumInt._TextChanged += ActivarBtnGuardar;
-            txtNumInt.KeyPress += SoloNumerosEnteros;
+            this.txtNumInt.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumInt.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtNumInt.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtNumInt.BorderRadius = (0);
+            this.txtNumInt.BorderSize = (2);
+            this.txtNumInt.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtNumInt.Location = (new global::System.Drawing.Point(649, 303));
+            this.txtNumInt.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtNumInt.Multiline = (false);
+            this.txtNumInt.Name = ("txtNumInt");
+            this.txtNumInt.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtNumInt.PasswordChar = (false);
+            this.txtNumInt.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtNumInt.PlaceholderText = ("Num. int.");
+            this.txtNumInt.Size = (new global::System.Drawing.Size(115, 48));
+            this.txtNumInt.TabIndex = (10);
+            this.txtNumInt.Texts = ("");
+            this.txtNumInt.UnderlinedStyle = (true);
+            this.txtNumInt._TextChanged += (this.ActivarBtnGuardar);
+            this.txtNumInt.KeyPress += (this.SoloNumerosEnteros);
             // 
             // label12
             // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(649, 269);
-            label12.Name = "label12";
-            label12.Size = new Size(113, 29);
-            label12.TabIndex = 19;
-            label12.Text = "Núm. int.:";
+            this.label12.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = (true);
+            this.label12.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label12.Location = (new global::System.Drawing.Point(649, 269));
+            this.label12.Name = ("label12");
+            this.label12.Size = (new global::System.Drawing.Size(113, 29));
+            this.label12.TabIndex = (19);
+            this.label12.Text = ("Núm. int.:");
             // 
             // txtColonia
             // 
-            txtColonia.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtColonia.BorderColor = Color.DarkSlateGray;
-            txtColonia.BorderFocusColor = SystemColors.Info;
-            txtColonia.BorderRadius = 0;
-            txtColonia.BorderSize = 2;
-            txtColonia.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtColonia.Location = new Point(649, 204);
-            txtColonia.Margin = new Padding(3, 4, 3, 4);
-            txtColonia.Multiline = false;
-            txtColonia.Name = "txtColonia";
-            txtColonia.Padding = new Padding(11, 9, 11, 9);
-            txtColonia.PasswordChar = false;
-            txtColonia.PlaceholderColor = Color.DimGray;
-            txtColonia.PlaceholderText = "Introduzca la colonia";
-            txtColonia.Size = new Size(265, 48);
-            txtColonia.TabIndex = 9;
-            txtColonia.Texts = "";
-            txtColonia.UnderlinedStyle = true;
-            txtColonia._TextChanged += ActivarBtnGuardar;
+            this.txtColonia.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.txtColonia.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtColonia.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtColonia.BorderRadius = (0);
+            this.txtColonia.BorderSize = (2);
+            this.txtColonia.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtColonia.Location = (new global::System.Drawing.Point(649, 204));
+            this.txtColonia.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtColonia.Multiline = (false);
+            this.txtColonia.Name = ("txtColonia");
+            this.txtColonia.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtColonia.PasswordChar = (false);
+            this.txtColonia.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtColonia.PlaceholderText = ("Introduzca la colonia");
+            this.txtColonia.Size = (new global::System.Drawing.Size(265, 48));
+            this.txtColonia.TabIndex = (9);
+            this.txtColonia.Texts = ("");
+            this.txtColonia.UnderlinedStyle = (true);
+            this.txtColonia._TextChanged += (this.ActivarBtnGuardar);
             // 
             // label11
             // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(649, 171);
-            label11.Name = "label11";
-            label11.Size = new Size(102, 29);
-            label11.TabIndex = 17;
-            label11.Text = "Colonia:";
+            this.label11.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = (true);
+            this.label11.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label11.Location = (new global::System.Drawing.Point(649, 171));
+            this.label11.Name = ("label11");
+            this.label11.Size = (new global::System.Drawing.Size(102, 29));
+            this.label11.TabIndex = (17);
+            this.label11.Text = ("Colonia:");
             // 
             // txtCalle
             // 
-            txtCalle.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtCalle.BorderColor = Color.DarkSlateGray;
-            txtCalle.BorderFocusColor = SystemColors.Info;
-            txtCalle.BorderRadius = 0;
-            txtCalle.BorderSize = 2;
-            txtCalle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCalle.Location = new Point(649, 104);
-            txtCalle.Margin = new Padding(3, 4, 3, 4);
-            txtCalle.Multiline = false;
-            txtCalle.Name = "txtCalle";
-            txtCalle.Padding = new Padding(11, 9, 11, 9);
-            txtCalle.PasswordChar = false;
-            txtCalle.PlaceholderColor = Color.DimGray;
-            txtCalle.PlaceholderText = "Introduzca la calle";
-            txtCalle.Size = new Size(265, 48);
-            txtCalle.TabIndex = 8;
-            txtCalle.Texts = "";
-            txtCalle.UnderlinedStyle = true;
-            txtCalle._TextChanged += ActivarBtnGuardar;
+            this.txtCalle.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCalle.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtCalle.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtCalle.BorderRadius = (0);
+            this.txtCalle.BorderSize = (2);
+            this.txtCalle.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtCalle.Location = (new global::System.Drawing.Point(649, 104));
+            this.txtCalle.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtCalle.Multiline = (false);
+            this.txtCalle.Name = ("txtCalle");
+            this.txtCalle.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtCalle.PasswordChar = (false);
+            this.txtCalle.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtCalle.PlaceholderText = ("Introduzca la calle");
+            this.txtCalle.Size = (new global::System.Drawing.Size(265, 48));
+            this.txtCalle.TabIndex = (8);
+            this.txtCalle.Texts = ("");
+            this.txtCalle.UnderlinedStyle = (true);
+            this.txtCalle._TextChanged += (this.ActivarBtnGuardar);
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(649, 71);
-            label10.Name = "label10";
-            label10.Size = new Size(75, 29);
-            label10.TabIndex = 15;
-            label10.Text = "Calle:";
+            this.label10.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = (true);
+            this.label10.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label10.Location = (new global::System.Drawing.Point(649, 71));
+            this.label10.Name = ("label10");
+            this.label10.Size = (new global::System.Drawing.Size(75, 29));
+            this.label10.TabIndex = (15);
+            this.label10.Text = ("Calle:");
             // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(649, 28);
-            label9.Name = "label9";
-            label9.Size = new Size(121, 29);
-            label9.TabIndex = 14;
-            label9.Text = "Dirección:";
+            this.label9.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = (true);
+            this.label9.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label9.Location = (new global::System.Drawing.Point(649, 28));
+            this.label9.Name = ("label9");
+            this.label9.Size = (new global::System.Drawing.Size(121, 29));
+            this.label9.TabIndex = (14);
+            this.label9.Text = ("Dirección:");
             // 
             // btnGuardar
             // 
-            btnGuardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGuardar.BackColor = SystemColors.Info;
-            btnGuardar.BackgroundColor = SystemColors.Info;
-            btnGuardar.BorderColor = Color.DarkSlateGray;
-            btnGuardar.BorderRadius = 10;
-            btnGuardar.BorderSize = 2;
-            btnGuardar.Enabled = false;
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.ForeColor = Color.Black;
-            btnGuardar.Location = new Point(690, 580);
-            btnGuardar.Margin = new Padding(3, 4, 3, 4);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(171, 53);
-            btnGuardar.TabIndex = 14;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.TextColor = Color.Black;
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += BtnGuardar_Click;
+            this.btnGuardar.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.btnGuardar.BackgroundColor = (global::System.Drawing.SystemColors.Info);
+            this.btnGuardar.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnGuardar.BorderRadius = (10);
+            this.btnGuardar.BorderSize = (2);
+            this.btnGuardar.Enabled = (false);
+            this.btnGuardar.FlatAppearance.BorderSize = (0);
+            this.btnGuardar.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnGuardar.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnGuardar.ForeColor = (global::System.Drawing.Color.Black);
+            this.btnGuardar.Location = (new global::System.Drawing.Point(690, 580));
+            this.btnGuardar.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnGuardar.Name = ("btnGuardar");
+            this.btnGuardar.Size = (new global::System.Drawing.Size(171, 53));
+            this.btnGuardar.TabIndex = (14);
+            this.btnGuardar.Text = ("Guardar");
+            this.btnGuardar.TextColor = (global::System.Drawing.Color.Black);
+            this.btnGuardar.UseVisualStyleBackColor = (false);
+            this.btnGuardar.Click += (this.BtnGuardar_Click);
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(18, 480);
-            label7.Name = "label7";
-            label7.Size = new Size(261, 29);
-            label7.TabIndex = 12;
-            label7.Text = "Monto total con interés:";
+            this.label7.AutoSize = (true);
+            this.label7.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label7.Location = (new global::System.Drawing.Point(18, 480));
+            this.label7.Name = ("label7");
+            this.label7.Size = (new global::System.Drawing.Size(261, 29));
+            this.label7.TabIndex = (12);
+            this.label7.Text = ("Monto total con interés:");
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(18, 408);
-            label6.Name = "label6";
-            label6.Size = new Size(119, 29);
-            label6.TabIndex = 10;
-            label6.Text = "Promotor:";
+            this.label6.AutoSize = (true);
+            this.label6.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label6.Location = (new global::System.Drawing.Point(18, 408));
+            this.label6.Name = ("label6");
+            this.label6.Size = (new global::System.Drawing.Size(119, 29));
+            this.label6.TabIndex = (10);
+            this.label6.Text = ("Promotor:");
             // 
             // cmbTipo
             // 
-            cmbTipo.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbTipo.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbTipo.BackColor = SystemColors.Info;
-            cmbTipo.BorderColor = Color.DarkSlateGray;
-            cmbTipo.BorderSize = 2;
-            cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTipo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbTipo.ForeColor = Color.Black;
-            cmbTipo.IconColor = Color.DarkSlateGray;
-            cmbTipo.Items.AddRange(new object[] { "Semanales", "Quincenales" });
-            cmbTipo.ListBackColor = SystemColors.Info;
-            cmbTipo.ListTextColor = Color.DimGray;
-            cmbTipo.Location = new Point(224, 325);
-            cmbTipo.Margin = new Padding(3, 4, 3, 4);
-            cmbTipo.MinimumSize = new Size(229, 40);
-            cmbTipo.Name = "cmbTipo";
-            cmbTipo.Padding = new Padding(2, 3, 2, 3);
-            cmbTipo.Size = new Size(361, 55);
-            cmbTipo.TabIndex = 5;
-            cmbTipo.Tag = "Selecciones un tipo de pago";
-            cmbTipo.Texts = "Seleccione un tipo de pago";
-            cmbTipo.OnSelectedIndexChanged += ActivarBtnCalcular;
+            this.cmbTipo.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.cmbTipo.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.cmbTipo.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbTipo.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbTipo.BorderSize = (2);
+            this.cmbTipo.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.cmbTipo.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.cmbTipo.ForeColor = (global::System.Drawing.Color.Black);
+            this.cmbTipo.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbTipo.Items.AddRange(new global::System.Object[] { "Semanales", "Quincenales" });
+            this.cmbTipo.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbTipo.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.cmbTipo.Location = (new global::System.Drawing.Point(224, 325));
+            this.cmbTipo.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.cmbTipo.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.cmbTipo.Name = ("cmbTipo");
+            this.cmbTipo.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.cmbTipo.Size = (new global::System.Drawing.Size(361, 55));
+            this.cmbTipo.TabIndex = (5);
+            this.cmbTipo.Tag = ("Selecciones un tipo de pago");
+            this.cmbTipo.Texts = ("Seleccione un tipo de pago");
+            this.cmbTipo.OnSelectedIndexChanged += (this.ActivarBtnCalcular);
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(18, 336);
-            label5.Name = "label5";
-            label5.Size = new Size(164, 29);
-            label5.TabIndex = 8;
-            label5.Text = "Tipo de pago:";
+            this.label5.AutoSize = (true);
+            this.label5.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label5.Location = (new global::System.Drawing.Point(18, 336));
+            this.label5.Name = ("label5");
+            this.label5.Size = (new global::System.Drawing.Size(164, 29));
+            this.label5.TabIndex = (8);
+            this.label5.Text = ("Tipo de pago:");
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(18, 264);
-            label4.Name = "label4";
-            label4.Size = new Size(92, 29);
-            label4.TabIndex = 6;
-            label4.Text = "Interés:";
+            this.label4.AutoSize = (true);
+            this.label4.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label4.Location = (new global::System.Drawing.Point(18, 264));
+            this.label4.Name = ("label4");
+            this.label4.Size = (new global::System.Drawing.Size(92, 29));
+            this.label4.TabIndex = (6);
+            this.label4.Text = ("Interés:");
             // 
             // dateFechaInicio
             // 
-            dateFechaInicio.BorderColor = Color.DarkSlateGray;
-            dateFechaInicio.BorderSize = 2;
-            dateFechaInicio.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateFechaInicio.Format = DateTimePickerFormat.Short;
-            dateFechaInicio.Location = new Point(224, 185);
-            dateFechaInicio.Margin = new Padding(3, 4, 3, 4);
-            dateFechaInicio.MinimumSize = new Size(4, 35);
-            dateFechaInicio.Name = "dateFechaInicio";
-            dateFechaInicio.Size = new Size(327, 35);
-            dateFechaInicio.SkinColor = SystemColors.Info;
-            dateFechaInicio.TabIndex = 3;
-            dateFechaInicio.TextColor = Color.Black;
+            this.dateFechaInicio.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.dateFechaInicio.BorderSize = (2);
+            this.dateFechaInicio.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.dateFechaInicio.Format = (global::System.Windows.Forms.DateTimePickerFormat.Short);
+            this.dateFechaInicio.Location = (new global::System.Drawing.Point(224, 185));
+            this.dateFechaInicio.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dateFechaInicio.MinimumSize = (new global::System.Drawing.Size(4, 35));
+            this.dateFechaInicio.Name = ("dateFechaInicio");
+            this.dateFechaInicio.Size = (new global::System.Drawing.Size(327, 35));
+            this.dateFechaInicio.SkinColor = (global::System.Drawing.SystemColors.Info);
+            this.dateFechaInicio.TabIndex = (3);
+            this.dateFechaInicio.TextColor = (global::System.Drawing.Color.Black);
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(18, 192);
-            label3.Name = "label3";
-            label3.Size = new Size(183, 29);
-            label3.TabIndex = 4;
-            label3.Text = "Fecha de inicio:";
+            this.label3.AutoSize = (true);
+            this.label3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label3.Location = (new global::System.Drawing.Point(18, 192));
+            this.label3.Name = ("label3");
+            this.label3.Size = (new global::System.Drawing.Size(183, 29));
+            this.label3.TabIndex = (4);
+            this.label3.Text = ("Fecha de inicio:");
             // 
             // txtCredito
             // 
-            txtCredito.BorderColor = Color.DarkSlateGray;
-            txtCredito.BorderFocusColor = SystemColors.Info;
-            txtCredito.BorderRadius = 0;
-            txtCredito.BorderSize = 2;
-            txtCredito.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCredito.Location = new Point(224, 111);
-            txtCredito.Margin = new Padding(3, 4, 3, 4);
-            txtCredito.Multiline = false;
-            txtCredito.Name = "txtCredito";
-            txtCredito.Padding = new Padding(11, 9, 11, 9);
-            txtCredito.PasswordChar = false;
-            txtCredito.PlaceholderColor = Color.DimGray;
-            txtCredito.PlaceholderText = "Introduzca monto total";
-            txtCredito.Size = new Size(406, 48);
-            txtCredito.TabIndex = 2;
-            txtCredito.Texts = "";
-            txtCredito.UnderlinedStyle = true;
-            txtCredito._TextChanged += ActivarBtnCalcular;
-            txtCredito.KeyPress += SoloNumerosDecimal;
+            this.txtCredito.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtCredito.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtCredito.BorderRadius = (0);
+            this.txtCredito.BorderSize = (2);
+            this.txtCredito.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtCredito.Location = (new global::System.Drawing.Point(224, 111));
+            this.txtCredito.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtCredito.Multiline = (false);
+            this.txtCredito.Name = ("txtCredito");
+            this.txtCredito.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtCredito.PasswordChar = (false);
+            this.txtCredito.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtCredito.PlaceholderText = ("Introduzca monto total");
+            this.txtCredito.Size = (new global::System.Drawing.Size(406, 48));
+            this.txtCredito.TabIndex = (2);
+            this.txtCredito.Texts = ("");
+            this.txtCredito.UnderlinedStyle = (true);
+            this.txtCredito._TextChanged += (this.ActivarBtnCalcular);
+            this.txtCredito.KeyPress += (this.SoloNumerosDecimal);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(18, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(199, 29);
-            label2.TabIndex = 2;
-            label2.Text = "Crédito prestado:";
+            this.label2.AutoSize = (true);
+            this.label2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label2.Location = (new global::System.Drawing.Point(18, 120));
+            this.label2.Name = ("label2");
+            this.label2.Size = (new global::System.Drawing.Size(199, 29));
+            this.label2.TabIndex = (2);
+            this.label2.Text = ("Crédito prestado:");
             // 
             // txtNombre
             // 
-            txtNombre.BorderColor = Color.DarkSlateGray;
-            txtNombre.BorderFocusColor = SystemColors.Info;
-            txtNombre.BorderRadius = 0;
-            txtNombre.BorderSize = 2;
-            txtNombre.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(224, 39);
-            txtNombre.Margin = new Padding(3, 4, 3, 4);
-            txtNombre.Multiline = false;
-            txtNombre.Name = "txtNombre";
-            txtNombre.Padding = new Padding(11, 9, 11, 9);
-            txtNombre.PasswordChar = false;
-            txtNombre.PlaceholderColor = Color.DimGray;
-            txtNombre.PlaceholderText = "Introduzca el nombre";
-            txtNombre.Size = new Size(401, 48);
-            txtNombre.TabIndex = 1;
-            txtNombre.Texts = "";
-            txtNombre.UnderlinedStyle = true;
-            txtNombre._TextChanged += ActivarBtnGuardar;
+            this.txtNombre.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.txtNombre.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.txtNombre.BorderRadius = (0);
+            this.txtNombre.BorderSize = (2);
+            this.txtNombre.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.txtNombre.Location = (new global::System.Drawing.Point(224, 39));
+            this.txtNombre.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.txtNombre.Multiline = (false);
+            this.txtNombre.Name = ("txtNombre");
+            this.txtNombre.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.txtNombre.PasswordChar = (false);
+            this.txtNombre.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.txtNombre.PlaceholderText = ("Introduzca el nombre");
+            this.txtNombre.Size = (new global::System.Drawing.Size(401, 48));
+            this.txtNombre.TabIndex = (1);
+            this.txtNombre.Texts = ("");
+            this.txtNombre.UnderlinedStyle = (true);
+            this.txtNombre._TextChanged += (this.ActivarBtnGuardar);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(18, 48);
-            label1.Name = "label1";
-            label1.Size = new Size(213, 29);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre completo:";
+            this.label1.AutoSize = (true);
+            this.label1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label1.Location = (new global::System.Drawing.Point(18, 48));
+            this.label1.Name = ("label1");
+            this.label1.Size = (new global::System.Drawing.Size(213, 29));
+            this.label1.TabIndex = (0);
+            this.label1.Text = ("Nombre completo:");
             // 
             // cmbPromotor
             // 
-            cmbPromotor.AutoCompleteCustomSource.AddRange(new string[] { "Ramona-la-nalgona", "Yael-el-licenciado" });
-            cmbPromotor.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbPromotor.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbPromotor.BackColor = SystemColors.Info;
-            cmbPromotor.BorderColor = Color.DarkSlateGray;
-            cmbPromotor.BorderSize = 2;
-            cmbPromotor.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbPromotor.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbPromotor.ForeColor = Color.Black;
-            cmbPromotor.IconColor = Color.DarkSlateGray;
-            cmbPromotor.Items.AddRange(new object[] { "Roberto", "Ramon" });
-            cmbPromotor.ListBackColor = SystemColors.Info;
-            cmbPromotor.ListTextColor = Color.DimGray;
-            cmbPromotor.Location = new Point(224, 397);
-            cmbPromotor.Margin = new Padding(3, 4, 3, 4);
-            cmbPromotor.MinimumSize = new Size(229, 40);
-            cmbPromotor.Name = "cmbPromotor";
-            cmbPromotor.Padding = new Padding(2, 3, 2, 3);
-            cmbPromotor.Size = new Size(361, 53);
-            cmbPromotor.TabIndex = 6;
-            cmbPromotor.Tag = "Seleccione al promotor";
-            cmbPromotor.Texts = "Seleccione al promotor";
-            cmbPromotor.OnSelectedIndexChanged += ActivarBtnGuardar;
+            this.cmbPromotor.AutoCompleteCustomSource.AddRange(new global::System.String[] { "Ramona-la-nalgona", "Yael-el-licenciado" });
+            this.cmbPromotor.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.cmbPromotor.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.cmbPromotor.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbPromotor.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbPromotor.BorderSize = (2);
+            this.cmbPromotor.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.cmbPromotor.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.cmbPromotor.ForeColor = (global::System.Drawing.Color.Black);
+            this.cmbPromotor.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbPromotor.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbPromotor.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.cmbPromotor.Location = (new global::System.Drawing.Point(224, 397));
+            this.cmbPromotor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.cmbPromotor.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.cmbPromotor.Name = ("cmbPromotor");
+            this.cmbPromotor.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.cmbPromotor.Size = (new global::System.Drawing.Size(361, 53));
+            this.cmbPromotor.TabIndex = (6);
+            this.cmbPromotor.Tag = ("Seleccione al promotor");
+            this.cmbPromotor.Texts = ("Seleccione al promotor");
+            this.cmbPromotor.OnSelectedIndexChanged += (this.ActivarBtnGuardar);
             // 
             // pnlListas
             // 
-            pnlListas.BackColor = SystemColors.Info;
-            pnlListas.Controls.Add(flowLayoutPanel3);
-            pnlListas.Controls.Add(flowLayoutPanel2);
-            pnlListas.Controls.Add(flowLayoutPanel1);
-            pnlListas.Controls.Add(gridListas);
-            pnlListas.Controls.Add(label8);
-            pnlListas.Dock = DockStyle.Fill;
-            pnlListas.Location = new Point(263, 80);
-            pnlListas.Margin = new Padding(3, 4, 3, 4);
-            pnlListas.Name = "pnlListas";
-            pnlListas.Size = new Size(979, 661);
-            pnlListas.TabIndex = 14;
+            this.pnlListas.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.pnlListas.Controls.Add(this.flowLayoutPanel3);
+            this.pnlListas.Controls.Add(this.flowLayoutPanel2);
+            this.pnlListas.Controls.Add(this.flowLayoutPanel1);
+            this.pnlListas.Controls.Add(this.gridListas);
+            this.pnlListas.Controls.Add(this.label8);
+            this.pnlListas.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pnlListas.Location = (new global::System.Drawing.Point(263, 80));
+            this.pnlListas.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pnlListas.Name = ("pnlListas");
+            this.pnlListas.Size = (new global::System.Drawing.Size(979, 661));
+            this.pnlListas.TabIndex = (14);
             // 
             // flowLayoutPanel3
             // 
-            flowLayoutPanel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            flowLayoutPanel3.Controls.Add(cmbCliente);
-            flowLayoutPanel3.Location = new Point(292, 583);
-            flowLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(371, 60);
-            flowLayoutPanel3.TabIndex = 23;
+            this.flowLayoutPanel3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel3.Controls.Add(this.cmbCliente);
+            this.flowLayoutPanel3.Location = (new global::System.Drawing.Point(292, 583));
+            this.flowLayoutPanel3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.flowLayoutPanel3.Name = ("flowLayoutPanel3");
+            this.flowLayoutPanel3.Size = (new global::System.Drawing.Size(371, 60));
+            this.flowLayoutPanel3.TabIndex = (23);
             // 
             // cmbCliente
             // 
-            cmbCliente.AllowDrop = true;
-            cmbCliente.AutoCompleteCustomSource.AddRange(new string[] { "Ramona-la-nalgona", "Yael-el-licenciado" });
-            cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbCliente.BackColor = SystemColors.Info;
-            cmbCliente.BorderColor = Color.DarkSlateGray;
-            cmbCliente.BorderSize = 2;
-            cmbCliente.DropDownStyle = ComboBoxStyle.DropDown;
-            cmbCliente.Enabled = false;
-            cmbCliente.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbCliente.ForeColor = Color.Black;
-            cmbCliente.IconColor = Color.DarkSlateGray;
-            cmbCliente.ListBackColor = SystemColors.Info;
-            cmbCliente.ListTextColor = Color.DimGray;
-            cmbCliente.Location = new Point(3, 4);
-            cmbCliente.Margin = new Padding(3, 4, 3, 4);
-            cmbCliente.MinimumSize = new Size(229, 40);
-            cmbCliente.Name = "cmbCliente";
-            cmbCliente.Padding = new Padding(2, 3, 2, 3);
-            cmbCliente.Size = new Size(361, 53);
-            cmbCliente.TabIndex = 22;
-            cmbCliente.Tag = "Seleccione un cliente";
-            cmbCliente.Texts = "Seleccione un cliente";
-            cmbCliente.OnSelectedIndexChanged += CmbCliente_OnSelectedIndexChanged;
+            this.cmbCliente.AllowDrop = (true);
+            this.cmbCliente.AutoCompleteCustomSource.AddRange(new global::System.String[] { "Ramona-la-nalgona", "Yael-el-licenciado" });
+            this.cmbCliente.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.cmbCliente.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.cmbCliente.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbCliente.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbCliente.BorderSize = (2);
+            this.cmbCliente.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDown);
+            this.cmbCliente.Enabled = (false);
+            this.cmbCliente.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.cmbCliente.ForeColor = (global::System.Drawing.Color.Black);
+            this.cmbCliente.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbCliente.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbCliente.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.cmbCliente.Location = (new global::System.Drawing.Point(3, 4));
+            this.cmbCliente.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.cmbCliente.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.cmbCliente.Name = ("cmbCliente");
+            this.cmbCliente.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.cmbCliente.Size = (new global::System.Drawing.Size(361, 53));
+            this.cmbCliente.TabIndex = (22);
+            this.cmbCliente.Tag = ("Seleccione un cliente");
+            this.cmbCliente.Texts = ("Seleccione un cliente");
+            this.cmbCliente.OnSelectedIndexChanged += (this.CmbCliente_OnSelectedIndexChanged);
             // 
             // flowLayoutPanel2
             // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            flowLayoutPanel2.Controls.Add(btnEditar);
-            flowLayoutPanel2.Controls.Add(btnEliminar);
-            flowLayoutPanel2.Location = new Point(670, 575);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(272, 75);
-            flowLayoutPanel2.TabIndex = 21;
+            this.flowLayoutPanel2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Controls.Add(this.btnEditar);
+            this.flowLayoutPanel2.Controls.Add(this.btnEliminar);
+            this.flowLayoutPanel2.Location = (new global::System.Drawing.Point(670, 575));
+            this.flowLayoutPanel2.Name = ("flowLayoutPanel2");
+            this.flowLayoutPanel2.Size = (new global::System.Drawing.Size(272, 75));
+            this.flowLayoutPanel2.TabIndex = (21);
             // 
             // btnEditar
             // 
-            btnEditar.Anchor = AnchorStyles.Bottom;
-            btnEditar.BackColor = Color.Teal;
-            btnEditar.BackgroundColor = Color.Teal;
-            btnEditar.BorderColor = Color.Teal;
-            btnEditar.BorderRadius = 15;
-            btnEditar.BorderSize = 2;
-            btnEditar.Enabled = false;
-            btnEditar.FlatAppearance.BorderSize = 0;
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.ForeColor = Color.Transparent;
-            btnEditar.Location = new Point(3, 4);
-            btnEditar.Margin = new Padding(3, 4, 3, 4);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(127, 68);
-            btnEditar.TabIndex = 18;
-            btnEditar.Text = "Editar\r\ncliente\r\n";
-            btnEditar.TextColor = Color.Transparent;
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += BtnEditar_Click;
+            this.btnEditar.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom);
+            this.btnEditar.BackColor = (global::System.Drawing.Color.Teal);
+            this.btnEditar.BackgroundColor = (global::System.Drawing.Color.Teal);
+            this.btnEditar.BorderColor = (global::System.Drawing.Color.Teal);
+            this.btnEditar.BorderRadius = (15);
+            this.btnEditar.BorderSize = (2);
+            this.btnEditar.Enabled = (false);
+            this.btnEditar.FlatAppearance.BorderSize = (0);
+            this.btnEditar.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnEditar.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnEditar.ForeColor = (global::System.Drawing.Color.Transparent);
+            this.btnEditar.Location = (new global::System.Drawing.Point(3, 4));
+            this.btnEditar.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnEditar.Name = ("btnEditar");
+            this.btnEditar.Size = (new global::System.Drawing.Size(127, 68));
+            this.btnEditar.TabIndex = (18);
+            this.btnEditar.Text = ("Editar\r\ncliente\r\n");
+            this.btnEditar.TextColor = (global::System.Drawing.Color.Transparent);
+            this.btnEditar.UseVisualStyleBackColor = (false);
+            this.btnEditar.Click += (this.BtnEditar_Click);
             // 
             // btnEliminar
             // 
-            btnEliminar.Anchor = AnchorStyles.Bottom;
-            btnEliminar.BackColor = Color.SteelBlue;
-            btnEliminar.BackgroundColor = Color.SteelBlue;
-            btnEliminar.BorderColor = Color.SteelBlue;
-            btnEliminar.BorderRadius = 15;
-            btnEliminar.BorderSize = 2;
-            btnEliminar.Enabled = false;
-            btnEliminar.FlatAppearance.BorderSize = 0;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.Transparent;
-            btnEliminar.Location = new Point(136, 5);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(127, 67);
-            btnEliminar.TabIndex = 19;
-            btnEliminar.Text = "Eliminar\r\ncliente\r\n";
-            btnEliminar.TextColor = Color.Transparent;
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += BtnEliminar_Click;
+            this.btnEliminar.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom);
+            this.btnEliminar.BackColor = (global::System.Drawing.Color.SteelBlue);
+            this.btnEliminar.BackgroundColor = (global::System.Drawing.Color.SteelBlue);
+            this.btnEliminar.BorderColor = (global::System.Drawing.Color.SteelBlue);
+            this.btnEliminar.BorderRadius = (15);
+            this.btnEliminar.BorderSize = (2);
+            this.btnEliminar.Enabled = (false);
+            this.btnEliminar.FlatAppearance.BorderSize = (0);
+            this.btnEliminar.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnEliminar.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnEliminar.ForeColor = (global::System.Drawing.Color.Transparent);
+            this.btnEliminar.Location = (new global::System.Drawing.Point(136, 5));
+            this.btnEliminar.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnEliminar.Name = ("btnEliminar");
+            this.btnEliminar.Size = (new global::System.Drawing.Size(127, 67));
+            this.btnEliminar.TabIndex = (19);
+            this.btnEliminar.Text = ("Eliminar\r\ncliente\r\n");
+            this.btnEliminar.TextColor = (global::System.Drawing.Color.Transparent);
+            this.btnEliminar.UseVisualStyleBackColor = (false);
+            this.btnEliminar.Click += (this.BtnEliminar_Click);
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            flowLayoutPanel1.Controls.Add(btnLista1);
-            flowLayoutPanel1.Controls.Add(btnLista2);
-            flowLayoutPanel1.Controls.Add(btnLista3);
-            flowLayoutPanel1.Controls.Add(btnMostrarTodos);
-            flowLayoutPanel1.Controls.Add(btnLiquidados);
-            flowLayoutPanel1.Controls.Add(rjButton1);
-            flowLayoutPanel1.Location = new Point(528, 3);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(426, 159);
-            flowLayoutPanel1.TabIndex = 20;
+            this.flowLayoutPanel1.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.btnLista1);
+            this.flowLayoutPanel1.Controls.Add(this.btnLista2);
+            this.flowLayoutPanel1.Controls.Add(this.btnLista3);
+            this.flowLayoutPanel1.Controls.Add(this.btnMostrarTodos);
+            this.flowLayoutPanel1.Controls.Add(this.btnLiquidados);
+            this.flowLayoutPanel1.Controls.Add(this.rjButton1);
+            this.flowLayoutPanel1.Location = (new global::System.Drawing.Point(528, 3));
+            this.flowLayoutPanel1.Name = ("flowLayoutPanel1");
+            this.flowLayoutPanel1.Size = (new global::System.Drawing.Size(426, 159));
+            this.flowLayoutPanel1.TabIndex = (20);
             // 
             // btnLista1
             // 
-            btnLista1.Anchor = AnchorStyles.Top;
-            btnLista1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnLista1.BackColor = Color.DarkSlateGray;
-            btnLista1.BackgroundColor = Color.DarkSlateGray;
-            btnLista1.BorderColor = Color.DarkSlateGray;
-            btnLista1.BorderRadius = 15;
-            btnLista1.BorderSize = 2;
-            btnLista1.FlatAppearance.BorderSize = 0;
-            btnLista1.FlatStyle = FlatStyle.Flat;
-            btnLista1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLista1.ForeColor = Color.Transparent;
-            btnLista1.Location = new Point(3, 4);
-            btnLista1.Margin = new Padding(3, 4, 3, 4);
-            btnLista1.Name = "btnLista1";
-            btnLista1.Size = new Size(127, 73);
-            btnLista1.TabIndex = 0;
-            btnLista1.Text = "Lista 1:\r\nIniciación";
-            btnLista1.TextColor = Color.Transparent;
-            btnLista1.UseVisualStyleBackColor = false;
-            btnLista1.Click += BtnLista1_Click;
+            this.btnLista1.Anchor = (global::System.Windows.Forms.AnchorStyles.Top);
+            this.btnLista1.AutoSizeMode = (global::System.Windows.Forms.AutoSizeMode.GrowAndShrink);
+            this.btnLista1.BackColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnLista1.BackgroundColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnLista1.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnLista1.BorderRadius = (15);
+            this.btnLista1.BorderSize = (2);
+            this.btnLista1.FlatAppearance.BorderSize = (0);
+            this.btnLista1.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnLista1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnLista1.ForeColor = (global::System.Drawing.Color.Transparent);
+            this.btnLista1.Location = (new global::System.Drawing.Point(3, 4));
+            this.btnLista1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnLista1.Name = ("btnLista1");
+            this.btnLista1.Size = (new global::System.Drawing.Size(127, 73));
+            this.btnLista1.TabIndex = (0);
+            this.btnLista1.Text = ("Lista 1:\r\nIniciación");
+            this.btnLista1.TextColor = (global::System.Drawing.Color.Transparent);
+            this.btnLista1.UseVisualStyleBackColor = (false);
+            this.btnLista1.Click += (this.BtnLista1_Click);
             // 
             // btnLista2
             // 
-            btnLista2.Anchor = AnchorStyles.Top;
-            btnLista2.BackColor = Color.Teal;
-            btnLista2.BackgroundColor = Color.Teal;
-            btnLista2.BorderColor = Color.Teal;
-            btnLista2.BorderRadius = 15;
-            btnLista2.BorderSize = 2;
-            btnLista2.FlatAppearance.BorderSize = 0;
-            btnLista2.FlatStyle = FlatStyle.Flat;
-            btnLista2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLista2.ForeColor = Color.Transparent;
-            btnLista2.Location = new Point(136, 4);
-            btnLista2.Margin = new Padding(3, 4, 3, 4);
-            btnLista2.Name = "btnLista2";
-            btnLista2.Size = new Size(127, 73);
-            btnLista2.TabIndex = 1;
-            btnLista2.Text = "Lista 2:\r\nExtrajudicial";
-            btnLista2.TextColor = Color.Transparent;
-            btnLista2.UseVisualStyleBackColor = false;
-            btnLista2.Click += BtnLista2_Click;
+            this.btnLista2.Anchor = (global::System.Windows.Forms.AnchorStyles.Top);
+            this.btnLista2.BackColor = (global::System.Drawing.Color.Teal);
+            this.btnLista2.BackgroundColor = (global::System.Drawing.Color.Teal);
+            this.btnLista2.BorderColor = (global::System.Drawing.Color.Teal);
+            this.btnLista2.BorderRadius = (15);
+            this.btnLista2.BorderSize = (2);
+            this.btnLista2.FlatAppearance.BorderSize = (0);
+            this.btnLista2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnLista2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnLista2.ForeColor = (global::System.Drawing.Color.Transparent);
+            this.btnLista2.Location = (new global::System.Drawing.Point(136, 4));
+            this.btnLista2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnLista2.Name = ("btnLista2");
+            this.btnLista2.Size = (new global::System.Drawing.Size(127, 73));
+            this.btnLista2.TabIndex = (1);
+            this.btnLista2.Text = ("Lista 2:\r\nExtrajudicial");
+            this.btnLista2.TextColor = (global::System.Drawing.Color.Transparent);
+            this.btnLista2.UseVisualStyleBackColor = (false);
+            this.btnLista2.Click += (this.BtnLista2_Click);
             // 
             // btnLista3
             // 
-            btnLista3.Anchor = AnchorStyles.Top;
-            btnLista3.BackColor = Color.SteelBlue;
-            btnLista3.BackgroundColor = Color.SteelBlue;
-            btnLista3.BorderColor = Color.SteelBlue;
-            btnLista3.BorderRadius = 15;
-            btnLista3.BorderSize = 2;
-            btnLista3.FlatAppearance.BorderSize = 0;
-            btnLista3.FlatStyle = FlatStyle.Flat;
-            btnLista3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLista3.ForeColor = Color.Transparent;
-            btnLista3.Location = new Point(269, 4);
-            btnLista3.Margin = new Padding(3, 4, 3, 4);
-            btnLista3.Name = "btnLista3";
-            btnLista3.Size = new Size(145, 73);
-            btnLista3.TabIndex = 2;
-            btnLista3.Text = "Lista 3:\r\nDemanda legal";
-            btnLista3.TextColor = Color.Transparent;
-            btnLista3.UseVisualStyleBackColor = false;
-            btnLista3.Click += BtnLista3_Click;
+            this.btnLista3.Anchor = (global::System.Windows.Forms.AnchorStyles.Top);
+            this.btnLista3.BackColor = (global::System.Drawing.Color.SteelBlue);
+            this.btnLista3.BackgroundColor = (global::System.Drawing.Color.SteelBlue);
+            this.btnLista3.BorderColor = (global::System.Drawing.Color.SteelBlue);
+            this.btnLista3.BorderRadius = (15);
+            this.btnLista3.BorderSize = (2);
+            this.btnLista3.FlatAppearance.BorderSize = (0);
+            this.btnLista3.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnLista3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnLista3.ForeColor = (global::System.Drawing.Color.Transparent);
+            this.btnLista3.Location = (new global::System.Drawing.Point(269, 4));
+            this.btnLista3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnLista3.Name = ("btnLista3");
+            this.btnLista3.Size = (new global::System.Drawing.Size(145, 73));
+            this.btnLista3.TabIndex = (2);
+            this.btnLista3.Text = ("Lista 3:\r\nDemanda legal");
+            this.btnLista3.TextColor = (global::System.Drawing.Color.Transparent);
+            this.btnLista3.UseVisualStyleBackColor = (false);
+            this.btnLista3.Click += (this.BtnLista3_Click);
             // 
             // btnMostrarTodos
             // 
-            btnMostrarTodos.Anchor = AnchorStyles.Top;
-            btnMostrarTodos.BackColor = Color.DarkSlateGray;
-            btnMostrarTodos.BackgroundColor = Color.DarkSlateGray;
-            btnMostrarTodos.BorderColor = Color.DarkSlateGray;
-            btnMostrarTodos.BorderRadius = 15;
-            btnMostrarTodos.BorderSize = 2;
-            btnMostrarTodos.FlatAppearance.BorderSize = 0;
-            btnMostrarTodos.FlatStyle = FlatStyle.Flat;
-            btnMostrarTodos.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMostrarTodos.ForeColor = Color.Transparent;
-            btnMostrarTodos.Location = new Point(3, 85);
-            btnMostrarTodos.Margin = new Padding(3, 4, 3, 4);
-            btnMostrarTodos.Name = "btnMostrarTodos";
-            btnMostrarTodos.Size = new Size(127, 75);
-            btnMostrarTodos.TabIndex = 14;
-            btnMostrarTodos.Text = "Mostrar\r\ntodos";
-            btnMostrarTodos.TextColor = Color.Transparent;
-            btnMostrarTodos.UseVisualStyleBackColor = false;
-            btnMostrarTodos.Click += BtnMostrarTodos_Click;
+            this.btnMostrarTodos.Anchor = (global::System.Windows.Forms.AnchorStyles.Top);
+            this.btnMostrarTodos.BackColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnMostrarTodos.BackgroundColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnMostrarTodos.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnMostrarTodos.BorderRadius = (15);
+            this.btnMostrarTodos.BorderSize = (2);
+            this.btnMostrarTodos.FlatAppearance.BorderSize = (0);
+            this.btnMostrarTodos.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnMostrarTodos.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnMostrarTodos.ForeColor = (global::System.Drawing.Color.Transparent);
+            this.btnMostrarTodos.Location = (new global::System.Drawing.Point(3, 85));
+            this.btnMostrarTodos.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnMostrarTodos.Name = ("btnMostrarTodos");
+            this.btnMostrarTodos.Size = (new global::System.Drawing.Size(127, 75));
+            this.btnMostrarTodos.TabIndex = (14);
+            this.btnMostrarTodos.Text = ("Mostrar\r\ntodos");
+            this.btnMostrarTodos.TextColor = (global::System.Drawing.Color.Transparent);
+            this.btnMostrarTodos.UseVisualStyleBackColor = (false);
+            this.btnMostrarTodos.Click += (this.BtnMostrarTodos_Click);
             // 
             // btnLiquidados
             // 
-            btnLiquidados.Anchor = AnchorStyles.Top;
-            btnLiquidados.BackColor = Color.Teal;
-            btnLiquidados.BackgroundColor = Color.Teal;
-            btnLiquidados.BorderColor = Color.Teal;
-            btnLiquidados.BorderRadius = 15;
-            btnLiquidados.BorderSize = 2;
-            btnLiquidados.FlatAppearance.BorderSize = 0;
-            btnLiquidados.FlatStyle = FlatStyle.Flat;
-            btnLiquidados.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLiquidados.ForeColor = Color.Transparent;
-            btnLiquidados.Location = new Point(136, 85);
-            btnLiquidados.Margin = new Padding(3, 4, 3, 4);
-            btnLiquidados.Name = "btnLiquidados";
-            btnLiquidados.Size = new Size(127, 71);
-            btnLiquidados.TabIndex = 15;
-            btnLiquidados.Text = "Clientes\r\nliquidados";
-            btnLiquidados.TextColor = Color.Transparent;
-            btnLiquidados.UseVisualStyleBackColor = false;
-            btnLiquidados.Click += BtnLiquidados_Click;
+            this.btnLiquidados.Anchor = (global::System.Windows.Forms.AnchorStyles.Top);
+            this.btnLiquidados.BackColor = (global::System.Drawing.Color.Teal);
+            this.btnLiquidados.BackgroundColor = (global::System.Drawing.Color.Teal);
+            this.btnLiquidados.BorderColor = (global::System.Drawing.Color.Teal);
+            this.btnLiquidados.BorderRadius = (15);
+            this.btnLiquidados.BorderSize = (2);
+            this.btnLiquidados.FlatAppearance.BorderSize = (0);
+            this.btnLiquidados.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnLiquidados.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnLiquidados.ForeColor = (global::System.Drawing.Color.Transparent);
+            this.btnLiquidados.Location = (new global::System.Drawing.Point(136, 85));
+            this.btnLiquidados.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnLiquidados.Name = ("btnLiquidados");
+            this.btnLiquidados.Size = (new global::System.Drawing.Size(127, 71));
+            this.btnLiquidados.TabIndex = (15);
+            this.btnLiquidados.Text = ("Clientes\r\nliquidados");
+            this.btnLiquidados.TextColor = (global::System.Drawing.Color.Transparent);
+            this.btnLiquidados.UseVisualStyleBackColor = (false);
+            this.btnLiquidados.Click += (this.BtnLiquidados_Click);
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.MediumSlateBlue;
-            rjButton1.BackgroundColor = Color.MediumSlateBlue;
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 20;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(269, 84);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(144, 72);
-            rjButton1.TabIndex = 16;
-            rjButton1.Text = "Exportar";
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += rjButton1_Click_1;
+            this.rjButton1.BackColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton1.BackgroundColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton1.BorderColor = (global::System.Drawing.Color.PaleVioletRed);
+            this.rjButton1.BorderRadius = (20);
+            this.rjButton1.BorderSize = (0);
+            this.rjButton1.FlatAppearance.BorderSize = (0);
+            this.rjButton1.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.rjButton1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton1.ForeColor = (global::System.Drawing.Color.White);
+            this.rjButton1.Location = (new global::System.Drawing.Point(269, 84));
+            this.rjButton1.Name = ("rjButton1");
+            this.rjButton1.Size = (new global::System.Drawing.Size(144, 72));
+            this.rjButton1.TabIndex = (16);
+            this.rjButton1.Text = ("Exportar");
+            this.rjButton1.TextColor = (global::System.Drawing.Color.White);
+            this.rjButton1.UseVisualStyleBackColor = (false);
+            this.rjButton1.Click += (this.RjButton1_Click_1);
             // 
             // gridListas
             // 
-            gridListas.AllowUserToAddRows = false;
-            gridListas.AllowUserToDeleteRows = false;
-            gridListas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            gridListas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            gridListas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            gridListas.BackgroundColor = Color.DarkCyan;
-            gridListas.BorderStyle = BorderStyle.None;
-            gridListas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Info;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            gridListas.ColumnHeadersHeight = 30;
-            gridListas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            gridListas.EnableHeadersVisualStyles = false;
-            gridListas.GridColor = Color.CadetBlue;
-            gridListas.Location = new Point(18, 169);
-            gridListas.Margin = new Padding(3, 4, 3, 4);
-            gridListas.Name = "gridListas";
-            gridListas.ReadOnly = true;
-            gridListas.RowHeadersVisible = false;
-            gridListas.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = Color.CadetBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Info;
-            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            gridListas.RowTemplate.Height = 25;
-            gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridListas.Size = new Size(912, 389);
-            gridListas.TabIndex = 16;
+            this.gridListas.AllowUserToAddRows = (false);
+            this.gridListas.AllowUserToDeleteRows = (false);
+            this.gridListas.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.gridListas.AutoSizeColumnsMode = (global::System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells);
+            this.gridListas.AutoSizeRowsMode = (global::System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells);
+            this.gridListas.BackgroundColor = (global::System.Drawing.Color.DarkCyan);
+            this.gridListas.BorderStyle = (global::System.Windows.Forms.BorderStyle.None);
+            this.gridListas.CellBorderStyle = (global::System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal);
+            this.gridListas.ColumnHeadersBorderStyle = (global::System.Windows.Forms.DataGridViewHeaderBorderStyle.None);
+            dataGridViewCellStyle1.Alignment = (global::System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter);
+            dataGridViewCellStyle1.BackColor = (global::System.Drawing.SystemColors.HotTrack);
+            dataGridViewCellStyle1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            dataGridViewCellStyle1.ForeColor = (global::System.Drawing.SystemColors.Info);
+            dataGridViewCellStyle1.SelectionBackColor = (global::System.Drawing.Color.RoyalBlue);
+            dataGridViewCellStyle1.SelectionForeColor = (global::System.Drawing.SystemColors.Info);
+            dataGridViewCellStyle1.WrapMode = (global::System.Windows.Forms.DataGridViewTriState.True);
+            this.gridListas.ColumnHeadersDefaultCellStyle = (dataGridViewCellStyle1);
+            this.gridListas.ColumnHeadersHeight = (30);
+            this.gridListas.ColumnHeadersHeightSizeMode = (global::System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing);
+            this.gridListas.EnableHeadersVisualStyles = (false);
+            this.gridListas.GridColor = (global::System.Drawing.Color.CadetBlue);
+            this.gridListas.Location = (new global::System.Drawing.Point(18, 169));
+            this.gridListas.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.gridListas.Name = ("gridListas");
+            this.gridListas.ReadOnly = (true);
+            this.gridListas.RowHeadersVisible = (false);
+            this.gridListas.RowHeadersWidth = (51);
+            dataGridViewCellStyle2.BackColor = (global::System.Drawing.Color.DarkCyan);
+            dataGridViewCellStyle2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            dataGridViewCellStyle2.ForeColor = (global::System.Drawing.SystemColors.Info);
+            dataGridViewCellStyle2.SelectionBackColor = (global::System.Drawing.Color.CadetBlue);
+            dataGridViewCellStyle2.SelectionForeColor = (global::System.Drawing.SystemColors.Info);
+            this.gridListas.RowsDefaultCellStyle = (dataGridViewCellStyle2);
+            this.gridListas.RowTemplate.Height = (25);
+            this.gridListas.SelectionMode = (global::System.Windows.Forms.DataGridViewSelectionMode.CellSelect);
+            this.gridListas.Size = (new global::System.Drawing.Size(912, 389));
+            this.gridListas.TabIndex = (16);
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(199, 9);
-            label8.Name = "label8";
-            label8.Size = new Size(320, 39);
-            label8.TabIndex = 13;
-            label8.Text = "Seleccione la lista:";
+            this.label8.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = (true);
+            this.label8.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 19.8000011F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label8.Location = (new global::System.Drawing.Point(199, 9));
+            this.label8.Name = ("label8");
+            this.label8.Size = (new global::System.Drawing.Size(320, 39));
+            this.label8.TabIndex = (13);
+            this.label8.Text = ("Seleccione la lista:");
             // 
             // PanelEditar
             // 
-            PanelEditar.BackColor = SystemColors.Info;
-            PanelEditar.Controls.Add(dateTimeLimite);
-            PanelEditar.Controls.Add(LabelLimite);
-            PanelEditar.Controls.Add(textBoxPersonalizado7);
-            PanelEditar.Controls.Add(label25);
-            PanelEditar.Controls.Add(textBoxPersonalizado8);
-            PanelEditar.Controls.Add(label27);
-            PanelEditar.Controls.Add(LblPerte);
-            PanelEditar.Controls.Add(label26);
-            PanelEditar.Controls.Add(btnGuardarCambio);
-            PanelEditar.Controls.Add(groupBox1);
-            PanelEditar.Controls.Add(textBoxPersonalizado1);
-            PanelEditar.Controls.Add(label18);
-            PanelEditar.Controls.Add(textBoxPersonalizado2);
-            PanelEditar.Controls.Add(label20);
-            PanelEditar.Controls.Add(textBoxPersonalizado3);
-            PanelEditar.Controls.Add(label21);
-            PanelEditar.Controls.Add(textBoxPersonalizado4);
-            PanelEditar.Controls.Add(label22);
-            PanelEditar.Controls.Add(textBoxPersonalizado5);
-            PanelEditar.Controls.Add(label23);
-            PanelEditar.Controls.Add(textBoxPersonalizado6);
-            PanelEditar.Controls.Add(label24);
-            PanelEditar.Controls.Add(rjComboBox1);
-            PanelEditar.Controls.Add(label28);
-            PanelEditar.Controls.Add(rjComboBox2);
-            PanelEditar.Controls.Add(label30);
-            PanelEditar.Controls.Add(label31);
-            PanelEditar.Controls.Add(dateTimePickerPersonalizado1);
-            PanelEditar.Controls.Add(label32);
-            PanelEditar.Controls.Add(textBoxPersonalizado9);
-            PanelEditar.Controls.Add(label33);
-            PanelEditar.Controls.Add(textBoxPersonalizado10);
-            PanelEditar.Controls.Add(label34);
-            PanelEditar.Controls.Add(rjComboBox3);
-            PanelEditar.Dock = DockStyle.Fill;
-            PanelEditar.Location = new Point(263, 80);
-            PanelEditar.Name = "PanelEditar";
-            PanelEditar.Size = new Size(979, 661);
-            PanelEditar.TabIndex = 24;
+            this.PanelEditar.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.PanelEditar.Controls.Add(this.dateTimeLimite);
+            this.PanelEditar.Controls.Add(this.LabelLimite);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado7);
+            this.PanelEditar.Controls.Add(this.label25);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado8);
+            this.PanelEditar.Controls.Add(this.label27);
+            this.PanelEditar.Controls.Add(this.LblPerte);
+            this.PanelEditar.Controls.Add(this.label26);
+            this.PanelEditar.Controls.Add(this.btnGuardarCambio);
+            this.PanelEditar.Controls.Add(this.groupBox1);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado1);
+            this.PanelEditar.Controls.Add(this.label18);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado2);
+            this.PanelEditar.Controls.Add(this.label20);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado3);
+            this.PanelEditar.Controls.Add(this.label21);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado4);
+            this.PanelEditar.Controls.Add(this.label22);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado5);
+            this.PanelEditar.Controls.Add(this.label23);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado6);
+            this.PanelEditar.Controls.Add(this.label24);
+            this.PanelEditar.Controls.Add(this.rjComboBox1);
+            this.PanelEditar.Controls.Add(this.label28);
+            this.PanelEditar.Controls.Add(this.rjComboBox2);
+            this.PanelEditar.Controls.Add(this.label30);
+            this.PanelEditar.Controls.Add(this.label31);
+            this.PanelEditar.Controls.Add(this.dateTimePickerPersonalizado1);
+            this.PanelEditar.Controls.Add(this.label32);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado9);
+            this.PanelEditar.Controls.Add(this.label33);
+            this.PanelEditar.Controls.Add(this.textBoxPersonalizado10);
+            this.PanelEditar.Controls.Add(this.label34);
+            this.PanelEditar.Controls.Add(this.rjComboBox3);
+            this.PanelEditar.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.PanelEditar.Location = (new global::System.Drawing.Point(263, 80));
+            this.PanelEditar.Name = ("PanelEditar");
+            this.PanelEditar.Size = (new global::System.Drawing.Size(979, 661));
+            this.PanelEditar.TabIndex = (24);
             // 
             // dateTimeLimite
             // 
-            dateTimeLimite.BorderColor = Color.DarkSlateGray;
-            dateTimeLimite.BorderSize = 2;
-            dateTimeLimite.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimeLimite.Format = DateTimePickerFormat.Short;
-            dateTimeLimite.Location = new Point(199, 513);
-            dateTimeLimite.Margin = new Padding(3, 4, 3, 4);
-            dateTimeLimite.MinimumSize = new Size(4, 35);
-            dateTimeLimite.Name = "dateTimeLimite";
-            dateTimeLimite.Size = new Size(327, 35);
-            dateTimeLimite.SkinColor = SystemColors.Info;
-            dateTimeLimite.TabIndex = 84;
-            dateTimeLimite.TextColor = Color.Black;
+            this.dateTimeLimite.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.dateTimeLimite.BorderSize = (2);
+            this.dateTimeLimite.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.dateTimeLimite.Format = (global::System.Windows.Forms.DateTimePickerFormat.Short);
+            this.dateTimeLimite.Location = (new global::System.Drawing.Point(199, 513));
+            this.dateTimeLimite.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dateTimeLimite.MinimumSize = (new global::System.Drawing.Size(4, 35));
+            this.dateTimeLimite.Name = ("dateTimeLimite");
+            this.dateTimeLimite.Size = (new global::System.Drawing.Size(327, 35));
+            this.dateTimeLimite.SkinColor = (global::System.Drawing.SystemColors.Info);
+            this.dateTimeLimite.TabIndex = (84);
+            this.dateTimeLimite.TextColor = (global::System.Drawing.Color.Black);
             // 
             // LabelLimite
             // 
-            LabelLimite.AutoSize = true;
-            LabelLimite.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelLimite.Location = new Point(8, 513);
-            LabelLimite.Name = "LabelLimite";
-            LabelLimite.Size = new Size(151, 29);
-            LabelLimite.TabIndex = 83;
-            LabelLimite.Text = "Fecha Limite";
+            this.LabelLimite.AutoSize = (true);
+            this.LabelLimite.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.LabelLimite.Location = (new global::System.Drawing.Point(8, 513));
+            this.LabelLimite.Name = ("LabelLimite");
+            this.LabelLimite.Size = (new global::System.Drawing.Size(151, 29));
+            this.LabelLimite.TabIndex = (83);
+            this.LabelLimite.Text = ("Fecha Limite");
             // 
             // textBoxPersonalizado7
             // 
-            textBoxPersonalizado7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxPersonalizado7.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado7.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado7.BorderRadius = 0;
-            textBoxPersonalizado7.BorderSize = 2;
-            textBoxPersonalizado7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado7.Location = new Point(620, 528);
-            textBoxPersonalizado7.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado7.Multiline = false;
-            textBoxPersonalizado7.Name = "textBoxPersonalizado7";
-            textBoxPersonalizado7.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado7.PasswordChar = false;
-            textBoxPersonalizado7.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado7.PlaceholderText = "";
-            textBoxPersonalizado7.Size = new Size(283, 48);
-            textBoxPersonalizado7.TabIndex = 82;
-            textBoxPersonalizado7.Texts = "";
-            textBoxPersonalizado7.UnderlinedStyle = true;
+            this.textBoxPersonalizado7.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado7.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado7.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado7.BorderRadius = (0);
+            this.textBoxPersonalizado7.BorderSize = (2);
+            this.textBoxPersonalizado7.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado7.Location = (new global::System.Drawing.Point(620, 528));
+            this.textBoxPersonalizado7.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado7.Multiline = (false);
+            this.textBoxPersonalizado7.Name = ("textBoxPersonalizado7");
+            this.textBoxPersonalizado7.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado7.PasswordChar = (false);
+            this.textBoxPersonalizado7.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado7.PlaceholderText = ("");
+            this.textBoxPersonalizado7.Size = (new global::System.Drawing.Size(283, 48));
+            this.textBoxPersonalizado7.TabIndex = (82);
+            this.textBoxPersonalizado7.Texts = ("");
+            this.textBoxPersonalizado7.UnderlinedStyle = (true);
             // 
             // label25
             // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(625, 498);
-            label25.Name = "label25";
-            label25.Size = new Size(181, 29);
-            label25.TabIndex = 81;
-            label25.Text = "Monto Restante";
+            this.label25.AutoSize = (true);
+            this.label25.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label25.Location = (new global::System.Drawing.Point(625, 498));
+            this.label25.Name = ("label25");
+            this.label25.Size = (new global::System.Drawing.Size(181, 29));
+            this.label25.TabIndex = (81);
+            this.label25.Text = ("Monto Restante");
             // 
             // textBoxPersonalizado8
             // 
-            textBoxPersonalizado8.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado8.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado8.BorderRadius = 0;
-            textBoxPersonalizado8.BorderSize = 2;
-            textBoxPersonalizado8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado8.Location = new Point(201, 295);
-            textBoxPersonalizado8.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado8.Multiline = false;
-            textBoxPersonalizado8.Name = "textBoxPersonalizado8";
-            textBoxPersonalizado8.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado8.PasswordChar = false;
-            textBoxPersonalizado8.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado8.PlaceholderText = "";
-            textBoxPersonalizado8.Size = new Size(361, 48);
-            textBoxPersonalizado8.TabIndex = 80;
-            textBoxPersonalizado8.Texts = "";
-            textBoxPersonalizado8.UnderlinedStyle = true;
+            this.textBoxPersonalizado8.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado8.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado8.BorderRadius = (0);
+            this.textBoxPersonalizado8.BorderSize = (2);
+            this.textBoxPersonalizado8.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado8.Location = (new global::System.Drawing.Point(201, 295));
+            this.textBoxPersonalizado8.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado8.Multiline = (false);
+            this.textBoxPersonalizado8.Name = ("textBoxPersonalizado8");
+            this.textBoxPersonalizado8.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado8.PasswordChar = (false);
+            this.textBoxPersonalizado8.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado8.PlaceholderText = ("");
+            this.textBoxPersonalizado8.Size = (new global::System.Drawing.Size(361, 48));
+            this.textBoxPersonalizado8.TabIndex = (80);
+            this.textBoxPersonalizado8.Texts = ("");
+            this.textBoxPersonalizado8.UnderlinedStyle = (true);
             // 
             // label27
             // 
-            label27.AutoSize = true;
-            label27.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label27.Location = new Point(-1, 302);
-            label27.Name = "label27";
-            label27.Size = new Size(137, 29);
-            label27.TabIndex = 78;
-            label27.Text = "Monto total:";
+            this.label27.AutoSize = (true);
+            this.label27.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label27.Location = (new global::System.Drawing.Point(-1, 302));
+            this.label27.Name = ("label27");
+            this.label27.Size = (new global::System.Drawing.Size(137, 29));
+            this.label27.TabIndex = (78);
+            this.label27.Text = ("Monto total:");
             // 
             // LblPerte
             // 
-            LblPerte.AutoSize = true;
-            LblPerte.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            LblPerte.Location = new Point(213, 12);
-            LblPerte.Name = "LblPerte";
-            LblPerte.Size = new Size(0, 28);
-            LblPerte.TabIndex = 77;
+            this.LblPerte.AutoSize = (true);
+            this.LblPerte.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.LblPerte.Location = (new global::System.Drawing.Point(213, 12));
+            this.LblPerte.Name = ("LblPerte");
+            this.LblPerte.Size = (new global::System.Drawing.Size(0, 28));
+            this.LblPerte.TabIndex = (77);
             // 
             // label26
             // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Roboto", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label26.Location = new Point(7, 12);
-            label26.Name = "label26";
-            label26.Size = new Size(174, 28);
-            label26.TabIndex = 76;
-            label26.Text = "Lista de Origen:";
+            this.label26.AutoSize = (true);
+            this.label26.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label26.Location = (new global::System.Drawing.Point(7, 12));
+            this.label26.Name = ("label26");
+            this.label26.Size = (new global::System.Drawing.Size(174, 28));
+            this.label26.TabIndex = (76);
+            this.label26.Text = ("Lista de Origen:");
             // 
             // btnGuardarCambio
             // 
-            btnGuardarCambio.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGuardarCambio.BackColor = SystemColors.Info;
-            btnGuardarCambio.BackgroundColor = SystemColors.Info;
-            btnGuardarCambio.BorderColor = Color.DarkSlateGray;
-            btnGuardarCambio.BorderRadius = 10;
-            btnGuardarCambio.BorderSize = 2;
-            btnGuardarCambio.FlatAppearance.BorderSize = 0;
-            btnGuardarCambio.FlatStyle = FlatStyle.Flat;
-            btnGuardarCambio.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardarCambio.ForeColor = Color.Black;
-            btnGuardarCambio.Location = new Point(799, 579);
-            btnGuardarCambio.Margin = new Padding(3, 4, 3, 4);
-            btnGuardarCambio.Name = "btnGuardarCambio";
-            btnGuardarCambio.Size = new Size(171, 79);
-            btnGuardarCambio.TabIndex = 75;
-            btnGuardarCambio.Text = "Guardar\r\ncambios";
-            btnGuardarCambio.TextColor = Color.Black;
-            btnGuardarCambio.UseVisualStyleBackColor = false;
-            btnGuardarCambio.Click += btnGuardarCambio_Click;
+            this.btnGuardarCambio.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarCambio.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.btnGuardarCambio.BackgroundColor = (global::System.Drawing.SystemColors.Info);
+            this.btnGuardarCambio.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnGuardarCambio.BorderRadius = (10);
+            this.btnGuardarCambio.BorderSize = (2);
+            this.btnGuardarCambio.FlatAppearance.BorderSize = (0);
+            this.btnGuardarCambio.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnGuardarCambio.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnGuardarCambio.ForeColor = (global::System.Drawing.Color.Black);
+            this.btnGuardarCambio.Location = (new global::System.Drawing.Point(799, 579));
+            this.btnGuardarCambio.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnGuardarCambio.Name = ("btnGuardarCambio");
+            this.btnGuardarCambio.Size = (new global::System.Drawing.Size(171, 79));
+            this.btnGuardarCambio.TabIndex = (75);
+            this.btnGuardarCambio.Text = ("Guardar\r\ncambios");
+            this.btnGuardarCambio.TextColor = (global::System.Drawing.Color.Black);
+            this.btnGuardarCambio.UseVisualStyleBackColor = (false);
+            this.btnGuardarCambio.Click += (this.BtnGuardarCambio_Click);
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btnMover);
-            groupBox1.Controls.Add(cmbLista);
-            groupBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(41, 560);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(416, 97);
-            groupBox1.TabIndex = 74;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Mover a";
+            this.groupBox1.Controls.Add(this.btnMover);
+            this.groupBox1.Controls.Add(this.cmbLista);
+            this.groupBox1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.groupBox1.Location = (new global::System.Drawing.Point(41, 560));
+            this.groupBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.groupBox1.Name = ("groupBox1");
+            this.groupBox1.Padding = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.groupBox1.Size = (new global::System.Drawing.Size(416, 97));
+            this.groupBox1.TabIndex = (74);
+            this.groupBox1.TabStop = (false);
+            this.groupBox1.Text = ("Mover a");
             // 
             // btnMover
             // 
-            btnMover.Anchor = AnchorStyles.Bottom;
-            btnMover.BackColor = SystemColors.Info;
-            btnMover.BackgroundColor = SystemColors.Info;
-            btnMover.BorderColor = Color.DarkSlateGray;
-            btnMover.BorderRadius = 10;
-            btnMover.BorderSize = 2;
-            btnMover.Enabled = false;
-            btnMover.FlatAppearance.BorderSize = 0;
-            btnMover.FlatStyle = FlatStyle.Flat;
-            btnMover.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMover.ForeColor = Color.Black;
-            btnMover.Location = new Point(259, 49);
-            btnMover.Margin = new Padding(3, 4, 3, 4);
-            btnMover.Name = "btnMover";
-            btnMover.Size = new Size(151, 40);
-            btnMover.TabIndex = 44;
-            btnMover.Text = "Mover";
-            btnMover.TextColor = Color.Black;
-            btnMover.UseVisualStyleBackColor = false;
-            btnMover.Click += btnMover_Click;
+            this.btnMover.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom);
+            this.btnMover.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.btnMover.BackgroundColor = (global::System.Drawing.SystemColors.Info);
+            this.btnMover.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.btnMover.BorderRadius = (10);
+            this.btnMover.BorderSize = (2);
+            this.btnMover.Enabled = (false);
+            this.btnMover.FlatAppearance.BorderSize = (0);
+            this.btnMover.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.btnMover.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.btnMover.ForeColor = (global::System.Drawing.Color.Black);
+            this.btnMover.Location = (new global::System.Drawing.Point(259, 49));
+            this.btnMover.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.btnMover.Name = ("btnMover");
+            this.btnMover.Size = (new global::System.Drawing.Size(151, 40));
+            this.btnMover.TabIndex = (44);
+            this.btnMover.Text = ("Mover");
+            this.btnMover.TextColor = (global::System.Drawing.Color.Black);
+            this.btnMover.UseVisualStyleBackColor = (false);
+            this.btnMover.Click += (this.BtnMover_Click);
             // 
             // cmbLista
             // 
-            cmbLista.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbLista.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbLista.BackColor = SystemColors.Info;
-            cmbLista.BorderColor = Color.DarkSlateGray;
-            cmbLista.BorderSize = 2;
-            cmbLista.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbLista.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbLista.ForeColor = Color.Black;
-            cmbLista.IconColor = Color.DarkSlateGray;
-            cmbLista.ListBackColor = SystemColors.Info;
-            cmbLista.ListTextColor = Color.DimGray;
-            cmbLista.Location = new Point(6, 35);
-            cmbLista.Margin = new Padding(3, 4, 3, 4);
-            cmbLista.MinimumSize = new Size(229, 40);
-            cmbLista.Name = "cmbLista";
-            cmbLista.Padding = new Padding(2, 3, 2, 3);
-            cmbLista.Size = new Size(229, 55);
-            cmbLista.TabIndex = 44;
-            cmbLista.Tag = "Selecciones un tipo de pago";
-            cmbLista.Texts = "Seleccione una lista";
-            cmbLista.OnSelectedIndexChanged += cmbLista_OnSelectedIndexChanged;
+            this.cmbLista.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.cmbLista.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.cmbLista.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbLista.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbLista.BorderSize = (2);
+            this.cmbLista.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.cmbLista.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.cmbLista.ForeColor = (global::System.Drawing.Color.Black);
+            this.cmbLista.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.cmbLista.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.cmbLista.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.cmbLista.Location = (new global::System.Drawing.Point(6, 35));
+            this.cmbLista.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.cmbLista.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.cmbLista.Name = ("cmbLista");
+            this.cmbLista.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.cmbLista.Size = (new global::System.Drawing.Size(229, 55));
+            this.cmbLista.TabIndex = (44);
+            this.cmbLista.Tag = ("Selecciones un tipo de pago");
+            this.cmbLista.Texts = ("Seleccione una lista");
+            this.cmbLista.OnSelectedIndexChanged += (this.CmbLista_OnSelectedIndexChanged);
             // 
             // textBoxPersonalizado1
             // 
-            textBoxPersonalizado1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxPersonalizado1.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado1.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado1.BorderRadius = 0;
-            textBoxPersonalizado1.BorderSize = 2;
-            textBoxPersonalizado1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado1.Location = new Point(616, 440);
-            textBoxPersonalizado1.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado1.Multiline = false;
-            textBoxPersonalizado1.Name = "textBoxPersonalizado1";
-            textBoxPersonalizado1.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado1.PasswordChar = false;
-            textBoxPersonalizado1.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado1.PlaceholderText = "";
-            textBoxPersonalizado1.Size = new Size(283, 48);
-            textBoxPersonalizado1.TabIndex = 66;
-            textBoxPersonalizado1.Texts = "";
-            textBoxPersonalizado1.UnderlinedStyle = true;
+            this.textBoxPersonalizado1.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado1.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado1.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado1.BorderRadius = (0);
+            this.textBoxPersonalizado1.BorderSize = (2);
+            this.textBoxPersonalizado1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado1.Location = (new global::System.Drawing.Point(616, 440));
+            this.textBoxPersonalizado1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado1.Multiline = (false);
+            this.textBoxPersonalizado1.Name = ("textBoxPersonalizado1");
+            this.textBoxPersonalizado1.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado1.PasswordChar = (false);
+            this.textBoxPersonalizado1.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado1.PlaceholderText = ("");
+            this.textBoxPersonalizado1.Size = (new global::System.Drawing.Size(283, 48));
+            this.textBoxPersonalizado1.TabIndex = (66);
+            this.textBoxPersonalizado1.Texts = ("");
+            this.textBoxPersonalizado1.UnderlinedStyle = (true);
             // 
             // label18
             // 
-            label18.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label18.AutoSize = true;
-            label18.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(616, 407);
-            label18.Name = "label18";
-            label18.Size = new Size(219, 29);
-            label18.TabIndex = 73;
-            label18.Text = "Correo electrónico:";
+            this.label18.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = (true);
+            this.label18.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label18.Location = (new global::System.Drawing.Point(616, 407));
+            this.label18.Name = ("label18");
+            this.label18.Size = (new global::System.Drawing.Size(219, 29));
+            this.label18.TabIndex = (73);
+            this.label18.Text = ("Correo electrónico:");
             // 
             // textBoxPersonalizado2
             // 
-            textBoxPersonalizado2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxPersonalizado2.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado2.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado2.BorderRadius = 0;
-            textBoxPersonalizado2.BorderSize = 2;
-            textBoxPersonalizado2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado2.Location = new Point(616, 339);
-            textBoxPersonalizado2.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado2.Multiline = false;
-            textBoxPersonalizado2.Name = "textBoxPersonalizado2";
-            textBoxPersonalizado2.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado2.PasswordChar = false;
-            textBoxPersonalizado2.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado2.PlaceholderText = "";
-            textBoxPersonalizado2.Size = new Size(283, 48);
-            textBoxPersonalizado2.TabIndex = 65;
-            textBoxPersonalizado2.Texts = "";
-            textBoxPersonalizado2.UnderlinedStyle = true;
+            this.textBoxPersonalizado2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado2.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado2.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado2.BorderRadius = (0);
+            this.textBoxPersonalizado2.BorderSize = (2);
+            this.textBoxPersonalizado2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado2.Location = (new global::System.Drawing.Point(616, 339));
+            this.textBoxPersonalizado2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado2.Multiline = (false);
+            this.textBoxPersonalizado2.Name = ("textBoxPersonalizado2");
+            this.textBoxPersonalizado2.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado2.PasswordChar = (false);
+            this.textBoxPersonalizado2.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado2.PlaceholderText = ("");
+            this.textBoxPersonalizado2.Size = (new global::System.Drawing.Size(283, 48));
+            this.textBoxPersonalizado2.TabIndex = (65);
+            this.textBoxPersonalizado2.Texts = ("");
+            this.textBoxPersonalizado2.UnderlinedStyle = (true);
             // 
             // label20
             // 
-            label20.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label20.AutoSize = true;
-            label20.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(616, 306);
-            label20.Name = "label20";
-            label20.Size = new Size(116, 29);
-            label20.TabIndex = 72;
-            label20.Text = "Teléfono:";
+            this.label20.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = (true);
+            this.label20.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label20.Location = (new global::System.Drawing.Point(616, 306));
+            this.label20.Name = ("label20");
+            this.label20.Size = (new global::System.Drawing.Size(116, 29));
+            this.label20.TabIndex = (72);
+            this.label20.Text = ("Teléfono:");
             // 
             // textBoxPersonalizado3
             // 
-            textBoxPersonalizado3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxPersonalizado3.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado3.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado3.BorderRadius = 0;
-            textBoxPersonalizado3.BorderSize = 2;
-            textBoxPersonalizado3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado3.Location = new Point(784, 238);
-            textBoxPersonalizado3.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado3.Multiline = false;
-            textBoxPersonalizado3.Name = "textBoxPersonalizado3";
-            textBoxPersonalizado3.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado3.PasswordChar = false;
-            textBoxPersonalizado3.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado3.PlaceholderText = "";
-            textBoxPersonalizado3.Size = new Size(115, 48);
-            textBoxPersonalizado3.TabIndex = 64;
-            textBoxPersonalizado3.Texts = "";
-            textBoxPersonalizado3.UnderlinedStyle = true;
+            this.textBoxPersonalizado3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado3.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado3.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado3.BorderRadius = (0);
+            this.textBoxPersonalizado3.BorderSize = (2);
+            this.textBoxPersonalizado3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado3.Location = (new global::System.Drawing.Point(784, 238));
+            this.textBoxPersonalizado3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado3.Multiline = (false);
+            this.textBoxPersonalizado3.Name = ("textBoxPersonalizado3");
+            this.textBoxPersonalizado3.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado3.PasswordChar = (false);
+            this.textBoxPersonalizado3.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado3.PlaceholderText = ("");
+            this.textBoxPersonalizado3.Size = (new global::System.Drawing.Size(115, 48));
+            this.textBoxPersonalizado3.TabIndex = (64);
+            this.textBoxPersonalizado3.Texts = ("");
+            this.textBoxPersonalizado3.UnderlinedStyle = (true);
             // 
             // label21
             // 
-            label21.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label21.AutoSize = true;
-            label21.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.Location = new Point(784, 206);
-            label21.Name = "label21";
-            label21.Size = new Size(119, 29);
-            label21.TabIndex = 71;
-            label21.Text = "Núm. ext.:";
+            this.label21.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = (true);
+            this.label21.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label21.Location = (new global::System.Drawing.Point(784, 206));
+            this.label21.Name = ("label21");
+            this.label21.Size = (new global::System.Drawing.Size(119, 29));
+            this.label21.TabIndex = (71);
+            this.label21.Text = ("Núm. ext.:");
             // 
             // textBoxPersonalizado4
             // 
-            textBoxPersonalizado4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxPersonalizado4.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado4.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado4.BorderRadius = 0;
-            textBoxPersonalizado4.BorderSize = 2;
-            textBoxPersonalizado4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado4.Location = new Point(616, 238);
-            textBoxPersonalizado4.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado4.Multiline = false;
-            textBoxPersonalizado4.Name = "textBoxPersonalizado4";
-            textBoxPersonalizado4.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado4.PasswordChar = false;
-            textBoxPersonalizado4.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado4.PlaceholderText = "";
-            textBoxPersonalizado4.Size = new Size(115, 48);
-            textBoxPersonalizado4.TabIndex = 63;
-            textBoxPersonalizado4.Texts = "";
-            textBoxPersonalizado4.UnderlinedStyle = true;
+            this.textBoxPersonalizado4.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado4.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado4.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado4.BorderRadius = (0);
+            this.textBoxPersonalizado4.BorderSize = (2);
+            this.textBoxPersonalizado4.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado4.Location = (new global::System.Drawing.Point(616, 238));
+            this.textBoxPersonalizado4.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado4.Multiline = (false);
+            this.textBoxPersonalizado4.Name = ("textBoxPersonalizado4");
+            this.textBoxPersonalizado4.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado4.PasswordChar = (false);
+            this.textBoxPersonalizado4.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado4.PlaceholderText = ("");
+            this.textBoxPersonalizado4.Size = (new global::System.Drawing.Size(115, 48));
+            this.textBoxPersonalizado4.TabIndex = (63);
+            this.textBoxPersonalizado4.Texts = ("");
+            this.textBoxPersonalizado4.UnderlinedStyle = (true);
             // 
             // label22
             // 
-            label22.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label22.AutoSize = true;
-            label22.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.Location = new Point(616, 204);
-            label22.Name = "label22";
-            label22.Size = new Size(113, 29);
-            label22.TabIndex = 70;
-            label22.Text = "Núm. int.:";
+            this.label22.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = (true);
+            this.label22.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label22.Location = (new global::System.Drawing.Point(616, 204));
+            this.label22.Name = ("label22");
+            this.label22.Size = (new global::System.Drawing.Size(113, 29));
+            this.label22.TabIndex = (70);
+            this.label22.Text = ("Núm. int.:");
             // 
             // textBoxPersonalizado5
             // 
-            textBoxPersonalizado5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxPersonalizado5.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado5.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado5.BorderRadius = 0;
-            textBoxPersonalizado5.BorderSize = 2;
-            textBoxPersonalizado5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado5.Location = new Point(616, 139);
-            textBoxPersonalizado5.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado5.Multiline = false;
-            textBoxPersonalizado5.Name = "textBoxPersonalizado5";
-            textBoxPersonalizado5.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado5.PasswordChar = false;
-            textBoxPersonalizado5.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado5.PlaceholderText = "";
-            textBoxPersonalizado5.Size = new Size(265, 48);
-            textBoxPersonalizado5.TabIndex = 62;
-            textBoxPersonalizado5.Texts = "";
-            textBoxPersonalizado5.UnderlinedStyle = true;
+            this.textBoxPersonalizado5.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado5.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado5.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado5.BorderRadius = (0);
+            this.textBoxPersonalizado5.BorderSize = (2);
+            this.textBoxPersonalizado5.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado5.Location = (new global::System.Drawing.Point(616, 139));
+            this.textBoxPersonalizado5.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado5.Multiline = (false);
+            this.textBoxPersonalizado5.Name = ("textBoxPersonalizado5");
+            this.textBoxPersonalizado5.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado5.PasswordChar = (false);
+            this.textBoxPersonalizado5.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado5.PlaceholderText = ("");
+            this.textBoxPersonalizado5.Size = (new global::System.Drawing.Size(265, 48));
+            this.textBoxPersonalizado5.TabIndex = (62);
+            this.textBoxPersonalizado5.Texts = ("");
+            this.textBoxPersonalizado5.UnderlinedStyle = (true);
             // 
             // label23
             // 
-            label23.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label23.AutoSize = true;
-            label23.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.Location = new Point(616, 106);
-            label23.Name = "label23";
-            label23.Size = new Size(102, 29);
-            label23.TabIndex = 69;
-            label23.Text = "Colonia:";
+            this.label23.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = (true);
+            this.label23.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label23.Location = (new global::System.Drawing.Point(616, 106));
+            this.label23.Name = ("label23");
+            this.label23.Size = (new global::System.Drawing.Size(102, 29));
+            this.label23.TabIndex = (69);
+            this.label23.Text = ("Colonia:");
             // 
             // textBoxPersonalizado6
             // 
-            textBoxPersonalizado6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxPersonalizado6.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado6.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado6.BorderRadius = 0;
-            textBoxPersonalizado6.BorderSize = 2;
-            textBoxPersonalizado6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado6.Location = new Point(616, 39);
-            textBoxPersonalizado6.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado6.Multiline = false;
-            textBoxPersonalizado6.Name = "textBoxPersonalizado6";
-            textBoxPersonalizado6.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado6.PasswordChar = false;
-            textBoxPersonalizado6.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado6.PlaceholderText = "";
-            textBoxPersonalizado6.Size = new Size(265, 48);
-            textBoxPersonalizado6.TabIndex = 61;
-            textBoxPersonalizado6.Texts = "";
-            textBoxPersonalizado6.UnderlinedStyle = true;
+            this.textBoxPersonalizado6.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado6.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado6.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado6.BorderRadius = (0);
+            this.textBoxPersonalizado6.BorderSize = (2);
+            this.textBoxPersonalizado6.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado6.Location = (new global::System.Drawing.Point(616, 39));
+            this.textBoxPersonalizado6.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado6.Multiline = (false);
+            this.textBoxPersonalizado6.Name = ("textBoxPersonalizado6");
+            this.textBoxPersonalizado6.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado6.PasswordChar = (false);
+            this.textBoxPersonalizado6.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado6.PlaceholderText = ("");
+            this.textBoxPersonalizado6.Size = (new global::System.Drawing.Size(265, 48));
+            this.textBoxPersonalizado6.TabIndex = (61);
+            this.textBoxPersonalizado6.Texts = ("");
+            this.textBoxPersonalizado6.UnderlinedStyle = (true);
             // 
             // label24
             // 
-            label24.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label24.AutoSize = true;
-            label24.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.Location = new Point(616, 6);
-            label24.Name = "label24";
-            label24.Size = new Size(75, 29);
-            label24.TabIndex = 68;
-            label24.Text = "Calle:";
+            this.label24.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = (true);
+            this.label24.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label24.Location = (new global::System.Drawing.Point(616, 6));
+            this.label24.Name = ("label24");
+            this.label24.Size = (new global::System.Drawing.Size(75, 29));
+            this.label24.TabIndex = (68);
+            this.label24.Text = ("Calle:");
             // 
             // rjComboBox1
             // 
-            rjComboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox1.BackColor = SystemColors.Info;
-            rjComboBox1.BorderColor = Color.DarkSlateGray;
-            rjComboBox1.BorderSize = 2;
-            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rjComboBox1.ForeColor = Color.Black;
-            rjComboBox1.IconColor = Color.DarkSlateGray;
-            rjComboBox1.Items.AddRange(new object[] { "7%", "8%", "10%" });
-            rjComboBox1.ListBackColor = SystemColors.Info;
-            rjComboBox1.ListTextColor = Color.DimGray;
-            rjComboBox1.Location = new Point(209, 228);
-            rjComboBox1.Margin = new Padding(3, 4, 3, 4);
-            rjComboBox1.MinimumSize = new Size(229, 40);
-            rjComboBox1.Name = "rjComboBox1";
-            rjComboBox1.Padding = new Padding(2, 3, 2, 3);
-            rjComboBox1.Size = new Size(361, 55);
-            rjComboBox1.TabIndex = 50;
-            rjComboBox1.Tag = "Seleccione un interés";
-            rjComboBox1.Texts = "Seleccione un interés";
+            this.rjComboBox1.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.rjComboBox1.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.rjComboBox1.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox1.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox1.BorderSize = (2);
+            this.rjComboBox1.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.rjComboBox1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjComboBox1.ForeColor = (global::System.Drawing.Color.Black);
+            this.rjComboBox1.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox1.Items.AddRange(new global::System.Object[] { "7%", "8%", "10%" });
+            this.rjComboBox1.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox1.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.rjComboBox1.Location = (new global::System.Drawing.Point(209, 228));
+            this.rjComboBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.rjComboBox1.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.rjComboBox1.Name = ("rjComboBox1");
+            this.rjComboBox1.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.rjComboBox1.Size = (new global::System.Drawing.Size(361, 55));
+            this.rjComboBox1.TabIndex = (50);
+            this.rjComboBox1.Tag = ("Seleccione un interés");
+            this.rjComboBox1.Texts = ("Seleccione un interés");
             // 
             // label28
             // 
-            label28.AutoSize = true;
-            label28.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label28.Location = new Point(3, 451);
-            label28.Name = "label28";
-            label28.Size = new Size(119, 29);
-            label28.TabIndex = 56;
-            label28.Text = "Promotor:";
+            this.label28.AutoSize = (true);
+            this.label28.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label28.Location = (new global::System.Drawing.Point(3, 451));
+            this.label28.Name = ("label28");
+            this.label28.Size = (new global::System.Drawing.Size(119, 29));
+            this.label28.TabIndex = (56);
+            this.label28.Text = ("Promotor:");
             // 
             // rjComboBox2
             // 
-            rjComboBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox2.BackColor = SystemColors.Info;
-            rjComboBox2.BorderColor = Color.DarkSlateGray;
-            rjComboBox2.BorderSize = 2;
-            rjComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rjComboBox2.ForeColor = Color.Black;
-            rjComboBox2.IconColor = Color.DarkSlateGray;
-            rjComboBox2.Items.AddRange(new object[] { "Semanales", "Quincenales" });
-            rjComboBox2.ListBackColor = SystemColors.Info;
-            rjComboBox2.ListTextColor = Color.DimGray;
-            rjComboBox2.Location = new Point(201, 360);
-            rjComboBox2.Margin = new Padding(3, 4, 3, 4);
-            rjComboBox2.MinimumSize = new Size(229, 40);
-            rjComboBox2.Name = "rjComboBox2";
-            rjComboBox2.Padding = new Padding(2, 3, 2, 3);
-            rjComboBox2.Size = new Size(361, 55);
-            rjComboBox2.TabIndex = 51;
-            rjComboBox2.Tag = "Selecciones un tipo de pago";
-            rjComboBox2.Texts = "Seleccione un tipo de pago";
+            this.rjComboBox2.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.rjComboBox2.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.rjComboBox2.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox2.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox2.BorderSize = (2);
+            this.rjComboBox2.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.rjComboBox2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjComboBox2.ForeColor = (global::System.Drawing.Color.Black);
+            this.rjComboBox2.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox2.Items.AddRange(new global::System.Object[] { "Semanales", "Quincenales" });
+            this.rjComboBox2.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox2.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.rjComboBox2.Location = (new global::System.Drawing.Point(201, 360));
+            this.rjComboBox2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.rjComboBox2.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.rjComboBox2.Name = ("rjComboBox2");
+            this.rjComboBox2.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.rjComboBox2.Size = (new global::System.Drawing.Size(361, 55));
+            this.rjComboBox2.TabIndex = (51);
+            this.rjComboBox2.Tag = ("Selecciones un tipo de pago");
+            this.rjComboBox2.Texts = ("Seleccione un tipo de pago");
             // 
             // label30
             // 
-            label30.AutoSize = true;
-            label30.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label30.Location = new Point(3, 371);
-            label30.Name = "label30";
-            label30.Size = new Size(164, 29);
-            label30.TabIndex = 55;
-            label30.Text = "Tipo de pago:";
+            this.label30.AutoSize = (true);
+            this.label30.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label30.Location = (new global::System.Drawing.Point(3, 371));
+            this.label30.Name = ("label30");
+            this.label30.Size = (new global::System.Drawing.Size(164, 29));
+            this.label30.TabIndex = (55);
+            this.label30.Text = ("Tipo de pago:");
             // 
             // label31
             // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label31.Location = new Point(3, 242);
-            label31.Name = "label31";
-            label31.Size = new Size(92, 29);
-            label31.TabIndex = 53;
-            label31.Text = "Interés:";
+            this.label31.AutoSize = (true);
+            this.label31.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label31.Location = (new global::System.Drawing.Point(3, 242));
+            this.label31.Name = ("label31");
+            this.label31.Size = (new global::System.Drawing.Size(92, 29));
+            this.label31.TabIndex = (53);
+            this.label31.Text = ("Interés:");
             // 
             // dateTimePickerPersonalizado1
             // 
-            dateTimePickerPersonalizado1.BorderColor = Color.DarkSlateGray;
-            dateTimePickerPersonalizado1.BorderSize = 2;
-            dateTimePickerPersonalizado1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerPersonalizado1.Format = DateTimePickerFormat.Short;
-            dateTimePickerPersonalizado1.Location = new Point(209, 171);
-            dateTimePickerPersonalizado1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePickerPersonalizado1.MinimumSize = new Size(4, 35);
-            dateTimePickerPersonalizado1.Name = "dateTimePickerPersonalizado1";
-            dateTimePickerPersonalizado1.Size = new Size(327, 35);
-            dateTimePickerPersonalizado1.SkinColor = SystemColors.Info;
-            dateTimePickerPersonalizado1.TabIndex = 48;
-            dateTimePickerPersonalizado1.TextColor = Color.Black;
+            this.dateTimePickerPersonalizado1.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.dateTimePickerPersonalizado1.BorderSize = (2);
+            this.dateTimePickerPersonalizado1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.dateTimePickerPersonalizado1.Format = (global::System.Windows.Forms.DateTimePickerFormat.Short);
+            this.dateTimePickerPersonalizado1.Location = (new global::System.Drawing.Point(209, 171));
+            this.dateTimePickerPersonalizado1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dateTimePickerPersonalizado1.MinimumSize = (new global::System.Drawing.Size(4, 35));
+            this.dateTimePickerPersonalizado1.Name = ("dateTimePickerPersonalizado1");
+            this.dateTimePickerPersonalizado1.Size = (new global::System.Drawing.Size(327, 35));
+            this.dateTimePickerPersonalizado1.SkinColor = (global::System.Drawing.SystemColors.Info);
+            this.dateTimePickerPersonalizado1.TabIndex = (48);
+            this.dateTimePickerPersonalizado1.TextColor = (global::System.Drawing.Color.Black);
             // 
             // label32
             // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label32.Location = new Point(-2, 177);
-            label32.Name = "label32";
-            label32.Size = new Size(183, 29);
-            label32.TabIndex = 49;
-            label32.Text = "Fecha de inicio:";
+            this.label32.AutoSize = (true);
+            this.label32.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label32.Location = (new global::System.Drawing.Point(-2, 177));
+            this.label32.Name = ("label32");
+            this.label32.Size = (new global::System.Drawing.Size(183, 29));
+            this.label32.TabIndex = (49);
+            this.label32.Text = ("Fecha de inicio:");
             // 
             // textBoxPersonalizado9
             // 
-            textBoxPersonalizado9.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado9.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado9.BorderRadius = 0;
-            textBoxPersonalizado9.BorderSize = 2;
-            textBoxPersonalizado9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado9.Location = new Point(209, 110);
-            textBoxPersonalizado9.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado9.Multiline = false;
-            textBoxPersonalizado9.Name = "textBoxPersonalizado9";
-            textBoxPersonalizado9.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado9.PasswordChar = false;
-            textBoxPersonalizado9.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado9.PlaceholderText = "";
-            textBoxPersonalizado9.Size = new Size(406, 48);
-            textBoxPersonalizado9.TabIndex = 47;
-            textBoxPersonalizado9.Texts = "";
-            textBoxPersonalizado9.UnderlinedStyle = true;
+            this.textBoxPersonalizado9.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado9.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado9.BorderRadius = (0);
+            this.textBoxPersonalizado9.BorderSize = (2);
+            this.textBoxPersonalizado9.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado9.Location = (new global::System.Drawing.Point(209, 110));
+            this.textBoxPersonalizado9.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado9.Multiline = (false);
+            this.textBoxPersonalizado9.Name = ("textBoxPersonalizado9");
+            this.textBoxPersonalizado9.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado9.PasswordChar = (false);
+            this.textBoxPersonalizado9.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado9.PlaceholderText = ("");
+            this.textBoxPersonalizado9.Size = (new global::System.Drawing.Size(406, 48));
+            this.textBoxPersonalizado9.TabIndex = (47);
+            this.textBoxPersonalizado9.Texts = ("");
+            this.textBoxPersonalizado9.UnderlinedStyle = (true);
             // 
             // label33
             // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label33.Location = new Point(-6, 119);
-            label33.Name = "label33";
-            label33.Size = new Size(199, 29);
-            label33.TabIndex = 46;
-            label33.Text = "Crédito prestado:";
+            this.label33.AutoSize = (true);
+            this.label33.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label33.Location = (new global::System.Drawing.Point(-6, 119));
+            this.label33.Name = ("label33");
+            this.label33.Size = (new global::System.Drawing.Size(199, 29));
+            this.label33.TabIndex = (46);
+            this.label33.Text = ("Crédito prestado:");
             // 
             // textBoxPersonalizado10
             // 
-            textBoxPersonalizado10.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado10.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado10.BorderRadius = 0;
-            textBoxPersonalizado10.BorderSize = 2;
-            textBoxPersonalizado10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPersonalizado10.Location = new Point(213, 44);
-            textBoxPersonalizado10.Margin = new Padding(3, 4, 3, 4);
-            textBoxPersonalizado10.Multiline = false;
-            textBoxPersonalizado10.Name = "textBoxPersonalizado10";
-            textBoxPersonalizado10.Padding = new Padding(11, 9, 11, 9);
-            textBoxPersonalizado10.PasswordChar = false;
-            textBoxPersonalizado10.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado10.PlaceholderText = "";
-            textBoxPersonalizado10.Size = new Size(386, 48);
-            textBoxPersonalizado10.TabIndex = 45;
-            textBoxPersonalizado10.Texts = "";
-            textBoxPersonalizado10.UnderlinedStyle = true;
+            this.textBoxPersonalizado10.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.textBoxPersonalizado10.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.textBoxPersonalizado10.BorderRadius = (0);
+            this.textBoxPersonalizado10.BorderSize = (2);
+            this.textBoxPersonalizado10.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.textBoxPersonalizado10.Location = (new global::System.Drawing.Point(213, 44));
+            this.textBoxPersonalizado10.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBoxPersonalizado10.Multiline = (false);
+            this.textBoxPersonalizado10.Name = ("textBoxPersonalizado10");
+            this.textBoxPersonalizado10.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.textBoxPersonalizado10.PasswordChar = (false);
+            this.textBoxPersonalizado10.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.textBoxPersonalizado10.PlaceholderText = ("");
+            this.textBoxPersonalizado10.Size = (new global::System.Drawing.Size(386, 48));
+            this.textBoxPersonalizado10.TabIndex = (45);
+            this.textBoxPersonalizado10.Texts = ("");
+            this.textBoxPersonalizado10.UnderlinedStyle = (true);
             // 
             // label34
             // 
-            label34.AutoSize = true;
-            label34.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(-6, 58);
-            label34.Name = "label34";
-            label34.Size = new Size(213, 29);
-            label34.TabIndex = 44;
-            label34.Text = "Nombre completo:";
+            this.label34.AutoSize = (true);
+            this.label34.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label34.Location = (new global::System.Drawing.Point(-6, 58));
+            this.label34.Name = ("label34");
+            this.label34.Size = (new global::System.Drawing.Size(213, 29));
+            this.label34.TabIndex = (44);
+            this.label34.Text = ("Nombre completo:");
             // 
             // rjComboBox3
             // 
-            rjComboBox3.AutoCompleteCustomSource.AddRange(new string[] { "Ramon", "Roberto", "Yael" });
-            rjComboBox3.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox3.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox3.BackColor = SystemColors.Info;
-            rjComboBox3.BorderColor = Color.DarkSlateGray;
-            rjComboBox3.BorderSize = 2;
-            rjComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rjComboBox3.ForeColor = Color.Black;
-            rjComboBox3.IconColor = Color.DarkSlateGray;
-            rjComboBox3.Items.AddRange(new object[] { "Ramon", "Roberto", "Yael" });
-            rjComboBox3.ListBackColor = SystemColors.Info;
-            rjComboBox3.ListTextColor = Color.DimGray;
-            rjComboBox3.Location = new Point(199, 435);
-            rjComboBox3.Margin = new Padding(3, 4, 3, 4);
-            rjComboBox3.MinimumSize = new Size(229, 40);
-            rjComboBox3.Name = "rjComboBox3";
-            rjComboBox3.Padding = new Padding(2, 3, 2, 3);
-            rjComboBox3.Size = new Size(361, 53);
-            rjComboBox3.TabIndex = 52;
-            rjComboBox3.Tag = "Seleccione al promotor";
-            rjComboBox3.Texts = "Seleccione al promotor";
+            this.rjComboBox3.AutoCompleteCustomSource.AddRange(new global::System.String[] { "Ramon", "Roberto", "Yael" });
+            this.rjComboBox3.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.rjComboBox3.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.rjComboBox3.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox3.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox3.BorderSize = (2);
+            this.rjComboBox3.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.rjComboBox3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjComboBox3.ForeColor = (global::System.Drawing.Color.Black);
+            this.rjComboBox3.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox3.Items.AddRange(new global::System.Object[] { "Ramon", "Roberto", "Yael" });
+            this.rjComboBox3.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox3.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.rjComboBox3.Location = (new global::System.Drawing.Point(199, 435));
+            this.rjComboBox3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.rjComboBox3.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.rjComboBox3.Name = ("rjComboBox3");
+            this.rjComboBox3.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.rjComboBox3.Size = (new global::System.Drawing.Size(361, 53));
+            this.rjComboBox3.TabIndex = (52);
+            this.rjComboBox3.Tag = ("Seleccione al promotor");
+            this.rjComboBox3.Texts = ("Seleccione al promotor");
             // 
             // bunifuElipse1
             // 
-            bunifuElipse1.ElipseRadius = 40;
-            bunifuElipse1.TargetControl = pictureBox1;
+            this.bunifuElipse1.ElipseRadius = (40);
+            this.bunifuElipse1.TargetControl = (this.pictureBox1);
             // 
             // PanelBien
             // 
-            PanelBien.BackColor = SystemColors.Info;
-            PanelBien.Controls.Add(label19);
-            PanelBien.Dock = DockStyle.Fill;
-            PanelBien.Location = new Point(263, 80);
-            PanelBien.Name = "PanelBien";
-            PanelBien.Size = new Size(979, 661);
-            PanelBien.TabIndex = 26;
-            PanelBien.SizeChanged += PanelBien_SizeChanged;
+            this.PanelBien.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.PanelBien.Controls.Add(this.label58);
+            this.PanelBien.Controls.Add(this.label57);
+            this.PanelBien.Controls.Add(this.label56);
+            this.PanelBien.Controls.Add(this.label55);
+            this.PanelBien.Controls.Add(this.label54);
+            this.PanelBien.Controls.Add(this.label53);
+            this.PanelBien.Controls.Add(this.label52);
+            this.PanelBien.Controls.Add(this.label19);
+            this.PanelBien.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.PanelBien.Location = (new global::System.Drawing.Point(263, 80));
+            this.PanelBien.Name = ("PanelBien");
+            this.PanelBien.Size = (new global::System.Drawing.Size(979, 661));
+            this.PanelBien.TabIndex = (26);
+            this.PanelBien.SizeChanged += (this.PanelBien_SizeChanged);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = (true);
+            this.label58.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label58.Location = (new global::System.Drawing.Point(62, 277));
+            this.label58.Name = ("label58");
+            this.label58.Size = (new global::System.Drawing.Size(66, 37));
+            this.label58.TabIndex = (7);
+            this.label58.Text = ("<==");
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = (true);
+            this.label57.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label57.Location = (new global::System.Drawing.Point(457, 592));
+            this.label57.Name = ("label57");
+            this.label57.Size = (new global::System.Drawing.Size(282, 28));
+            this.label57.TabIndex = (6);
+            this.label57.Text = ("o  directamente con Cesar");
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = (true);
+            this.label56.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label56.Location = (new global::System.Drawing.Point(141, 592));
+            this.label56.Name = ("label56");
+            this.label56.Size = (new global::System.Drawing.Size(310, 28));
+            this.label56.TabIndex = (5);
+            this.label56.Text = ("donnetgastelum@gmail.com");
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = (true);
+            this.label55.Font = (new global::System.Drawing.Font("Roboto Medium", 13.8F, (global::System.Drawing.FontStyle)((global::System.Drawing.FontStyle.Bold) | (global::System.Drawing.FontStyle.Italic)), global::System.Drawing.GraphicsUnit.Point));
+            this.label55.Location = (new global::System.Drawing.Point(7, 592));
+            this.label55.Name = ("label55");
+            this.label55.Size = (new global::System.Drawing.Size(121, 28));
+            this.label55.TabIndex = (4);
+            this.label55.Text = ("Contacto:");
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = (true);
+            this.label54.Font = (new global::System.Drawing.Font("Roboto Medium", 16.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label54.Location = (new global::System.Drawing.Point(10, 533));
+            this.label54.Name = ("label54");
+            this.label54.Size = (new global::System.Drawing.Size(955, 34));
+            this.label54.TabIndex = (3);
+            this.label54.Text = ("Si despues de leerlo sigues con dudas, contacta a los desarrolladores");
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = (true);
+            this.label53.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label53.Location = (new global::System.Drawing.Point(18, 481));
+            this.label53.Name = ("label53");
+            this.label53.Size = (new global::System.Drawing.Size(806, 34));
+            this.label53.TabIndex = (2);
+            this.label53.Text = ("Si tienes dudas con el funcionamiento lee el manual de usuario");
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = (true);
+            this.label52.Font = (new global::System.Drawing.Font("Roboto Medium", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label52.ForeColor = (global::System.Drawing.Color.Red);
+            this.label52.Location = (new global::System.Drawing.Point(8, 440));
+            this.label52.Name = ("label52");
+            this.label52.Size = (new global::System.Drawing.Size(82, 28));
+            this.label52.TabIndex = (1);
+            this.label52.Text = ("NOTA:");
             // 
             // label19
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Roboto", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.Location = new Point(53, 261);
-            label19.Name = "label19";
-            label19.Size = new Size(868, 41);
-            label19.TabIndex = 0;
-            label19.Text = "Porfavor selecciona una opcion del panel de la izquierda";
+            this.label19.AutoSize = (true);
+            this.label19.Font = (new global::System.Drawing.Font("Roboto", 19.8000011F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label19.Location = (new global::System.Drawing.Point(62, 228));
+            this.label19.Name = ("label19");
+            this.label19.Size = (new global::System.Drawing.Size(868, 41));
+            this.label19.TabIndex = (0);
+            this.label19.Text = ("Porfavor selecciona una opcion del panel de la izquierda");
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.Info;
-            panel2.Controls.Add(tabControl1);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(263, 80);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(979, 661);
-            panel2.TabIndex = 24;
+            this.panel2.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.panel2.Location = (new global::System.Drawing.Point(263, 80));
+            this.panel2.Name = ("panel2");
+            this.panel2.Size = (new global::System.Drawing.Size(979, 661));
+            this.panel2.TabIndex = (24);
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(Conexion_Sql);
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(970, 661);
-            tabControl1.TabIndex = 21;
-            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.Conexion_Sql);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = (new global::System.Drawing.Point(0, 0));
+            this.tabControl1.Name = ("tabControl1");
+            this.tabControl1.SelectedIndex = (0);
+            this.tabControl1.Size = (new global::System.Drawing.Size(970, 661));
+            this.tabControl1.TabIndex = (21);
+            this.tabControl1.SelectedIndexChanged += (this.TabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = SystemColors.Info;
-            tabPage1.Controls.Add(tableLayoutPanel1);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(962, 628);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Usuarios";
+            this.tabPage1.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Location = (new global::System.Drawing.Point(4, 29));
+            this.tabPage1.Name = ("tabPage1");
+            this.tabPage1.Padding = (new global::System.Windows.Forms.Padding(3));
+            this.tabPage1.Size = (new global::System.Drawing.Size(962, 628));
+            this.tabPage1.TabIndex = (0);
+            this.tabPage1.Text = ("Usuarios");
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel4, 0, 0);
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel5, 1, 0);
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(977, 661);
-            tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = (2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 1, 0);
+            this.tableLayoutPanel1.Location = (new global::System.Drawing.Point(0, 0));
+            this.tableLayoutPanel1.Name = ("tableLayoutPanel1");
+            this.tableLayoutPanel1.RowCount = (1);
+            this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = (new global::System.Drawing.Size(977, 661));
+            this.tableLayoutPanel1.TabIndex = (0);
             // 
             // flowLayoutPanel4
             // 
-            flowLayoutPanel4.Controls.Add(label35);
-            flowLayoutPanel4.Controls.Add(label36);
-            flowLayoutPanel4.Controls.Add(textBox1);
-            flowLayoutPanel4.Controls.Add(label37);
-            flowLayoutPanel4.Controls.Add(TextboxContr);
-            flowLayoutPanel4.Controls.Add(label38);
-            flowLayoutPanel4.Controls.Add(TextboxConfirm);
-            flowLayoutPanel4.Controls.Add(checkBox1);
-            flowLayoutPanel4.Controls.Add(button1);
-            flowLayoutPanel4.Controls.Add(AvisoVacio);
-            flowLayoutPanel4.Dock = DockStyle.Fill;
-            flowLayoutPanel4.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel4.Location = new Point(3, 3);
-            flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(482, 655);
-            flowLayoutPanel4.TabIndex = 0;
+            this.flowLayoutPanel4.Controls.Add(this.label35);
+            this.flowLayoutPanel4.Controls.Add(this.label36);
+            this.flowLayoutPanel4.Controls.Add(this.textBox1);
+            this.flowLayoutPanel4.Controls.Add(this.label37);
+            this.flowLayoutPanel4.Controls.Add(this.TextboxContr);
+            this.flowLayoutPanel4.Controls.Add(this.label38);
+            this.flowLayoutPanel4.Controls.Add(this.TextboxConfirm);
+            this.flowLayoutPanel4.Controls.Add(this.checkBox1);
+            this.flowLayoutPanel4.Controls.Add(this.button1);
+            this.flowLayoutPanel4.Controls.Add(this.AvisoVacio);
+            this.flowLayoutPanel4.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.flowLayoutPanel4.FlowDirection = (global::System.Windows.Forms.FlowDirection.TopDown);
+            this.flowLayoutPanel4.Location = (new global::System.Drawing.Point(3, 3));
+            this.flowLayoutPanel4.Name = ("flowLayoutPanel4");
+            this.flowLayoutPanel4.Size = (new global::System.Drawing.Size(482, 655));
+            this.flowLayoutPanel4.TabIndex = (0);
             // 
             // label35
             // 
-            label35.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label35.ForeColor = SystemColors.ActiveCaption;
-            label35.Location = new Point(150, 3);
-            label35.Margin = new Padding(150, 3, 40, 20);
-            label35.Name = "label35";
-            label35.Size = new Size(184, 37);
-            label35.TabIndex = 12;
-            label35.Text = "Agregar";
+            this.label35.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label35.ForeColor = (global::System.Drawing.SystemColors.ActiveCaption);
+            this.label35.Location = (new global::System.Drawing.Point(150, 3));
+            this.label35.Margin = (new global::System.Windows.Forms.Padding(150, 3, 40, 20));
+            this.label35.Name = ("label35");
+            this.label35.Size = (new global::System.Drawing.Size(184, 37));
+            this.label35.TabIndex = (12);
+            this.label35.Text = ("Agregar");
             // 
             // label36
             // 
-            label36.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label36.Location = new Point(40, 60);
-            label36.Margin = new Padding(40, 0, 3, 15);
-            label36.Name = "label36";
-            label36.Size = new Size(331, 37);
-            label36.TabIndex = 13;
-            label36.Text = "Usuario";
+            this.label36.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label36.Location = (new global::System.Drawing.Point(40, 60));
+            this.label36.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 15));
+            this.label36.Name = ("label36");
+            this.label36.Size = (new global::System.Drawing.Size(331, 37));
+            this.label36.TabIndex = (13);
+            this.label36.Text = ("Usuario");
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(40, 115);
-            textBox1.Margin = new Padding(40, 3, 3, 20);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(331, 32);
-            textBox1.TabIndex = 11;
+            this.textBox1.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.textBox1.Location = (new global::System.Drawing.Point(40, 115));
+            this.textBox1.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.textBox1.Name = ("textBox1");
+            this.textBox1.Size = (new global::System.Drawing.Size(331, 32));
+            this.textBox1.TabIndex = (11);
             // 
             // label37
             // 
-            label37.Dock = DockStyle.Fill;
-            label37.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label37.Location = new Point(40, 170);
-            label37.Margin = new Padding(40, 3, 3, 20);
-            label37.Name = "label37";
-            label37.Size = new Size(331, 37);
-            label37.TabIndex = 14;
-            label37.Text = "Contraseña";
+            this.label37.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label37.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label37.Location = (new global::System.Drawing.Point(40, 170));
+            this.label37.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.label37.Name = ("label37");
+            this.label37.Size = (new global::System.Drawing.Size(331, 37));
+            this.label37.TabIndex = (14);
+            this.label37.Text = ("Contraseña");
             // 
             // TextboxContr
             // 
-            TextboxContr.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            TextboxContr.Location = new Point(40, 230);
-            TextboxContr.Margin = new Padding(40, 3, 3, 20);
-            TextboxContr.MaxLength = 18;
-            TextboxContr.Name = "TextboxContr";
-            TextboxContr.Size = new Size(331, 32);
-            TextboxContr.TabIndex = 15;
-            TextboxContr.UseSystemPasswordChar = true;
+            this.TextboxContr.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.TextboxContr.Location = (new global::System.Drawing.Point(40, 230));
+            this.TextboxContr.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.TextboxContr.MaxLength = (18);
+            this.TextboxContr.Name = ("TextboxContr");
+            this.TextboxContr.Size = (new global::System.Drawing.Size(331, 32));
+            this.TextboxContr.TabIndex = (15);
+            this.TextboxContr.UseSystemPasswordChar = (true);
             // 
             // label38
             // 
-            label38.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label38.Location = new Point(40, 285);
-            label38.Margin = new Padding(40, 3, 3, 20);
-            label38.Name = "label38";
-            label38.Size = new Size(331, 37);
-            label38.TabIndex = 17;
-            label38.Text = "Confirma la contraseña";
+            this.label38.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label38.Location = (new global::System.Drawing.Point(40, 285));
+            this.label38.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.label38.Name = ("label38");
+            this.label38.Size = (new global::System.Drawing.Size(331, 37));
+            this.label38.TabIndex = (17);
+            this.label38.Text = ("Confirma la contraseña");
             // 
             // TextboxConfirm
             // 
-            TextboxConfirm.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            TextboxConfirm.Location = new Point(40, 345);
-            TextboxConfirm.Margin = new Padding(40, 3, 3, 20);
-            TextboxConfirm.MaxLength = 18;
-            TextboxConfirm.Name = "TextboxConfirm";
-            TextboxConfirm.Size = new Size(331, 32);
-            TextboxConfirm.TabIndex = 16;
-            TextboxConfirm.UseSystemPasswordChar = true;
+            this.TextboxConfirm.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.TextboxConfirm.Location = (new global::System.Drawing.Point(40, 345));
+            this.TextboxConfirm.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.TextboxConfirm.MaxLength = (18);
+            this.TextboxConfirm.Name = ("TextboxConfirm");
+            this.TextboxConfirm.Size = (new global::System.Drawing.Size(331, 32));
+            this.TextboxConfirm.TabIndex = (16);
+            this.TextboxConfirm.UseSystemPasswordChar = (true);
             // 
             // checkBox1
             // 
-            checkBox1.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.Location = new Point(40, 400);
-            checkBox1.Margin = new Padding(40, 3, 3, 20);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(331, 26);
-            checkBox1.TabIndex = 19;
-            checkBox1.Text = "Ver contraseñas";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            this.checkBox1.Font = (new global::System.Drawing.Font("Roboto", 10.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.checkBox1.Location = (new global::System.Drawing.Point(40, 400));
+            this.checkBox1.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.checkBox1.Name = ("checkBox1");
+            this.checkBox1.Size = (new global::System.Drawing.Size(331, 26));
+            this.checkBox1.TabIndex = (19);
+            this.checkBox1.Text = ("Ver contraseñas");
+            this.checkBox1.UseVisualStyleBackColor = (true);
+            this.checkBox1.CheckedChanged += (this.CheckBox1_CheckedChanged);
             // 
             // button1
             // 
-            button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button1.FlatAppearance.BorderColor = Color.MediumBlue;
-            button1.FlatAppearance.BorderSize = 4;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(100, 449);
-            button1.Margin = new Padding(100, 3, 3, 20);
-            button1.Name = "button1";
-            button1.Size = new Size(271, 65);
-            button1.TabIndex = 18;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.AutoSizeMode = (global::System.Windows.Forms.AutoSizeMode.GrowAndShrink);
+            this.button1.FlatAppearance.BorderColor = (global::System.Drawing.Color.MediumBlue);
+            this.button1.FlatAppearance.BorderSize = (4);
+            this.button1.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.button1.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.button1.Location = (new global::System.Drawing.Point(100, 449));
+            this.button1.Margin = (new global::System.Windows.Forms.Padding(100, 3, 3, 20));
+            this.button1.Name = ("button1");
+            this.button1.Size = (new global::System.Drawing.Size(271, 65));
+            this.button1.TabIndex = (18);
+            this.button1.Text = ("Guardar");
+            this.button1.UseVisualStyleBackColor = (true);
+            this.button1.Click += (this.Button1_Click);
             // 
             // AvisoVacio
             // 
-            AvisoVacio.AutoSize = true;
-            AvisoVacio.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            AvisoVacio.ForeColor = Color.Red;
-            AvisoVacio.Location = new Point(100, 534);
-            AvisoVacio.Margin = new Padding(100, 0, 3, 0);
-            AvisoVacio.Name = "AvisoVacio";
-            AvisoVacio.Size = new Size(0, 26);
-            AvisoVacio.TabIndex = 20;
+            this.AvisoVacio.AutoSize = (true);
+            this.AvisoVacio.Font = (new global::System.Drawing.Font("Showcard Gothic", 12F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.AvisoVacio.ForeColor = (global::System.Drawing.Color.Red);
+            this.AvisoVacio.Location = (new global::System.Drawing.Point(100, 534));
+            this.AvisoVacio.Margin = (new global::System.Windows.Forms.Padding(100, 0, 3, 0));
+            this.AvisoVacio.Name = ("AvisoVacio");
+            this.AvisoVacio.Size = (new global::System.Drawing.Size(0, 26));
+            this.AvisoVacio.TabIndex = (20);
             // 
             // flowLayoutPanel5
             // 
-            flowLayoutPanel5.Controls.Add(label39);
-            flowLayoutPanel5.Controls.Add(label40);
-            flowLayoutPanel5.Controls.Add(comboBox1);
-            flowLayoutPanel5.Controls.Add(label41);
-            flowLayoutPanel5.Controls.Add(textBox2);
-            flowLayoutPanel5.Controls.Add(label42);
-            flowLayoutPanel5.Controls.Add(textBox3);
-            flowLayoutPanel5.Controls.Add(checkBox2);
-            flowLayoutPanel5.Controls.Add(AvisoVacio2);
-            flowLayoutPanel5.Controls.Add(panel3);
-            flowLayoutPanel5.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel5.Location = new Point(491, 3);
-            flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(483, 655);
-            flowLayoutPanel5.TabIndex = 1;
+            this.flowLayoutPanel5.Controls.Add(this.label39);
+            this.flowLayoutPanel5.Controls.Add(this.label40);
+            this.flowLayoutPanel5.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel5.Controls.Add(this.label41);
+            this.flowLayoutPanel5.Controls.Add(this.textBox2);
+            this.flowLayoutPanel5.Controls.Add(this.label42);
+            this.flowLayoutPanel5.Controls.Add(this.textBox3);
+            this.flowLayoutPanel5.Controls.Add(this.checkBox2);
+            this.flowLayoutPanel5.Controls.Add(this.AvisoVacio2);
+            this.flowLayoutPanel5.Controls.Add(this.panel3);
+            this.flowLayoutPanel5.FlowDirection = (global::System.Windows.Forms.FlowDirection.TopDown);
+            this.flowLayoutPanel5.Location = (new global::System.Drawing.Point(491, 3));
+            this.flowLayoutPanel5.Name = ("flowLayoutPanel5");
+            this.flowLayoutPanel5.Size = (new global::System.Drawing.Size(483, 655));
+            this.flowLayoutPanel5.TabIndex = (1);
             // 
             // label39
             // 
-            label39.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label39.AutoSize = true;
-            label39.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label39.ForeColor = SystemColors.ActiveCaption;
-            label39.Location = new Point(150, 3);
-            label39.Margin = new Padding(150, 3, 40, 20);
-            label39.Name = "label39";
-            label39.Size = new Size(234, 37);
-            label39.TabIndex = 21;
-            label39.Text = "Editar";
+            this.label39.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label39.AutoSize = (true);
+            this.label39.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label39.ForeColor = (global::System.Drawing.SystemColors.ActiveCaption);
+            this.label39.Location = (new global::System.Drawing.Point(150, 3));
+            this.label39.Margin = (new global::System.Windows.Forms.Padding(150, 3, 40, 20));
+            this.label39.Name = ("label39");
+            this.label39.Size = (new global::System.Drawing.Size(234, 37));
+            this.label39.TabIndex = (21);
+            this.label39.Text = ("Editar");
             // 
             // label40
             // 
-            label40.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label40.AutoSize = true;
-            label40.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label40.Location = new Point(40, 60);
-            label40.Margin = new Padding(40, 0, 3, 20);
-            label40.Name = "label40";
-            label40.Size = new Size(381, 37);
-            label40.TabIndex = 23;
-            label40.Text = "Selecciona al usuario";
+            this.label40.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label40.AutoSize = (true);
+            this.label40.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label40.Location = (new global::System.Drawing.Point(40, 60));
+            this.label40.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label40.Name = ("label40");
+            this.label40.Size = (new global::System.Drawing.Size(381, 37));
+            this.label40.TabIndex = (23);
+            this.label40.Text = ("Selecciona al usuario");
             // 
             // comboBox1
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.BackColor = SystemColors.Info;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(40, 120);
-            comboBox1.Margin = new Padding(40, 3, 3, 20);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(381, 30);
-            comboBox1.TabIndex = 22;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            this.comboBox1.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.comboBox1.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.comboBox1.Font = (new global::System.Drawing.Font("Roboto", 10.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.comboBox1.FormattingEnabled = (true);
+            this.comboBox1.Location = (new global::System.Drawing.Point(40, 120));
+            this.comboBox1.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.comboBox1.Name = ("comboBox1");
+            this.comboBox1.Size = (new global::System.Drawing.Size(381, 30));
+            this.comboBox1.TabIndex = (22);
+            this.comboBox1.SelectedIndexChanged += (this.ComboBox1_SelectedIndexChanged);
             // 
             // label41
             // 
-            label41.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label41.AutoSize = true;
-            label41.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label41.Location = new Point(40, 170);
-            label41.Margin = new Padding(40, 0, 3, 20);
-            label41.Name = "label41";
-            label41.Size = new Size(381, 37);
-            label41.TabIndex = 24;
-            label41.Text = "Usuario";
+            this.label41.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.AutoSize = (true);
+            this.label41.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label41.Location = (new global::System.Drawing.Point(40, 170));
+            this.label41.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label41.Name = ("label41");
+            this.label41.Size = (new global::System.Drawing.Size(381, 37));
+            this.label41.TabIndex = (24);
+            this.label41.Text = ("Usuario");
             // 
             // textBox2
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Enabled = false;
-            textBox2.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.Location = new Point(40, 230);
-            textBox2.Margin = new Padding(40, 3, 3, 20);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(381, 32);
-            textBox2.TabIndex = 25;
+            this.textBox2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.textBox2.Location = (new global::System.Drawing.Point(40, 230));
+            this.textBox2.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.textBox2.Name = ("textBox2");
+            this.textBox2.Size = (new global::System.Drawing.Size(381, 32));
+            this.textBox2.TabIndex = (25);
             // 
             // label42
             // 
-            label42.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label42.AutoSize = true;
-            label42.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label42.Location = new Point(40, 282);
-            label42.Margin = new Padding(40, 0, 3, 20);
-            label42.Name = "label42";
-            label42.Size = new Size(381, 37);
-            label42.TabIndex = 26;
-            label42.Text = "Contraseña";
+            this.label42.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label42.AutoSize = (true);
+            this.label42.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label42.Location = (new global::System.Drawing.Point(40, 282));
+            this.label42.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label42.Name = ("label42");
+            this.label42.Size = (new global::System.Drawing.Size(381, 37));
+            this.label42.TabIndex = (26);
+            this.label42.Text = ("Contraseña");
             // 
             // textBox3
             // 
-            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox3.Location = new Point(40, 342);
-            textBox3.Margin = new Padding(40, 3, 3, 20);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(381, 32);
-            textBox3.TabIndex = 27;
-            textBox3.UseSystemPasswordChar = true;
+            this.textBox3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.textBox3.Location = (new global::System.Drawing.Point(40, 342));
+            this.textBox3.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.textBox3.Name = ("textBox3");
+            this.textBox3.Size = (new global::System.Drawing.Size(381, 32));
+            this.textBox3.TabIndex = (27);
+            this.textBox3.UseSystemPasswordChar = (true);
             // 
             // checkBox2
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox2.Location = new Point(40, 397);
-            checkBox2.Margin = new Padding(40, 3, 3, 20);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(165, 26);
-            checkBox2.TabIndex = 29;
-            checkBox2.Text = "Ver contraseñas";
-            checkBox2.UseVisualStyleBackColor = true;
-            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            this.checkBox2.AutoSize = (true);
+            this.checkBox2.Font = (new global::System.Drawing.Font("Roboto", 10.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.checkBox2.Location = (new global::System.Drawing.Point(40, 397));
+            this.checkBox2.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.checkBox2.Name = ("checkBox2");
+            this.checkBox2.Size = (new global::System.Drawing.Size(165, 26));
+            this.checkBox2.TabIndex = (29);
+            this.checkBox2.Text = ("Ver contraseñas");
+            this.checkBox2.UseVisualStyleBackColor = (true);
+            this.checkBox2.CheckedChanged += (this.CheckBox2_CheckedChanged);
             // 
             // AvisoVacio2
             // 
-            AvisoVacio2.AutoSize = true;
-            AvisoVacio2.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            AvisoVacio2.Location = new Point(40, 443);
-            AvisoVacio2.Margin = new Padding(40, 0, 3, 0);
-            AvisoVacio2.Name = "AvisoVacio2";
-            AvisoVacio2.Size = new Size(0, 24);
-            AvisoVacio2.TabIndex = 30;
+            this.AvisoVacio2.AutoSize = (true);
+            this.AvisoVacio2.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.AvisoVacio2.Location = (new global::System.Drawing.Point(40, 443));
+            this.AvisoVacio2.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 0));
+            this.AvisoVacio2.Name = ("AvisoVacio2");
+            this.AvisoVacio2.Size = (new global::System.Drawing.Size(0, 24));
+            this.AvisoVacio2.TabIndex = (30);
             // 
             // panel3
             // 
-            panel3.Controls.Add(button2);
-            panel3.Controls.Add(button3);
-            panel3.Location = new Point(3, 470);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(418, 177);
-            panel3.TabIndex = 32;
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Location = (new global::System.Drawing.Point(3, 470));
+            this.panel3.Name = ("panel3");
+            this.panel3.Size = (new global::System.Drawing.Size(418, 177));
+            this.panel3.TabIndex = (32);
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button2.FlatAppearance.BorderColor = Color.MediumBlue;
-            button2.FlatAppearance.BorderSize = 4;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(2, 5);
-            button2.Margin = new Padding(100, 3, 3, 20);
-            button2.Name = "button2";
-            button2.Size = new Size(170, 98);
-            button2.TabIndex = 32;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
+            this.button2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatAppearance.BorderColor = (global::System.Drawing.Color.MediumBlue);
+            this.button2.FlatAppearance.BorderSize = (4);
+            this.button2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.button2.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.button2.Location = (new global::System.Drawing.Point(2, 5));
+            this.button2.Margin = (new global::System.Windows.Forms.Padding(100, 3, 3, 20));
+            this.button2.Name = ("button2");
+            this.button2.Size = (new global::System.Drawing.Size(170, 98));
+            this.button2.TabIndex = (32);
+            this.button2.Text = ("Editar");
+            this.button2.UseVisualStyleBackColor = (true);
+            this.button2.Click += (this.Button2_Click_1);
             // 
             // button3
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button3.FlatAppearance.BorderColor = Color.MediumBlue;
-            button3.FlatAppearance.BorderSize = 4;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(227, 7);
-            button3.Margin = new Padding(100, 3, 3, 20);
-            button3.Name = "button3";
-            button3.Size = new Size(158, 96);
-            button3.TabIndex = 33;
-            button3.Text = "Borrar";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            this.button3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.FlatAppearance.BorderColor = (global::System.Drawing.Color.MediumBlue);
+            this.button3.FlatAppearance.BorderSize = (4);
+            this.button3.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.button3.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.button3.Location = (new global::System.Drawing.Point(227, 7));
+            this.button3.Margin = (new global::System.Windows.Forms.Padding(100, 3, 3, 20));
+            this.button3.Name = ("button3");
+            this.button3.Size = (new global::System.Drawing.Size(158, 96));
+            this.button3.TabIndex = (33);
+            this.button3.Text = ("Borrar");
+            this.button3.UseVisualStyleBackColor = (true);
+            this.button3.Click += (this.Button3_Click);
             // 
             // Conexion_Sql
             // 
-            Conexion_Sql.BackColor = SystemColors.Info;
-            Conexion_Sql.Controls.Add(rjButton3);
-            Conexion_Sql.Controls.Add(LabelEstado);
-            Conexion_Sql.Controls.Add(label51);
-            Conexion_Sql.Controls.Add(rjButton2);
-            Conexion_Sql.Controls.Add(checkBox3);
-            Conexion_Sql.Controls.Add(label50);
-            Conexion_Sql.Controls.Add(label49);
-            Conexion_Sql.Controls.Add(TextContra);
-            Conexion_Sql.Controls.Add(TextUsuario);
-            Conexion_Sql.Controls.Add(TextBase);
-            Conexion_Sql.Controls.Add(TextPuerto);
-            Conexion_Sql.Controls.Add(TextServer);
-            Conexion_Sql.Controls.Add(label48);
-            Conexion_Sql.Controls.Add(label47);
-            Conexion_Sql.Controls.Add(label46);
-            Conexion_Sql.Controls.Add(label45);
-            Conexion_Sql.Controls.Add(label44);
-            Conexion_Sql.Controls.Add(label43);
-            Conexion_Sql.Location = new Point(4, 29);
-            Conexion_Sql.Name = "Conexion_Sql";
-            Conexion_Sql.Padding = new Padding(3);
-            Conexion_Sql.Size = new Size(962, 628);
-            Conexion_Sql.TabIndex = 1;
-            Conexion_Sql.Text = "Conexion Sql";
+            this.Conexion_Sql.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.Conexion_Sql.Controls.Add(this.rjButton3);
+            this.Conexion_Sql.Controls.Add(this.LabelEstado);
+            this.Conexion_Sql.Controls.Add(this.label51);
+            this.Conexion_Sql.Controls.Add(this.rjButton2);
+            this.Conexion_Sql.Controls.Add(this.checkBox3);
+            this.Conexion_Sql.Controls.Add(this.label50);
+            this.Conexion_Sql.Controls.Add(this.label49);
+            this.Conexion_Sql.Controls.Add(this.TextContra);
+            this.Conexion_Sql.Controls.Add(this.TextUsuario);
+            this.Conexion_Sql.Controls.Add(this.TextBase);
+            this.Conexion_Sql.Controls.Add(this.TextPuerto);
+            this.Conexion_Sql.Controls.Add(this.TextServer);
+            this.Conexion_Sql.Controls.Add(this.label48);
+            this.Conexion_Sql.Controls.Add(this.label47);
+            this.Conexion_Sql.Controls.Add(this.label46);
+            this.Conexion_Sql.Controls.Add(this.label45);
+            this.Conexion_Sql.Controls.Add(this.label44);
+            this.Conexion_Sql.Controls.Add(this.label43);
+            this.Conexion_Sql.Location = (new global::System.Drawing.Point(4, 29));
+            this.Conexion_Sql.Name = ("Conexion_Sql");
+            this.Conexion_Sql.Padding = (new global::System.Windows.Forms.Padding(3));
+            this.Conexion_Sql.Size = (new global::System.Drawing.Size(962, 628));
+            this.Conexion_Sql.TabIndex = (1);
+            this.Conexion_Sql.Text = ("Conexion Sql");
             // 
             // rjButton3
             // 
-            rjButton3.BackColor = Color.Violet;
-            rjButton3.BackgroundColor = Color.Violet;
-            rjButton3.BorderColor = Color.PaleVioletRed;
-            rjButton3.BorderRadius = 20;
-            rjButton3.BorderSize = 0;
-            rjButton3.FlatAppearance.BorderSize = 0;
-            rjButton3.FlatStyle = FlatStyle.Flat;
-            rjButton3.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton3.ForeColor = Color.White;
-            rjButton3.Location = new Point(707, 192);
-            rjButton3.Name = "rjButton3";
-            rjButton3.Size = new Size(188, 50);
-            rjButton3.TabIndex = 17;
-            rjButton3.Text = "Revisar";
-            rjButton3.TextColor = Color.White;
-            rjButton3.UseVisualStyleBackColor = false;
-            rjButton3.Click += rjButton3_ClickAsync;
+            this.rjButton3.BackColor = (global::System.Drawing.Color.Violet);
+            this.rjButton3.BackgroundColor = (global::System.Drawing.Color.Violet);
+            this.rjButton3.BorderColor = (global::System.Drawing.Color.PaleVioletRed);
+            this.rjButton3.BorderRadius = (20);
+            this.rjButton3.BorderSize = (0);
+            this.rjButton3.FlatAppearance.BorderSize = (0);
+            this.rjButton3.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.rjButton3.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton3.ForeColor = (global::System.Drawing.Color.White);
+            this.rjButton3.Location = (new global::System.Drawing.Point(707, 192));
+            this.rjButton3.Name = ("rjButton3");
+            this.rjButton3.Size = (new global::System.Drawing.Size(188, 50));
+            this.rjButton3.TabIndex = (17);
+            this.rjButton3.Text = ("Revisar");
+            this.rjButton3.TextColor = (global::System.Drawing.Color.White);
+            this.rjButton3.UseVisualStyleBackColor = (false);
+            this.rjButton3.Click += (this.RjButton3_ClickAsync);
             // 
             // LabelEstado
             // 
-            LabelEstado.AutoSize = true;
-            LabelEstado.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelEstado.ForeColor = Color.Red;
-            LabelEstado.Location = new Point(732, 121);
-            LabelEstado.Name = "LabelEstado";
-            LabelEstado.Size = new Size(125, 37);
-            LabelEstado.TabIndex = 16;
-            LabelEstado.Text = "Inactivo";
+            this.LabelEstado.AutoSize = (true);
+            this.LabelEstado.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.LabelEstado.ForeColor = (global::System.Drawing.Color.Red);
+            this.LabelEstado.Location = (new global::System.Drawing.Point(732, 121));
+            this.LabelEstado.Name = ("LabelEstado");
+            this.LabelEstado.Size = (new global::System.Drawing.Size(125, 37));
+            this.LabelEstado.TabIndex = (16);
+            this.LabelEstado.Text = ("Inactivo");
             // 
             // label51
             // 
-            label51.AutoSize = true;
-            label51.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label51.Location = new Point(660, 64);
-            label51.Name = "label51";
-            label51.Size = new Size(255, 34);
-            label51.TabIndex = 15;
-            label51.Text = "Estado del servidor";
+            this.label51.AutoSize = (true);
+            this.label51.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label51.Location = (new global::System.Drawing.Point(660, 64));
+            this.label51.Name = ("label51");
+            this.label51.Size = (new global::System.Drawing.Size(255, 34));
+            this.label51.TabIndex = (15);
+            this.label51.Text = ("Estado del servidor");
             // 
             // rjButton2
             // 
-            rjButton2.BackColor = Color.MediumSlateBlue;
-            rjButton2.BackgroundColor = Color.MediumSlateBlue;
-            rjButton2.BorderColor = Color.PaleVioletRed;
-            rjButton2.BorderRadius = 20;
-            rjButton2.BorderSize = 0;
-            rjButton2.FlatAppearance.BorderSize = 0;
-            rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.Font = new Font("Roboto", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton2.ForeColor = Color.White;
-            rjButton2.Location = new Point(227, 486);
-            rjButton2.Name = "rjButton2";
-            rjButton2.Size = new Size(256, 73);
-            rjButton2.TabIndex = 14;
-            rjButton2.Text = "Aplicar";
-            rjButton2.TextColor = Color.White;
-            rjButton2.UseVisualStyleBackColor = false;
-            rjButton2.Click += rjButton2_Click;
+            this.rjButton2.BackColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton2.BackgroundColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton2.BorderColor = (global::System.Drawing.Color.PaleVioletRed);
+            this.rjButton2.BorderRadius = (20);
+            this.rjButton2.BorderSize = (0);
+            this.rjButton2.FlatAppearance.BorderSize = (0);
+            this.rjButton2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.rjButton2.Font = (new global::System.Drawing.Font("Roboto", 22.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton2.ForeColor = (global::System.Drawing.Color.White);
+            this.rjButton2.Location = (new global::System.Drawing.Point(227, 486));
+            this.rjButton2.Name = ("rjButton2");
+            this.rjButton2.Size = (new global::System.Drawing.Size(256, 73));
+            this.rjButton2.TabIndex = (14);
+            this.rjButton2.Text = ("Aplicar");
+            this.rjButton2.TextColor = (global::System.Drawing.Color.White);
+            this.rjButton2.UseVisualStyleBackColor = (false);
+            this.rjButton2.Click += (this.RjButton2_Click);
             // 
             // checkBox3
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox3.Location = new Point(590, 423);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(168, 28);
-            checkBox3.TabIndex = 13;
-            checkBox3.Text = "Ver contraseña";
-            checkBox3.UseVisualStyleBackColor = true;
-            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
+            this.checkBox3.AutoSize = (true);
+            this.checkBox3.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.checkBox3.Location = (new global::System.Drawing.Point(590, 423));
+            this.checkBox3.Name = ("checkBox3");
+            this.checkBox3.Size = (new global::System.Drawing.Size(168, 28));
+            this.checkBox3.TabIndex = (13);
+            this.checkBox3.Text = ("Ver contraseña");
+            this.checkBox3.UseVisualStyleBackColor = (true);
+            this.checkBox3.CheckedChanged += (this.CheckBox3_CheckedChanged);
             // 
             // label50
             // 
-            label50.AutoSize = true;
-            label50.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label50.ForeColor = Color.Red;
-            label50.Location = new Point(416, 597);
-            label50.Name = "label50";
-            label50.Size = new Size(67, 28);
-            label50.TabIndex = 12;
-            label50.Text = "Nota:";
+            this.label50.AutoSize = (true);
+            this.label50.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label50.ForeColor = (global::System.Drawing.Color.Red);
+            this.label50.Location = (new global::System.Drawing.Point(416, 597));
+            this.label50.Name = ("label50");
+            this.label50.Size = (new global::System.Drawing.Size(67, 28));
+            this.label50.TabIndex = (12);
+            this.label50.Text = ("Nota:");
             // 
             // label49
             // 
-            label49.AutoSize = true;
-            label49.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label49.Location = new Point(489, 599);
-            label49.Name = "label49";
-            label49.Size = new Size(449, 24);
-            label49.TabIndex = 11;
-            label49.Text = "Si no esta seguro de que ingresar no lo modifique";
+            this.label49.AutoSize = (true);
+            this.label49.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label49.Location = (new global::System.Drawing.Point(489, 599));
+            this.label49.Name = ("label49");
+            this.label49.Size = (new global::System.Drawing.Size(449, 24));
+            this.label49.TabIndex = (11);
+            this.label49.Text = ("Si no esta seguro de que ingresar no lo modifique");
             // 
             // TextContra
             // 
-            TextContra.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TextContra.Location = new Point(308, 416);
-            TextContra.Name = "TextContra";
-            TextContra.Size = new Size(207, 40);
-            TextContra.TabIndex = 10;
-            TextContra.UseSystemPasswordChar = true;
+            this.TextContra.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.TextContra.Location = (new global::System.Drawing.Point(308, 416));
+            this.TextContra.Name = ("TextContra");
+            this.TextContra.Size = (new global::System.Drawing.Size(207, 40));
+            this.TextContra.TabIndex = (10);
+            this.TextContra.UseSystemPasswordChar = (true);
             // 
             // TextUsuario
             // 
-            TextUsuario.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TextUsuario.Location = new Point(305, 344);
-            TextUsuario.Name = "TextUsuario";
-            TextUsuario.Size = new Size(210, 40);
-            TextUsuario.TabIndex = 9;
+            this.TextUsuario.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.TextUsuario.Location = (new global::System.Drawing.Point(305, 344));
+            this.TextUsuario.Name = ("TextUsuario");
+            this.TextUsuario.Size = (new global::System.Drawing.Size(210, 40));
+            this.TextUsuario.TabIndex = (9);
             // 
             // TextBase
             // 
-            TextBase.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TextBase.Location = new Point(343, 274);
-            TextBase.Name = "TextBase";
-            TextBase.Size = new Size(172, 40);
-            TextBase.TabIndex = 8;
+            this.TextBase.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.TextBase.Location = (new global::System.Drawing.Point(343, 274));
+            this.TextBase.Name = ("TextBase");
+            this.TextBase.Size = (new global::System.Drawing.Size(172, 40));
+            this.TextBase.TabIndex = (8);
             // 
             // TextPuerto
             // 
-            TextPuerto.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TextPuerto.Location = new Point(319, 213);
-            TextPuerto.Name = "TextPuerto";
-            TextPuerto.Size = new Size(196, 40);
-            TextPuerto.TabIndex = 7;
+            this.TextPuerto.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.TextPuerto.Location = (new global::System.Drawing.Point(319, 213));
+            this.TextPuerto.Name = ("TextPuerto");
+            this.TextPuerto.Size = (new global::System.Drawing.Size(196, 40));
+            this.TextPuerto.TabIndex = (7);
             // 
             // TextServer
             // 
-            TextServer.Font = new Font("Roboto", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TextServer.Location = new Point(308, 132);
-            TextServer.Name = "TextServer";
-            TextServer.Size = new Size(196, 40);
-            TextServer.TabIndex = 6;
+            this.TextServer.Font = (new global::System.Drawing.Font("Roboto", 16.2F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.TextServer.Location = (new global::System.Drawing.Point(308, 132));
+            this.TextServer.Name = ("TextServer");
+            this.TextServer.Size = (new global::System.Drawing.Size(196, 40));
+            this.TextServer.TabIndex = (6);
             // 
             // label48
             // 
-            label48.AutoSize = true;
-            label48.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label48.Location = new Point(112, 274);
-            label48.Name = "label48";
-            label48.Size = new Size(213, 37);
-            label48.TabIndex = 5;
-            label48.Text = "Base de datos:";
+            this.label48.AutoSize = (true);
+            this.label48.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label48.Location = (new global::System.Drawing.Point(112, 274));
+            this.label48.Name = ("label48");
+            this.label48.Size = (new global::System.Drawing.Size(213, 37));
+            this.label48.TabIndex = (5);
+            this.label48.Text = ("Base de datos:");
             // 
             // label47
             // 
-            label47.AutoSize = true;
-            label47.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label47.Location = new Point(112, 205);
-            label47.Name = "label47";
-            label47.Size = new Size(116, 37);
-            label47.TabIndex = 4;
-            label47.Text = "Puerto:";
+            this.label47.AutoSize = (true);
+            this.label47.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label47.Location = (new global::System.Drawing.Point(112, 205));
+            this.label47.Name = ("label47");
+            this.label47.Size = (new global::System.Drawing.Size(116, 37));
+            this.label47.TabIndex = (4);
+            this.label47.Text = ("Puerto:");
             // 
             // label46
             // 
-            label46.AutoSize = true;
-            label46.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label46.Location = new Point(119, 406);
-            label46.Name = "label46";
-            label46.Size = new Size(180, 37);
-            label46.TabIndex = 3;
-            label46.Text = "Contraseña:";
+            this.label46.AutoSize = (true);
+            this.label46.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label46.Location = (new global::System.Drawing.Point(119, 406));
+            this.label46.Name = ("label46");
+            this.label46.Size = (new global::System.Drawing.Size(180, 37));
+            this.label46.TabIndex = (3);
+            this.label46.Text = ("Contraseña:");
             // 
             // label45
             // 
-            label45.AutoSize = true;
-            label45.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label45.Location = new Point(112, 336);
-            label45.Name = "label45";
-            label45.Size = new Size(129, 37);
-            label45.TabIndex = 2;
-            label45.Text = "Usuario:";
+            this.label45.AutoSize = (true);
+            this.label45.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label45.Location = (new global::System.Drawing.Point(112, 336));
+            this.label45.Name = ("label45");
+            this.label45.Size = (new global::System.Drawing.Size(129, 37));
+            this.label45.TabIndex = (2);
+            this.label45.Text = ("Usuario:");
             // 
             // label44
             // 
-            label44.AutoSize = true;
-            label44.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label44.Location = new Point(111, 133);
-            label44.Name = "label44";
-            label44.Size = new Size(138, 37);
-            label44.TabIndex = 1;
-            label44.Text = "Servidor:";
+            this.label44.AutoSize = (true);
+            this.label44.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label44.Location = (new global::System.Drawing.Point(111, 133));
+            this.label44.Name = ("label44");
+            this.label44.Size = (new global::System.Drawing.Size(138, 37));
+            this.label44.TabIndex = (1);
+            this.label44.Text = ("Servidor:");
             // 
             // label43
             // 
-            label43.AutoSize = true;
-            label43.Font = new Font("Roboto", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label43.Location = new Point(67, 10);
-            label43.Name = "label43";
-            label43.Size = new Size(284, 44);
-            label43.TabIndex = 0;
-            label43.Text = "Editar Conexion";
+            this.label43.AutoSize = (true);
+            this.label43.Font = (new global::System.Drawing.Font("Roboto", 22.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label43.Location = (new global::System.Drawing.Point(67, 10));
+            this.label43.Name = ("label43");
+            this.label43.Size = (new global::System.Drawing.Size(284, 44));
+            this.label43.TabIndex = (0);
+            this.label43.Text = ("Editar Conexion");
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.tabPage2.Controls.Add(this.rjButton6);
+            this.tabPage2.Controls.Add(this.rjButton5);
+            this.tabPage2.Controls.Add(this.rjButton4);
+            this.tabPage2.Controls.Add(this.label64);
+            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.rjComboBox4);
+            this.tabPage2.Controls.Add(this.label62);
+            this.tabPage2.Controls.Add(this.label63);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.label61);
+            this.tabPage2.Controls.Add(this.label60);
+            this.tabPage2.Controls.Add(this.label59);
+            this.tabPage2.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.tabPage2.Location = (new global::System.Drawing.Point(4, 29));
+            this.tabPage2.Name = ("tabPage2");
+            this.tabPage2.Size = (new global::System.Drawing.Size(962, 628));
+            this.tabPage2.TabIndex = (2);
+            this.tabPage2.Text = ("Promotores");
+            // 
+            // rjButton6
+            // 
+            this.rjButton6.BackColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton6.BackgroundColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton6.BorderColor = (global::System.Drawing.Color.PaleVioletRed);
+            this.rjButton6.BorderRadius = (20);
+            this.rjButton6.BorderSize = (0);
+            this.rjButton6.FlatAppearance.BorderSize = (0);
+            this.rjButton6.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.rjButton6.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton6.ForeColor = (global::System.Drawing.Color.White);
+            this.rjButton6.Location = (new global::System.Drawing.Point(705, 458));
+            this.rjButton6.Name = ("rjButton6");
+            this.rjButton6.Size = (new global::System.Drawing.Size(223, 76));
+            this.rjButton6.TabIndex = (35);
+            this.rjButton6.Text = ("Borrar");
+            this.rjButton6.TextColor = (global::System.Drawing.Color.White);
+            this.rjButton6.UseVisualStyleBackColor = (false);
+            this.rjButton6.Click += (this.RjButton6_Click);
+            // 
+            // rjButton5
+            // 
+            this.rjButton5.BackColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton5.BackgroundColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton5.BorderColor = (global::System.Drawing.Color.PaleVioletRed);
+            this.rjButton5.BorderRadius = (20);
+            this.rjButton5.BorderSize = (0);
+            this.rjButton5.FlatAppearance.BorderSize = (0);
+            this.rjButton5.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.rjButton5.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton5.ForeColor = (global::System.Drawing.Color.White);
+            this.rjButton5.Location = (new global::System.Drawing.Point(26, 458));
+            this.rjButton5.Name = ("rjButton5");
+            this.rjButton5.Size = (new global::System.Drawing.Size(223, 76));
+            this.rjButton5.TabIndex = (34);
+            this.rjButton5.Text = ("Agregar");
+            this.rjButton5.TextColor = (global::System.Drawing.Color.White);
+            this.rjButton5.UseVisualStyleBackColor = (false);
+            this.rjButton5.Click += (this.RjButton5_Click);
+            // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton4.BackgroundColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjButton4.BorderColor = (global::System.Drawing.Color.PaleVioletRed);
+            this.rjButton4.BorderRadius = (20);
+            this.rjButton4.BorderSize = (0);
+            this.rjButton4.FlatAppearance.BorderSize = (0);
+            this.rjButton4.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.rjButton4.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton4.ForeColor = (global::System.Drawing.Color.White);
+            this.rjButton4.Location = (new global::System.Drawing.Point(416, 460));
+            this.rjButton4.Name = ("rjButton4");
+            this.rjButton4.Size = (new global::System.Drawing.Size(223, 76));
+            this.rjButton4.TabIndex = (33);
+            this.rjButton4.Text = ("Editar");
+            this.rjButton4.TextColor = (global::System.Drawing.Color.White);
+            this.rjButton4.UseVisualStyleBackColor = (false);
+            this.rjButton4.Click += (this.RjButton4_Click);
+            // 
+            // label64
+            // 
+            this.label64.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label64.Location = (new global::System.Drawing.Point(17, 186));
+            this.label64.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 15));
+            this.label64.Name = ("label64");
+            this.label64.Size = (new global::System.Drawing.Size(331, 37));
+            this.label64.TabIndex = (32);
+            this.label64.Text = ("Promotor");
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.textBox5.Location = (new global::System.Drawing.Point(17, 241));
+            this.textBox5.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.textBox5.Name = ("textBox5");
+            this.textBox5.Size = (new global::System.Drawing.Size(331, 32));
+            this.textBox5.TabIndex = (31);
+            this.textBox5.TextChanged += (this.TextBox5_TextChanged);
+            // 
+            // rjComboBox4
+            // 
+            this.rjComboBox4.BackColor = (global::System.Drawing.Color.WhiteSmoke);
+            this.rjComboBox4.BorderColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjComboBox4.BorderSize = (1);
+            this.rjComboBox4.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDown);
+            this.rjComboBox4.Font = (new global::System.Drawing.Font("Segoe UI", 10F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjComboBox4.ForeColor = (global::System.Drawing.Color.DimGray);
+            this.rjComboBox4.IconColor = (global::System.Drawing.Color.MediumSlateBlue);
+            this.rjComboBox4.ListBackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(230)), (global::System.Int32)((global::System.Byte)(228)), (global::System.Int32)((global::System.Byte)(245))));
+            this.rjComboBox4.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.rjComboBox4.Location = (new global::System.Drawing.Point(524, 241));
+            this.rjComboBox4.MinimumSize = (new global::System.Drawing.Size(200, 30));
+            this.rjComboBox4.Name = ("rjComboBox4");
+            this.rjComboBox4.Padding = (new global::System.Windows.Forms.Padding(1));
+            this.rjComboBox4.Size = (new global::System.Drawing.Size(337, 38));
+            this.rjComboBox4.TabIndex = (30);
+            this.rjComboBox4.Texts = ("");
+            this.rjComboBox4.OnSelectedIndexChanged += (this.RjComboBox4_OnSelectedIndexChanged);
+            // 
+            // label62
+            // 
+            this.label62.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label62.AutoSize = (true);
+            this.label62.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label62.Location = (new global::System.Drawing.Point(515, 181));
+            this.label62.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label62.Name = ("label62");
+            this.label62.Size = (new global::System.Drawing.Size(332, 37));
+            this.label62.TabIndex = (27);
+            this.label62.Text = ("Selecciona al Promotor");
+            // 
+            // label63
+            // 
+            this.label63.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label63.AutoSize = (true);
+            this.label63.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label63.Location = (new global::System.Drawing.Point(515, 291));
+            this.label63.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label63.Name = ("label63");
+            this.label63.Size = (new global::System.Drawing.Size(219, 37));
+            this.label63.TabIndex = (28);
+            this.label63.Text = ("Nuevo Nombre");
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox4.Font = (new global::System.Drawing.Font("Roboto", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.textBox4.Location = (new global::System.Drawing.Point(515, 351));
+            this.textBox4.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.textBox4.Name = ("textBox4");
+            this.textBox4.Size = (new global::System.Drawing.Size(381, 32));
+            this.textBox4.TabIndex = (29);
+            this.textBox4.TextChanged += (this.TextBox4_TextChanged);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = (true);
+            this.label61.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label61.Location = (new global::System.Drawing.Point(595, 96));
+            this.label61.Name = ("label61");
+            this.label61.Size = (new global::System.Drawing.Size(192, 37));
+            this.label61.TabIndex = (2);
+            this.label61.Text = ("Editar/Borrar");
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = (true);
+            this.label60.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label60.Location = (new global::System.Drawing.Point(53, 86));
+            this.label60.Name = ("label60");
+            this.label60.Size = (new global::System.Drawing.Size(125, 37));
+            this.label60.TabIndex = (1);
+            this.label60.Text = ("Agregar");
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = (true);
+            this.label59.Font = (new global::System.Drawing.Font("Roboto Black", 22.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label59.Location = (new global::System.Drawing.Point(241, 14));
+            this.label59.Name = ("label59");
+            this.label59.Size = (new global::System.Drawing.Size(498, 44));
+            this.label59.TabIndex = (0);
+            this.label59.Text = ("Agregar o quitar Promotores");
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1242, 741);
-            Controls.Add(PanelEditar);
-            Controls.Add(pnlListas);
-            Controls.Add(panel2);
-            Controls.Add(PanelBien);
-            Controls.Add(pnlClientes);
-            Controls.Add(pnlRegPago);
-            Controls.Add(panelTitleBar);
-            Controls.Add(panelMenu);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FutureLending";
-            FormClosed += Form1_FormClosed;
-            panelMenu.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panelTitleBar.ResumeLayout(false);
-            panelTitleBar.PerformLayout();
-            pnlRegPago.ResumeLayout(false);
-            pnlRegPago.PerformLayout();
-            pnlClientes.ResumeLayout(false);
-            pnlClientes.PerformLayout();
-            pnlListas.ResumeLayout(false);
-            pnlListas.PerformLayout();
-            flowLayoutPanel3.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gridListas).EndInit();
-            PanelEditar.ResumeLayout(false);
-            PanelEditar.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            PanelBien.ResumeLayout(false);
-            PanelBien.PerformLayout();
-            panel2.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel4.ResumeLayout(false);
-            flowLayoutPanel4.PerformLayout();
-            flowLayoutPanel5.ResumeLayout(false);
-            flowLayoutPanel5.PerformLayout();
-            panel3.ResumeLayout(false);
-            Conexion_Sql.ResumeLayout(false);
-            Conexion_Sql.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
+            this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
+            this.ClientSize = (new global::System.Drawing.Size(1242, 741));
+            this.Controls.Add(this.PanelBien);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlClientes);
+            this.Controls.Add(this.PanelEditar);
+            this.Controls.Add(this.pnlListas);
+            this.Controls.Add(this.pnlRegPago);
+            this.Controls.Add(this.panelTitleBar);
+            this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = (global::System.Windows.Forms.FormBorderStyle.Fixed3D);
+            this.Icon = ((global::System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.Name = ("Form1");
+            this.StartPosition = (global::System.Windows.Forms.FormStartPosition.CenterScreen);
+            this.Text = ("FutureLending");
+            this.FormClosed += (this.Form1_FormClosed);
+            this.panelMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((global::System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
+            this.pnlRegPago.ResumeLayout(false);
+            this.pnlRegPago.PerformLayout();
+            this.pnlClientes.ResumeLayout(false);
+            this.pnlClientes.PerformLayout();
+            this.pnlListas.ResumeLayout(false);
+            this.pnlListas.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            ((global::System.ComponentModel.ISupportInitialize)(this.gridListas)).EndInit();
+            this.PanelEditar.ResumeLayout(false);
+            this.PanelEditar.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.PanelBien.ResumeLayout(false);
+            this.PanelBien.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.Conexion_Sql.ResumeLayout(false);
+            this.Conexion_Sql.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.ResumeLayout(false);
         }
 
         #endregion
@@ -2918,5 +3205,25 @@
         private Label label44;
         private Label label43;
         private Controles_personalizados.RJButton rjButton3;
+        private global::System.Windows.Forms.Label label58;
+        private global::System.Windows.Forms.Label label57;
+        private global::System.Windows.Forms.Label label56;
+        private global::System.Windows.Forms.Label label55;
+        private global::System.Windows.Forms.Label label54;
+        private global::System.Windows.Forms.Label label53;
+        private global::System.Windows.Forms.Label label52;
+        private global::System.Windows.Forms.TabPage tabPage2;
+        private global::System.Windows.Forms.Label label59;
+        private global::System.Windows.Forms.Label label62;
+        private global::System.Windows.Forms.Label label63;
+        private global::System.Windows.Forms.TextBox textBox4;
+        private global::System.Windows.Forms.Label label61;
+        private global::System.Windows.Forms.Label label60;
+        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox4;
+        private global::FutureLending.Controles_personalizados.RJButton rjButton6;
+        private global::FutureLending.Controles_personalizados.RJButton rjButton5;
+        private global::FutureLending.Controles_personalizados.RJButton rjButton4;
+        private global::System.Windows.Forms.Label label64;
+        private global::System.Windows.Forms.TextBox textBox5;
     }
 }

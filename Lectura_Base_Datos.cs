@@ -352,7 +352,7 @@ namespace FutureLending
         {
             string query = "SELECT * FROM lista2 WHERE Nombre_Completo = @nombre";
             using MySqlConnection connection = Conector();
-            using MySqlCommand command = new MySqlCommand(query, connection);
+            using MySqlCommand command = new(query, connection);
             command.Parameters.AddWithValue("@nombre", nombre);
 
             try
@@ -392,41 +392,39 @@ namespace FutureLending
         {
             string query = "SELECT * FROM lista3 WHERE Nombre_Completo = @nombre";
 
-            using (MySqlConnection connection = Conector())
+            using MySqlConnection connection = Conector();
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@nombre", nombre);
+
+            try
             {
-                using MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@nombre", nombre);
+                using MySqlDataReader reader = command.ExecuteReader();
 
-                try
+                if (reader.Read())
                 {
-                    using MySqlDataReader reader = command.ExecuteReader();
+                    // Obtener los valores de las columnas del registro encontrado
+                    string[] datos = new string[14];
+                    datos[0] = reader.GetString("Nombre_Completo");
+                    datos[1] = reader.GetString("Credito_Prestado");
+                    datos[2] = reader.GetString("Fecha_Inicio");
+                    datos[3] = reader.GetString("Interes");
+                    datos[4] = reader.GetString("Monto_Total");
+                    datos[5] = reader.GetString("Promotor");
+                    datos[6] = reader.GetString("Calle");
+                    datos[7] = reader.GetString("Colonia");
+                    datos[8] = reader.GetString("Num_int");
+                    datos[9] = reader.GetString("Num_ext");
+                    datos[10] = reader.GetString("Telefono");
+                    datos[11] = reader.GetString("Correo");
+                    datos[12] = reader.GetInt32("Tipo_pago").ToString();
+                    datos[13] = reader.GetString("Monto_Restante");
 
-                    if (reader.Read())
-                    {
-                        // Obtener los valores de las columnas del registro encontrado
-                        string[] datos = new string[14];
-                        datos[0] = reader.GetString("Nombre_Completo");
-                        datos[1] = reader.GetString("Credito_Prestado");
-                        datos[2] = reader.GetString("Fecha_Inicio");
-                        datos[3] = reader.GetString("Interes");
-                        datos[4] = reader.GetString("Monto_Total");
-                        datos[5] = reader.GetString("Promotor");
-                        datos[6] = reader.GetString("Calle");
-                        datos[7] = reader.GetString("Colonia");
-                        datos[8] = reader.GetString("Num_int");
-                        datos[9] = reader.GetString("Num_ext");
-                        datos[10] = reader.GetString("Telefono");
-                        datos[11] = reader.GetString("Correo");
-                        datos[12] = reader.GetInt32("Tipo_pago").ToString();
-                        datos[13] = reader.GetString("Monto_Restante");
-
-                        return datos;
-                    }
+                    return datos;
                 }
-                catch (Exception ex)
-                {
-                    Registro_errores("Error al obtener el registro: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                Registro_errores("Error al obtener el registro: " + ex.Message);
             }
             return null;
         }
@@ -434,43 +432,37 @@ namespace FutureLending
         {
             string query = "SELECT * FROM liquidados WHERE Nombre_Completo = @nombre";
 
-            using (MySqlConnection connection = Conector())
+            using MySqlConnection connection = Conector();
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@nombre", nombre);
+
+            try
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
                 {
-                    command.Parameters.AddWithValue("@nombre", nombre);
+                    string[] datos = new string[14];
+                    datos[0] = reader.GetString("Nombre_Completo");
+                    datos[1] = reader.GetString("Credito_Prestado");
+                    datos[2] = reader.GetString("Fecha_Inicio");
+                    datos[3] = reader.GetString("Fecha_Ultimo_Pago");
+                    datos[4] = reader.GetString("Interes");
+                    datos[5] = reader.GetString("Monto_Total");
+                    datos[6] = reader.GetString("Promotor");
+                    datos[7] = reader.GetString("Calle");
+                    datos[8] = reader.GetString("Colonia");
+                    datos[9] = reader.GetString("Num_int");
+                    datos[10] = reader.GetString("Num_ext");
+                    datos[11] = reader.GetString("Telefono");
+                    datos[12] = reader.GetString("Correo");
+                    datos[13] = reader.GetInt32("Tipo_pago").ToString();
 
-                    try
-                    {
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                string[] datos = new string[14];
-                                datos[0] = reader.GetString("Nombre_Completo");
-                                datos[1] = reader.GetString("Credito_Prestado");
-                                datos[2] = reader.GetString("Fecha_Inicio");
-                                datos[3] = reader.GetString("Fecha_Ultimo_Pago");
-                                datos[4] = reader.GetString("Interes");
-                                datos[5] = reader.GetString("Monto_Total");
-                                datos[6] = reader.GetString("Promotor");
-                                datos[7] = reader.GetString("Calle");
-                                datos[8] = reader.GetString("Colonia");
-                                datos[9] = reader.GetString("Num_int");
-                                datos[10] = reader.GetString("Num_ext");
-                                datos[11] = reader.GetString("Telefono");
-                                datos[12] = reader.GetString("Correo");
-                                datos[13] = reader.GetInt32("Tipo_pago").ToString();
-
-                                return datos;
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Registro_errores("Error al obtener el registro: " + ex.Message);
-                    }
+                    return datos;
                 }
+            }
+            catch (Exception ex)
+            {
+                Registro_errores("Error al obtener el registro: " + ex.Message);
             }
 
             return null;
@@ -561,35 +553,31 @@ namespace FutureLending
 
             string query = $"UPDATE {nombreTabla} SET Nombre_Completo = @NuevoNombre, Credito_Prestado = @NuevoCredito, Fecha_Inicio = @NuevaFechaInicio, Interes = @NuevoInteres, Monto_Total = @NuevoMonto, Promotor = @NuevoPromotor, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_pago = @NuevoTipoPago, Monto_Restante = @NuevoMontoRestante, Fecha_Limite = @NuevaFechaLimite WHERE Nombre_Completo = @Nombre";
 
-            using (MySqlConnection connection = Conector())
+            using MySqlConnection connection = Conector();
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
+            command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
+            command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
+            command.Parameters.AddWithValue("@NuevoInteres", datos[3]);
+            command.Parameters.AddWithValue("@NuevoMonto", datos[4]);
+            command.Parameters.AddWithValue("@NuevoPromotor", datos[5]);
+            command.Parameters.AddWithValue("@NuevaCalle", datos[6]);
+            command.Parameters.AddWithValue("@NuevaColonia", datos[7]);
+            command.Parameters.AddWithValue("@NuevoNumInt", datos[8]);
+            command.Parameters.AddWithValue("@NuevoNumExt", datos[9]);
+            command.Parameters.AddWithValue("@NuevoTelefono", datos[10]);
+            command.Parameters.AddWithValue("@NuevoCorreo", datos[11]);
+            command.Parameters.AddWithValue("@NuevoTipoPago", int.Parse(datos[12]));
+            command.Parameters.AddWithValue("@NuevoMontoRestante", datos[13]);
+            command.Parameters.AddWithValue("@NuevaFechaLimite", datos[14]);
+            command.Parameters.AddWithValue("@Nombre", datos[15]);
+            try
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
-                    command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
-                    command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
-                    command.Parameters.AddWithValue("@NuevoInteres", datos[3]);
-                    command.Parameters.AddWithValue("@NuevoMonto", datos[4]);
-                    command.Parameters.AddWithValue("@NuevoPromotor", datos[5]);
-                    command.Parameters.AddWithValue("@NuevaCalle", datos[6]);
-                    command.Parameters.AddWithValue("@NuevaColonia", datos[7]);
-                    command.Parameters.AddWithValue("@NuevoNumInt", datos[8]);
-                    command.Parameters.AddWithValue("@NuevoNumExt", datos[9]);
-                    command.Parameters.AddWithValue("@NuevoTelefono", datos[10]);
-                    command.Parameters.AddWithValue("@NuevoCorreo", datos[11]);
-                    command.Parameters.AddWithValue("@NuevoTipoPago", int.Parse(datos[12]));
-                    command.Parameters.AddWithValue("@NuevoMontoRestante", datos[13]);
-                    command.Parameters.AddWithValue("@NuevaFechaLimite", datos[14]);
-                    command.Parameters.AddWithValue("@Nombre", datos[15]);
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        Registro_errores(ex.ToString());
-                    }
-                }
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Registro_errores(ex.ToString());
             }
         }
         public void EditarLista3(string[] datos)
@@ -604,35 +592,31 @@ namespace FutureLending
 
             string query = $"UPDATE {nombreTabla} SET Nombre_Completo =@NuevoNombre,Credito_Prestado = @NuevoCredito, Fecha_Inicio = @NuevaFechaInicio, Interes = @NuevoInteres, Monto_Total = @NuevoMonto, Promotor = @NuevoPromotor, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_pago = @NuevoTipoPago, Monto_Restante = @NuevoMontoRestante WHERE Nombre_Completo = @Nombre";
 
-            using (MySqlConnection connection = Conector())
-            {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
-                    command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
-                    command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
-                    command.Parameters.AddWithValue("@NuevoInteres", datos[3]);
-                    command.Parameters.AddWithValue("@NuevoMonto", datos[4]);
-                    command.Parameters.AddWithValue("@NuevoPromotor", datos[5]);
-                    command.Parameters.AddWithValue("@NuevaCalle", datos[6]);
-                    command.Parameters.AddWithValue("@NuevaColonia", datos[7]);
-                    command.Parameters.AddWithValue("@NuevoNumInt", datos[8]);
-                    command.Parameters.AddWithValue("@NuevoNumExt", datos[9]);
-                    command.Parameters.AddWithValue("@NuevoTelefono", datos[10]);
-                    command.Parameters.AddWithValue("@NuevoCorreo", datos[11]);
-                    command.Parameters.AddWithValue("@NuevoTipoPago", int.Parse(datos[12]));
-                    command.Parameters.AddWithValue("@NuevoMontoRestante", datos[13]);
-                    command.Parameters.AddWithValue("@Nombre", datos[14]);
+            using MySqlConnection connection = Conector();
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
+            command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
+            command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
+            command.Parameters.AddWithValue("@NuevoInteres", datos[3]);
+            command.Parameters.AddWithValue("@NuevoMonto", datos[4]);
+            command.Parameters.AddWithValue("@NuevoPromotor", datos[5]);
+            command.Parameters.AddWithValue("@NuevaCalle", datos[6]);
+            command.Parameters.AddWithValue("@NuevaColonia", datos[7]);
+            command.Parameters.AddWithValue("@NuevoNumInt", datos[8]);
+            command.Parameters.AddWithValue("@NuevoNumExt", datos[9]);
+            command.Parameters.AddWithValue("@NuevoTelefono", datos[10]);
+            command.Parameters.AddWithValue("@NuevoCorreo", datos[11]);
+            command.Parameters.AddWithValue("@NuevoTipoPago", int.Parse(datos[12]));
+            command.Parameters.AddWithValue("@NuevoMontoRestante", datos[13]);
+            command.Parameters.AddWithValue("@Nombre", datos[14]);
 
-                    try
-                    {
-                       command.ExecuteNonQuery();
-                    }
-                    catch (MySqlException ex)
-                    {
-                        Registro_errores(ex.ToString());
-                    }
-                }
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                Registro_errores(ex.ToString());
             }
         }
         public void EditarListaLiquidados(string[] datos)
@@ -647,43 +631,39 @@ namespace FutureLending
 
             string query = $"UPDATE {nombreTabla} SET Nombre_Completo=@NuevoNombre,Credito_Prestado = @NuevoCredito, Fecha_Inicio = @NuevaFechaInicio, Fecha_Ultimo_Pago = @NuevaFechaUltimoPago, Interes = @NuevoInteres, Monto_Total = @NuevoMonto, Promotor = @NuevoPromotor, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_pago = @NuevoTipoPago WHERE Nombre_Completo = @Nombre";
 
-            using (MySqlConnection connection = Conector())
-            {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
-                    command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
-                    command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
-                    command.Parameters.AddWithValue("@NuevaFechaUltimoPago", datos[3]);
-                    command.Parameters.AddWithValue("@NuevoInteres", datos[4]);
-                    command.Parameters.AddWithValue("@NuevoMonto", datos[5]);
-                    command.Parameters.AddWithValue("@NuevoPromotor", datos[6]);
-                    command.Parameters.AddWithValue("@NuevaCalle", datos[7]);
-                    command.Parameters.AddWithValue("@NuevaColonia", datos[8]);
-                    command.Parameters.AddWithValue("@NuevoNumInt", datos[9]);
-                    command.Parameters.AddWithValue("@NuevoNumExt", datos[10]);
-                    command.Parameters.AddWithValue("@NuevoTelefono", datos[11]);
-                    command.Parameters.AddWithValue("@NuevoCorreo", datos[12]);
-                    command.Parameters.AddWithValue("@NuevoTipoPago", datos[13]);
-                    command.Parameters.AddWithValue("@Nombre", datos[14]);
+            using MySqlConnection connection = Conector();
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@NuevoNombre", datos[0]);
+            command.Parameters.AddWithValue("@NuevoCredito", datos[1]);
+            command.Parameters.AddWithValue("@NuevaFechaInicio", datos[2]);
+            command.Parameters.AddWithValue("@NuevaFechaUltimoPago", datos[3]);
+            command.Parameters.AddWithValue("@NuevoInteres", datos[4]);
+            command.Parameters.AddWithValue("@NuevoMonto", datos[5]);
+            command.Parameters.AddWithValue("@NuevoPromotor", datos[6]);
+            command.Parameters.AddWithValue("@NuevaCalle", datos[7]);
+            command.Parameters.AddWithValue("@NuevaColonia", datos[8]);
+            command.Parameters.AddWithValue("@NuevoNumInt", datos[9]);
+            command.Parameters.AddWithValue("@NuevoNumExt", datos[10]);
+            command.Parameters.AddWithValue("@NuevoTelefono", datos[11]);
+            command.Parameters.AddWithValue("@NuevoCorreo", datos[12]);
+            command.Parameters.AddWithValue("@NuevoTipoPago", datos[13]);
+            command.Parameters.AddWithValue("@Nombre", datos[14]);
 
-                    try
-                    {                                   
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            Console.WriteLine("Datos actualizados correctamente.");
-                        }
-                        else
-                        {
-                            Registro_errores("No se encontró ningún registro para actualizar.");
-                        }
-                    }
-                    catch (MySqlException ex)
-                    {
-                        Registro_errores(ex.ToString());
-                    }
+            try
+            {
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    Console.WriteLine("Datos actualizados correctamente.");
                 }
+                else
+                {
+                    Registro_errores("No se encontró ningún registro para actualizar.");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Registro_errores(ex.ToString());
             }
         }
         #endregion
@@ -814,12 +794,12 @@ namespace FutureLending
         public void InsertarLiquidados(string[] datos)
         {
             using MySqlConnection connection = Conector();
-            StringBuilder queryBuilder = new StringBuilder();
+            StringBuilder queryBuilder = new();
             queryBuilder.Append("INSERT INTO liquidados (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Fecha_Ultimo_Pago, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago)");
             queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaI, @FechaUP, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumI, @NumE, @Telefono, @Correo, @TipoP)");
             string query = queryBuilder.ToString();
 
-            using MySqlCommand command = new MySqlCommand(query, connection);
+            using MySqlCommand command = new(query, connection);
             command.Parameters.AddWithValue("@Nombre", datos[0]);
             command.Parameters.AddWithValue("@Credito", datos[1]);
             command.Parameters.AddWithValue("@FechaI", datos[2]);
@@ -846,12 +826,12 @@ namespace FutureLending
         public void InsertarLista2(string[] valores)
         {
             using MySqlConnection connection = Conector();
-            StringBuilder queryBuilder = new StringBuilder();
+            StringBuilder queryBuilder = new();
             queryBuilder.Append("INSERT INTO lista2 (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante, Fecha_Limite)");
             queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaInicio, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @MontoRestante, @FechaLimite)");
             string query = queryBuilder.ToString();
 
-            using MySqlCommand command = new MySqlCommand(query, connection);
+            using MySqlCommand command = new(query, connection);
             command.Parameters.AddWithValue("@Nombre", valores[0]);
             command.Parameters.AddWithValue("@Credito", valores[1]);
             command.Parameters.AddWithValue("@FechaInicio", valores[2]);
@@ -880,12 +860,12 @@ namespace FutureLending
         public void InsertarLista3(string[] valores)
         {
             using MySqlConnection connection = Conector();
-            StringBuilder queryBuilder = new StringBuilder();
+            StringBuilder queryBuilder = new();
             queryBuilder.Append("INSERT INTO lista3 (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante)");
             queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaInicio, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @MontoRestante)");
             string query = queryBuilder.ToString();
 
-            using MySqlCommand command = new MySqlCommand(query, connection);
+            using MySqlCommand command = new(query, connection);
             command.Parameters.AddWithValue("@Nombre", valores[0]);
             command.Parameters.AddWithValue("@Credito", valores[1]);
             command.Parameters.AddWithValue("@FechaInicio", valores[2]);
@@ -982,9 +962,7 @@ namespace FutureLending
                 UseShellExecute = false
             };
             var process = Process.Start(processStartInfo);
-#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
             process.EnableRaisingEvents = true;
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
 #pragma warning disable CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
             process.Exited += (s, e) => tcs.TrySetResult(null);
 #pragma warning restore CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
@@ -1097,7 +1075,7 @@ namespace FutureLending
                 // Crea un StreamWriter para escribir en el archivo de registro
                 using StreamWriter writer = new(logFilePath, true);
                 // Escribe la información del error en el archivo
-                writer.WriteLine($"[{DateTime.Now}] Error: {error}");
+                writer.WriteLine(value: $"[{DateTime.Now}] Error: {error}");
             }
             catch (Exception ex)
             {

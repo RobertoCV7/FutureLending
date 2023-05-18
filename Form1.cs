@@ -2,6 +2,7 @@ using Bunifu.Framework.UI;
 using Bunifu.UI.WinForms;
 using FutureLending.ControlesPersonalizados;
 using MySqlX.XDevAPI.Relational;
+using Newtonsoft.Json;
 using Org.BouncyCastle.Utilities;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,9 @@ namespace FutureLending
         {
             InitializeComponent();
             CollapseMenu();
+            rjButton6.Enabled = false;
+            rjButton4.Enabled = false;
+            rjButton5.Enabled = false;
             cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
             ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -74,6 +78,9 @@ namespace FutureLending
         {
             lblTitle.Text = "Ingresar Clientes";
             pnlClientes.BringToFront();
+            CargarPromotoresEnComboBox(cmbPromotor);
+
+
         }
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
@@ -244,7 +251,7 @@ namespace FutureLending
             lblTitle.Text = "Listas Completas";
             pnlListas.BringToFront();
         }
-        private void btnGuardarCambio_Click(object sender, EventArgs e)
+        private void BtnGuardarCambio_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos a = new();
             if (ListaEstado == 0)
@@ -383,7 +390,7 @@ namespace FutureLending
             }
 
         }
-        private void rjButton1_Click_1(object sender, EventArgs e)
+        private void RjButton1_Click_1(object sender, EventArgs e)
         {
             Exportar_Excel a = new();
             a.ShowDialog();
@@ -476,11 +483,11 @@ namespace FutureLending
 
 
             Lectura_Base_Datos a = new();
-
-            string pertenece = "";
-            string lista = "";
             LabelLimite.Hide();
             dateTimeLimite.Hide();
+
+            string pertenece;
+            string lista;
             if (ListaEstado == 0)
             {
                 cmbLista.Items.Clear();
@@ -547,7 +554,6 @@ namespace FutureLending
                 LabelLimite.Show();
                 dateTimeLimite.Show();
                 pertenece = "Lista 2";
-                lista = "lista2";
                 LblPerte.Text = pertenece;
                 cmbLista.Items.AddRange(new string[] { "Lista 3", "Liquidados" });
                 informacion3 = a.LectName2(Cliente);
@@ -620,7 +626,6 @@ namespace FutureLending
                 LabelLimite.Hide();
                 dateTimeLimite.Hide();
                 pertenece = "Lista 3";
-                lista = "lista3";
                 LblPerte.Text = pertenece;
                 cmbLista.Items.AddRange(new string[] { "Liquidados" });
                 Cliente = cmbCliente.Texts;
@@ -680,7 +685,6 @@ namespace FutureLending
                 label25.Hide();
                 textBoxPersonalizado7.Hide();
                 pertenece = "Lista Liquidados";
-                lista = "liquidados";
                 LblPerte.Text = pertenece;
                 cmbLista.Enabled = false;
                 textBoxPersonalizado10.Texts = informacion3[0];
@@ -775,6 +779,144 @@ namespace FutureLending
                 cmbCliente.Enabled = true;
             }
         }
+
+        #endregion
+        #region Cambio de listas
+        private void CmbLista_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbLista.SelectedIndex != -1)
+            {
+                btnMover.Enabled = true;
+            }
+            else
+            {
+                btnMover.Enabled = false;
+            }
+
+        }
+        private void BtnMover_Click(object sender, EventArgs e) //boton para mover
+        {
+
+            string proviene = LblPerte.Text;
+            if (proviene == "Lista 1")
+            {
+                proviene = "lista1";
+            }
+            else if (proviene == "Lista 2")
+            {
+                proviene = "lista2";
+            }
+            else if (proviene == "Lista 3")
+            {
+                proviene = "lista3";
+            }
+            string Nombre = textBoxPersonalizado10.Texts;
+            string Credito = textBoxPersonalizado9.Texts;
+            string Fecha_Inicio = dateTimePickerPersonalizado1.Value.ToString("dd/MM/yyyy");
+            string Interes = rjComboBox1.SelectedItem.ToString().Split("%")[0];
+            string Monto = textBoxPersonalizado8.Texts;
+            string promotor = rjComboBox3.SelectedItem.ToString();
+            string calle = textBoxPersonalizado6.Texts;
+            string colonia = textBoxPersonalizado5.Texts;
+            string num_int = textBoxPersonalizado4.Texts;
+            string num_ext = textBoxPersonalizado3.Texts;
+            string telefono = textBoxPersonalizado2.Texts;
+            string correo = textBoxPersonalizado1.Texts;
+            int tipo_pago;
+            if (rjComboBox2.SelectedItem.ToString() == "Semanales")
+            {
+                tipo_pago = 0;
+            }
+            else
+            {
+                tipo_pago = 1;
+            }
+            Lectura_Base_Datos lec = new();
+
+            switch (cmbLista.SelectedItem.ToString())
+            {
+                case "Lista 2": //lista2
+                    LabelLimite.Text = "Fecha Limite";
+                    string Fecha_Ultimo1 = dateTimeLimite.Value.ToString("dd/MM/yyyy");
+                    string Monto_Restante = textBoxPersonalizado7.Texts;
+                    string[] datos1 = new string[]{
+    Nombre,
+    Credito,
+    Fecha_Inicio,
+    Interes,
+    Monto,
+    promotor,
+    calle,
+    colonia,
+    num_int,
+    num_ext,
+    telefono,
+    correo
+};
+                    string[] arrayCompleto1 = datos1.Concat(new string[] { tipo_pago.ToString() }).ToArray();
+                    string[] arrayCompleto2 = arrayCompleto1.Concat(new string[] { Monto_Restante, Fecha_Ultimo1 }).ToArray();
+                    lec.Erase(Nombre, proviene);
+                    lec.InsertarLista2(arrayCompleto2);
+                    pnlListas.BringToFront();
+                    break;
+                case "Lista 3": //lista 3
+                    string Monto_Restante2 = textBoxPersonalizado7.Texts;
+                    string[] datitos = new string[]
+                    {
+                        Nombre,
+                        Credito,
+                        Fecha_Inicio,
+                        Interes,
+                        Monto,
+                        promotor,
+                        calle,
+                        colonia,
+                        num_int,
+                        num_ext,
+                        telefono,
+                        correo
+                    };
+                    string[] completito = datitos.Concat(new string[] { tipo_pago.ToString(), Monto_Restante2 }).ToArray();
+                    lec.Erase(Nombre, proviene);
+                    lec.InsertarLista3(completito);
+                    pnlListas.BringToFront();
+                    break;
+                case "Liquidados": //lista liquidados
+                    string Fecha_Ultimo = dateTimeLimite.Value.ToString("dd/MM/yyyy");
+                    string[] datos = new string[]{
+    Nombre,
+    Credito,
+    Fecha_Inicio,
+    Fecha_Ultimo,
+    Interes,
+    Monto,
+    promotor,
+    calle,
+    colonia,
+    num_int,
+    num_ext,
+    telefono,
+    correo
+};
+                    string[] arrayCompleto = datos.Concat(new string[] { tipo_pago.ToString() }).ToArray();
+                    lec.Erase(Nombre, proviene);
+                    lec.InsertarLiquidados(arrayCompleto);
+                    pnlListas.BringToFront();
+                    break;
+            }
+
+
+
+
+
+        }
+
+
+
+
+
+
+
 
         #endregion
 
@@ -936,18 +1078,19 @@ namespace FutureLending
         #endregion
         #region Configuracion
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
+            CargarPromotoresEnComboBox(rjComboBox4);
             lblTitle.Text = "Configuracion";
-            Accesos a = new();
             panel2.BringToFront();
-            string[] usuarios = a.CargarUsuarios().ToArray();
+            _ = new Accesos();
+            string[] usuarios = Accesos.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
         }
 
         private bool changingCheckedState = false;
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (!changingCheckedState)
             {
@@ -970,7 +1113,7 @@ namespace FutureLending
             }
         }
         private bool changingCheckedState2 = false;
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (!changingCheckedState2)
             {
@@ -991,10 +1134,10 @@ namespace FutureLending
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             bool mensaje;
-            Accesos a = new();
+            _ = new Accesos();
             string User = textBox1.Text.ToString();
             string password = TextboxContr.Text.ToString();
             if (string.IsNullOrEmpty(User))
@@ -1003,7 +1146,7 @@ namespace FutureLending
             }
             else
             {
-                mensaje = a.AgregarUsuario(User, password);
+                mensaje = Accesos.AgregarUsuario(User, password);
                 if (mensaje == true)
                 {
                     textBox1.Text = "";
@@ -1016,14 +1159,14 @@ namespace FutureLending
                     AvisoVacio.Text = "El usuario ya existe. No se pudo agregar";
                 }
             }
-            Accesos a2 = new();
-            panel2.BringToFront();
-            string[] usuarios = a2.CargarUsuarios().ToArray();
+
+            _ = new Accesos();
+            string[] usuarios = Accesos.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
             {
@@ -1036,28 +1179,29 @@ namespace FutureLending
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             string usuario = comboBox1.SelectedItem.ToString();
-            Accesos a = new();
-            a.EliminarUsuario(usuario);
+            _ = new Accesos();
+            Accesos.EliminarUsuario(usuario);
             comboBox1.SelectedIndex = -1;
+            string[] usuarios = Accesos.CargarUsuarios().ToArray();
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(usuarios);
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void Button2_Click_1(object sender, EventArgs e)
         {
-
-            Accesos a = new();
+            _ = new
+            Accesos();
             string user = textBox2.Text.ToString();
             string pass = textBox3.Text.ToString();
-            a.EditarUsuarioContraseña(user, pass);
+            Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), user, pass);
             textBox2.Text = "";
             textBox3.Text = "";
             AvisoVacio2.Text = "";
             comboBox1.SelectedIndex = -1;
-
-            panel2.BringToFront();
-            string[] usuarios = a.CargarUsuarios().ToArray();
+            string[] usuarios = Accesos.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
         }
@@ -1066,17 +1210,17 @@ namespace FutureLending
 
         public bool conect;
         public bool revisador = true;
-        private async void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private async void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Lectura_Base_Datos a = new();
             if (tabControl1.SelectedIndex == 0)
             {
-                Accesos a2 = new();
-                string[] usuarios = a2.CargarUsuarios().ToArray();
+                _ = new Accesos();
+                string[] usuarios = Accesos.CargarUsuarios().ToArray();
                 comboBox1.Items.Clear();
                 comboBox1.Items.AddRange(usuarios);
             }
-            else
+            else if (tabControl1.SelectedIndex == 1)
             {
                 TextServer.Text = Properties.Settings1.Default.Servidor;
                 TextPuerto.Text = Properties.Settings1.Default.Puerto.ToString();
@@ -1096,9 +1240,13 @@ namespace FutureLending
                     LabelEstado.ForeColor = Color.Green;
                 }
             }
+            else
+            {
+
+            }
         }
         private bool check = false;
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (!check)
             {
@@ -1114,7 +1262,7 @@ namespace FutureLending
             }
             check = false;
         }
-        private void rjButton2_Click(object sender, EventArgs e)
+        private void RjButton2_Click(object sender, EventArgs e)
         {
             string server = TextServer.Text.ToString();
             string puerto = TextPuerto.Text.ToString();
@@ -1137,7 +1285,7 @@ namespace FutureLending
                 MessageB("Se guardaron los cambios", "Exito", 1);
             }
         }
-        private async void rjButton3_ClickAsync(object sender, EventArgs e)
+        private async void RjButton3_ClickAsync(object sender, EventArgs e)
         {
             Lectura_Base_Datos a = new();
             revisador = false;
@@ -1179,164 +1327,194 @@ namespace FutureLending
         #endregion
 
 
+        #region Promotores
 
 
-        #region Cambio de listas
-        private void cmbLista_OnSelectedIndexChanged(object sender, EventArgs e)
+        public class Promotor
         {
-            if (cmbLista.SelectedIndex != -1)
-            {
-                btnMover.Enabled = true;
-            }
-            else
-            {
-                btnMover.Enabled = false;
-            }
-
+            public string Nombre { get; set; }
         }
-        private void btnMover_Click(object sender, EventArgs e) //boton para mover
+
+        public static void CargarPromotoresEnComboBox(RJComboBox box)
         {
-            
-            string proviene = LblPerte.Text;
-            if (proviene == "Lista 1")
-            {
-                proviene = "lista1";
-            }
-            else if (proviene == "Lista 2")
-            {
-                proviene = "lista2";
-            }
-            else if (proviene == "Lista 3")
-            {
-                proviene = "lista3";
-            }
-            string Nombre = textBoxPersonalizado10.Texts;
-            string Credito = textBoxPersonalizado9.Texts;
-            string Fecha_Inicio = dateTimePickerPersonalizado1.Value.ToString("dd/MM/yyyy");
-            string Interes = rjComboBox1.SelectedItem.ToString().Split("%")[0];
-            string Monto = textBoxPersonalizado8.Texts;
-            string promotor = rjComboBox3.SelectedItem.ToString();
-            string calle = textBoxPersonalizado6.Texts;
-            string colonia = textBoxPersonalizado5.Texts;
-            string num_int = textBoxPersonalizado4.Texts;
-            string num_ext = textBoxPersonalizado3.Texts;
-            string telefono = textBoxPersonalizado2.Texts;
-            string correo = textBoxPersonalizado1.Texts;
-            int tipo_pago;
-            if (rjComboBox2.SelectedItem.ToString() == "Semanales")
-            {
-                tipo_pago = 0;
-            }
-            else
-            {
-                tipo_pago = 1;
-            }
             Lectura_Base_Datos lec = new();
-
-            switch (cmbLista.SelectedItem.ToString())
+            try
             {
-                case "Lista 2": //lista2
-                    MessageBox.Show("Entre a lista2");
-                    LabelLimite.Text = "Fecha Limite";
-                    string Fecha_Ultimo1 = dateTimeLimite.Value.ToString("dd/MM/yyyy");
-                    string Monto_Restante = textBoxPersonalizado7.Texts;
-                    string[] datos1 = new string[]{
-    Nombre,
-    Credito,
-    Fecha_Inicio,
-    Interes,
-    Monto,
-    promotor,
-    calle,
-    colonia,
-    num_int,
-    num_ext,
-    telefono,
-    correo
-};
-                    string[] arrayCompleto1 = datos1.Concat(new string[] { tipo_pago.ToString() }).ToArray();
-                    string[] arrayCompleto2 = arrayCompleto1.Concat(new string[] { Monto_Restante, Fecha_Ultimo1 }).ToArray();
-                    lec.Erase(Nombre, proviene);
-                    lec.InsertarLista2(arrayCompleto2);
-                    pnlListas.BringToFront();
-                    break;
-                case "Lista 3": //lista 3
-                    MessageBox.Show("Entre a lista 3");
-                    string Monto_Restante2 = textBoxPersonalizado7.Texts;
-                    string[] datitos = new string[]
-                    {
-                        Nombre,
-                        Credito,
-                        Fecha_Inicio,
-                        Interes,
-                        Monto,
-                        promotor,
-                        calle,
-                        colonia,
-                        num_int,
-                        num_ext,
-                        telefono,
-                        correo
-                    };
-                    string[] completito = datitos.Concat(new string[] { tipo_pago.ToString(), Monto_Restante2 }).ToArray();
-                    lec.Erase(Nombre, proviene);
-                    lec.InsertarLista3(completito);
-                    pnlListas.BringToFront();
-                    break;
-                case "Liquidados": //lista liquidados
-                    MessageBox.Show("Entre a liquidados");
-                    string Fecha_Ultimo = dateTimeLimite.Value.ToString("dd/MM/yyyy");
-                    string[] datos = new string[]{
-    Nombre,
-    Credito,
-    Fecha_Inicio,
-    Fecha_Ultimo,
-    Interes,
-    Monto,
-    promotor,
-    calle,
-    colonia,
-    num_int,
-    num_ext,
-    telefono,
-    correo
-};
-                    string[] arrayCompleto = datos.Concat(new string[] { tipo_pago.ToString() }).ToArray();
-                    lec.Erase(Nombre, proviene);
-                    lec.InsertarLiquidados(arrayCompleto);
-                    pnlListas.BringToFront();
-                    break;
+                // Ruta del archivo JSON
+                string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Promotores.json");
+
+                // Leer el archivo JSON
+                string json = File.ReadAllText(jsonFilePath);
+
+                // Deserializar el JSON en una lista de objetos Promotor
+                var promotores = JsonConvert.DeserializeObject<dynamic>(json);
+
+                // Obtener los nombres de los promotores
+                var nombresPromotores = promotores.promotores.ToObject<string[]>();
+
+                // Limpiar el ComboBox antes de agregar los nuevos elementos
+                box.Items.Clear();
+
+                // Agregar los nombres de los promotores al ComboBox
+                box.Items.AddRange(nombresPromotores);
             }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error que ocurra al leer o cargar el JSON
+                lec.Registro_errores("Error al cargar los promotores: " + ex.Message);
+            }
+        }
+        public static void AgregarPromotor(string nombre)
+        {
+            Lectura_Base_Datos lec = new();
+            try
+            {
+                string jsonFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Promotores.json";
 
+                // Leer el archivo JSON actual
+                string json = File.ReadAllText(jsonFilePath);
 
+                // Deserializar el JSON en un objeto dynamic
+                dynamic jsonObject = JsonConvert.DeserializeObject(json);
 
+                // Obtener la lista de promotores
+                List<string> promotores = jsonObject.promotores.ToObject<List<string>>();
 
+                // Agregar el nuevo promotor a la lista
+                promotores.Add(nombre);
+
+                // Serializar la lista de promotores de nuevo a JSON
+                string nuevoJson = JsonConvert.SerializeObject(new { promotores });
+
+                // Escribir el JSON actualizado en el archivo
+                File.WriteAllText(jsonFilePath, nuevoJson);
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error que ocurra al leer o escribir el JSON
+                lec.Registro_errores("Error al agregar el promotor: " + ex.Message);
+            }
+        }
+        public static void EditarPromotor(string nombreOriginal, string nombreEditado)
+        {
+            Lectura_Base_Datos lec = new();
+            try
+            {
+                string jsonFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Promotores.json";
+
+                // Leer el archivo JSON actual
+                string json = File.ReadAllText(jsonFilePath);
+
+                // Deserializar el JSON en un objeto dynamic
+                dynamic jsonObject = JsonConvert.DeserializeObject(json);
+
+                // Obtener la lista de promotores
+                List<string> promotores = jsonObject.promotores.ToObject<List<string>>();
+
+                // Buscar el nombre original en la lista
+                int index = promotores.IndexOf(nombreOriginal);
+                if (index != -1)
+                {
+                    // Actualizar el nombre en la lista
+                    promotores[index] = nombreEditado;
+
+                    // Serializar la lista de promotores de nuevo a JSON
+                    string nuevoJson = JsonConvert.SerializeObject(new { promotores });
+
+                    // Escribir el JSON actualizado en el archivo
+                    File.WriteAllText(jsonFilePath, nuevoJson);
+                }
+                else
+                {
+                    MessageB("El promotor no existe en el JSON.", "Aviso", 2);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error que ocurra al leer o escribir el JSON
+                lec.Registro_errores("Error al editar el promotor: " + ex.Message);
+            }
+        }
+
+        public static void EliminarPromotor(string nombre)
+        {
+            Lectura_Base_Datos lec = new();
+            try
+            {
+                string jsonFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Promotores.json";
+
+                // Leer el archivo JSON actual
+                string json = File.ReadAllText(jsonFilePath);
+
+                // Deserializar el JSON en un objeto dynamic
+                dynamic jsonObject = JsonConvert.DeserializeObject(json);
+
+                // Obtener la lista de promotores
+                List<string> promotores = jsonObject.promotores.ToObject<List<string>>();
+
+                // Buscar el nombre en la lista
+                if (promotores.Contains(nombre))
+                {
+                    // Eliminar el nombre de la lista
+                    promotores.Remove(nombre);
+
+                    // Serializar la lista de promotores de nuevo a JSON
+                    string nuevoJson = JsonConvert.SerializeObject(new { promotores });
+
+                    // Escribir el JSON actualizado en el archivo
+                    File.WriteAllText(jsonFilePath, nuevoJson);
+                }
+                else
+                {
+                    MessageB("El promotor no existe en el JSON.", "Aviso", 2);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error que ocurra al leer o escribir el JSON
+                lec.Registro_errores("Error al eliminar el promotor: " + ex.Message);
+            }
+        }
+        private void RjComboBox4_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rjComboBox4.SelectedIndex != -1)
+            {
+                rjButton6.Enabled = true;
+                textBox4.Text = rjComboBox4.SelectedItem.ToString();
+            }
 
         }
 
+        private void TextBox4_TextChanged(object sender, EventArgs e)
+        {
+            rjButton4.Enabled = true;
+        }
+        private void RjButton4_Click(object sender, EventArgs e)
+        {
+            EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
+            textBox4.Text = "";
+            rjComboBox4.SelectedIndex = -1;
+            CargarPromotoresEnComboBox(rjComboBox4);
+        }
+        private void RjButton6_Click(object sender, EventArgs e)
+        {
+            EliminarPromotor(rjComboBox4.SelectedItem.ToString());
+            rjComboBox4.SelectedIndex = -1;
+            textBox4.Text = "";
+            CargarPromotoresEnComboBox(rjComboBox4);
 
-
-
-
-
-
-
+        }
+        private void TextBox5_TextChanged(object sender, EventArgs e)
+        {
+            rjButton5.Enabled = true;
+        }
+        private void RjButton5_Click(object sender, EventArgs e)
+        {
+            AgregarPromotor(textBox5.Text);
+            textBox5.Text = "";
+            CargarPromotoresEnComboBox(rjComboBox4);
+        }
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
