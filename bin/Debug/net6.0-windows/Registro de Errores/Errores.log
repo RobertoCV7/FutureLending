@@ -2,3 +2,7 @@
    at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
    at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 340
+[18/05/2023 05:04:01 a. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Fecha1
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 340

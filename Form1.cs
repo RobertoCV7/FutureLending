@@ -1523,5 +1523,9 @@ namespace FutureLending
 
 
 
+        private void pnlClientes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
