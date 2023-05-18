@@ -952,6 +952,7 @@ namespace FutureLending
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            lblTitle.Text = "Usuarios";
             Accesos a = new();
             panel2.BringToFront();
             string[] usuarios = a.CargarUsuarios().ToArray();
