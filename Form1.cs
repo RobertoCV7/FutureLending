@@ -517,7 +517,7 @@ namespace FutureLending
                         break;
                 }
                 textBoxPersonalizado8.Texts = informacion[4];
-                if (informacion[12] == "0")
+                if (informacion[12] == "0" || informacion[12] == "Semanal")
                 {
                     rjComboBox2.SelectedIndex = 0;
                 }
@@ -525,7 +525,7 @@ namespace FutureLending
                 {
                     rjComboBox2.SelectedIndex = 1;
                 }
-
+                MessageBox.Show(informacion[12].ToString());
                 if (informacion[5] == "Ramon")
                 {
                     rjComboBox3.SelectedIndex = 0;
@@ -574,7 +574,7 @@ namespace FutureLending
                         break;
                 }
                 textBoxPersonalizado8.Texts = informacion3[4];
-                if (informacion3[12] == "0")
+                if (informacion3[12] == "0" || informacion3[12] == "Semanal")
                 {
                     rjComboBox2.SelectedIndex = 0;
                 }
@@ -647,7 +647,7 @@ namespace FutureLending
                         break;
                 }
                 textBoxPersonalizado8.Texts = informacion3[4];
-                if (informacion3[12] == "0")
+                if (informacion3[12] == "0" || informacion3[12] == "Semanal")
                 {
                     rjComboBox2.SelectedIndex = 0;
                 }
@@ -706,7 +706,7 @@ namespace FutureLending
                         break;
                 }
                 textBoxPersonalizado8.Texts = informacion3[5];
-                if (informacion3[13] == "0")
+                if (informacion3[13] == "0" || informacion3[12] == "Semanal")
                 {
                     rjComboBox2.SelectedIndex = 0;
                 }
@@ -1246,22 +1246,27 @@ namespace FutureLending
 
             }
         }
-        private bool check = false;
+        private bool changingCheckedState3 = false;
         private void CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (!check)
+            if (!changingCheckedState3)
             {
-                check = true;
-                if (check == true)
+                changingCheckedState3 = true;
+
+                if (checkBox3.Checked)
                 {
+                    // Desactivar el uso de contraseña
                     TextContra.UseSystemPasswordChar = false;
+
                 }
                 else
                 {
+                    // Activar el uso de contraseña
                     TextContra.UseSystemPasswordChar = true;
                 }
+
+                changingCheckedState3 = false;
             }
-            check = false;
         }
         private void RjButton2_Click(object sender, EventArgs e)
         {

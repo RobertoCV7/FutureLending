@@ -11,16 +11,26 @@ namespace FutureLending
     internal class ExportarExcel
     {
         readonly Lectura_Base_Datos a = new();
-        public void ExportarLista1AExcel(string rutaArchivo)
-        {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            // Arreglo de strings con los nombres de cada columna
-            string[] nombresString =  {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
+
+        string[] Nombres_Lista1 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                               "TIPO DE PAGO", "MONTO RESTANTE"};
+        string[] Nombres_Lisat2 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE" };
+        string[] Nombres_Listas3 = { "NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO","MONTO RESTANTE"}; 
+    string[] Nombres_ListasLiq = { "NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
+                              "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+                              "TELÉFONO", "CORREO", "TIPO DE PAGO"};
 
+
+        public void ExportarLista1AExcel(string rutaArchivo)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;        
             // Añade los strings de cada fecha y pago a la lista
-            List<string> nombresColumnas = new (nombresString);
+            List<string> nombresColumnas = new (Nombres_Lista1);
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
@@ -66,21 +76,15 @@ namespace FutureLending
             List<string[]> datos = a.LectLista2();
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            // Nombres de las columnas
-            string[] nombresString2 ={"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
-                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE"};
-        
-
             // Crea un nuevo archivo Excel
             using var package = new ExcelPackage();
             // Agrega una hoja al libro de Excel
             var worksheet = package.Workbook.Worksheets.Add("Lista2");
 
             // Escribe los nombres de las columnas en el archivo Excel
-            for (int col = 0; col < nombresString2.Length; col++)
+            for (int col = 0; col < Nombres_Lisat2.Length; col++)
             {
-                worksheet.Cells[1, col + 1].Value = nombresString2[col];
+                worksheet.Cells[1, col + 1].Value = Nombres_Lisat2[col];
                 worksheet.Cells[1, col + 1].Style.Font.Bold = true;
                 worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -108,21 +112,15 @@ namespace FutureLending
             List<string[]> datos = a.LectLista3();
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-            // Nombres de las columnas
-            string[] nombresString3 ={"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
-                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO","MONTO RESTANTE"};
-
             // Crea un nuevo archivo Excel
             using var package = new ExcelPackage();
             // Agrega una hoja al libro de Excel
             var worksheet = package.Workbook.Worksheets.Add("Lista3");
 
             // Escribe los nombres de las columnas en el archivo Excel
-            for (int col = 0; col < nombresString3.Length; col++)
+            for (int col = 0; col < Nombres_Listas3.Length; col++)
             {
-                worksheet.Cells[1, col + 1].Value = nombresString3[col];
+                worksheet.Cells[1, col + 1].Value = Nombres_Listas3[col];
                 worksheet.Cells[1, col + 1].Style.Font.Bold = true;
                 worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -150,21 +148,15 @@ namespace FutureLending
             List<string[]> datos = a.LectLiquidados();
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-            // Nombres de las columnas
-            string[] nombresString4 ={"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
-                              "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
-                              "TELÉFONO", "CORREO", "TIPO DE PAGO"};
-
             // Crea un nuevo archivo Excel
             using var package = new ExcelPackage();
             // Agrega una hoja al libro de Excel
             var worksheet = package.Workbook.Worksheets.Add("Liquidados");
 
             // Escribe los nombres de las columnas en el archivo Excel
-            for (int col = 0; col < nombresString4.Length; col++)
+            for (int col = 0; col < Nombres_ListasLiq.Length; col++)
             {
-                worksheet.Cells[1, col + 1].Value = nombresString4[col];
+                worksheet.Cells[1, col + 1].Value = Nombres_ListasLiq[col];
                 worksheet.Cells[1, col + 1].Style.Font.Bold = true;
                 worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -196,22 +188,9 @@ namespace FutureLending
             List<string[]> datosLista3 = a.LectLista3();
             List<string[]> datosLiquidados = a.LectLiquidados();
 
-            string[] nombresString1 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
-                              "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                              "TIPO DE PAGO", "MONTO RESTANTE"};
-            string[] nombresString2 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
-                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE"};
-            string[] nombresString3 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
-                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO","MONTO RESTANTE"};
-            string[] nombresString4 =  {"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
-                              "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
-                              "TELÉFONO", "CORREO", "TIPO DE PAGO"};
+                    // Crea un nuevo archivo Excel
 
-            // Crea un nuevo archivo Excel
-
-            List<string> nombresColumnas = new(nombresString1);
+            List<string> nombresColumnas = new(Nombres_Lista1);
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
@@ -220,9 +199,9 @@ namespace FutureLending
             using var package = new ExcelPackage();
             // Agrega una hoja para cada lista de datos
             AgregarHojaDatos(package, datosLista1, "Lista1", nombresColumnas.ToArray());
-            AgregarHojaDatos(package, datosLista2, "Lista2", nombresString2);
-            AgregarHojaDatos(package, datosLista3, "Lista3", nombresString3);
-            AgregarHojaDatos(package, datosLiquidados, "Liquidados", nombresString4);
+            AgregarHojaDatos(package, datosLista2, "Lista2", Nombres_Lisat2);
+            AgregarHojaDatos(package, datosLista3, "Lista3", Nombres_Listas3);
+            AgregarHojaDatos(package, datosLiquidados, "Liquidados", Nombres_ListasLiq);
 
             // Guarda el archivo Excel en el disco
             package.SaveAs(ruta);
@@ -230,8 +209,38 @@ namespace FutureLending
 
         private static void AgregarHojaDatos(ExcelPackage package, List<string[]> datos, string nombreHoja, string[] nombresColumnas)
         {
+            if (string.IsNullOrWhiteSpace(nombreHoja) || nombreHoja.Length > 31 || nombreHoja.Any(c => Path.GetInvalidFileNameChars().Contains(c)))
+            {
+                throw new ArgumentException("El nombre de la hoja no es válido.");
+            }
+
+            // Verifica los nombres de las columnas
+            if (nombresColumnas.Length > 16384)
+            {
+                throw new ArgumentException("El número de columnas excede el límite máximo.");
+            }
+
+            // Verifica si los datos están vacíos
+            if (datos.Count == 0)
+            {
+                return;
+                throw new ArgumentException("Los datos están vacíos. No se puede agregar una hoja vacía.");
+            }
+            // Verifica el nombre de la hoja
+            if (string.IsNullOrWhiteSpace(nombreHoja) || nombreHoja.Length > 31 || nombreHoja.Any(c => Path.GetInvalidFileNameChars().Contains(c)))
+            {
+                throw new ArgumentException("El nombre de la hoja no es válido.");
+            }
+
+            // Verifica los nombres de las columnas
+            if (nombresColumnas.Length > 16384)
+            {
+                throw new ArgumentException("El número de columnas excede el límite máximo.");
+            }
+
             // Agrega una hoja al libro de Excel
             var worksheet = package.Workbook.Worksheets.Add(nombreHoja);
+        
 
             // Escribe los nombres de las columnas en el archivo Excel
             for (int col = 0; col < nombresColumnas.Length; col++)
@@ -264,20 +273,22 @@ namespace FutureLending
             }
         }
 
-        // Función auxiliar para obtener el nombre de la columna de Excel en función del índice
-        private static string GetExcelColumnName(int columnIndex)
+        // Función auxiliar para obtener el nombre de columna de Excel a partir de su índice
+        private static string GetExcelColumnName(int columnNumber)
         {
-            int dividend = columnIndex;
-            string columnName = string.Empty;
+            int dividend = columnNumber;
+            string columnName = String.Empty;
 
             while (dividend > 0)
             {
                 int modulo = (dividend - 1) % 26;
-                columnName = Convert.ToChar(65 + modulo) + columnName;
+                columnName = Convert.ToChar('A' + modulo) + columnName;
                 dividend = (dividend - modulo) / 26;
             }
 
             return columnName;
         }
+
+        
     }
 }
