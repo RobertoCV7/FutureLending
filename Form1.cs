@@ -22,6 +22,7 @@ namespace FutureLending
         {
             InitializeComponent();
             CollapseMenu();
+            CargarPromotoresEnComboBox(rjComboBox3);
             rjButton6.Enabled = false;
             rjButton4.Enabled = false;
             rjButton5.Enabled = false;
@@ -480,7 +481,7 @@ namespace FutureLending
         string Cliente;
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-
+            CargarPromotoresEnComboBox(rjComboBox3);
 
             Lectura_Base_Datos a = new();
             LabelLimite.Hide();
