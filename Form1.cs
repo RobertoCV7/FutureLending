@@ -488,20 +488,18 @@ namespace FutureLending
             dateTimeLimite.Hide();
 
             string pertenece;
-            string lista;
             if (ListaEstado == 0)
             {
                 cmbLista.Items.Clear();
                 cmbLista.Enabled = true;
                 PanelEditar.BringToFront();
                 pertenece = "Lista 1";
-                lista = "lista1";
                 cmbLista.Items.AddRange(new string[] { "Lista 2", "Lista 3", "Liquidados" });
                 LblPerte.Text = pertenece;
                 Cliente = cmbCliente.Texts;
                 textBoxPersonalizado10.Texts = Cliente;
                 //Empieza
-                informacion = a.LectName(lista, Cliente);
+                informacion = a.LectName(Cliente);
                 textBoxPersonalizado9.Texts = informacion[1];
                 dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion[2]);
                 switch (informacion[3])
@@ -525,7 +523,6 @@ namespace FutureLending
                 {
                     rjComboBox2.SelectedIndex = 1;
                 }
-                MessageBox.Show(informacion[12].ToString());
                 if (informacion[5] == "Ramon")
                 {
                     rjComboBox3.SelectedIndex = 0;
@@ -973,13 +970,16 @@ namespace FutureLending
 
             //Agregamos los datos del cliente al form
             Lectura_Base_Datos instancia = new();
-            string list;
+            string[] datos;
             if (CombBoxLista.Texts == "Lista 1")
             {
-                list = "lista1";
+                datos = instancia.LectName(ComBoxName.Texts);
             }
-            else { list = "lista2"; }
-            string[] datos = instancia.LectName(list, ComBoxName.Texts);
+            else
+            {
+                datos = instancia.LectName2(ComBoxName.Texts);
+            }
+
             if (datos[1] == null)
             {
                 Form2 a = new("No se encontro al usuario en esa Lista", "Advertencia", 2);
@@ -994,11 +994,8 @@ namespace FutureLending
                 lblMonto.Visible = true;
                 DateTimeReg.Visible = true;
                 btnMarcarP.Visible = true;
-                txtBoxCredito.Texts = datos[1];
+                txtBoxCredito.Texts = datos[4];
             }
-
-
-
         }
         private void BtnMarcarP_Click(object sender, EventArgs e)
         {
@@ -1011,25 +1008,31 @@ namespace FutureLending
             //Leer las fechas registradas 
             Lectura_Base_Datos instancia = new();
             string list;
+            string[] datos;
             if (CombBoxLista.Texts == "Lista 1")
             {
                 list = "lista1";
-            }
-            else { list = "lista2"; }
-            string[] datos = instancia.LectName(list, ComBoxName.Texts);
-            for (int i = 14; i < datos.Length; i++)
-            {
-                if (datos[i] != null)
+                datos = instancia.LectName(ComBoxName.Texts);
+                for (int i = 14; i < datos.Length; i++)
                 {
-
-                    string datos2 = datos[i].Replace("-", "");
-                    if (datos2 == Fecha)
+                    if (datos[i] != null)
                     {
-                        band = true;
-                        index = i - 13;
-                    }
-                }
 
+                        string datos2 = datos[i].Replace("-", "");
+                        if (datos2 == Fecha)
+                        {
+                            band = true;
+                            index = i - 13;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                list = "lista2";
+                datos = instancia.LectName2(ComBoxName.Texts);
+                if (datos[14] == Fecha) { band = true; }
             }
 
             if (!band)
@@ -1046,8 +1049,17 @@ namespace FutureLending
                 if (totRes == 0)
                 {
                     Lectura_Base_Datos obj = new();
-                    obj.CreateLiquidados(1, datos); //Agregarlo en liquidados
-                    obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                    if (list == "lista1")
+                    {
+                        obj.CreateLiquidados(1, datos); //Agregarlo en liquidados
+                        obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                    }
+                    else
+                    {
+                        obj.CreateLiquidados(2, datos); //Agregarlo en liquidados
+                        obj.Erase(ComBoxName.Texts, "lista2"); //Lo elimino de lista 1
+                    }
+
                 }
                 else
                 {
@@ -1068,9 +1080,6 @@ namespace FutureLending
                 DateTimeReg.Visible = false;
                 btnMarcarP.Visible = false;
             }
-            //En caso de que el cliente ya termino de pagar todo, se pasa a liquidados ***FALTA
-
-
         }
 
 
@@ -1521,11 +1530,6 @@ namespace FutureLending
             CargarPromotoresEnComboBox(rjComboBox4);
         }
         #endregion
-
-
-
-
-
 
 
 

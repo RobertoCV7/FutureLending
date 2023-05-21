@@ -733,7 +733,6 @@ C:\Users\yarel\FutureLending\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Sy
 C:\Users\yarel\FutureLending\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\yarel\FutureLending\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.ServiceProcess.ServiceController.dll
 C:\Users\yarel\FutureLending\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Speech.dll
-C:\Users\yarel\FutureLending\obj\Debug\net6.0-windows\FutureLending.EditarForm.resources
 C:\Users\yarel\FutureLending\obj\Debug\net6.0-windows\FutureLending.Form2.resources
 C:\Users\yarel\FutureLending\obj\Debug\net6.0-windows\FutureLending.Inicio_Sesion.resources
 C:\Users\donne\FutureLending\bin\Debug\net6.0-windows\EPPlus.dll
@@ -893,3 +892,4 @@ D:\Documentos\TrabajoReal\obj\Debug\net6.0-windows\refint\FutureLending.dll
 D:\Documentos\TrabajoReal\obj\Debug\net6.0-windows\FutureLending.pdb
 D:\Documentos\TrabajoReal\obj\Debug\net6.0-windows\FutureLending.genruntimeconfig.cache
 D:\Documentos\TrabajoReal\obj\Debug\net6.0-windows\ref\FutureLending.dll
+C:\Users\yarel\FutureLending\obj\Debug\net6.0-windows\FutureLending.Exportar_Excel.resources

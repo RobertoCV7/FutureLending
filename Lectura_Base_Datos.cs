@@ -251,8 +251,19 @@ namespace FutureLending
                         fila[10] = reader.GetString("Num_ext");
                         fila[11] = reader.GetString("Telefono");
                         fila[12] = reader.GetString("Correo");
-                        //Verifica si el tipo de pago es semanal (0) o quincenal (1)
-                        fila[13] = reader.GetInt32("Tipo_pago") == 0 ? "Semanal" : "Quincenal";
+                        //Verifica si el tipo de pago es por cualquiera de las 3 listas
+                        fila[13] = Convert.ToString(reader.GetInt32("Tipo_pago"));
+                        if (fila[13] == "1")
+                        {
+                            fila[13] = "Lista 1";
+                        }else
+                        {
+                            if(fila[13] == "2")
+                            {
+                                fila[13] = "Lista 2";
+                            }
+                            else { fila[13] = "Lista 3"; }
+                        }
                         datos.Add(fila);
                     }
                 }
@@ -305,14 +316,14 @@ namespace FutureLending
         }
         #endregion
         #region Lectura de datos especificos
-        public string[] LectName(string tabla, string name) //Lectura de lista 1
+        public string[] LectName(string name) //Lectura de lista 1
         {
             string[] fila = new string[28];
             using (MySqlConnection connection = Conector())
             {
                 try
                 {
-                    string query = "SELECT * FROM " + tabla + " WHERE Nombre_Completo = @name";
+                    string query = "SELECT * FROM lista1 WHERE Nombre_Completo = @name";
                     using MySqlCommand command = new(query, connection);
                     command.Parameters.AddWithValue("@name", name);
                     using MySqlDataReader reader = command.ExecuteReader();
@@ -769,9 +780,17 @@ namespace FutureLending
             command.Parameters.AddWithValue("@Nombre", datos[0]);
             command.Parameters.AddWithValue("@Credito", datos[1]);
             command.Parameters.AddWithValue("@FechaI", datos[2]);
-            string[] fecha;
-            fecha = datos[12] == "0" ? datos[27].Split("-") : datos[20].Split("-");
-            command.Parameters.AddWithValue("@FechaUP", fecha[0]);
+            if(lista == 1)
+            {
+                string[] fecha;
+                fecha = datos[12] == "0" ? datos[27].Split("-") : datos[20].Split("-");
+                command.Parameters.AddWithValue("@FechaUP", fecha[0]);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@FechaUP", datos[14]);
+            }
+            
             command.Parameters.AddWithValue("@Interes", datos[3]);
             command.Parameters.AddWithValue("@Monto", datos[4]);
             command.Parameters.AddWithValue("@Promotor", datos[5]);
