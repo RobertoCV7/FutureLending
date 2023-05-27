@@ -85,18 +85,18 @@ namespace FutureLending
         #region Lectura de Listas general
         public List<string[]> LectLista1()
         {
-            List<string[]> datos = new List<string[]>();
+            List<string[]> datos = new();
 
             using (MySqlConnection connection = Conector())
             {
-                string query = "SELECT * FROM lista1";
-                using MySqlCommand command = new MySqlCommand(query, connection);
+                string query = "SELECT * FROM lista1 ORDER BY Promotor ASC";
+                using MySqlCommand command = new(query, connection);
                 try
                 {
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        string[] fila = new string[42];
+                        string[] fila = new string[30];
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
                         fila[2] = reader.GetString("Credito_Prestado");
@@ -116,15 +116,11 @@ namespace FutureLending
 
                         for (int i = 0; i < 14; i++)
                         {
-                            string fecha = reader.GetString("Fecha" + (i + 1));
-                            string[] fechaYPago = fecha.Split("-");
-                            fila[16 + i * 2] = fechaYPago[0];
-                            fila[17 + i * 2] = fechaYPago[1];
-                            // En caso de que sólo tenga 7 fechas
-                            if (string.IsNullOrWhiteSpace(fila[16 + i * 2]))
+                            fila[16 + i] = reader.GetString("Fecha" + (i + 1));
+                            // En caso de que alguna fecha sea nula o vacía, se asigna "-"
+                            if (string.IsNullOrWhiteSpace(fila[16 + i]))
                             {
-                                fila[16 + i * 2] = "-";
-                                fila[17 + i * 2] = "-";
+                                fila[16 + i] = "-";
                             }
                         }
 
@@ -141,51 +137,57 @@ namespace FutureLending
         }
         public List<string[]> LectLista2()
         {
-            List<string[]> datos = new();
+            List<string[]> datos = new List<string[]>();
 
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM lista2";
-                using (MySqlCommand command = new(query, connection))
+                using MySqlCommand command = new MySqlCommand(query, connection);
+                try
                 {
-                    try
+                    using MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
                     {
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        string[] fila = new string[41]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
+
+                        fila[0] = reader.GetString("Promotor");
+                        fila[1] = reader.GetString("Nombre_Completo");
+                        fila[2] = reader.GetString("Credito_Prestado");
+                        fila[3] = reader.GetString("Monto_Restante");
+                        fila[4] = reader.GetString("Pagare");
+                        fila[5] = reader.GetString("Calle");
+                        fila[6] = reader.GetString("Colonia");
+                        fila[7] = reader.GetString("Num_int");
+                        fila[8] = reader.GetString("Num_ext");
+                        fila[9] = reader.GetString("Telefono");
+                        fila[10] = reader.GetString("Correo");
+                        fila[11] = reader.GetString("Tipo_de_pago");
+                        fila[12] = reader.GetString("Liquidacion_Intencion");
+                        fila[13] = reader.GetString("Quita");
+
+                        for (int i = 0; i < 14; i++)
                         {
-                            while (reader.Read())
+                            string fechaCampo = "FECHA " + (i + 1).ToString();
+                            string pagoCampo = "PAGO " + (i + 1).ToString();
+                            if (i == 0)
                             {
-                                string[] fila = new string[30];
-                                fila[0] = reader.GetString("Promotor");
-                                fila[1] = reader.GetString("Nombre_Completo");
-                                fila[2] = reader.GetString("Credito_Prestado");
-                                fila[3] = reader.GetString("Monto_Restante");
-                                fila[4] = reader.GetString("Pagare");
-                                fila[5] = reader.GetString("Calle");
-                                fila[6] = reader.GetString("Colonia");
-                                fila[7] = reader.GetString("Num_int");
-                                fila[8] = reader.GetString("Num_ext");
-                                fila[9] = reader.GetString("Telefono");
-                                fila[10] = reader.GetString("Correo");
-                                fila[11] = reader.GetString("Tipo_de_pago");
-                                fila[12] = reader.GetString("Liquidacion_Intencion");
-                                fila[13] = reader.GetString("Quita");
-
-                                for (int i = 1; i <= 14; i++)
-                                {
-                                    string fechaColumn = $"FECHA {i}";
-                                    string pagoColumn = $"PAGO {i}";
-                                    fila[13 + i * 2] = reader.GetString(fechaColumn);
-                                    fila[14 + i * 2] = reader.GetString(pagoColumn);
-                                }
-
-                                datos.Add(fila);
+                                fila[14] = reader.GetString(fechaCampo);
+                                fila[15] = reader.GetString(pagoCampo);
                             }
+                            else
+                            {
+                                fila[16 + (i + 1)] = reader.GetString(fechaCampo);
+                                fila[17 + (i + 1)] = reader.GetString(pagoCampo);
+                            }
+
                         }
+
+                        datos.Add(fila);
                     }
-                    catch (Exception ex)
-                    {
-                        Registro_errores(ex.ToString());
-                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
                 }
             }
 
@@ -193,42 +195,39 @@ namespace FutureLending
         }
         public List<string[]> LectLista3()
         {
-            List<string[]> datos = new();
+            List<string[]> datos = new List<string[]>();
 
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM lista3";
-                using (MySqlCommand command = new(query, connection))
+                using MySqlCommand command = new MySqlCommand(query, connection);
+                try
                 {
-                    try
+                    using MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
                     {
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string[] fila = new string[13];
-                                fila[0] = reader.GetString("Promotor");
-                                fila[1] = reader.GetString("Nombre_Completo");
-                                fila[2] = reader.GetString("Credito_Prestado");
-                                fila[3] = reader.GetString("Pagare");
-                                fila[4] = reader.GetString("Calle");
-                                fila[5] = reader.GetString("Colonia");
-                                fila[6] = reader.GetString("Num_int");
-                                fila[7] = reader.GetString("Num_ext");
-                                fila[8] = reader.GetString("Telefono");
-                                fila[9] = reader.GetString("Correo");
-                                fila[10] = reader.GetString("Tipo_de_Resolucion");
-                                fila[11] = reader.GetString("Resolucion_Demanda");
-                                fila[12] = reader.GetString("Importe");
+                        string[] fila = new string[13]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
 
-                                datos.Add(fila);
-                            }
-                        }
+                        fila[0] = reader.GetString("Promotor");
+                        fila[1] = reader.GetString("Nombre_Completo");
+                        fila[2] = reader.GetString("Credito_Prestado");
+                        fila[3] = reader.GetString("Pagare");
+                        fila[4] = reader.GetString("Calle");
+                        fila[5] = reader.GetString("Colonia");
+                        fila[6] = reader.GetString("Num_int");
+                        fila[7] = reader.GetString("Num_ext");
+                        fila[8] = reader.GetString("Telefono");
+                        fila[9] = reader.GetString("Correo");
+                        fila[10] = reader.GetString("Tipo_de_Resolucion");
+                        fila[11] = reader.GetString("Resolucion_Demanda");
+                        fila[12] = reader.GetString("Importe");
+
+                        datos.Add(fila);
                     }
-                    catch (Exception ex)
-                    {
-                        Registro_errores(ex.ToString());
-                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
                 }
             }
 
@@ -236,12 +235,12 @@ namespace FutureLending
         }
         public List<string[]> LectLiquidados()
         {
-            List<string[]> datos = new();
+            List<string[]> datos = new List<string[]>();
 
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM liquidados";
-                using (MySqlCommand command = new(query, connection))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     try
                     {
@@ -249,21 +248,18 @@ namespace FutureLending
                         {
                             while (reader.Read())
                             {
-                                string[] fila = new string[14];
+                                string[] fila = new string[11];
                                 fila[0] = reader.GetString("Promotor");
                                 fila[1] = reader.GetString("Nombre_Completo");
                                 fila[2] = reader.GetString("Credito_Prestado");
                                 fila[3] = reader.GetString("Fecha_Inicio");
-                                fila[4] = reader.GetString("Fecha_Ultimo_Pago");
-                                fila[5] = reader.GetString("Interes");
-                                fila[6] = reader.GetString("Monto_Total");
-                                fila[7] = reader.GetString("Calle");
-                                fila[8] = reader.GetString("Colonia");
-                                fila[9] = reader.GetString("Num_int");
-                                fila[10] = reader.GetString("Num_ext");
-                                fila[11] = reader.GetString("Telefono");
-                                fila[12] = reader.GetString("Correo");
-                                fila[13] = reader.GetString("Forma_Liquidacion");
+                                fila[4] = reader.GetString("Calle");
+                                fila[5] = reader.GetString("Colonia");
+                                fila[6] = reader.GetString("Num_int");
+                                fila[7] = reader.GetString("Num_ext");
+                                fila[8] = reader.GetString("Telefono");
+                                fila[9] = reader.GetString("Correo");
+                                fila[10] = reader.GetString("Forma_Liquidacion");
 
                                 datos.Add(fila);
                             }

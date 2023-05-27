@@ -11,19 +11,18 @@ namespace FutureLending
     internal class ExportarExcel
     {
         readonly Lectura_Base_Datos a = new();
-
-        string[] Nombres_Lista1 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
+        readonly string[] Nombres_Lista1 = {"PROMOTOR","NOMBRE", "CREDITO","PAGARE", "FECHA INICIO","FECHA TERMINO" ,"INTERESES", "MONTO TOTAL",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                               "TIPO DE PAGO", "MONTO RESTANTE"};
-        string[] Nombres_Lisat2 = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+        readonly string[] Nombres_Lisat2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE" };
-        string[] Nombres_Listas3 = { "NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+                                "TIPO DE PAGO", "LIQUIDACION/INTENCION","QUITA"};
+        readonly string[] Nombres_Listas3 =  {"PROMOTOR","NOMBRE", "CREDITO","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO","MONTO RESTANTE"}; 
-    string[] Nombres_ListasLiq = { "NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
-                              "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
-                              "TELÉFONO", "CORREO", "TIPO DE PAGO"};
+                                "TIPO DE RESOLUCION","RESOLUCION DEMANDA","IMPORTE"};
+        readonly string[] Nombres_ListasLiq = {"PROMOTOR","NOMBRE", "CREDITO", "FECHA INICIO",
+                              "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+                              "TELÉFONO", "CORREO", "FORMA DE LIQUIDACION"};
 
 
         public void ExportarLista1AExcel(string rutaArchivo)
@@ -80,9 +79,15 @@ namespace FutureLending
             using var package = new ExcelPackage();
             // Agrega una hoja al libro de Excel
             var worksheet = package.Workbook.Worksheets.Add("Lista2");
+            List<string> nombresColumnas = new(Nombres_Lisat2);
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas.Add("FECHA " + i);
+                nombresColumnas.Add("PAGO " + i);
+            }
 
             // Escribe los nombres de las columnas en el archivo Excel
-            for (int col = 0; col < Nombres_Lisat2.Length; col++)
+            for (int col = 0; col < nombresColumnas.Count; col++)
             {
                 worksheet.Cells[1, col + 1].Value = Nombres_Lisat2[col];
                 worksheet.Cells[1, col + 1].Style.Font.Bold = true;
@@ -188,7 +193,7 @@ namespace FutureLending
             List<string[]> datosLista3 = a.LectLista3();
             List<string[]> datosLiquidados = a.LectLiquidados();
 
-                    // Crea un nuevo archivo Excel
+            // Crea un nuevo archivo Excel
 
             List<string> nombresColumnas = new(Nombres_Lista1);
             for (int i = 1; i <= 14; i++)
@@ -196,17 +201,23 @@ namespace FutureLending
                 nombresColumnas.Add("FECHA " + i);
                 nombresColumnas.Add("PAGO " + i);
             }
+            List<string> NombresColumnas2 = new(Nombres_Lisat2);
+            for (int i = 1; i <= 14; i++)
+            {
+                NombresColumnas2.Add("FECHA " + i);
+                NombresColumnas2.Add("PAGO " + i);
+            }
+
             using var package = new ExcelPackage();
             // Agrega una hoja para cada lista de datos
             AgregarHojaDatos(package, datosLista1, "Lista1", nombresColumnas.ToArray());
-            AgregarHojaDatos(package, datosLista2, "Lista2", Nombres_Lisat2);
+            AgregarHojaDatos(package, datosLista2, "Lista2", NombresColumnas2.ToArray());
             AgregarHojaDatos(package, datosLista3, "Lista3", Nombres_Listas3);
             AgregarHojaDatos(package, datosLiquidados, "Liquidados", Nombres_ListasLiq);
 
             // Guarda el archivo Excel en el disco
             package.SaveAs(ruta);
         }
-
         private static void AgregarHojaDatos(ExcelPackage package, List<string[]> datos, string nombreHoja, string[] nombresColumnas)
         {
             if (string.IsNullOrWhiteSpace(nombreHoja) || nombreHoja.Length > 31 || nombreHoja.Any(c => Path.GetInvalidFileNameChars().Contains(c)))
@@ -240,7 +251,7 @@ namespace FutureLending
 
             // Agrega una hoja al libro de Excel
             var worksheet = package.Workbook.Worksheets.Add(nombreHoja);
-        
+
 
             // Escribe los nombres de las columnas en el archivo Excel
             for (int col = 0; col < nombresColumnas.Length; col++)
@@ -289,6 +300,6 @@ namespace FutureLending
             return columnName;
         }
 
-        
+
     }
 }

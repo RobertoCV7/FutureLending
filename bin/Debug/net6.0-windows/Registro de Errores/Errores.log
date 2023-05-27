@@ -1,45 +1,8 @@
-[18/05/2023 02:41:14 a. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Fecha1
+[26/05/2023 07:33:31 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
    at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
-   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 340
-[18/05/2023 05:04:01 a. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Fecha1
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 325
+[26/05/2023 07:33:35 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
    at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
-   at FutureLending.Lectura_Base_Datos.LectName(String tabla, String name) in C:\Users\donne\FutureLending\Lectura_Base_Datos.cs:line 340
-[21/05/2023 12:51:43 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Fecha0' in 'field list'
-   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
-   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
-   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
-   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
-   at FutureLending.Lectura_Base_Datos.Edit(String tabla, String name, String datos) in C:\Users\yarel\FutureLending\Lectura_Base_Datos.cs:line 487
-[26/05/2023 06:41:56 p. m.] Error: System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
-   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
-   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
-   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
-   at FutureLending.Lectura_Base_Datos.LectLista1() in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 115
-[26/05/2023 06:42:00 p. m.] Error: System.FormatException: Input string was not in a correct format.
-   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
-   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
-   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
-   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
-   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 306
-[26/05/2023 06:42:00 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Fecha_Inicio
-   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
-   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
-   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 295
-[26/05/2023 06:42:00 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Fecha_Inicio
-   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
-   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
-   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 295
-[26/05/2023 06:42:00 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Interes
-   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
-   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
-   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 296
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 325

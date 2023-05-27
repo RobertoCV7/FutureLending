@@ -22,7 +22,7 @@ namespace FutureLending
             LimpiarDatos(gridListas, cmbCliente);
 
             // Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL", "PROMOTOR",
+            string[] nombresString ={"PROMOTOR","NOMBRE", "CREDITO","PAGARE", "FECHA INICIO","FECHA TERMINO" ,"INTERESES", "MONTO TOTAL",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                               "TIPO DE PAGO", "MONTO RESTANTE"};
 
@@ -51,18 +51,23 @@ namespace FutureLending
 
         //Muestra en la tabla los datos de la lista 2
         public static async Task MostrarLista2(DataGridView gridListas,
-            ControlesPersonalizados.RJComboBox cmbCliente)
+             ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
             LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+            string[] nombresString = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO", "MONTO RESTANTE", "FECHA LÍMITE"};
-            List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
+                                "TIPO DE PAGO", "LIQUIDACION/INTENCION","QUITA"};
+            List<string> nombresColumnas = new(nombresString);
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas.Add("FECHA " + i);
+                nombresColumnas.Add("PAGO " + i);
+            }
             nombresColumnas.AddRange(nombresString);
-         
+
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
@@ -74,20 +79,20 @@ namespace FutureLending
             AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
-            await AñadirDatos(datosList, gridListas, cmbCliente,  false);
+            await AñadirDatos(datosList, gridListas, cmbCliente, false);
         }
 
         //Muestra en la tabla los datos de la lista 3
         public static async Task MostrarLista3(DataGridView gridListas,
-            ControlesPersonalizados.RJComboBox cmbCliente)
+           ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
             LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "INTERES", "MONTO TOTAL", "PROMOTOR",
+            string[] nombresString = {"PROMOTOR","NOMBRE", "CREDITO","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO","MONTO RESTANTE"};
+                                "TIPO DE RESOLUCION","RESOLUCION DEMANDA","IMPORTE"};
             List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
@@ -107,16 +112,16 @@ namespace FutureLending
         }
 
         //Muestra en la tabla los datos de la liquidados
-        public static async Task MostrarLiquidados(DataGridView gridListas, 
-            ControlesPersonalizados.RJComboBox cmbCliente)
+        public static async Task MostrarLiquidados(DataGridView gridListas,
+               ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
             LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"NOMBRE", "CREDITO", "FECHA INICIO", "FECHA ÚLTIMO PAGO", "INTERESES",
-                              "MONTO TOTAL", "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
-                              "TELÉFONO", "CORREO", "TIPO DE PAGO"};
+            string[] nombresString = {"PROMOTOR","NOMBRE", "CREDITO", "FECHA INICIO",
+                              "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+                              "TELÉFONO", "CORREO", "FORMA DE LIQUIDACION"};
             List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
 
@@ -137,14 +142,14 @@ namespace FutureLending
 
         //Muestra en la tabla los datos de todos los clientes y su lista perteneciente
         public static async Task MostrarTodos(DataGridView gridListas,
-            ControlesPersonalizados.RJComboBox cmbCliente)
+              ControlesPersonalizados.RJComboBox cmbCliente)
         {
             //Se borran los registros
             LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"LISTA", "NOMBRE", "CREDITO", "FECHA INICIO", "INTERESES", "MONTO TOTAL",
-                            "PROMOTOR", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+            string[] nombresString = {"LISTA", "PROMOTOR","NOMBRE", "CREDITO",
+                           "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                             "TELÉFONO", "CORREO", "TIPO DE PAGO"};
             List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);
@@ -169,21 +174,7 @@ namespace FutureLending
             await AñadirDatos(datosList, gridListas, cmbCliente, true);
         }
 
-        //Para determinar si son necesarias 26 o 19 columnas para las fechas
-        static int ObtenerColumnas()
-        {
-            int fechas = 28;
-            for (int i = 0; i < datos.Count; i++)
-            {
-                if (datos[i][12] == "Semanal")
-                {
-                    fechas = 42;
-                    return fechas;
-                }
-            }
-            return fechas;
-        }
-
+      
         //Añade los datos en cualquier tabla
         static void AñadirEncabezado(List<string> nombresColumnas, DataGridView gridListas)
         {
