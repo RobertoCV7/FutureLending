@@ -6,3 +6,21 @@
    at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
    at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 325
+[26/05/2023 08:04:08 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 325
+[26/05/2023 08:30:44 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 325
+[26/05/2023 08:30:45 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 325
+[26/05/2023 08:34:17 p. m.] Error: System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at FutureLending.Lectura_Base_Datos.LectName(String name) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 403

@@ -23,6 +23,8 @@ namespace FutureLending
             InitializeComponent();
             CollapseMenu();
             CargarPromotoresEnComboBox(rjComboBox3);
+            CargarPromotoresEnComboBox(cmbPromotor);
+            dateTimePickerPersonalizado2.Enabled = false;
             rjButton6.Enabled = false;
             rjButton4.Enabled = false;
             rjButton5.Enabled = false;
@@ -80,17 +82,36 @@ namespace FutureLending
             lblTitle.Text = "Ingresar Clientes";
             pnlClientes.BringToFront();
             CargarPromotoresEnComboBox(cmbPromotor);
-
+            dateTimePickerPersonalizado2.Enabled = false;
 
         }
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
+            DateTime a = dateFechaInicio.Value;
+            DateTime FechaFinal;
+            int multiplicador = cmbTipo.SelectedIndex == 0 ? 14 : 15;
+            FechaFinal = a.AddDays(multiplicador * 7);
+            dateTimePickerPersonalizado2.Value = FechaFinal;
             String credito = txtCredito.Texts;
             Double credito2 = Convert.ToDouble(credito);
             String interes = cmbInteres.Texts;
-            string nuevoString = interes.Replace("%", ""); // Elimina los % para poder calcular
+            string nuevoString;
+
+            if (cmbInteres.Texts == "Preferencial")
+            {
+                nuevoString = "7";
+            }
+            else if (cmbInteres.Texts == "Premier")
+            {
+                nuevoString = "8";
+            }
+            else
+            {
+                nuevoString = "10";
+            }
+
             Double interes2 = Convert.ToDouble(nuevoString);
-            double tasa_interes = interes2 * credito2 / 100;
+            double tasa_interes = (interes2 * credito2 / 100) * 4;
             double monto_total = credito2 + tasa_interes;
             txtTotal.Texts = $"${monto_total}";
             double monto_segun_tipo = 0;
@@ -109,13 +130,15 @@ namespace FutureLending
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos obj = new();
-            string Interes = cmbInteres.Texts.Replace("%", "");
+            string Interes = cmbInteres.Texts;
             string MontoTotal = txtTotal.Texts.Replace("$", "");
-            obj.Create("lista1", txtNombre.Texts, txtCredito.Texts, dateFechaInicio.Value, Interes, MontoTotal, cmbPromotor.Texts, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedIndex, MontoTotal);
+            int p = int.Parse(MontoTotal) * 2;
+
+            obj.Create("lista1", cmbPromotor.Texts, txtNombre.Texts, txtCredito.Texts, p.ToString(), dateFechaInicio.Value, dateTimePickerPersonalizado2.Value, Interes, MontoTotal, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedItem.ToString(), MontoTotal);
             //Borrar datos para poder agregar de nuevo 
             txtNombre.Texts = "";
             txtCredito.Texts = "";
-            dateFechaInicio.Value = new DateTime(2023, 5, 14, 16, 8, 19, 357);
+            dateFechaInicio.Value = DateTime.Now;
             cmbInteres.Texts = "Seleccione un interés";
             cmbTipo.Texts = "Seleccione un tipo de pago";
             cmbPromotor.Texts = "Seleccione al promotor";
@@ -772,7 +795,7 @@ namespace FutureLending
 
         private void ActivarEditar()
         {
-            if (gridListas.Rows.Count > 0)
+            if (gridListas.Rows.Count > 1)
             {
                 cmbCliente.Enabled = true;
             }

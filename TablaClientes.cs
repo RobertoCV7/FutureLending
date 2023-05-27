@@ -57,16 +57,16 @@ namespace FutureLending
             LimpiarDatos(gridListas, cmbCliente);
 
             //Arreglo de strings con los nombres de cada columna
-            string[] nombresString = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
+            string[] nombresString2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                                 "TIPO DE PAGO", "LIQUIDACION/INTENCION","QUITA"};
-            List<string> nombresColumnas = new(nombresString);
+            List<string> nombresColumnas2 = new(nombresString2);
             for (int i = 1; i <= 14; i++)
             {
-                nombresColumnas.Add("FECHA " + i);
-                nombresColumnas.Add("PAGO " + i);
+                nombresColumnas2.Add("FECHA " + i);
+                nombresColumnas2.Add("PAGO " + i);
             }
-            nombresColumnas.AddRange(nombresString);
+       
 
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
@@ -75,8 +75,8 @@ namespace FutureLending
                 return instancia.LectLista2();
             });
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
-            gridListas.ColumnCount = nombresColumnas.Count;
-            AñadirEncabezado(nombresColumnas, gridListas);
+            gridListas.ColumnCount = nombresColumnas2.Count;
+            AñadirEncabezado(nombresColumnas2, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
             await AñadirDatos(datosList, gridListas, cmbCliente, false);
@@ -213,7 +213,7 @@ namespace FutureLending
                     {
                         cmbCliente.Invoke(new Action(() =>
                         {
-                            cmbCliente.Items.Add(row[0]);
+                            cmbCliente.Items.Add(row[1]);
                         }));
                     }
                 }

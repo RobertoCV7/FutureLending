@@ -57,6 +57,8 @@
             this.lblMonto = (new global::System.Windows.Forms.Label());
             this.DateTimeReg = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
             this.pnlClientes = (new global::System.Windows.Forms.Panel());
+            this.dateTimePickerPersonalizado2 = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
+            this.label65 = (new global::System.Windows.Forms.Label());
             this.cmbInteres = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.btnCalcular = (new global::FutureLending.Controles_personalizados.RJButton());
             this.txtTotal_I = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
@@ -249,7 +251,7 @@
             this.panelMenu.Location = (new global::System.Drawing.Point(0, 0));
             this.panelMenu.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.panelMenu.Name = ("panelMenu");
-            this.panelMenu.Size = (new global::System.Drawing.Size(263, 739));
+            this.panelMenu.Size = (new global::System.Drawing.Size(263, 749));
             this.panelMenu.TabIndex = (0);
             // 
             // iconButton1
@@ -286,7 +288,7 @@
             this.btnTodosSistemas.IconColor = (global::System.Drawing.Color.White);
             this.btnTodosSistemas.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
             this.btnTodosSistemas.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
-            this.btnTodosSistemas.Location = (new global::System.Drawing.Point(0, 658));
+            this.btnTodosSistemas.Location = (new global::System.Drawing.Point(0, 668));
             this.btnTodosSistemas.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.btnTodosSistemas.Name = ("btnTodosSistemas");
             this.btnTodosSistemas.Padding = (new global::System.Windows.Forms.Padding(11, 0, 0, 0));
@@ -413,7 +415,7 @@
             this.panelTitleBar.Location = (new global::System.Drawing.Point(263, 0));
             this.panelTitleBar.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.panelTitleBar.Name = ("panelTitleBar");
-            this.panelTitleBar.Size = (new global::System.Drawing.Size(979, 80));
+            this.panelTitleBar.Size = (new global::System.Drawing.Size(1081, 80));
             this.panelTitleBar.TabIndex = (1);
             // 
             // lblTitle
@@ -446,7 +448,7 @@
             this.pnlRegPago.Location = (new global::System.Drawing.Point(0, 0));
             this.pnlRegPago.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.pnlRegPago.Name = ("pnlRegPago");
-            this.pnlRegPago.Size = (new global::System.Drawing.Size(1242, 739));
+            this.pnlRegPago.Size = (new global::System.Drawing.Size(1344, 749));
             this.pnlRegPago.TabIndex = (27);
             // 
             // ComBoxName
@@ -658,6 +660,8 @@
             // pnlClientes
             // 
             this.pnlClientes.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.pnlClientes.Controls.Add(this.dateTimePickerPersonalizado2);
+            this.pnlClientes.Controls.Add(this.label65);
             this.pnlClientes.Controls.Add(this.cmbInteres);
             this.pnlClientes.Controls.Add(this.btnCalcular);
             this.pnlClientes.Controls.Add(this.txtTotal_I);
@@ -693,9 +697,34 @@
             this.pnlClientes.Location = (new global::System.Drawing.Point(263, 80));
             this.pnlClientes.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.pnlClientes.Name = ("pnlClientes");
-            this.pnlClientes.Size = (new global::System.Drawing.Size(979, 659));
+            this.pnlClientes.Size = (new global::System.Drawing.Size(1081, 669));
             this.pnlClientes.TabIndex = (2);
             this.pnlClientes.Paint += (this.pnlClientes_Paint);
+            // 
+            // dateTimePickerPersonalizado2
+            // 
+            this.dateTimePickerPersonalizado2.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.dateTimePickerPersonalizado2.BorderSize = (2);
+            this.dateTimePickerPersonalizado2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.dateTimePickerPersonalizado2.Format = (global::System.Windows.Forms.DateTimePickerFormat.Short);
+            this.dateTimePickerPersonalizado2.Location = (new global::System.Drawing.Point(224, 240));
+            this.dateTimePickerPersonalizado2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dateTimePickerPersonalizado2.MinimumSize = (new global::System.Drawing.Size(4, 35));
+            this.dateTimePickerPersonalizado2.Name = ("dateTimePickerPersonalizado2");
+            this.dateTimePickerPersonalizado2.Size = (new global::System.Drawing.Size(327, 35));
+            this.dateTimePickerPersonalizado2.SkinColor = (global::System.Drawing.SystemColors.Info);
+            this.dateTimePickerPersonalizado2.TabIndex = (31);
+            this.dateTimePickerPersonalizado2.TextColor = (global::System.Drawing.Color.Black);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = (true);
+            this.label65.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label65.Location = (new global::System.Drawing.Point(18, 243));
+            this.label65.Name = ("label65");
+            this.label65.Size = (new global::System.Drawing.Size(145, 29));
+            this.label65.TabIndex = (30);
+            this.label65.Text = ("Fecha Final:");
             // 
             // cmbInteres
             // 
@@ -708,10 +737,10 @@
             this.cmbInteres.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.cmbInteres.ForeColor = (global::System.Drawing.Color.Black);
             this.cmbInteres.IconColor = (global::System.Drawing.Color.DarkSlateGray);
-            this.cmbInteres.Items.AddRange(new global::System.Object[] { "7%", "8%", "10%" });
+            this.cmbInteres.Items.AddRange(new global::System.Object[] { "Preferencial", "Premier", "Normal" });
             this.cmbInteres.ListBackColor = (global::System.Drawing.SystemColors.Info);
             this.cmbInteres.ListTextColor = (global::System.Drawing.Color.DimGray);
-            this.cmbInteres.Location = (new global::System.Drawing.Point(224, 253));
+            this.cmbInteres.Location = (new global::System.Drawing.Point(224, 288));
             this.cmbInteres.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.cmbInteres.MinimumSize = (new global::System.Drawing.Size(229, 40));
             this.cmbInteres.Name = ("cmbInteres");
@@ -735,7 +764,7 @@
             this.btnCalcular.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnCalcular.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.btnCalcular.ForeColor = (global::System.Drawing.Color.Black);
-            this.btnCalcular.Location = (new global::System.Drawing.Point(201, 600));
+            this.btnCalcular.Location = (new global::System.Drawing.Point(532, 536));
             this.btnCalcular.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.btnCalcular.Name = ("btnCalcular");
             this.btnCalcular.Size = (new global::System.Drawing.Size(151, 52));
@@ -754,7 +783,7 @@
             this.txtTotal_I.BorderSize = (2);
             this.txtTotal_I.Enabled = (false);
             this.txtTotal_I.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtTotal_I.Location = (new global::System.Drawing.Point(323, 540));
+            this.txtTotal_I.Location = (new global::System.Drawing.Point(323, 555));
             this.txtTotal_I.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtTotal_I.Multiline = (false);
             this.txtTotal_I.Name = ("txtTotal_I");
@@ -772,7 +801,7 @@
             // 
             this.label16.AutoSize = (true);
             this.label16.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label16.Location = (new global::System.Drawing.Point(18, 552));
+            this.label16.Location = (new global::System.Drawing.Point(7, 570));
             this.label16.Name = ("label16");
             this.label16.Size = (new global::System.Drawing.Size(299, 29));
             this.label16.TabIndex = (28);
@@ -787,7 +816,7 @@
             this.txtTotal.BorderSize = (2);
             this.txtTotal.Enabled = (false);
             this.txtTotal.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtTotal.Location = (new global::System.Drawing.Point(323, 472));
+            this.txtTotal.Location = (new global::System.Drawing.Point(323, 494));
             this.txtTotal.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtTotal.Multiline = (false);
             this.txtTotal.Name = ("txtTotal");
@@ -809,7 +838,7 @@
             this.txtCorreo.BorderRadius = (0);
             this.txtCorreo.BorderSize = (2);
             this.txtCorreo.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtCorreo.Location = (new global::System.Drawing.Point(649, 505));
+            this.txtCorreo.Location = (new global::System.Drawing.Point(751, 505));
             this.txtCorreo.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtCorreo.Multiline = (false);
             this.txtCorreo.Name = ("txtCorreo");
@@ -828,7 +857,7 @@
             this.label15.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = (true);
             this.label15.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label15.Location = (new global::System.Drawing.Point(649, 472));
+            this.label15.Location = (new global::System.Drawing.Point(751, 472));
             this.label15.Name = ("label15");
             this.label15.Size = (new global::System.Drawing.Size(219, 29));
             this.label15.TabIndex = (25);
@@ -842,7 +871,7 @@
             this.txtTelefono.BorderRadius = (0);
             this.txtTelefono.BorderSize = (2);
             this.txtTelefono.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtTelefono.Location = (new global::System.Drawing.Point(649, 404));
+            this.txtTelefono.Location = (new global::System.Drawing.Point(751, 404));
             this.txtTelefono.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtTelefono.Multiline = (false);
             this.txtTelefono.Name = ("txtTelefono");
@@ -862,7 +891,7 @@
             this.label14.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = (true);
             this.label14.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label14.Location = (new global::System.Drawing.Point(649, 371));
+            this.label14.Location = (new global::System.Drawing.Point(751, 371));
             this.label14.Name = ("label14");
             this.label14.Size = (new global::System.Drawing.Size(116, 29));
             this.label14.TabIndex = (23);
@@ -876,7 +905,7 @@
             this.txtNumExt.BorderRadius = (0);
             this.txtNumExt.BorderSize = (2);
             this.txtNumExt.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtNumExt.Location = (new global::System.Drawing.Point(817, 303));
+            this.txtNumExt.Location = (new global::System.Drawing.Point(919, 303));
             this.txtNumExt.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtNumExt.Multiline = (false);
             this.txtNumExt.Name = ("txtNumExt");
@@ -896,7 +925,7 @@
             this.label13.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = (true);
             this.label13.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label13.Location = (new global::System.Drawing.Point(817, 271));
+            this.label13.Location = (new global::System.Drawing.Point(919, 271));
             this.label13.Name = ("label13");
             this.label13.Size = (new global::System.Drawing.Size(119, 29));
             this.label13.TabIndex = (21);
@@ -910,7 +939,7 @@
             this.txtNumInt.BorderRadius = (0);
             this.txtNumInt.BorderSize = (2);
             this.txtNumInt.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtNumInt.Location = (new global::System.Drawing.Point(649, 303));
+            this.txtNumInt.Location = (new global::System.Drawing.Point(751, 303));
             this.txtNumInt.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtNumInt.Multiline = (false);
             this.txtNumInt.Name = ("txtNumInt");
@@ -930,7 +959,7 @@
             this.label12.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = (true);
             this.label12.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label12.Location = (new global::System.Drawing.Point(649, 269));
+            this.label12.Location = (new global::System.Drawing.Point(751, 269));
             this.label12.Name = ("label12");
             this.label12.Size = (new global::System.Drawing.Size(113, 29));
             this.label12.TabIndex = (19);
@@ -944,7 +973,7 @@
             this.txtColonia.BorderRadius = (0);
             this.txtColonia.BorderSize = (2);
             this.txtColonia.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtColonia.Location = (new global::System.Drawing.Point(649, 204));
+            this.txtColonia.Location = (new global::System.Drawing.Point(751, 204));
             this.txtColonia.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtColonia.Multiline = (false);
             this.txtColonia.Name = ("txtColonia");
@@ -963,7 +992,7 @@
             this.label11.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = (true);
             this.label11.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label11.Location = (new global::System.Drawing.Point(649, 171));
+            this.label11.Location = (new global::System.Drawing.Point(751, 171));
             this.label11.Name = ("label11");
             this.label11.Size = (new global::System.Drawing.Size(102, 29));
             this.label11.TabIndex = (17);
@@ -977,7 +1006,7 @@
             this.txtCalle.BorderRadius = (0);
             this.txtCalle.BorderSize = (2);
             this.txtCalle.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtCalle.Location = (new global::System.Drawing.Point(649, 104));
+            this.txtCalle.Location = (new global::System.Drawing.Point(751, 104));
             this.txtCalle.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtCalle.Multiline = (false);
             this.txtCalle.Name = ("txtCalle");
@@ -996,7 +1025,7 @@
             this.label10.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = (true);
             this.label10.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label10.Location = (new global::System.Drawing.Point(649, 71));
+            this.label10.Location = (new global::System.Drawing.Point(751, 71));
             this.label10.Name = ("label10");
             this.label10.Size = (new global::System.Drawing.Size(75, 29));
             this.label10.TabIndex = (15);
@@ -1007,7 +1036,7 @@
             this.label9.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = (true);
             this.label9.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label9.Location = (new global::System.Drawing.Point(649, 28));
+            this.label9.Location = (new global::System.Drawing.Point(751, 28));
             this.label9.Name = ("label9");
             this.label9.Size = (new global::System.Drawing.Size(121, 29));
             this.label9.TabIndex = (14);
@@ -1026,7 +1055,7 @@
             this.btnGuardar.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnGuardar.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.btnGuardar.ForeColor = (global::System.Drawing.Color.Black);
-            this.btnGuardar.Location = (new global::System.Drawing.Point(690, 580));
+            this.btnGuardar.Location = (new global::System.Drawing.Point(792, 580));
             this.btnGuardar.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.btnGuardar.Name = ("btnGuardar");
             this.btnGuardar.Size = (new global::System.Drawing.Size(171, 53));
@@ -1040,7 +1069,7 @@
             // 
             this.label7.AutoSize = (true);
             this.label7.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label7.Location = (new global::System.Drawing.Point(18, 480));
+            this.label7.Location = (new global::System.Drawing.Point(8, 507));
             this.label7.Name = ("label7");
             this.label7.Size = (new global::System.Drawing.Size(261, 29));
             this.label7.TabIndex = (12);
@@ -1050,7 +1079,7 @@
             // 
             this.label6.AutoSize = (true);
             this.label6.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label6.Location = (new global::System.Drawing.Point(18, 408));
+            this.label6.Location = (new global::System.Drawing.Point(12, 439));
             this.label6.Name = ("label6");
             this.label6.Size = (new global::System.Drawing.Size(119, 29));
             this.label6.TabIndex = (10);
@@ -1070,7 +1099,7 @@
             this.cmbTipo.Items.AddRange(new global::System.Object[] { "Semanales", "Quincenales" });
             this.cmbTipo.ListBackColor = (global::System.Drawing.SystemColors.Info);
             this.cmbTipo.ListTextColor = (global::System.Drawing.Color.DimGray);
-            this.cmbTipo.Location = (new global::System.Drawing.Point(224, 325));
+            this.cmbTipo.Location = (new global::System.Drawing.Point(222, 359));
             this.cmbTipo.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.cmbTipo.MinimumSize = (new global::System.Drawing.Size(229, 40));
             this.cmbTipo.Name = ("cmbTipo");
@@ -1085,7 +1114,7 @@
             // 
             this.label5.AutoSize = (true);
             this.label5.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label5.Location = (new global::System.Drawing.Point(18, 336));
+            this.label5.Location = (new global::System.Drawing.Point(10, 371));
             this.label5.Name = ("label5");
             this.label5.Size = (new global::System.Drawing.Size(164, 29));
             this.label5.TabIndex = (8);
@@ -1095,7 +1124,7 @@
             // 
             this.label4.AutoSize = (true);
             this.label4.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label4.Location = (new global::System.Drawing.Point(18, 264));
+            this.label4.Location = (new global::System.Drawing.Point(18, 295));
             this.label4.Name = ("label4");
             this.label4.Size = (new global::System.Drawing.Size(92, 29));
             this.label4.TabIndex = (6);
@@ -1203,7 +1232,7 @@
             this.cmbPromotor.IconColor = (global::System.Drawing.Color.DarkSlateGray);
             this.cmbPromotor.ListBackColor = (global::System.Drawing.SystemColors.Info);
             this.cmbPromotor.ListTextColor = (global::System.Drawing.Color.DimGray);
-            this.cmbPromotor.Location = (new global::System.Drawing.Point(224, 397));
+            this.cmbPromotor.Location = (new global::System.Drawing.Point(222, 427));
             this.cmbPromotor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.cmbPromotor.MinimumSize = (new global::System.Drawing.Size(229, 40));
             this.cmbPromotor.Name = ("cmbPromotor");
@@ -1226,14 +1255,14 @@
             this.pnlListas.Location = (new global::System.Drawing.Point(263, 80));
             this.pnlListas.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.pnlListas.Name = ("pnlListas");
-            this.pnlListas.Size = (new global::System.Drawing.Size(979, 659));
+            this.pnlListas.Size = (new global::System.Drawing.Size(1081, 669));
             this.pnlListas.TabIndex = (14);
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel3.Controls.Add(this.cmbCliente);
-            this.flowLayoutPanel3.Location = (new global::System.Drawing.Point(293, 581));
+            this.flowLayoutPanel3.Location = (new global::System.Drawing.Point(395, 591));
             this.flowLayoutPanel3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.flowLayoutPanel3.Name = ("flowLayoutPanel3");
             this.flowLayoutPanel3.Size = (new global::System.Drawing.Size(371, 60));
@@ -1271,7 +1300,7 @@
             this.flowLayoutPanel2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel2.Controls.Add(this.btnEditar);
             this.flowLayoutPanel2.Controls.Add(this.btnEliminar);
-            this.flowLayoutPanel2.Location = (new global::System.Drawing.Point(670, 573));
+            this.flowLayoutPanel2.Location = (new global::System.Drawing.Point(772, 583));
             this.flowLayoutPanel2.Name = ("flowLayoutPanel2");
             this.flowLayoutPanel2.Size = (new global::System.Drawing.Size(272, 75));
             this.flowLayoutPanel2.TabIndex = (21);
@@ -1331,7 +1360,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnMostrarTodos);
             this.flowLayoutPanel1.Controls.Add(this.btnLiquidados);
             this.flowLayoutPanel1.Controls.Add(this.rjButton1);
-            this.flowLayoutPanel1.Location = (new global::System.Drawing.Point(528, 3));
+            this.flowLayoutPanel1.Location = (new global::System.Drawing.Point(630, 3));
             this.flowLayoutPanel1.Name = ("flowLayoutPanel1");
             this.flowLayoutPanel1.Size = (new global::System.Drawing.Size(426, 159));
             this.flowLayoutPanel1.TabIndex = (20);
@@ -1504,7 +1533,7 @@
             this.gridListas.RowsDefaultCellStyle = (dataGridViewCellStyle2);
             this.gridListas.RowTemplate.Height = (25);
             this.gridListas.SelectionMode = (global::System.Windows.Forms.DataGridViewSelectionMode.CellSelect);
-            this.gridListas.Size = (new global::System.Drawing.Size(912, 387));
+            this.gridListas.Size = (new global::System.Drawing.Size(1014, 397));
             this.gridListas.TabIndex = (16);
             // 
             // label8
@@ -1512,7 +1541,7 @@
             this.label8.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = (true);
             this.label8.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 19.8000011F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label8.Location = (new global::System.Drawing.Point(199, 9));
+            this.label8.Location = (new global::System.Drawing.Point(301, 9));
             this.label8.Name = ("label8");
             this.label8.Size = (new global::System.Drawing.Size(320, 39));
             this.label8.TabIndex = (13);
@@ -1558,7 +1587,7 @@
             this.PanelEditar.Dock = (global::System.Windows.Forms.DockStyle.Fill);
             this.PanelEditar.Location = (new global::System.Drawing.Point(263, 80));
             this.PanelEditar.Name = ("PanelEditar");
-            this.PanelEditar.Size = (new global::System.Drawing.Size(979, 659));
+            this.PanelEditar.Size = (new global::System.Drawing.Size(1081, 669));
             this.PanelEditar.TabIndex = (24);
             // 
             // dateTimeLimite
@@ -1594,7 +1623,7 @@
             this.textBoxPersonalizado7.BorderRadius = (0);
             this.textBoxPersonalizado7.BorderSize = (2);
             this.textBoxPersonalizado7.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado7.Location = (new global::System.Drawing.Point(619, 528));
+            this.textBoxPersonalizado7.Location = (new global::System.Drawing.Point(721, 528));
             this.textBoxPersonalizado7.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBoxPersonalizado7.Multiline = (false);
             this.textBoxPersonalizado7.Name = ("textBoxPersonalizado7");
@@ -1612,7 +1641,7 @@
             this.label25.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = (true);
             this.label25.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label25.Location = (new global::System.Drawing.Point(625, 499));
+            this.label25.Location = (new global::System.Drawing.Point(727, 499));
             this.label25.Name = ("label25");
             this.label25.Size = (new global::System.Drawing.Size(181, 29));
             this.label25.TabIndex = (81);
@@ -1679,7 +1708,7 @@
             this.btnGuardarCambio.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnGuardarCambio.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.btnGuardarCambio.ForeColor = (global::System.Drawing.Color.Black);
-            this.btnGuardarCambio.Location = (new global::System.Drawing.Point(799, 577));
+            this.btnGuardarCambio.Location = (new global::System.Drawing.Point(901, 587));
             this.btnGuardarCambio.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.btnGuardarCambio.Name = ("btnGuardarCambio");
             this.btnGuardarCambio.Size = (new global::System.Drawing.Size(171, 79));
@@ -1758,7 +1787,7 @@
             this.textBoxPersonalizado1.BorderRadius = (0);
             this.textBoxPersonalizado1.BorderSize = (2);
             this.textBoxPersonalizado1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado1.Location = (new global::System.Drawing.Point(616, 440));
+            this.textBoxPersonalizado1.Location = (new global::System.Drawing.Point(718, 440));
             this.textBoxPersonalizado1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBoxPersonalizado1.Multiline = (false);
             this.textBoxPersonalizado1.Name = ("textBoxPersonalizado1");
@@ -1776,7 +1805,7 @@
             this.label18.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = (true);
             this.label18.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label18.Location = (new global::System.Drawing.Point(616, 407));
+            this.label18.Location = (new global::System.Drawing.Point(718, 407));
             this.label18.Name = ("label18");
             this.label18.Size = (new global::System.Drawing.Size(219, 29));
             this.label18.TabIndex = (73);
@@ -1790,7 +1819,7 @@
             this.textBoxPersonalizado2.BorderRadius = (0);
             this.textBoxPersonalizado2.BorderSize = (2);
             this.textBoxPersonalizado2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado2.Location = (new global::System.Drawing.Point(616, 339));
+            this.textBoxPersonalizado2.Location = (new global::System.Drawing.Point(718, 339));
             this.textBoxPersonalizado2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBoxPersonalizado2.Multiline = (false);
             this.textBoxPersonalizado2.Name = ("textBoxPersonalizado2");
@@ -1808,7 +1837,7 @@
             this.label20.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = (true);
             this.label20.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label20.Location = (new global::System.Drawing.Point(616, 307));
+            this.label20.Location = (new global::System.Drawing.Point(718, 307));
             this.label20.Name = ("label20");
             this.label20.Size = (new global::System.Drawing.Size(116, 29));
             this.label20.TabIndex = (72);
@@ -1822,7 +1851,7 @@
             this.textBoxPersonalizado3.BorderRadius = (0);
             this.textBoxPersonalizado3.BorderSize = (2);
             this.textBoxPersonalizado3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado3.Location = (new global::System.Drawing.Point(784, 237));
+            this.textBoxPersonalizado3.Location = (new global::System.Drawing.Point(886, 237));
             this.textBoxPersonalizado3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBoxPersonalizado3.Multiline = (false);
             this.textBoxPersonalizado3.Name = ("textBoxPersonalizado3");
@@ -1840,7 +1869,7 @@
             this.label21.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = (true);
             this.label21.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label21.Location = (new global::System.Drawing.Point(784, 205));
+            this.label21.Location = (new global::System.Drawing.Point(886, 205));
             this.label21.Name = ("label21");
             this.label21.Size = (new global::System.Drawing.Size(119, 29));
             this.label21.TabIndex = (71);
@@ -1854,7 +1883,7 @@
             this.textBoxPersonalizado4.BorderRadius = (0);
             this.textBoxPersonalizado4.BorderSize = (2);
             this.textBoxPersonalizado4.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado4.Location = (new global::System.Drawing.Point(616, 237));
+            this.textBoxPersonalizado4.Location = (new global::System.Drawing.Point(718, 237));
             this.textBoxPersonalizado4.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBoxPersonalizado4.Multiline = (false);
             this.textBoxPersonalizado4.Name = ("textBoxPersonalizado4");
@@ -1872,7 +1901,7 @@
             this.label22.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = (true);
             this.label22.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label22.Location = (new global::System.Drawing.Point(616, 204));
+            this.label22.Location = (new global::System.Drawing.Point(718, 204));
             this.label22.Name = ("label22");
             this.label22.Size = (new global::System.Drawing.Size(113, 29));
             this.label22.TabIndex = (70);
@@ -1886,7 +1915,7 @@
             this.textBoxPersonalizado5.BorderRadius = (0);
             this.textBoxPersonalizado5.BorderSize = (2);
             this.textBoxPersonalizado5.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado5.Location = (new global::System.Drawing.Point(616, 139));
+            this.textBoxPersonalizado5.Location = (new global::System.Drawing.Point(718, 139));
             this.textBoxPersonalizado5.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBoxPersonalizado5.Multiline = (false);
             this.textBoxPersonalizado5.Name = ("textBoxPersonalizado5");
@@ -1904,7 +1933,7 @@
             this.label23.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = (true);
             this.label23.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label23.Location = (new global::System.Drawing.Point(616, 107));
+            this.label23.Location = (new global::System.Drawing.Point(718, 107));
             this.label23.Name = ("label23");
             this.label23.Size = (new global::System.Drawing.Size(102, 29));
             this.label23.TabIndex = (69);
@@ -1918,7 +1947,7 @@
             this.textBoxPersonalizado6.BorderRadius = (0);
             this.textBoxPersonalizado6.BorderSize = (2);
             this.textBoxPersonalizado6.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado6.Location = (new global::System.Drawing.Point(616, 39));
+            this.textBoxPersonalizado6.Location = (new global::System.Drawing.Point(718, 39));
             this.textBoxPersonalizado6.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBoxPersonalizado6.Multiline = (false);
             this.textBoxPersonalizado6.Name = ("textBoxPersonalizado6");
@@ -1936,7 +1965,7 @@
             this.label24.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = (true);
             this.label24.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label24.Location = (new global::System.Drawing.Point(616, 5));
+            this.label24.Location = (new global::System.Drawing.Point(718, 5));
             this.label24.Name = ("label24");
             this.label24.Size = (new global::System.Drawing.Size(75, 29));
             this.label24.TabIndex = (68);
@@ -2148,7 +2177,7 @@
             this.PanelBien.Dock = (global::System.Windows.Forms.DockStyle.Fill);
             this.PanelBien.Location = (new global::System.Drawing.Point(263, 80));
             this.PanelBien.Name = ("PanelBien");
-            this.PanelBien.Size = (new global::System.Drawing.Size(979, 659));
+            this.PanelBien.Size = (new global::System.Drawing.Size(1081, 669));
             this.PanelBien.TabIndex = (26);
             this.PanelBien.SizeChanged += (this.PanelBien_SizeChanged);
             // 
@@ -2240,7 +2269,7 @@
             this.panel2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
             this.panel2.Location = (new global::System.Drawing.Point(263, 80));
             this.panel2.Name = ("panel2");
-            this.panel2.Size = (new global::System.Drawing.Size(979, 659));
+            this.panel2.Size = (new global::System.Drawing.Size(1081, 669));
             this.panel2.TabIndex = (24);
             // 
             // tabControl1
@@ -2252,7 +2281,7 @@
             this.tabControl1.Location = (new global::System.Drawing.Point(0, 0));
             this.tabControl1.Name = ("tabControl1");
             this.tabControl1.SelectedIndex = (0);
-            this.tabControl1.Size = (new global::System.Drawing.Size(979, 659));
+            this.tabControl1.Size = (new global::System.Drawing.Size(1081, 669));
             this.tabControl1.SizeMode = (global::System.Windows.Forms.TabSizeMode.Fixed);
             this.tabControl1.TabIndex = (21);
             this.tabControl1.SelectedIndexChanged += (this.TabControl1_SelectedIndexChanged);
@@ -2264,7 +2293,7 @@
             this.tabPage1.Location = (new global::System.Drawing.Point(4, 29));
             this.tabPage1.Name = ("tabPage1");
             this.tabPage1.Padding = (new global::System.Windows.Forms.Padding(3));
-            this.tabPage1.Size = (new global::System.Drawing.Size(971, 626));
+            this.tabPage1.Size = (new global::System.Drawing.Size(1073, 636));
             this.tabPage1.TabIndex = (0);
             this.tabPage1.Text = ("Usuarios");
             // 
@@ -2627,7 +2656,7 @@
             this.Conexion_Sql.Location = (new global::System.Drawing.Point(4, 29));
             this.Conexion_Sql.Name = ("Conexion_Sql");
             this.Conexion_Sql.Padding = (new global::System.Windows.Forms.Padding(3));
-            this.Conexion_Sql.Size = (new global::System.Drawing.Size(971, 626));
+            this.Conexion_Sql.Size = (new global::System.Drawing.Size(1073, 636));
             this.Conexion_Sql.TabIndex = (1);
             this.Conexion_Sql.Text = ("Conexion Sql");
             // 
@@ -2844,7 +2873,7 @@
             this.tabPage2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.tabPage2.Location = (new global::System.Drawing.Point(4, 29));
             this.tabPage2.Name = ("tabPage2");
-            this.tabPage2.Size = (new global::System.Drawing.Size(971, 626));
+            this.tabPage2.Size = (new global::System.Drawing.Size(1073, 636));
             this.tabPage2.TabIndex = (2);
             this.tabPage2.Text = ("Promotores");
             // 
@@ -3016,12 +3045,12 @@
             // 
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
-            this.ClientSize = (new global::System.Drawing.Size(1242, 739));
-            this.Controls.Add(this.PanelBien);
+            this.ClientSize = (new global::System.Drawing.Size(1344, 749));
             this.Controls.Add(this.pnlListas);
+            this.Controls.Add(this.pnlClientes);
+            this.Controls.Add(this.PanelBien);
             this.Controls.Add(this.PanelEditar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlRegPago);
@@ -3249,5 +3278,7 @@
         private global::FutureLending.Controles_personalizados.RJButton rjButton4;
         private Label label64;
         private TextBox textBox5;
+        private global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado dateTimePickerPersonalizado2;
+        private global::System.Windows.Forms.Label label65;
     }
 }
