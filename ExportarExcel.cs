@@ -85,6 +85,7 @@ namespace FutureLending
                 nombresColumnas.Add("FECHA " + i);
                 nombresColumnas.Add("PAGO " + i);
             }
+            nombresColumnas.Add("PAGO TOTAL EXT");
 
             // Escribe los nombres de las columnas en el archivo Excel
             for (int col = 0; col < nombresColumnas.Count; col++)
@@ -207,6 +208,7 @@ namespace FutureLending
                 NombresColumnas2.Add("FECHA " + i);
                 NombresColumnas2.Add("PAGO " + i);
             }
+            NombresColumnas2.Add("PAGO TOTAL EXT");
 
             using var package = new ExcelPackage();
             // Agrega una hoja para cada lista de datos
