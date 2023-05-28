@@ -481,47 +481,6 @@ namespace FutureLending
                 }
             }
         }
-        public void CreateLiquidados(int lista, string[] datos)
-        {
-            using MySqlConnection connection = Conector();
-            StringBuilder queryBuilder = new();
-            queryBuilder.Append("INSERT INTO liquidados (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Fecha_Ultimo_Pago, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago");
-            queryBuilder.Append(") VALUES (@Nombre, @Credito, @FechaI, @FechaUP, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumI, @NumE, @Telefono, @Correo, @TipoP)");
-            string query = queryBuilder.ToString();
-            using MySqlCommand command = new(query, connection);
-            command.Parameters.AddWithValue("@Nombre", datos[0]);
-            command.Parameters.AddWithValue("@Credito", datos[1]);
-            command.Parameters.AddWithValue("@FechaI", datos[2]);
-            if(lista == 1)
-            {
-                string[] fecha;
-                fecha = datos[12] == "0" ? datos[27].Split("-") : datos[20].Split("-");
-                command.Parameters.AddWithValue("@FechaUP", fecha[0]);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@FechaUP", datos[14]);
-            }
-            
-            command.Parameters.AddWithValue("@Interes", datos[3]);
-            command.Parameters.AddWithValue("@Monto", datos[4]);
-            command.Parameters.AddWithValue("@Promotor", datos[5]);
-            command.Parameters.AddWithValue("@Calle", datos[6]);
-            command.Parameters.AddWithValue("@Colonia", datos[7]);
-            command.Parameters.AddWithValue("@NumI", datos[8]);
-            command.Parameters.AddWithValue("@NumE", datos[9]);
-            command.Parameters.AddWithValue("@Telefono", datos[10]);
-            command.Parameters.AddWithValue("@Correo", datos[11]);
-            command.Parameters.AddWithValue("@TipoP", lista);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Registro_errores(ex.ToString());
-            }
-        }
         public bool InsertarLiquidados(string[] datos)
         {
             using MySqlConnection connection = Conector();

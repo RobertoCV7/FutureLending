@@ -44,18 +44,18 @@
             this.panelTitleBar = (new global::System.Windows.Forms.Panel());
             this.lblTitle = (new global::System.Windows.Forms.Label());
             this.pnlRegPago = (new global::System.Windows.Forms.Panel());
+            this.TextBoxRestantepagos = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label17 = (new global::System.Windows.Forms.Label());
+            this.rjComboBox9 = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.ComBoxName = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
-            this.CombBoxLista = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.label29 = (new global::System.Windows.Forms.Label());
             this.btnBuscarC = (new global::FutureLending.Controles_personalizados.RJButton());
-            this.label17 = (new global::System.Windows.Forms.Label());
             this.lblFecha = (new global::System.Windows.Forms.Label());
             this.txtBoxCredito = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
             this.lblCredito = (new global::System.Windows.Forms.Label());
             this.txtBoxMonto = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
             this.btnMarcarP = (new global::FutureLending.Controles_personalizados.RJButton());
             this.lblMonto = (new global::System.Windows.Forms.Label());
-            this.DateTimeReg = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
             this.pnlClientes = (new global::System.Windows.Forms.Panel());
             this.dateTimePickerPersonalizado2 = (new global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado());
             this.label65 = (new global::System.Windows.Forms.Label());
@@ -554,24 +554,80 @@
             // pnlRegPago
             // 
             this.pnlRegPago.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.pnlRegPago.Controls.Add(this.TextBoxRestantepagos);
+            this.pnlRegPago.Controls.Add(this.label17);
+            this.pnlRegPago.Controls.Add(this.rjComboBox9);
             this.pnlRegPago.Controls.Add(this.ComBoxName);
-            this.pnlRegPago.Controls.Add(this.CombBoxLista);
             this.pnlRegPago.Controls.Add(this.label29);
             this.pnlRegPago.Controls.Add(this.btnBuscarC);
-            this.pnlRegPago.Controls.Add(this.label17);
             this.pnlRegPago.Controls.Add(this.lblFecha);
             this.pnlRegPago.Controls.Add(this.txtBoxCredito);
             this.pnlRegPago.Controls.Add(this.lblCredito);
             this.pnlRegPago.Controls.Add(this.txtBoxMonto);
             this.pnlRegPago.Controls.Add(this.btnMarcarP);
             this.pnlRegPago.Controls.Add(this.lblMonto);
-            this.pnlRegPago.Controls.Add(this.DateTimeReg);
             this.pnlRegPago.Dock = (global::System.Windows.Forms.DockStyle.Fill);
-            this.pnlRegPago.Location = (new global::System.Drawing.Point(0, 0));
+            this.pnlRegPago.Location = (new global::System.Drawing.Point(263, 80));
             this.pnlRegPago.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.pnlRegPago.Name = ("pnlRegPago");
-            this.pnlRegPago.Size = (new global::System.Drawing.Size(1344, 799));
+            this.pnlRegPago.Size = (new global::System.Drawing.Size(1081, 719));
             this.pnlRegPago.TabIndex = (27);
+            // 
+            // TextBoxRestantepagos
+            // 
+            this.TextBoxRestantepagos.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.TextBoxRestantepagos.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.TextBoxRestantepagos.BorderRadius = (0);
+            this.TextBoxRestantepagos.BorderSize = (2);
+            this.TextBoxRestantepagos.Enabled = (false);
+            this.TextBoxRestantepagos.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.TextBoxRestantepagos.Location = (new global::System.Drawing.Point(309, 255));
+            this.TextBoxRestantepagos.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.TextBoxRestantepagos.Multiline = (false);
+            this.TextBoxRestantepagos.Name = ("TextBoxRestantepagos");
+            this.TextBoxRestantepagos.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.TextBoxRestantepagos.PasswordChar = (false);
+            this.TextBoxRestantepagos.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.TextBoxRestantepagos.PlaceholderText = ("");
+            this.TextBoxRestantepagos.Size = (new global::System.Drawing.Size(265, 48));
+            this.TextBoxRestantepagos.TabIndex = (37);
+            this.TextBoxRestantepagos.Texts = ("");
+            this.TextBoxRestantepagos.UnderlinedStyle = (true);
+            this.TextBoxRestantepagos.Visible = (false);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = (true);
+            this.label17.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label17.Location = (new global::System.Drawing.Point(41, 273));
+            this.label17.Name = ("label17");
+            this.label17.Size = (new global::System.Drawing.Size(187, 29));
+            this.label17.TabIndex = (38);
+            this.label17.Text = ("Monto Restante:");
+            this.label17.Visible = (false);
+            // 
+            // rjComboBox9
+            // 
+            this.rjComboBox9.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.rjComboBox9.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.rjComboBox9.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox9.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox9.BorderSize = (2);
+            this.rjComboBox9.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDown);
+            this.rjComboBox9.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjComboBox9.ForeColor = (global::System.Drawing.Color.Black);
+            this.rjComboBox9.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.rjComboBox9.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.rjComboBox9.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.rjComboBox9.Location = (new global::System.Drawing.Point(258, 434));
+            this.rjComboBox9.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.rjComboBox9.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.rjComboBox9.Name = ("rjComboBox9");
+            this.rjComboBox9.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.rjComboBox9.Size = (new global::System.Drawing.Size(346, 63));
+            this.rjComboBox9.TabIndex = (36);
+            this.rjComboBox9.Texts = ("Seleccione la fecha");
+            this.rjComboBox9.OnSelectedIndexChanged += (this.rjComboBox9_OnSelectedIndexChanged);
             // 
             // ComBoxName
             // 
@@ -596,30 +652,6 @@
             this.ComBoxName.Texts = ("Introduzca nombre");
             this.ComBoxName.OnSelectedIndexChanged += (this.ActivarBtnBuscar);
             // 
-            // CombBoxLista
-            // 
-            this.CombBoxLista.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
-            this.CombBoxLista.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
-            this.CombBoxLista.BackColor = (global::System.Drawing.SystemColors.Info);
-            this.CombBoxLista.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
-            this.CombBoxLista.BorderSize = (2);
-            this.CombBoxLista.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDown);
-            this.CombBoxLista.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.CombBoxLista.ForeColor = (global::System.Drawing.Color.Black);
-            this.CombBoxLista.IconColor = (global::System.Drawing.Color.DarkSlateGray);
-            this.CombBoxLista.Items.AddRange(new global::System.Object[] { "Lista 1", "Lista 2" });
-            this.CombBoxLista.ListBackColor = (global::System.Drawing.SystemColors.Info);
-            this.CombBoxLista.ListTextColor = (global::System.Drawing.Color.DimGray);
-            this.CombBoxLista.Location = (new global::System.Drawing.Point(309, 139));
-            this.CombBoxLista.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
-            this.CombBoxLista.MinimumSize = (new global::System.Drawing.Size(229, 40));
-            this.CombBoxLista.Name = ("CombBoxLista");
-            this.CombBoxLista.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
-            this.CombBoxLista.Size = (new global::System.Drawing.Size(346, 63));
-            this.CombBoxLista.TabIndex = (35);
-            this.CombBoxLista.Texts = ("Introduzca lista");
-            this.CombBoxLista.OnSelectedIndexChanged += (this.ActivarBtnBuscar);
-            // 
             // label29
             // 
             this.label29.AutoSize = (true);
@@ -642,31 +674,21 @@
             this.btnBuscarC.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnBuscarC.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.btnBuscarC.ForeColor = (global::System.Drawing.Color.Black);
-            this.btnBuscarC.Location = (new global::System.Drawing.Point(799, 109));
+            this.btnBuscarC.Location = (new global::System.Drawing.Point(805, 45));
             this.btnBuscarC.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.btnBuscarC.Name = ("btnBuscarC");
-            this.btnBuscarC.Size = (new global::System.Drawing.Size(135, 48));
+            this.btnBuscarC.Size = (new global::System.Drawing.Size(184, 76));
             this.btnBuscarC.TabIndex = (13);
             this.btnBuscarC.Text = ("Buscar");
             this.btnBuscarC.TextColor = (global::System.Drawing.Color.Black);
             this.btnBuscarC.UseVisualStyleBackColor = (false);
             this.btnBuscarC.Click += (this.BtnBuscarC_Click);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = (true);
-            this.label17.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label17.Location = (new global::System.Drawing.Point(41, 172));
-            this.label17.Name = ("label17");
-            this.label17.Size = (new global::System.Drawing.Size(152, 29));
-            this.label17.TabIndex = (34);
-            this.label17.Text = ("Tipo de lista:");
-            // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = (true);
             this.lblFecha.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.lblFecha.Location = (new global::System.Drawing.Point(41, 536));
+            this.lblFecha.Location = (new global::System.Drawing.Point(31, 453));
             this.lblFecha.Name = ("lblFecha");
             this.lblFecha.Size = (new global::System.Drawing.Size(200, 29));
             this.lblFecha.TabIndex = (31);
@@ -681,7 +703,7 @@
             this.txtBoxCredito.BorderSize = (2);
             this.txtBoxCredito.Enabled = (false);
             this.txtBoxCredito.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtBoxCredito.Location = (new global::System.Drawing.Point(309, 264));
+            this.txtBoxCredito.Location = (new global::System.Drawing.Point(309, 167));
             this.txtBoxCredito.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtBoxCredito.Multiline = (false);
             this.txtBoxCredito.Name = ("txtBoxCredito");
@@ -699,7 +721,7 @@
             // 
             this.lblCredito.AutoSize = (true);
             this.lblCredito.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.lblCredito.Location = (new global::System.Drawing.Point(41, 292));
+            this.lblCredito.Location = (new global::System.Drawing.Point(41, 185));
             this.lblCredito.Name = ("lblCredito");
             this.lblCredito.Size = (new global::System.Drawing.Size(199, 29));
             this.lblCredito.TabIndex = (28);
@@ -713,7 +735,7 @@
             this.txtBoxMonto.BorderRadius = (0);
             this.txtBoxMonto.BorderSize = (2);
             this.txtBoxMonto.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.txtBoxMonto.Location = (new global::System.Drawing.Point(309, 388));
+            this.txtBoxMonto.Location = (new global::System.Drawing.Point(309, 327));
             this.txtBoxMonto.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.txtBoxMonto.Multiline = (false);
             this.txtBoxMonto.Name = ("txtBoxMonto");
@@ -721,7 +743,7 @@
             this.txtBoxMonto.PasswordChar = (false);
             this.txtBoxMonto.PlaceholderColor = (global::System.Drawing.Color.DimGray);
             this.txtBoxMonto.PlaceholderText = ("");
-            this.txtBoxMonto.Size = (new global::System.Drawing.Size(171, 48));
+            this.txtBoxMonto.Size = (new global::System.Drawing.Size(263, 48));
             this.txtBoxMonto.TabIndex = (30);
             this.txtBoxMonto.Texts = ("");
             this.txtBoxMonto.UnderlinedStyle = (true);
@@ -741,10 +763,10 @@
             this.btnMarcarP.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnMarcarP.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.btnMarcarP.ForeColor = (global::System.Drawing.Color.Black);
-            this.btnMarcarP.Location = (new global::System.Drawing.Point(535, 587));
+            this.btnMarcarP.Location = (new global::System.Drawing.Point(699, 594));
             this.btnMarcarP.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.btnMarcarP.Name = ("btnMarcarP");
-            this.btnMarcarP.Size = (new global::System.Drawing.Size(277, 53));
+            this.btnMarcarP.Size = (new global::System.Drawing.Size(317, 77));
             this.btnMarcarP.TabIndex = (33);
             this.btnMarcarP.Text = ("Marcar como pagada");
             this.btnMarcarP.TextColor = (global::System.Drawing.Color.Black);
@@ -756,28 +778,12 @@
             // 
             this.lblMonto.AutoSize = (true);
             this.lblMonto.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.lblMonto.Location = (new global::System.Drawing.Point(41, 419));
+            this.lblMonto.Location = (new global::System.Drawing.Point(36, 346));
             this.lblMonto.Name = ("lblMonto");
             this.lblMonto.Size = (new global::System.Drawing.Size(212, 29));
             this.lblMonto.TabIndex = (29);
             this.lblMonto.Text = ("Monto a depositar:");
             this.lblMonto.Visible = (false);
-            // 
-            // DateTimeReg
-            // 
-            this.DateTimeReg.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
-            this.DateTimeReg.BorderSize = (2);
-            this.DateTimeReg.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.DateTimeReg.Format = (global::System.Windows.Forms.DateTimePickerFormat.Short);
-            this.DateTimeReg.Location = (new global::System.Drawing.Point(307, 528));
-            this.DateTimeReg.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
-            this.DateTimeReg.MinimumSize = (new global::System.Drawing.Size(4, 35));
-            this.DateTimeReg.Name = ("DateTimeReg");
-            this.DateTimeReg.Size = (new global::System.Drawing.Size(172, 35));
-            this.DateTimeReg.SkinColor = (global::System.Drawing.SystemColors.Info);
-            this.DateTimeReg.TabIndex = (32);
-            this.DateTimeReg.TextColor = (global::System.Drawing.Color.Black);
-            this.DateTimeReg.Visible = (false);
             // 
             // pnlClientes
             // 
@@ -3268,7 +3274,7 @@
             this.BotonEditarFechas2.Enabled = (false);
             this.BotonEditarFechas2.FlatAppearance.BorderSize = (0);
             this.BotonEditarFechas2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.BotonEditarFechas2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.BotonEditarFechas2.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.BotonEditarFechas2.ForeColor = (global::System.Drawing.Color.Black);
             this.BotonEditarFechas2.Location = (new global::System.Drawing.Point(726, 533));
             this.BotonEditarFechas2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
@@ -3414,7 +3420,7 @@
             this.rjButton7.BorderSize = (2);
             this.rjButton7.FlatAppearance.BorderSize = (0);
             this.rjButton7.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.rjButton7.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton7.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.rjButton7.ForeColor = (global::System.Drawing.Color.Black);
             this.rjButton7.Location = (new global::System.Drawing.Point(799, 632));
             this.rjButton7.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
@@ -3435,7 +3441,7 @@
             this.groupBox2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.groupBox2.Name = ("groupBox2");
             this.groupBox2.Padding = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
-            this.groupBox2.Size = (new global::System.Drawing.Size(509, 97));
+            this.groupBox2.Size = (new global::System.Drawing.Size(590, 97));
             this.groupBox2.TabIndex = (111);
             this.groupBox2.TabStop = (false);
             this.groupBox2.Text = ("Mover a");
@@ -3451,9 +3457,9 @@
             this.rjButton8.Enabled = (false);
             this.rjButton8.FlatAppearance.BorderSize = (0);
             this.rjButton8.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.rjButton8.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton8.Font = (new global::System.Drawing.Font("Roboto", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.rjButton8.ForeColor = (global::System.Drawing.Color.Black);
-            this.rjButton8.Location = (new global::System.Drawing.Point(308, 30));
+            this.rjButton8.Location = (new global::System.Drawing.Point(396, 35));
             this.rjButton8.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.rjButton8.Name = ("rjButton8");
             this.rjButton8.Size = (new global::System.Drawing.Size(181, 53));
@@ -3461,6 +3467,7 @@
             this.rjButton8.Text = ("Mover");
             this.rjButton8.TextColor = (global::System.Drawing.Color.Black);
             this.rjButton8.UseVisualStyleBackColor = (false);
+            this.rjButton8.Click += (this.rjButton8_Click);
             // 
             // CmbLista2
             // 
@@ -3470,20 +3477,21 @@
             this.CmbLista2.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
             this.CmbLista2.BorderSize = (2);
             this.CmbLista2.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
-            this.CmbLista2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.CmbLista2.Font = (new global::System.Drawing.Font("Roboto Black", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.CmbLista2.ForeColor = (global::System.Drawing.Color.Black);
             this.CmbLista2.IconColor = (global::System.Drawing.Color.DarkSlateGray);
             this.CmbLista2.ListBackColor = (global::System.Drawing.SystemColors.Info);
             this.CmbLista2.ListTextColor = (global::System.Drawing.Color.DimGray);
-            this.CmbLista2.Location = (new global::System.Drawing.Point(6, 35));
+            this.CmbLista2.Location = (new global::System.Drawing.Point(8, 38));
             this.CmbLista2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.CmbLista2.MinimumSize = (new global::System.Drawing.Size(229, 40));
             this.CmbLista2.Name = ("CmbLista2");
             this.CmbLista2.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
-            this.CmbLista2.Size = (new global::System.Drawing.Size(265, 48));
+            this.CmbLista2.Size = (new global::System.Drawing.Size(297, 48));
             this.CmbLista2.TabIndex = (44);
             this.CmbLista2.Tag = ("Selecciones un tipo de pago");
             this.CmbLista2.Texts = ("Seleccione una lista");
+            this.CmbLista2.OnSelectedIndexChanged += (this.CmbLista2_OnSelectedIndexChanged);
             // 
             // TextBoxCorreo
             // 
@@ -4144,7 +4152,7 @@
             this.rjButton9.Enabled = (false);
             this.rjButton9.FlatAppearance.BorderSize = (0);
             this.rjButton9.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.rjButton9.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.rjButton9.Font = (new global::System.Drawing.Font("Roboto Black", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.rjButton9.ForeColor = (global::System.Drawing.Color.Black);
             this.rjButton9.Location = (new global::System.Drawing.Point(422, 39));
             this.rjButton9.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
@@ -4154,6 +4162,7 @@
             this.rjButton9.Text = ("Mover");
             this.rjButton9.TextColor = (global::System.Drawing.Color.Black);
             this.rjButton9.UseVisualStyleBackColor = (false);
+            this.rjButton9.Click += (this.rjButton9_Click);
             // 
             // rjComboBox5
             // 
@@ -4163,7 +4172,7 @@
             this.rjComboBox5.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
             this.rjComboBox5.BorderSize = (2);
             this.rjComboBox5.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
-            this.rjComboBox5.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.rjComboBox5.Font = (new global::System.Drawing.Font("Roboto Black", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.rjComboBox5.ForeColor = (global::System.Drawing.Color.Black);
             this.rjComboBox5.IconColor = (global::System.Drawing.Color.DarkSlateGray);
             this.rjComboBox5.ListBackColor = (global::System.Drawing.SystemColors.Info);
@@ -4177,6 +4186,7 @@
             this.rjComboBox5.TabIndex = (44);
             this.rjComboBox5.Tag = ("Selecciones un tipo de pago");
             this.rjComboBox5.Texts = ("Seleccione una lista");
+            this.rjComboBox5.OnSelectedIndexChanged += (this.rjComboBox5_OnSelectedIndexChanged);
             // 
             // TextImporte3
             // 
@@ -4298,7 +4308,7 @@
             this.BotonGuardar3.BorderSize = (2);
             this.BotonGuardar3.FlatAppearance.BorderSize = (0);
             this.BotonGuardar3.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.BotonGuardar3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.BotonGuardar3.Font = (new global::System.Drawing.Font("Roboto Black", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.BotonGuardar3.ForeColor = (global::System.Drawing.Color.Black);
             this.BotonGuardar3.Location = (new global::System.Drawing.Point(781, 566));
             this.BotonGuardar3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
@@ -5057,10 +5067,11 @@
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1344, 799));
+            this.Controls.Add(this.pnlRegPago);
+            this.Controls.Add(this.PanelEditar3);
+            this.Controls.Add(this.PnlEditar2);
             this.Controls.Add(this.PanelEditar2_2);
             this.Controls.Add(this.PanelBien);
-            this.Controls.Add(this.PnlEditar2);
-            this.Controls.Add(this.PanelEditar3);
             this.Controls.Add(this.PanelEditar);
             this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlListas);
@@ -5068,7 +5079,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.pnlRegPago);
             this.FormBorderStyle = (global::System.Windows.Forms.FormBorderStyle.Fixed3D);
             this.Icon = ((global::System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
@@ -5178,17 +5188,14 @@
         private ControlesPersonalizados.RJComboBox cmbInteres;
         private FlowLayoutPanel flowLayoutPanel1;
         private ControlesPersonalizados.RJComboBox ComBoxName;
-        private ControlesPersonalizados.RJComboBox CombBoxLista;
         private Label label29;
         private Controles_personalizados.RJButton btnBuscarC;
-        private Label label17;
         private Label lblFecha;
         private Controles_personalizados.TextBoxPersonalizado txtBoxCredito;
         private Label lblCredito;
         private Controles_personalizados.TextBoxPersonalizado txtBoxMonto;
         private Controles_personalizados.RJButton btnMarcarP;
         private Label lblMonto;
-        private Controles_personalizados.DateTimePickerPersonalizado DateTimeReg;
         private FlowLayoutPanel flowLayoutPanel2;
         private ControlesPersonalizados.RJComboBox cmbCliente;
         private Controles_personalizados.RJButton btnEditar;
@@ -5425,5 +5432,8 @@
         private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxPromotorLiq;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxPagoExt;
         private global::System.Windows.Forms.Label label93;
+        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox9;
+        private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxRestantepagos;
+        private global::System.Windows.Forms.Label label17;
     }
 }

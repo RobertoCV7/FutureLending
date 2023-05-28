@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedirDatos3));
             TextImporte3 = new Controles_personalizados.TextBoxPersonalizado();
             label103 = new Label();
-            TextResolucionDemanda = new Controles_personalizados.TextBoxPersonalizado();
             label92 = new Label();
             ComboBoxResolucion3 = new ControlesPersonalizados.RJComboBox();
             label102 = new Label();
             rjButton1 = new Controles_personalizados.RJButton();
+            ComboBoxResolucionD = new ControlesPersonalizados.RJComboBox();
             SuspendLayout();
             // 
             // TextImporte3
@@ -67,26 +67,6 @@
             label103.Size = new Size(101, 29);
             label103.TabIndex = 135;
             label103.Text = "Importe:";
-            // 
-            // TextResolucionDemanda
-            // 
-            TextResolucionDemanda.BorderColor = Color.DarkSlateGray;
-            TextResolucionDemanda.BorderFocusColor = SystemColors.Info;
-            TextResolucionDemanda.BorderRadius = 0;
-            TextResolucionDemanda.BorderSize = 2;
-            TextResolucionDemanda.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TextResolucionDemanda.Location = new Point(281, 98);
-            TextResolucionDemanda.Margin = new Padding(3, 4, 3, 4);
-            TextResolucionDemanda.Multiline = false;
-            TextResolucionDemanda.Name = "TextResolucionDemanda";
-            TextResolucionDemanda.Padding = new Padding(11, 9, 11, 9);
-            TextResolucionDemanda.PasswordChar = false;
-            TextResolucionDemanda.PlaceholderColor = Color.DimGray;
-            TextResolucionDemanda.PlaceholderText = "";
-            TextResolucionDemanda.Size = new Size(353, 48);
-            TextResolucionDemanda.TabIndex = 134;
-            TextResolucionDemanda.Texts = "";
-            TextResolucionDemanda.UnderlinedStyle = true;
             // 
             // label92
             // 
@@ -142,16 +122,40 @@
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton1.ForeColor = Color.White;
+            rjButton1.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.Black;
             rjButton1.Location = new Point(388, 307);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(213, 79);
             rjButton1.TabIndex = 137;
             rjButton1.Text = "Mover";
-            rjButton1.TextColor = Color.White;
+            rjButton1.TextColor = Color.Black;
             rjButton1.UseVisualStyleBackColor = false;
             rjButton1.Click += rjButton1_Click;
+            // 
+            // ComboBoxResolucionD
+            // 
+            ComboBoxResolucionD.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ComboBoxResolucionD.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ComboBoxResolucionD.BackColor = SystemColors.Info;
+            ComboBoxResolucionD.BorderColor = Color.DarkSlateGray;
+            ComboBoxResolucionD.BorderSize = 2;
+            ComboBoxResolucionD.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxResolucionD.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxResolucionD.ForeColor = Color.Black;
+            ComboBoxResolucionD.IconColor = Color.DarkSlateGray;
+            ComboBoxResolucionD.Items.AddRange(new object[] { "En Tramite", "Embargo" });
+            ComboBoxResolucionD.ListBackColor = SystemColors.Info;
+            ComboBoxResolucionD.ListTextColor = Color.DimGray;
+            ComboBoxResolucionD.Location = new Point(273, 105);
+            ComboBoxResolucionD.Margin = new Padding(3, 4, 3, 4);
+            ComboBoxResolucionD.MinimumSize = new Size(229, 40);
+            ComboBoxResolucionD.Name = "ComboBoxResolucionD";
+            ComboBoxResolucionD.Padding = new Padding(2, 3, 2, 3);
+            ComboBoxResolucionD.Size = new Size(361, 55);
+            ComboBoxResolucionD.TabIndex = 138;
+            ComboBoxResolucionD.Tag = "Selecciones un tipo de pago";
+            ComboBoxResolucionD.Texts = "Seleccione un tipo de pago";
             // 
             // PedirDatos3
             // 
@@ -159,10 +163,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(700, 412);
+            Controls.Add(ComboBoxResolucionD);
             Controls.Add(rjButton1);
             Controls.Add(TextImporte3);
             Controls.Add(label103);
-            Controls.Add(TextResolucionDemanda);
             Controls.Add(label92);
             Controls.Add(ComboBoxResolucion3);
             Controls.Add(label102);
@@ -178,10 +182,10 @@
 
         public Controles_personalizados.TextBoxPersonalizado TextImporte3;
         private Label label103;
-        public Controles_personalizados.TextBoxPersonalizado TextResolucionDemanda;
         private Label label92;
         public ControlesPersonalizados.RJComboBox ComboBoxResolucion3;
         private Label label102;
         public Controles_personalizados.RJButton rjButton1;
+        public ControlesPersonalizados.RJComboBox ComboBoxResolucionD;
     }
 }

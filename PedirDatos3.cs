@@ -24,7 +24,7 @@ namespace FutureLending
 
         private void ComboBoxResolucion3_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if(ComboBoxResolucion3.SelectedIndex != -1)
+            if (ComboBoxResolucion3.SelectedIndex != -1)
             {
                 rjButton1.Enabled = true;
             }
