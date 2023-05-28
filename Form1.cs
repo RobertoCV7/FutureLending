@@ -133,7 +133,7 @@ namespace FutureLending
             Lectura_Base_Datos obj = new();
             string Interes = cmbInteres.Texts;
             string MontoTotal = txtTotal.Texts.Replace("$", "");
-            double p =(credito2 * 2);
+            double p = (credito2 * 2);
             obj.Create("lista1", cmbPromotor.Texts, txtNombre.Texts, txtCredito.Texts, p.ToString(), dateFechaInicio.Value, dateTimePickerPersonalizado2.Value, Interes, MontoTotal, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedItem.ToString(), MontoTotal);
             //Borrar datos para poder agregar de nuevo 
             txtNombre.Texts = "";
@@ -436,6 +436,7 @@ namespace FutureLending
                 rjComboBox7.SelectedItem = Informacion2[11]; //Liquidacion o Intencion
                 TextBoxLiquidacionIntencion.Texts = Informacion2[12]; //Monto de liquidacion o intencion
                 TextBoxQuita.Texts = Informacion2[13]; //Monto de Quita
+                TextBoxPagoExt.Texts = Informacion2[42];
                 //De aqui pasa al caso de oprimir el boton para mover las fechas y pagos 
             }
             else if (ListaEstado == 2) //Si viene de la lista 3
@@ -527,8 +528,130 @@ namespace FutureLending
                 MessageBox.Show("Error al guardar los cambios");
             }
         }
+        private void BtnMover_Click(object sender, EventArgs e) //boton para mover lista 1 a cualquier otra lista
+        {
+            switch (cmbLista.SelectedIndex)
+            {
+                case 0://Mover a lista 2
+                    Pedir_Datos a = new();
+                    a.ShowDialog();
+                    //Para mover a lista 2 copio valores que tiene la lista 1 y agrego otros que el usuario debe agregar
+                    string[] InfoMov = new string[43];
+                    InfoMov[0] = informacion[0]; //Promotor que lo atiende
+                    InfoMov[1] = informacion[1]; //Nombre del registro
+                    InfoMov[2] = informacion[2]; //Credito Prestado
+                    InfoMov[3] = informacion[15]; //Monto Restante
+                    InfoMov[4] = informacion[3]; //Pagare generado
+                    InfoMov[5] = informacion[8]; //calle
+                    InfoMov[6] = informacion[9]; //colonia
+                    InfoMov[7] = informacion[10]; //Numero de casa interior
+                    InfoMov[8] = informacion[11]; //Numero de casa exterior
+                    InfoMov[9] = informacion[12]; //Telefono
+                    InfoMov[10] = informacion[13]; //Correo
+                    InfoMov[11] = a.rjComboBox2.SelectedItem.ToString(); //Su forma de pago Liquidacion o Intencion
+
+                    if (a.rjComboBox2.SelectedItem.ToString() == "Liquidacion")
+                    {
+
+                        InfoMov[12] = a.TextLiquidacionPedir.Texts;//Monto de Liquidacion
+                        int pag = int.Parse(InfoMov[4]);
+                        int liquidacion = int.Parse(InfoMov[12]);
+                        uint Quita =   ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(liquidacion)); //en Uint para que no sea negativo jamas
+                        InfoMov[13] = Quita.ToString();//Monto de Quita que es la diferencia entre el liquidacion y el pagare por haber seleccionado liquidacion
+                        InfoMov[42] = InfoMov[4];//Monto de Extencion - Al pagare se le resta el pago de intencion
+                    }
+                    else
+                    {
+                        //Se toma encuenta 10% del Pagare y se le suma a su monto restante
+                        int pag = int.Parse(InfoMov[4]);
+                        double quita = (pag * .10);
+                        MessageBox.Show("" + quita + " 10% de pagare");
+                        InfoMov[12] = quita.ToString();//Monto de Intencion es el 10% del pagare
+                        InfoMov[13] = "0";//Monto de Quita es 0 por ser de convenio
+                        double Ext = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(pag)); //en Uint para que no sea negativo jamas 
+                        InfoMov[42] = Ext.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
+                    }
+                    for (int i = 14; i < 42; i++)
+                    {
+                        InfoMov[i] = "-";
+                    }
+
+                    Lectura_Base_Datos instancia = new();
+                    bool rev = instancia.InsertarLista2(InfoMov);
+
+                    if (rev)
+                    {
+                        //Borro el registro de la lista 1 porque si se movio al 2
+                        instancia.Erase(InfoMov[1], "lista1");
+                        pnlListas.BringToFront();
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista  2
+                    }
+                    else
+                    {
+                        MessageB("Error al mover el registro", "Aviso", 2);
+                    }
+                    break;
+                case 1: //Para mover a lista 3
+                    PedirDatos3 a1 = new();
+                    string[] InfoMov3 = new string[13];
+                    InfoMov3[0] = informacion[0]; //Promotor que lo atiende
+                    InfoMov3[1] = informacion[1]; //Nombre del registro
+                    InfoMov3[2] = informacion[2]; //Credito Prestado
+                    InfoMov3[3] = informacion[3]; //Pagare generado
+                    InfoMov3[4] = informacion[8]; //calle
+                    InfoMov3[5] = informacion[9]; //colonia
+                    InfoMov3[6] = informacion[10]; //Numero de casa interior
+                    InfoMov3[7] = informacion[11]; //Numero de casa exterior
+                    InfoMov3[8] = informacion[12]; //Telefono
+                    InfoMov3[9] = informacion[13]; //Correo
+                    InfoMov3[10] = a1.ComboBoxResolucion3.SelectedItem.ToString(); //Su forma de pago Liquidacion o Convenio
+                    InfoMov3[11] = a1.TextResolucionDemanda.Texts;//Monto de Liquidacion
+                    InfoMov3[12] = a1.TextImporte3.Texts;//Monto de Quita
+                    Lectura_Base_Datos instancia3 = new();
+                    bool rev3 = instancia3.InsertarLista3(InfoMov3);
+                    if (rev3)
+                    {
+                        instancia3.Erase(InfoMov3[1], "lista1");
+                        pnlListas.BringToFront();
+                        btnLista3.PerformClick(); //Reactualizo los datos de la lista  3
+                    }
+                    else
+                    {
+                        MessageB("Error al mover el registro", "Aviso", 2);
+                    }
+                    break;
+                case 2: //Para mover a liquidados
+                    string[] InfoMov4 = new string[11];
+                    InfoMov4[0] = informacion[0]; //Promotor que lo atiende
+                    InfoMov4[1] = informacion[1]; //Nombre del registro
+                    InfoMov4[2] = informacion[2]; //Credito Prestado
+                    InfoMov4[4] = informacion[5];//Fecha de inicio
+                    InfoMov4[5] = informacion[8];//Calle
+                    InfoMov4[6] = informacion[9];//Colonia
+                    InfoMov4[7] = informacion[10];//Numero de casa interior
+                    InfoMov4[8] = informacion[11];//Numero de casa exterior
+                    InfoMov4[9] = informacion[12];//Telefono
+                    InfoMov4[10] = informacion[13];//Correo
+                    InfoMov4[11] = "Lista 1";
+                    Lectura_Base_Datos instancia4 = new();
+                    bool rev4 = instancia4.InsertarLiquidados(InfoMov4);
+                    if (rev4)
+                    {
+                        instancia4.Erase(InfoMov4[1], "lista1");
+                        pnlListas.BringToFront();
+                        btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
+                    }
+                    else
+                    {
+                        MessageB("Error al mover el registro", "Aviso", 2);
+                    }
+                    break;
+            }
+
+        }
+
         #endregion
-        #region Lista2 Editar
+        #region Lista2 
         //Seguir editando lista 2 pero las fechas y pagos
         private void BotonEditarFechas2_Click(object sender, EventArgs e)
         {
@@ -577,8 +700,8 @@ namespace FutureLending
             InfoListaNueva2[11] = rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
             InfoListaNueva2[12] = TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
             InfoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
-            InfoListaNueva2[41] = Cliente;
-
+            InfoListaNueva2[42] = TextBoxPagoExt.Texts; //Pago Ext
+            InfoListaNueva2[43] = Cliente; //Nombre del que va a editar
             bool a = e2.EditarLista2(InfoListaNueva2);
             if (a)
             {
@@ -771,122 +894,6 @@ namespace FutureLending
             {
                 btnMover.Enabled = false;
             }
-
-        }
-        private void BtnMover_Click(object sender, EventArgs e) //boton para mover
-        {
-
-            string proviene = LblPerte.Text;
-            if (proviene == "Lista 1")
-            {
-                proviene = "lista1";
-            }
-            else if (proviene == "Lista 2")
-            {
-                proviene = "lista2";
-            }
-            else if (proviene == "Lista 3")
-            {
-                proviene = "lista3";
-            }
-            string Nombre = textBoxPersonalizado10.Texts;
-            string Credito = textBoxPersonalizado9.Texts;
-            string Fecha_Inicio = dateTimePickerPersonalizado1.Value.ToString("dd/MM/yyyy");
-            string Interes = rjComboBox1.SelectedItem.ToString().Split("%")[0];
-            string Monto = textBoxPersonalizado8.Texts;
-            string promotor = rjComboBox3.SelectedItem.ToString();
-            string calle = textBoxPersonalizado6.Texts;
-            string colonia = textBoxPersonalizado5.Texts;
-            string num_int = textBoxPersonalizado4.Texts;
-            string num_ext = textBoxPersonalizado3.Texts;
-            string telefono = textBoxPersonalizado2.Texts;
-            string correo = textBoxPersonalizado1.Texts;
-            int tipo_pago;
-            if (rjComboBox2.SelectedItem.ToString() == "Semanales")
-            {
-                tipo_pago = 0;
-            }
-            else
-            {
-                tipo_pago = 1;
-            }
-            Lectura_Base_Datos lec = new();
-
-            switch (cmbLista.SelectedItem.ToString())
-            {
-                case "Lista 2": //lista2
-                    LabelLimite.Text = "Fecha Limite";
-                    string Fecha_Ultimo1 = dateTimeLimite.Value.ToString("dd/MM/yyyy");
-                    string Monto_Restante = textBoxPersonalizado7.Texts;
-                    string[] datos1 = new string[]{
-    Nombre,
-    Credito,
-    Fecha_Inicio,
-    Interes,
-    Monto,
-    promotor,
-    calle,
-    colonia,
-    num_int,
-    num_ext,
-    telefono,
-    correo
-};
-                    string[] arrayCompleto1 = datos1.Concat(new string[] { tipo_pago.ToString() }).ToArray();
-                    string[] arrayCompleto2 = arrayCompleto1.Concat(new string[] { Monto_Restante, Fecha_Ultimo1 }).ToArray();
-                    lec.Erase(Nombre, proviene);
-                    lec.InsertarLista2(arrayCompleto2);
-                    pnlListas.BringToFront();
-                    break;
-                case "Lista 3": //lista 3
-                    string Monto_Restante2 = textBoxPersonalizado7.Texts;
-                    string[] datitos = new string[]
-                    {
-                        Nombre,
-                        Credito,
-                        Fecha_Inicio,
-                        Interes,
-                        Monto,
-                        promotor,
-                        calle,
-                        colonia,
-                        num_int,
-                        num_ext,
-                        telefono,
-                        correo
-                    };
-                    string[] completito = datitos.Concat(new string[] { tipo_pago.ToString(), Monto_Restante2 }).ToArray();
-                    lec.Erase(Nombre, proviene);
-                    lec.InsertarLista3(completito);
-                    pnlListas.BringToFront();
-                    break;
-                case "Liquidados": //lista liquidados
-                    string Fecha_Ultimo = dateTimeLimite.Value.ToString("dd/MM/yyyy");
-                    string[] datos = new string[]{
-    Nombre,
-    Credito,
-    Fecha_Inicio,
-    Fecha_Ultimo,
-    Interes,
-    Monto,
-    promotor,
-    calle,
-    colonia,
-    num_int,
-    num_ext,
-    telefono,
-    correo
-};
-                    string[] arrayCompleto = datos.Concat(new string[] { tipo_pago.ToString() }).ToArray();
-                    lec.Erase(Nombre, proviene);
-                    lec.InsertarLiquidados(arrayCompleto);
-                    pnlListas.BringToFront();
-                    break;
-            }
-
-
-
-
 
         }
 

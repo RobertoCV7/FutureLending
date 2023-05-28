@@ -65,7 +65,7 @@ namespace FutureLending
         }
         public string[] LectName2(string nombre)
         {
-            string[] fila = new string[42]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
+            string[] fila = new string[44]; 
             using (MySqlConnection connection = con.Conector())
             {
           
@@ -103,6 +103,7 @@ namespace FutureLending
                                 fila[14 + (2*i)] = reader.GetString(fechaCampo);
                                 fila[15 + (2*i)] = reader.GetString(pagoCampo);
                         }
+                        fila[42] = reader.GetString("Pago_Total_EXT");
                     }
                 }
                 catch (Exception ex)

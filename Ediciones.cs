@@ -88,66 +88,85 @@ namespace FutureLending
         }
         public bool EditarLista2(string[] datos)
         {
-            if (datos.Length != 42)
+            if (datos.Length != 44)
             {
                 con.Registro_errores("Error: El arreglo de datos no tiene la longitud esperada.");
                 return false;
             }
 
-            string query = $"UPDATE lista2 SET Promotor = @NuevoPromotor, Nombre_Completo = @NuevoNombre, Credito_Prestado = @NuevoCredito, Monto_Restante = @NuevoMontoRestante, Pagare = @NuevoPagare, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_de_pago = @NuevoTipoPago, Liquidacion_Intencion = @NuevoLiquidacionIntencion, Quita = @NuevoQuita, ";
+            string query = "UPDATE lista2 SET ";
+            string[] columnNames = {
+        "Promotor", "Nombre_Completo", "Credito_Prestado", "Monto_Restante",
+        "Pagare", "Calle", "Colonia", "Num_int", "Num_ext", "Telefono",
+        "Correo", "Tipo_de_pago", "Liquidacion_Intencion", "Quita"
+    };
+
+            string[] fechaColumnNames = new string[14];
+            string[] pagoColumnNames = new string[14];
 
             for (int i = 0; i < 14; i++)
             {
-             
-                if(i==13)
-                {
-                    query += $"FECHA{i + 1} = @NuevaFecha{i + 1}, ";
-                    query += $"PAGO{i + 1} = @NuevoPago{i + 1} ";
-                }
-                else
-                {
-                    query += $"FECHA{i + 1} = @NuevaFecha{i + 1}, ";
-                    query += $"PAGO{i + 1} = @NuevoPago{i + 1}, ";
-                }
+                fechaColumnNames[i] = $"Fecha{i + 1}";
+                pagoColumnNames[i] = $"Pago{i + 1}";
             }
 
-            query += $"WHERE Nombre_Completo = '{datos[41]}'";
+            for (int i = 0; i < columnNames.Length; i++)
+            {
+                query += $"{columnNames[i]} = @{columnNames[i]}, ";
+            }
 
-
-            using MySqlConnection connection = con.Conector();
-            using MySqlCommand command = new(query, connection);
-            command.Parameters.AddWithValue("@NuevoPromotor", datos[0]);
-            command.Parameters.AddWithValue("@NuevoNombre", datos[1]);
-            command.Parameters.AddWithValue("@NuevoCredito", datos[2]);
-            command.Parameters.AddWithValue("@NuevoMontoRestante", datos[3]);
-            command.Parameters.AddWithValue("@NuevoPagare", datos[4]);
-            command.Parameters.AddWithValue("@NuevaCalle", datos[5]);
-            command.Parameters.AddWithValue("@NuevaColonia", datos[6]);
-            command.Parameters.AddWithValue("@NuevoNumInt", datos[7]);
-            command.Parameters.AddWithValue("@NuevoNumExt", datos[8]);
-            command.Parameters.AddWithValue("@NuevoTelefono", datos[9]);
-            command.Parameters.AddWithValue("@NuevoCorreo", datos[10]);
-            command.Parameters.AddWithValue("@NuevoTipoPago", datos[11]);
-            command.Parameters.AddWithValue("@NuevoLiquidacionIntencion", datos[12]); 
-            command.Parameters.AddWithValue("@NuevoQuita", datos[13]);
             for (int i = 0; i < 14; i++)
             {
-                int index = i * 2;
-                command.Parameters.AddWithValue($"@NuevaFecha{i + 1}", datos[index + 14]);
-                command.Parameters.AddWithValue($"@NuevoPago{i + 1}", datos[index + 15]);
+                query += $"{fechaColumnNames[i]} = @{fechaColumnNames[i]}, ";
+                query += $"{pagoColumnNames[i]} = @{pagoColumnNames[i]}, ";
             }
 
-            try
+            query += "Pago_Total_Ext = @PagoEXT ";
+            query += "WHERE Nombre_Completo = @Nombre";
+
+            using (MySqlConnection connection = con.Conector())
             {
-                command.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                con.Registro_errores(ex.ToString());
-                return false;
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Promotor", datos[0]);
+                    command.Parameters.AddWithValue("@Nombre_Completo", datos[1]);  
+                    command.Parameters.AddWithValue("@Credito_Prestado", datos[2]);
+                    command.Parameters.AddWithValue("@Monto_Restante", datos[3]);
+                    command.Parameters.AddWithValue("@Pagare", datos[4]);
+                    command.Parameters.AddWithValue("@Calle", datos[5]);
+                    command.Parameters.AddWithValue("@Colonia", datos[6]);
+                    command.Parameters.AddWithValue("@Num_int", datos[7]);
+                    command.Parameters.AddWithValue("@Num_ext", datos[8]);
+                    command.Parameters.AddWithValue("@Telefono", datos[9]);
+                    command.Parameters.AddWithValue("@Correo", datos[10]);
+                    command.Parameters.AddWithValue("@Tipo_de_pago", datos[11]);
+                    command.Parameters.AddWithValue("@Liquidacion_Intencion", datos[12]);
+                    command.Parameters.AddWithValue("@Quita", datos[13]);
+
+                    for (int i = 0; i < 14; i++)
+                    {
+                        int index = i * 2;
+                        command.Parameters.AddWithValue($"@{fechaColumnNames[i]}", datos[index + 14]);
+                        command.Parameters.AddWithValue($"@{pagoColumnNames[i]}", datos[index + 15]);
+                    }
+
+                    command.Parameters.AddWithValue("@PagoEXT", datos[42]);
+                    command.Parameters.AddWithValue("@Nombre", datos[43]);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Registro_errores(ex.ToString());
+                        return false;
+                    }
+                }
             }
         }
+
         public bool EditarLista3(string[] datos)
         {
             if (datos.Length != 14)

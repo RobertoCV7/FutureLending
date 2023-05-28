@@ -147,7 +147,7 @@ namespace FutureLending
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        string[] fila = new string[41]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
+                        string[] fila = new string[43]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
 
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
@@ -178,9 +178,8 @@ namespace FutureLending
                                 fila[16 + (i + 1)] = reader.GetString(fechaCampo);
                                 fila[17 + (i + 1)] = reader.GetString(pagoCampo);
                             }
-
                         }
-
+                        fila[42] = reader.GetString("Pago_Total_EXT");
                         datos.Add(fila);
                     }
                 }
@@ -523,112 +522,141 @@ namespace FutureLending
                 Registro_errores(ex.ToString());
             }
         }
-        public void InsertarLiquidados(string[] datos)
+        public bool InsertarLiquidados(string[] datos)
         {
             using MySqlConnection connection = Conector();
             StringBuilder queryBuilder = new();
-            queryBuilder.Append("INSERT INTO liquidados (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Fecha_Ultimo_Pago, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago)");
-            queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaI, @FechaUP, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumI, @NumE, @Telefono, @Correo, @TipoP)");
+            queryBuilder.Append("INSERT INTO liquidados (Promotor, Nombre_Completo, Credito_Prestado, Fecha_Inicio, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Forma_Liquidacion)");
+            queryBuilder.Append(" VALUES (@Promotor, @Nombre, @Credito, @FechaI, @Calle, @Colonia, @NumI, @NumE, @Telefono, @Correo, @FormaLiquidacion)");
             string query = queryBuilder.ToString();
 
             using MySqlCommand command = new(query, connection);
-            command.Parameters.AddWithValue("@Nombre", datos[0]);
-            command.Parameters.AddWithValue("@Credito", datos[1]);
-            command.Parameters.AddWithValue("@FechaI", datos[2]);
-            command.Parameters.AddWithValue("@FechaUP", datos[3]);
-            command.Parameters.AddWithValue("@Interes", datos[4]);
-            command.Parameters.AddWithValue("@Monto", datos[5]);
-            command.Parameters.AddWithValue("@Promotor", datos[6]);
-            command.Parameters.AddWithValue("@Calle", datos[7]);
-            command.Parameters.AddWithValue("@Colonia", datos[8]);
-            command.Parameters.AddWithValue("@NumI", datos[9]);
-            command.Parameters.AddWithValue("@NumE", datos[10]);
-            command.Parameters.AddWithValue("@Telefono", datos[11]);
-            command.Parameters.AddWithValue("@Correo", datos[12]);
-            command.Parameters.AddWithValue("@TipoP", datos[13]);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Registro_errores(ex.ToString());
-            }
-        }
-        public void InsertarLista2(string[] valores)
-        {
-            using MySqlConnection connection = Conector();
-            StringBuilder queryBuilder = new();
-            queryBuilder.Append("INSERT INTO lista2 (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante, Fecha_Limite)");
-            queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaInicio, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @MontoRestante, @FechaLimite)");
-            string query = queryBuilder.ToString();
-
-            using MySqlCommand command = new(query, connection);
-            command.Parameters.AddWithValue("@Nombre", valores[0]);
-            command.Parameters.AddWithValue("@Credito", valores[1]);
-            command.Parameters.AddWithValue("@FechaInicio", valores[2]);
-            command.Parameters.AddWithValue("@Interes", valores[3]);
-            command.Parameters.AddWithValue("@Monto", valores[4]);
-            command.Parameters.AddWithValue("@Promotor", valores[5]);
-            command.Parameters.AddWithValue("@Calle", valores[6]);
-            command.Parameters.AddWithValue("@Colonia", valores[7]);
-            command.Parameters.AddWithValue("@NumInt", valores[8]);
-            command.Parameters.AddWithValue("@NumExt", valores[9]);
-            command.Parameters.AddWithValue("@Telefono", valores[10]);
-            command.Parameters.AddWithValue("@Correo", valores[11]);
-            command.Parameters.AddWithValue("@TipoPago", valores[12]);
-            command.Parameters.AddWithValue("@MontoRestante", valores[13]);
-            command.Parameters.AddWithValue("@FechaLimite", valores[14]);
+            command.Parameters.AddWithValue("@Promotor", datos[0]);
+            command.Parameters.AddWithValue("@Nombre", datos[1]);
+            command.Parameters.AddWithValue("@Credito", datos[2]);
+            command.Parameters.AddWithValue("@FechaI", datos[3]);
+            command.Parameters.AddWithValue("@Calle", datos[4]);
+            command.Parameters.AddWithValue("@Colonia", datos[5]);
+            command.Parameters.AddWithValue("@NumI", datos[6]);
+            command.Parameters.AddWithValue("@NumE", datos[7]);
+            command.Parameters.AddWithValue("@Telefono", datos[8]);
+            command.Parameters.AddWithValue("@Correo", datos[9]);
+            command.Parameters.AddWithValue("@FormaLiquidacion", datos[10]);
 
             try
             {
                 command.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 Registro_errores(ex.ToString());
+                return false;
             }
         }
-        public void InsertarLista3(string[] valores)
+        public bool InsertarLista2(string[] valores)
         {
             using MySqlConnection connection = Conector();
             StringBuilder queryBuilder = new();
-            queryBuilder.Append("INSERT INTO lista3 (Nombre_Completo, Credito_Prestado, Fecha_Inicio, Interes, Monto_Total, Promotor, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante)");
-            queryBuilder.Append(" VALUES (@Nombre, @Credito, @FechaInicio, @Interes, @Monto, @Promotor, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @MontoRestante)");
+            queryBuilder.Append("INSERT INTO lista2 (Promotor, Nombre_Completo, Credito_Prestado, Monto_Restante, Pagare, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_de_pago, Liquidacion_Intencion, Quita, FECHA1, PAGO1, FECHA2, PAGO2, FECHA3, PAGO3, FECHA4, PAGO4, FECHA5, PAGO5, FECHA6, PAGO6, FECHA7, PAGO7, FECHA8, PAGO8, FECHA9, PAGO9, FECHA10, PAGO10, FECHA11, PAGO11, FECHA12, PAGO12, FECHA13, PAGO13, FECHA14, PAGO14,Pago_Total_EXT)");
+            queryBuilder.Append(" VALUES (@Promotor, @Nombre, @Credito, @MontoRestante, @Pagare, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @LiquidacionIntencion, @Quita, @Fecha1, @Pago1, @Fecha2, @Pago2, @Fecha3, @Pago3, @Fecha4, @Pago4, @Fecha5, @Pago5, @Fecha6, @Pago6, @Fecha7, @Pago7, @Fecha8, @Pago8, @Fecha9, @Pago9, @Fecha10, @Pago10, @Fecha11, @Pago11, @Fecha12, @Pago12, @Fecha13, @Pago13, @Fecha14, @Pago14,@PagoEXT)");
             string query = queryBuilder.ToString();
 
             using MySqlCommand command = new(query, connection);
-            command.Parameters.AddWithValue("@Nombre", valores[0]);
-            command.Parameters.AddWithValue("@Credito", valores[1]);
-            command.Parameters.AddWithValue("@FechaInicio", valores[2]);
-            command.Parameters.AddWithValue("@Interes", valores[3]);
-            command.Parameters.AddWithValue("@Monto", valores[4]);
-            command.Parameters.AddWithValue("@Promotor", valores[5]);
-            command.Parameters.AddWithValue("@Calle", valores[6]);
-            command.Parameters.AddWithValue("@Colonia", valores[7]);
-            command.Parameters.AddWithValue("@NumInt", valores[8]);
-            command.Parameters.AddWithValue("@NumExt", valores[9]);
-            command.Parameters.AddWithValue("@Telefono", valores[10]);
-            command.Parameters.AddWithValue("@Correo", valores[11]);
-            command.Parameters.AddWithValue("@TipoPago", valores[12]);
-            command.Parameters.AddWithValue("@MontoRestante", valores[13]);
+            command.Parameters.AddWithValue("@Promotor", valores[0]);
+            command.Parameters.AddWithValue("@Nombre", valores[1]);
+            command.Parameters.AddWithValue("@Credito", valores[2]);
+            command.Parameters.AddWithValue("@MontoRestante", valores[3]);
+            command.Parameters.AddWithValue("@Pagare", valores[4]);
+            command.Parameters.AddWithValue("@Calle", valores[5]);
+            command.Parameters.AddWithValue("@Colonia", valores[6]);
+            command.Parameters.AddWithValue("@NumInt", valores[7]);
+            command.Parameters.AddWithValue("@NumExt", valores[8]);
+            command.Parameters.AddWithValue("@Telefono", valores[9]);
+            command.Parameters.AddWithValue("@Correo", valores[10]);
+            command.Parameters.AddWithValue("@TipoPago", valores[11]);
+            command.Parameters.AddWithValue("@LiquidacionIntencion", valores[12]);
+            command.Parameters.AddWithValue("@Quita", valores[13]);
+            command.Parameters.AddWithValue("@Fecha1", valores[14]);
+            command.Parameters.AddWithValue("@Pago1", valores[15]);
+            command.Parameters.AddWithValue("@Fecha2", valores[16]);
+            command.Parameters.AddWithValue("@Pago2", valores[17]);
+            command.Parameters.AddWithValue("@Fecha3", valores[18]);
+            command.Parameters.AddWithValue("@Pago3", valores[19]);
+            command.Parameters.AddWithValue("@Fecha4", valores[20]);
+            command.Parameters.AddWithValue("@Pago4", valores[21]);
+            command.Parameters.AddWithValue("@Fecha5", valores[22]);
+            command.Parameters.AddWithValue("@Pago5", valores[23]);
+            command.Parameters.AddWithValue("@Fecha6", valores[24]);
+            command.Parameters.AddWithValue("@Pago6", valores[25]);
+            command.Parameters.AddWithValue("@Fecha7", valores[26]);
+            command.Parameters.AddWithValue("@Pago7", valores[27]);
+            command.Parameters.AddWithValue("@Fecha8", valores[28]);
+            command.Parameters.AddWithValue("@Pago8", valores[29]);
+            command.Parameters.AddWithValue("@Fecha9", valores[30]);
+            command.Parameters.AddWithValue("@Pago9", valores[31]);
+            command.Parameters.AddWithValue("@Fecha10", valores[32]);
+            command.Parameters.AddWithValue("@Pago10", valores[33]);
+            command.Parameters.AddWithValue("@Fecha11", valores[34]);
+            command.Parameters.AddWithValue("@Pago11", valores[35]);
+            command.Parameters.AddWithValue("@Fecha12", valores[36]);
+            command.Parameters.AddWithValue("@Pago12", valores[37]);
+            command.Parameters.AddWithValue("@Fecha13", valores[38]);
+            command.Parameters.AddWithValue("@Pago13", valores[39]);
+            command.Parameters.AddWithValue("@Fecha14", valores[40]);
+            command.Parameters.AddWithValue("@Pago14", valores[41]);
+            command.Parameters.AddWithValue("@PagoEXT", valores[42]);
 
             try
             {
                 command.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 Registro_errores(ex.ToString());
+                return false;
             }
         }
+        public bool InsertarLista3(string[] valores)
+        {
+            using MySqlConnection connection = Conector();
+            StringBuilder queryBuilder = new();
+            queryBuilder.Append("INSERT INTO lista3 (Promotor, Nombre_Completo, Credito_Prestado, Pagare, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_de_Resolucion, Resolucion_Demanda, Importe)");
+            queryBuilder.Append(" VALUES (@Promotor, @Nombre, @Credito, @Pagare, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoResolucion, @ResolucionDemanda, @Importe)");
+            string query = queryBuilder.ToString();
 
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@Promotor", valores[0]);
+            command.Parameters.AddWithValue("@Nombre", valores[1]);
+            command.Parameters.AddWithValue("@Credito", valores[2]);
+            command.Parameters.AddWithValue("@Pagare", valores[3]);
+            command.Parameters.AddWithValue("@Calle", valores[4]);
+            command.Parameters.AddWithValue("@Colonia", valores[5]);
+            command.Parameters.AddWithValue("@NumInt", valores[6]);
+            command.Parameters.AddWithValue("@NumExt", valores[7]);
+            command.Parameters.AddWithValue("@Telefono", valores[8]);
+            command.Parameters.AddWithValue("@Correo", valores[9]);
+            command.Parameters.AddWithValue("@TipoResolucion", valores[10]);
+            command.Parameters.AddWithValue("@ResolucionDemanda", valores[11]);
+            command.Parameters.AddWithValue("@Importe", valores[12]);
 
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Registro_errores(ex.ToString());
+                return false;
+            }
+          }
 
-        #endregion
-        #endregion
-        #region reparar conexion
-        public async Task CheckConnection(bool revisador)
+            #endregion
+            #endregion
+            #region reparar conexion
+            public async Task CheckConnection(bool revisador)
         {
             Form1 a = new();
             ReacomodoDeScripts();

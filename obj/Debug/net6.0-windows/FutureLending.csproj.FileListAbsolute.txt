@@ -1034,3 +1034,5 @@ D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\refint\FutureLe
 D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.pdb
 D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.genruntimeconfig.cache
 D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\ref\FutureLending.dll
+D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.Pedir_Datos.resources
+D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.PedirDatos3.resources

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 28-05-2023 a las 03:42:05
+-- Tiempo de generación: 28-05-2023 a las 09:53:54
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -46,8 +46,8 @@ CREATE TABLE `liquidados` (
 --
 
 INSERT INTO `liquidados` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Forma_Liquidacion`) VALUES
-('b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', ''),
-('roberta', 'donnet', '4000', 'sabe', 'asasas', 'asas', '12', '', 'asas', 'asasas', 'Lista1');
+('roberta', 'donnet', '4000', '27/05/2023', 'asasas', 'asas', '12', '', 'asas', 'asasas', 'Lista1'),
+('Promotor2', 'Ricardo Suñiga', '1000', '27/05/2023', 'b', 'b', 'b', 'b', 'b', 'b', 'Lista 2');
 
 -- --------------------------------------------------------
 
@@ -87,16 +87,6 @@ CREATE TABLE `lista1` (
   `Fecha13` varchar(30) NOT NULL,
   `Fecha14` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `lista1`
---
-
-INSERT INTO `lista1` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Pagare`, `Fecha_Inicio`, `Fecha_Termino`, `Interes`, `Monto_Total`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
-('Promotor2', 'Cesar Donnet Hernandez Gastelum', '4000', '8000', '22/05/2023', '04/09/2023', 'Normal', '5600', 'asasas', 'asasasasa', '', '122', '12121212121', 'asasasasass', '', '5600', '06/06/2023', '21/06/2023', '06/07/2023', '21/07/2023', '05/08/2023', '20/08/2023', '04/09/2023', '-', '-', '-', '-', '-', '-', '-'),
-('Promotor1', 'Lopez Mendoza sabe quien', '3600', '9216', '26/05/2023', '08/09/2023', 'Preferencial', '4608', 'asass', 'asas', '', '12', '12121212', 'asasas', 'Quincenales', '4608', '10/06/2023', '25/06/2023', '10/07/2023', '25/07/2023', '09/08/2023', '24/08/2023', '08/09/2023', '-', '-', '-', '-', '-', '-', '-'),
-('Promotor3', 'Los quien', '2300', '6072', '26/05/2023', '01/09/2023', 'Premier', '3036', 'asasas', 'asas', '', '12', '121212121212', 'asasasas', 'Semanales', '3036', '10/06/2023', '25/06/2023', '10/07/2023', '25/07/2023', '09/08/2023', '24/08/2023', '08/09/2023', '-', '-', '-', '-', '-', '-', '-'),
-('Promotor1', 'Ricardo Anaya', '4000', '11200', '26/05/2023', '01/09/2023', 'Normal', '5600', 'Rincon', 'san marcos', '', '128', '213232323', 'asasasas', 'Semanales', '5600', '10/06/2023', '25/06/2023', '10/07/2023', '25/07/2023', '09/08/2023', '24/08/2023', '08/09/2023', '-', '-', '-', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -146,16 +136,17 @@ CREATE TABLE `lista2` (
   `FECHA13` varchar(20) NOT NULL,
   `PAGO13` varchar(20) NOT NULL,
   `FECHA14` varchar(20) NOT NULL,
-  `PAGO14` varchar(20) NOT NULL
+  `PAGO14` varchar(20) NOT NULL,
+  `Pago_Total_EXT` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `lista2`
 --
 
-INSERT INTO `lista2` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Monto_Restante`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_pago`, `Liquidacion_Intencion`, `Quita`, `FECHA1`, `PAGO1`, `FECHA2`, `PAGO2`, `FECHA3`, `PAGO3`, `FECHA4`, `PAGO4`, `FECHA5`, `PAGO5`, `FECHA6`, `PAGO6`, `FECHA7`, `PAGO7`, `FECHA8`, `PAGO8`, `FECHA9`, `PAGO9`, `FECHA10`, `PAGO10`, `FECHA11`, `PAGO11`, `FECHA12`, `PAGO12`, `FECHA13`, `PAGO13`, `FECHA14`, `PAGO14`) VALUES
-('Promotor2', 'd', '2000', '', '4000', 'asasas', 'asasas', 'asasas', '', 'aasasas', 'asasas', 'Liquidacion', '2500', '', '-', '-', '-', '-', '-', '-', '-', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-('Promotor1', 'dsdsdsd', '2000', '1500', '4000', 'asasas', 'asasas', 'asasas', '', 'aasasas', 'asasas', 'Intencion', '2500', '1000', '27/05/2023', '1500', '-', '-', '-', '-', '-', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'dsdsdsd');
+INSERT INTO `lista2` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Monto_Restante`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_pago`, `Liquidacion_Intencion`, `Quita`, `FECHA1`, `PAGO1`, `FECHA2`, `PAGO2`, `FECHA3`, `PAGO3`, `FECHA4`, `PAGO4`, `FECHA5`, `PAGO5`, `FECHA6`, `PAGO6`, `FECHA7`, `PAGO7`, `FECHA8`, `PAGO8`, `FECHA9`, `PAGO9`, `FECHA10`, `PAGO10`, `FECHA11`, `PAGO11`, `FECHA12`, `PAGO12`, `FECHA13`, `PAGO13`, `FECHA14`, `PAGO14`, `Pago_Total_EXT`) VALUES
+('Promotor1', 'Cesar Donnet', '4000', '5,600.00', '8000', 'Paseo del rincon verde', 'San nicolas', '', '328', '4495919159', 'DonnetGastelum@gmail.com', 'Liquidacion', '', '6700', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '8000'),
+('Promotor2', 'Yarely Ruiz', '3200', '4,096.00', '6400', 'asas', 'asas', '12', '', '121212', 'asasas', 'Liquidacion', '1200', '5200', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '6400');
 
 -- --------------------------------------------------------
 
@@ -184,7 +175,7 @@ CREATE TABLE `lista3` (
 --
 
 INSERT INTO `lista3` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_Resolucion`, `Resolucion_Demanda`, `Importe`) VALUES
-('asasa', 'donnet', '4000', '8000', 'asas', 'asas', 'asas', '', 'asas', 'asas', '', 'Embargo', '1');
+('Promotor2', 'donnet', '4000', '8000', 'asas', 'asas', 'asas', '', 'asas', 'asas', 'Liquidacion', 'Embargo', '1');
 
 --
 -- Índices para tablas volcadas

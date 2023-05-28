@@ -251,6 +251,8 @@
             this.label84 = (new global::System.Windows.Forms.Label());
             this.rjComboBox8 = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.PanelEditar2_2 = (new global::System.Windows.Forms.Panel());
+            this.TextBoxPagoExt = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
+            this.label93 = (new global::System.Windows.Forms.Label());
             this.LabelNombreEditar2_2 = (new global::System.Windows.Forms.Label());
             this.label89 = (new global::System.Windows.Forms.Label());
             this.BotonVolverEditar2 = (new global::FutureLending.Controles_personalizados.RJButton());
@@ -1878,7 +1880,7 @@
             this.groupBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.groupBox1.Name = ("groupBox1");
             this.groupBox1.Padding = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
-            this.groupBox1.Size = (new global::System.Drawing.Size(509, 97));
+            this.groupBox1.Size = (new global::System.Drawing.Size(583, 97));
             this.groupBox1.TabIndex = (74);
             this.groupBox1.TabStop = (false);
             this.groupBox1.Text = ("Mover a");
@@ -1896,7 +1898,7 @@
             this.btnMover.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnMover.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.btnMover.ForeColor = (global::System.Drawing.Color.Black);
-            this.btnMover.Location = (new global::System.Drawing.Point(290, 31));
+            this.btnMover.Location = (new global::System.Drawing.Point(375, 30));
             this.btnMover.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.btnMover.Name = ("btnMover");
             this.btnMover.Size = (new global::System.Drawing.Size(181, 53));
@@ -1924,7 +1926,7 @@
             this.cmbLista.MinimumSize = (new global::System.Drawing.Size(229, 40));
             this.cmbLista.Name = ("cmbLista");
             this.cmbLista.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
-            this.cmbLista.Size = (new global::System.Drawing.Size(265, 48));
+            this.cmbLista.Size = (new global::System.Drawing.Size(304, 48));
             this.cmbLista.TabIndex = (44);
             this.cmbLista.Tag = ("Selecciones un tipo de pago");
             this.cmbLista.Texts = ("Seleccione una lista");
@@ -2346,7 +2348,7 @@
             // 
             this.label57.AutoSize = (true);
             this.label57.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label57.Location = (new global::System.Drawing.Point(457, 592));
+            this.label57.Location = (new global::System.Drawing.Point(488, 592));
             this.label57.Name = ("label57");
             this.label57.Size = (new global::System.Drawing.Size(319, 29));
             this.label57.TabIndex = (6);
@@ -3283,7 +3285,7 @@
             this.label70.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label70.AutoSize = (true);
             this.label70.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.label70.Location = (new global::System.Drawing.Point(10, 559));
+            this.label70.Location = (new global::System.Drawing.Point(20, 566));
             this.label70.Name = ("label70");
             this.label70.Size = (new global::System.Drawing.Size(76, 29));
             this.label70.TabIndex = (125);
@@ -3806,6 +3808,8 @@
             // PanelEditar2_2
             // 
             this.PanelEditar2_2.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.PanelEditar2_2.Controls.Add(this.TextBoxPagoExt);
+            this.PanelEditar2_2.Controls.Add(this.label93);
             this.PanelEditar2_2.Controls.Add(this.LabelNombreEditar2_2);
             this.PanelEditar2_2.Controls.Add(this.label89);
             this.PanelEditar2_2.Controls.Add(this.BotonVolverEditar2);
@@ -3825,6 +3829,37 @@
             this.PanelEditar2_2.Name = ("PanelEditar2_2");
             this.PanelEditar2_2.Size = (new global::System.Drawing.Size(1081, 719));
             this.PanelEditar2_2.TabIndex = (129);
+            // 
+            // TextBoxPagoExt
+            // 
+            this.TextBoxPagoExt.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxPagoExt.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.TextBoxPagoExt.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
+            this.TextBoxPagoExt.BorderRadius = (0);
+            this.TextBoxPagoExt.BorderSize = (2);
+            this.TextBoxPagoExt.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.TextBoxPagoExt.Location = (new global::System.Drawing.Point(214, 598));
+            this.TextBoxPagoExt.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.TextBoxPagoExt.Multiline = (false);
+            this.TextBoxPagoExt.Name = ("TextBoxPagoExt");
+            this.TextBoxPagoExt.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
+            this.TextBoxPagoExt.PasswordChar = (false);
+            this.TextBoxPagoExt.PlaceholderColor = (global::System.Drawing.Color.DimGray);
+            this.TextBoxPagoExt.PlaceholderText = ("");
+            this.TextBoxPagoExt.Size = (new global::System.Drawing.Size(291, 48));
+            this.TextBoxPagoExt.TabIndex = (138);
+            this.TextBoxPagoExt.Texts = ("");
+            this.TextBoxPagoExt.UnderlinedStyle = (true);
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = (true);
+            this.label93.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label93.Location = (new global::System.Drawing.Point(51, 616));
+            this.label93.Name = ("label93");
+            this.label93.Size = (new global::System.Drawing.Size(119, 28));
+            this.label93.TabIndex = (137);
+            this.label93.Text = ("Pago EXT:");
             // 
             // LabelNombreEditar2_2
             // 
@@ -3869,6 +3904,7 @@
             // 
             // label88
             // 
+            this.label88.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label88.AutoSize = (true);
             this.label88.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
             this.label88.Location = (new global::System.Drawing.Point(702, 202));
@@ -3900,7 +3936,7 @@
             // 
             // textBoxPersonalizado12
             // 
-            this.textBoxPersonalizado12.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPersonalizado12.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPersonalizado12.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
             this.textBoxPersonalizado12.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
             this.textBoxPersonalizado12.BorderRadius = (0);
@@ -3921,9 +3957,10 @@
             // 
             // label87
             // 
+            this.label87.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
             this.label87.AutoSize = (true);
             this.label87.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label87.Location = (new global::System.Drawing.Point(640, 304));
+            this.label87.Location = (new global::System.Drawing.Point(656, 303));
             this.label87.Name = ("label87");
             this.label87.Size = (new global::System.Drawing.Size(179, 28));
             this.label87.TabIndex = (130);
@@ -3941,12 +3978,12 @@
             this.Botoncambiodefechamomentaneo.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.Botoncambiodefechamomentaneo.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.Botoncambiodefechamomentaneo.ForeColor = (global::System.Drawing.Color.Black);
-            this.Botoncambiodefechamomentaneo.Location = (new global::System.Drawing.Point(314, 570));
+            this.Botoncambiodefechamomentaneo.Location = (new global::System.Drawing.Point(324, 472));
             this.Botoncambiodefechamomentaneo.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.Botoncambiodefechamomentaneo.Name = ("Botoncambiodefechamomentaneo");
             this.Botoncambiodefechamomentaneo.Size = (new global::System.Drawing.Size(171, 79));
             this.Botoncambiodefechamomentaneo.TabIndex = (130);
-            this.Botoncambiodefechamomentaneo.Text = ("Guardar\r\ncambios");
+            this.Botoncambiodefechamomentaneo.Text = ("Asignar");
             this.Botoncambiodefechamomentaneo.TextColor = (global::System.Drawing.Color.Black);
             this.Botoncambiodefechamomentaneo.UseVisualStyleBackColor = (false);
             this.Botoncambiodefechamomentaneo.Click += (this.Botoncambiodefechamomentaneo_Click);
@@ -3959,7 +3996,7 @@
             this.TextBoxPago.BorderRadius = (0);
             this.TextBoxPago.BorderSize = (2);
             this.TextBoxPago.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.TextBoxPago.Location = (new global::System.Drawing.Point(258, 437));
+            this.TextBoxPago.Location = (new global::System.Drawing.Point(292, 382));
             this.TextBoxPago.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.TextBoxPago.Multiline = (false);
             this.TextBoxPago.Name = ("TextBoxPago");
@@ -3977,7 +4014,7 @@
             // 
             this.label86.AutoSize = (true);
             this.label86.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label86.Location = (new global::System.Drawing.Point(20, 456));
+            this.label86.Location = (new global::System.Drawing.Point(36, 391));
             this.label86.Name = ("label86");
             this.label86.Size = (new global::System.Drawing.Size(188, 28));
             this.label86.TabIndex = (99);
@@ -4237,9 +4274,9 @@
             this.LabelLista3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.LabelLista3.Location = (new global::System.Drawing.Point(214, 8));
             this.LabelLista3.Name = ("LabelLista3");
-            this.LabelLista3.Size = (new global::System.Drawing.Size(75, 29));
+            this.LabelLista3.Size = (new global::System.Drawing.Size(82, 29));
             this.LabelLista3.TabIndex = (114);
-            this.LabelLista3.Text = ("lista 3");
+            this.LabelLista3.Text = ("Lista 3");
             // 
             // label94
             // 
@@ -5020,14 +5057,14 @@
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1344, 799));
-            this.Controls.Add(this.pnlClientes);
-            this.Controls.Add(this.PanelEditar3);
-            this.Controls.Add(this.pnlListas);
-            this.Controls.Add(this.PanelEditar);
-            this.Controls.Add(this.PnlEditar2);
-            this.Controls.Add(this.PanelEditarLiquidados);
             this.Controls.Add(this.PanelEditar2_2);
             this.Controls.Add(this.PanelBien);
+            this.Controls.Add(this.PnlEditar2);
+            this.Controls.Add(this.PanelEditar3);
+            this.Controls.Add(this.PanelEditar);
+            this.Controls.Add(this.pnlClientes);
+            this.Controls.Add(this.pnlListas);
+            this.Controls.Add(this.PanelEditarLiquidados);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -5386,5 +5423,7 @@
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextNombreLiq;
         private global::System.Windows.Forms.Label label116;
         private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxPromotorLiq;
+        private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxPagoExt;
+        private global::System.Windows.Forms.Label label93;
     }
 }

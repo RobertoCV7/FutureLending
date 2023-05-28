@@ -25,5 +25,11 @@
     <Compile Update="Inicio_Sesion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PedirDatos3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pedir_Datos.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

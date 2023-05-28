@@ -57,14 +57,14 @@ namespace FutureLending
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-                                "TIPO DE PAGO", "LIQUIDACION/INTENCION","QUITA"};
+                                "TIPO DE PAGO", "LIQUIDACION/CONVENIO","QUITA"};
             List<string> nombresColumnas2 = new(nombresString2);
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas2.Add("FECHA " + i);
                 nombresColumnas2.Add("PAGO " + i);
             }
-       
+                 nombresColumnas2.Add("Pago EXT");
 
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
