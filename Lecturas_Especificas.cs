@@ -68,7 +68,6 @@ namespace FutureLending
             string[] fila = new string[44]; 
             using (MySqlConnection connection = con.Conector())
             {
-          
                 string query = "SELECT * FROM lista2 WHERE Nombre_Completo = @nombre";
 
                 using MySqlCommand command = new MySqlCommand(query, connection);
@@ -78,9 +77,6 @@ namespace FutureLending
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                       
-                       
-
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
                         fila[2] = reader.GetString("Credito_Prestado");

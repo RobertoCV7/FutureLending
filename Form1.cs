@@ -549,7 +549,7 @@ namespace FutureLending
                     InfoMov[9] = informacion[12]; //Telefono
                     InfoMov[10] = informacion[13]; //Correo
                     InfoMov[11] = a.rjComboBox2.SelectedItem.ToString(); //Su forma de pago Liquidacion o Intencion
-
+                    #region Calculos del Excel
                     if (a.rjComboBox2.SelectedItem.ToString() == "Liquidacion")
                     {
 
@@ -571,6 +571,7 @@ namespace FutureLending
                         double Ext = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(pag)); //en Uint para que no sea negativo jamas 
                         InfoMov[42] = Ext.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
                     }
+                    #endregion
                     for (int i = 14; i < 42; i++)
                     {
                         InfoMov[i] = "-";
@@ -663,7 +664,7 @@ namespace FutureLending
                 ComboBoxDeFechas.Items.Add("Fecha " + (i + 1));
             }
         }
-        //presionado boton guardar el pago y la asignacion de fecha
+        //presionado boton guardar el pago y la asignacion de fecha en la lista 2 ademas de actualizar el Pago EXT
         private void Botoncambiodefechamomentaneo_Click(object sender, EventArgs e)
         {
             string fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
@@ -673,12 +674,16 @@ namespace FutureLending
                 int indice = 14;
                 Informacion2[indice] = fecha;
                 Informacion2[indice + 1] = pago;
+                int resta = int.Parse(Informacion2[42]) - int.Parse(pago);
+                Informacion2[42] = resta.ToString(); 
             }
             else
             {
                 int indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
                 Informacion2[indice] = fecha;
                 Informacion2[indice + 1] = pago;
+                int resta = int.Parse(Informacion2[42]) - int.Parse(pago);
+                Informacion2[42] = resta.ToString();
             }
 
         }
@@ -700,7 +705,6 @@ namespace FutureLending
             InfoListaNueva2[11] = rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
             InfoListaNueva2[12] = TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
             InfoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
-            InfoListaNueva2[42] = TextBoxPagoExt.Texts; //Pago Ext
             InfoListaNueva2[43] = Cliente; //Nombre del que va a editar
             bool a = e2.EditarLista2(InfoListaNueva2);
             if (a)
