@@ -5067,11 +5067,11 @@
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1344, 799));
-            this.Controls.Add(this.pnlRegPago);
-            this.Controls.Add(this.PanelEditar3);
+            this.Controls.Add(this.PanelBien);
             this.Controls.Add(this.PnlEditar2);
             this.Controls.Add(this.PanelEditar2_2);
-            this.Controls.Add(this.PanelBien);
+            this.Controls.Add(this.pnlRegPago);
+            this.Controls.Add(this.PanelEditar3);
             this.Controls.Add(this.PanelEditar);
             this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlListas);
