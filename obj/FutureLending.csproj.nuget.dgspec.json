@@ -46,15 +46,15 @@
           "dependencies": {
             "Bunifu.UI.WinForms": {
               "target": "Package",
-              "version": "[6.0.0-Beta, )"
+              "version": "[6.1.0, )"
             },
             "EPPlus": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.2.4, )"
             },
             "FontAwesome.Sharp": {
               "target": "Package",
-              "version": "[6.2.1, )"
+              "version": "[6.3.0, )"
             },
             "MySql.Data": {
               "target": "Package",

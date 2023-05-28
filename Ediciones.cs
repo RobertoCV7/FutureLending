@@ -10,7 +10,7 @@ namespace FutureLending
     internal class Ediciones
     {
         #region editar por nombre 
-        Lectura_Base_Datos con = new();
+        readonly Lectura_Base_Datos con = new();
 
         public void Edit(string tabla, string name, string datos)
         {
@@ -124,46 +124,42 @@ namespace FutureLending
             query += "Pago_Total_Ext = @PagoEXT ";
             query += "WHERE Nombre_Completo = @Nombre";
 
-            using (MySqlConnection connection = con.Conector())
+            using MySqlConnection connection = con.Conector();
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@Promotor", datos[0]);
+            command.Parameters.AddWithValue("@Nombre_Completo", datos[1]);
+            command.Parameters.AddWithValue("@Credito_Prestado", datos[2]);
+            command.Parameters.AddWithValue("@Monto_Restante", datos[3]);
+            command.Parameters.AddWithValue("@Pagare", datos[4]);
+            command.Parameters.AddWithValue("@Calle", datos[5]);
+            command.Parameters.AddWithValue("@Colonia", datos[6]);
+            command.Parameters.AddWithValue("@Num_int", datos[7]);
+            command.Parameters.AddWithValue("@Num_ext", datos[8]);
+            command.Parameters.AddWithValue("@Telefono", datos[9]);
+            command.Parameters.AddWithValue("@Correo", datos[10]);
+            command.Parameters.AddWithValue("@Tipo_de_pago", datos[11]);
+            command.Parameters.AddWithValue("@Liquidacion_Intencion", datos[12]);
+            command.Parameters.AddWithValue("@Quita", datos[13]);
+
+            for (int i = 0; i < 14; i++)
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Promotor", datos[0]);
-                    command.Parameters.AddWithValue("@Nombre_Completo", datos[1]);  
-                    command.Parameters.AddWithValue("@Credito_Prestado", datos[2]);
-                    command.Parameters.AddWithValue("@Monto_Restante", datos[3]);
-                    command.Parameters.AddWithValue("@Pagare", datos[4]);
-                    command.Parameters.AddWithValue("@Calle", datos[5]);
-                    command.Parameters.AddWithValue("@Colonia", datos[6]);
-                    command.Parameters.AddWithValue("@Num_int", datos[7]);
-                    command.Parameters.AddWithValue("@Num_ext", datos[8]);
-                    command.Parameters.AddWithValue("@Telefono", datos[9]);
-                    command.Parameters.AddWithValue("@Correo", datos[10]);
-                    command.Parameters.AddWithValue("@Tipo_de_pago", datos[11]);
-                    command.Parameters.AddWithValue("@Liquidacion_Intencion", datos[12]);
-                    command.Parameters.AddWithValue("@Quita", datos[13]);
+                int index = i * 2;
+                command.Parameters.AddWithValue($"@{fechaColumnNames[i]}", datos[index + 14]);
+                command.Parameters.AddWithValue($"@{pagoColumnNames[i]}", datos[index + 15]);
+            }
 
-                    for (int i = 0; i < 14; i++)
-                    {
-                        int index = i * 2;
-                        command.Parameters.AddWithValue($"@{fechaColumnNames[i]}", datos[index + 14]);
-                        command.Parameters.AddWithValue($"@{pagoColumnNames[i]}", datos[index + 15]);
-                    }
+            command.Parameters.AddWithValue("@PagoEXT", datos[42]);
+            command.Parameters.AddWithValue("@Nombre", datos[43]);
 
-                    command.Parameters.AddWithValue("@PagoEXT", datos[42]);
-                    command.Parameters.AddWithValue("@Nombre", datos[43]);
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                        return true;
-                    }
-                    catch (Exception ex)
-                    {
-                        con.Registro_errores(ex.ToString());
-                        return false;
-                    }
-                }
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                con.Registro_errores(ex.ToString());
+                return false;
             }
         }
 

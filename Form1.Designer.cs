@@ -627,7 +627,7 @@
             this.rjComboBox9.Size = (new global::System.Drawing.Size(346, 63));
             this.rjComboBox9.TabIndex = (36);
             this.rjComboBox9.Texts = ("Seleccione la fecha");
-            this.rjComboBox9.OnSelectedIndexChanged += (this.rjComboBox9_OnSelectedIndexChanged);
+            this.rjComboBox9.OnSelectedIndexChanged += (this.RjComboBox9_OnSelectedIndexChanged);
             // 
             // ComBoxName
             // 
@@ -3430,7 +3430,7 @@
             this.rjButton7.Text = ("Guardar\r\ncambios");
             this.rjButton7.TextColor = (global::System.Drawing.Color.Black);
             this.rjButton7.UseVisualStyleBackColor = (false);
-            this.rjButton7.Click += (this.rjButton7_Click);
+            this.rjButton7.Click += (this.RjButton7_Click);
             // 
             // groupBox2
             // 
@@ -3467,7 +3467,7 @@
             this.rjButton8.Text = ("Mover");
             this.rjButton8.TextColor = (global::System.Drawing.Color.Black);
             this.rjButton8.UseVisualStyleBackColor = (false);
-            this.rjButton8.Click += (this.rjButton8_Click);
+            this.rjButton8.Click += (this.RjButton8_Click);
             // 
             // CmbLista2
             // 
@@ -4162,7 +4162,7 @@
             this.rjButton9.Text = ("Mover");
             this.rjButton9.TextColor = (global::System.Drawing.Color.Black);
             this.rjButton9.UseVisualStyleBackColor = (false);
-            this.rjButton9.Click += (this.rjButton9_Click);
+            this.rjButton9.Click += (this.RjButton9_Click);
             // 
             // rjComboBox5
             // 
@@ -4186,7 +4186,7 @@
             this.rjComboBox5.TabIndex = (44);
             this.rjComboBox5.Tag = ("Selecciones un tipo de pago");
             this.rjComboBox5.Texts = ("Seleccione una lista");
-            this.rjComboBox5.OnSelectedIndexChanged += (this.rjComboBox5_OnSelectedIndexChanged);
+            this.rjComboBox5.OnSelectedIndexChanged += (this.RjComboBox5_OnSelectedIndexChanged);
             // 
             // TextImporte3
             // 
@@ -5068,9 +5068,9 @@
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1344, 799));
             this.Controls.Add(this.PanelBien);
+            this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.PnlEditar2);
             this.Controls.Add(this.PanelEditar2_2);
-            this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.PanelEditar3);
             this.Controls.Add(this.PanelEditar);
             this.Controls.Add(this.pnlClientes);
@@ -5339,7 +5339,6 @@
         private global::System.Windows.Forms.Label label77;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxCalle;
         private global::System.Windows.Forms.Label label78;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox6;
         private global::System.Windows.Forms.Label label79;
         private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox7;
         private global::System.Windows.Forms.Label label80;

@@ -136,12 +136,12 @@ namespace FutureLending
         }
         public List<string[]> LectLista2()
         {
-            List<string[]> datos = new List<string[]>();
+            List<string[]> datos = new();
 
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM lista2";
-                using MySqlCommand command = new MySqlCommand(query, connection);
+                using MySqlCommand command = new(query, connection);
                 try
                 {
                     using MySqlDataReader reader = command.ExecuteReader();
@@ -193,12 +193,12 @@ namespace FutureLending
         }
         public List<string[]> LectLista3()
         {
-            List<string[]> datos = new List<string[]>();
+            List<string[]> datos = new();
 
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM lista3";
-                using MySqlCommand command = new MySqlCommand(query, connection);
+                using MySqlCommand command = new(query, connection);
                 try
                 {
                     using MySqlDataReader reader = command.ExecuteReader();
@@ -233,40 +233,36 @@ namespace FutureLending
         }
         public List<string[]> LectLiquidados()
         {
-            List<string[]> datos = new List<string[]>();
+            List<string[]> datos = new();
 
             using (MySqlConnection connection = Conector())
             {
                 string query = "SELECT * FROM liquidados";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using MySqlCommand command = new(query, connection);
+                try
                 {
-                    try
+                    using MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
                     {
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string[] fila = new string[11];
-                                fila[0] = reader.GetString("Promotor");
-                                fila[1] = reader.GetString("Nombre_Completo");
-                                fila[2] = reader.GetString("Credito_Prestado");
-                                fila[3] = reader.GetString("Fecha_Inicio");
-                                fila[4] = reader.GetString("Calle");
-                                fila[5] = reader.GetString("Colonia");
-                                fila[6] = reader.GetString("Num_int");
-                                fila[7] = reader.GetString("Num_ext");
-                                fila[8] = reader.GetString("Telefono");
-                                fila[9] = reader.GetString("Correo");
-                                fila[10] = reader.GetString("Forma_Liquidacion");
+                        string[] fila = new string[11];
+                        fila[0] = reader.GetString("Promotor");
+                        fila[1] = reader.GetString("Nombre_Completo");
+                        fila[2] = reader.GetString("Credito_Prestado");
+                        fila[3] = reader.GetString("Fecha_Inicio");
+                        fila[4] = reader.GetString("Calle");
+                        fila[5] = reader.GetString("Colonia");
+                        fila[6] = reader.GetString("Num_int");
+                        fila[7] = reader.GetString("Num_ext");
+                        fila[8] = reader.GetString("Telefono");
+                        fila[9] = reader.GetString("Correo");
+                        fila[10] = reader.GetString("Forma_Liquidacion");
 
-                                datos.Add(fila);
-                            }
-                        }
+                        datos.Add(fila);
                     }
-                    catch (Exception ex)
-                    {
-                        Registro_errores(ex.ToString());
-                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
                 }
             }
 
@@ -412,7 +408,7 @@ namespace FutureLending
             }
 
             using MySqlConnection connection = Conector();
-            StringBuilder queryBuilder = new StringBuilder();
+            StringBuilder queryBuilder = new();
             queryBuilder.Append("INSERT INTO ");
             queryBuilder.Append(lista);
             queryBuilder.Append(" (Promotor, Nombre_Completo, Credito_Prestado, Pagare, Fecha_Inicio, Fecha_Termino, Interes, Monto_Total, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante");
@@ -431,11 +427,11 @@ namespace FutureLending
                 queryBuilder.Append(i);
             }
 
-            queryBuilder.Append(")");
+            queryBuilder.Append(')');
 
             string consulta = queryBuilder.ToString();
 
-            using MySqlCommand command = new MySqlCommand(consulta, connection);
+            using MySqlCommand command = new(consulta, connection);
 
             command.Parameters.AddWithValue("@Promotor", Promotor);
             command.Parameters.AddWithValue("@Nombre", Nombre);

@@ -96,7 +96,7 @@ namespace FutureLending
             dateTimePickerPersonalizado2.Value = FechaFinal;
             String credito = txtCredito.Texts;
             credito2 = Convert.ToDouble(credito);
-            String interes = cmbInteres.Texts;
+            _ = cmbInteres.Texts;
             string nuevoString;
 
             if (cmbInteres.Texts == "Preferencial")
@@ -500,7 +500,7 @@ namespace FutureLending
         #region Lista1
         private void BtnGuardarCambio_Click(object sender, EventArgs e)
         {
-            Ediciones e1 = new Ediciones();
+            Ediciones e1 = new();
             string[] Informacion = informacion; //Asigno los valores leidos anteriormente al nuevo string por si no hya cambios
             Informacion[0] = rjComboBox3.SelectedItem.ToString(); //Promotor que lo atiende
             Informacion[1] = textBoxPersonalizado10.Texts;
@@ -708,7 +708,7 @@ namespace FutureLending
             }
 
         }
-        private void rjButton7_Click(object sender, EventArgs e) //Guarda los cambios usando ListEdit2 
+        private void RjButton7_Click(object sender, EventArgs e) //Guarda los cambios usando ListEdit2 
         {
             if (Mover)
             {
@@ -740,7 +740,7 @@ namespace FutureLending
             else
             {
 
-                Ediciones e2 = new Ediciones();
+                Ediciones e2 = new();
                 string[] InfoListaNueva2 = Informacion2;
                 InfoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
                 InfoListaNueva2[1] = TextBoxNombre.Texts; //Nombre del registro
@@ -832,7 +832,7 @@ namespace FutureLending
             PnlEditar2.BringToFront();
         }
 
-        private void rjButton8_Click(object sender, EventArgs e)//Mover de Lista 2 a lista 3 o liquidados
+        private void RjButton8_Click(object sender, EventArgs e)//Mover de Lista 2 a lista 3 o liquidados
         {
             switch (CmbLista2.SelectedIndex)
             {
@@ -853,7 +853,7 @@ namespace FutureLending
                     Move3[10] = a.ComboBoxResolucion3.SelectedItem.ToString();//Resolucion
                     Move3[11] = a.ComboBoxResolucionD.SelectedItem.ToString();//Resolucion Demanda Embargo o en Tramite
                     Move3[12] = a.TextImporte3.Texts;//Importe
-                    Lectura_Base_Datos Instancia = new Lectura_Base_Datos();
+                    Lectura_Base_Datos Instancia = new();
 
                     bool av = Instancia.InsertarLista3(Move3);
                     if (av)
@@ -880,7 +880,7 @@ namespace FutureLending
                     Mov4[8] = Informacion2[9];//Telefono
                     Mov4[9] = Informacion2[10];//Correo
                     Mov4[10] = "Lista 2";
-                    Lectura_Base_Datos Instancia2 = new Lectura_Base_Datos();
+                    Lectura_Base_Datos Instancia2 = new();
                     bool av2 = Instancia2.InsertarLiquidados(Mov4);
                     if (av2)
                     {
@@ -913,7 +913,7 @@ namespace FutureLending
         #region Lista3
         private void BotonGuardar3_Click(object sender, EventArgs e)
         {
-            Ediciones a = new Ediciones();
+            Ediciones a = new();
             string[] Informacion3 = informacion3;
             Informacion3[1] = TextBoxNombre3.Texts; //Nombre del registro
             Informacion3[2] = TextBoxCredito3.Texts; //Credito Prestado
@@ -940,7 +940,7 @@ namespace FutureLending
                 MessageBox.Show("Error al editar");
             }
         }
-        private void rjButton9_Click(object sender, EventArgs e)//Mover de Lista 3 a Liquidados
+        private void RjButton9_Click(object sender, EventArgs e)//Mover de Lista 3 a Liquidados
         {
             string[] Mov4 = new string[12];
             Mov4[0] = informacion3[0]; //Promotor
@@ -954,7 +954,7 @@ namespace FutureLending
             Mov4[8] = informacion3[8];//Telefono
             Mov4[9] = informacion3[9];//Correo
             Mov4[10] = "Lista 3";
-            Lectura_Base_Datos Instancia2 = new Lectura_Base_Datos();
+            Lectura_Base_Datos Instancia2 = new();
             bool av2 = Instancia2.InsertarLiquidados(Mov4);
             if (av2)
             {
@@ -967,7 +967,7 @@ namespace FutureLending
                 MessageB("Error al mover a liquidados", "Error", 2);
             }
         }
-        private void rjComboBox5_OnSelectedIndexChanged(object sender, EventArgs e)
+        private void RjComboBox5_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox5.SelectedIndex != -1)
             {
@@ -983,7 +983,7 @@ namespace FutureLending
         #region Liquidados
         private void BottonLiq_Click(object sender, EventArgs e)
         {
-            Ediciones e2 = new Ediciones();
+            Ediciones e2 = new();
             string[] Informacion4 = informacion4;
             Informacion4[1] = TextNombreLiq.Texts; //Nombre del registro
             Informacion4[2] = TextCreditoLiq.Texts; //Credito Prestado
@@ -1133,7 +1133,7 @@ namespace FutureLending
             {
                 for (int i = 16; i < datos.Length; i++)
                 {
-                    if (datos[i] != null)
+                    if (datos[i] != null && datos[i] != "-")
                     {
                         rjComboBox9.Items.Add(datos[i]);
                     }
@@ -1157,7 +1157,6 @@ namespace FutureLending
             //Obtener el valor seleccionado de fecha por el nombre del cliente
             Lecturas_Especificas instancia2 = new();
             string[] fechas = instancia2.LectName(ComBoxName.SelectedItem.ToString());
-
             //Leer las fechas registradas 
             int index = rjComboBox9.SelectedIndex; //Fecha seleccionada por el cliente
             index += 16;
@@ -1189,7 +1188,7 @@ namespace FutureLending
                 Ediciones instancia22 = new();
                 string[] dato = fechas;
                 dato[30] = fechas[1];
-                bool al = instancia22.EditarLista1(dato);
+                _ = instancia22.EditarLista1(dato);
             }
             //Resetear valores 
             ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
@@ -1202,7 +1201,9 @@ namespace FutureLending
             TextBoxRestantepagos.Visible = false;
             lblMonto.Visible = false;
             lblFecha.Visible = false;
+            label17.Visible = false;
             btnMarcarP.Visible = false;
+            rjComboBox9.SelectedIndex = -1;
 
         }
 
@@ -1656,7 +1657,7 @@ namespace FutureLending
         #endregion
 
 
-        private void rjComboBox9_OnSelectedIndexChanged(object sender, EventArgs e)
+        private void RjComboBox9_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox9.SelectedIndex != -1)
             {
