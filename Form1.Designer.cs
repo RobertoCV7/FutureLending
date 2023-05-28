@@ -256,10 +256,6 @@
             this.LabelNombreEditar2_2 = (new global::System.Windows.Forms.Label());
             this.label89 = (new global::System.Windows.Forms.Label());
             this.BotonVolverEditar2 = (new global::FutureLending.Controles_personalizados.RJButton());
-            this.label88 = (new global::System.Windows.Forms.Label());
-            this.AgregarFechasBaseDeDatos = (new global::FutureLending.Controles_personalizados.RJButton());
-            this.textBoxPersonalizado12 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
-            this.label87 = (new global::System.Windows.Forms.Label());
             this.Botoncambiodefechamomentaneo = (new global::FutureLending.Controles_personalizados.RJButton());
             this.TextBoxPago = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
             this.label86 = (new global::System.Windows.Forms.Label());
@@ -429,7 +425,7 @@
             this.btnEstadoPagos.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnEstadoPagos.Font = (new global::System.Drawing.Font("Verdana", 11.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.btnEstadoPagos.ForeColor = (global::System.Drawing.Color.White);
-            this.btnEstadoPagos.IconChar = (global::FontAwesome.Sharp.IconChar.MoneyCheckAlt);
+            this.btnEstadoPagos.IconChar = (global::FontAwesome.Sharp.IconChar.MoneyCheckDollar);
             this.btnEstadoPagos.IconColor = (global::System.Drawing.Color.White);
             this.btnEstadoPagos.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
             this.btnEstadoPagos.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
@@ -452,7 +448,7 @@
             this.btnListas.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.btnListas.Font = (new global::System.Drawing.Font("Verdana", 11.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.btnListas.ForeColor = (global::System.Drawing.Color.White);
-            this.btnListas.IconChar = (global::FontAwesome.Sharp.IconChar.List12);
+            this.btnListas.IconChar = (global::FontAwesome.Sharp.IconChar.ListNumeric);
             this.btnListas.IconColor = (global::System.Drawing.Color.White);
             this.btnListas.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
             this.btnListas.ImageAlign = (global::System.Drawing.ContentAlignment.MiddleLeft);
@@ -506,7 +502,7 @@
             // 
             this.btnMenu.FlatAppearance.BorderSize = (0);
             this.btnMenu.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.btnMenu.IconChar = (global::FontAwesome.Sharp.IconChar.Bars);
+            this.btnMenu.IconChar = (global::FontAwesome.Sharp.IconChar.Navicon);
             this.btnMenu.IconColor = (global::System.Drawing.Color.White);
             this.btnMenu.IconFont = (global::FontAwesome.Sharp.IconFont.Auto);
             this.btnMenu.IconSize = (30);
@@ -2394,7 +2390,7 @@
             // 
             this.label53.AutoSize = (true);
             this.label53.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 16.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label53.Location = (new global::System.Drawing.Point(18, 481));
+            this.label53.Location = (new global::System.Drawing.Point(14, 482));
             this.label53.Name = ("label53");
             this.label53.Size = (new global::System.Drawing.Size(873, 32));
             this.label53.TabIndex = (2);
@@ -3821,10 +3817,6 @@
             this.PanelEditar2_2.Controls.Add(this.LabelNombreEditar2_2);
             this.PanelEditar2_2.Controls.Add(this.label89);
             this.PanelEditar2_2.Controls.Add(this.BotonVolverEditar2);
-            this.PanelEditar2_2.Controls.Add(this.label88);
-            this.PanelEditar2_2.Controls.Add(this.AgregarFechasBaseDeDatos);
-            this.PanelEditar2_2.Controls.Add(this.textBoxPersonalizado12);
-            this.PanelEditar2_2.Controls.Add(this.label87);
             this.PanelEditar2_2.Controls.Add(this.Botoncambiodefechamomentaneo);
             this.PanelEditar2_2.Controls.Add(this.TextBoxPago);
             this.PanelEditar2_2.Controls.Add(this.label86);
@@ -3846,7 +3838,7 @@
             this.TextBoxPagoExt.BorderRadius = (0);
             this.TextBoxPagoExt.BorderSize = (2);
             this.TextBoxPagoExt.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.TextBoxPagoExt.Location = (new global::System.Drawing.Point(214, 598));
+            this.TextBoxPagoExt.Location = (new global::System.Drawing.Point(350, 461));
             this.TextBoxPagoExt.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.TextBoxPagoExt.Multiline = (false);
             this.TextBoxPagoExt.Name = ("TextBoxPagoExt");
@@ -3854,7 +3846,7 @@
             this.TextBoxPagoExt.PasswordChar = (false);
             this.TextBoxPagoExt.PlaceholderColor = (global::System.Drawing.Color.DimGray);
             this.TextBoxPagoExt.PlaceholderText = ("");
-            this.TextBoxPagoExt.Size = (new global::System.Drawing.Size(291, 48));
+            this.TextBoxPagoExt.Size = (new global::System.Drawing.Size(375, 48));
             this.TextBoxPagoExt.TabIndex = (138);
             this.TextBoxPagoExt.Texts = ("");
             this.TextBoxPagoExt.UnderlinedStyle = (true);
@@ -3863,7 +3855,7 @@
             // 
             this.label93.AutoSize = (true);
             this.label93.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label93.Location = (new global::System.Drawing.Point(51, 616));
+            this.label93.Location = (new global::System.Drawing.Point(70, 473));
             this.label93.Name = ("label93");
             this.label93.Size = (new global::System.Drawing.Size(119, 28));
             this.label93.TabIndex = (137);
@@ -3900,79 +3892,15 @@
             this.BotonVolverEditar2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.BotonVolverEditar2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.BotonVolverEditar2.ForeColor = (global::System.Drawing.Color.Black);
-            this.BotonVolverEditar2.Location = (new global::System.Drawing.Point(818, 570));
+            this.BotonVolverEditar2.Location = (new global::System.Drawing.Point(822, 563));
             this.BotonVolverEditar2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.BotonVolverEditar2.Name = ("BotonVolverEditar2");
-            this.BotonVolverEditar2.Size = (new global::System.Drawing.Size(171, 79));
+            this.BotonVolverEditar2.Size = (new global::System.Drawing.Size(184, 87));
             this.BotonVolverEditar2.TabIndex = (134);
             this.BotonVolverEditar2.Text = ("Volver");
             this.BotonVolverEditar2.TextColor = (global::System.Drawing.Color.Black);
             this.BotonVolverEditar2.UseVisualStyleBackColor = (false);
             this.BotonVolverEditar2.Click += (this.BotonVolverEditar2_Click);
-            // 
-            // label88
-            // 
-            this.label88.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.label88.AutoSize = (true);
-            this.label88.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label88.Location = (new global::System.Drawing.Point(702, 202));
-            this.label88.Name = ("label88");
-            this.label88.Size = (new global::System.Drawing.Size(287, 28));
-            this.label88.TabIndex = (133);
-            this.label88.Text = ("Digite el numero de fechas");
-            // 
-            // AgregarFechasBaseDeDatos
-            // 
-            this.AgregarFechasBaseDeDatos.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.AgregarFechasBaseDeDatos.BackColor = (global::System.Drawing.SystemColors.Info);
-            this.AgregarFechasBaseDeDatos.BackgroundColor = (global::System.Drawing.SystemColors.Info);
-            this.AgregarFechasBaseDeDatos.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
-            this.AgregarFechasBaseDeDatos.BorderRadius = (10);
-            this.AgregarFechasBaseDeDatos.BorderSize = (2);
-            this.AgregarFechasBaseDeDatos.FlatAppearance.BorderSize = (0);
-            this.AgregarFechasBaseDeDatos.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.AgregarFechasBaseDeDatos.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.AgregarFechasBaseDeDatos.ForeColor = (global::System.Drawing.Color.Black);
-            this.AgregarFechasBaseDeDatos.Location = (new global::System.Drawing.Point(813, 405));
-            this.AgregarFechasBaseDeDatos.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
-            this.AgregarFechasBaseDeDatos.Name = ("AgregarFechasBaseDeDatos");
-            this.AgregarFechasBaseDeDatos.Size = (new global::System.Drawing.Size(171, 79));
-            this.AgregarFechasBaseDeDatos.TabIndex = (132);
-            this.AgregarFechasBaseDeDatos.Text = ("Agregar Fechas");
-            this.AgregarFechasBaseDeDatos.TextColor = (global::System.Drawing.Color.Black);
-            this.AgregarFechasBaseDeDatos.UseVisualStyleBackColor = (false);
-            // 
-            // textBoxPersonalizado12
-            // 
-            this.textBoxPersonalizado12.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPersonalizado12.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
-            this.textBoxPersonalizado12.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
-            this.textBoxPersonalizado12.BorderRadius = (0);
-            this.textBoxPersonalizado12.BorderSize = (2);
-            this.textBoxPersonalizado12.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.textBoxPersonalizado12.Location = (new global::System.Drawing.Point(855, 277));
-            this.textBoxPersonalizado12.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
-            this.textBoxPersonalizado12.Multiline = (false);
-            this.textBoxPersonalizado12.Name = ("textBoxPersonalizado12");
-            this.textBoxPersonalizado12.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
-            this.textBoxPersonalizado12.PasswordChar = (false);
-            this.textBoxPersonalizado12.PlaceholderColor = (global::System.Drawing.Color.DimGray);
-            this.textBoxPersonalizado12.PlaceholderText = ("");
-            this.textBoxPersonalizado12.Size = (new global::System.Drawing.Size(166, 48));
-            this.textBoxPersonalizado12.TabIndex = (131);
-            this.textBoxPersonalizado12.Texts = ("");
-            this.textBoxPersonalizado12.UnderlinedStyle = (true);
-            // 
-            // label87
-            // 
-            this.label87.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Bottom) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.label87.AutoSize = (true);
-            this.label87.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label87.Location = (new global::System.Drawing.Point(656, 303));
-            this.label87.Name = ("label87");
-            this.label87.Size = (new global::System.Drawing.Size(179, 28));
-            this.label87.TabIndex = (130);
-            this.label87.Text = ("Agregar Fechas:");
             // 
             // Botoncambiodefechamomentaneo
             // 
@@ -3986,10 +3914,10 @@
             this.Botoncambiodefechamomentaneo.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
             this.Botoncambiodefechamomentaneo.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.Botoncambiodefechamomentaneo.ForeColor = (global::System.Drawing.Color.Black);
-            this.Botoncambiodefechamomentaneo.Location = (new global::System.Drawing.Point(324, 472));
+            this.Botoncambiodefechamomentaneo.Location = (new global::System.Drawing.Point(378, 560));
             this.Botoncambiodefechamomentaneo.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.Botoncambiodefechamomentaneo.Name = ("Botoncambiodefechamomentaneo");
-            this.Botoncambiodefechamomentaneo.Size = (new global::System.Drawing.Size(171, 79));
+            this.Botoncambiodefechamomentaneo.Size = (new global::System.Drawing.Size(196, 89));
             this.Botoncambiodefechamomentaneo.TabIndex = (130);
             this.Botoncambiodefechamomentaneo.Text = ("Asignar");
             this.Botoncambiodefechamomentaneo.TextColor = (global::System.Drawing.Color.Black);
@@ -4004,7 +3932,7 @@
             this.TextBoxPago.BorderRadius = (0);
             this.TextBoxPago.BorderSize = (2);
             this.TextBoxPago.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.TextBoxPago.Location = (new global::System.Drawing.Point(292, 382));
+            this.TextBoxPago.Location = (new global::System.Drawing.Point(343, 354));
             this.TextBoxPago.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.TextBoxPago.Multiline = (false);
             this.TextBoxPago.Name = ("TextBoxPago");
@@ -4012,7 +3940,7 @@
             this.TextBoxPago.PasswordChar = (false);
             this.TextBoxPago.PlaceholderColor = (global::System.Drawing.Color.DimGray);
             this.TextBoxPago.PlaceholderText = ("");
-            this.TextBoxPago.Size = (new global::System.Drawing.Size(291, 48));
+            this.TextBoxPago.Size = (new global::System.Drawing.Size(382, 48));
             this.TextBoxPago.TabIndex = (129);
             this.TextBoxPago.Texts = ("");
             this.TextBoxPago.UnderlinedStyle = (true);
@@ -4022,7 +3950,7 @@
             // 
             this.label86.AutoSize = (true);
             this.label86.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label86.Location = (new global::System.Drawing.Point(36, 391));
+            this.label86.Location = (new global::System.Drawing.Point(36, 365));
             this.label86.Name = ("label86");
             this.label86.Size = (new global::System.Drawing.Size(188, 28));
             this.label86.TabIndex = (99);
@@ -4032,7 +3960,7 @@
             // 
             this.label85.AutoSize = (true);
             this.label85.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label85.Location = (new global::System.Drawing.Point(36, 311));
+            this.label85.Location = (new global::System.Drawing.Point(31, 279));
             this.label85.Name = ("label85");
             this.label85.Size = (new global::System.Drawing.Size(165, 28));
             this.label85.TabIndex = (98);
@@ -4044,11 +3972,11 @@
             this.FechaEnLista2.BorderSize = (2);
             this.FechaEnLista2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
             this.FechaEnLista2.Format = (global::System.Windows.Forms.DateTimePickerFormat.Short);
-            this.FechaEnLista2.Location = (new global::System.Drawing.Point(271, 311));
+            this.FechaEnLista2.Location = (new global::System.Drawing.Point(343, 263));
             this.FechaEnLista2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.FechaEnLista2.MinimumSize = (new global::System.Drawing.Size(4, 35));
             this.FechaEnLista2.Name = ("FechaEnLista2");
-            this.FechaEnLista2.Size = (new global::System.Drawing.Size(327, 35));
+            this.FechaEnLista2.Size = (new global::System.Drawing.Size(382, 35));
             this.FechaEnLista2.SkinColor = (global::System.Drawing.SystemColors.Info);
             this.FechaEnLista2.TabIndex = (97);
             this.FechaEnLista2.TextColor = (global::System.Drawing.Color.Black);
@@ -4077,12 +4005,12 @@
             this.ComboBoxDeFechas.Items.AddRange(new global::System.Object[] { "Liquidacion", "Intencion" });
             this.ComboBoxDeFechas.ListBackColor = (global::System.Drawing.SystemColors.Info);
             this.ComboBoxDeFechas.ListTextColor = (global::System.Drawing.Color.DimGray);
-            this.ComboBoxDeFechas.Location = (new global::System.Drawing.Point(272, 151));
+            this.ComboBoxDeFechas.Location = (new global::System.Drawing.Point(343, 146));
             this.ComboBoxDeFechas.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.ComboBoxDeFechas.MinimumSize = (new global::System.Drawing.Size(229, 40));
             this.ComboBoxDeFechas.Name = ("ComboBoxDeFechas");
             this.ComboBoxDeFechas.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
-            this.ComboBoxDeFechas.Size = (new global::System.Drawing.Size(327, 55));
+            this.ComboBoxDeFechas.Size = (new global::System.Drawing.Size(382, 55));
             this.ComboBoxDeFechas.TabIndex = (95);
             this.ComboBoxDeFechas.Tag = ("Seleccione la fecha");
             this.ComboBoxDeFechas.Texts = ("Seleccione la fecha");
@@ -5068,9 +4996,9 @@
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1344, 799));
             this.Controls.Add(this.PanelBien);
+            this.Controls.Add(this.PanelEditar2_2);
             this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.PnlEditar2);
-            this.Controls.Add(this.PanelEditar2_2);
             this.Controls.Add(this.PanelEditar3);
             this.Controls.Add(this.PanelEditar);
             this.Controls.Add(this.pnlClientes);
@@ -5357,10 +5285,6 @@
         private global::System.Windows.Forms.Panel PanelEditar2_2;
         private global::System.Windows.Forms.Label label89;
         private global::FutureLending.Controles_personalizados.RJButton BotonVolverEditar2;
-        private global::System.Windows.Forms.Label label88;
-        private global::FutureLending.Controles_personalizados.RJButton AgregarFechasBaseDeDatos;
-        private global::FutureLending.Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado12;
-        private global::System.Windows.Forms.Label label87;
         private global::FutureLending.Controles_personalizados.RJButton Botoncambiodefechamomentaneo;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxPago;
         private global::System.Windows.Forms.Label label86;
