@@ -13,19 +13,19 @@ namespace FutureLending
         Lectura_Base_Datos con = new();
         public string[] LectName(string nombre)
         {
-            List<string[]> datos = new();
+            string[] fila = new string[31];
 
             using (MySqlConnection connection = con.Conector())
             {
                 string query = "SELECT * FROM lista1 Where Nombre_Completo = @nombre";
-                query = query.Replace("@nombre", nombre);
                 using MySqlCommand command = new(query, connection);
+                command.Parameters.AddWithValue("@nombre", nombre);
                 try
                 {
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        string[] fila = new string[30];
+                        
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
                         fila[2] = reader.GetString("Credito_Prestado");
@@ -42,7 +42,6 @@ namespace FutureLending
                         fila[13] = reader.GetString("Correo");
                         fila[14] = reader.GetString("Tipo_pago");
                         fila[15] = reader.GetString("Monto_Restante");
-
                         for (int i = 0; i < 14; i++)
                         {
                             fila[16 + i] = reader.GetString("Fecha" + (i + 1));
@@ -53,7 +52,7 @@ namespace FutureLending
                             }
                         }
 
-                        datos.Add(fila);
+                     
                     }
                 }
                 catch (Exception ex)
@@ -62,9 +61,8 @@ namespace FutureLending
                 }
             }
 
-            return datos.SelectMany(x => x).ToArray();
+            return fila;
         }
-
         public string[] LectName2(string nombre)
         {
             string[] fila = new string[42]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
@@ -114,21 +112,21 @@ namespace FutureLending
             }
             return fila;
         }
-        public List<string[]> LectName3(string nombre)
+        public string[] LectName3(string nombre)
         {
-            List<string[]> datos = new List<string[]>();
-
+            string[] fila = new string[14];
             using (MySqlConnection connection = con.Conector())
             {
                 string query = "SELECT * FROM lista3 WHERE Nombre_Completo = @nombre";
-                query = query.Replace("@nombre", nombre);
+                
                 using MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", nombre);
                 try
                 {
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        string[] fila = new string[13]; 
+                       
 
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
@@ -143,8 +141,6 @@ namespace FutureLending
                         fila[10] = reader.GetString("Tipo_de_Resolucion");
                         fila[11] = reader.GetString("Resolucion_Demanda");
                         fila[12] = reader.GetString("Importe");
-
-                        datos.Add(fila);
                     }
                 }
                 catch (Exception ex)
@@ -153,25 +149,26 @@ namespace FutureLending
                 }
             }
 
-            return datos;
+            return fila;
         }
-        public List<string[]> LectName4(string nombre)
+        public string[] LectName4(string nombre)
         {
-            List<string[]> datos = new List<string[]>();
+            string[] fila = new string[12];
 
             using (MySqlConnection connection = con.Conector())
             {
+            
                 string query = "SELECT * FROM liquidados WHERE Nombre_Completo = @nombre";
-                query = query.Replace("@nombre", nombre);
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@nombre", nombre);
                     try
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                string[] fila = new string[11];
+                                
                                 fila[0] = reader.GetString("Promotor");
                                 fila[1] = reader.GetString("Nombre_Completo");
                                 fila[2] = reader.GetString("Credito_Prestado");
@@ -184,7 +181,6 @@ namespace FutureLending
                                 fila[9] = reader.GetString("Correo");
                                 fila[10] = reader.GetString("Forma_Liquidacion");
 
-                                datos.Add(fila);
                             }
                         }
                     }
@@ -195,9 +191,10 @@ namespace FutureLending
                 }
             }
 
-            return datos;
+         
+            return fila;
         }
-        
+
         #endregion
     }
 }

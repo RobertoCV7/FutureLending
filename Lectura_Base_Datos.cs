@@ -402,46 +402,48 @@ namespace FutureLending
         public void Create(string lista, string Promotor, string Nombre, string Credito, string Pagare, DateTime Fecha_inicio, DateTime Fecha_Termino, string Interes, string Monto_Total, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, string Tipo_pago, string Monto_Restante)
         {
             DateTime fechaInicio = Fecha_inicio.Date;
-            string fechainicio = Fecha_inicio.ToString("dd/MM/yyyy");
-            string fechafinal = Fecha_Termino.ToString("dd/MM/yyyy");
-            string[] dias_de_pago = new string[14];
-            if (Tipo_pago == "Semanal")
-            {
-                for (int i = 0; i < 14; i++)
-                {
-                    dias_de_pago[i] = fechaInicio.AddDays(14 * (i + 1)).ToString("dd/MM/yyyy");
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 7; i++)
-                {
-                    dias_de_pago[i] = fechaInicio.AddDays(15 * (i + 1)).ToString("dd/MM/yyyy");
-                }
+            int cantidadFechas = Tipo_pago == "Semanales" ? 14 : 7;
+            string[] dias_de_pago = new string[cantidadFechas];
 
+            int incremento = Tipo_pago == "Semanales" ? 7 : 15;
+
+            for (int i = 0; i < cantidadFechas; i++)
+            {
+                dias_de_pago[i] = fechaInicio.AddDays(incremento * (i + 1)).ToString("dd/MM/yyyy");
             }
 
             using MySqlConnection connection = Conector();
-            StringBuilder queryBuilder = new();
-            queryBuilder.Append("INSERT INTO " + lista + " (Promotor, Nombre_Completo, Credito_Prestado, Pagare, Fecha_Inicio, Fecha_Termino, Interes, Monto_Total, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante");
-            for (int i = 1; i <= 14; i++)
+            StringBuilder queryBuilder = new StringBuilder();
+            queryBuilder.Append("INSERT INTO ");
+            queryBuilder.Append(lista);
+            queryBuilder.Append(" (Promotor, Nombre_Completo, Credito_Prestado, Pagare, Fecha_Inicio, Fecha_Termino, Interes, Monto_Total, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_pago, Monto_Restante");
+
+            for (int i = 1; i <= cantidadFechas; i++)
             {
-                queryBuilder.Append(", Fecha").Append(i);
+                queryBuilder.Append(", Fecha");
+                queryBuilder.Append(i);
             }
+
             queryBuilder.Append(") VALUES (@Promotor, @Nombre, @Credito, @Pagare, @Fecha_inicio, @Fecha_Termino, @Interes, @Monto_Total, @Calle, @Colonia, @Num_int, @Num_ext, @Telefono, @Correo, @Tipo_pago, @Monto_Restante");
-            for (int i = 1; i <= 14; i++)
+
+            for (int i = 1; i <= cantidadFechas; i++)
             {
-                queryBuilder.Append(", @Fecha").Append(i);
+                queryBuilder.Append(", @Fecha");
+                queryBuilder.Append(i);
             }
-            queryBuilder.Append(')');
-            string query = queryBuilder.ToString();
-            using MySqlCommand command = new(query, connection);
+
+            queryBuilder.Append(")");
+
+            string consulta = queryBuilder.ToString();
+
+            using MySqlCommand command = new MySqlCommand(consulta, connection);
+
             command.Parameters.AddWithValue("@Promotor", Promotor);
             command.Parameters.AddWithValue("@Nombre", Nombre);
             command.Parameters.AddWithValue("@Credito", Credito);
             command.Parameters.AddWithValue("@Pagare", Pagare);
-            command.Parameters.AddWithValue("@Fecha_inicio", fechainicio);
-            command.Parameters.AddWithValue("@Fecha_Termino", fechafinal);
+            command.Parameters.AddWithValue("@Fecha_inicio", Fecha_inicio.ToString("dd/MM/yyyy"));
+            command.Parameters.AddWithValue("@Fecha_Termino", Fecha_Termino.ToString("dd/MM/yyyy"));
             command.Parameters.AddWithValue("@Interes", Interes);
             command.Parameters.AddWithValue("@Monto_Total", Monto_Total);
             command.Parameters.AddWithValue("@Calle", Calle);
@@ -452,18 +454,20 @@ namespace FutureLending
             command.Parameters.AddWithValue("@Correo", Correo);
             command.Parameters.AddWithValue("@Tipo_pago", Tipo_pago);
             command.Parameters.AddWithValue("@Monto_Restante", Monto_Restante);
-            for (int i = 0; i < dias_de_pago.Length; i++)
+
+            for (int i = 1; i <= 14; i++)
             {
-                if (dias_de_pago[i] == null)
+                if (i <= dias_de_pago.Length)
                 {
-                    command.Parameters.AddWithValue("@Fecha" + (i + 1), "-");
+                    command.Parameters.AddWithValue("@Fecha" + i, dias_de_pago[i - 1]);
                 }
                 else
                 {
-                    command.Parameters.AddWithValue("@Fecha" + (i + 1), dias_de_pago[i]);
+                    command.Parameters.AddWithValue("@Fecha" + i, "-");
                 }
-
             }
+
+
             try
             {
                 command.ExecuteNonQuery();
@@ -471,6 +475,7 @@ namespace FutureLending
             catch (Exception ex)
             {
                 Registro_errores(ex.ToString());
+
                 if (ex.ToString().Contains("Duplicate entry"))
                 {
                     Form1.MessageB("Este usuario ya existe!!!", "Alerta", 2);

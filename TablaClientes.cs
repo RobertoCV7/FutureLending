@@ -31,9 +31,7 @@ namespace FutureLending
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
-                nombresColumnas.Add("PAGO " + i);
             }
-
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {

@@ -1,0 +1,8 @@
+[27/05/2023 11:15:13 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 324
+[27/05/2023 11:15:14 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Documentos\Trabajos\FutureLendingpro\Lectura_Base_Datos.cs:line 324
