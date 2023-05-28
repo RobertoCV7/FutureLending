@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 27-05-2023 a las 02:42:16
+-- Tiempo de generación: 28-05-2023 a las 03:42:05
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -93,7 +93,10 @@ CREATE TABLE `lista1` (
 --
 
 INSERT INTO `lista1` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Pagare`, `Fecha_Inicio`, `Fecha_Termino`, `Interes`, `Monto_Total`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
-('Promotor2', 'Cesar Donnet Hernandez Gastelum', '4000', '8000', '22/05/2023', '04/09/2023', 'Normal', '5600', 'asasas', 'asasasasa', '', '122', '12121212121', 'asasasasass', '', '5600', '06/06/2023', '21/06/2023', '06/07/2023', '21/07/2023', '05/08/2023', '20/08/2023', '04/09/2023', '-', '-', '-', '-', '-', '-', '-');
+('Promotor2', 'Cesar Donnet Hernandez Gastelum', '4000', '8000', '22/05/2023', '04/09/2023', 'Normal', '5600', 'asasas', 'asasasasa', '', '122', '12121212121', 'asasasasass', '', '5600', '06/06/2023', '21/06/2023', '06/07/2023', '21/07/2023', '05/08/2023', '20/08/2023', '04/09/2023', '-', '-', '-', '-', '-', '-', '-'),
+('Promotor1', 'Lopez Mendoza sabe quien', '3600', '9216', '26/05/2023', '08/09/2023', 'Preferencial', '4608', 'asass', 'asas', '', '12', '12121212', 'asasas', 'Quincenales', '4608', '10/06/2023', '25/06/2023', '10/07/2023', '25/07/2023', '09/08/2023', '24/08/2023', '08/09/2023', '-', '-', '-', '-', '-', '-', '-'),
+('Promotor3', 'Los quien', '2300', '6072', '26/05/2023', '01/09/2023', 'Premier', '3036', 'asasas', 'asas', '', '12', '121212121212', 'asasasas', 'Semanales', '3036', '10/06/2023', '25/06/2023', '10/07/2023', '25/07/2023', '09/08/2023', '24/08/2023', '08/09/2023', '-', '-', '-', '-', '-', '-', '-'),
+('Promotor1', 'Ricardo Anaya', '4000', '11200', '26/05/2023', '01/09/2023', 'Normal', '5600', 'Rincon', 'san marcos', '', '128', '213232323', 'asasasas', 'Semanales', '5600', '10/06/2023', '25/06/2023', '10/07/2023', '25/07/2023', '09/08/2023', '24/08/2023', '08/09/2023', '-', '-', '-', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -116,43 +119,43 @@ CREATE TABLE `lista2` (
   `Tipo_de_pago` varchar(20) NOT NULL,
   `Liquidacion_Intencion` varchar(20) NOT NULL,
   `Quita` varchar(20) NOT NULL,
-  `FECHA 1` varchar(20) NOT NULL,
-  `PAGO 1` varchar(20) NOT NULL,
-  `FECHA 2` varchar(20) NOT NULL,
-  `PAGO 2` varchar(20) NOT NULL,
-  `FECHA 3` varchar(20) NOT NULL,
-  `PAGO 3` varchar(20) NOT NULL,
-  `FECHA 4` varchar(20) NOT NULL,
-  `PAGO 4` varchar(20) NOT NULL,
-  `FECHA 5` varchar(20) NOT NULL,
-  `PAGO 5` varchar(20) NOT NULL,
-  `FECHA 6` varchar(20) NOT NULL,
-  `PAGO 6` varchar(20) NOT NULL,
-  `FECHA 7` varchar(20) NOT NULL,
-  `PAGO 7` varchar(20) NOT NULL,
-  `FECHA 8` varchar(20) NOT NULL,
-  `PAGO 8` varchar(20) NOT NULL,
-  `FECHA 9` varchar(20) NOT NULL,
-  `PAGO 9` varchar(20) NOT NULL,
-  `FECHA 10` varchar(20) NOT NULL,
-  `PAGO 10` varchar(20) NOT NULL,
-  `FECHA 11` varchar(20) NOT NULL,
-  `PAGO 11` varchar(20) NOT NULL,
-  `FECHA 12` varchar(20) NOT NULL,
-  `PAGO 12` varchar(20) NOT NULL,
-  `FECHA 13` varchar(20) NOT NULL,
-  `PAGO 13` varchar(20) NOT NULL,
-  `FECHA 14` varchar(20) NOT NULL,
-  `PAGO 14` varchar(20) NOT NULL
+  `FECHA1` varchar(20) NOT NULL,
+  `PAGO1` varchar(20) NOT NULL,
+  `FECHA2` varchar(20) NOT NULL,
+  `PAGO2` varchar(20) NOT NULL,
+  `FECHA3` varchar(20) NOT NULL,
+  `PAGO3` varchar(20) NOT NULL,
+  `FECHA4` varchar(20) NOT NULL,
+  `PAGO4` varchar(20) NOT NULL,
+  `FECHA5` varchar(20) NOT NULL,
+  `PAGO5` varchar(20) NOT NULL,
+  `FECHA6` varchar(20) NOT NULL,
+  `PAGO6` varchar(20) NOT NULL,
+  `FECHA7` varchar(20) NOT NULL,
+  `PAGO7` varchar(20) NOT NULL,
+  `FECHA8` varchar(20) NOT NULL,
+  `PAGO8` varchar(20) NOT NULL,
+  `FECHA9` varchar(20) NOT NULL,
+  `PAGO9` varchar(20) NOT NULL,
+  `FECHA10` varchar(20) NOT NULL,
+  `PAGO10` varchar(20) NOT NULL,
+  `FECHA11` varchar(20) NOT NULL,
+  `PAGO11` varchar(20) NOT NULL,
+  `FECHA12` varchar(20) NOT NULL,
+  `PAGO12` varchar(20) NOT NULL,
+  `FECHA13` varchar(20) NOT NULL,
+  `PAGO13` varchar(20) NOT NULL,
+  `FECHA14` varchar(20) NOT NULL,
+  `PAGO14` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `lista2`
 --
 
-INSERT INTO `lista2` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Monto_Restante`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_pago`, `Liquidacion_Intencion`, `Quita`, `FECHA 1`, `PAGO 1`, `FECHA 2`, `PAGO 2`, `FECHA 3`, `PAGO 3`, `FECHA 4`, `PAGO 4`, `FECHA 5`, `PAGO 5`, `FECHA 6`, `PAGO 6`, `FECHA 7`, `PAGO 7`, `FECHA 8`, `PAGO 8`, `FECHA 9`, `PAGO 9`, `FECHA 10`, `PAGO 10`, `FECHA 11`, `PAGO 11`, `FECHA 12`, `PAGO 12`, `FECHA 13`, `PAGO 13`, `FECHA 14`, `PAGO 14`) VALUES
-('adasas', 'd', '2000', '', '4000', 'asasas', 'asasas', 'asasas', '', 'aasasas', 'asasas', 'liquidacion', '2500', '', '-', '-', '-', '-', '-', '-', '-', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-('adasas', 'dsdsdsd', '2000', '', '4000', 'asasas', 'asasas', 'asasas', '', 'aasasas', 'asasas', 'liquidacion', '2500', '', '-', '-', '-', '-', '-', '-', '-', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `lista2` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Monto_Restante`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_pago`, `Liquidacion_Intencion`, `Quita`, `FECHA1`, `PAGO1`, `FECHA2`, `PAGO2`, `FECHA3`, `PAGO3`, `FECHA4`, `PAGO4`, `FECHA5`, `PAGO5`, `FECHA6`, `PAGO6`, `FECHA7`, `PAGO7`, `FECHA8`, `PAGO8`, `FECHA9`, `PAGO9`, `FECHA10`, `PAGO10`, `FECHA11`, `PAGO11`, `FECHA12`, `PAGO12`, `FECHA13`, `PAGO13`, `FECHA14`, `PAGO14`) VALUES
+('Promotor2', 'd', '2000', '', '4000', 'asasas', 'asasas', 'asasas', '', 'aasasas', 'asasas', 'Liquidacion', '2500', '', '-', '-', '-', '-', '-', '-', '-', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+('Promotor1', 'dsdsdsd', '2000', '1500', '4000', 'asasas', 'asasas', 'asasas', '', 'aasasas', 'asasas', 'Intencion', '2500', '1000', '27/05/2023', '1500', '-', '-', '-', '-', '-', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'dsdsdsd');
 
 -- --------------------------------------------------------
 
