@@ -33,11 +33,16 @@ namespace FutureLending
             ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
             ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            //Para una visualización más rápida de los datos mediante virtualización
             gridListas.VirtualMode = false;
             TablaClientes.AñadirEvento(gridListas);
         }
-
+        public string[] informacion = new string[30]; //Se usa para guardar la info de la lista 1
+        public string[] Informacion2 = new string[44]; //Se usa para guardar la info de la lista 2
+        public string[] informacion3 = new string[15];
+        public string[] Fechas = new string[100]; //Fechas de lista 2 inicializado en 100 por posible expansion futura
+        public string[] Pagos = new string[14]; //Pagos de lista 2
+        public string pertenece; //De que lista viene
+        public string Cliente; //Nombre del cliente
         #region Animacion de menu
         private void CollapseMenu()
         {
@@ -280,7 +285,7 @@ namespace FutureLending
             Lectura_Base_Datos a = new();
             if (ListaEstado == 0)
             {
-                string[] informacion2 = new string[29];
+                string[] informacion2 = new string[30];
                 for (int i = 0; i < informacion.Length; i++)
                 {
                     informacion2[i] = informacion[i];
@@ -312,39 +317,8 @@ namespace FutureLending
                 }
                 informacion2[13] = string.IsNullOrEmpty(textBoxPersonalizado7.Texts) ? informacion[13] : textBoxPersonalizado7.Texts;
                 informacion2[28] = Cliente;
-                a.EditarLista1(informacion2);
-                pnlListas.BringToFront();
-            }
-            else if (ListaEstado == 1)
-            {
-                string[] informacion2 = new string[16];
-                for (int i = 0; i < 14; i++)
-                {
-                    informacion2[i] = informacion3[i];
-                }
-                informacion2[0] = string.IsNullOrEmpty(textBoxPersonalizado10.Texts) ? informacion3[0] : textBoxPersonalizado10.Texts;
-                informacion2[1] = string.IsNullOrEmpty(textBoxPersonalizado9.Texts) ? informacion3[1] : textBoxPersonalizado9.Texts;
-                informacion2[2] = dateTimePickerPersonalizado1.Value.ToString("dd/MM/yyyy");
-                informacion2[3] = string.IsNullOrEmpty(rjComboBox1.Texts) ? informacion3[3] : rjComboBox1.Texts;
-                informacion2[4] = string.IsNullOrEmpty(textBoxPersonalizado8.Texts) ? informacion3[4] : textBoxPersonalizado8.Texts;
-                informacion2[5] = string.IsNullOrEmpty(rjComboBox3.Texts) ? informacion3[5] : rjComboBox3.Texts;
-                informacion2[6] = string.IsNullOrEmpty(textBoxPersonalizado6.Texts) ? informacion3[6] : textBoxPersonalizado6.Texts;
-                informacion2[7] = string.IsNullOrEmpty(textBoxPersonalizado5.Texts) ? informacion3[7] : textBoxPersonalizado5.Texts;
-                informacion2[8] = string.IsNullOrEmpty(textBoxPersonalizado4.Texts) ? informacion3[8] : textBoxPersonalizado4.Texts;
-                informacion2[9] = string.IsNullOrEmpty(textBoxPersonalizado3.Texts) ? informacion3[9] : textBoxPersonalizado3.Texts;
-                informacion2[10] = string.IsNullOrEmpty(textBoxPersonalizado2.Texts) ? informacion3[10] : textBoxPersonalizado2.Texts;
-                informacion2[11] = string.IsNullOrEmpty(textBoxPersonalizado1.Texts) ? informacion3[11] : textBoxPersonalizado1.Texts;
-                if (rjComboBox2.Texts == "Semanal")
-                {
-                    informacion2[12] = "0";
-                }
-                else
-                {
-                    informacion2[12] = "1";
-                }
-                informacion2[13] = string.IsNullOrEmpty(textBoxPersonalizado7.Texts) ? informacion3[13] : textBoxPersonalizado7.Texts;
-                informacion2[13] = Cliente;
-                a.EditarLista2(informacion2);
+                Ediciones a2 = new();
+                a2.EditarLista1(informacion2);
                 pnlListas.BringToFront();
             }
             else if (ListaEstado == 2)
@@ -376,7 +350,8 @@ namespace FutureLending
                 }
                 informacion2[13] = string.IsNullOrEmpty(textBoxPersonalizado7.Texts) ? informacion3[13] : textBoxPersonalizado7.Texts;
                 informacion2[14] = Cliente;
-                a.EditarLista3(informacion2);
+                Ediciones a2 = new();
+                a2.EditarLista3(informacion2);
                 pnlListas.BringToFront();
             }
             else if (ListaEstado == 3)
@@ -408,7 +383,8 @@ namespace FutureLending
                     informacion5[13] = "1";
                 }
                 informacion5[14] = Cliente;
-                a.EditarListaLiquidados(informacion5);
+                Ediciones a2 = new();
+                a2.EditarListaLiquidados(informacion5);
                 pnlListas.BringToFront();
 
             }
@@ -499,145 +475,87 @@ namespace FutureLending
                 btnEliminar.Enabled = true;
             }
         }
-        string[] informacion = new string[28];
-        string[] informacion3 = new string[15];
-        string Cliente;
+        //Declaraciones Globales
+
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             CargarPromotoresEnComboBox(rjComboBox3);
 
-            Lectura_Base_Datos a = new();
+            Lecturas_Especificas a = new();
             LabelLimite.Hide();
             dateTimeLimite.Hide();
 
-            string pertenece;
-            if (ListaEstado == 0)
+
+            if (ListaEstado == 0) //Si viene de la lista 1
             {
+                PanelEditar.BringToFront();
+                //Limpio las listas donde es posible  mover al registro
                 cmbLista.Items.Clear();
                 cmbLista.Enabled = true;
-                PanelEditar.BringToFront();
-                pertenece = "Lista 1";
                 cmbLista.Items.AddRange(new string[] { "Lista 2", "Lista 3", "Liquidados" });
+                //Establezco de donde viene este registro
+                pertenece = "Lista 1";
                 LblPerte.Text = pertenece;
+                //Obtengo el nombre del cliente
                 Cliente = cmbCliente.Texts;
                 textBoxPersonalizado10.Texts = Cliente;
-                //Empieza
+                //Empieza leyendo su informacion de la base de datos
                 informacion = a.LectName(Cliente);
-                textBoxPersonalizado9.Texts = informacion[1];
-                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion[2]);
-                switch (informacion[3])
-                {
-                    case "7":
-                        rjComboBox1.SelectedIndex = 0;
-                        break;
-                    case "8":
-                        rjComboBox1.SelectedIndex = 1;
-                        break;
-                    case "10":
-                        rjComboBox1.SelectedIndex = 2;
-                        break;
-                }
-                textBoxPersonalizado8.Texts = informacion[4];
-                if (informacion[12] == "0" || informacion[12] == "Semanal")
-                {
-                    rjComboBox2.SelectedIndex = 0;
-                }
-                else
-                {
-                    rjComboBox2.SelectedIndex = 1;
-                }
-                if (informacion[5] == "Ramon")
-                {
-                    rjComboBox3.SelectedIndex = 0;
-                }
-                else if (informacion[5] == "Roberto")
-                {
-                    rjComboBox3.SelectedIndex = 1;
-                }
-                else
-                {
-                    rjComboBox3.SelectedIndex = 2;
-                }
-                textBoxPersonalizado7.Texts = informacion[13];
-                textBoxPersonalizado6.Texts = informacion[6];
-                textBoxPersonalizado5.Texts = informacion[7];
-                textBoxPersonalizado4.Texts = informacion[8];
-                textBoxPersonalizado3.Texts = informacion[9];
-                textBoxPersonalizado2.Texts = informacion[10];
-                textBoxPersonalizado1.Texts = informacion[11];
+              
+                //Tuve que convertir de List<string[]> a string[] para poder usarlo en los objetos del Panel (Editar)
+                textBoxPersonalizado9.Texts = informacion[2]; //Credito Prestado
+                textBoxPersonalizado11.Texts = informacion[3]; //Pagare generado
+                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion[4]); //Fecha de Inicio
+                dateTimeLimite.Value = DateTime.Parse(informacion[5]);//Fecha de su ultimo pago (Limite)
+                rjComboBox1.SelectedItem = informacion[6]; //Interes Que tiene
+                textBoxPersonalizado8.Texts = informacion[7]; //Monto Total del prestamo + intereses
+                rjComboBox2.SelectedItem = informacion[14]; //Su forma de pago quincenales o semanales
+                rjComboBox3.SelectedItem = informacion[0]; //Promotor que lo atiende
+                textBoxPersonalizado7.Texts = informacion[15]; //Monto Restante
+                textBoxPersonalizado6.Texts = informacion[8]; //Calle
+                textBoxPersonalizado5.Texts = informacion[9]; //Colonia
+                textBoxPersonalizado4.Texts = informacion[10]; //Numero de casa interior
+                textBoxPersonalizado3.Texts = informacion[11];//Numero de casa exterior
+                textBoxPersonalizado2.Texts = informacion[12];//Telefono
+                textBoxPersonalizado1.Texts = informacion[13];//Correo
+                //Del 16 al 29 son los datos de las 14 fechas que solo ocupan 7 si sus pagos con quincenales
             }
-            else if (ListaEstado == 1)
+
+            else if (ListaEstado == 1) //Si viene de la lista 2
             {
-                cmbLista.Items.Clear();
-                cmbLista.Enabled = true;
-                PanelEditar.BringToFront();
+                //Llamo al panel editar de la lista 2
+                PnlEditar2.BringToFront();
+                //Lleno el rjcombobox de promotores con la info correspondiente
+                CargarPromotoresEnComboBox(rjComboBox8);
+                //Limpio las listas donde es posible  mover al registro
+                CmbLista2.Items.Clear();
+                CmbLista2.Enabled = true;
+                CmbLista2.Items.AddRange(new string[] { "Lista 3", "Liquidados" });
+                //Nombre del registro
                 Cliente = cmbCliente.Texts;
-                LabelLimite.Show();
-                dateTimeLimite.Show();
+                //activar boton de fechas
+                BotonEditarFechas2.Enabled = true;
+                //Ahora de donde viene este registro
                 pertenece = "Lista 2";
-                LblPerte.Text = pertenece;
-                cmbLista.Items.AddRange(new string[] { "Lista 3", "Liquidados" });
-                informacion3 = a.LectName2(Cliente);
-                textBoxPersonalizado10.Texts = informacion3[0];
-                textBoxPersonalizado9.Texts = informacion3[1];
-                dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
-                switch (informacion3[3])
-                {
-                    case "7":
-                        rjComboBox1.SelectedIndex = 0;
-                        break;
-                    case "8":
-                        rjComboBox1.SelectedIndex = 1;
-                        break;
-                    case "10":
-                        rjComboBox1.SelectedIndex = 2;
-                        break;
-                }
-                textBoxPersonalizado8.Texts = informacion3[4];
-                if (informacion3[12] == "0" || informacion3[12] == "Semanal")
-                {
-                    rjComboBox2.SelectedIndex = 0;
-                }
-                else
-                {
-                    rjComboBox2.SelectedIndex = 1;
-                }
-                if (informacion3[5] == "Ramon")
-                {
-                    rjComboBox3.SelectedIndex = 0;
-                }
-                else if (informacion[5] == "Roberto")
-                {
-                    rjComboBox3.SelectedIndex = 1;
-                }
-                else
-                {
-                    rjComboBox3.SelectedIndex = 2;
-                }
-                textBoxPersonalizado6.Texts = informacion3[6];
-                textBoxPersonalizado5.Texts = informacion3[7];
-                textBoxPersonalizado4.Texts = informacion3[8];
-                textBoxPersonalizado3.Texts = informacion3[9];
-                textBoxPersonalizado2.Texts = informacion3[10];
-                textBoxPersonalizado1.Texts = informacion3[11];
-                textBoxPersonalizado7.Texts = informacion3[13];
-                if (DateTime.TryParse(informacion[14], out DateTime parsedDate))
-                {
-                    dateTimeLimite.Value = parsedDate;
-                }
-                else
-                {
-                    dateTimeLimite.Value = DateTime.Now;
-                }
-
-
-
-
-
-
-
-
-
+                LabelPertenece.Text = pertenece;
+                //Leo la informacion de ese registro en especifico
+                Informacion2 = a.LectName2(Cliente);
+                //Empiezo a llenar los objetos del panel editar2
+                rjComboBox8.SelectedItem = Informacion2[0]; //Promotor que lo atiende
+                TextBoxNombre.Texts = Cliente; //Nombre del registro
+                TextBoxCredito.Texts = Informacion2[2]; //Credito Prestado
+                TextBoxRestante.Texts = Informacion2[3]; //Monto Restante
+                TextBoxPagare.Texts = Informacion2[4]; //Pagare generado
+                TextBoxCalle.Texts = Informacion2[5]; //Calle
+                TextBoxColonia.Texts = Informacion2[6]; //Colonia
+                TextBoxNumInt.Texts = Informacion2[7]; //Numero de casa interior
+                TextBoxNumExt.Texts = Informacion2[8]; //Numero de casa exterior
+                TextBoxTelefono.Texts = Informacion2[9]; //Telefono
+                TextBoxCorreo.Texts = Informacion2[10]; //Correo
+                rjComboBox7.SelectedItem = Informacion2[11]; //Liquidacion o Intencion
+                TextBoxLiquidacionIntencion.Texts = Informacion2[12]; //Monto de liquidacion o intencion
+                TextBoxQuita.Texts = Informacion2[13]; //Monto de Quita
+                //De aqui pasa al caso de oprimir el boton para mover las fechas y pagos 
             }
             else if (ListaEstado == 2)
             {
@@ -650,7 +568,8 @@ namespace FutureLending
                 LblPerte.Text = pertenece;
                 cmbLista.Items.AddRange(new string[] { "Liquidados" });
                 Cliente = cmbCliente.Texts;
-                informacion3 = a.LectName3(Cliente);
+                List<string[]> list = a.LectName3(Cliente);
+                informacion3 = list.SelectMany(x => x).ToArray();
                 textBoxPersonalizado10.Texts = informacion3[0];
                 textBoxPersonalizado9.Texts = informacion3[1];
                 dateTimePickerPersonalizado1.Value = DateTime.Parse(informacion3[2]);
@@ -700,7 +619,8 @@ namespace FutureLending
             {
                 cmbLista.Items.Clear();
                 Cliente = cmbCliente.Texts;
-                informacion3 = a.LectName4(Cliente);
+                List<string[]> list = a.LectName4(Cliente);
+                informacion3 = list.SelectMany(x => x).ToArray();
                 PanelEditar.BringToFront();
                 LabelLimite.Text = "Fecha Ultimo";
                 label25.Hide();
@@ -754,6 +674,135 @@ namespace FutureLending
                 textBoxPersonalizado1.Texts = informacion3[12];
             }
         }
+
+
+        #region Lista2 Editar
+        //Seguir editando lista 2 pero las fechas y pagos
+        private void BotonEditarFechas2_Click(object sender, EventArgs e)
+        {
+            PanelEditar2_2.BringToFront();
+            //acomodamos el combobox de Fechas para agregar las fechas que se necesiten
+            ComboBoxDeFechas.Items.Clear();
+            for (int i = 0; i < 14; i++)
+            {
+                ComboBoxDeFechas.Items.Add("Fecha " + (i + 1));
+            }
+
+
+        }
+        //presionado boton guardar el pago y la asignacion de fecha
+        private void Botoncambiodefechamomentaneo_Click(object sender, EventArgs e)
+        {
+            string fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
+            string pago = TextBoxPago.Texts;
+            if (ComboBoxDeFechas.SelectedIndex == 0)
+            {
+                int indice = 14;
+                Informacion2[indice] = fecha;
+                Informacion2[indice + 1] = pago;
+            }
+            else
+            {
+                int indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                Informacion2[indice] = fecha;
+                Informacion2[indice + 1] = pago;
+            }
+     
+        }
+
+        
+        private void rjButton7_Click(object sender, EventArgs e) //Guarda los cambios usando ListEdit2 
+        {
+            Ediciones e2 = new Ediciones();
+            string[] InfoListaNueva2 = Informacion2;
+            InfoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
+           InfoListaNueva2[1]= TextBoxNombre.Texts; //Nombre del registro
+            InfoListaNueva2[2] = TextBoxCredito.Texts; //Credito Prestado
+            InfoListaNueva2[3] = TextBoxRestante.Texts; //Monto Restante
+           InfoListaNueva2[4]= TextBoxPagare.Texts; //Pagare generado
+           InfoListaNueva2[5]= TextBoxCalle.Texts; //Calle
+            InfoListaNueva2[6]=TextBoxColonia.Texts; //Colonia
+            InfoListaNueva2[7]=TextBoxNumInt.Texts; //Numero de casa interior
+            InfoListaNueva2[8]=TextBoxNumExt.Texts; //Numero de casa exterior
+            InfoListaNueva2[9]=TextBoxTelefono.Texts; //Telefono
+            InfoListaNueva2[10]=TextBoxCorreo.Texts; //Correo
+            InfoListaNueva2[11]= rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
+            InfoListaNueva2[12]=TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
+            InfoListaNueva2[13]=TextBoxQuita.Texts; //Monto de Quita
+            InfoListaNueva2[41] = Cliente;
+           
+           bool a= e2.EditarLista2(InfoListaNueva2);
+            if (a)
+            {
+                pnlListas.BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar los cambios");
+            }
+        }
+
+        //Si selecciona una fecha de lista 2 se muestra en el datetimepicker
+        private void ComboBoxDeFechas_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            FechaEnLista2.Enabled = true;
+            if (string.IsNullOrEmpty(Informacion2[2]))
+            {
+                FechaEnLista2.Value = DateTime.Today;
+            }
+            else
+            {
+                if(ComboBoxDeFechas.SelectedIndex == 0)
+                {
+                    int apuntador = 14;
+
+                    if (Informacion2[apuntador] == "-" || Informacion2[apuntador] == "" || Informacion2[apuntador] == null)
+                    {
+                        FechaEnLista2.Value = DateTime.Today;
+                    }
+                    else
+                    {
+                        FechaEnLista2.Value = DateTime.Parse(Informacion2[apuntador]);
+                    }
+                }
+                else
+                {
+                    int apuntador = ComboBoxDeFechas.SelectedIndex + (14+2);
+                    if (Informacion2[apuntador] == "-" || Informacion2[apuntador] == "" || Informacion2[apuntador] == null)
+                    {
+                        FechaEnLista2.Value = DateTime.Today;
+                    }
+                    else
+                    {
+                        FechaEnLista2.Value = DateTime.Parse(Informacion2[apuntador]);
+                    }
+                    
+                }   
+             
+            }
+        }
+        //Si ya puso un pago se activa el boton
+        private void TextBoxPago__TextChanged(object sender, EventArgs e)
+        {
+            if (TextBoxPago.Texts != null && TextBoxPago.Texts != "")
+            {
+                Botoncambiodefechamomentaneo.Enabled = true;
+            }
+            else
+            {
+                Botoncambiodefechamomentaneo.Enabled = false;
+            }
+
+        }
+        //De editar lista 2_2 a editar lista 2
+        private void BotonVolverEditar2_Click(object sender, EventArgs e)
+        {
+            BotonEditarFechas2.Enabled = false;
+            Botoncambiodefechamomentaneo.Enabled = false;
+            FechaEnLista2.Enabled = false;
+            PnlEditar2.BringToFront();
+        }
+        #endregion
 
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -992,15 +1041,17 @@ namespace FutureLending
             //Mostramos en el form
 
             //Agregamos los datos del cliente al form
-            Lectura_Base_Datos instancia = new();
+            Lecturas_Especificas instancia = new();
             string[] datos;
             if (CombBoxLista.Texts == "Lista 1")
             {
                 datos = instancia.LectName(ComBoxName.Texts);
+               
             }
             else
             {
-                datos = instancia.LectName2(ComBoxName.Texts);
+                datos = instancia.LectName(ComBoxName.Texts);
+           
             }
 
             if (datos[1] == null)
@@ -1029,13 +1080,15 @@ namespace FutureLending
             DateTime fecha = DateTimeReg.Value;
             string Fecha = fecha.ToString("dd/MM/yyyy");
             //Leer las fechas registradas 
-            Lectura_Base_Datos instancia = new();
+            Lecturas_Especificas instancia = new();
             string list;
             string[] datos;
             if (CombBoxLista.Texts == "Lista 1")
             {
                 list = "lista1";
-                datos = instancia.LectName(ComBoxName.Texts);
+
+                datos = instancia.LectName2(ComBoxName.Texts);
+            
                 for (int i = 14; i < datos.Length; i++)
                 {
                     if (datos[i] != null)
@@ -1055,6 +1108,7 @@ namespace FutureLending
             {
                 list = "lista2";
                 datos = instancia.LectName2(ComBoxName.Texts);
+                
                 if (datos[14] == Fecha) { band = true; }
             }
 
@@ -1088,7 +1142,7 @@ namespace FutureLending
                 {
                     Fecha += "-" + txtBoxMonto.Texts;
                     string update = "Fecha" + index + "='" + Fecha + "'" + ", Monto_Restante='" + Convert.ToString(totRes) + "'";
-                    Lectura_Base_Datos instancia2 = new();
+                    Ediciones  instancia2 = new();
                     instancia2.Edit(list, ComBoxName.Texts, update);
                 }
                 //Resetear valores 
@@ -1556,9 +1610,9 @@ namespace FutureLending
 
 
 
-        private void pnlClientes_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
+
+
+     
     }
 }
