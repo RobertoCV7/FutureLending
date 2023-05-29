@@ -1,10 +1,22 @@
 [
   {
-    "Usuario1": "root",
-    "Contraseña1": ""
+    "Usuario": "root",
+    "Contraseña": "",
+    "Permisos": {
+      "lista1": true,
+      "lista2": true,
+      "lista3": true,
+      "liquidados": true
+    }
   },
   {
-    "Usuario1": "admin",
-    "Contraseña1": ""
+    "Usuario": "admin",
+    "Contraseña": "",
+    "Permisos": {
+      "lista1": false,
+      "lista2": true,
+      "lista3": true,
+      "liquidados": true
+    }
   }
 ]

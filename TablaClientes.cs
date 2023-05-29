@@ -73,6 +73,7 @@ namespace FutureLending
                 return instancia.LectLista2();
             });
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
+            
             gridListas.ColumnCount = nombresColumnas2.Count;
             AñadirEncabezado(nombresColumnas2, gridListas);
 

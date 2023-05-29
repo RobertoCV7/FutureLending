@@ -1036,3 +1036,4 @@ D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.g
 D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\ref\FutureLending.dll
 D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.Pedir_Datos.resources
 D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.PedirDatos3.resources
+D:\Documentos\Trabajos\FutureLendingpro\obj\Debug\net6.0-windows\FutureLending.Permisos_Lect.resources

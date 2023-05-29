@@ -166,18 +166,11 @@ namespace FutureLending
 
                         for (int i = 0; i < 14; i++)
                         {
-                            string fechaCampo = "FECHA" + (i + 1).ToString();
-                            string pagoCampo = "PAGO" + (i + 1).ToString();
-                            if (i == 0)
-                            {
-                                fila[14] = reader.GetString(fechaCampo);
-                                fila[15] = reader.GetString(pagoCampo);
-                            }
-                            else
-                            {
-                                fila[16 + (i + 1)] = reader.GetString(fechaCampo);
-                                fila[17 + (i + 1)] = reader.GetString(pagoCampo);
-                            }
+                            string fechaCampo = "FECHA" + (i + 1);
+                            string pagoCampo = "PAGO" + (i + 1);
+                                                          fila[14 + (i *2)] = reader.GetString(fechaCampo);
+                                fila[15 + (i *2)] = reader.GetString(pagoCampo);
+  
                         }
                         fila[42] = reader.GetString("Pago_Total_EXT");
                         datos.Add(fila);

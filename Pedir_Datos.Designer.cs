@@ -90,6 +90,8 @@
             TextLiquidacionPedir.TabIndex = 59;
             TextLiquidacionPedir.Texts = "";
             TextLiquidacionPedir.UnderlinedStyle = true;
+            TextLiquidacionPedir._TextChanged += TextLiquidacionPedir__TextChanged;
+            TextLiquidacionPedir.KeyPress += TextLiquidacionPedir_KeyPress;
             // 
             // label33
             // 
@@ -112,7 +114,7 @@
             BotonDeingresarPedir.FlatStyle = FlatStyle.Flat;
             BotonDeingresarPedir.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
             BotonDeingresarPedir.ForeColor = Color.White;
-            BotonDeingresarPedir.Location = new Point(198, 278);
+            BotonDeingresarPedir.Location = new Point(348, 287);
             BotonDeingresarPedir.Name = "BotonDeingresarPedir";
             BotonDeingresarPedir.Size = new Size(249, 94);
             BotonDeingresarPedir.TabIndex = 62;

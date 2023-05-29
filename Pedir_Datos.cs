@@ -32,6 +32,7 @@ namespace FutureLending
                 {
                     TextLiquidacionPedir.Enabled = true;
                     TextLiquidacionPedir.Text = "";
+                    BotonDeingresarPedir.Enabled = false;
                 }
             }
             else
@@ -43,6 +44,27 @@ namespace FutureLending
         private void BotonDeingresarPedir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TextLiquidacionPedir__TextChanged(object sender, EventArgs e)
+        {
+            if (TextLiquidacionPedir.Texts != "")
+            {
+                BotonDeingresarPedir.Enabled = true;
+            }
+            else
+            {
+                BotonDeingresarPedir.Enabled = false;
+            }
+        }
+
+        private void TextLiquidacionPedir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
         }
     }
 }

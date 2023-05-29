@@ -28,6 +28,7 @@ namespace FutureLending
             rjButton6.Enabled = false;
             rjComboBox9.Visible = false;
             rjButton4.Enabled = false;
+            TextBoxPagoExt.Enabled = false;
             label17.Visible = false;
             rjButton5.Enabled = false;
             cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -275,10 +276,94 @@ namespace FutureLending
         #region Listas
         private void BtnListas_Click(object sender, EventArgs e)
         {
+            List<string> list = Accesos.ObtenerPermisosUsuario(Inicio_Sesion.NombreUsuario);
+            if (list != null)
+            {
+                // Bloquear y deshabilitar todos los botones por defecto
+                btnLista1.Enabled = false;
+                btnLista1.Click -= BtnLista1_Click;
+                btnLista1.MouseDown -= BtnLista1_MouseDown;
+                btnLista1.TabStop = false;
+                btnLista1.FlatStyle = FlatStyle.Flat;
+                btnLista1.FlatAppearance.MouseOverBackColor = btnLista1.BackColor;
+                btnLista1.FlatAppearance.MouseDownBackColor = btnLista1.BackColor;
+                deshabilitartodos();
+
+                btnLista2.Enabled = false;
+                btnLista2.Click -= BtnLista2_Click;
+                btnLista2.TabStop = false;
+                btnLista2.FlatStyle = FlatStyle.Flat;
+                btnLista2.FlatAppearance.MouseOverBackColor = btnLista2.BackColor;
+                btnLista2.FlatAppearance.MouseDownBackColor = btnLista2.BackColor;
+
+                
+                btnLista3.Enabled = false;
+                btnLista3.Click -= BtnLista3_Click;
+                btnLista3.TabStop = false;
+                btnLista3.FlatStyle = FlatStyle.Flat;
+                btnLista3.FlatAppearance.MouseOverBackColor = btnLista3.BackColor;
+                btnLista3.FlatAppearance.MouseDownBackColor = btnLista3.BackColor;
+
+
+                btnLiquidados.Enabled = false;
+                btnLiquidados.Click -= BtnLiquidados_Click;
+                btnLiquidados.TabStop = false;
+                btnLiquidados.FlatStyle = FlatStyle.Flat;
+                btnLiquidados.FlatAppearance.MouseOverBackColor = btnLiquidados.BackColor;
+                btnLiquidados.FlatAppearance.MouseDownBackColor = btnLiquidados.BackColor;
+
+
+                // Desbloquear y habilitar los botones especificados en la lista
+                foreach (string item in list)
+                {
+                    MessageBox.Show(item);
+                    switch (item)
+                    {
+                        case "lista1":
+                            btnLista1.Enabled = true;
+                            btnLista1.Click += BtnLista1_Click;
+                            btnLista1.MouseDown += BtnLista1_MouseDown;
+                            btnLista1.TabStop = true;
+                            btnLista1.FlatStyle = FlatStyle.Standard;
+                            break;
+                        case "lista2":
+                            btnLista2.Enabled = true;
+                            btnLista2.Click += BtnLista2_Click;
+                            btnLista2.TabStop = true;
+                            btnLista2.FlatStyle = FlatStyle.Standard;
+                            break;
+                        case "lista3":
+                            btnLista3.Enabled = true;
+                            btnLista3.Click += BtnLista3_Click;
+                            btnLista3.TabStop = true;
+                            btnLista3.FlatStyle = FlatStyle.Standard;
+                            break;
+                        case "liquidados":
+                            btnLiquidados.Enabled = true;
+                            btnLiquidados.Click += BtnLiquidados_Click;
+                            btnLiquidados.TabStop = true;
+                            btnLiquidados.FlatStyle = FlatStyle.Standard;
+                            break;
+                    }
+                }
+
+
+            }
+
             lblTitle.Text = "Listas Completas";
             pnlListas.BringToFront();
-        }
+           
 
+        }
+        void deshabilitartodos()
+        {
+            btnMostrarTodos.Enabled = false;
+            btnMostrarTodos.Click -= BtnMostrarTodos_Click;
+            btnMostrarTodos.TabStop = false;
+            btnMostrarTodos.FlatStyle = FlatStyle.Flat;
+            btnMostrarTodos.FlatAppearance.MouseOverBackColor = btnLiquidados.BackColor;
+            btnMostrarTodos.FlatAppearance.MouseDownBackColor = btnLiquidados.BackColor;
+        }
         private void RjButton1_Click_1(object sender, EventArgs e)
         {
             Exportar_Excel a = new();
@@ -468,7 +553,7 @@ namespace FutureLending
                 TextBoxTelefono3.Texts = informacion3[8]; //Telefono
                 TextBoxCorreo3.Texts = informacion3[9]; //Correo
                 ComboBoxPromotor3.SelectedItem = informacion3[0]; //Promotor que lo atiende
-                TextResolucionDemanda.Texts = informacion3[11]; //Resolucion de la demanda
+                ResolucionDemanda.SelectedItem = informacion3[11]; //Resolucion de la demanda
                 TextImporte3.Texts = informacion3[12]; //Importe
                 ComboBoxResolucion3.SelectedItem = informacion3[10]; //Resolucion
             }
@@ -573,12 +658,13 @@ namespace FutureLending
                         double Ext = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(pag)); //en Uint para que no sea negativo jamas 
                         InfoMov[42] = Ext.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
                     }
-                    #endregion
-                    for (int i = 14; i < 42; i++)
+                    //Lleno la parte de fechas con guiones
+                    for (int i = 14; i <= 41; i++)
                     {
                         InfoMov[i] = "-";
+                        MessageBox.Show(InfoMov[i]);
                     }
-
+                    #endregion
                     Lectura_Base_Datos instancia = new();
                     bool rev = instancia.InsertarLista2(InfoMov);
 
@@ -658,13 +744,33 @@ namespace FutureLending
         //Seguir editando lista 2 pero las fechas y pagos
         private void BotonEditarFechas2_Click(object sender, EventArgs e)
         {
+            TextBoxPago.Texts = "";
+            ComboBoxDeFechas.SelectedIndex = -1;
+            Lecturas_Especificas instancia = new();
+
             PanelEditar2_2.BringToFront();
+            int a = 1;
             //acomodamos el combobox de Fechas para agregar las fechas que se necesiten
             ComboBoxDeFechas.Items.Clear();
-            for (int i = 0; i < 14; i++)
+            string[] Info = instancia.LectName2(Cliente);
+            for (int i = 14; i < 42; i += 2)
             {
-                ComboBoxDeFechas.Items.Add("Fecha " + (i + 1));
+                if (Info[i] == "-")
+                {
+                    ComboBoxDeFechas.Items.Add("Fecha " + a);
+
+                }
+                else
+                {
+                    ComboBoxDeFechas.Items.Add("Fecha " + a + "-Pagado");
+                }
+
+                if (i % 2 == 0)
+                {
+                    a++;
+                }
             }
+
         }
         //presionado boton guardar el pago y la asignacion de fecha en la lista 2 ademas de actualizar el Pago EXT
         bool Mover;
@@ -925,7 +1031,7 @@ namespace FutureLending
             Informacion3[8] = TextBoxTelefono3.Texts; //Telefono
             Informacion3[9] = TextBoxCorreo3.Texts; //Correo
             Informacion3[0] = ComboBoxPromotor3.SelectedItem.ToString(); //Promotor que lo atiende
-            Informacion3[11] = TextResolucionDemanda.Texts; //Resolucion de la demanda
+            Informacion3[11] = ResolucionDemanda.SelectedItem.ToString(); //Resolucion de la demanda
             Informacion3[12] = TextImporte3.Texts; //Importe
             Informacion3[10] = ComboBoxResolucion3.SelectedItem.ToString(); //Resolucion
             Informacion3[13] = Cliente;
@@ -1133,9 +1239,13 @@ namespace FutureLending
             {
                 for (int i = 16; i < datos.Length; i++)
                 {
-                    if (datos[i] != null && datos[i] != "-")
+                    if (datos[i] != null && !datos[i].Contains("-"))
                     {
                         rjComboBox9.Items.Add(datos[i]);
+                    }
+                    else
+                    {
+                        rjComboBox9.Items.Add(datos[i] + "(PAGADA)");
                     }
                 }
                 label17.Visible = true;
@@ -1334,7 +1444,6 @@ namespace FutureLending
             Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), user, pass);
             textBox2.Text = "";
             textBox3.Text = "";
-            AvisoVacio2.Text = "";
             comboBox1.SelectedIndex = -1;
             string[] usuarios = Accesos.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
@@ -1667,6 +1776,185 @@ namespace FutureLending
             {
                 btnMarcarP.Enabled = false;
             }
+        }
+        #region limitar a ingresar numeros
+        private void TextBoxPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxCredito_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxPagare_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxRestante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxLiquidacionIntencion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxQuita_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxPagare3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextImporte3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxCredito3__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxCredito3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPersonalizado11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPersonalizado8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPersonalizado7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+
+        private void TextCreditoLiq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
+        #endregion
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                Boton_Permisos.Enabled = true;
+                textBox2.Text = comboBox1.SelectedItem.ToString();
+            }
+            else
+            {
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+                Boton_Permisos.Enabled = false;
+            }
+        }
+
+        private void Boton_Permisos_Click(object sender, EventArgs e)
+        {
+            Permisos_Lect per = new(comboBox1.SelectedItem.ToString());
+
+            per.ShowDialog();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
+            textBox2.Text = "";
+            comboBox1.SelectedIndex = -1;
+            List<string> usuarios = Accesos.CargarUsuarios();
+            foreach (var users in usuarios)
+            {
+                comboBox1.Items.Add(users);
+            }
+        }
+
+        private void BtnLista1_MouseDown(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

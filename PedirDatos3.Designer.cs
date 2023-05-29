@@ -57,6 +57,7 @@
             TextImporte3.TabIndex = 136;
             TextImporte3.Texts = "";
             TextImporte3.UnderlinedStyle = true;
+            TextImporte3.KeyPress += TextImporte3_KeyPress;
             // 
             // label103
             // 
@@ -122,11 +123,11 @@
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.Black;
-            rjButton1.Location = new Point(388, 307);
+            rjButton1.Location = new Point(368, 296);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(213, 79);
+            rjButton1.Size = new Size(266, 104);
             rjButton1.TabIndex = 137;
             rjButton1.Text = "Mover";
             rjButton1.TextColor = Color.Black;

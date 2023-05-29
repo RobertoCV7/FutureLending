@@ -34,5 +34,14 @@ namespace FutureLending
             }
 
         }
+
+        private void TextImporte3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Cancela el evento KeyPress
+                e.Handled = true;
+            }
+        }
     }
 }

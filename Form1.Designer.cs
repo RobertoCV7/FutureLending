@@ -158,19 +158,6 @@
             this.tabControl1 = (new global::System.Windows.Forms.TabControl());
             this.tabPage1 = (new global::System.Windows.Forms.TabPage());
             this.tableLayoutPanel1 = (new global::System.Windows.Forms.TableLayoutPanel());
-            this.flowLayoutPanel5 = (new global::System.Windows.Forms.FlowLayoutPanel());
-            this.label39 = (new global::System.Windows.Forms.Label());
-            this.label40 = (new global::System.Windows.Forms.Label());
-            this.comboBox1 = (new global::System.Windows.Forms.ComboBox());
-            this.label41 = (new global::System.Windows.Forms.Label());
-            this.textBox2 = (new global::System.Windows.Forms.TextBox());
-            this.label42 = (new global::System.Windows.Forms.Label());
-            this.textBox3 = (new global::System.Windows.Forms.TextBox());
-            this.checkBox2 = (new global::System.Windows.Forms.CheckBox());
-            this.panel3 = (new global::System.Windows.Forms.Panel());
-            this.button2 = (new global::System.Windows.Forms.Button());
-            this.button3 = (new global::System.Windows.Forms.Button());
-            this.AvisoVacio2 = (new global::System.Windows.Forms.Label());
             this.flowLayoutPanel4 = (new global::System.Windows.Forms.FlowLayoutPanel());
             this.label35 = (new global::System.Windows.Forms.Label());
             this.label36 = (new global::System.Windows.Forms.Label());
@@ -182,6 +169,19 @@
             this.checkBox1 = (new global::System.Windows.Forms.CheckBox());
             this.button1 = (new global::System.Windows.Forms.Button());
             this.AvisoVacio = (new global::System.Windows.Forms.Label());
+            this.flowLayoutPanel6 = (new global::System.Windows.Forms.FlowLayoutPanel());
+            this.label39 = (new global::System.Windows.Forms.Label());
+            this.label40 = (new global::System.Windows.Forms.Label());
+            this.comboBox1 = (new global::System.Windows.Forms.ComboBox());
+            this.Boton_Permisos = (new global::FutureLending.Controles_personalizados.RJButton());
+            this.label41 = (new global::System.Windows.Forms.Label());
+            this.textBox2 = (new global::System.Windows.Forms.TextBox());
+            this.label42 = (new global::System.Windows.Forms.Label());
+            this.textBox3 = (new global::System.Windows.Forms.TextBox());
+            this.checkBox2 = (new global::System.Windows.Forms.CheckBox());
+            this.panel3 = (new global::System.Windows.Forms.Panel());
+            this.button2 = (new global::System.Windows.Forms.Button());
+            this.button3 = (new global::System.Windows.Forms.Button());
             this.Conexion_Sql = (new global::System.Windows.Forms.TabPage());
             this.rjButton3 = (new global::FutureLending.Controles_personalizados.RJButton());
             this.LabelEstado = (new global::System.Windows.Forms.Label());
@@ -266,12 +266,12 @@
             this.backgroundWorker1 = (new global::System.ComponentModel.BackgroundWorker());
             this.backgroundWorker2 = (new global::System.ComponentModel.BackgroundWorker());
             this.PanelEditar3 = (new global::System.Windows.Forms.Panel());
+            this.ResolucionDemanda = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.groupBox3 = (new global::System.Windows.Forms.GroupBox());
             this.rjButton9 = (new global::FutureLending.Controles_personalizados.RJButton());
             this.rjComboBox5 = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.TextImporte3 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
             this.label103 = (new global::System.Windows.Forms.Label());
-            this.TextResolucionDemanda = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
             this.label92 = (new global::System.Windows.Forms.Label());
             this.TextBoxPagare3 = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
             this.label81 = (new global::System.Windows.Forms.Label());
@@ -342,9 +342,9 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.Conexion_Sql.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.PnlEditar2.SuspendLayout();
@@ -1510,6 +1510,7 @@
             this.btnLista1.TextColor = (global::System.Drawing.Color.Transparent);
             this.btnLista1.UseVisualStyleBackColor = (false);
             this.btnLista1.Click += (this.BtnLista1_Click);
+            this.btnLista1.MouseDown += (this.BtnLista1_MouseDown);
             // 
             // btnLista2
             // 
@@ -1734,6 +1735,7 @@
             this.textBoxPersonalizado11.TabIndex = (86);
             this.textBoxPersonalizado11.Texts = ("");
             this.textBoxPersonalizado11.UnderlinedStyle = (true);
+            this.textBoxPersonalizado11.KeyPress += (this.textBoxPersonalizado11_KeyPress);
             // 
             // label66
             // 
@@ -1790,6 +1792,7 @@
             this.textBoxPersonalizado7.TabIndex = (82);
             this.textBoxPersonalizado7.Texts = ("");
             this.textBoxPersonalizado7.UnderlinedStyle = (true);
+            this.textBoxPersonalizado7.KeyPress += (this.textBoxPersonalizado7_KeyPress);
             // 
             // label25
             // 
@@ -1821,6 +1824,7 @@
             this.textBoxPersonalizado8.TabIndex = (80);
             this.textBoxPersonalizado8.Texts = ("");
             this.textBoxPersonalizado8.UnderlinedStyle = (true);
+            this.textBoxPersonalizado8.KeyPress += (this.textBoxPersonalizado8_KeyPress);
             // 
             // label27
             // 
@@ -2457,8 +2461,8 @@
             this.tableLayoutPanel1.ColumnCount = (2);
             this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel6, 1, 0);
             this.tableLayoutPanel1.Location = (new global::System.Drawing.Point(0, 0));
             this.tableLayoutPanel1.Name = ("tableLayoutPanel1");
             this.tableLayoutPanel1.RowCount = (1);
@@ -2467,178 +2471,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 629F));
             this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 629F));
             this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 629F));
-            this.tableLayoutPanel1.Size = (new global::System.Drawing.Size(977, 629));
+            this.tableLayoutPanel1.Size = (new global::System.Drawing.Size(1074, 687));
             this.tableLayoutPanel1.TabIndex = (0);
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.AutoSize = (true);
-            this.flowLayoutPanel5.Controls.Add(this.label39);
-            this.flowLayoutPanel5.Controls.Add(this.label40);
-            this.flowLayoutPanel5.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel5.Controls.Add(this.label41);
-            this.flowLayoutPanel5.Controls.Add(this.textBox2);
-            this.flowLayoutPanel5.Controls.Add(this.label42);
-            this.flowLayoutPanel5.Controls.Add(this.textBox3);
-            this.flowLayoutPanel5.Controls.Add(this.checkBox2);
-            this.flowLayoutPanel5.Controls.Add(this.panel3);
-            this.flowLayoutPanel5.Controls.Add(this.AvisoVacio2);
-            this.flowLayoutPanel5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
-            this.flowLayoutPanel5.FlowDirection = (global::System.Windows.Forms.FlowDirection.TopDown);
-            this.flowLayoutPanel5.Location = (new global::System.Drawing.Point(491, 3));
-            this.flowLayoutPanel5.Name = ("flowLayoutPanel5");
-            this.flowLayoutPanel5.Size = (new global::System.Drawing.Size(483, 623));
-            this.flowLayoutPanel5.TabIndex = (1);
-            // 
-            // label39
-            // 
-            this.label39.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.label39.AutoSize = (true);
-            this.label39.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label39.ForeColor = (global::System.Drawing.SystemColors.ActiveCaption);
-            this.label39.Location = (new global::System.Drawing.Point(150, 3));
-            this.label39.Margin = (new global::System.Windows.Forms.Padding(150, 3, 40, 20));
-            this.label39.Name = ("label39");
-            this.label39.Size = (new global::System.Drawing.Size(173, 36));
-            this.label39.TabIndex = (21);
-            this.label39.Text = ("Editar");
-            // 
-            // label40
-            // 
-            this.label40.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.label40.AutoSize = (true);
-            this.label40.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label40.Location = (new global::System.Drawing.Point(40, 59));
-            this.label40.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
-            this.label40.Name = ("label40");
-            this.label40.Size = (new global::System.Drawing.Size(320, 36));
-            this.label40.TabIndex = (23);
-            this.label40.Text = ("Selecciona al usuario");
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.BackColor = (global::System.Drawing.SystemColors.Info);
-            this.comboBox1.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
-            this.comboBox1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 10.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.comboBox1.FormattingEnabled = (true);
-            this.comboBox1.Location = (new global::System.Drawing.Point(40, 118));
-            this.comboBox1.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
-            this.comboBox1.Name = ("comboBox1");
-            this.comboBox1.Size = (new global::System.Drawing.Size(320, 30));
-            this.comboBox1.TabIndex = (22);
-            this.comboBox1.SelectedIndexChanged += (this.ComboBox1_SelectedIndexChanged);
-            // 
-            // label41
-            // 
-            this.label41.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.AutoSize = (true);
-            this.label41.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label41.Location = (new global::System.Drawing.Point(40, 168));
-            this.label41.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
-            this.label41.Name = ("label41");
-            this.label41.Size = (new global::System.Drawing.Size(320, 36));
-            this.label41.TabIndex = (24);
-            this.label41.Text = ("Usuario");
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.textBox2.Location = (new global::System.Drawing.Point(40, 227));
-            this.textBox2.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
-            this.textBox2.Name = ("textBox2");
-            this.textBox2.Size = (new global::System.Drawing.Size(320, 30));
-            this.textBox2.TabIndex = (25);
-            // 
-            // label42
-            // 
-            this.label42.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.label42.AutoSize = (true);
-            this.label42.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.label42.Location = (new global::System.Drawing.Point(40, 277));
-            this.label42.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
-            this.label42.Name = ("label42");
-            this.label42.Size = (new global::System.Drawing.Size(320, 36));
-            this.label42.TabIndex = (26);
-            this.label42.Text = ("Contraseña");
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.textBox3.Location = (new global::System.Drawing.Point(40, 336));
-            this.textBox3.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
-            this.textBox3.Name = ("textBox3");
-            this.textBox3.Size = (new global::System.Drawing.Size(320, 30));
-            this.textBox3.TabIndex = (27);
-            this.textBox3.UseSystemPasswordChar = (true);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox2.AutoSize = (true);
-            this.checkBox2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 10.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.checkBox2.Location = (new global::System.Drawing.Point(40, 389));
-            this.checkBox2.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
-            this.checkBox2.Name = ("checkBox2");
-            this.checkBox2.Size = (new global::System.Drawing.Size(320, 26));
-            this.checkBox2.TabIndex = (29);
-            this.checkBox2.Text = ("Ver contraseñas");
-            this.checkBox2.UseVisualStyleBackColor = (true);
-            this.checkBox2.CheckedChanged += (this.CheckBox2_CheckedChanged);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Location = (new global::System.Drawing.Point(40, 438));
-            this.panel3.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 0));
-            this.panel3.Name = ("panel3");
-            this.panel3.Size = (new global::System.Drawing.Size(318, 92));
-            this.panel3.TabIndex = (32);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatAppearance.BorderColor = (global::System.Drawing.Color.MediumBlue);
-            this.button2.FlatAppearance.BorderSize = (4);
-            this.button2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.button2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.button2.Location = (new global::System.Drawing.Point(1, 0));
-            this.button2.Margin = (new global::System.Windows.Forms.Padding(101, 3, 3, 0));
-            this.button2.Name = ("button2");
-            this.button2.Size = (new global::System.Drawing.Size(160, 89));
-            this.button2.TabIndex = (32);
-            this.button2.Text = ("Editar");
-            this.button2.UseVisualStyleBackColor = (true);
-            this.button2.Click += (this.Button2_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.FlatAppearance.BorderColor = (global::System.Drawing.Color.MediumBlue);
-            this.button3.FlatAppearance.BorderSize = (4);
-            this.button3.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
-            this.button3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.button3.Location = (new global::System.Drawing.Point(158, 0));
-            this.button3.Margin = (new global::System.Windows.Forms.Padding(101, 3, 3, 0));
-            this.button3.Name = ("button3");
-            this.button3.Size = (new global::System.Drawing.Size(160, 89));
-            this.button3.TabIndex = (33);
-            this.button3.Text = ("Borrar");
-            this.button3.UseVisualStyleBackColor = (true);
-            this.button3.Click += (this.Button3_Click);
-            // 
-            // AvisoVacio2
-            // 
-            this.AvisoVacio2.AutoSize = (true);
-            this.AvisoVacio2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
-            this.AvisoVacio2.Location = (new global::System.Drawing.Point(40, 530));
-            this.AvisoVacio2.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 0));
-            this.AvisoVacio2.Name = ("AvisoVacio2");
-            this.AvisoVacio2.Size = (new global::System.Drawing.Size(0, 25));
-            this.AvisoVacio2.TabIndex = (30);
+            this.tableLayoutPanel1.Paint += (this.tableLayoutPanel1_Paint_1);
             // 
             // flowLayoutPanel4
             // 
@@ -2657,7 +2492,7 @@
             this.flowLayoutPanel4.FlowDirection = (global::System.Windows.Forms.FlowDirection.TopDown);
             this.flowLayoutPanel4.Location = (new global::System.Drawing.Point(3, 3));
             this.flowLayoutPanel4.Name = ("flowLayoutPanel4");
-            this.flowLayoutPanel4.Size = (new global::System.Drawing.Size(482, 623));
+            this.flowLayoutPanel4.Size = (new global::System.Drawing.Size(531, 681));
             this.flowLayoutPanel4.TabIndex = (0);
             // 
             // label35
@@ -2786,6 +2621,184 @@
             this.AvisoVacio.Name = ("AvisoVacio");
             this.AvisoVacio.Size = (new global::System.Drawing.Size(262, 26));
             this.AvisoVacio.TabIndex = (20);
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.label39);
+            this.flowLayoutPanel6.Controls.Add(this.label40);
+            this.flowLayoutPanel6.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel6.Controls.Add(this.Boton_Permisos);
+            this.flowLayoutPanel6.Controls.Add(this.label41);
+            this.flowLayoutPanel6.Controls.Add(this.textBox2);
+            this.flowLayoutPanel6.Controls.Add(this.label42);
+            this.flowLayoutPanel6.Controls.Add(this.textBox3);
+            this.flowLayoutPanel6.Controls.Add(this.checkBox2);
+            this.flowLayoutPanel6.Controls.Add(this.panel3);
+            this.flowLayoutPanel6.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.flowLayoutPanel6.FlowDirection = (global::System.Windows.Forms.FlowDirection.TopDown);
+            this.flowLayoutPanel6.Location = (new global::System.Drawing.Point(540, 3));
+            this.flowLayoutPanel6.Name = ("flowLayoutPanel6");
+            this.flowLayoutPanel6.Size = (new global::System.Drawing.Size(531, 681));
+            this.flowLayoutPanel6.TabIndex = (21);
+            this.flowLayoutPanel6.Paint += (this.flowLayoutPanel6_Paint);
+            // 
+            // label39
+            // 
+            this.label39.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.label39.AutoSize = (true);
+            this.label39.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label39.ForeColor = (global::System.Drawing.SystemColors.ActiveCaption);
+            this.label39.Location = (new global::System.Drawing.Point(150, 3));
+            this.label39.Margin = (new global::System.Windows.Forms.Padding(150, 3, 40, 20));
+            this.label39.Name = ("label39");
+            this.label39.Size = (new global::System.Drawing.Size(332, 36));
+            this.label39.TabIndex = (34);
+            this.label39.Text = ("Editar");
+            // 
+            // label40
+            // 
+            this.label40.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label40.Location = (new global::System.Drawing.Point(40, 59));
+            this.label40.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label40.Name = ("label40");
+            this.label40.RightToLeft = (global::System.Windows.Forms.RightToLeft.No);
+            this.label40.Size = (new global::System.Drawing.Size(422, 36));
+            this.label40.TabIndex = (43);
+            this.label40.Text = ("Seleccione un Usuario");
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.comboBox1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.comboBox1.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.comboBox1.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 10.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.comboBox1.FormattingEnabled = (true);
+            this.comboBox1.Location = (new global::System.Drawing.Point(40, 118));
+            this.comboBox1.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.comboBox1.Name = ("comboBox1");
+            this.comboBox1.Size = (new global::System.Drawing.Size(479, 30));
+            this.comboBox1.TabIndex = (35);
+            this.comboBox1.SelectedIndexChanged += (this.comboBox1_SelectedIndexChanged_1);
+            // 
+            // Boton_Permisos
+            // 
+            this.Boton_Permisos.BackColor = (global::System.Drawing.Color.Crimson);
+            this.Boton_Permisos.BackgroundColor = (global::System.Drawing.Color.Crimson);
+            this.Boton_Permisos.BorderColor = (global::System.Drawing.Color.PaleVioletRed);
+            this.Boton_Permisos.BorderRadius = (20);
+            this.Boton_Permisos.BorderSize = (0);
+            this.Boton_Permisos.FlatAppearance.BorderSize = (0);
+            this.Boton_Permisos.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.Boton_Permisos.Font = (new global::System.Drawing.Font("Roboto", 13.8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.Boton_Permisos.ForeColor = (global::System.Drawing.Color.White);
+            this.Boton_Permisos.Location = (new global::System.Drawing.Point(280, 171));
+            this.Boton_Permisos.Margin = (new global::System.Windows.Forms.Padding(280, 3, 3, 3));
+            this.Boton_Permisos.Name = ("Boton_Permisos");
+            this.Boton_Permisos.Size = (new global::System.Drawing.Size(239, 49));
+            this.Boton_Permisos.TabIndex = (42);
+            this.Boton_Permisos.Text = ("Permisos de Lectura");
+            this.Boton_Permisos.TextColor = (global::System.Drawing.Color.White);
+            this.Boton_Permisos.UseVisualStyleBackColor = (false);
+            this.Boton_Permisos.Click += (this.Boton_Permisos_Click);
+            // 
+            // label41
+            // 
+            this.label41.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label41.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label41.Location = (new global::System.Drawing.Point(40, 223));
+            this.label41.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label41.Name = ("label41");
+            this.label41.RightToLeft = (global::System.Windows.Forms.RightToLeft.No);
+            this.label41.Size = (new global::System.Drawing.Size(479, 36));
+            this.label41.TabIndex = (36);
+            this.label41.Text = ("Usuario");
+            // 
+            // textBox2
+            // 
+            this.textBox2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.textBox2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.textBox2.Location = (new global::System.Drawing.Point(40, 282));
+            this.textBox2.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.textBox2.Name = ("textBox2");
+            this.textBox2.Size = (new global::System.Drawing.Size(479, 30));
+            this.textBox2.TabIndex = (37);
+            // 
+            // label42
+            // 
+            this.label42.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label42.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label42.Location = (new global::System.Drawing.Point(40, 332));
+            this.label42.Margin = (new global::System.Windows.Forms.Padding(40, 0, 3, 20));
+            this.label42.Name = ("label42");
+            this.label42.RightToLeft = (global::System.Windows.Forms.RightToLeft.No);
+            this.label42.Size = (new global::System.Drawing.Size(479, 38));
+            this.label42.TabIndex = (38);
+            this.label42.Text = ("Contraseña");
+            // 
+            // textBox3
+            // 
+            this.textBox3.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.textBox3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 12F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.textBox3.Location = (new global::System.Drawing.Point(40, 393));
+            this.textBox3.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.textBox3.Name = ("textBox3");
+            this.textBox3.Size = (new global::System.Drawing.Size(479, 30));
+            this.textBox3.TabIndex = (39);
+            this.textBox3.UseSystemPasswordChar = (true);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = (true);
+            this.checkBox2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.checkBox2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 10.8F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.checkBox2.Location = (new global::System.Drawing.Point(40, 446));
+            this.checkBox2.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 20));
+            this.checkBox2.Name = ("checkBox2");
+            this.checkBox2.Size = (new global::System.Drawing.Size(479, 26));
+            this.checkBox2.TabIndex = (40);
+            this.checkBox2.Text = ("Ver contraseñas");
+            this.checkBox2.UseVisualStyleBackColor = (true);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Location = (new global::System.Drawing.Point(40, 495));
+            this.panel3.Margin = (new global::System.Windows.Forms.Padding(40, 3, 3, 0));
+            this.panel3.Name = ("panel3");
+            this.panel3.Size = (new global::System.Drawing.Size(422, 106));
+            this.panel3.TabIndex = (41);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatAppearance.BorderColor = (global::System.Drawing.Color.MediumBlue);
+            this.button2.FlatAppearance.BorderSize = (4);
+            this.button2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.button2.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.button2.Location = (new global::System.Drawing.Point(0, 0));
+            this.button2.Margin = (new global::System.Windows.Forms.Padding(101, 3, 3, 0));
+            this.button2.Name = ("button2");
+            this.button2.Size = (new global::System.Drawing.Size(176, 104));
+            this.button2.TabIndex = (32);
+            this.button2.Text = ("Editar");
+            this.button2.UseVisualStyleBackColor = (true);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)) | (global::System.Windows.Forms.AnchorStyles.Left)) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.FlatAppearance.BorderColor = (global::System.Drawing.Color.MediumBlue);
+            this.button3.FlatAppearance.BorderSize = (4);
+            this.button3.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.button3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 18F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.button3.Location = (new global::System.Drawing.Point(245, 0));
+            this.button3.Margin = (new global::System.Windows.Forms.Padding(101, 3, 3, 0));
+            this.button3.Name = ("button3");
+            this.button3.Size = (new global::System.Drawing.Size(176, 104));
+            this.button3.TabIndex = (33);
+            this.button3.Text = ("Borrar");
+            this.button3.UseVisualStyleBackColor = (true);
+            this.button3.Click += (this.button3_Click_1);
             // 
             // Conexion_Sql
             // 
@@ -3258,6 +3271,7 @@
             this.TextBoxQuita.TabIndex = (128);
             this.TextBoxQuita.Texts = ("");
             this.TextBoxQuita.UnderlinedStyle = (true);
+            this.TextBoxQuita.KeyPress += (this.TextBoxQuita_KeyPress);
             // 
             // BotonEditarFechas2
             // 
@@ -3313,6 +3327,7 @@
             this.TextBoxLiquidacionIntencion.TabIndex = (124);
             this.TextBoxLiquidacionIntencion.Texts = ("");
             this.TextBoxLiquidacionIntencion.UnderlinedStyle = (true);
+            this.TextBoxLiquidacionIntencion.KeyPress += (this.TextBoxLiquidacionIntencion_KeyPress);
             // 
             // label68
             // 
@@ -3344,6 +3359,7 @@
             this.TextBoxPagare.TabIndex = (122);
             this.TextBoxPagare.Texts = ("");
             this.TextBoxPagare.UnderlinedStyle = (true);
+            this.TextBoxPagare.KeyPress += (this.TextBoxPagare_KeyPress);
             // 
             // label67
             // 
@@ -3375,6 +3391,7 @@
             this.TextBoxRestante.TabIndex = (118);
             this.TextBoxRestante.Texts = ("");
             this.TextBoxRestante.UnderlinedStyle = (true);
+            this.TextBoxRestante.KeyPress += (this.TextBoxRestante_KeyPress);
             // 
             // label69
             // 
@@ -3744,6 +3761,7 @@
             this.TextBoxCredito.TabIndex = (90);
             this.TextBoxCredito.Texts = ("");
             this.TextBoxCredito.UnderlinedStyle = (true);
+            this.TextBoxCredito.KeyPress += (this.TextBoxCredito_KeyPress);
             // 
             // label83
             // 
@@ -3945,6 +3963,7 @@
             this.TextBoxPago.Texts = ("");
             this.TextBoxPago.UnderlinedStyle = (true);
             this.TextBoxPago._TextChanged += (this.TextBoxPago__TextChanged);
+            this.TextBoxPago.KeyPress += (this.TextBoxPago_KeyPress);
             // 
             // label86
             // 
@@ -4019,10 +4038,10 @@
             // PanelEditar3
             // 
             this.PanelEditar3.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.PanelEditar3.Controls.Add(this.ResolucionDemanda);
             this.PanelEditar3.Controls.Add(this.groupBox3);
             this.PanelEditar3.Controls.Add(this.TextImporte3);
             this.PanelEditar3.Controls.Add(this.label103);
-            this.PanelEditar3.Controls.Add(this.TextResolucionDemanda);
             this.PanelEditar3.Controls.Add(this.label92);
             this.PanelEditar3.Controls.Add(this.TextBoxPagare3);
             this.PanelEditar3.Controls.Add(this.label81);
@@ -4054,6 +4073,31 @@
             this.PanelEditar3.Name = ("PanelEditar3");
             this.PanelEditar3.Size = (new global::System.Drawing.Size(1081, 719));
             this.PanelEditar3.TabIndex = (129);
+            // 
+            // ResolucionDemanda
+            // 
+            this.ResolucionDemanda.AutoCompleteCustomSource.AddRange(new global::System.String[] { "Ramon", "Roberto", "Yael" });
+            this.ResolucionDemanda.AutoCompleteMode = (global::System.Windows.Forms.AutoCompleteMode.Suggest);
+            this.ResolucionDemanda.AutoCompleteSource = (global::System.Windows.Forms.AutoCompleteSource.ListItems);
+            this.ResolucionDemanda.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.ResolucionDemanda.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.ResolucionDemanda.BorderSize = (2);
+            this.ResolucionDemanda.DropDownStyle = (global::System.Windows.Forms.ComboBoxStyle.DropDownList);
+            this.ResolucionDemanda.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.ResolucionDemanda.ForeColor = (global::System.Drawing.Color.Black);
+            this.ResolucionDemanda.IconColor = (global::System.Drawing.Color.DarkSlateGray);
+            this.ResolucionDemanda.Items.AddRange(new global::System.Object[] { "En tramite", "Embargo" });
+            this.ResolucionDemanda.ListBackColor = (global::System.Drawing.SystemColors.Info);
+            this.ResolucionDemanda.ListTextColor = (global::System.Drawing.Color.DimGray);
+            this.ResolucionDemanda.Location = (new global::System.Drawing.Point(254, 411));
+            this.ResolucionDemanda.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.ResolucionDemanda.MinimumSize = (new global::System.Drawing.Size(229, 40));
+            this.ResolucionDemanda.Name = ("ResolucionDemanda");
+            this.ResolucionDemanda.Padding = (new global::System.Windows.Forms.Padding(2, 3, 2, 3));
+            this.ResolucionDemanda.Size = (new global::System.Drawing.Size(361, 53));
+            this.ResolucionDemanda.TabIndex = (96);
+            this.ResolucionDemanda.Tag = ("Seleccione al promotor");
+            this.ResolucionDemanda.Texts = ("Seleccione la resolucion");
             // 
             // groupBox3
             // 
@@ -4123,7 +4167,7 @@
             this.TextImporte3.BorderRadius = (0);
             this.TextImporte3.BorderSize = (2);
             this.TextImporte3.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.TextImporte3.Location = (new global::System.Drawing.Point(258, 486));
+            this.TextImporte3.Location = (new global::System.Drawing.Point(191, 488));
             this.TextImporte3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.TextImporte3.Multiline = (false);
             this.TextImporte3.Name = ("TextImporte3");
@@ -4135,6 +4179,7 @@
             this.TextImporte3.TabIndex = (128);
             this.TextImporte3.Texts = ("");
             this.TextImporte3.UnderlinedStyle = (true);
+            this.TextImporte3.KeyPress += (this.TextImporte3_KeyPress);
             // 
             // label103
             // 
@@ -4145,26 +4190,6 @@
             this.label103.Size = (new global::System.Drawing.Size(101, 29));
             this.label103.TabIndex = (127);
             this.label103.Text = ("Importe:");
-            // 
-            // TextResolucionDemanda
-            // 
-            this.TextResolucionDemanda.BorderColor = (global::System.Drawing.Color.DarkSlateGray);
-            this.TextResolucionDemanda.BorderFocusColor = (global::System.Drawing.SystemColors.Info);
-            this.TextResolucionDemanda.BorderRadius = (0);
-            this.TextResolucionDemanda.BorderSize = (2);
-            this.TextResolucionDemanda.Font = (new global::System.Drawing.Font("Microsoft Sans Serif", 14.25F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
-            this.TextResolucionDemanda.Location = (new global::System.Drawing.Point(258, 409));
-            this.TextResolucionDemanda.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
-            this.TextResolucionDemanda.Multiline = (false);
-            this.TextResolucionDemanda.Name = ("TextResolucionDemanda");
-            this.TextResolucionDemanda.Padding = (new global::System.Windows.Forms.Padding(11, 9, 11, 9));
-            this.TextResolucionDemanda.PasswordChar = (false);
-            this.TextResolucionDemanda.PlaceholderColor = (global::System.Drawing.Color.DimGray);
-            this.TextResolucionDemanda.PlaceholderText = ("");
-            this.TextResolucionDemanda.Size = (new global::System.Drawing.Size(413, 48));
-            this.TextResolucionDemanda.TabIndex = (126);
-            this.TextResolucionDemanda.Texts = ("");
-            this.TextResolucionDemanda.UnderlinedStyle = (true);
             // 
             // label92
             // 
@@ -4195,6 +4220,7 @@
             this.TextBoxPagare3.TabIndex = (122);
             this.TextBoxPagare3.Texts = ("");
             this.TextBoxPagare3.UnderlinedStyle = (true);
+            this.TextBoxPagare3.KeyPress += (this.TextBoxPagare3_KeyPress);
             // 
             // label81
             // 
@@ -4503,6 +4529,8 @@
             this.TextBoxCredito3.TabIndex = (90);
             this.TextBoxCredito3.Texts = ("");
             this.TextBoxCredito3.UnderlinedStyle = (true);
+            this.TextBoxCredito3._TextChanged += (this.TextBoxCredito3__TextChanged);
+            this.TextBoxCredito3.KeyPress += (this.TextBoxCredito3_KeyPress);
             // 
             // label105
             // 
@@ -4925,6 +4953,7 @@
             this.TextCreditoLiq.TabIndex = (133);
             this.TextCreditoLiq.Texts = ("");
             this.TextCreditoLiq.UnderlinedStyle = (true);
+            this.TextCreditoLiq.KeyPress += (this.TextCreditoLiq_KeyPress);
             // 
             // label115
             // 
@@ -4995,16 +5024,16 @@
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1344, 799));
-            this.Controls.Add(this.PanelBien);
-            this.Controls.Add(this.PanelEditar2_2);
-            this.Controls.Add(this.pnlRegPago);
-            this.Controls.Add(this.PnlEditar2);
-            this.Controls.Add(this.PanelEditar3);
-            this.Controls.Add(this.PanelEditar);
-            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.pnlListas);
-            this.Controls.Add(this.PanelEditarLiquidados);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PanelEditarLiquidados);
+            this.Controls.Add(this.PanelEditar);
+            this.Controls.Add(this.PanelEditar3);
+            this.Controls.Add(this.PnlEditar2);
+            this.Controls.Add(this.PanelEditar2_2);
+            this.Controls.Add(this.PanelBien);
+            this.Controls.Add(this.pnlRegPago);
+            this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = (global::System.Windows.Forms.FormBorderStyle.Fixed3D);
@@ -5039,11 +5068,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.Conexion_Sql.ResumeLayout(false);
             this.Conexion_Sql.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -5183,20 +5212,7 @@
         private TextBox TextboxConfirm;
         private CheckBox checkBox1;
         private Button button1;
-        private FlowLayoutPanel flowLayoutPanel5;
-        private Label label39;
-        private Label label40;
-        private ComboBox comboBox1;
-        private Label label41;
-        private TextBox textBox2;
-        private Label label42;
-        private TextBox textBox3;
-        private CheckBox checkBox2;
-        private Label AvisoVacio2;
         private Label AvisoVacio;
-        private Panel panel3;
-        private Button button2;
-        private Button button3;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage Conexion_Sql;
@@ -5272,7 +5288,6 @@
         private global::System.Windows.Forms.Label label80;
         private global::System.Windows.Forms.Label LabelNombreEditar2_2;
         private global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado dateTimePickerPersonalizado4;
-        private global::System.Windows.Forms.Label label82;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxCredito;
         private global::System.Windows.Forms.Label label83;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxNombre;
@@ -5297,7 +5312,6 @@
         private global::System.Windows.Forms.Panel PanelEditar3;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextImporte3;
         private global::System.Windows.Forms.Label label103;
-        private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextResolucionDemanda;
         private global::System.Windows.Forms.Label label92;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxPagare3;
         private global::System.Windows.Forms.Label label81;
@@ -5358,5 +5372,19 @@
         private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox9;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxRestantepagos;
         private global::System.Windows.Forms.Label label17;
+        private global::FutureLending.ControlesPersonalizados.RJComboBox ResolucionDemanda;
+        private global::System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private global::System.Windows.Forms.Panel panel3;
+        private global::System.Windows.Forms.Button button2;
+        private global::System.Windows.Forms.Button button3;
+        private global::FutureLending.Controles_personalizados.RJButton Boton_Permisos;
+        private global::System.Windows.Forms.ComboBox comboBox1;
+        private global::System.Windows.Forms.Label label41;
+        private global::System.Windows.Forms.TextBox textBox2;
+        private global::System.Windows.Forms.Label label42;
+        private global::System.Windows.Forms.TextBox textBox3;
+        private global::System.Windows.Forms.CheckBox checkBox2;
+        private global::System.Windows.Forms.Label label39;
+        private global::System.Windows.Forms.Label label40;
     }
 }

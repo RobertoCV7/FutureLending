@@ -12,6 +12,7 @@ namespace FutureLending
 {
     public partial class Inicio_Sesion : Form
     {
+        public static string NombreUsuario { get; private set; }
         public Inicio_Sesion()
         {
             InitializeComponent();
@@ -21,10 +22,11 @@ namespace FutureLending
         {
             this.Close();
         }
-
+        string usuario1;
         private void Button1_Click(object sender, EventArgs e)
         {
             string usuariop = TextUsuario.Text.ToString();
+            NombreUsuario = usuariop;
             string contrap = TextContra.Text.ToString();
             bool cerrar;
             cerrar = Accesos.Accesar(usuariop, contrap);
@@ -40,14 +42,6 @@ namespace FutureLending
                 Mensaje.Text = "Usuario o Contraseña incorrectos ";
             }
         }
-        private void Inicio_Sesion_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextContra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

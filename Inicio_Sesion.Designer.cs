@@ -145,7 +145,6 @@
             TextContra.Size = new Size(281, 32);
             TextContra.TabIndex = 8;
             TextContra.UseSystemPasswordChar = true;
-            TextContra.TextChanged += TextContra_TextChanged;
             // 
             // button1
             // 
@@ -231,7 +230,6 @@
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio_Sesion";
-            Load += Inicio_Sesion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
