@@ -276,47 +276,39 @@ namespace FutureLending
         #region Listas
         private void BtnListas_Click(object sender, EventArgs e)
         {
+            int a = 0;
             List<string> list = Accesos.ObtenerPermisosUsuario(Inicio_Sesion.NombreUsuario);
             if (list != null)
             {
                 // Bloquear y deshabilitar todos los botones por defecto
+                deshabilitartodos();
                 btnLista1.Enabled = false;
                 btnLista1.Click -= BtnLista1_Click;
                 btnLista1.MouseDown -= BtnLista1_MouseDown;
                 btnLista1.TabStop = false;
-                btnLista1.FlatStyle = FlatStyle.Flat;
-                btnLista1.FlatAppearance.MouseOverBackColor = btnLista1.BackColor;
-                btnLista1.FlatAppearance.MouseDownBackColor = btnLista1.BackColor;
-                deshabilitartodos();
 
                 btnLista2.Enabled = false;
                 btnLista2.Click -= BtnLista2_Click;
+                btnLista2.MouseDown -= BtnLista2_MouseDown;
                 btnLista2.TabStop = false;
-                btnLista2.FlatStyle = FlatStyle.Flat;
-                btnLista2.FlatAppearance.MouseOverBackColor = btnLista2.BackColor;
-                btnLista2.FlatAppearance.MouseDownBackColor = btnLista2.BackColor;
 
-                
                 btnLista3.Enabled = false;
                 btnLista3.Click -= BtnLista3_Click;
+                btnLista3.MouseDown += BtnLista3_MouseDown;
                 btnLista3.TabStop = false;
-                btnLista3.FlatStyle = FlatStyle.Flat;
-                btnLista3.FlatAppearance.MouseOverBackColor = btnLista3.BackColor;
-                btnLista3.FlatAppearance.MouseDownBackColor = btnLista3.BackColor;
+
 
 
                 btnLiquidados.Enabled = false;
                 btnLiquidados.Click -= BtnLiquidados_Click;
+                btnLiquidados.MouseDown += BtnLiquidados_MouseDown;
                 btnLiquidados.TabStop = false;
-                btnLiquidados.FlatStyle = FlatStyle.Flat;
-                btnLiquidados.FlatAppearance.MouseOverBackColor = btnLiquidados.BackColor;
-                btnLiquidados.FlatAppearance.MouseDownBackColor = btnLiquidados.BackColor;
+
 
 
                 // Desbloquear y habilitar los botones especificados en la lista
                 foreach (string item in list)
                 {
-                    MessageBox.Show(item);
                     switch (item)
                     {
                         case "lista1":
@@ -324,45 +316,65 @@ namespace FutureLending
                             btnLista1.Click += BtnLista1_Click;
                             btnLista1.MouseDown += BtnLista1_MouseDown;
                             btnLista1.TabStop = true;
-                            btnLista1.FlatStyle = FlatStyle.Standard;
+
+                            a += 1;
                             break;
                         case "lista2":
                             btnLista2.Enabled = true;
                             btnLista2.Click += BtnLista2_Click;
+                            btnLista2.MouseDown += BtnLista2_MouseDown;
                             btnLista2.TabStop = true;
-                            btnLista2.FlatStyle = FlatStyle.Standard;
+
+                            a += 1;
                             break;
                         case "lista3":
                             btnLista3.Enabled = true;
                             btnLista3.Click += BtnLista3_Click;
+                            btnLista3.MouseDown += BtnLista3_MouseDown;
                             btnLista3.TabStop = true;
-                            btnLista3.FlatStyle = FlatStyle.Standard;
+
+                            a += 1;
                             break;
                         case "liquidados":
                             btnLiquidados.Enabled = true;
                             btnLiquidados.Click += BtnLiquidados_Click;
+                            btnLiquidados.MouseDown += BtnLiquidados_MouseDown;
                             btnLiquidados.TabStop = true;
-                            btnLiquidados.FlatStyle = FlatStyle.Standard;
+
+                            a += 1;
                             break;
                     }
                 }
+                if (a == 4)
+                {
+                    habilitartodos();
+                }
+                a = 0;
 
 
             }
 
             lblTitle.Text = "Listas Completas";
             pnlListas.BringToFront();
-           
 
+
+        }
+        void habilitartodos()
+        {
+            btnMostrarTodos.Enabled = true;
+            btnMostrarTodos.Click += BtnMostrarTodos_Click;
+            btnMostrarTodos.MouseDown += BtnMostrarTodos_MouseDown;
+            btnMostrarTodos.TabStop = true;
+            btnMostrarTodos.FlatStyle = FlatStyle.Flat;
+    
         }
         void deshabilitartodos()
         {
             btnMostrarTodos.Enabled = false;
             btnMostrarTodos.Click -= BtnMostrarTodos_Click;
+            btnMostrarTodos.MouseDown -= BtnMostrarTodos_MouseDown;
             btnMostrarTodos.TabStop = false;
-            btnMostrarTodos.FlatStyle = FlatStyle.Flat;
-            btnMostrarTodos.FlatAppearance.MouseOverBackColor = btnLiquidados.BackColor;
-            btnMostrarTodos.FlatAppearance.MouseDownBackColor = btnLiquidados.BackColor;
+
         }
         private void RjButton1_Click_1(object sender, EventArgs e)
         {
@@ -1953,6 +1965,26 @@ namespace FutureLending
         }
 
         private void BtnLista1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BtnLista2_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BtnLista3_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BtnLiquidados_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void BtnMostrarTodos_MouseDown(object sender, MouseEventArgs e)
         {
 
         }

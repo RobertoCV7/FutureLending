@@ -1533,6 +1533,7 @@
             this.btnLista2.TextColor = (global::System.Drawing.Color.Transparent);
             this.btnLista2.UseVisualStyleBackColor = (false);
             this.btnLista2.Click += (this.BtnLista2_Click);
+            this.btnLista2.MouseDown += (this.BtnLista2_MouseDown);
             // 
             // btnLista3
             // 
@@ -1555,6 +1556,7 @@
             this.btnLista3.TextColor = (global::System.Drawing.Color.Transparent);
             this.btnLista3.UseVisualStyleBackColor = (false);
             this.btnLista3.Click += (this.BtnLista3_Click);
+            this.btnLista3.MouseDown += (this.BtnLista3_MouseDown);
             // 
             // btnMostrarTodos
             // 
@@ -1577,6 +1579,7 @@
             this.btnMostrarTodos.TextColor = (global::System.Drawing.Color.Transparent);
             this.btnMostrarTodos.UseVisualStyleBackColor = (false);
             this.btnMostrarTodos.Click += (this.BtnMostrarTodos_Click);
+            this.btnMostrarTodos.MouseDown += (this.BtnMostrarTodos_MouseDown);
             // 
             // btnLiquidados
             // 
@@ -1599,6 +1602,7 @@
             this.btnLiquidados.TextColor = (global::System.Drawing.Color.Transparent);
             this.btnLiquidados.UseVisualStyleBackColor = (false);
             this.btnLiquidados.Click += (this.BtnLiquidados_Click);
+            this.btnLiquidados.MouseDown += (this.BtnLiquidados_MouseDown);
             // 
             // rjButton1
             // 
@@ -5025,13 +5029,13 @@
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1344, 799));
             this.Controls.Add(this.pnlListas);
+            this.Controls.Add(this.PanelBien);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelEditarLiquidados);
             this.Controls.Add(this.PanelEditar);
             this.Controls.Add(this.PanelEditar3);
             this.Controls.Add(this.PnlEditar2);
             this.Controls.Add(this.PanelEditar2_2);
-            this.Controls.Add(this.PanelBien);
             this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.panelTitleBar);
