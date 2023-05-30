@@ -58,7 +58,6 @@
             // 
             comboBox1.Font = new Font("Roboto Medium", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Lista 1", "Lista 2", "Lista 3", "Lista Liquidados", "Todas las Listas" });
             comboBox1.Location = new Point(62, 163);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(214, 36);

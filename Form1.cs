@@ -274,6 +274,11 @@ namespace FutureLending
         #endregion
 
         #region Listas
+        public static bool boton1 { get; private set; }
+        public static bool boton2 { get; private set; }
+        public static bool boton3 { get; private set; }
+        public static bool boton4 { get; private set; }
+
         private void BtnListas_Click(object sender, EventArgs e)
         {
             int a = 0;
@@ -316,6 +321,7 @@ namespace FutureLending
                             btnLista1.Click += BtnLista1_Click;
                             btnLista1.MouseDown += BtnLista1_MouseDown;
                             btnLista1.TabStop = true;
+                            boton1 = true;
 
                             a += 1;
                             break;
@@ -324,7 +330,7 @@ namespace FutureLending
                             btnLista2.Click += BtnLista2_Click;
                             btnLista2.MouseDown += BtnLista2_MouseDown;
                             btnLista2.TabStop = true;
-
+                            boton2 = true;
                             a += 1;
                             break;
                         case "lista3":
@@ -332,7 +338,7 @@ namespace FutureLending
                             btnLista3.Click += BtnLista3_Click;
                             btnLista3.MouseDown += BtnLista3_MouseDown;
                             btnLista3.TabStop = true;
-
+                            boton3 = true;
                             a += 1;
                             break;
                         case "liquidados":
@@ -340,7 +346,7 @@ namespace FutureLending
                             btnLiquidados.Click += BtnLiquidados_Click;
                             btnLiquidados.MouseDown += BtnLiquidados_MouseDown;
                             btnLiquidados.TabStop = true;
-
+                            boton4 = true;
                             a += 1;
                             break;
                     }
@@ -1143,6 +1149,7 @@ namespace FutureLending
         //Para desactivar los botones mientras se imprime una tabla
         private void DesactivarBotones()
         {
+           
             btnLista1.Enabled = false;
             btnLista2.Enabled = false;
             btnLista3.Enabled = false;
@@ -1157,12 +1164,32 @@ namespace FutureLending
         //Se reactivan los botones una vez se imprime la tabla
         private void ActivarListas()
         {
-            btnLista1.Enabled = true;
-            btnLista2.Enabled = true;
-            btnLista3.Enabled = true;
-            btnMostrarTodos.Enabled = true;
-            btnLiquidados.Enabled = true;
+            if (boton1)
+            {
+                btnLista1.Enabled = true;
+            }
+            if (boton2)
+            {
+                btnLista2.Enabled = true;
+            }
+            if (boton3)
+            {
+                btnLista3.Enabled = true;
+            }
+            if (boton4)
+            {
+                btnLiquidados.Enabled = true;
+            }
+            if(!boton1 || !boton2 || !boton3 || !boton4)
+            {
+
+            }
+            else
+            {
+                btnMostrarTodos.Enabled = true;
+            }
             rjButton1.Enabled = true;
+
         }
 
         private void ActivarEditar()

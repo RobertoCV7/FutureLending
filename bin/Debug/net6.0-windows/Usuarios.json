@@ -15,8 +15,8 @@
     "Permisos": {
       "lista1": false,
       "lista2": true,
-      "lista3": true,
-      "liquidados": true
+      "lista3": false,
+      "liquidados": false
     }
   }
 ]
