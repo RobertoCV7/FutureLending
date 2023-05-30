@@ -90,7 +90,7 @@ namespace FutureLending
             // Escribe los nombres de las columnas en el archivo Excel
             for (int col = 0; col < nombresColumnas.Count; col++)
             {
-                worksheet.Cells[1, col + 1].Value = Nombres_Lisat2[col];
+                worksheet.Cells[1, col + 1].Value = nombresColumnas[col];
                 worksheet.Cells[1, col + 1].Style.Font.Bold = true;
                 worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                 worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;

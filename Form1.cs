@@ -372,7 +372,7 @@ namespace FutureLending
             btnMostrarTodos.MouseDown += BtnMostrarTodos_MouseDown;
             btnMostrarTodos.TabStop = true;
             btnMostrarTodos.FlatStyle = FlatStyle.Flat;
-    
+
         }
         void deshabilitartodos()
         {
@@ -1149,7 +1149,7 @@ namespace FutureLending
         //Para desactivar los botones mientras se imprime una tabla
         private void DesactivarBotones()
         {
-           
+
             btnLista1.Enabled = false;
             btnLista2.Enabled = false;
             btnLista3.Enabled = false;
@@ -1180,7 +1180,7 @@ namespace FutureLending
             {
                 btnLiquidados.Enabled = true;
             }
-            if(!boton1 || !boton2 || !boton3 || !boton4)
+            if (!boton1 || !boton2 || !boton3 || !boton4)
             {
 
             }

@@ -89,6 +89,7 @@ namespace FutureLending
                         reiniciartodo();
                         break;
                 }
+                this.Close();
             }
         }
         void reiniciartodo()

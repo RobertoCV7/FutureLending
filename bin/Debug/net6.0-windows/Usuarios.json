@@ -13,7 +13,7 @@
     "Usuario": "admin",
     "Contraseña": "",
     "Permisos": {
-      "lista1": false,
+      "lista1": true,
       "lista2": true,
       "lista3": false,
       "liquidados": false
