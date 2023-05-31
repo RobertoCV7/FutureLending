@@ -43,11 +43,12 @@
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Segoe UI Symbol", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(62, 282);
+            rjButton1.Location = new Point(32, 202);
+            rjButton1.Margin = new Padding(3, 2, 3, 2);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(218, 82);
+            rjButton1.Size = new Size(213, 72);
             rjButton1.TabIndex = 0;
             rjButton1.Text = "Exportar";
             rjButton1.TextColor = Color.White;
@@ -56,33 +57,36 @@
             // 
             // comboBox1
             // 
-            comboBox1.Font = new Font("Roboto Medium", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBox1.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(62, 163);
+            comboBox1.Location = new Point(32, 95);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(214, 36);
+            comboBox1.Size = new Size(241, 32);
             comboBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(48, 53);
+            label1.Font = new Font("Cooper Black", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(32, 9);
             label1.Name = "label1";
-            label1.Size = new Size(275, 46);
+            label1.Size = new Size(241, 31);
             label1.TabIndex = 2;
             label1.Text = "Exportar a Excel";
             // 
             // Exportar_Excel
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(355, 400);
+            ClientSize = new Size(311, 300);
             Controls.Add(label1);
             Controls.Add(comboBox1);
             Controls.Add(rjButton1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "Exportar_Excel";
             Text = "Exportar_Excel";
             ResumeLayout(false);

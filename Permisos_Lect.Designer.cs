@@ -38,47 +38,49 @@
             // checkedListBox1
             // 
             checkedListBox1.BackColor = SystemColors.Info;
-            checkedListBox1.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            checkedListBox1.Font = new Font("Consolas", 18F, FontStyle.Bold, GraphicsUnit.Point);
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "lista1", "lista2", "lista3", "liquidados" });
-            checkedListBox1.Location = new Point(63, 92);
+            checkedListBox1.Location = new Point(44, 72);
+            checkedListBox1.Margin = new Padding(3, 2, 3, 2);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(256, 160);
+            checkedListBox1.Size = new Size(235, 159);
             checkedListBox1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(3, 26);
+            label1.Font = new Font("Consolas", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(3, 20);
             label1.Name = "label1";
-            label1.Size = new Size(129, 37);
+            label1.Size = new Size(116, 28);
             label1.TabIndex = 1;
             label1.Text = "Usuario:";
             // 
             // Label_User
             // 
             Label_User.AutoSize = true;
-            Label_User.Font = new Font("Roboto", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            Label_User.Location = new Point(147, 26);
+            Label_User.Font = new Font("Consolas", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            Label_User.Location = new Point(129, 20);
             Label_User.Name = "Label_User";
-            Label_User.Size = new Size(0, 37);
+            Label_User.Size = new Size(0, 28);
             Label_User.TabIndex = 2;
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.MediumSlateBlue;
-            rjButton1.BackgroundColor = Color.MediumSlateBlue;
+            rjButton1.BackColor = Color.Crimson;
+            rjButton1.BackgroundColor = Color.Crimson;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Roboto Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.Font = new Font("Cooper Black", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(74, 313);
+            rjButton1.Location = new Point(55, 249);
+            rjButton1.Margin = new Padding(3, 2, 3, 2);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(225, 76);
+            rjButton1.Size = new Size(215, 75);
             rjButton1.TabIndex = 3;
             rjButton1.Text = "Guardar";
             rjButton1.TextColor = Color.White;
@@ -87,16 +89,19 @@
             // 
             // Permisos_Lect
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(388, 416);
+            ClientSize = new Size(350, 335);
             Controls.Add(rjButton1);
             Controls.Add(Label_User);
             Controls.Add(label1);
             Controls.Add(checkedListBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "Permisos_Lect";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Permisos de Lectura";
             ResumeLayout(false);
             PerformLayout();

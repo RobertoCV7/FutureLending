@@ -45,15 +45,14 @@
             TextImporte3.BorderRadius = 0;
             TextImporte3.BorderSize = 2;
             TextImporte3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TextImporte3.Location = new Point(285, 179);
-            TextImporte3.Margin = new Padding(3, 4, 3, 4);
+            TextImporte3.Location = new Point(250, 167);
             TextImporte3.Multiline = false;
             TextImporte3.Name = "TextImporte3";
-            TextImporte3.Padding = new Padding(11, 9, 11, 9);
+            TextImporte3.Padding = new Padding(10, 7, 10, 7);
             TextImporte3.PasswordChar = false;
             TextImporte3.PlaceholderColor = Color.DimGray;
             TextImporte3.PlaceholderText = "";
-            TextImporte3.Size = new Size(349, 48);
+            TextImporte3.Size = new Size(305, 39);
             TextImporte3.TabIndex = 136;
             TextImporte3.Texts = "";
             TextImporte3.UnderlinedStyle = true;
@@ -62,20 +61,20 @@
             // label103
             // 
             label103.AutoSize = true;
-            label103.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label103.Location = new Point(25, 198);
+            label103.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label103.Location = new Point(23, 181);
             label103.Name = "label103";
-            label103.Size = new Size(101, 29);
+            label103.Size = new Size(106, 24);
             label103.TabIndex = 135;
             label103.Text = "Importe:";
             // 
             // label92
             // 
             label92.AutoSize = true;
-            label92.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label92.Location = new Point(25, 117);
+            label92.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label92.Location = new Point(6, 111);
             label92.Name = "label92";
-            label92.Size = new Size(250, 29);
+            label92.Size = new Size(238, 24);
             label92.TabIndex = 133;
             label92.Text = "Resolucion Demanda:";
             // 
@@ -87,47 +86,48 @@
             ComboBoxResolucion3.BorderColor = Color.DarkSlateGray;
             ComboBoxResolucion3.BorderSize = 2;
             ComboBoxResolucion3.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxResolucion3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxResolucion3.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             ComboBoxResolucion3.ForeColor = Color.Black;
             ComboBoxResolucion3.IconColor = Color.DarkSlateGray;
             ComboBoxResolucion3.Items.AddRange(new object[] { "Liquidacion", "Convenio" });
             ComboBoxResolucion3.ListBackColor = SystemColors.Info;
             ComboBoxResolucion3.ListTextColor = Color.DimGray;
-            ComboBoxResolucion3.Location = new Point(273, 13);
-            ComboBoxResolucion3.Margin = new Padding(3, 4, 3, 4);
-            ComboBoxResolucion3.MinimumSize = new Size(229, 40);
+            ComboBoxResolucion3.Location = new Point(250, 11);
+            ComboBoxResolucion3.Margin = new Padding(3, 2, 3, 2);
+            ComboBoxResolucion3.MinimumSize = new Size(175, 22);
             ComboBoxResolucion3.Name = "ComboBoxResolucion3";
-            ComboBoxResolucion3.Padding = new Padding(2, 3, 2, 3);
-            ComboBoxResolucion3.Size = new Size(361, 55);
+            ComboBoxResolucion3.Padding = new Padding(2);
+            ComboBoxResolucion3.Size = new Size(369, 53);
             ComboBoxResolucion3.TabIndex = 129;
             ComboBoxResolucion3.Tag = "Selecciones un tipo de pago";
-            ComboBoxResolucion3.Texts = "Seleccione un tipo de pago";
+            ComboBoxResolucion3.Texts = "Seleccione un tipo de Resolucion";
             ComboBoxResolucion3.OnSelectedIndexChanged += ComboBoxResolucion3_OnSelectedIndexChanged;
             // 
             // label102
             // 
             label102.AutoSize = true;
-            label102.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label102.Location = new Point(25, 26);
+            label102.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label102.Location = new Point(6, 20);
             label102.Name = "label102";
-            label102.Size = new Size(230, 29);
+            label102.Size = new Size(238, 24);
             label102.TabIndex = 131;
             label102.Text = "Tipo de Resolucion:";
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.Pink;
-            rjButton1.BackgroundColor = Color.Pink;
+            rjButton1.BackColor = Color.Crimson;
+            rjButton1.BackgroundColor = Color.Crimson;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Roboto", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.Black;
-            rjButton1.Location = new Point(368, 296);
+            rjButton1.Location = new Point(331, 236);
+            rjButton1.Margin = new Padding(3, 2, 3, 2);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(266, 104);
+            rjButton1.Size = new Size(233, 78);
             rjButton1.TabIndex = 137;
             rjButton1.Text = "Mover";
             rjButton1.TextColor = Color.Black;
@@ -142,28 +142,28 @@
             ComboBoxResolucionD.BorderColor = Color.DarkSlateGray;
             ComboBoxResolucionD.BorderSize = 2;
             ComboBoxResolucionD.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxResolucionD.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxResolucionD.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             ComboBoxResolucionD.ForeColor = Color.Black;
             ComboBoxResolucionD.IconColor = Color.DarkSlateGray;
             ComboBoxResolucionD.Items.AddRange(new object[] { "En Tramite", "Embargo" });
             ComboBoxResolucionD.ListBackColor = SystemColors.Info;
             ComboBoxResolucionD.ListTextColor = Color.DimGray;
-            ComboBoxResolucionD.Location = new Point(273, 105);
-            ComboBoxResolucionD.Margin = new Padding(3, 4, 3, 4);
-            ComboBoxResolucionD.MinimumSize = new Size(229, 40);
+            ComboBoxResolucionD.Location = new Point(250, 111);
+            ComboBoxResolucionD.Margin = new Padding(3, 2, 3, 2);
+            ComboBoxResolucionD.MinimumSize = new Size(175, 22);
             ComboBoxResolucionD.Name = "ComboBoxResolucionD";
-            ComboBoxResolucionD.Padding = new Padding(2, 3, 2, 3);
-            ComboBoxResolucionD.Size = new Size(361, 55);
+            ComboBoxResolucionD.Padding = new Padding(2);
+            ComboBoxResolucionD.Size = new Size(369, 38);
             ComboBoxResolucionD.TabIndex = 138;
             ComboBoxResolucionD.Tag = "Selecciones un tipo de pago";
-            ComboBoxResolucionD.Texts = "Seleccione un tipo de pago";
+            ComboBoxResolucionD.Texts = "Seleccione una opcion";
             // 
             // PedirDatos3
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(700, 412);
+            ClientSize = new Size(627, 325);
             Controls.Add(ComboBoxResolucionD);
             Controls.Add(rjButton1);
             Controls.Add(TextImporte3);
@@ -172,6 +172,8 @@
             Controls.Add(ComboBoxResolucion3);
             Controls.Add(label102);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "PedirDatos3";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Informacion Lista3";

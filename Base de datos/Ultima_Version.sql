@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 28-05-2023 a las 09:53:54
+-- Tiempo de generación: 31-05-2023 a las 00:44:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -88,6 +88,13 @@ CREATE TABLE `lista1` (
   `Fecha14` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `lista1`
+--
+
+INSERT INTO `lista1` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Pagare`, `Fecha_Inicio`, `Fecha_Termino`, `Interes`, `Monto_Total`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
+('Promotor2', 'dona', '4000', '8000', '29/05/2023', '04/09/2023', 'Premier', '5,280.00', 'asas', 'asas', '12', '', '121212', 'asasas', 'Semanales', '5000', '05/06/2023-280', '12/06/2023', '19/06/2023', '26/06/2023', '03/07/2023', '10/07/2023', '17/07/2023', '24/07/2023', '31/07/2023', '07/08/2023', '14/08/2023', '21/08/2023', '28/08/2023', '04/09/2023');
+
 -- --------------------------------------------------------
 
 --
@@ -145,8 +152,9 @@ CREATE TABLE `lista2` (
 --
 
 INSERT INTO `lista2` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Monto_Restante`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_pago`, `Liquidacion_Intencion`, `Quita`, `FECHA1`, `PAGO1`, `FECHA2`, `PAGO2`, `FECHA3`, `PAGO3`, `FECHA4`, `PAGO4`, `FECHA5`, `PAGO5`, `FECHA6`, `PAGO6`, `FECHA7`, `PAGO7`, `FECHA8`, `PAGO8`, `FECHA9`, `PAGO9`, `FECHA10`, `PAGO10`, `FECHA11`, `PAGO11`, `FECHA12`, `PAGO12`, `FECHA13`, `PAGO13`, `FECHA14`, `PAGO14`, `Pago_Total_EXT`) VALUES
-('Promotor1', 'Cesar Donnet', '4000', '5,600.00', '8000', 'Paseo del rincon verde', 'San nicolas', '', '328', '4495919159', 'DonnetGastelum@gmail.com', 'Liquidacion', '', '6700', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '8000'),
-('Promotor2', 'Yarely Ruiz', '3200', '4,096.00', '6400', 'asas', 'asas', '12', '', '121212', 'asasas', 'Liquidacion', '1200', '5200', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '6400');
+('Promotor1', 'alex', '4000', '5,600.00', '8000', 'asas', 'sas', '12', '', '121212', 'qsasasas', 'Liquidacion', '1000', '7000', '29/05/2023', '600', '-', '-', '-', '-', '29/05/2023', '800', '29/05/2023', '600', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '6000'),
+('Promotor1', 'Cesar Daniel', '4000', '5,600.00', '8000', 'asas', 'asas', '12', '', '121212', 'asasasas', 'Liquidacion', '500', '7500', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '8000'),
+('Promotor1', 'Cesar Donnet', '4000', '2000', '8000', 'asas', 'asas', '12', '', '1212', 'asas', 'Liquidacion', '1000', '7000', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '8000');
 
 -- --------------------------------------------------------
 
@@ -176,6 +184,29 @@ CREATE TABLE `lista3` (
 
 INSERT INTO `lista3` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_Resolucion`, `Resolucion_Demanda`, `Importe`) VALUES
 ('Promotor2', 'donnet', '4000', '8000', 'asas', 'asas', 'asas', '', 'asas', 'asas', 'Liquidacion', 'Embargo', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `Usuario` varchar(50) NOT NULL,
+  `Contraseña` varchar(50) NOT NULL,
+  `lista1` tinyint(1) NOT NULL,
+  `lista2` tinyint(1) NOT NULL,
+  `lista3` tinyint(1) NOT NULL,
+  `liquidados` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`Usuario`, `Contraseña`, `lista1`, `lista2`, `lista3`, `liquidados`) VALUES
+('root', '', 1, 1, 1, 1),
+('admin', '', 1, 1, 1, 1);
 
 --
 -- Índices para tablas volcadas

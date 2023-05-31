@@ -278,13 +278,14 @@ namespace FutureLending
         public static bool boton2 { get; private set; }
         public static bool boton3 { get; private set; }
         public static bool boton4 { get; private set; }
-
+        bool revisado = false;
         private void BtnListas_Click(object sender, EventArgs e)
         {
             int a = 0;
             List<string> list = Accesos.ObtenerPermisosUsuario(Inicio_Sesion.NombreUsuario);
-            if (list != null)
+            if (list != null && !revisado)
             {
+                revisado = true;
                 // Bloquear y deshabilitar todos los botones por defecto
                 deshabilitartodos();
                 btnLista1.Enabled = false;
@@ -630,7 +631,7 @@ namespace FutureLending
             }
             else
             {
-                MessageBox.Show("Error al guardar los cambios");
+                MessageB("Error al guardar los cambios", "Alerta", 2);
             }
         }
         private void BtnMover_Click(object sender, EventArgs e) //boton para mover lista 1 a cualquier otra lista
@@ -670,7 +671,6 @@ namespace FutureLending
                         //Se toma encuenta 10% del Pagare y se le suma a su monto restante
                         int pag = int.Parse(InfoMov[4]);
                         double quita = (pag * .10);
-                        MessageBox.Show("" + quita + " 10% de pagare");
                         InfoMov[12] = quita.ToString();//Monto de Intencion es el 10% del pagare
                         InfoMov[13] = "0";//Monto de Quita es 0 por ser de convenio
                         double Ext = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(pag)); //en Uint para que no sea negativo jamas 
@@ -680,7 +680,6 @@ namespace FutureLending
                     for (int i = 14; i <= 41; i++)
                     {
                         InfoMov[i] = "-";
-                        MessageBox.Show(InfoMov[i]);
                     }
                     #endregion
                     Lectura_Base_Datos instancia = new();
@@ -1061,7 +1060,7 @@ namespace FutureLending
             }
             else
             {
-                MessageBox.Show("Error al editar");
+                MessageB("Error al editar", "Alerta", 2); ;
             }
         }
         private void RjButton9_Click(object sender, EventArgs e)//Mover de Lista 3 a Liquidados
@@ -1129,7 +1128,7 @@ namespace FutureLending
             }
             else
             {
-                MessageBox.Show("Error al guardar los cambios");
+                MessageB("Error al guardar los cambios", "Alerta", 2);
             }
         }
         #endregion
@@ -2012,6 +2011,32 @@ namespace FutureLending
         }
 
         private void BtnMostrarTodos_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool a = Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), textBox2.Text, textBox3.Text);
+            if (a)
+            {
+                comboBox1.Items.Clear();
+                textBox2.Text = "";
+                textBox3.Text = "";
+                List<string> usuarios = Accesos.CargarUsuarios();
+                foreach (var users in usuarios)
+                {
+                    comboBox1.Items.Add(users);
+                }
+                comboBox1.SelectedIndex = -1;
+            }
+            else
+            {
+                MessageB("Error al editar al usuario", "Error", 3);
+            }
+        }
+
+        private void label32_Click(object sender, EventArgs e)
         {
 
         }

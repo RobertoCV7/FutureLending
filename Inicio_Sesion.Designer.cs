@@ -47,6 +47,8 @@
             bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(components);
             bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(components);
             bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(components);
+            btnTodosSistemas = new FontAwesome.Sharp.IconButton();
+            bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -56,9 +58,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(42, 12);
+            pictureBox1.Location = new Point(37, 9);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(554, 574);
+            pictureBox1.Size = new Size(485, 430);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -67,8 +70,9 @@
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 1);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(36, 34);
+            pictureBox2.Size = new Size(32, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -77,39 +81,40 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Roboto Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(721, 35);
+            label1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(599, 18);
             label1.Name = "label1";
-            label1.Size = new Size(226, 41);
+            label1.Size = new Size(235, 36);
             label1.TabIndex = 2;
             label1.Text = "Iniciar Sesión";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(657, 118);
+            label2.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(575, 73);
             label2.Name = "label2";
-            label2.Size = new Size(91, 28);
+            label2.Size = new Size(109, 27);
             label2.TabIndex = 3;
             label2.Text = "Usuario";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(657, 265);
+            label3.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(575, 184);
             label3.Name = "label3";
-            label3.Size = new Size(130, 28);
+            label3.Size = new Size(151, 27);
             label3.TabIndex = 4;
             label3.Text = "Contraseña";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(657, 171);
+            pictureBox3.Location = new Point(569, 112);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(312, 65);
+            pictureBox3.Size = new Size(286, 56);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
@@ -117,9 +122,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(657, 314);
+            pictureBox4.Location = new Point(569, 230);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(312, 65);
+            pictureBox4.Size = new Size(286, 56);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 6;
             pictureBox4.TabStop = false;
@@ -128,21 +134,23 @@
             // 
             TextUsuario.BackColor = Color.FromArgb(28, 41, 86);
             TextUsuario.BorderStyle = BorderStyle.None;
-            TextUsuario.Font = new Font("Consolas", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            TextUsuario.Font = new Font("Consolas", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             TextUsuario.ForeColor = Color.White;
-            TextUsuario.Location = new Point(677, 188);
+            TextUsuario.Location = new Point(575, 127);
+            TextUsuario.Margin = new Padding(3, 2, 3, 2);
             TextUsuario.Name = "TextUsuario";
-            TextUsuario.Size = new Size(281, 32);
+            TextUsuario.Size = new Size(246, 32);
             TextUsuario.TabIndex = 7;
             // 
             // TextContra
             // 
             TextContra.BackColor = Color.FromArgb(28, 41, 86);
             TextContra.BorderStyle = BorderStyle.None;
-            TextContra.Font = new Font("Consolas", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            TextContra.Location = new Point(677, 334);
+            TextContra.Font = new Font("Consolas", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            TextContra.Location = new Point(575, 244);
+            TextContra.Margin = new Padding(3, 2, 3, 2);
             TextContra.Name = "TextContra";
-            TextContra.Size = new Size(281, 32);
+            TextContra.Size = new Size(259, 32);
             TextContra.TabIndex = 8;
             TextContra.UseSystemPasswordChar = true;
             // 
@@ -151,10 +159,11 @@
             button1.BackColor = Color.FromArgb(155, 145, 221);
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(657, 430);
+            button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(569, 305);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(312, 65);
+            button1.Size = new Size(279, 65);
             button1.TabIndex = 9;
             button1.Text = "Iniciar Sesión";
             button1.UseVisualStyleBackColor = false;
@@ -163,11 +172,11 @@
             // Mensaje
             // 
             Mensaje.AutoSize = true;
-            Mensaje.Font = new Font("Roboto Medium", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            Mensaje.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(657, 522);
+            Mensaje.Location = new Point(569, 390);
             Mensaje.Name = "Mensaje";
-            Mensaje.Size = new Size(0, 22);
+            Mensaje.Size = new Size(0, 24);
             Mensaje.TabIndex = 10;
             // 
             // bunifuElipse1
@@ -182,7 +191,7 @@
             // 
             // bunifuElipse3
             // 
-            bunifuElipse3.ElipseRadius = 15;
+            bunifuElipse3.ElipseRadius = 12;
             bunifuElipse3.TargetControl = pictureBox2;
             // 
             // bunifuElipse4
@@ -200,14 +209,40 @@
             bunifuElipse6.ElipseRadius = 30;
             bunifuElipse6.TargetControl = pictureBox4;
             // 
+            // btnTodosSistemas
+            // 
+            btnTodosSistemas.FlatAppearance.BorderSize = 0;
+            btnTodosSistemas.FlatStyle = FlatStyle.Flat;
+            btnTodosSistemas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTodosSistemas.ForeColor = Color.White;
+            btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            btnTodosSistemas.IconColor = Color.White;
+            btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTodosSistemas.Location = new Point(838, 386);
+            btnTodosSistemas.Name = "btnTodosSistemas";
+            btnTodosSistemas.Padding = new Padding(10, 0, 0, 0);
+            btnTodosSistemas.Size = new Size(68, 61);
+            btnTodosSistemas.TabIndex = 11;
+            btnTodosSistemas.Tag = "Reparar";
+            btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTodosSistemas.UseVisualStyleBackColor = true;
+            btnTodosSistemas.Click += btnTodosSistemas_Click;
+            // 
+            // bunifuElipse7
+            // 
+            bunifuElipse7.ElipseRadius = 100;
+            bunifuElipse7.TargetControl = btnTodosSistemas;
+            // 
             // Inicio_Sesion
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(10, 25, 74);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1035, 598);
+            ClientSize = new Size(906, 448);
             ControlBox = false;
+            Controls.Add(btnTodosSistemas);
             Controls.Add(Mensaje);
             Controls.Add(button1);
             Controls.Add(TextContra);
@@ -221,6 +256,7 @@
             Controls.Add(pictureBox1);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
@@ -257,5 +293,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
+        private FontAwesome.Sharp.IconButton btnTodosSistemas;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
     }
 }

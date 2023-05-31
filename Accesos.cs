@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Data;
 
 namespace FutureLending
 {
@@ -10,23 +12,24 @@ namespace FutureLending
         //Funcion que revisa si el usuario y contraseña ingresados son correctos
         public static bool Accesar(string user, string password)
         {
-            string jsonFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Usuarios.json";
             Lectura_Base_Datos a = new Lectura_Base_Datos();
+            MySqlConnection connection = a.Conector();
+        
             try
             {
-                // Leer el archivo JSON
-                JArray usuariosArray = JArray.Parse(File.ReadAllText(jsonFilePath));
-                foreach (JObject usuarioObj in usuariosArray.Cast<JObject>())
-                {
-                    string usuario = usuarioObj["Usuario"].ToString();
-                    string contra = usuarioObj["Contraseña"].ToString();
+                // Consultar la base de datos para encontrar el usuario y contraseña coincidentes
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Usuario", user);
+                command.Parameters.AddWithValue("@Contraseña", password);
+                int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    if (usuario.Equals(user) && contra.Equals(password))
-                    {
-                        a.Registro_Usuarios(user);
-                        return true;
-                    }
+                if (count > 0)
+                {
+                    a.Registro_Usuarios(user);
+                    return true;
                 }
+
                 return false;
             }
             catch (Exception ex)
@@ -34,145 +37,143 @@ namespace FutureLending
                 a.Registro_errores(ex.ToString());
                 return false;
             }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
+
         #endregion
 
         #region AgregarUsuario
 
-        public class Usuario
-        {
-            public string? Usuario1 { get; set; }
-            public string? Contraseña1 { get; set; }
-            public Permisos Permiso { get; set; }
-        }
-
-        public class Permisos
-        {
-            public bool lista1 { get; set; } = true;
-            public bool lista2 { get; set; } = true;
-            public bool lista3 { get; set; } = true;
-            public bool liquidados { get; set; } = true;
-        }
-
         public static bool AgregarUsuario(string nuevoUsuario, string nuevaContraseña)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-            string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            string jsonFilePath = directorioProyecto + "\\Usuarios.json";
+            MySqlConnection connection = a.Conector();
 
             try
-            {
-                // Leer el archivo JSON
-                JArray jsonArray = JArray.Parse(File.ReadAllText(jsonFilePath));
-
+            { 
                 // Verificar si ya existe un usuario con el mismo nombre
-                if (jsonArray.Any(u => u["Usuario"].ToString() == nuevoUsuario))
+                string existeUsuarioQuery = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @Usuario";
+                MySqlCommand existeUsuarioCommand = new MySqlCommand(existeUsuarioQuery, connection);
+                existeUsuarioCommand.Parameters.AddWithValue("@Usuario", nuevoUsuario);
+                int usuarioExistenteCount = Convert.ToInt32(existeUsuarioCommand.ExecuteScalar());
+
+                if (usuarioExistenteCount > 0)
                 {
                     return false;
                 }
 
-                // Crear el nuevo objeto de usuario con los permisos establecidos en false
-                JObject nuevoUsuarioObj = new JObject();
-                nuevoUsuarioObj["Usuario"] = nuevoUsuario;
-                nuevoUsuarioObj["Contraseña"] = nuevaContraseña;
-
-                JObject permisosObj = new JObject();
-                permisosObj["lista1"] = false;
-                permisosObj["lista2"] = false;
-                permisosObj["lista3"] = false;
-                permisosObj["liquidados"] = false;
-
-                nuevoUsuarioObj["Permisos"] = permisosObj;
-
-                // Agregar el nuevo usuario al arreglo JSON
-                jsonArray.Add(nuevoUsuarioObj);
-
-                // Guardar el JSON actualizado en el archivo
-                File.WriteAllText(jsonFilePath, jsonArray.ToString());
-
+                // Insertar el nuevo usuario en la base de datos
+                string insertarUsuarioQuery = "INSERT INTO Usuarios (Usuario, Contraseña, lista1, lista2, lista3, liquidados) VALUES (@Usuario, @Contraseña, @Lista1, @Lista2, @Lista3, @Liquidados)";
+                MySqlCommand insertarUsuarioCommand = new MySqlCommand(insertarUsuarioQuery, connection);
+                insertarUsuarioCommand.Parameters.AddWithValue("@Usuario", nuevoUsuario);
+                insertarUsuarioCommand.Parameters.AddWithValue("@Contraseña", nuevaContraseña);
+                insertarUsuarioCommand.Parameters.AddWithValue("@Lista1", false);
+                insertarUsuarioCommand.Parameters.AddWithValue("@Lista2", false);
+                insertarUsuarioCommand.Parameters.AddWithValue("@Lista3", false);
+                insertarUsuarioCommand.Parameters.AddWithValue("@Liquidados", false);
+                insertarUsuarioCommand.ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)
             {
                 a.Registro_errores(ex.ToString());
             }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
 
             return false;
         }
-
         #endregion
 
         #region EditarUsuarios
         //funcion que carga al combobox los usuarios que existen
-        public static List<string>? CargarUsuarios()
+        public static List<string> CargarUsuarios()
         {
+
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-            string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            string jsonFilePath = directorioProyecto + "\\Usuarios.json";
+           
+            MySqlConnection connection = a.Conector();
 
             try
             {
-                // Leer el archivo JSON
-                JArray jsonArray = JArray.Parse(File.ReadAllText(jsonFilePath));
+                // Consultar la base de datos para obtener los nombres de usuario
+                string query = "SELECT Usuario FROM Usuarios";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
 
-                // Obtener solo los nombres de usuario
+                // Obtener los nombres de usuario y almacenarlos en una lista
                 List<string> nombresUsuarios = new List<string>();
-                foreach (JObject usuarioObj in jsonArray.Cast<JObject>())
+                while (reader.Read())
                 {
-                    string usuario = usuarioObj["Usuario"].ToString();
+                    string usuario = reader["Usuario"].ToString();
                     nombresUsuarios.Add(usuario);
                 }
 
-                // Agregar los nombres de usuario al ComboBox
+                reader.Close();
+
                 return nombresUsuarios;
             }
             catch (Exception ex)
             {
                 a.Registro_errores(ex.ToString());
             }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
             return null;
         }
 
+
         // Función que edita el usuario recibiendo 2 parámetros
-        public static void EditarUsuarioContraseña(string usuario, string nuevoUsuario, string nuevaContraseña)
+        public static bool EditarUsuarioContraseña(string usuario, string nuevoUsuario, string nuevaContraseña)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-            string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            string jsonFilePath = directorioProyecto + "\\Usuarios.json";
+      
+            MySqlConnection connection = a.Conector();
 
             try
             {
-                // Leer el archivo JSON
-                JArray usuarios = JArray.Parse(File.ReadAllText(jsonFilePath));
 
-                // Buscar el usuario correspondiente
-                foreach (JObject usuarioObj in usuarios.Cast<JObject>())
-                {
-                    string nombreUsuario = usuarioObj["Usuario"].ToString();
-                    if (nombreUsuario.Equals(usuario))
-                    {
-                        // Obtener los permisos actuales antes de actualizar el objeto de usuario
-                        JToken permisos = usuarioObj["Permisos"];
-
-                        // Crear un nuevo objeto de usuario con el nombre y contraseña actualizados
-                        JObject nuevoUsuarioObj = new JObject();
-                        nuevoUsuarioObj["Usuario"] = nuevoUsuario;
-                        nuevoUsuarioObj["Contraseña"] = nuevaContraseña;
-                        nuevoUsuarioObj["Permisos"] = permisos;
-
-                        // Reemplazar el objeto de usuario original con el nuevo objeto
-                        usuarios[usuarios.IndexOf(usuarioObj)] = nuevoUsuarioObj;
-
-                        break;
-                    }
-                }
-
-                // Guardar los cambios en el archivo JSON
-                File.WriteAllText(jsonFilePath, usuarios.ToString());
+                // Actualizar el usuario y contraseña en la base de datos
+                string query = "UPDATE Usuarios SET Usuario = @NuevoUsuario, Contraseña = @NuevaContraseña WHERE Usuario = @Usuario";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NuevoUsuario", nuevoUsuario);
+                command.Parameters.AddWithValue("@NuevaContraseña", nuevaContraseña);
+                command.Parameters.AddWithValue("@Usuario", usuario);
+                command.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 a.Registro_errores(ex.ToString());
+                return false;
+            }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -182,28 +183,25 @@ namespace FutureLending
         public static bool EliminarUsuario(string nombreUsuario)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-            string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            string jsonFilePath = directorioProyecto + "\\Usuarios.json";
+      
+            MySqlConnection connection = a.Conector();
 
             try
             {
-                // Leer el archivo JSON
-                JArray jsonArray = JArray.Parse(File.ReadAllText(jsonFilePath));
+                // Verificar si el usuario existe
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @Usuario";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                int count = Convert.ToInt32(command.ExecuteScalar());
 
-                // Buscar el usuario por nombre
-                JObject usuarioObj = jsonArray.FirstOrDefault(u => u["Usuario"].ToString() == nombreUsuario) as JObject;
-
-                // Verificar si se encontró el usuario
-                if (usuarioObj != null)
+                if (count > 0)
                 {
-                    // Eliminar el usuario del arreglo JSON
-                    jsonArray.Remove(usuarioObj);
+                    // Eliminar el usuario de la base de datos
+                    query = "DELETE FROM Usuarios WHERE Usuario = @Usuario";
+                    command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                    command.ExecuteNonQuery();
 
-                    // Serializar el objeto contenedor a JSON
-                    string nuevoJson = jsonArray.ToString();
-
-                    // Guardar el JSON actualizado en el archivo
-                    File.WriteAllText(jsonFilePath, nuevoJson);
                     return true;
                 }
                 else
@@ -216,49 +214,73 @@ namespace FutureLending
             {
                 a.Registro_errores(ex.ToString());
             }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
 
             return false;
         }
+
         #endregion
 
         #region Leer permisos
         public static List<string> ObtenerPermisosUsuario(string nombreUsuario)
         {
-            string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            string jsonFilePath = directorioProyecto + "\\Usuarios.json";
+            Lectura_Base_Datos a = new();
+            MySqlConnection connection =a.Conector() ;
 
             try
             {
-                // Leer el archivo JSON
-                JArray jsonArray = JArray.Parse(File.ReadAllText(jsonFilePath));
+                // Consultar la base de datos para obtener los permisos del usuario
+                string query = "SELECT lista1, lista2, lista3, liquidados FROM Usuarios WHERE Usuario = @Usuario";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                MySqlDataReader reader = command.ExecuteReader();
 
-                // Buscar el usuario por nombre
-                JObject usuarioObj = jsonArray.FirstOrDefault(u => u["Usuario"].ToString() == nombreUsuario) as JObject;
+                // Obtener los permisos del usuario
+                List<string> permisos = new List<string>();
 
-                // Verificar si se encontró el usuario
-                if (usuarioObj != null)
+                if (reader.Read())
                 {
-                    // Obtener los permisos del usuario
-                    JObject permisosObj = usuarioObj["Permisos"] as JObject;
-
-                    // Crear una lista para almacenar los permisos
-                    List<string> permisos = new List<string>();
-
                     // Iterar sobre los permisos y agregar los que estén en true a la lista
-                    foreach (KeyValuePair<string, JToken> permiso in permisosObj)
+                    for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        if (permiso.Value.Type == JTokenType.Boolean && (bool)permiso.Value)
+                        string permiso = reader.GetName(i);
+
+                        if (reader.IsDBNull(i))
                         {
-                            permisos.Add(permiso.Key);
+                            continue;
+                        }
+
+                        bool valor = reader.GetBoolean(i);
+
+                        if (valor)
+                        {
+                            permisos.Add(permiso);
                         }
                     }
-
-                    return permisos;
                 }
+
+                reader.Close();
+
+                return permisos;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al obtener los permisos del usuario: " + ex.ToString());
+            }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
 
             return null;
@@ -267,54 +289,78 @@ namespace FutureLending
         public static bool EditarPermisosUsuario(string nombreUsuario, List<string> nuevosPermisos)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-            string directorioProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            string jsonFilePath = directorioProyecto + "\\Usuarios.json";
+            MySqlConnection connection = a.Conector();
 
             try
             {
-                // Leer el archivo JSON
-                JArray jsonArray = JArray.Parse(File.ReadAllText(jsonFilePath));
+                // Iniciar una transacción para asegurar la atomicidad de la operación
+                MySqlTransaction transaction = connection.BeginTransaction();
 
-                // Buscar el usuario por nombre
-                JObject usuarioObj = jsonArray.FirstOrDefault(u => u["Usuario"].ToString() == nombreUsuario) as JObject;
-
-                // Verificar si se encontró el usuario
-                if (usuarioObj != null)
+                try
                 {
-                    // Obtener el objeto de permisos del usuario
-                    JObject permisosObj = usuarioObj["Permisos"] as JObject;
+                    // Verificar si el usuario existe
+                    string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @Usuario";
+                    MySqlCommand command = new MySqlCommand(query, connection, transaction);
+                    command.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    // Establecer en false todos los permisos existentes
-                    foreach (var permisoProp in permisosObj.Properties())
+                    if (count > 0)
                     {
-                        permisoProp.Value = false;
-                    }
+                        // Actualizar los permisos del usuario en la base de datos
 
-                    // Establecer en true los nuevos permisos recibidos
-                    foreach (var permiso in nuevosPermisos)
-                    {
-                        if (permisosObj.ContainsKey(permiso))
+                        // Establecer en false todos los permisos existentes
+                        query = "UPDATE Usuarios SET lista1 = @lista1, lista2 = @lista2, lista3 = @lista3, liquidados = @liquidados WHERE Usuario = @Usuario";
+                        command = new MySqlCommand(query, connection, transaction);
+                        command.Parameters.AddWithValue("@lista1", false);
+                        command.Parameters.AddWithValue("@lista2", false);
+                        command.Parameters.AddWithValue("@lista3", false);
+                        command.Parameters.AddWithValue("@liquidados", false);
+                        command.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                        command.ExecuteNonQuery();
+
+                        // Establecer en true los nuevos permisos recibidos
+                        foreach (var permiso in nuevosPermisos)
                         {
-                            permisosObj[permiso] = true;
+                            query = $"UPDATE Usuarios SET {permiso} = @Valor WHERE Usuario = @Usuario";
+                            command = new MySqlCommand(query, connection, transaction);
+                            command.Parameters.AddWithValue("@Valor", true);
+                            command.Parameters.AddWithValue("@Usuario", nombreUsuario);
+                            command.ExecuteNonQuery();
                         }
-                    }
 
-                    // Guardar los cambios en el archivo JSON
-                    File.WriteAllText(jsonFilePath, jsonArray.ToString());
-                    return true;
+                        // Confirmar la transacción
+                        transaction.Commit();
+
+                        return true;
+                    }
+                    else
+                    {
+                        // El usuario no existe
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Si ocurre un error, deshacer la transacción
+                    transaction.Rollback();
+                    a.Registro_errores(ex.ToString());
                 }
             }
             catch (Exception ex)
             {
                 a.Registro_errores(ex.ToString());
             }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
 
             return false;
         }
-
-
-
-
         #endregion
     }
 }

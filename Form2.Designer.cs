@@ -43,14 +43,14 @@
             // Texto
             // 
             Texto.AutoSize = true;
-            Texto.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Texto.Font = new Font("Cooper Black", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             Texto.ForeColor = SystemColors.Highlight;
-            Texto.Location = new Point(12, 38);
+            Texto.Location = new Point(9, 23);
             Texto.Name = "Texto";
-            Texto.Size = new Size(506, 32);
+            Texto.Size = new Size(552, 34);
             Texto.TabIndex = 0;
             Texto.Text = "El programa funciona correctamente";
-            Texto.TextAlign = ContentAlignment.TopCenter;
+            Texto.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // rjButton1
             // 
@@ -61,11 +61,11 @@
             rjButton1.BorderSize = 0;
             rjButton1.FlatAppearance.BorderSize = 0;
             rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(145, 134);
+            rjButton1.Location = new Point(173, 119);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(230, 68);
+            rjButton1.Size = new Size(254, 83);
             rjButton1.TabIndex = 1;
             rjButton1.Text = "Aceptar";
             rjButton1.TextColor = Color.White;
@@ -74,14 +74,14 @@
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
-            ClientSize = new Size(567, 214);
+            ClientSize = new Size(585, 214);
             Controls.Add(rjButton1);
             Controls.Add(Texto);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;

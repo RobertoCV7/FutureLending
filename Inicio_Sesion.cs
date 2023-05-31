@@ -42,6 +42,11 @@ namespace FutureLending
                 Mensaje.Text = "Usuario o Contraseña incorrectos ";
             }
         }
-        
+
+        private async void btnTodosSistemas_Click(object sender, EventArgs e)
+        {
+            Lectura_Base_Datos a = new();
+            await a.CheckConnection(false);
+        }
     }
 }
