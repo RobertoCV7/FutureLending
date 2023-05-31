@@ -1,6 +1,6 @@
 ﻿namespace FutureLending
 {
-    partial class Form2
+    partial class Exportar_Excel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
-            Texto = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exportar_Excel));
             rjButton1 = new Controles_personalizados.RJButton();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // bunifuElipse1
-            // 
-            bunifuElipse1.ElipseRadius = 10;
-            bunifuElipse1.TargetControl = this;
-            // 
-            // Texto
-            // 
-            Texto.AutoSize = true;
-            Texto.Font = new Font("Cooper Black", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            Texto.ForeColor = SystemColors.Highlight;
-            Texto.Location = new Point(9, 23);
-            Texto.Name = "Texto";
-            Texto.Size = new Size(552, 34);
-            Texto.TabIndex = 0;
-            Texto.Text = "El programa funciona correctamente";
-            Texto.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.LightCoral;
-            rjButton1.BackgroundColor = Color.LightCoral;
+            rjButton1.BackColor = Color.Crimson;
+            rjButton1.BackgroundColor = Color.Crimson;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
@@ -63,38 +45,56 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(173, 119);
+            rjButton1.Location = new Point(52, 269);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(254, 83);
-            rjButton1.TabIndex = 1;
-            rjButton1.Text = "Aceptar";
+            rjButton1.Size = new Size(243, 96);
+            rjButton1.TabIndex = 0;
+            rjButton1.Text = "Exportar";
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += RjButton1_Click;
+            rjButton1.Click += rjButton1_Click;
             // 
-            // Form2
+            // comboBox1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(37, 126);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(275, 39);
+            comboBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cooper Black", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(27, 40);
+            label1.Name = "label1";
+            label1.Size = new Size(302, 39);
+            label1.TabIndex = 2;
+            label1.Text = "Exportar a Excel";
+            // 
+            // Exportar_Excel
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Wheat;
-            ClientSize = new Size(585, 214);
+            BackColor = SystemColors.Info;
+            ClientSize = new Size(355, 400);
+            Controls.Add(label1);
+            Controls.Add(comboBox1);
             Controls.Add(rjButton1);
-            Controls.Add(Texto);
-            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "Form2";
-            StartPosition = FormStartPosition.CenterScreen;
+            Name = "Exportar_Excel";
+            Text = "Exportar_Excel";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Controles_personalizados.RJButton rjButton1;
-        private Label Texto;
+        private ComboBox comboBox1;
+        private Label label1;
     }
 }

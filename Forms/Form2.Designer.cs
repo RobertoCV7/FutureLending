@@ -1,6 +1,6 @@
 ﻿namespace FutureLending
 {
-    partial class Exportar_Excel
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exportar_Excel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            Texto = new Label();
             rjButton1 = new Controles_personalizados.RJButton();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
             SuspendLayout();
+            // 
+            // Texto
+            // 
+            Texto.AutoSize = true;
+            Texto.Font = new Font("Cooper Black", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            Texto.ForeColor = SystemColors.Highlight;
+            Texto.Location = new Point(43, 23);
+            Texto.Margin = new Padding(3, 3, 3, 0);
+            Texto.Name = "Texto";
+            Texto.Size = new Size(654, 39);
+            Texto.TabIndex = 0;
+            Texto.Text = "El programa funciona correctamente";
+            Texto.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.MediumSlateBlue;
-            rjButton1.BackgroundColor = Color.MediumSlateBlue;
+            rjButton1.BackColor = Color.LightCoral;
+            rjButton1.BackgroundColor = Color.LightCoral;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
@@ -45,58 +57,36 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(32, 202);
-            rjButton1.Margin = new Padding(3, 2, 3, 2);
+            rjButton1.Location = new Point(251, 125);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(213, 72);
-            rjButton1.TabIndex = 0;
-            rjButton1.Text = "Exportar";
+            rjButton1.Size = new Size(254, 83);
+            rjButton1.TabIndex = 1;
+            rjButton1.Text = "Aceptar";
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += rjButton1_Click;
+            rjButton1.Click += RjButton1_Click;
             // 
-            // comboBox1
+            // Form2
             // 
-            comboBox1.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(32, 95);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(241, 32);
-            comboBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cooper Black", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(32, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(241, 31);
-            label1.TabIndex = 2;
-            label1.Text = "Exportar a Excel";
-            // 
-            // Exportar_Excel
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Info;
-            ClientSize = new Size(311, 300);
-            Controls.Add(label1);
-            Controls.Add(comboBox1);
+            BackColor = Color.Wheat;
+            ClientSize = new Size(740, 220);
             Controls.Add(rjButton1);
+            Controls.Add(Texto);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
-            Name = "Exportar_Excel";
-            Text = "Exportar_Excel";
+            MinimizeBox = false;
+            Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
         private Controles_personalizados.RJButton rjButton1;
-        private ComboBox comboBox1;
-        private Label label1;
+        private Label Texto;
     }
 }
