@@ -1383,7 +1383,7 @@ namespace FutureLending
 
         private void IconButton1_Click(object sender, EventArgs e)
         {
-            Boton_Permisos.Enabled=false;
+            Boton_Permisos.Enabled = false;
             CargarPromotoresEnComboBox(rjComboBox4);
 
             lblTitle.Text = "Configuracion";
