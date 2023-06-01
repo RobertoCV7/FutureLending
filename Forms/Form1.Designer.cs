@@ -1,4 +1,6 @@
-﻿namespace FutureLending
+﻿using FutureLending.Controles_personalizados;
+
+namespace FutureLending
 {
     partial class Form1
     {
@@ -2422,6 +2424,7 @@
             this.tabControl1.Controls.Add(this.Conexion_Sql);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tabControl1.ItemSize = (new global::System.Drawing.Size(424, 25));
             this.tabControl1.Location = (new global::System.Drawing.Point(0, 0));
             this.tabControl1.Name = ("tabControl1");
             this.tabControl1.SelectedIndex = (0);
@@ -2436,7 +2439,7 @@
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = (new global::System.Drawing.Point(4, 29));
             this.tabPage1.Name = ("tabPage1");
-            this.tabPage1.Padding = (new global::System.Windows.Forms.Padding(3, 3, 3, 3));
+            this.tabPage1.Padding = (new global::System.Windows.Forms.Padding(3));
             this.tabPage1.Size = (new global::System.Drawing.Size(1267, 854));
             this.tabPage1.TabIndex = (0);
             this.tabPage1.Text = ("Usuarios");
@@ -2458,7 +2461,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 852F));
             this.tableLayoutPanel1.Size = (new global::System.Drawing.Size(1275, 852));
             this.tableLayoutPanel1.TabIndex = (0);
-            this.tableLayoutPanel1.Paint += (this.tableLayoutPanel1_Paint_1);
             // 
             // flowLayoutPanel4
             // 
@@ -2619,7 +2621,6 @@
             this.flowLayoutPanel6.Name = ("flowLayoutPanel6");
             this.flowLayoutPanel6.Size = (new global::System.Drawing.Size(632, 846));
             this.flowLayoutPanel6.TabIndex = (21);
-            this.flowLayoutPanel6.Paint += (this.flowLayoutPanel6_Paint);
             // 
             // label39
             // 
@@ -2664,6 +2665,7 @@
             this.comboBox1.Size = (new global::System.Drawing.Size(473, 50));
             this.comboBox1.TabIndex = (44);
             this.comboBox1.Texts = ("");
+            this.comboBox1.OnSelectedIndexChanged += (this.comboBox1_OnSelectedIndexChanged);
             // 
             // Boton_Permisos
             // 
@@ -2768,7 +2770,7 @@
             this.button2.TabIndex = (32);
             this.button2.Text = ("Editar");
             this.button2.UseVisualStyleBackColor = (true);
-            this.button2.Click += (this.button2_Click);
+            this.button2.Click += (this.Button2_Click);
             // 
             // button3
             // 
@@ -2784,7 +2786,7 @@
             this.button3.TabIndex = (33);
             this.button3.Text = ("Borrar");
             this.button3.UseVisualStyleBackColor = (true);
-            this.button3.Click += (this.button3_Click_1);
+            this.button3.Click += (this.Button3_Click_1);
             // 
             // Conexion_Sql
             // 
@@ -2809,7 +2811,7 @@
             this.Conexion_Sql.Controls.Add(this.label43);
             this.Conexion_Sql.Location = (new global::System.Drawing.Point(4, 29));
             this.Conexion_Sql.Name = ("Conexion_Sql");
-            this.Conexion_Sql.Padding = (new global::System.Windows.Forms.Padding(3, 3, 3, 3));
+            this.Conexion_Sql.Padding = (new global::System.Windows.Forms.Padding(3));
             this.Conexion_Sql.Size = (new global::System.Drawing.Size(1267, 854));
             this.Conexion_Sql.TabIndex = (1);
             this.Conexion_Sql.Text = ("Conexion Sql");
@@ -5009,12 +5011,12 @@
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1538, 967));
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelBien);
             this.Controls.Add(this.pnlListas);
             this.Controls.Add(this.PanelEditar3);
             this.Controls.Add(this.PnlEditar2);
             this.Controls.Add(this.PanelEditar);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelEditar2_2);
             this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.PanelEditarLiquidados);
@@ -5247,6 +5249,12 @@
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxPagare;
         private Label label67;
         private global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado dateTimePickerPersonalizado3;
+
+        public Form1(DateTimePickerPersonalizado dateTimePickerPersonalizado3)
+        {
+            this.dateTimePickerPersonalizado3 = dateTimePickerPersonalizado3;
+        }
+
         private Label label68;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxRestante;
         private Label label69;

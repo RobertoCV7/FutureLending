@@ -1,5 +1,6 @@
 using Bunifu.Framework.UI;
 using Bunifu.UI.WinForms;
+using FutureLending.Controles_personalizados;
 using FutureLending.ControlesPersonalizados;
 using MySqlX.XDevAPI.Relational;
 using Newtonsoft.Json;
@@ -8,7 +9,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Runtime.CompilerServices;
 using System.Windows.Automation;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using Button = System.Windows.Forms.Button;
 
 namespace FutureLending
 {
@@ -21,24 +24,41 @@ namespace FutureLending
         public Form1()
         {
             InitializeComponent();
-            CollapseMenu();
-            CargarPromotoresEnComboBox(rjComboBox3);
-            CargarPromotoresEnComboBox(cmbPromotor);
-            dateTimePickerPersonalizado2.Enabled = false;
-            rjButton6.Enabled = false;
-            rjComboBox9.Visible = false;
-            rjButton4.Enabled = false;
-            TextBoxPagoExt.Enabled = false;
-            label17.Visible = false;
-            rjButton5.Enabled = false;
-            cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            gridListas.VirtualMode = false;
-            TablaClientes.AñadirEvento(gridListas);
+            this.Load += Form1_Load;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Task.Run(() =>
+            {
+                // CargarPromotoresEnComboBox puede ser un método que toma tiempo, así que lo ejecutamos en un hilo separado
+                CargarPromotoresEnComboBox(rjComboBox3);
+                CargarPromotoresEnComboBox(cmbPromotor);
+
+                // Otros códigos de inicialización que no son bloqueantes
+
+                // Actualizar los controles de la interfaz de usuario desde el hilo de UI
+                this.Invoke(new Action(() =>
+                {
+                    CollapseMenu();
+                    dateTimePickerPersonalizado2.Enabled = false;
+                    rjButton6.Enabled = false;
+                    rjComboBox9.Visible = false;
+                    rjButton4.Enabled = false;
+                    TextBoxPagoExt.Enabled = false;
+                    label17.Visible = false;
+                    rjButton5.Enabled = false;
+                    cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                    gridListas.VirtualMode = false;
+                    TablaClientes.AñadirEvento(gridListas);
+                }));
+            });
+        }
+
 
         #region Animacion de menu
         private void CollapseMenu()
@@ -274,10 +294,10 @@ namespace FutureLending
         #endregion
 
         #region Listas
-        public static bool boton1 { get; private set; }
-        public static bool boton2 { get; private set; }
-        public static bool boton3 { get; private set; }
-        public static bool boton4 { get; private set; }
+        public static bool Boton1 { get; private set; }
+        public static bool Boton2 { get; private set; }
+        public static bool Boton3 { get; private set; }
+        public static bool Boton4 { get; private set; }
         bool revisado = false;
         private void BtnListas_Click(object sender, EventArgs e)
         {
@@ -287,7 +307,7 @@ namespace FutureLending
             {
                 revisado = true;
                 // Bloquear y deshabilitar todos los botones por defecto
-                deshabilitartodos();
+                Deshabilitartodos();
                 btnLista1.Enabled = false;
                 btnLista1.Click -= BtnLista1_Click;
                 btnLista1.MouseDown -= BtnLista1_MouseDown;
@@ -322,7 +342,7 @@ namespace FutureLending
                             btnLista1.Click += BtnLista1_Click;
                             btnLista1.MouseDown += BtnLista1_MouseDown;
                             btnLista1.TabStop = true;
-                            boton1 = true;
+                            Boton1 = true;
 
                             a += 1;
                             break;
@@ -331,7 +351,7 @@ namespace FutureLending
                             btnLista2.Click += BtnLista2_Click;
                             btnLista2.MouseDown += BtnLista2_MouseDown;
                             btnLista2.TabStop = true;
-                            boton2 = true;
+                            Boton2 = true;
                             a += 1;
                             break;
                         case "lista3":
@@ -339,7 +359,7 @@ namespace FutureLending
                             btnLista3.Click += BtnLista3_Click;
                             btnLista3.MouseDown += BtnLista3_MouseDown;
                             btnLista3.TabStop = true;
-                            boton3 = true;
+                            Boton3 = true;
                             a += 1;
                             break;
                         case "liquidados":
@@ -347,14 +367,14 @@ namespace FutureLending
                             btnLiquidados.Click += BtnLiquidados_Click;
                             btnLiquidados.MouseDown += BtnLiquidados_MouseDown;
                             btnLiquidados.TabStop = true;
-                            boton4 = true;
+                            Boton4 = true;
                             a += 1;
                             break;
                     }
                 }
                 if (a == 4)
                 {
-                    habilitartodos();
+                    Habilitartodos();
                 }
                 a = 0;
 
@@ -366,7 +386,7 @@ namespace FutureLending
 
 
         }
-        void habilitartodos()
+        void Habilitartodos()
         {
             btnMostrarTodos.Enabled = true;
             btnMostrarTodos.Click += BtnMostrarTodos_Click;
@@ -375,7 +395,7 @@ namespace FutureLending
             btnMostrarTodos.FlatStyle = FlatStyle.Flat;
 
         }
-        void deshabilitartodos()
+        void Deshabilitartodos()
         {
             btnMostrarTodos.Enabled = false;
             btnMostrarTodos.Click -= BtnMostrarTodos_Click;
@@ -1163,23 +1183,23 @@ namespace FutureLending
         //Se reactivan los botones una vez se imprime la tabla
         private void ActivarListas()
         {
-            if (boton1)
+            if (Boton1)
             {
                 btnLista1.Enabled = true;
             }
-            if (boton2)
+            if (Boton2)
             {
                 btnLista2.Enabled = true;
             }
-            if (boton3)
+            if (Boton3)
             {
                 btnLista3.Enabled = true;
             }
-            if (boton4)
+            if (Boton4)
             {
                 btnLiquidados.Enabled = true;
             }
-            if (!boton1 || !boton2 || !boton3 || !boton4)
+            if (!Boton1 || !Boton2 || !Boton3 || !Boton4)
             {
 
             }
@@ -1363,7 +1383,9 @@ namespace FutureLending
 
         private void IconButton1_Click(object sender, EventArgs e)
         {
+            Boton_Permisos.Enabled=false;
             CargarPromotoresEnComboBox(rjComboBox4);
+
             lblTitle.Text = "Configuracion";
             panel2.BringToFront();
             _ = new Accesos();
@@ -1492,41 +1514,58 @@ namespace FutureLending
 
         public bool conect;
         public bool revisador = true;
+        private readonly Lectura_Base_Datos lecturaBaseDatos = new Lectura_Base_Datos();
+
+        private bool isTabPageLoaded = false; // Variable para rastrear si los objetos de la pestaña se han cargado
+
         private async void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Lectura_Base_Datos a = new();
             if (tabControl1.SelectedIndex == 0)
             {
-                _ = new Accesos();
-                string[] usuarios = Accesos.CargarUsuarios().ToArray();
-                comboBox1.Items.Clear();
-                comboBox1.Items.AddRange(usuarios);
+                await LoadTabPage0Async();
             }
             else if (tabControl1.SelectedIndex == 1)
             {
-                TextServer.Text = Properties.Settings1.Default.Servidor;
-                TextPuerto.Text = Properties.Settings1.Default.Puerto.ToString();
-                TextBase.Text = Properties.Settings1.Default.Base_de_datos;
-                TextUsuario.Text = Properties.Settings1.Default.Usuario;
-                TextContra.Text = Properties.Settings1.Default.Contraseña;
-                await a.CheckConnection(true);
-                revisador = true;
-                if (conect)
+                if (!isTabPageLoaded)
                 {
-                    LabelEstado.Text = "Inactivo";
-                    LabelEstado.ForeColor = Color.Red;
-                }
-                else
-                {
-                    LabelEstado.Text = "Activo";
-                    LabelEstado.ForeColor = Color.Green;
+                    await LoadTabPage1Async();
+                    isTabPageLoaded = true;
                 }
             }
             else
             {
-
+                // Lógica para otros índices del TabControl
             }
         }
+
+        private async Task LoadTabPage0Async()
+        {
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(await Task.Run(() => Accesos.CargarUsuarios().ToArray()));
+        }
+
+        private async Task LoadTabPage1Async()
+        {
+            await Task.Run(() =>
+            {
+                // Cargar y preparar los objetos de la pestaña 1 en segundo plano
+
+                // Actualizar la interfaz de usuario una vez que los objetos estén listos
+                Invoke((Action)(() =>
+                {
+                    TextServer.Text = Properties.Settings1.Default.Servidor;
+                    TextPuerto.Text = Properties.Settings1.Default.Puerto.ToString();
+                    TextBase.Text = Properties.Settings1.Default.Base_de_datos;
+                    TextUsuario.Text = Properties.Settings1.Default.Usuario;
+                    TextContra.Text = Properties.Settings1.Default.Contraseña;
+
+                    LabelEstado.Text = conect ? "Inactivo" : "Activo";
+                    LabelEstado.ForeColor = conect ? Color.Red : Color.Green;
+                }));
+            });
+        }
+
+
         private bool changingCheckedState3 = false;
         private void CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
@@ -1803,7 +1842,6 @@ namespace FutureLending
         }
         #endregion
 
-
         private void RjComboBox9_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox9.SelectedIndex != -1)
@@ -1939,38 +1977,6 @@ namespace FutureLending
         }
         #endregion
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex != -1)
-            {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                Boton_Permisos.Enabled = true;
-                textBox2.Text = comboBox1.SelectedItem.ToString();
-            }
-            else
-            {
-                textBox2.Enabled = false;
-                textBox3.Enabled = false;
-                Boton_Permisos.Enabled = false;
-            }
-        }
-
         private void Boton_Permisos_Click(object sender, EventArgs e)
         {
             Permisos_Lect per = new(comboBox1.SelectedItem.ToString());
@@ -1978,7 +1984,7 @@ namespace FutureLending
             per.ShowDialog();
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void Button3_Click_1(object sender, EventArgs e)
         {
             Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
             textBox2.Text = "";
@@ -2015,7 +2021,7 @@ namespace FutureLending
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             bool a = Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), textBox2.Text, textBox3.Text);
             if (a)
@@ -2039,6 +2045,23 @@ namespace FutureLending
         private void label32_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                Boton_Permisos.Enabled = true;
+                textBox2.Text = comboBox1.SelectedItem.ToString();
+            }
+            else
+            {
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+                Boton_Permisos.Enabled = false;
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace FutureLending
         {
             this.Close();
         }
-        string usuario1;
+
         private void Button1_Click(object sender, EventArgs e)
         {
             string usuariop = TextUsuario.Text.ToString();
@@ -43,7 +43,7 @@ namespace FutureLending
             }
         }
 
-        private async void btnTodosSistemas_Click(object sender, EventArgs e)
+        private async void BtnTodosSistemas_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos a = new();
             await a.CheckConnection(false);

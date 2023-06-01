@@ -13,25 +13,25 @@
     <Compile Update="ControlesPersonalizados\TextBoxPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Exportar_Excel.cs">
+    <Compile Update="Forms\Exportar_Excel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form2.cs">
+    <Compile Update="Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Inicio_Sesion.cs">
+    <Compile Update="Forms\Inicio_Sesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PedirDatos3.cs">
+    <Compile Update="Forms\PedirDatos3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pedir_Datos.cs">
+    <Compile Update="Forms\Pedir_Datos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Permisos_Lect.cs">
+    <Compile Update="Forms\Permisos_Lect.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -221,7 +221,7 @@
             btnTodosSistemas.Tag = "Reparar";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTodosSistemas.UseVisualStyleBackColor = true;
-            btnTodosSistemas.Click += btnTodosSistemas_Click;
+            btnTodosSistemas.Click += BtnTodosSistemas_Click;
             // 
             // bunifuElipse7
             // 

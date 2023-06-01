@@ -18,7 +18,7 @@ namespace FutureLending
             InitializeComponent();
 
 
-            if (Form1.boton1 || Form1.boton2 || Form1.boton3 || Form1.boton4)
+            if (Form1.Boton1 || Form1.Boton2 || Form1.Boton3 || Form1.Boton4)
             {
                 string[] opciones = { "Lista 1", "Lista 2", "Lista 3", "Lista Liquidados", "Todas las Listas" };
                 foreach (var a in opciones)
@@ -27,12 +27,12 @@ namespace FutureLending
                 }
             }
             comboBox1.Items.Clear();
-            if (Form1.boton1)
+            if (Form1.Boton1)
             {
                 comboBox1.Items.Add("Lista 1");
             }
 
-            if (Form1.boton2)
+            if (Form1.Boton2)
             {
 
                 comboBox1.Items.Add("Lista 2");
@@ -41,11 +41,11 @@ namespace FutureLending
             {
                 MessageBox.Show("fue false");
             }
-            if (Form1.boton3)
+            if (Form1.Boton3)
             {
                 comboBox1.Items.Add("Lista 3");
             }
-            if (Form1.boton4)
+            if (Form1.Boton4)
             {
                 comboBox1.Items.Add("Lista Liquidados");
             }

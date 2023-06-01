@@ -195,3 +195,46 @@
    at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
    at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\FutureLendingpro\Lectura_Base_Datos.cs:line 312
+[31/05/2023 08:45:44 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 08:46:45 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 08:46:45 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 08:58:28 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 08:58:28 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:00:33 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:00:33 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:00:58 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Escritorio\FutureLendingpro\Funciones.cs\Lectura_Base_Datos.cs:line 312
+[31/05/2023 09:04:40 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:04:40 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:05:53 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:05:53 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:08:37 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:08:37 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:09:31 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:09:31 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:10:34 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:10:34 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:10:38 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Escritorio\FutureLendingpro\Funciones.cs\Lectura_Base_Datos.cs:line 312
+[31/05/2023 09:13:54 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:13:54 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:15:21 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:15:21 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:16:08 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:16:08 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:18:26 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:18:26 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:20:00 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:20:00 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:25:25 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:25:25 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:27:34 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:27:34 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[31/05/2023 09:28:26 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in D:\Escritorio\FutureLendingpro\Funciones.cs\Lectura_Base_Datos.cs:line 312
