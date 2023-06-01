@@ -1,20 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
 using System.Data;
 
 namespace FutureLending
 {
-      public class Accesos
-        {
+    public class Accesos
+    {
         #region Dar Acceso
         //Funcion que revisa si el usuario y contraseña ingresados son correctos
         public static bool Accesar(string user, string password)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
             MySqlConnection connection = a.Conector();
-        
+
             try
             {
                 // Consultar la base de datos para encontrar el usuario y contraseña coincidentes
@@ -57,7 +54,7 @@ namespace FutureLending
             MySqlConnection connection = a.Conector();
 
             try
-            { 
+            {
                 // Verificar si ya existe un usuario con el mismo nombre
                 string existeUsuarioQuery = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @Usuario";
                 MySqlCommand existeUsuarioCommand = new MySqlCommand(existeUsuarioQuery, connection);
@@ -100,11 +97,11 @@ namespace FutureLending
 
         #region EditarUsuarios
         //funcion que carga al combobox los usuarios que existen
-        public static List<string> CargarUsuarios()
+        public static List<string>? CargarUsuarios()
         {
 
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-           
+
             MySqlConnection connection = a.Conector();
 
             try
@@ -147,7 +144,7 @@ namespace FutureLending
         public static bool EditarUsuarioContraseña(string usuario, string nuevoUsuario, string nuevaContraseña)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-      
+
             MySqlConnection connection = a.Conector();
 
             try
@@ -183,7 +180,7 @@ namespace FutureLending
         public static bool EliminarUsuario(string nombreUsuario)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
-      
+
             MySqlConnection connection = a.Conector();
 
             try
@@ -229,10 +226,10 @@ namespace FutureLending
         #endregion
 
         #region Leer permisos
-        public static List<string> ObtenerPermisosUsuario(string nombreUsuario)
+        public static List<string>? ObtenerPermisosUsuario(string nombreUsuario)
         {
             Lectura_Base_Datos a = new();
-            MySqlConnection connection =a.Conector() ;
+            MySqlConnection connection = a.Conector();
 
             try
             {

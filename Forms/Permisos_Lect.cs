@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static FutureLending.Accesos;
-
-namespace FutureLending
+﻿namespace FutureLending
 {
+    //Este Forms muestra los permisos que cada usuario tiene acerca de la lectura de las listas ademas de las exportaciones
     public partial class Permisos_Lect : Form
     {
         string nombre1;

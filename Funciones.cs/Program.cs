@@ -12,8 +12,8 @@ namespace FutureLending
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Inicio_Sesion());
-            
+
         }
-      
+
     }
 }

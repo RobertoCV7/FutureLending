@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FutureLending
+﻿namespace FutureLending
 {
+    //Este forms pide los datos faltantes para mover el registro de la lista 1 a la lista 2
     public partial class Pedir_Datos : Form
     {
         public Pedir_Datos()

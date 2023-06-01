@@ -1,9 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FutureLending
 {
@@ -25,7 +20,7 @@ namespace FutureLending
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        
+
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
                         fila[2] = reader.GetString("Credito_Prestado");
@@ -52,7 +47,7 @@ namespace FutureLending
                             }
                         }
 
-                     
+
                     }
                 }
                 catch (Exception ex)
@@ -65,7 +60,7 @@ namespace FutureLending
         }
         public string[] LectName2(string nombre)
         {
-            string[] fila = new string[44]; 
+            string[] fila = new string[44];
             using (MySqlConnection connection = con.Conector())
             {
                 string query = "SELECT * FROM lista2 WHERE Nombre_Completo = @nombre";
@@ -96,8 +91,8 @@ namespace FutureLending
                         {
                             string fechaCampo = "FECHA" + (i + 1);
                             string pagoCampo = "PAGO" + (i + 1);
-                                fila[14 + (2*i)] = reader.GetString(fechaCampo);
-                                fila[15 + (2*i)] = reader.GetString(pagoCampo);
+                            fila[14 + (2 * i)] = reader.GetString(fechaCampo);
+                            fila[15 + (2 * i)] = reader.GetString(pagoCampo);
                         }
                         fila[42] = reader.GetString("Pago_Total_EXT");
                     }
@@ -115,7 +110,7 @@ namespace FutureLending
             using (MySqlConnection connection = con.Conector())
             {
                 string query = "SELECT * FROM lista3 WHERE Nombre_Completo = @nombre";
-                
+
                 using MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@nombre", nombre);
                 try
@@ -123,7 +118,7 @@ namespace FutureLending
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                       
+
 
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
@@ -154,7 +149,7 @@ namespace FutureLending
 
             using (MySqlConnection connection = con.Conector())
             {
-            
+
                 string query = "SELECT * FROM liquidados WHERE Nombre_Completo = @nombre";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -165,7 +160,7 @@ namespace FutureLending
                         {
                             while (reader.Read())
                             {
-                                
+
                                 fila[0] = reader.GetString("Promotor");
                                 fila[1] = reader.GetString("Nombre_Completo");
                                 fila[2] = reader.GetString("Credito_Prestado");
@@ -188,7 +183,7 @@ namespace FutureLending
                 }
             }
 
-         
+
             return fila;
         }
 

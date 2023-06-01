@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.IO;
-using System.Text;
+﻿using Microsoft.Win32;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
-using Microsoft.Win32;
-using System.Data;
-using Bunifu.Framework.UI;
-using System.Data.SqlClient;
+using System.Reflection;
+using System.Text;
 
 namespace FutureLending
 {
@@ -63,22 +56,8 @@ namespace FutureLending
             }
 
             // Devolvemos la conexión, que puede ser nula en caso de error
-#pragma warning disable CS8603 // Posible tipo de valor devuelto de referencia nulo
             return connection;
-#pragma warning restore CS8603 // Posible tipo de valor devuelto de referencia nulo
         }
-        public void CerrarConexion()
-        {
-    
-            if (Conexion != null && Conexion.State == ConnectionState.Open)
-            {
-                Conexion.Close();
-                Conexion.Dispose();
-            }
-
-        }
-
-
         #endregion
         #region Lectura
         #region Lectura de Listas general
@@ -168,9 +147,9 @@ namespace FutureLending
                         {
                             string fechaCampo = "FECHA" + (i + 1);
                             string pagoCampo = "PAGO" + (i + 1);
-                                                          fila[14 + (i *2)] = reader.GetString(fechaCampo);
-                                fila[15 + (i *2)] = reader.GetString(pagoCampo);
-  
+                            fila[14 + (i * 2)] = reader.GetString(fechaCampo);
+                            fila[15 + (i * 2)] = reader.GetString(pagoCampo);
+
                         }
                         fila[42] = reader.GetString("Pago_Total_EXT");
                         datos.Add(fila);
@@ -363,8 +342,8 @@ namespace FutureLending
         #endregion
         #endregion
         #region editar, borrar y crear
-    
-  
+
+
         #region Borrar General
         public void Erase(string nombre, string tabla)
         {
@@ -599,12 +578,12 @@ namespace FutureLending
                 Registro_errores(ex.ToString());
                 return false;
             }
-          }
+        }
 
-            #endregion
-            #endregion
-            #region reparar conexion
-            public async Task CheckConnection(bool revisador)
+        #endregion
+        #endregion
+        #region reparar conexion
+        public async Task CheckConnection(bool revisador)
         {
             Form1 a = new();
             ReacomodoDeScripts();
@@ -627,7 +606,7 @@ namespace FutureLending
             try
             {
                 await connection.OpenAsync();
-                if(revisador == false)
+                if (revisador == false)
                 {
                     Form1.MessageB("La Aplicacion Funciona Correctamente", "Funcionando", 1);
                 }
@@ -638,7 +617,7 @@ namespace FutureLending
             }
             catch (Exception ex)
             {
-                if(revisador == false)
+                if (revisador == false)
                 {
                     Registro_errores(ex.ToString());
                     await RepairProgramAsync();
@@ -647,7 +626,7 @@ namespace FutureLending
                 {
                     return;
                 }
-       
+
             }
             finally
             {
@@ -670,9 +649,7 @@ namespace FutureLending
             };
             var process = Process.Start(processStartInfo);
             process.EnableRaisingEvents = true;
-#pragma warning disable CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
             process.Exited += (s, e) => tcs.TrySetResult(null);
-#pragma warning restore CS8625 // No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL.
             await Task.WhenAny(tcs.Task, Task.Delay(3000)); // Espera hasta que se complete la tarea o hasta 3 segundos
             if (!process.HasExited) // Si el proceso aún no se ha cerrado después de esperar 3 segundos
             {
@@ -772,7 +749,7 @@ namespace FutureLending
         }
         #endregion
         #region registros
-       public  void Registro_errores(string error)
+        public void Registro_errores(string error)
         {
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string logFilePath = $"{exeDirectory}\\Registro de Errores\\Errores.log";
@@ -786,7 +763,7 @@ namespace FutureLending
             catch (Exception ex)
             {
                 Registro_errores(ex.ToString());
-           
+
             }
 
         }

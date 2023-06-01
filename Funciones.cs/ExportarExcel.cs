@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using OfficeOpenXml;
 
 namespace FutureLending
 {
@@ -27,9 +22,9 @@ namespace FutureLending
 
         public void ExportarLista1AExcel(string rutaArchivo)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;        
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             // Añade los strings de cada fecha y pago a la lista
-            List<string> nombresColumnas = new (Nombres_Lista1);
+            List<string> nombresColumnas = new(Nombres_Lista1);
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas.Add("FECHA " + i);

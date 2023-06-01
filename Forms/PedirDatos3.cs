@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FutureLending
+﻿namespace FutureLending
 {
+    //Este forms pide los daros faltantes para mover algun usuario de lista1 o lista 2 a la lista 3
     public partial class PedirDatos3 : Form
     {
         public PedirDatos3()

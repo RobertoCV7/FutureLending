@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FutureLending
+﻿namespace FutureLending
 {
     internal class TablaClientes
     {
@@ -15,7 +6,7 @@ namespace FutureLending
         private static readonly List<string[]> datos = new();
 
         //Muestra en la tabla los datos de la lista 1
-        public static async Task MostrarLista1(DataGridView gridListas, 
+        public static async Task MostrarLista1(DataGridView gridListas,
             ControlesPersonalizados.RJComboBox cmbCliente)
         {
             // Se borran los registros
@@ -64,7 +55,7 @@ namespace FutureLending
                 nombresColumnas2.Add("FECHA " + i);
                 nombresColumnas2.Add("PAGO " + i);
             }
-                 nombresColumnas2.Add("Pago EXT");
+            nombresColumnas2.Add("Pago EXT");
 
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
@@ -73,7 +64,7 @@ namespace FutureLending
                 return instancia.LectLista2();
             });
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
-            
+
             gridListas.ColumnCount = nombresColumnas2.Count;
             AñadirEncabezado(nombresColumnas2, gridListas);
 
@@ -173,7 +164,7 @@ namespace FutureLending
             await AñadirDatos(datosList, gridListas, cmbCliente, true);
         }
 
-      
+
         //Añade los datos en cualquier tabla
         static void AñadirEncabezado(List<string> nombresColumnas, DataGridView gridListas)
         {
@@ -191,9 +182,7 @@ namespace FutureLending
             gridListas.Columns.Clear();
             cmbCliente.Items.Clear();
             cmbCliente.SelectedItem = -1;
-#pragma warning disable CS8601 // Posible asignación de referencia nula
             cmbCliente.Texts = cmbCliente.Tag.ToString();
-#pragma warning restore CS8601 // Posible asignación de referencia nula
         }
 
         //Añade los datos a la tabla y ComboBox
@@ -222,9 +211,7 @@ namespace FutureLending
         public static void AñadirEvento(DataGridView gridListas)
         {
             //Se encarga del evento para la virtualización e immpresión de datos en la tabla
-#pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
             gridListas.CellValueNeeded += new DataGridViewCellValueEventHandler(GridListas_CellValueNeeded);
-#pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
         }
 
         private static void GridListas_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)

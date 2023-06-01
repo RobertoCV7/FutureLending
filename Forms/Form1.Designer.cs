@@ -5280,7 +5280,6 @@ namespace FutureLending
         private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox7;
         private Label label80;
         private Label LabelNombreEditar2_2;
-        private global::FutureLending.Controles_personalizados.DateTimePickerPersonalizado dateTimePickerPersonalizado4;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxCredito;
         private Label label83;
         private global::FutureLending.Controles_personalizados.TextBoxPersonalizado TextBoxNombre;

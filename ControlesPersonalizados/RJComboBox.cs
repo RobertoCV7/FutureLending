@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FutureLending.ControlesPersonalizados
 {
     [DefaultEvent("OnSelectedIndexChanged")]
+    //Este es un combobox modificado para que se vea mas bonito
     public class RJComboBox : UserControl
     {
         //Fields

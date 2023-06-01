@@ -1,15 +1,4 @@
-﻿using FutureLending.ControlesPersonalizados;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FutureLending
+﻿namespace FutureLending
 {
     public partial class Exportar_Excel : Form
     {

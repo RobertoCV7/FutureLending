@@ -1,9 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FutureLending
 {
@@ -175,7 +170,7 @@ namespace FutureLending
 
             string query = $"UPDATE {nombreTabla} SET Promotor=@NuevoPromotor, Nombre_Completo =@NuevoNombre, Credito_Prestado = @NuevoCredito,Pagare = @NuevoPagare, Calle = @NuevaCalle, Colonia = @NuevaColonia, Num_int = @NuevoNumInt, Num_ext = @NuevoNumExt, Telefono = @NuevoTelefono, Correo = @NuevoCorreo, Tipo_de_Resolucion = @NuevoTipoResolucion, Resolucion_Demanda = @NuevoResolucionDemanda, Importe= @NuevoImporte  WHERE Nombre_Completo = @Nombre";
 
-            using MySqlConnection connection =  con.Conector();
+            using MySqlConnection connection = con.Conector();
             using MySqlCommand command = new(query, connection);
             command.Parameters.AddWithValue("@NuevoPromotor", datos[0]);
             command.Parameters.AddWithValue("@NuevoNombre", datos[1]);

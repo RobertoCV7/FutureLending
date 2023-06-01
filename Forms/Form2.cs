@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing;
-namespace FutureLending
+﻿namespace FutureLending
 {
+    //Lo que hace este forms es mostrar un mensaje de error, alerta o correcto 
+    //Basicamente remplaza el MessageBox.Show de windows forms
     public partial class Form2 : Form
     {
         public Form2(string text, string titulo, int situacion)

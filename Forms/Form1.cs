@@ -1,16 +1,6 @@
-using Bunifu.Framework.UI;
-using Bunifu.UI.WinForms;
-using FutureLending.Controles_personalizados;
 using FutureLending.ControlesPersonalizados;
-using MySqlX.XDevAPI.Relational;
 using Newtonsoft.Json;
-using Org.BouncyCastle.Utilities;
 using System.ComponentModel;
-using System.Data;
-using System.Runtime.CompilerServices;
-using System.Windows.Automation;
-using System.Windows.Controls;
-using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
 
 namespace FutureLending
@@ -1261,9 +1251,7 @@ namespace FutureLending
 
             // Iniciar el hilo de fondo
             BackgroundWorker worker = new();
-#pragma warning disable CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
             worker.DoWork += Worker_DoWork;
-#pragma warning restore CS8622 // La nulabilidad de los tipos de referencia del tipo de parámetro no coincide con el delegado de destino (posiblemente debido a los atributos de nulabilidad).
             worker.RunWorkerAsync();
         }
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
