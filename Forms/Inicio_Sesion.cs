@@ -24,7 +24,9 @@
             {
                 // Crear e iniciar el nuevo formulario
                 Form1 form2 = new Form1();
+
                 form2.Show();
+
                 this.Hide();
             }
             else

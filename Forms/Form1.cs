@@ -2,6 +2,7 @@ using FutureLending.ControlesPersonalizados;
 using Newtonsoft.Json;
 using System.ComponentModel;
 using System.IO.Ports;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
 using Timer = System.Windows.Forms.Timer;
@@ -22,6 +23,7 @@ namespace FutureLending
             timer.Interval = 10; // Intervalo de tiempo para la animación (en milisegundos)
             timer.Tick += Timer_Tick;
 
+
         }
         private double opacity = 1.0;
         private void Timer_Tick(object sender, EventArgs e)
@@ -41,6 +43,7 @@ namespace FutureLending
         {
             Task.Run(() =>
             {
+
                 // CargarPromotoresEnComboBox puede ser un método que toma tiempo, así que lo ejecutamos en un hilo separado
                 CargarPromotoresEnComboBox(rjComboBox3);
                 CargarPromotoresEnComboBox(cmbPromotor);
@@ -413,14 +416,14 @@ namespace FutureLending
 
         }
         //Funcion para esconder los paneles menos el enviado
-        void EsconderPaneles(Panel panel1)
+        void EsconderPaneles(System.Windows.Forms.Panel panel1)
         {
             timer.Start();
-            foreach (Control control in this.Controls)
+            foreach (System.Windows.Forms.Control control in this.Controls)
             {
-                if (control is Panel)
+                if (control is System.Windows.Forms.Panel)
                 {
-                    Panel panel = (Panel)control;
+                    System.Windows.Forms.Panel panel = (System.Windows.Forms.Panel)control;
 
                     // Verificar si el panel debe mantenerse visible o no
                     if (panel.Name != "panelTitleBar" && panel.Name != "panelMenu")
@@ -446,7 +449,7 @@ namespace FutureLending
             DesactivarBotones();
             BarradeProgreso.Visible = true;
 
-            await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso,label57);
+            await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso, label57);
 
             ActivarListas();
             ActivarEditar();
@@ -458,7 +461,7 @@ namespace FutureLending
             ListaEstado = 1;
             DesactivarBotones();
 
-            await TablaClientes.MostrarLista2(gridListas, cmbCliente, BarradeProgreso,label57);
+            await TablaClientes.MostrarLista2(gridListas, cmbCliente, BarradeProgreso, label57);
 
             ActivarListas();
             ActivarEditar();
@@ -470,7 +473,7 @@ namespace FutureLending
             ListaEstado = 2;
             DesactivarBotones();
 
-            await TablaClientes.MostrarLista3(gridListas, cmbCliente, BarradeProgreso,label57);
+            await TablaClientes.MostrarLista3(gridListas, cmbCliente, BarradeProgreso, label57);
 
             ActivarListas();
             ActivarEditar();
@@ -481,7 +484,7 @@ namespace FutureLending
         {
             DesactivarBotones();
 
-            await TablaClientes.MostrarTodos(gridListas, cmbCliente, BarradeProgreso,label57);
+            await TablaClientes.MostrarTodos(gridListas, cmbCliente, BarradeProgreso, label57);
 
             ActivarListas();
         }
@@ -489,7 +492,7 @@ namespace FutureLending
         private async void BtnLiquidados_Click(object sender, EventArgs e)
         {
             ListaEstado = 3;
-            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente, BarradeProgreso,label57);
+            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente, BarradeProgreso, label57);
             while (!mostrarListaTask.IsCompleted)
             {
                 DesactivarBotones();

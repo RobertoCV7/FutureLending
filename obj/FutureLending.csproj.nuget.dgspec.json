@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Escritorio\\Prueba-mejor-diseñO\\FutureLending.csproj": {}
+    "D:\\Documentos\\TrabajoReal\\FutureLending.csproj": {}
   },
   "projects": {
-    "D:\\Escritorio\\Prueba-mejor-diseñO\\FutureLending.csproj": {
+    "D:\\Documentos\\TrabajoReal\\FutureLending.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Escritorio\\Prueba-mejor-diseñO\\FutureLending.csproj",
+        "projectUniqueName": "D:\\Documentos\\TrabajoReal\\FutureLending.csproj",
         "projectName": "FutureLending",
-        "projectPath": "D:\\Escritorio\\Prueba-mejor-diseñO\\FutureLending.csproj",
+        "projectPath": "D:\\Documentos\\TrabajoReal\\FutureLending.csproj",
         "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-        "outputPath": "D:\\Escritorio\\Prueba-mejor-diseñO\\obj\\",
+        "outputPath": "D:\\Documentos\\TrabajoReal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Visual studio\\cosas\\NuGetPackages"
+          "D:\\Aplicaciones\\Microsoft Visual Studio\\Componentes\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\donne\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -89,7 +90,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
