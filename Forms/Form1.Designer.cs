@@ -93,6 +93,7 @@ namespace FutureLending
             this.label1 = (new global::System.Windows.Forms.Label());
             this.cmbPromotor = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.pnlListas = (new global::System.Windows.Forms.Panel());
+            this.BarradeProgreso = (new global::System.Windows.Forms.ProgressBar());
             this.flowLayoutPanel3 = (new global::System.Windows.Forms.FlowLayoutPanel());
             this.cmbCliente = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
             this.flowLayoutPanel2 = (new global::System.Windows.Forms.FlowLayoutPanel());
@@ -325,6 +326,7 @@ namespace FutureLending
             this.TextNombreLiq = (new global::FutureLending.Controles_personalizados.TextBoxPersonalizado());
             this.label116 = (new global::System.Windows.Forms.Label());
             this.ComboBoxPromotorLiq = (new global::FutureLending.ControlesPersonalizados.RJComboBox());
+            this.label57 = (new global::System.Windows.Forms.Label());
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((global::System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1365,6 +1367,8 @@ namespace FutureLending
             // pnlListas
             // 
             this.pnlListas.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.pnlListas.Controls.Add(this.label57);
+            this.pnlListas.Controls.Add(this.BarradeProgreso);
             this.pnlListas.Controls.Add(this.flowLayoutPanel3);
             this.pnlListas.Controls.Add(this.flowLayoutPanel2);
             this.pnlListas.Controls.Add(this.flowLayoutPanel1);
@@ -1376,6 +1380,17 @@ namespace FutureLending
             this.pnlListas.Name = ("pnlListas");
             this.pnlListas.Size = (new global::System.Drawing.Size(1275, 887));
             this.pnlListas.TabIndex = (14);
+            // 
+            // BarradeProgreso
+            // 
+            this.BarradeProgreso.BackColor = (global::System.Drawing.SystemColors.Info);
+            this.BarradeProgreso.Enabled = (false);
+            this.BarradeProgreso.ForeColor = (global::System.Drawing.Color.Green);
+            this.BarradeProgreso.Location = (new global::System.Drawing.Point(30, 125));
+            this.BarradeProgreso.Name = ("BarradeProgreso");
+            this.BarradeProgreso.Size = (new global::System.Drawing.Size(330, 32));
+            this.BarradeProgreso.Style = (global::System.Windows.Forms.ProgressBarStyle.Continuous);
+            this.BarradeProgreso.TabIndex = (24);
             // 
             // flowLayoutPanel3
             // 
@@ -5006,15 +5021,25 @@ namespace FutureLending
             this.ComboBoxPromotorLiq.Tag = ("Seleccione al promotor");
             this.ComboBoxPromotorLiq.Texts = ("Seleccione al promotor");
             // 
+            // label57
+            // 
+            this.label57.AutoSize = (true);
+            this.label57.Font = (new global::System.Drawing.Font("Consolas", 16.2F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label57.Location = (new global::System.Drawing.Point(95, 87));
+            this.label57.Name = ("label57");
+            this.label57.Size = (new global::System.Drawing.Size(180, 33));
+            this.label57.TabIndex = (25);
+            this.label57.Text = ("Cargando...");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1538, 967));
+            this.Controls.Add(this.pnlListas);
             this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.PanelBien);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlListas);
             this.Controls.Add(this.PanelEditar3);
             this.Controls.Add(this.PnlEditar2);
             this.Controls.Add(this.PanelEditar);
@@ -5378,5 +5403,7 @@ namespace FutureLending
         private Label label39;
         private Label label40;
         private ControlesPersonalizados.RJComboBox comboBox1;
+        private global::System.Windows.Forms.ProgressBar BarradeProgreso;
+        private global::System.Windows.Forms.Label label57;
     }
 }

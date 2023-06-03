@@ -119,7 +119,7 @@ namespace FutureLending
 
             using (MySqlConnection connection = Conector())
             {
-                string query = "SELECT * FROM lista2";
+                string query = "SELECT * FROM lista2 ORDER BY Promotor ASC";
                 using MySqlCommand command = new(query, connection);
                 try
                 {
@@ -209,7 +209,7 @@ namespace FutureLending
 
             using (MySqlConnection connection = Conector())
             {
-                string query = "SELECT * FROM liquidados";
+                string query = "SELECT * FROM liquidados ORDER BY Promotor ASC";
                 using MySqlCommand command = new(query, connection);
                 try
                 {
@@ -247,7 +247,7 @@ namespace FutureLending
             {
                 try
                 {
-                    string query = "SELECT * FROM " + tabla;
+                    string query = "SELECT * FROM " + tabla + " ORDER BY Promotor ASC";
                     using MySqlCommand command = new(query, connection);
                     using MySqlDataReader reader = command.ExecuteReader();
                     //Lee cada fila de datos en la base de datos

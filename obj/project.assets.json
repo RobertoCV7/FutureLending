@@ -4923,11 +4923,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documentos\\Trabajos\\FutureLendingpro\\FutureLending.csproj",
+      "projectUniqueName": "D:\\Escritorio\\Prueba-mejor-diseñO\\FutureLending.csproj",
       "projectName": "FutureLending",
-      "projectPath": "D:\\Documentos\\Trabajos\\FutureLendingpro\\FutureLending.csproj",
+      "projectPath": "D:\\Escritorio\\Prueba-mejor-diseñO\\FutureLending.csproj",
       "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-      "outputPath": "D:\\Documentos\\Trabajos\\FutureLendingpro\\obj\\",
+      "outputPath": "D:\\Escritorio\\Prueba-mejor-diseñO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Visual studio\\cosas\\NuGetPackages"
