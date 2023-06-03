@@ -2121,5 +2121,15 @@ namespace FutureLending
                 comboBox1.Items.Add(users);
             }
         }
+
+        private void gridListas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBoxCredito__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
