@@ -58,21 +58,19 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(46, 9);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(290, 107);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(485, 430);
+            pictureBox1.Size = new Size(150, 158);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 1);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Image = Properties.Resources.x_circle_icon;
+            pictureBox2.Location = new Point(24, 21);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(41, 34);
+            pictureBox2.Size = new Size(47, 45);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -81,40 +79,45 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(599, 18);
+            label1.BackColor = SystemColors.InactiveCaption;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(28, 41, 86);
+            label1.Location = new Point(235, 38);
             label1.Name = "label1";
-            label1.Size = new Size(235, 36);
+            label1.Size = new Size(251, 54);
             label1.TabIndex = 2;
-            label1.Text = "Iniciar Sesión";
+            label1.Text = "Iniciar sesión";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(575, 73);
+            label2.Font = new Font("Corbel Light", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(173, 275);
             label2.Name = "label2";
-            label2.Size = new Size(109, 27);
+            label2.Size = new Size(90, 31);
             label2.TabIndex = 3;
             label2.Text = "Usuario";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(575, 184);
+            label3.Font = new Font("Corbel Light", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(173, 405);
             label3.Name = "label3";
-            label3.Size = new Size(151, 27);
+            label3.Size = new Size(130, 31);
             label3.TabIndex = 4;
             label3.Text = "Contraseña";
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = SystemColors.ScrollBar;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(569, 112);
-            pictureBox3.Margin = new Padding(3, 2, 3, 2);
+            pictureBox3.Location = new Point(173, 313);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(286, 56);
+            pictureBox3.Size = new Size(405, 63);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
@@ -122,10 +125,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(569, 230);
-            pictureBox4.Margin = new Padding(3, 2, 3, 2);
+            pictureBox4.Location = new Point(173, 443);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(286, 56);
+            pictureBox4.Size = new Size(405, 63);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 6;
             pictureBox4.TabStop = false;
@@ -134,38 +136,38 @@
             // 
             TextUsuario.BackColor = Color.FromArgb(28, 41, 86);
             TextUsuario.BorderStyle = BorderStyle.None;
-            TextUsuario.Font = new Font("Consolas", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            TextUsuario.Font = new Font("Corbel Light", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             TextUsuario.ForeColor = Color.White;
-            TextUsuario.Location = new Point(575, 127);
-            TextUsuario.Margin = new Padding(3, 2, 3, 2);
+            TextUsuario.Location = new Point(182, 327);
             TextUsuario.Name = "TextUsuario";
-            TextUsuario.Size = new Size(246, 32);
+            TextUsuario.Size = new Size(340, 33);
             TextUsuario.TabIndex = 7;
             // 
             // TextContra
             // 
             TextContra.BackColor = Color.FromArgb(28, 41, 86);
             TextContra.BorderStyle = BorderStyle.None;
-            TextContra.Font = new Font("Consolas", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            TextContra.Location = new Point(575, 244);
-            TextContra.Margin = new Padding(3, 2, 3, 2);
+            TextContra.Font = new Font("Corbel Light", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            TextContra.ForeColor = SystemColors.InactiveBorder;
+            TextContra.Location = new Point(182, 460);
             TextContra.Name = "TextContra";
-            TextContra.Size = new Size(259, 32);
+            TextContra.Size = new Size(317, 29);
             TextContra.TabIndex = 8;
             TextContra.UseSystemPasswordChar = true;
+            TextContra.TextChanged += TextContra_TextChanged;
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(155, 145, 221);
+            button1.BackColor = SystemColors.ActiveCaption;
             button1.BackgroundImageLayout = ImageLayout.None;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(569, 305);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Font = new Font("Dubai", 16.1999989F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(28, 41, 86);
+            button1.Location = new Point(281, 540);
             button1.Name = "button1";
-            button1.Size = new Size(279, 65);
+            button1.Size = new Size(179, 48);
             button1.TabIndex = 9;
-            button1.Text = "Iniciar Sesión";
+            button1.Text = "Acceder";
             button1.UseVisualStyleBackColor = false;
             button1.Click += Button1_Click;
             // 
@@ -174,9 +176,9 @@
             Mensaje.AutoSize = true;
             Mensaje.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(569, 386);
+            Mensaje.Location = new Point(650, 515);
             Mensaje.Name = "Mensaje";
-            Mensaje.Size = new Size(0, 24);
+            Mensaje.Size = new Size(0, 32);
             Mensaje.TabIndex = 10;
             // 
             // bunifuElipse1
@@ -214,15 +216,16 @@
             btnTodosSistemas.FlatAppearance.BorderSize = 0;
             btnTodosSistemas.FlatStyle = FlatStyle.Flat;
             btnTodosSistemas.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTodosSistemas.ForeColor = Color.White;
+            btnTodosSistemas.ForeColor = Color.Gray;
             btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Wrench;
             btnTodosSistemas.IconColor = Color.White;
             btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(838, 386);
+            btnTodosSistemas.Location = new Point(650, 551);
+            btnTodosSistemas.Margin = new Padding(3, 4, 3, 4);
             btnTodosSistemas.Name = "btnTodosSistemas";
-            btnTodosSistemas.Padding = new Padding(10, 0, 0, 0);
-            btnTodosSistemas.Size = new Size(68, 61);
+            btnTodosSistemas.Padding = new Padding(11, 0, 0, 0);
+            btnTodosSistemas.Size = new Size(67, 47);
             btnTodosSistemas.TabIndex = 11;
             btnTodosSistemas.Tag = "Reparar";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -236,11 +239,11 @@
             // 
             // Inicio_Sesion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(10, 25, 74);
+            BackColor = SystemColors.InactiveCaption;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(906, 448);
+            ClientSize = new Size(726, 611);
             ControlBox = false;
             Controls.Add(btnTodosSistemas);
             Controls.Add(Mensaje);
@@ -256,7 +259,6 @@
             Controls.Add(pictureBox1);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;

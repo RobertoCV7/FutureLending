@@ -40,5 +40,15 @@
             Lectura_Base_Datos a = new();
             await a.CheckConnection(false);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextContra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

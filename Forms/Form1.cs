@@ -1493,39 +1493,6 @@ namespace FutureLending
                 changingCheckedState2 = false;
             }
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            bool mensaje;
-            _ = new Accesos();
-            string User = textBox1.Text.ToString();
-            string password = TextboxContr.Text.ToString();
-            if (string.IsNullOrEmpty(User))
-            {
-                AvisoVacio.Text = "No puede haber nada vacio";
-            }
-            else
-            {
-                mensaje = Accesos.AgregarUsuario(User, password);
-                if (mensaje == true)
-                {
-                    textBox1.Text = "";
-                    TextboxContr.Text = "";
-                    TextboxConfirm.Text = "";
-                    AvisoVacio.Text = "";
-                }
-                else
-                {
-                    AvisoVacio.Text = "El usuario ya existe. No se pudo agregar";
-                }
-            }
-
-            _ = new Accesos();
-            string[] usuarios = Accesos.CargarUsuarios().ToArray();
-            comboBox1.Items.Clear();
-            comboBox1.Items.AddRange(usuarios);
-        }
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
@@ -2044,18 +2011,6 @@ namespace FutureLending
             per.ShowDialog();
         }
 
-        private void Button3_Click_1(object sender, EventArgs e)
-        {
-            Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
-            textBox2.Text = "";
-            comboBox1.SelectedIndex = -1;
-            List<string> usuarios = Accesos.CargarUsuarios();
-            foreach (var users in usuarios)
-            {
-                comboBox1.Items.Add(users);
-            }
-        }
-
         private void BtnLista1_MouseDown(object sender, MouseEventArgs e)
         {
 
@@ -2080,8 +2035,61 @@ namespace FutureLending
         {
 
         }
+        private void label32_Click(object sender, EventArgs e)
+        {
 
-        private void Button2_Click(object sender, EventArgs e)
+        }
+
+        private void comboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                Boton_Permisos.Enabled = true;
+                textBox2.Text = comboBox1.SelectedItem.ToString();
+            }
+            else
+            {
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+                Boton_Permisos.Enabled = false;
+            }
+        }
+
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+            bool mensaje;
+            _ = new Accesos();
+            string User = textBox1.Text.ToString();
+            string password = TextboxContr.Text.ToString();
+            if (string.IsNullOrEmpty(User))
+            {
+                AvisoVacio.Text = "No puede haber nada vacio";
+            }
+            else
+            {
+                mensaje = Accesos.AgregarUsuario(User, password);
+                if (mensaje == true)
+                {
+                    textBox1.Text = "";
+                    TextboxContr.Text = "";
+                    TextboxConfirm.Text = "";
+                    AvisoVacio.Text = "";
+                }
+                else
+                {
+                    AvisoVacio.Text = "El usuario ya existe. No se pudo agregar";
+                }
+            }
+
+            _ = new Accesos();
+            string[] usuarios = Accesos.CargarUsuarios().ToArray();
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(usuarios);
+        }
+
+        private void rjButton11_Click(object sender, EventArgs e)
         {
             bool a = Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), textBox2.Text, textBox3.Text);
             if (a)
@@ -2102,25 +2110,15 @@ namespace FutureLending
             }
         }
 
-        private void label32_Click(object sender, EventArgs e)
+        private void rjButton12_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void comboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex != -1)
+            Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
+            textBox2.Text = "";
+            comboBox1.SelectedIndex = -1;
+            List<string> usuarios = Accesos.CargarUsuarios();
+            foreach (var users in usuarios)
             {
-                textBox2.Enabled = true;
-                textBox3.Enabled = true;
-                Boton_Permisos.Enabled = true;
-                textBox2.Text = comboBox1.SelectedItem.ToString();
-            }
-            else
-            {
-                textBox2.Enabled = false;
-                textBox3.Enabled = false;
-                Boton_Permisos.Enabled = false;
+                comboBox1.Items.Add(users);
             }
         }
     }
