@@ -5011,6 +5011,7 @@ namespace FutureLending
             this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
             this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
             this.ClientSize = (new global::System.Drawing.Size(1538, 967));
+            this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.PanelBien);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlListas);
@@ -5018,7 +5019,6 @@ namespace FutureLending
             this.Controls.Add(this.PnlEditar2);
             this.Controls.Add(this.PanelEditar);
             this.Controls.Add(this.PanelEditar2_2);
-            this.Controls.Add(this.pnlRegPago);
             this.Controls.Add(this.PanelEditarLiquidados);
             this.Controls.Add(this.pnlClientes);
             this.Controls.Add(this.panelTitleBar);

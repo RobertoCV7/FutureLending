@@ -129,7 +129,6 @@
             // Agrega los datos al DataGridView en un hilo separado
             await AñadirDatos(datosList, gridListas, cmbCliente, false);
         }
-
         //Muestra en la tabla los datos de todos los clientes y su lista perteneciente
         public static async Task MostrarTodos(DataGridView gridListas,
               ControlesPersonalizados.RJComboBox cmbCliente)

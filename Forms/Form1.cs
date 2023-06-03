@@ -43,8 +43,7 @@ namespace FutureLending
                     ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
                     ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
                     this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-                    gridListas.VirtualMode = false;
-                    TablaClientes.AñadirEvento(gridListas);
+                    dateTimePickerPersonalizado2.Enabled = false;
                 }));
             });
         }
@@ -91,10 +90,10 @@ namespace FutureLending
 
         private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
+
+            EsconderPaneles(pnlClientes);
             lblTitle.Text = "Ingresar Clientes";
-            pnlClientes.BringToFront();
             CargarPromotoresEnComboBox(cmbPromotor);
-            dateTimePickerPersonalizado2.Enabled = false;
 
         }
         Double credito2;
@@ -372,9 +371,7 @@ namespace FutureLending
             }
 
             lblTitle.Text = "Listas Completas";
-            pnlListas.BringToFront();
-
-
+            EsconderPaneles(pnlListas);
         }
         void Habilitartodos()
         {
@@ -391,6 +388,26 @@ namespace FutureLending
             btnMostrarTodos.Click -= BtnMostrarTodos_Click;
             btnMostrarTodos.MouseDown -= BtnMostrarTodos_MouseDown;
             btnMostrarTodos.TabStop = false;
+
+        }
+        //Funcion para esconder los paneles menos el enviado
+        void EsconderPaneles(Panel panel1)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Panel)
+                {
+                    Panel panel = (Panel)control;
+
+                    // Verificar si el panel debe mantenerse visible o no
+                    if (panel.Name != "panelTitleBar" && panel.Name != "panelMenu")
+                    {
+                        panel.Visible = false;
+                    }
+                }
+            }
+            panel1.Visible = true;
+            panel1.BringToFront();
 
         }
         private void RjButton1_Click_1(object sender, EventArgs e)
@@ -485,7 +502,7 @@ namespace FutureLending
                 //Cargar los promotores en el ComboBox
                 CargarPromotoresEnComboBox(rjComboBox3);
                 //Muestro el panel de editar
-                PanelEditar.BringToFront();
+                EsconderPaneles(PanelEditar);
                 //Limpio las listas donde es posible  mover al registro
                 cmbLista.Items.Clear();
                 cmbLista.Enabled = true;
@@ -521,7 +538,7 @@ namespace FutureLending
                 //Cargar los promotores en el ComboBox
                 CargarPromotoresEnComboBox(rjComboBox8);
                 //Llamo al panel editar de la lista 2
-                PnlEditar2.BringToFront();
+                EsconderPaneles(PnlEditar2);
                 //Lleno el rjcombobox de promotores con la info correspondiente
                 CargarPromotoresEnComboBox(rjComboBox8);
                 //Limpio las listas donde es posible  mover al registro
@@ -560,7 +577,7 @@ namespace FutureLending
                 //Cargar los promotores en el ComboBox
                 CargarPromotoresEnComboBox(ComboBoxPromotor3);
                 //Traer panel de edicion3
-                PanelEditar3.BringToFront();
+                EsconderPaneles(PanelEditar3);
                 //Llenar el rjcombobox de promotores con la info correspondiente
                 CargarPromotoresEnComboBox(ComboBoxPromotor3);
                 //Limpio las listas donde es posible  mover al registro
@@ -591,7 +608,7 @@ namespace FutureLending
                 //Cargo lo promotres en el combobox de liquidados
                 CargarPromotoresEnComboBox(ComboBoxPromotorLiq);
                 //Traigo el panel editar de liquidados
-                PanelEditarLiquidados.BringToFront();
+                EsconderPaneles(PanelEditarLiquidados);
                 //Nombre del registro
                 Cliente = cmbCliente.Texts;
                 //Obtenemos la informacion de ese registro en especifico
@@ -636,7 +653,7 @@ namespace FutureLending
             bool revisar = e1.EditarLista1(Informacion);
             if (revisar)
             {
-                pnlListas.BringToFront();
+                EsconderPaneles(pnlListas);
                 btnLista1.PerformClick(); //Reactualizo los datos de la lista 1
             }
             else
@@ -699,7 +716,7 @@ namespace FutureLending
                     {
                         //Borro el registro de la lista 1 porque si se movio al 2
                         instancia.Erase(InfoMov[1], "lista1");
-                        pnlListas.BringToFront();
+                        EsconderPaneles(pnlListas);
                         btnLista2.PerformClick(); //Reactualizo los datos de la lista  2
                     }
                     else
@@ -728,7 +745,7 @@ namespace FutureLending
                     if (rev3)
                     {
                         instancia3.Erase(InfoMov3[1], "lista1");
-                        pnlListas.BringToFront();
+                        EsconderPaneles(pnlListas);
                         btnLista3.PerformClick(); //Reactualizo los datos de la lista  3
                     }
                     else
@@ -754,7 +771,7 @@ namespace FutureLending
                     if (rev4)
                     {
                         instancia4.Erase(InfoMov4[1], "lista1");
-                        pnlListas.BringToFront();
+                        EsconderPaneles(pnlListas);
                         btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
                     }
                     else
@@ -774,8 +791,7 @@ namespace FutureLending
             TextBoxPago.Texts = "";
             ComboBoxDeFechas.SelectedIndex = -1;
             Lecturas_Especificas instancia = new();
-
-            PanelEditar2_2.BringToFront();
+            EsconderPaneles(PanelEditar2_2);
             int a = 1;
             //acomodamos el combobox de Fechas para agregar las fechas que se necesiten
             ComboBoxDeFechas.Items.Clear();
@@ -862,7 +878,7 @@ namespace FutureLending
                 if (rev5)
                 {
                     instancia5.Erase(Mov5[1], "lista2"); //Eliminamos el registro 
-                    pnlListas.BringToFront();
+                    EsconderPaneles(pnlListas);
                     btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados ya que se paso para alla
                 }
                 else
@@ -893,7 +909,7 @@ namespace FutureLending
                 bool a = e2.EditarLista2(InfoListaNueva2);
                 if (a)
                 {
-                    pnlListas.BringToFront();
+                    EsconderPaneles(pnlListas);
                     btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
 
                 }
@@ -907,6 +923,7 @@ namespace FutureLending
         //Si selecciona una fecha de lista 2 se muestra en el datetimepicker
         private void ComboBoxDeFechas_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            int apuntador = 0;
             FechaEnLista2.Enabled = true;
             if (string.IsNullOrEmpty(Informacion2[2]))
             {
@@ -916,7 +933,7 @@ namespace FutureLending
             {
                 if (ComboBoxDeFechas.SelectedIndex == 0)
                 {
-                    int apuntador = 14;
+                    apuntador = 14;
 
                     if (Informacion2[apuntador] == "-" || Informacion2[apuntador] == "" || Informacion2[apuntador] == null)
                     {
@@ -929,7 +946,15 @@ namespace FutureLending
                 }
                 else
                 {
-                    int apuntador = ComboBoxDeFechas.SelectedIndex + (14 + 2);
+                    if (ComboBoxDeFechas.SelectedIndex != -1)
+                    {
+                        apuntador = ((ComboBoxDeFechas.SelectedIndex * 2) + (14));
+                    }
+                    else
+                    {
+                        apuntador = 14;
+                    }
+
                     if (Informacion2[apuntador] == "-" || Informacion2[apuntador] == "" || Informacion2[apuntador] == null)
                     {
                         FechaEnLista2.Value = DateTime.Today;
@@ -942,6 +967,16 @@ namespace FutureLending
                 }
 
             }
+            if (ComboBoxDeFechas.SelectedItem != null)
+            {
+                if (ComboBoxDeFechas.SelectedItem.ToString().Contains("Pagado"))
+                {
+                    ComboBoxDeFechas.SelectedIndex = -1;
+                }
+
+            }
+
+
         }
         //Si ya puso un pago se activa el boton
         private void TextBoxPago__TextChanged(object sender, EventArgs e)
@@ -962,7 +997,7 @@ namespace FutureLending
             BotonEditarFechas2.Enabled = false;
             Botoncambiodefechamomentaneo.Enabled = false;
             FechaEnLista2.Enabled = false;
-            PnlEditar2.BringToFront();
+            EsconderPaneles(PnlEditar2);
         }
 
         private void RjButton8_Click(object sender, EventArgs e)//Mover de Lista 2 a lista 3 o liquidados
@@ -992,7 +1027,7 @@ namespace FutureLending
                     if (av)
                     {
                         Instancia.Erase(Cliente, "lista2");//Lo borro de la lista 2
-                        pnlListas.BringToFront();
+                        EsconderPaneles(pnlListas);
                         btnLista3.PerformClick();
                     }
                     else
@@ -1018,7 +1053,7 @@ namespace FutureLending
                     if (av2)
                     {
                         Instancia2.Erase(Cliente, "lista2");//Lo borro de la lista 2
-                        pnlListas.BringToFront();
+                        EsconderPaneles(pnlListas);
                         btnLiquidados.PerformClick();
                     }
                     else
@@ -1065,7 +1100,7 @@ namespace FutureLending
             bool es = a.EditarLista3(Informacion3);
             if (es)
             {
-                pnlListas.BringToFront();
+                EsconderPaneles(pnlListas);
                 btnLista3.PerformClick(); //Reactualizo los datos de la lista 3
             }
             else
@@ -1092,7 +1127,7 @@ namespace FutureLending
             if (av2)
             {
                 Instancia2.Erase(Cliente, "lista3");//Lo borro de la lista 3
-                pnlListas.BringToFront();
+                EsconderPaneles(pnlListas);
                 btnLiquidados.PerformClick();
             }
             else
@@ -1133,7 +1168,7 @@ namespace FutureLending
             bool saber2 = e2.EditarListaLiquidados(Informacion4);
             if (saber2)
             {
-                pnlListas.BringToFront();
+                EsconderPaneles(pnlListas);
                 btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
             }
             else
@@ -1246,7 +1281,7 @@ namespace FutureLending
         #region Estado de Pagos
         private void BtnEstadoPagos_Click(object sender, EventArgs e)
         {
-            pnlRegPago.BringToFront();
+            EsconderPaneles(pnlRegPago);
             lblTitle.Text = "Registrar pago";
 
             // Iniciar el hilo de fondo
@@ -1316,6 +1351,7 @@ namespace FutureLending
             //Leer las fechas registradas 
             int index = rjComboBox9.SelectedIndex; //Fecha seleccionada por el cliente
             index += 16;
+            rjComboBox9.SelectedIndex = -1;
             //Restar el nuevo pago al monto restante 
             double totRes = (Convert.ToDouble(fechas[15])) - (Convert.ToDouble(txtBoxMonto.Texts));
             //Si el monto restante es 0, entonces se pasa a liquidados 
@@ -1347,7 +1383,8 @@ namespace FutureLending
                 _ = instancia22.EditarLista1(dato);
             }
             //Resetear valores 
-            ComBoxName.SelectedIndex = -1; ComBoxName.Texts = "Introduzca nombre";
+            ComBoxName.SelectedIndex = -1; 
+            ComBoxName.Texts = "Introduzca nombre";
             btnBuscarC.Enabled = false;
             rjComboBox9.Items.Clear();
             rjComboBox9.Visible = false;
@@ -1361,6 +1398,8 @@ namespace FutureLending
             btnMarcarP.Visible = false;
             rjComboBox9.SelectedIndex = -1;
 
+            //Recargo de datos
+            BtnEstadoPagos_Click(sender, e);
         }
 
 
@@ -1375,7 +1414,7 @@ namespace FutureLending
             CargarPromotoresEnComboBox(rjComboBox4);
 
             lblTitle.Text = "Configuracion";
-            panel2.BringToFront();
+            EsconderPaneles(panel2);
             _ = new Accesos();
             string[] usuarios = Accesos.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
@@ -1835,6 +1874,11 @@ namespace FutureLending
             if (rjComboBox9.SelectedIndex != -1)
             {
                 btnMarcarP.Enabled = true;
+                if (rjComboBox9.SelectedItem.ToString().Contains("(PAGADA)"))
+                {
+                    rjComboBox9.SelectedIndex = -1;  rjComboBox9.Texts = "Fecha Invalida"; 
+
+                }
             }
             else
             {

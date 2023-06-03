@@ -240,7 +240,7 @@ namespace FutureLending
 
             return datos;
         }
-        public List<string[]> LectTodos(string tabla, string lista)
+        public List<string[]>  LectTodos(string tabla, string lista)
         {
             List<string[]> datos = new();
             using (MySqlConnection connection = Conector())
