@@ -163,7 +163,7 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Dubai", 16.1999989F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(28, 41, 86);
-            button1.Location = new Point(281, 540);
+            button1.Location = new Point(276, 562);
             button1.Name = "button1";
             button1.Size = new Size(179, 48);
             button1.TabIndex = 9;
@@ -174,11 +174,11 @@
             // Mensaje
             // 
             Mensaje.AutoSize = true;
-            Mensaje.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Mensaje.Font = new Font("Corbel Light", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(650, 515);
+            Mensaje.Location = new Point(182, 521);
             Mensaje.Name = "Mensaje";
-            Mensaje.Size = new Size(0, 32);
+            Mensaje.Size = new Size(0, 35);
             Mensaje.TabIndex = 10;
             // 
             // bunifuElipse1
@@ -221,7 +221,7 @@
             btnTodosSistemas.IconColor = Color.White;
             btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(650, 551);
+            btnTodosSistemas.Location = new Point(647, 572);
             btnTodosSistemas.Margin = new Padding(3, 4, 3, 4);
             btnTodosSistemas.Name = "btnTodosSistemas";
             btnTodosSistemas.Padding = new Padding(11, 0, 0, 0);
@@ -243,7 +243,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(726, 611);
+            ClientSize = new Size(726, 632);
             ControlBox = false;
             Controls.Add(btnTodosSistemas);
             Controls.Add(Mensaje);
@@ -267,6 +267,7 @@
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio_Sesion";
+            Load += Inicio_Sesion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
