@@ -1068,7 +1068,7 @@ namespace FutureLending
             }
             else
             {
-                for (int i = 16; i < datos.Length; i++)
+                for (int i = 16; i < 30; i++)
                 {
                     if (datos[i] != null && !datos[i].Contains("-"))
                     {
