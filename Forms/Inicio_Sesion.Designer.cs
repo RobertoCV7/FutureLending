@@ -174,11 +174,11 @@
             // Mensaje
             // 
             Mensaje.AutoSize = true;
-            Mensaje.Font = new Font("Corbel Light", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            Mensaje.Font = new Font("Corbel Light", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(182, 521);
+            Mensaje.Location = new Point(224, 509);
             Mensaje.Name = "Mensaje";
-            Mensaje.Size = new Size(0, 35);
+            Mensaje.Size = new Size(0, 28);
             Mensaje.TabIndex = 10;
             // 
             // bunifuElipse1
