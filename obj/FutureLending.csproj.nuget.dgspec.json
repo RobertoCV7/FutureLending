@@ -14,7 +14,7 @@
         "outputPath": "C:\\Users\\donne\\FutureLending\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Visual studio\\cosas\\NuGetPackages"
+          "D:\\Aplicaciones\\Microsoft Visual Studio\\Componentes\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\donne\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

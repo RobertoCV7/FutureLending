@@ -7,9 +7,6 @@
     <ActiveDebugProfile>FutureLending</ActiveDebugProfile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Configuracion_Inicio_Sesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="ControlesPersonalizados\DateTimePickerPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -21,6 +18,9 @@
     </Compile>
     <Compile Update="ControlesPersonalizados\TextBoxPersonalizado.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Configuracion_Inicio_Sesion.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Exportar_Excel.cs">
       <SubType>Form</SubType>
