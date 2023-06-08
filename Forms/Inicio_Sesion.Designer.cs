@@ -58,9 +58,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(290, 107);
+            pictureBox1.Location = new Point(254, 80);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 158);
+            pictureBox1.Size = new Size(131, 118);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -68,9 +69,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.x_circle_icon;
-            pictureBox2.Location = new Point(12, 12);
+            pictureBox2.Location = new Point(10, 9);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(47, 45);
+            pictureBox2.Size = new Size(41, 34);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -82,9 +84,9 @@
             label1.BackColor = SystemColors.InactiveCaption;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(28, 41, 86);
-            label1.Location = new Point(235, 38);
+            label1.Location = new Point(206, 28);
             label1.Name = "label1";
-            label1.Size = new Size(251, 54);
+            label1.Size = new Size(204, 45);
             label1.TabIndex = 2;
             label1.Text = "Iniciar sesión";
             label1.Click += label1_Click;
@@ -94,9 +96,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Corbel Light", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(173, 275);
+            label2.Location = new Point(151, 206);
             label2.Name = "label2";
-            label2.Size = new Size(90, 31);
+            label2.Size = new Size(72, 24);
             label2.TabIndex = 3;
             label2.Text = "Usuario";
             // 
@@ -105,9 +107,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Corbel Light", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(173, 405);
+            label3.Location = new Point(151, 304);
             label3.Name = "label3";
-            label3.Size = new Size(130, 31);
+            label3.Size = new Size(103, 24);
             label3.TabIndex = 4;
             label3.Text = "Contraseña";
             // 
@@ -115,9 +117,10 @@
             // 
             pictureBox3.BackColor = SystemColors.ScrollBar;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(173, 313);
+            pictureBox3.Location = new Point(151, 235);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(405, 63);
+            pictureBox3.Size = new Size(354, 47);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
@@ -125,9 +128,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(173, 443);
+            pictureBox4.Location = new Point(151, 332);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(405, 63);
+            pictureBox4.Size = new Size(354, 47);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 6;
             pictureBox4.TabStop = false;
@@ -138,9 +142,10 @@
             TextUsuario.BorderStyle = BorderStyle.None;
             TextUsuario.Font = new Font("Corbel Light", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             TextUsuario.ForeColor = Color.White;
-            TextUsuario.Location = new Point(182, 327);
+            TextUsuario.Location = new Point(159, 245);
+            TextUsuario.Margin = new Padding(3, 2, 3, 2);
             TextUsuario.Name = "TextUsuario";
-            TextUsuario.Size = new Size(340, 33);
+            TextUsuario.Size = new Size(298, 27);
             TextUsuario.TabIndex = 7;
             // 
             // TextContra
@@ -149,9 +154,10 @@
             TextContra.BorderStyle = BorderStyle.None;
             TextContra.Font = new Font("Corbel Light", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             TextContra.ForeColor = SystemColors.InactiveBorder;
-            TextContra.Location = new Point(182, 460);
+            TextContra.Location = new Point(159, 345);
+            TextContra.Margin = new Padding(3, 2, 3, 2);
             TextContra.Name = "TextContra";
-            TextContra.Size = new Size(317, 29);
+            TextContra.Size = new Size(277, 23);
             TextContra.TabIndex = 8;
             TextContra.UseSystemPasswordChar = true;
             TextContra.TextChanged += TextContra_TextChanged;
@@ -163,9 +169,10 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Dubai", 16.1999989F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(28, 41, 86);
-            button1.Location = new Point(268, 554);
+            button1.Location = new Point(234, 416);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(196, 56);
+            button1.Size = new Size(172, 42);
             button1.TabIndex = 9;
             button1.Text = "Acceder";
             button1.UseVisualStyleBackColor = false;
@@ -176,9 +183,9 @@
             Mensaje.AutoSize = true;
             Mensaje.Font = new Font("Corbel Light", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(182, 509);
+            Mensaje.Location = new Point(159, 382);
             Mensaje.Name = "Mensaje";
-            Mensaje.Size = new Size(0, 28);
+            Mensaje.Size = new Size(0, 23);
             Mensaje.TabIndex = 10;
             // 
             // bunifuElipse1
@@ -221,11 +228,10 @@
             btnTodosSistemas.IconColor = Color.White;
             btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(647, 572);
-            btnTodosSistemas.Margin = new Padding(3, 4, 3, 4);
+            btnTodosSistemas.Location = new Point(566, 429);
             btnTodosSistemas.Name = "btnTodosSistemas";
-            btnTodosSistemas.Padding = new Padding(11, 0, 0, 0);
-            btnTodosSistemas.Size = new Size(67, 47);
+            btnTodosSistemas.Padding = new Padding(10, 0, 0, 0);
+            btnTodosSistemas.Size = new Size(59, 35);
             btnTodosSistemas.TabIndex = 11;
             btnTodosSistemas.Tag = "Reparar";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -239,11 +245,11 @@
             // 
             // Inicio_Sesion
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(726, 632);
+            ClientSize = new Size(635, 474);
             ControlBox = false;
             Controls.Add(btnTodosSistemas);
             Controls.Add(Mensaje);
@@ -259,6 +265,7 @@
             Controls.Add(pictureBox1);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
