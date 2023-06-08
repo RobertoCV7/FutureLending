@@ -612,7 +612,7 @@ namespace FutureLending
                 }
                 else
                 {
-                    a.conect = true;
+                    Form1.conect = true;
                 }
             }
             catch (Exception ex)

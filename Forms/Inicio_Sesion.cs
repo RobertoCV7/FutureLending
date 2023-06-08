@@ -35,25 +35,12 @@
             }
         }
 
-        private async void BtnTodosSistemas_Click(object sender, EventArgs e)
+        private void BtnTodosSistemas_Click(object sender, EventArgs e)
         {
-            Lectura_Base_Datos a = new();
-            await a.CheckConnection(false);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextContra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Inicio_Sesion_Load(object sender, EventArgs e)
-        {
-
+            using (Configuracion_Inicio_Sesion a = new Configuracion_Inicio_Sesion())
+            {
+                a.ShowDialog();
+            }
         }
     }
 }

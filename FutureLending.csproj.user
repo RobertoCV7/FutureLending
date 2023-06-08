@@ -7,6 +7,9 @@
     <ActiveDebugProfile>FutureLending</ActiveDebugProfile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Configuracion_Inicio_Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ControlesPersonalizados\DateTimePickerPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>

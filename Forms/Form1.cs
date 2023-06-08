@@ -380,7 +380,7 @@ namespace FutureLending
         {
             ListaEstado = 0;
             DesactivarBotones();
-            
+
 
             await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso, label57);
 
@@ -1256,8 +1256,8 @@ namespace FutureLending
 
         #region Edicion conexion sql
 
-        public bool conect;
-        public bool revisador = true;
+        public static bool conect;
+        public static bool revisador = true;
         private readonly Lectura_Base_Datos lecturaBaseDatos = new Lectura_Base_Datos();
 
         private bool isTabPageLoaded = false; // Variable para rastrear si los objetos de la pestaña se han cargado
@@ -1361,7 +1361,7 @@ namespace FutureLending
             revisador = false;
             await a.CheckConnection(true);
             revisador = true;
-            if (conect)
+            if (!conect)
             {
                 LabelEstado.Text = "Inactivo";
                 LabelEstado.ForeColor = Color.Red;

@@ -874,3 +874,4 @@ C:\Users\donne\FutureLending\obj\Debug\net6.0-windows10.0.17763.0\refint\FutureL
 C:\Users\donne\FutureLending\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.pdb
 C:\Users\donne\FutureLending\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.genruntimeconfig.cache
 C:\Users\donne\FutureLending\obj\Debug\net6.0-windows10.0.17763.0\ref\FutureLending.dll
+C:\Users\donne\FutureLending\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Configuracion_Inicio_Sesion.resources
