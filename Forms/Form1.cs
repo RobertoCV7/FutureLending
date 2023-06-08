@@ -58,6 +58,8 @@ namespace FutureLending
                     BarradeProgreso.Visible = false;
                     label17.Visible = false;
                     rjButton5.Enabled = false;
+                    label82.Visible = false;
+                    Monto_Recomendado.Visible = false;
                     cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
                     cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
                     ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -917,21 +919,20 @@ namespace FutureLending
             rjComboBox9.Texts = "Seleccione la Fecha";
             Lecturas_Especificas instancia = new();
             string[] datos = instancia.LectName(ComBoxName.SelectedItem.ToString());
-            if (datos[1] != ComBoxName.SelectedItem.ToString())
+            int f = 0;
+            for (int i = 16; i < 30; i++)
             {
-                MessageB("No se encontro al usuario en esa Lista", "Advertencia", 2);
-            }
-            else
-            {
-                for (int i = 16; i < 30; i++)
+                if (datos[i] != null && !datos[i].Contains("-"))
                 {
-                    if (datos[i] != null && !datos[i].Contains("-"))
-                    {
-                        rjComboBox9.Items.Add(datos[i]);
-                    }
-                    else
+                    rjComboBox9.Items.Add(datos[i]);
+                    f++;
+                }
+                else
+                {
+                    if (datos[i] != null)
                     {
                         rjComboBox9.Items.Add(datos[i] + "(PAGADA)");
+                        f++;
                     }
                 }
                 label17.Visible = true;
@@ -945,7 +946,10 @@ namespace FutureLending
                 TextBoxRestantepagos.Visible = true;
                 TextBoxRestantepagos.Texts = datos[15];
                 TextBoxRestantepagos.Enabled = false;
-                txtBoxCredito.Texts = datos[2];
+                txtBoxCredito.Texts = datos[7];
+                Monto_Recomendado.Visible = true;
+                label82.Visible = true;
+                Monto_Recomendado.Texts = (Convert.ToDouble(datos[7]) / Convert.ToDouble(f)).ToString("N2");
             }
         }
         private void BtnMarcarP_Click(object sender, EventArgs e)
@@ -996,7 +1000,9 @@ namespace FutureLending
             txtBoxCredito.Visible = false;
             txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
             lblCredito.Visible = false;
+            label82.Visible = false;
             TextBoxRestantepagos.Visible = false;
+            Monto_Recomendado.Visible = false;
             lblMonto.Visible = false;
             lblFecha.Visible = false;
             label17.Visible = false;
@@ -2115,17 +2121,16 @@ namespace FutureLending
                         int liquidacion = int.Parse(InfoMov[12]);
                         uint Quita = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(liquidacion)); //en Uint para que no sea negativo jamas
                         InfoMov[13] = Quita.ToString();//Monto de Quita que es la diferencia entre el liquidacion y el pagare por haber seleccionado liquidacion
-                        InfoMov[42] = InfoMov[4];//Monto de Extencion - Al pagare se le resta el pago de intencion
+                        InfoMov[42] = liquidacion.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
                     }
                     else
                     {
                         //Se toma encuenta 10% del Pagare y se le suma a su monto restante
                         int pag = int.Parse(InfoMov[4]);
-                        double quita = (pag * .10);
+                        double quita = (pag * .90);
                         InfoMov[12] = quita.ToString();//Monto de Intencion es el 10% del pagare
                         InfoMov[13] = "0";//Monto de Quita es 0 por ser de convenio
-                        double Ext = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(pag)); //en Uint para que no sea negativo jamas 
-                        InfoMov[42] = Ext.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
+                        InfoMov[42] = quita.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
                     }
                     //Lleno la parte de fechas con guiones
                     for (int i = 14; i <= 41; i++)
