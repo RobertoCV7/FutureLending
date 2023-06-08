@@ -380,7 +380,7 @@ namespace FutureLending
         {
             ListaEstado = 0;
             DesactivarBotones();
-            BarradeProgreso.Visible = true;
+            
 
             await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso, label57);
 

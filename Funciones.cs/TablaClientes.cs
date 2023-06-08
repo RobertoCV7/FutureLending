@@ -198,12 +198,22 @@
             if (datosList.Count != 0)
             {
                 porcentajePaso = 100.0 / datosList.Count;
+                if (datosList.Count <= 100)
+                {
+                    bar.Visible = false;
+                }
+                else
+                {
+                    bar.Visible = true;
+                    Lab.Visible = true;
+                }
             }
             else
             {
                 hacer = false;
+                bar.Visible = false;
             }
-
+           
             await Task.Run(() =>
             {
                 foreach (string[] row in datosList)
@@ -216,8 +226,8 @@
                             int valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
                             bar.Invoke(new Action(() =>
                             {
-                                bar.Visible = true;
-                                Lab.Visible = true;
+                                
+                                
                                 bar.Value = valorProgressBar;
                                 bar.Refresh();
                                 if (valorProgressBar == 100)

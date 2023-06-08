@@ -183,7 +183,7 @@
             Mensaje.AutoSize = true;
             Mensaje.Font = new Font("Corbel Light", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(159, 382);
+            Mensaje.Location = new Point(206, 381);
             Mensaje.Name = "Mensaje";
             Mensaje.Size = new Size(0, 23);
             Mensaje.TabIndex = 10;

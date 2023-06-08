@@ -5119,8 +5119,8 @@ namespace FutureLending
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1346, 725);
-            Controls.Add(pnlListas);
             Controls.Add(PanelBien);
+            Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
             Controls.Add(PanelEditar3);
             Controls.Add(pnlClientes);

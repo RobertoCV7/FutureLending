@@ -461,3 +461,67 @@
    at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
    at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:46:38 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:46:38 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:47:00 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:49:03 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:49:03 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:49:08 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:49:09 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:49:10 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:49:11 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:50:15 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:50:15 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:50:18 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:50:19 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:50:20 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:50:21 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:50:22 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:51:14 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:51:14 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:51:57 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:51:57 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:52:00 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:52:03 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
+[07/06/2023 08:53:30 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:53:30 p. m.] Error: Error al cargar los promotores: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[07/06/2023 08:53:33 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Tipo_pago
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at FutureLending.Lectura_Base_Datos.LectTodos(String tabla, String lista) in C:\Users\donne\FutureLending\Funciones.cs\Lectura_Base_Datos.cs:line 291
