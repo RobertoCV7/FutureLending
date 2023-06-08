@@ -80,6 +80,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form2";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();

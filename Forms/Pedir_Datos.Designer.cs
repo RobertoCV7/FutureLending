@@ -50,12 +50,11 @@
             rjComboBox2.Items.AddRange(new object[] { "Liquidacion", "Convenio" });
             rjComboBox2.ListBackColor = SystemColors.Info;
             rjComboBox2.ListTextColor = Color.DimGray;
-            rjComboBox2.Location = new Point(298, 36);
-            rjComboBox2.Margin = new Padding(3, 2, 3, 2);
-            rjComboBox2.MinimumSize = new Size(175, 22);
+            rjComboBox2.Location = new Point(322, 47);
+            rjComboBox2.MinimumSize = new Size(200, 29);
             rjComboBox2.Name = "rjComboBox2";
-            rjComboBox2.Padding = new Padding(2, 2, 2, 2);
-            rjComboBox2.Size = new Size(334, 49);
+            rjComboBox2.Padding = new Padding(2, 3, 2, 3);
+            rjComboBox2.Size = new Size(388, 65);
             rjComboBox2.TabIndex = 56;
             rjComboBox2.Tag = "Selecciones un tipo de pago";
             rjComboBox2.Texts = "Seleccione un tipo de pago";
@@ -66,9 +65,9 @@
             label30.AutoSize = true;
             label30.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label30.ForeColor = Color.DarkSlateGray;
-            label30.Location = new Point(24, 58);
+            label30.Location = new Point(27, 77);
             label30.Name = "label30";
-            label30.Size = new Size(140, 27);
+            label30.Size = new Size(179, 35);
             label30.TabIndex = 57;
             label30.Text = "Tipo de pago:";
             // 
@@ -79,14 +78,15 @@
             TextLiquidacionPedir.BorderRadius = 0;
             TextLiquidacionPedir.BorderSize = 2;
             TextLiquidacionPedir.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TextLiquidacionPedir.Location = new Point(298, 133);
+            TextLiquidacionPedir.Location = new Point(322, 176);
+            TextLiquidacionPedir.Margin = new Padding(3, 4, 3, 4);
             TextLiquidacionPedir.Multiline = false;
             TextLiquidacionPedir.Name = "TextLiquidacionPedir";
-            TextLiquidacionPedir.Padding = new Padding(10, 7, 10, 7);
+            TextLiquidacionPedir.Padding = new Padding(11, 9, 11, 9);
             TextLiquidacionPedir.PasswordChar = false;
             TextLiquidacionPedir.PlaceholderColor = Color.DimGray;
             TextLiquidacionPedir.PlaceholderText = "";
-            TextLiquidacionPedir.Size = new Size(334, 39);
+            TextLiquidacionPedir.Size = new Size(382, 48);
             TextLiquidacionPedir.TabIndex = 59;
             TextLiquidacionPedir.Texts = "";
             TextLiquidacionPedir.UnderlinedStyle = true;
@@ -98,16 +98,16 @@
             label33.AutoSize = true;
             label33.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label33.ForeColor = Color.DarkSlateGray;
-            label33.Location = new Point(23, 142);
+            label33.Location = new Point(26, 189);
             label33.Name = "label33";
-            label33.Size = new Size(220, 27);
+            label33.Size = new Size(287, 35);
             label33.TabIndex = 58;
             label33.Text = "Liquidacion/Intencion:";
             // 
             // BotonDeingresarPedir
             // 
-            BotonDeingresarPedir.BackColor = Color.Crimson;
-            BotonDeingresarPedir.BackgroundColor = Color.Crimson;
+            BotonDeingresarPedir.BackColor = Color.IndianRed;
+            BotonDeingresarPedir.BackgroundColor = Color.IndianRed;
             BotonDeingresarPedir.BorderColor = Color.PaleVioletRed;
             BotonDeingresarPedir.BorderRadius = 20;
             BotonDeingresarPedir.BorderSize = 0;
@@ -115,10 +115,9 @@
             BotonDeingresarPedir.FlatStyle = FlatStyle.Flat;
             BotonDeingresarPedir.Font = new Font("Cooper Black", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             BotonDeingresarPedir.ForeColor = Color.White;
-            BotonDeingresarPedir.Location = new Point(391, 216);
-            BotonDeingresarPedir.Margin = new Padding(3, 2, 3, 2);
+            BotonDeingresarPedir.Location = new Point(455, 288);
             BotonDeingresarPedir.Name = "BotonDeingresarPedir";
-            BotonDeingresarPedir.Size = new Size(218, 70);
+            BotonDeingresarPedir.Size = new Size(249, 93);
             BotonDeingresarPedir.TabIndex = 62;
             BotonDeingresarPedir.Text = "Ingresar";
             BotonDeingresarPedir.TextColor = Color.White;
@@ -127,10 +126,10 @@
             // 
             // Pedir_Datos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HighlightText;
-            ClientSize = new Size(648, 295);
+            ClientSize = new Size(741, 393);
             Controls.Add(BotonDeingresarPedir);
             Controls.Add(TextLiquidacionPedir);
             Controls.Add(label33);
@@ -138,11 +137,11 @@
             Controls.Add(label30);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Pedir_Datos";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Pedir_Datos";
+            Text = "Datos Para Lista 2";
             ResumeLayout(false);
             PerformLayout();
         }

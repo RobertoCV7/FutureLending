@@ -48,7 +48,6 @@
             bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(components);
             bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(components);
             btnTodosSistemas = new FontAwesome.Sharp.IconButton();
-            bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -93,22 +92,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Corbel Light", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Corbel", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
             label2.Location = new Point(151, 206);
             label2.Name = "label2";
-            label2.Size = new Size(72, 24);
+            label2.Size = new Size(76, 24);
             label2.TabIndex = 3;
             label2.Text = "Usuario";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Corbel Light", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Corbel", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(151, 304);
             label3.Name = "label3";
-            label3.Size = new Size(103, 24);
+            label3.Size = new Size(108, 24);
             label3.TabIndex = 4;
             label3.Text = "Contraseña";
             // 
@@ -139,25 +138,28 @@
             // 
             TextUsuario.BackColor = Color.FromArgb(28, 41, 86);
             TextUsuario.BorderStyle = BorderStyle.None;
-            TextUsuario.Font = new Font("Corbel Light", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TextUsuario.Font = new Font("Corbel", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             TextUsuario.ForeColor = Color.White;
             TextUsuario.Location = new Point(159, 245);
             TextUsuario.Margin = new Padding(3, 2, 3, 2);
             TextUsuario.Name = "TextUsuario";
-            TextUsuario.Size = new Size(298, 27);
+            TextUsuario.Size = new Size(331, 27);
             TextUsuario.TabIndex = 7;
+            TextUsuario.TextAlign = HorizontalAlignment.Center;
+            TextUsuario.TextChanged += TextUsuario_TextChanged;
             // 
             // TextContra
             // 
             TextContra.BackColor = Color.FromArgb(28, 41, 86);
             TextContra.BorderStyle = BorderStyle.None;
-            TextContra.Font = new Font("Corbel Light", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            TextContra.Font = new Font("Corbel", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             TextContra.ForeColor = SystemColors.InactiveBorder;
             TextContra.Location = new Point(159, 345);
             TextContra.Margin = new Padding(3, 2, 3, 2);
             TextContra.Name = "TextContra";
-            TextContra.Size = new Size(277, 23);
+            TextContra.Size = new Size(331, 27);
             TextContra.TabIndex = 8;
+            TextContra.TextAlign = HorizontalAlignment.Center;
             TextContra.UseSystemPasswordChar = true;
             // 
             // button1
@@ -188,12 +190,12 @@
             // 
             // bunifuElipse1
             // 
-            bunifuElipse1.ElipseRadius = 35;
+            bunifuElipse1.ElipseRadius = 25;
             bunifuElipse1.TargetControl = this;
             // 
             // bunifuElipse2
             // 
-            bunifuElipse2.ElipseRadius = 30;
+            bunifuElipse2.ElipseRadius = 20;
             bunifuElipse2.TargetControl = pictureBox1;
             // 
             // bunifuElipse3
@@ -203,17 +205,17 @@
             // 
             // bunifuElipse4
             // 
-            bunifuElipse4.ElipseRadius = 30;
+            bunifuElipse4.ElipseRadius = 10;
             bunifuElipse4.TargetControl = button1;
             // 
             // bunifuElipse5
             // 
-            bunifuElipse5.ElipseRadius = 30;
+            bunifuElipse5.ElipseRadius = 20;
             bunifuElipse5.TargetControl = pictureBox3;
             // 
             // bunifuElipse6
             // 
-            bunifuElipse6.ElipseRadius = 30;
+            bunifuElipse6.ElipseRadius = 20;
             bunifuElipse6.TargetControl = pictureBox4;
             // 
             // btnTodosSistemas
@@ -226,20 +228,15 @@
             btnTodosSistemas.IconColor = Color.White;
             btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(566, 429);
+            btnTodosSistemas.Location = new Point(565, 429);
             btnTodosSistemas.Name = "btnTodosSistemas";
             btnTodosSistemas.Padding = new Padding(10, 0, 0, 0);
-            btnTodosSistemas.Size = new Size(59, 35);
+            btnTodosSistemas.Size = new Size(60, 35);
             btnTodosSistemas.TabIndex = 11;
             btnTodosSistemas.Tag = "Reparar";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTodosSistemas.UseVisualStyleBackColor = true;
             btnTodosSistemas.Click += BtnTodosSistemas_Click;
-            // 
-            // bunifuElipse7
-            // 
-            bunifuElipse7.ElipseRadius = 100;
-            bunifuElipse7.TargetControl = btnTodosSistemas;
             // 
             // Inicio_Sesion
             // 
@@ -300,6 +297,5 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private FontAwesome.Sharp.IconButton btnTodosSistemas;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
     }
 }

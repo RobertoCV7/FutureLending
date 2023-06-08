@@ -36,8 +36,8 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.Crimson;
-            rjButton1.BackgroundColor = Color.Crimson;
+            rjButton1.BackColor = Color.IndianRed;
+            rjButton1.BackgroundColor = Color.IndianRed;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
@@ -87,6 +87,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Exportar_Excel";
+            ShowInTaskbar = false;
             Text = "Exportar_Excel";
             ResumeLayout(false);
             PerformLayout();

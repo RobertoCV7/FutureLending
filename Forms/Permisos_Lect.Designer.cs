@@ -42,7 +42,7 @@
             checkedListBox1.ForeColor = Color.DarkSlateGray;
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "lista1", "lista2", "lista3", "liquidados" });
-            checkedListBox1.Location = new Point(50, 96);
+            checkedListBox1.Location = new Point(72, 96);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(268, 199);
             checkedListBox1.TabIndex = 0;
@@ -70,8 +70,8 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.Crimson;
-            rjButton1.BackgroundColor = Color.Crimson;
+            rjButton1.BackColor = Color.IndianRed;
+            rjButton1.BackgroundColor = Color.IndianRed;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
@@ -79,9 +79,9 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Cooper Black", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(63, 332);
+            rjButton1.Location = new Point(72, 335);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(246, 100);
+            rjButton1.Size = new Size(268, 100);
             rjButton1.TabIndex = 3;
             rjButton1.Text = "Guardar";
             rjButton1.TextColor = Color.White;
@@ -102,6 +102,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Permisos_Lect";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Permisos de Lectura";
             ResumeLayout(false);

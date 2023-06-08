@@ -16,6 +16,11 @@
         },
         "runtime": {
           "FutureLending.dll": {}
+        },
+        "resources": {
+          "es-MX/FutureLending.resources.dll": {
+            "locale": "es-MX"
+          }
         }
       },
       "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.17763.28": {

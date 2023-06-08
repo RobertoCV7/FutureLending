@@ -45,7 +45,7 @@
             TextImporte3.BorderRadius = 0;
             TextImporte3.BorderSize = 2;
             TextImporte3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TextImporte3.Location = new Point(312, 225);
+            TextImporte3.Location = new Point(312, 228);
             TextImporte3.Margin = new Padding(3, 4, 3, 4);
             TextImporte3.Multiline = false;
             TextImporte3.Name = "TextImporte3";
@@ -64,7 +64,7 @@
             label103.AutoSize = true;
             label103.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label103.ForeColor = Color.DarkSlateGray;
-            label103.Location = new Point(162, 241);
+            label103.Location = new Point(12, 241);
             label103.Name = "label103";
             label103.Size = new Size(121, 35);
             label103.TabIndex = 135;
@@ -95,11 +95,11 @@
             ComboBoxResolucion3.Items.AddRange(new object[] { "Liquidacion", "Convenio" });
             ComboBoxResolucion3.ListBackColor = SystemColors.Info;
             ComboBoxResolucion3.ListTextColor = Color.DimGray;
-            ComboBoxResolucion3.Location = new Point(312, 44);
+            ComboBoxResolucion3.Location = new Point(312, 47);
             ComboBoxResolucion3.MinimumSize = new Size(200, 29);
             ComboBoxResolucion3.Name = "ComboBoxResolucion3";
             ComboBoxResolucion3.Padding = new Padding(2, 3, 2, 3);
-            ComboBoxResolucion3.Size = new Size(422, 54);
+            ComboBoxResolucion3.Size = new Size(325, 54);
             ComboBoxResolucion3.TabIndex = 129;
             ComboBoxResolucion3.Tag = "Selecciones un tipo de pago";
             ComboBoxResolucion3.Texts = "Tipo de Resolucion";
@@ -118,8 +118,8 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.Crimson;
-            rjButton1.BackgroundColor = Color.Crimson;
+            rjButton1.BackColor = Color.IndianRed;
+            rjButton1.BackgroundColor = Color.IndianRed;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
@@ -127,7 +127,7 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.Black;
-            rjButton1.Location = new Point(552, 317);
+            rjButton1.Location = new Point(395, 317);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(266, 104);
             rjButton1.TabIndex = 137;
@@ -150,11 +150,11 @@
             ComboBoxResolucionD.Items.AddRange(new object[] { "En Tramite", "Embargo" });
             ComboBoxResolucionD.ListBackColor = SystemColors.Info;
             ComboBoxResolucionD.ListTextColor = Color.DimGray;
-            ComboBoxResolucionD.Location = new Point(312, 123);
+            ComboBoxResolucionD.Location = new Point(312, 126);
             ComboBoxResolucionD.MinimumSize = new Size(200, 29);
             ComboBoxResolucionD.Name = "ComboBoxResolucionD";
             ComboBoxResolucionD.Padding = new Padding(2, 3, 2, 3);
-            ComboBoxResolucionD.Size = new Size(422, 57);
+            ComboBoxResolucionD.Size = new Size(325, 57);
             ComboBoxResolucionD.TabIndex = 138;
             ComboBoxResolucionD.Tag = "Selecciones un tipo de pago";
             ComboBoxResolucionD.Texts = "Seleccione una opcion";
@@ -164,7 +164,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HighlightText;
-            ClientSize = new Size(870, 433);
+            ClientSize = new Size(691, 433);
             Controls.Add(ComboBoxResolucionD);
             Controls.Add(rjButton1);
             Controls.Add(TextImporte3);
@@ -176,6 +176,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "PedirDatos3";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Informacion Lista3";
             ResumeLayout(false);

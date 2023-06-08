@@ -6,6 +6,7 @@
         public Inicio_Sesion()
         {
             InitializeComponent();
+            button1.Enabled = false;
         }
 
         private void PictureBox2_Click(object sender, EventArgs e)
@@ -42,5 +43,18 @@
                 a.ShowDialog();
             }
         }
+
+        private void TextUsuario_TextChanged(object sender, EventArgs e)
+        {
+            if (TextUsuario.Text != null && TextUsuario.Text != "")
+            {
+                button1.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+            }
+        }
+
     }
 }
