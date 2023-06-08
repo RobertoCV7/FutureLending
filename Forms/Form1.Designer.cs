@@ -84,6 +84,8 @@ namespace FutureLending
             panelTitleBar = new Panel();
             lblTitle = new Label();
             pnlRegPago = new Panel();
+            Monto_Recomendado = new TextBoxPersonalizado();
+            label82 = new Label();
             TextBoxRestantepagos = new TextBoxPersonalizado();
             label17 = new Label();
             rjComboBox9 = new ControlesPersonalizados.RJComboBox();
@@ -256,7 +258,6 @@ namespace FutureLending
             panel3 = new Panel();
             rjButton11 = new RJButton();
             rjButton12 = new RJButton();
-            rjButton10 = new RJButton();
             Conexion_Sql = new TabPage();
             rjButton3 = new RJButton();
             LabelEstado = new Label();
@@ -643,8 +644,8 @@ namespace FutureLending
             // btnMover3
             // 
             resources.ApplyResources(btnMover3, "btnMover3");
-            btnMover3.BackColor = SystemColors.ActiveCaption;
-            btnMover3.BackgroundColor = SystemColors.ActiveCaption;
+            btnMover3.BackColor = Color.IndianRed;
+            btnMover3.BackgroundColor = Color.IndianRed;
             btnMover3.BorderColor = SystemColors.ActiveCaption;
             btnMover3.BorderRadius = 15;
             btnMover3.BorderSize = 2;
@@ -911,6 +912,8 @@ namespace FutureLending
             // 
             resources.ApplyResources(pnlRegPago, "pnlRegPago");
             pnlRegPago.BackColor = SystemColors.ButtonHighlight;
+            pnlRegPago.Controls.Add(Monto_Recomendado);
+            pnlRegPago.Controls.Add(label82);
             pnlRegPago.Controls.Add(TextBoxRestantepagos);
             pnlRegPago.Controls.Add(label17);
             pnlRegPago.Controls.Add(rjComboBox9);
@@ -924,6 +927,27 @@ namespace FutureLending
             pnlRegPago.Controls.Add(btnMarcarP);
             pnlRegPago.Controls.Add(lblMonto);
             pnlRegPago.Name = "pnlRegPago";
+            // 
+            // Monto_Recomendado
+            // 
+            resources.ApplyResources(Monto_Recomendado, "Monto_Recomendado");
+            Monto_Recomendado.BorderColor = Color.LightSlateGray;
+            Monto_Recomendado.BorderFocusColor = SystemColors.ButtonHighlight;
+            Monto_Recomendado.BorderRadius = 0;
+            Monto_Recomendado.BorderSize = 2;
+            Monto_Recomendado.Multiline = false;
+            Monto_Recomendado.Name = "Monto_Recomendado";
+            Monto_Recomendado.PasswordChar = false;
+            Monto_Recomendado.PlaceholderColor = Color.DimGray;
+            Monto_Recomendado.PlaceholderText = "";
+            Monto_Recomendado.Texts = "";
+            Monto_Recomendado.UnderlinedStyle = true;
+            // 
+            // label82
+            // 
+            resources.ApplyResources(label82, "label82");
+            label82.ForeColor = Color.DarkSlateGray;
+            label82.Name = "label82";
             // 
             // TextBoxRestantepagos
             // 
@@ -1125,8 +1149,8 @@ namespace FutureLending
             // btnGuardar1
             // 
             resources.ApplyResources(btnGuardar1, "btnGuardar1");
-            btnGuardar1.BackColor = Color.SteelBlue;
-            btnGuardar1.BackgroundColor = Color.SteelBlue;
+            btnGuardar1.BackColor = Color.IndianRed;
+            btnGuardar1.BackgroundColor = Color.IndianRed;
             btnGuardar1.BorderColor = Color.SteelBlue;
             btnGuardar1.BorderRadius = 15;
             btnGuardar1.BorderSize = 2;
@@ -1145,6 +1169,7 @@ namespace FutureLending
             dateTimePickerPersonalizado2.Name = "dateTimePickerPersonalizado2";
             dateTimePickerPersonalizado2.SkinColor = SystemColors.ButtonHighlight;
             dateTimePickerPersonalizado2.TextColor = Color.Black;
+            dateTimePickerPersonalizado2.ValueChanged += dateTimePickerPersonalizado2_ValueChanged;
             // 
             // label65
             // 
@@ -1518,8 +1543,8 @@ namespace FutureLending
             // btnGuardar2
             // 
             resources.ApplyResources(btnGuardar2, "btnGuardar2");
-            btnGuardar2.BackColor = Color.SteelBlue;
-            btnGuardar2.BackgroundColor = Color.SteelBlue;
+            btnGuardar2.BackColor = Color.IndianRed;
+            btnGuardar2.BackgroundColor = Color.IndianRed;
             btnGuardar2.BorderColor = Color.SteelBlue;
             btnGuardar2.BorderRadius = 15;
             btnGuardar2.BorderSize = 2;
@@ -2768,7 +2793,6 @@ namespace FutureLending
             flowLayoutPanel6.Controls.Add(textBox3);
             flowLayoutPanel6.Controls.Add(checkBox2);
             flowLayoutPanel6.Controls.Add(panel3);
-            flowLayoutPanel6.Controls.Add(rjButton10);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
             // 
             // label39
@@ -2882,20 +2906,6 @@ namespace FutureLending
             rjButton12.TextColor = Color.Azure;
             rjButton12.UseVisualStyleBackColor = false;
             rjButton12.Click += rjButton12_Click;
-            // 
-            // rjButton10
-            // 
-            resources.ApplyResources(rjButton10, "rjButton10");
-            rjButton10.BackColor = SystemColors.ActiveCaption;
-            rjButton10.BackgroundColor = SystemColors.ActiveCaption;
-            rjButton10.BorderColor = Color.PaleVioletRed;
-            rjButton10.BorderRadius = 20;
-            rjButton10.BorderSize = 0;
-            rjButton10.FlatAppearance.BorderSize = 0;
-            rjButton10.ForeColor = Color.Azure;
-            rjButton10.Name = "rjButton10";
-            rjButton10.TextColor = Color.Azure;
-            rjButton10.UseVisualStyleBackColor = false;
             // 
             // Conexion_Sql
             // 
@@ -3199,8 +3209,8 @@ namespace FutureLending
             // BotonVolverEditar2
             // 
             resources.ApplyResources(BotonVolverEditar2, "BotonVolverEditar2");
-            BotonVolverEditar2.BackColor = Color.MediumSlateBlue;
-            BotonVolverEditar2.BackgroundColor = Color.MediumSlateBlue;
+            BotonVolverEditar2.BackColor = Color.SlateGray;
+            BotonVolverEditar2.BackgroundColor = Color.SlateGray;
             BotonVolverEditar2.BorderColor = Color.PaleVioletRed;
             BotonVolverEditar2.BorderRadius = 20;
             BotonVolverEditar2.BorderSize = 0;
@@ -3620,16 +3630,16 @@ namespace FutureLending
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pnlListas);
             Controls.Add(PanelBien);
-            Controls.Add(pnlRegPago);
-            Controls.Add(panel2);
             Controls.Add(PanelEditarLiquidados);
-            Controls.Add(PanelEditar);
-            Controls.Add(pnlClientes);
             Controls.Add(PanelEditar3);
-            Controls.Add(PanelEditar2_2);
             Controls.Add(PnlEditar2);
+            Controls.Add(PanelEditar);
+            Controls.Add(PanelEditar2_2);
+            Controls.Add(pnlClientes);
+            Controls.Add(panel2);
+            Controls.Add(pnlListas);
+            Controls.Add(pnlRegPago);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -3681,6 +3691,7 @@ namespace FutureLending
             PanelEditarLiquidados.ResumeLayout(false);
             PanelEditarLiquidados.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -3967,7 +3978,6 @@ namespace FutureLending
         private ProgressBar BarradeProgreso;
         private Label label57;
         private RJButton Button1;
-        private RJButton rjButton10;
         private RJButton rjButton11;
         private RJButton rjButton12;
         private RJButton btnCalcular1;
@@ -3981,5 +3991,7 @@ namespace FutureLending
         private RJButton BotonVolverEditar2;
         private RJButton BtnMover;
         private RJButton BtnGuardarCambio;
+        private TextBoxPersonalizado Monto_Recomendado;
+        private Label label82;
     }
 }

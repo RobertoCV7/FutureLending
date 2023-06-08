@@ -25,7 +25,7 @@
             {
                 // Crear e iniciar el nuevo formulario
                 Form1 form2 = new Form1();
-
+                form2.Size= new(1600, 900);
                 form2.Show();
 
                 this.Hide();
