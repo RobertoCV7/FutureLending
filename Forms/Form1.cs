@@ -2147,15 +2147,55 @@ namespace FutureLending
                 }
             }
         }
-
-        private void PnlEditar2_Paint(object sender, PaintEventArgs e)
+        private void Botoncambiodefechamomentaneo_Click_1(object sender, EventArgs e)
         {
+
+            string fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
+            string pago = TextBoxPago.Texts;
+            if (ComboBoxDeFechas.SelectedIndex == 0)
+            {
+                int indice = 14;
+                Informacion2[indice] = fecha;
+                Informacion2[indice + 1] = pago;
+                int resta = int.Parse(Informacion2[42]) - int.Parse(pago);
+                Informacion2[42] = resta.ToString();
+                TextBoxPagoExt.Texts = Informacion2[42];
+                if (TextBoxPagoExt.Texts == "0")
+                {
+                    Mover = true;
+                }
+                else
+                {
+                    Mover = false;
+                }
+            }
+            else
+            {
+                int indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                Informacion2[indice] = fecha;
+                Informacion2[indice + 1] = pago;
+                int resta = int.Parse(Informacion2[42]) - int.Parse(pago);
+                Informacion2[42] = resta.ToString();
+                TextBoxPagoExt.Texts = Informacion2[42];
+                if (TextBoxPagoExt.Texts == "0")
+                {
+                    Mover = true;
+                }
+                else
+                {
+                    Mover = false;
+                }
+            }
+
 
         }
 
-        private void Form1_Load_1(object sender, EventArgs e)
+        private void BotonVolverEditar2_Click_1(object sender, EventArgs e)
         {
-
+            btnEditarFechas2.Enabled = false;
+            Botoncambiodefechamomentaneo.Enabled = false;
+            FechaEnLista2.Enabled = false;
+            EsconderPaneles(PnlEditar2);
         }
     }
 }

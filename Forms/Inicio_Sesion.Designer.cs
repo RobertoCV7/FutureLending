@@ -68,7 +68,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.x_circle_icon;
-            pictureBox2.Location = new Point(24, 21);
+            pictureBox2.Location = new Point(12, 12);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(47, 45);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -163,9 +163,9 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Dubai", 16.1999989F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(28, 41, 86);
-            button1.Location = new Point(276, 562);
+            button1.Location = new Point(268, 554);
             button1.Name = "button1";
-            button1.Size = new Size(179, 48);
+            button1.Size = new Size(196, 56);
             button1.TabIndex = 9;
             button1.Text = "Acceder";
             button1.UseVisualStyleBackColor = false;
@@ -176,7 +176,7 @@
             Mensaje.AutoSize = true;
             Mensaje.Font = new Font("Corbel Light", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             Mensaje.ForeColor = Color.Red;
-            Mensaje.Location = new Point(224, 509);
+            Mensaje.Location = new Point(182, 509);
             Mensaje.Name = "Mensaje";
             Mensaje.Size = new Size(0, 28);
             Mensaje.TabIndex = 10;
@@ -193,7 +193,7 @@
             // 
             // bunifuElipse3
             // 
-            bunifuElipse3.ElipseRadius = 12;
+            bunifuElipse3.ElipseRadius = 400;
             bunifuElipse3.TargetControl = pictureBox2;
             // 
             // bunifuElipse4

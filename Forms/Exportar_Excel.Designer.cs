@@ -78,11 +78,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Info;
+            BackColor = SystemColors.HighlightText;
             ClientSize = new Size(355, 400);
             Controls.Add(label1);
             Controls.Add(comboBox1);
             Controls.Add(rjButton1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Exportar_Excel";

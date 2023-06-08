@@ -62,20 +62,22 @@
             // label103
             // 
             label103.AutoSize = true;
-            label103.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label103.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label103.ForeColor = Color.DarkSlateGray;
             label103.Location = new Point(162, 241);
             label103.Name = "label103";
-            label103.Size = new Size(134, 32);
+            label103.Size = new Size(121, 35);
             label103.TabIndex = 135;
             label103.Text = "Importe:";
             // 
             // label92
             // 
             label92.AutoSize = true;
-            label92.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label92.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label92.ForeColor = Color.DarkSlateGray;
             label92.Location = new Point(7, 148);
             label92.Name = "label92";
-            label92.Size = new Size(299, 32);
+            label92.Size = new Size(278, 35);
             label92.TabIndex = 133;
             label92.Text = "Resolucion Demanda:";
             // 
@@ -87,29 +89,30 @@
             ComboBoxResolucion3.BorderColor = Color.DarkSlateGray;
             ComboBoxResolucion3.BorderSize = 2;
             ComboBoxResolucion3.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxResolucion3.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            ComboBoxResolucion3.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             ComboBoxResolucion3.ForeColor = Color.Black;
             ComboBoxResolucion3.IconColor = Color.DarkSlateGray;
             ComboBoxResolucion3.Items.AddRange(new object[] { "Liquidacion", "Convenio" });
             ComboBoxResolucion3.ListBackColor = SystemColors.Info;
             ComboBoxResolucion3.ListTextColor = Color.DimGray;
-            ComboBoxResolucion3.Location = new Point(312, 27);
+            ComboBoxResolucion3.Location = new Point(312, 44);
             ComboBoxResolucion3.MinimumSize = new Size(200, 29);
             ComboBoxResolucion3.Name = "ComboBoxResolucion3";
             ComboBoxResolucion3.Padding = new Padding(2, 3, 2, 3);
-            ComboBoxResolucion3.Size = new Size(546, 71);
+            ComboBoxResolucion3.Size = new Size(422, 54);
             ComboBoxResolucion3.TabIndex = 129;
             ComboBoxResolucion3.Tag = "Selecciones un tipo de pago";
-            ComboBoxResolucion3.Texts = "Seleccione un tipo de Resolucion";
+            ComboBoxResolucion3.Texts = "Tipo de Resolucion";
             ComboBoxResolucion3.OnSelectedIndexChanged += ComboBoxResolucion3_OnSelectedIndexChanged;
             // 
             // label102
             // 
             label102.AutoSize = true;
-            label102.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label102.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label102.ForeColor = Color.DarkSlateGray;
             label102.Location = new Point(7, 66);
             label102.Name = "label102";
-            label102.Size = new Size(299, 32);
+            label102.Size = new Size(251, 35);
             label102.TabIndex = 131;
             label102.Text = "Tipo de Resolucion:";
             // 
@@ -141,7 +144,7 @@
             ComboBoxResolucionD.BorderColor = Color.DarkSlateGray;
             ComboBoxResolucionD.BorderSize = 2;
             ComboBoxResolucionD.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxResolucionD.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            ComboBoxResolucionD.Font = new Font("Corbel", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             ComboBoxResolucionD.ForeColor = Color.Black;
             ComboBoxResolucionD.IconColor = Color.DarkSlateGray;
             ComboBoxResolucionD.Items.AddRange(new object[] { "En Tramite", "Embargo" });
@@ -160,7 +163,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Info;
+            BackColor = SystemColors.HighlightText;
             ClientSize = new Size(870, 433);
             Controls.Add(ComboBoxResolucionD);
             Controls.Add(rjButton1);
@@ -169,6 +172,7 @@
             Controls.Add(label92);
             Controls.Add(ComboBoxResolucion3);
             Controls.Add(label102);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "PedirDatos3";
