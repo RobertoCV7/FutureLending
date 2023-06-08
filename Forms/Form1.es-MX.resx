@@ -20704,7 +20704,7 @@
     <value>200, 30</value>
   </data>
   <data name="CmbLista2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="CmbLista2.Size" type="System.Drawing.Size, System.Drawing">
     <value>295, 67</value>
@@ -20914,7 +20914,7 @@
     <value>153, 16</value>
   </data>
   <data name="rjComboBox7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox7.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 51</value>
@@ -20989,7 +20989,7 @@
     <value>153, 16</value>
   </data>
   <data name="rjComboBox8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox8.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 50</value>
@@ -21088,7 +21088,7 @@
     <value>175, 22</value>
   </data>
   <data name="rjComboBox9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox9.Size" type="System.Drawing.Size, System.Drawing">
     <value>363, 53</value>
@@ -21103,7 +21103,7 @@
     <value>175, 22</value>
   </data>
   <data name="ComBoxName.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="ComBoxName.Size" type="System.Drawing.Size, System.Drawing">
     <value>358, 53</value>
@@ -21232,7 +21232,7 @@
     <value>153, 16</value>
   </data>
   <data name="cmbInteres.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbInteres.Size" type="System.Drawing.Size, System.Drawing">
     <value>435, 53</value>
@@ -21436,7 +21436,7 @@
     <value>153, 16</value>
   </data>
   <data name="cmbTipo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbTipo.Size" type="System.Drawing.Size, System.Drawing">
     <value>435, 53</value>
@@ -21532,7 +21532,7 @@
     <value>153, 16</value>
   </data>
   <data name="cmbPromotor.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbPromotor.Size" type="System.Drawing.Size, System.Drawing">
     <value>435, 53</value>
@@ -21559,7 +21559,7 @@
     <value>175, 22</value>
   </data>
   <data name="ResolucionDemanda.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="ResolucionDemanda.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 48</value>
@@ -21577,7 +21577,7 @@
     <value>200, 30</value>
   </data>
   <data name="rjComboBox5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>293, 69</value>
@@ -21790,7 +21790,7 @@
     <value>175, 22</value>
   </data>
   <data name="ComboBoxResolucion3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="ComboBoxResolucion3.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 54</value>
@@ -21850,7 +21850,7 @@
     <value>175, 22</value>
   </data>
   <data name="ComboBoxPromotor3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="ComboBoxPromotor3.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 50</value>
@@ -21892,7 +21892,7 @@
     <value>175, 22</value>
   </data>
   <data name="cmbCliente.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbCliente.Size" type="System.Drawing.Size, System.Drawing">
     <value>350, 64</value>
@@ -22117,7 +22117,7 @@
     <value>175, 22</value>
   </data>
   <data name="cmbLista.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbLista.Size" type="System.Drawing.Size, System.Drawing">
     <value>307, 57</value>
@@ -22285,7 +22285,7 @@
     <value>117, 9</value>
   </data>
   <data name="rjComboBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>428, 54</value>
@@ -22312,7 +22312,7 @@
     <value>117, 9</value>
   </data>
   <data name="rjComboBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>428, 54</value>
@@ -22408,7 +22408,7 @@
     <value>117, 9</value>
   </data>
   <data name="rjComboBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>428, 54</value>
@@ -22426,7 +22426,7 @@
     <value>Corbel, 36pt, style=Bold</value>
   </data>
   <data name="label58.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 129</value>
+    <value>52, 146</value>
   </data>
   <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 59</value>
@@ -22490,6 +22490,9 @@
   </data>
   <data name="PanelBien.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
+  </data>
+  <data name="PanelBien.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1600, 900</value>
   </data>
   <data name="PanelBien.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
@@ -22654,7 +22657,7 @@
     <value>175, 22</value>
   </data>
   <data name="comboBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>489, 49</value>
@@ -23038,7 +23041,7 @@
     <value>153, 16</value>
   </data>
   <data name="rjComboBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>377, 55</value>
@@ -23254,7 +23257,7 @@
     <value>153, 16</value>
   </data>
   <data name="ComboBoxDeFechas.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="ComboBoxDeFechas.Size" type="System.Drawing.Size, System.Drawing">
     <value>398, 52</value>
@@ -23311,7 +23314,7 @@
     <value>175, 22</value>
   </data>
   <data name="ComBoBoxLiquidacion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="ComBoBoxLiquidacion.Size" type="System.Drawing.Size, System.Drawing">
     <value>416, 56</value>
@@ -23509,7 +23512,7 @@
     <value>175, 22</value>
   </data>
   <data name="ComboBoxPromotorLiq.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="ComboBoxPromotorLiq.Size" type="System.Drawing.Size, System.Drawing">
     <value>416, 47</value>
@@ -26899,9 +26902,6 @@
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1600, 900</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1402, 685</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>    FutureLending</value>
