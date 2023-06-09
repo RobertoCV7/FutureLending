@@ -60,6 +60,119 @@ namespace FutureLending
         }
         #endregion
         #region Lectura
+        #region Lectura de listas especificas promotores
+        public List<string[]> LectLista1Prom(string prom)
+        {
+            List<string[]> datos = new();
+
+            using (MySqlConnection connection = Conector())
+            {
+                string query = "SELECT * FROM lista1 Where Promotor = @Promotor";
+                using MySqlCommand command = new(query, connection);
+                command.Parameters.AddWithValue("@Promotor", prom);
+                try
+                {
+                    using MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string[] fila = new string[30];
+                        fila[0] = reader.GetString("Promotor");
+                        fila[1] = reader.GetString("Nombre_Completo");
+                        fila[2] = reader.GetString("Credito_Prestado");
+                        fila[3] = reader.GetString("Pagare");
+                        fila[4] = reader.GetString("Fecha_Inicio");
+                        fila[5] = reader.GetString("Fecha_Termino");
+                        fila[6] = reader.GetString("Interes");
+                        fila[7] = reader.GetString("Monto_Total");
+                        fila[8] = reader.GetString("Calle");
+                        fila[9] = reader.GetString("Colonia");
+                        fila[10] = reader.GetString("Num_int");
+                        fila[11] = reader.GetString("Num_ext");
+                        fila[12] = reader.GetString("Telefono");
+                        fila[13] = reader.GetString("Correo");
+                        fila[14] = reader.GetString("Tipo_pago");
+                        fila[15] = reader.GetString("Monto_Restante");
+
+                        for (int i = 0; i < 14; i++)
+                        {
+                            fila[16 + i] = reader.GetString("Fecha" + (i + 1));
+                            // En caso de que alguna fecha sea nula o vacía, se asigna "-"
+                            if (string.IsNullOrWhiteSpace(fila[16 + i]))
+                            {
+                                fila[16 + i] = "-";
+                            }
+                        }
+
+                        datos.Add(fila);
+                        Form1.dinero_aire += Convert.ToDouble(fila[15]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
+                }
+            }
+
+            return datos;
+        }
+        public List<string[]> LectLista2Prom(string prom)
+        {
+            List<string[]> datos = new();
+
+            using (MySqlConnection connection = Conector())
+            {
+                string query = "SELECT * FROM lista2 Where Promotor = @Promotor";
+                using MySqlCommand command = new(query, connection);
+                command.Parameters.AddWithValue("@Promotor", prom);
+                try
+                {
+                    using MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string[] fila = new string[43]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
+
+                        fila[0] = reader.GetString("Promotor");
+                        fila[1] = reader.GetString("Nombre_Completo");
+                        fila[2] = reader.GetString("Credito_Prestado");
+                        fila[3] = reader.GetString("Monto_Restante");
+                        fila[4] = reader.GetString("Pagare");
+                        fila[5] = reader.GetString("Calle");
+                        fila[6] = reader.GetString("Colonia");
+                        fila[7] = reader.GetString("Num_int");
+                        fila[8] = reader.GetString("Num_ext");
+                        fila[9] = reader.GetString("Telefono");
+                        fila[10] = reader.GetString("Correo");
+                        fila[11] = reader.GetString("Tipo_de_pago");
+                        fila[12] = reader.GetString("Liquidacion_Intencion");
+                        fila[13] = reader.GetString("Quita");
+
+                        for (int i = 0; i < 14; i++)
+                        {
+                            string fechaCampo = "FECHA" + (i + 1);
+                            string pagoCampo = "PAGO" + (i + 1);
+                            fila[14 + (i * 2)] = reader.GetString(fechaCampo);
+                            fila[15 + (i * 2)] = reader.GetString(pagoCampo);
+
+                        }
+                        fila[42] = reader.GetString("Pago_Total_EXT");
+                        datos.Add(fila);
+                        Form1.dinero_aire += Convert.ToDouble(fila[42]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
+                }
+            }
+
+            return datos;
+        }
+
+        #endregion
+
+
+
+
         #region Lectura de Listas general
         public List<string[]> LectLista1()
         {
@@ -169,7 +282,7 @@ namespace FutureLending
 
             using (MySqlConnection connection = Conector())
             {
-                string query = "SELECT * FROM lista3";
+                string query = "SELECT * FROM lista3  ORDER BY Promotor ASC";
                 using MySqlCommand command = new(query, connection);
                 try
                 {

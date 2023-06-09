@@ -21082,7 +21082,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="rjComboBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 496</value>
+    <value>311, 490</value>
   </data>
   <data name="rjComboBox9.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
@@ -21091,13 +21091,13 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 53</value>
+    <value>363, 59</value>
   </data>
   <data name="ComBoxName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="ComBoxName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 86</value>
+    <value>315, 82</value>
   </data>
   <data name="ComBoxName.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
@@ -21106,7 +21106,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ComBoxName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 53</value>
+    <value>358, 57</value>
   </data>
   <data name="label29.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21864,14 +21864,56 @@
   <data name="PanelEditar3.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
   </data>
+  <data name="labelDineroAire.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDineroAire.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Dubai, 21.75pt, style=Bold</value>
+  </data>
+  <data name="labelDineroAire.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelDineroAire.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 78</value>
+  </data>
+  <data name="labelDineroAire.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 49</value>
+  </data>
+  <data name="flowLayoutPanel5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 13.8pt, style=Bold</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 21</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 56</value>
+  </data>
+  <data name="flowLayoutPanel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 65</value>
+  </data>
   <data name="label57.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Dubai, 24pt, style=Bold</value>
+    <value>Dubai, 21.75pt, style=Bold</value>
   </data>
   <data name="label57.Location" type="System.Drawing.Point, System.Drawing">
     <value>74, 25</value>
   </data>
   <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 54</value>
+    <value>159, 49</value>
   </data>
   <data name="BarradeProgreso.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 84</value>
@@ -21880,7 +21922,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="BarradeProgreso.Size" type="System.Drawing.Size, System.Drawing">
-    <value>375, 34</value>
+    <value>296, 34</value>
   </data>
   <data name="cmbCliente.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 2</value>
@@ -21895,7 +21937,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbCliente.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 64</value>
+    <value>350, 56</value>
   </data>
   <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
     <value>663, 711</value>

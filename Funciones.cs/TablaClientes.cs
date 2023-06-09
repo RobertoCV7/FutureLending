@@ -5,7 +5,60 @@
 
         //Aquí se guardan los datos de todas las consultas
         private static readonly List<string[]> datos = new();
- 
+        #region Muestra solo a los promotores
+        public static async Task MostrarLista1Prom(DataGridView gridListas,
+          ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar, Label lab, List<string[]> info)
+        {
+            // Se borran los registros
+            LimpiarDatos(gridListas, cmbCliente);
+
+            // Arreglo de strings con los nombres de cada columna
+            string[] nombresString ={"PROMOTOR","NOMBRE", "CREDITO","PAGARE", "FECHA INICIO","FECHA TERMINO" ,"INTERESES", "MONTO TOTAL",
+                              "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                              "TIPO DE PAGO", "MONTO RESTANTE"};
+            // Añade los strings de cada fecha y pago a la lista
+            List<string> nombresColumnas = new(nombresString);
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas.Add("FECHA " + i);
+            }
+            // Añade las columnas correspondientes a la tabla y el nombre de cada una
+            gridListas.ColumnCount = nombresColumnas.Count;
+            AñadirEncabezado(nombresColumnas, gridListas);
+            // Agrega los datos al DataGridView en un hilo separado y los nombres al ComboBox
+            await AñadirDatos(info, gridListas, cmbCliente, false, bar, lab);
+
+        }
+        public static async Task MostrarLista2Prom(DataGridView gridListas,
+            ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar, Label lab, List<string[]> info)
+        {
+            //Se borran los registros
+            LimpiarDatos(gridListas, cmbCliente);
+            //Arreglo de strings con los nombres de cada columna
+            string[] nombresString2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO", "LIQUIDACION/CONVENIO","QUITA"};
+            List<string> nombresColumnas2 = new(nombresString2);
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas2.Add("FECHA " + i);
+                nombresColumnas2.Add("PAGO " + i);
+            }
+            nombresColumnas2.Add("Pago EXT");
+            gridListas.ColumnCount = nombresColumnas2.Count;
+            AñadirEncabezado(nombresColumnas2, gridListas);
+            // Agrega los datos al DataGridView en un hilo separado
+            await AñadirDatos(info, gridListas, cmbCliente, false, bar, lab);
+        }
+
+        #endregion
+
+
+
+
+
+
+
         //Muestra en la tabla los datos de la lista 1
         public static async Task MostrarLista1(DataGridView gridListas,
             ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar,Label lab)
@@ -227,8 +280,11 @@
                             bar.Invoke(new Action(() =>
                             {
                                 
-                                
-                                bar.Value = valorProgressBar;
+                                if (valorProgressBar < 100)
+                                {
+                                    bar.Value = valorProgressBar;
+                                }
+                              
                                 bar.Refresh();
                                 if (valorProgressBar == 100)
                                 {
@@ -236,10 +292,11 @@
                                     bar.Value = 0;
                                     Lab.Visible = false;
                                 }
+                                
                                 else
                                 {
-                                  
-                                        Lab.Text = "Cargando...(" + valorProgressBar+"%) ";
+                                   
+                                    Lab.Text = "Cargando...(" + valorProgressBar+"%) ";
                                     
                                    
                                 }
