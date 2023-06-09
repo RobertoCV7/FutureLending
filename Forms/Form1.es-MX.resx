@@ -21603,6 +21603,45 @@
   <data name="PanelEditar3.Size" type="System.Drawing.Size, System.Drawing">
     <value>1114, 669</value>
   </data>
+  <data name="LabelDineroAire.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelDineroAire.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Dubai, 16.199999pt</value>
+  </data>
+  <data name="LabelDineroAire.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelDineroAire.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 37</value>
+  </data>
+  <data name="flowLayoutPanel5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 13.8pt, style=Bold</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 21</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ComboBoxPromotoresListas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 54</value>
+  </data>
+  <data name="flowLayoutPanel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="flowLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 65</value>
+  </data>
   <data name="label57.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 57</value>
   </data>
@@ -21616,7 +21655,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="BarradeProgreso.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 24</value>
+    <value>232, 24</value>
   </data>
   <data name="cmbCliente.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 2</value>

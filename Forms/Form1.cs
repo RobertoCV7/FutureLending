@@ -41,8 +41,8 @@ namespace FutureLending
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarPromotoresEnComboBox(rjComboBox3);
-            CargarPromotoresEnComboBox(cmbPromotor);
+            CargarPromotoresEnComboBox(rjComboBox3, false);
+            CargarPromotoresEnComboBox(cmbPromotor, false);
             Task.Run(() =>
             {
                 // Actualizar los controles de la interfaz de usuario desde el hilo de UI
@@ -57,6 +57,7 @@ namespace FutureLending
                     label57.Visible = false;
                     BarradeProgreso.Visible = false;
                     label17.Visible = false;
+                    ComboBoxPromotoresListas.Enabled = true;
                     rjButton5.Enabled = false;
                     label82.Visible = false;
                     Monto_Recomendado.Visible = false;
@@ -105,7 +106,7 @@ namespace FutureLending
             CollapseMenu();
         }
         #endregion
-
+        public static double dinero_aire = 0;
         #region Botones centrales del menu
 
         #region Ingresar Clientes
@@ -115,7 +116,7 @@ namespace FutureLending
 
             EsconderPaneles(pnlClientes);
             lblTitle.Text = "Ingresar Clientes";
-            CargarPromotoresEnComboBox(cmbPromotor);
+            CargarPromotoresEnComboBox(cmbPromotor, false);
 
         }
         Double credito2;
@@ -256,6 +257,7 @@ namespace FutureLending
         bool revisado = false;
         private void BtnListas_Click(object sender, EventArgs e)
         {
+            CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
             int a = 0;
             List<string> list = Accesos.ObtenerPermisosUsuario(Inicio_Sesion.NombreUsuario);
             if (list != null && !revisado)
@@ -386,27 +388,58 @@ namespace FutureLending
         int ListaEstado;
         private async void BtnLista1_Click(object sender, EventArgs e)
         {
-            ListaEstado = 0;
-            DesactivarBotones();
-
-
-            await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso, label57);
-
-            ActivarListas();
-            ActivarEditar();
-            listaActual = "lista1";
+            if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
+            {
+                LabelDineroAire.Text = "";
+                dinero_aire = 0;
+                ListaEstado = 0;
+                DesactivarBotones();
+                Lectura_Base_Datos ar = new();
+                List<string[]> Datos = ar.LectLista1Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
+                await TablaClientes.MostrarLista1Prom(gridListas, cmbCliente, BarradeProgreso, label57, Datos);
+                LabelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem.ToString() + " tiene $" + dinero_aire.ToString("N2") + " en Pagos pendientes";
+                ActivarListas();
+                ActivarEditar();
+                listaActual = "lista1";
+            }
+            else
+            {
+                LabelDineroAire.Text = "";
+                ListaEstado = 0;
+                DesactivarBotones();
+                await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso, label57);
+                ActivarListas();
+                ActivarEditar();
+                listaActual = "lista1";
+            }
         }
 
         private async void BtnLista2_Click(object sender, EventArgs e)
         {
-            ListaEstado = 1;
-            DesactivarBotones();
-
-            await TablaClientes.MostrarLista2(gridListas, cmbCliente, BarradeProgreso, label57);
-
-            ActivarListas();
-            ActivarEditar();
-            listaActual = "lista2";
+            if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
+            {
+                LabelDineroAire.Text = "";
+                dinero_aire = 0;
+                ListaEstado = 1;
+                DesactivarBotones();
+                Lectura_Base_Datos ar = new();
+                List<string[]> datos = ar.LectLista2Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
+                await TablaClientes.MostrarLista2Prom(gridListas, cmbCliente, BarradeProgreso, label57, datos);
+                LabelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem.ToString() + " tiene $" + dinero_aire.ToString("N2") + " en Pagos pendientes";
+                ActivarListas();
+                ActivarEditar();
+                listaActual = "lista2";
+            }
+            else
+            {
+                LabelDineroAire.Text = "";
+                ListaEstado = 1;
+                DesactivarBotones();
+                await TablaClientes.MostrarLista2(gridListas, cmbCliente, BarradeProgreso, label57);
+                ActivarListas();
+                ActivarEditar();
+                listaActual = "lista2";
+            }
         }
 
         private async void BtnLista3_Click(object sender, EventArgs e)
@@ -468,7 +501,7 @@ namespace FutureLending
             if (ListaEstado == 0) //Si viene de la lista 1
             {
                 //Cargar los promotores en el ComboBox
-                CargarPromotoresEnComboBox(rjComboBox3);
+                CargarPromotoresEnComboBox(rjComboBox3, false);
                 //Muestro el panel de editar
                 EsconderPaneles(PanelEditar);
                 //Limpio las listas donde es posible  mover al registro
@@ -504,11 +537,11 @@ namespace FutureLending
             else if (ListaEstado == 1) //Si viene de la lista 2
             {
                 //Cargar los promotores en el ComboBox
-                CargarPromotoresEnComboBox(rjComboBox8);
+                CargarPromotoresEnComboBox(rjComboBox8, false);
                 //Llamo al panel editar de la lista 2
                 EsconderPaneles(PnlEditar2);
                 //Lleno el rjcombobox de promotores con la info correspondiente
-                CargarPromotoresEnComboBox(rjComboBox8);
+                CargarPromotoresEnComboBox(rjComboBox8, false);
                 //Limpio las listas donde es posible  mover al registro
                 CmbLista2.Items.Clear();
                 CmbLista2.Enabled = true;
@@ -543,11 +576,11 @@ namespace FutureLending
             else if (ListaEstado == 2) //Si viene de la lista 3
             {
                 //Cargar los promotores en el ComboBox
-                CargarPromotoresEnComboBox(ComboBoxPromotor3);
+                CargarPromotoresEnComboBox(ComboBoxPromotor3, false);
                 //Traer panel de edicion3
                 EsconderPaneles(PanelEditar3);
                 //Llenar el rjcombobox de promotores con la info correspondiente
-                CargarPromotoresEnComboBox(ComboBoxPromotor3);
+                CargarPromotoresEnComboBox(ComboBoxPromotor3, false);
                 //Limpio las listas donde es posible  mover al registro
                 rjComboBox5.Items.Clear();
                 rjComboBox5.Enabled = true;
@@ -574,7 +607,7 @@ namespace FutureLending
             else if (ListaEstado == 3)//Si viene de liquidados
             {
                 //Cargo lo promotres en el combobox de liquidados
-                CargarPromotoresEnComboBox(ComboBoxPromotorLiq);
+                CargarPromotoresEnComboBox(ComboBoxPromotorLiq, false);
                 //Traigo el panel editar de liquidados
                 EsconderPaneles(PanelEditarLiquidados);
                 //Nombre del registro
@@ -1022,7 +1055,7 @@ namespace FutureLending
         private void IconButton1_Click(object sender, EventArgs e)
         {
             Boton_Permisos.Enabled = false;
-            CargarPromotoresEnComboBox(rjComboBox4);
+            CargarPromotoresEnComboBox(rjComboBox4, false);
 
             lblTitle.Text = "Configuracion";
             EsconderPaneles(panel2);
@@ -1266,33 +1299,69 @@ namespace FutureLending
             public string Nombre { get; set; }
         }
 
-        public static void CargarPromotoresEnComboBox(RJComboBox box)
+        public static void CargarPromotoresEnComboBox(RJComboBox box, bool a)
         {
-            Lectura_Base_Datos lec = new();
-            try
+
+            if (a)
             {
-                // Ruta del archivo JSON
-                string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Promotores.json");
 
-                // Leer el archivo JSON
-                string json = File.ReadAllText(jsonFilePath);
+                Lectura_Base_Datos lec = new();
+                try
+                {
+                    // Ruta del archivo JSON
+                    string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Promotores.json");
 
-                // Deserializar el JSON en una lista de objetos Promotor
-                var promotores = JsonConvert.DeserializeObject<dynamic>(json);
+                    // Leer el archivo JSON
+                    string json = File.ReadAllText(jsonFilePath);
 
-                // Obtener los nombres de los promotores
-                var nombresPromotores = promotores.promotores.ToObject<string[]>();
+                    // Deserializar el JSON en una lista de objetos Promotor
+                    var promotores = JsonConvert.DeserializeObject<dynamic>(json);
 
-                // Limpiar el ComboBox antes de agregar los nuevos elementos
-                box.Items.Clear();
+                    // Obtener los nombres de los promotores
+                    var nombresPromotores = promotores.promotores.ToObject<string[]>();
 
-                // Agregar los nombres de los promotores al ComboBox
-                box.Items.AddRange(nombresPromotores);
+                    // Limpiar el ComboBox antes de agregar los nuevos elementos
+                    box.Items.Clear();
+
+                    // Agregar los nombres de los promotores al ComboBox
+                    box.Items.Add("Seleccionar Promotor");
+                    box.Items.AddRange(nombresPromotores);
+                }
+                catch (Exception ex)
+                {
+                    // Manejar cualquier error que ocurra al leer o cargar el JSON
+                    lec.Registro_errores("Error al cargar los promotores: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                // Manejar cualquier error que ocurra al leer o cargar el JSON
-                lec.Registro_errores("Error al cargar los promotores: " + ex.Message);
+
+                Lectura_Base_Datos lec = new();
+                try
+                {
+                    // Ruta del archivo JSON
+                    string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Promotores.json");
+
+                    // Leer el archivo JSON
+                    string json = File.ReadAllText(jsonFilePath);
+
+                    // Deserializar el JSON en una lista de objetos Promotor
+                    var promotores = JsonConvert.DeserializeObject<dynamic>(json);
+
+                    // Obtener los nombres de los promotores
+                    var nombresPromotores = promotores.promotores.ToObject<string[]>();
+
+                    // Limpiar el ComboBox antes de agregar los nuevos elementos
+                    box.Items.Clear();
+
+                    // Agregar los nombres de los promotores al ComboBox
+                    box.Items.AddRange(nombresPromotores);
+                }
+                catch (Exception ex)
+                {
+                    // Manejar cualquier error que ocurra al leer o cargar el JSON
+                    lec.Registro_errores("Error al cargar los promotores: " + ex.Message);
+                }
             }
         }
         public static void AgregarPromotor(string nombre)
@@ -1425,14 +1494,14 @@ namespace FutureLending
             EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
             textBox4.Text = "";
             rjComboBox4.SelectedIndex = -1;
-            CargarPromotoresEnComboBox(rjComboBox4);
+            CargarPromotoresEnComboBox(rjComboBox4, false);
         }
         private void RjButton6_Click(object sender, EventArgs e)
         {
             EliminarPromotor(rjComboBox4.SelectedItem.ToString());
             rjComboBox4.SelectedIndex = -1;
             textBox4.Text = "";
-            CargarPromotoresEnComboBox(rjComboBox4);
+            CargarPromotoresEnComboBox(rjComboBox4, false);
 
         }
         private void TextBox5_TextChanged(object sender, EventArgs e)
@@ -1443,7 +1512,7 @@ namespace FutureLending
         {
             AgregarPromotor(textBox5.Text);
             textBox5.Text = "";
-            CargarPromotoresEnComboBox(rjComboBox4);
+            CargarPromotoresEnComboBox(rjComboBox4, false);
         }
         #endregion
 
@@ -2368,6 +2437,17 @@ namespace FutureLending
             {
                 // Cancela el evento KeyPress
                 e.Handled = true;
+            }
+        }
+
+        private void ComboBoxPromotoresListas_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
+            {
+                btnLista3.Enabled = false;
+                btnLiquidados.Enabled = false;
+                btnMostrarTodos.Enabled = false;
+                rjButton1.Enabled = false;
             }
         }
     }

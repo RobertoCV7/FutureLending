@@ -166,6 +166,9 @@ namespace FutureLending
             LabelNombre3 = new Label();
             ComboBoxPromotor3 = new ControlesPersonalizados.RJComboBox();
             pnlListas = new Panel();
+            LabelDineroAire = new Label();
+            flowLayoutPanel5 = new FlowLayoutPanel();
+            ComboBoxPromotoresListas = new ControlesPersonalizados.RJComboBox();
             label57 = new Label();
             BarradeProgreso = new ProgressBar();
             flowLayoutPanel3 = new FlowLayoutPanel();
@@ -342,6 +345,7 @@ namespace FutureLending
             PanelEditar3.SuspendLayout();
             groupBox3.SuspendLayout();
             pnlListas.SuspendLayout();
+            flowLayoutPanel5.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -1900,6 +1904,8 @@ namespace FutureLending
             // 
             resources.ApplyResources(pnlListas, "pnlListas");
             pnlListas.BackColor = SystemColors.ButtonHighlight;
+            pnlListas.Controls.Add(LabelDineroAire);
+            pnlListas.Controls.Add(flowLayoutPanel5);
             pnlListas.Controls.Add(label57);
             pnlListas.Controls.Add(BarradeProgreso);
             pnlListas.Controls.Add(flowLayoutPanel3);
@@ -1908,6 +1914,38 @@ namespace FutureLending
             pnlListas.Controls.Add(gridListas);
             pnlListas.Controls.Add(label8);
             pnlListas.Name = "pnlListas";
+            // 
+            // LabelDineroAire
+            // 
+            resources.ApplyResources(LabelDineroAire, "LabelDineroAire");
+            LabelDineroAire.ForeColor = Color.DarkSlateGray;
+            LabelDineroAire.Name = "LabelDineroAire";
+            // 
+            // flowLayoutPanel5
+            // 
+            resources.ApplyResources(flowLayoutPanel5, "flowLayoutPanel5");
+            flowLayoutPanel5.Controls.Add(ComboBoxPromotoresListas);
+            flowLayoutPanel5.Name = "flowLayoutPanel5";
+            // 
+            // ComboBoxPromotoresListas
+            // 
+            resources.ApplyResources(ComboBoxPromotoresListas, "ComboBoxPromotoresListas");
+            ComboBoxPromotoresListas.AllowDrop = true;
+            ComboBoxPromotoresListas.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("ComboBoxPromotoresListas.AutoCompleteCustomSource"), resources.GetString("ComboBoxPromotoresListas.AutoCompleteCustomSource1") });
+            ComboBoxPromotoresListas.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ComboBoxPromotoresListas.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ComboBoxPromotoresListas.BackColor = SystemColors.ButtonHighlight;
+            ComboBoxPromotoresListas.BorderColor = Color.DarkSlateGray;
+            ComboBoxPromotoresListas.BorderSize = 3;
+            ComboBoxPromotoresListas.DropDownStyle = ComboBoxStyle.DropDown;
+            ComboBoxPromotoresListas.ForeColor = Color.DarkSlateGray;
+            ComboBoxPromotoresListas.IconColor = Color.LightSlateGray;
+            ComboBoxPromotoresListas.ListBackColor = SystemColors.ButtonHighlight;
+            ComboBoxPromotoresListas.ListTextColor = Color.DimGray;
+            ComboBoxPromotoresListas.Name = "ComboBoxPromotoresListas";
+            ComboBoxPromotoresListas.Tag = "Seleccione un cliente";
+            ComboBoxPromotoresListas.Texts = "Promotor:";
+            ComboBoxPromotoresListas.OnSelectedIndexChanged += ComboBoxPromotoresListas_OnSelectedIndexChanged;
             // 
             // label57
             // 
@@ -3629,9 +3667,9 @@ namespace FutureLending
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pnlListas);
             Controls.Add(PanelBien);
             Controls.Add(panel2);
-            Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
             Controls.Add(pnlClientes);
             Controls.Add(PanelEditar2_2);
@@ -3662,6 +3700,7 @@ namespace FutureLending
             groupBox3.ResumeLayout(false);
             pnlListas.ResumeLayout(false);
             pnlListas.PerformLayout();
+            flowLayoutPanel5.ResumeLayout(false);
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
@@ -3992,5 +4031,8 @@ namespace FutureLending
         private RJButton BtnGuardarCambio;
         private TextBoxPersonalizado Monto_Recomendado;
         private Label label82;
+        private Label LabelDineroAire;
+        private FlowLayoutPanel flowLayoutPanel5;
+        private ControlesPersonalizados.RJComboBox ComboBoxPromotoresListas;
     }
 }
