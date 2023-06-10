@@ -1021,7 +1021,7 @@ namespace FutureLending
             else
             {
                 fechas[index] += "-" + txtBoxMonto.Texts;
-                fechas[15] = totRes.ToString();//Asigno el nuevo monto restante
+                fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
                 Ediciones instancia22 = new();
                 string[] dato = fechas;
                 dato[30] = fechas[1];
@@ -2452,7 +2452,7 @@ namespace FutureLending
 
         private void ComboBoxPromotoresListas_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if(ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
+            if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
             {
                 btnLista3.Enabled = false;
                 btnLiquidados.Enabled = false;

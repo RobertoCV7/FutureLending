@@ -128,6 +128,9 @@
   <data name="iconButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 64</value>
   </data>
+  <data name="iconButton1.Text" xml:space="preserve">
+    <value>     Configuración</value>
+  </data>
   <data name="btnTodosSistemas.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 789</value>
   </data>
@@ -21031,7 +21034,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="Monto_Recomendado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 54</value>
+    <value>397, 54</value>
   </data>
   <data name="Monto_Recomendado.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -21067,7 +21070,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxRestantepagos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 54</value>
+    <value>397, 54</value>
   </data>
   <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21091,7 +21094,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 59</value>
+    <value>401, 59</value>
   </data>
   <data name="ComBoxName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21106,7 +21109,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ComBoxName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 57</value>
+    <value>397, 57</value>
   </data>
   <data name="label29.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21145,7 +21148,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtBoxCredito.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 54</value>
+    <value>397, 54</value>
   </data>
   <data name="lblCredito.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21166,7 +21169,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtBoxMonto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 54</value>
+    <value>397, 54</value>
   </data>
   <data name="btnMarcarP.Location" type="System.Drawing.Point, System.Drawing">
     <value>330, 638</value>
@@ -21188,6 +21191,24 @@
   </data>
   <data name="pnlRegPago.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
+  </data>
+  <data name="label87.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="label87.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label87.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimSun, 36pt, style=Bold</value>
+  </data>
+  <data name="label87.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label87.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 48</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Informacion:</value>
   </data>
   <data name="btnCalcular1.Location" type="System.Drawing.Point, System.Drawing">
     <value>601, 694</value>

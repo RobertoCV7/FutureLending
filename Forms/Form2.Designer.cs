@@ -41,7 +41,7 @@
             Texto.Location = new Point(43, 23);
             Texto.Margin = new Padding(3, 3, 3, 0);
             Texto.Name = "Texto";
-            Texto.Size = new Size(654, 39);
+            Texto.Size = new Size(517, 31);
             Texto.TabIndex = 0;
             Texto.Text = "El programa funciona correctamente";
             Texto.TextAlign = ContentAlignment.MiddleLeft;
@@ -57,7 +57,7 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(251, 125);
+            rjButton1.Location = new Point(183, 125);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(254, 83);
             rjButton1.TabIndex = 1;
@@ -68,10 +68,10 @@
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
-            ClientSize = new Size(740, 220);
+            ClientSize = new Size(617, 220);
             Controls.Add(rjButton1);
             Controls.Add(Texto);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
