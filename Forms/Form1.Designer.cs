@@ -295,6 +295,7 @@ namespace FutureLending
             label60 = new Label();
             label59 = new Label();
             PanelEditar2_2 = new Panel();
+            rjButton7 = new RJButton();
             BotonVolverEditar2 = new RJButton();
             Botoncambiodefechamomentaneo = new RJButton();
             TextBoxPagoExt = new TextBoxPersonalizado();
@@ -2356,8 +2357,8 @@ namespace FutureLending
             // BtnMover
             // 
             resources.ApplyResources(BtnMover, "BtnMover");
-            BtnMover.BackColor = Color.MediumSlateBlue;
-            BtnMover.BackgroundColor = Color.MediumSlateBlue;
+            BtnMover.BackColor = Color.Gray;
+            BtnMover.BackgroundColor = Color.Gray;
             BtnMover.BorderColor = Color.PaleVioletRed;
             BtnMover.BorderRadius = 20;
             BtnMover.BorderSize = 0;
@@ -3237,6 +3238,7 @@ namespace FutureLending
             // 
             resources.ApplyResources(PanelEditar2_2, "PanelEditar2_2");
             PanelEditar2_2.BackColor = SystemColors.HighlightText;
+            PanelEditar2_2.Controls.Add(rjButton7);
             PanelEditar2_2.Controls.Add(BotonVolverEditar2);
             PanelEditar2_2.Controls.Add(Botoncambiodefechamomentaneo);
             PanelEditar2_2.Controls.Add(TextBoxPagoExt);
@@ -3250,6 +3252,21 @@ namespace FutureLending
             PanelEditar2_2.Controls.Add(label71);
             PanelEditar2_2.Controls.Add(ComboBoxDeFechas);
             PanelEditar2_2.Name = "PanelEditar2_2";
+            // 
+            // rjButton7
+            // 
+            resources.ApplyResources(rjButton7, "rjButton7");
+            rjButton7.BackColor = Color.Gray;
+            rjButton7.BackgroundColor = Color.Gray;
+            rjButton7.BorderColor = Color.PaleVioletRed;
+            rjButton7.BorderRadius = 20;
+            rjButton7.BorderSize = 0;
+            rjButton7.FlatAppearance.BorderSize = 0;
+            rjButton7.ForeColor = Color.White;
+            rjButton7.Name = "rjButton7";
+            rjButton7.TextColor = Color.White;
+            rjButton7.UseVisualStyleBackColor = false;
+            rjButton7.Click += rjButton7_Click;
             // 
             // BotonVolverEditar2
             // 
@@ -3320,7 +3337,7 @@ namespace FutureLending
             TextBoxPago.BorderColor = Color.DarkSlateGray;
             TextBoxPago.BorderFocusColor = SystemColors.Info;
             TextBoxPago.BorderRadius = 0;
-            TextBoxPago.BorderSize = 2;
+            TextBoxPago.BorderSize = 3;
             TextBoxPago.Multiline = false;
             TextBoxPago.Name = "TextBoxPago";
             TextBoxPago.PasswordChar = false;
@@ -3676,15 +3693,15 @@ namespace FutureLending
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(PanelEditar3);
+            Controls.Add(PanelEditarLiquidados);
             Controls.Add(pnlRegPago);
+            Controls.Add(PanelEditar2_2);
+            Controls.Add(PnlEditar2);
+            Controls.Add(PanelEditar);
             Controls.Add(pnlClientes);
             Controls.Add(pnlListas);
             Controls.Add(panel2);
-            Controls.Add(PanelEditar2_2);
-            Controls.Add(PanelEditar);
-            Controls.Add(PnlEditar2);
-            Controls.Add(PanelEditar3);
-            Controls.Add(PanelEditarLiquidados);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -4043,5 +4060,6 @@ namespace FutureLending
         private FlowLayoutPanel flowLayoutPanel5;
         private ControlesPersonalizados.RJComboBox ComboBoxPromotoresListas;
         private Label label87;
+        private RJButton rjButton7;
     }
 }

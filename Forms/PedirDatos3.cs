@@ -7,7 +7,7 @@
         {
             InitializeComponent();
         }
-
+        public bool Mover3 = true;
         private void rjButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,6 +33,57 @@
                 // Cancela el evento KeyPress
                 e.Handled = true;
             }
+        }
+        private bool mostrado = false;
+
+        private void PedirDatos3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Mover3)
+            {
+                if (ComboBoxResolucion3.SelectedIndex != -1)
+                {
+                    if (ComboBoxResolucionD.SelectedIndex != -1)
+                    {
+                        if (TextImporte3.Texts != "" || TextImporte3.Texts != null)
+                        {
+
+                        }
+                        else
+                        {
+                            if (!mostrado)
+                            {
+                                Form1.MessageB("No puede dejar nada vacio ni sin seleccionar", "Advertencia", 2);
+                                e.Cancel = true;
+                                mostrado = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (!mostrado)
+                        {
+                            Form1.MessageB("No puede dejar nada vacio ni sin seleccionar", "Advertencia", 2);
+                            e.Cancel = true;
+                            mostrado = true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (!mostrado)
+                    {
+                        Form1.MessageB("No puede dejar nada vacio ni sin seleccionar", "Advertencia", 2);
+                        e.Cancel = true;
+                        mostrado = true;
+                    }
+                }
+            }
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            Mover3 = false;
+            this.Close();
         }
     }
 }
