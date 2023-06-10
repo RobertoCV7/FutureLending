@@ -21078,6 +21078,24 @@
   <data name="pnlRegPago.Size" type="System.Drawing.Size, System.Drawing">
     <value>1114, 669</value>
   </data>
+  <data name="label87.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="label87.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label87.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimSun, 24pt</value>
+  </data>
+  <data name="label87.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label87.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 33</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Informacion:</value>
+  </data>
   <data name="btnCalcular1.Location" type="System.Drawing.Point, System.Drawing">
     <value>504, 577</value>
   </data>
@@ -21091,19 +21109,19 @@
     <value>199, 47</value>
   </data>
   <data name="dateTimePickerPersonalizado2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 226</value>
+    <value>255, 271</value>
   </data>
   <data name="dateTimePickerPersonalizado2.Size" type="System.Drawing.Size, System.Drawing">
     <value>446, 39</value>
   </data>
   <data name="label65.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 233</value>
+    <value>24, 278</value>
   </data>
   <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 29</value>
   </data>
   <data name="cmbInteres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 287</value>
+    <value>255, 332</value>
   </data>
   <data name="cmbInteres.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -21244,13 +21262,13 @@
     <value>254, 29</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 444</value>
+    <value>24, 489</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 29</value>
   </data>
   <data name="cmbTipo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 359</value>
+    <value>255, 404</value>
   </data>
   <data name="cmbTipo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -21265,31 +21283,31 @@
     <value>445, 46</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 375</value>
+    <value>24, 420</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 29</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 290</value>
+    <value>24, 335</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 29</value>
   </data>
   <data name="dateFechaInicio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 154</value>
+    <value>255, 199</value>
   </data>
   <data name="dateFechaInicio.Size" type="System.Drawing.Size, System.Drawing">
     <value>446, 39</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 165</value>
+    <value>24, 210</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 29</value>
   </data>
   <data name="txtCredito.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 66</value>
+    <value>255, 111</value>
   </data>
   <data name="txtCredito.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -21298,13 +21316,13 @@
     <value>445, 52</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 90</value>
+    <value>24, 135</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 29</value>
   </data>
   <data name="txtNombre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 14</value>
+    <value>255, 59</value>
   </data>
   <data name="txtNombre.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -21313,13 +21331,13 @@
     <value>445, 42</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 22</value>
+    <value>24, 67</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 29</value>
   </data>
   <data name="cmbPromotor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 426</value>
+    <value>255, 471</value>
   </data>
   <data name="cmbPromotor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>

@@ -99,6 +99,7 @@ namespace FutureLending
             btnMarcarP = new RJButton();
             lblMonto = new Label();
             pnlClientes = new Panel();
+            label87 = new Label();
             btnCalcular1 = new RJButton();
             btnGuardar1 = new RJButton();
             dateTimePickerPersonalizado2 = new DateTimePickerPersonalizado();
@@ -1099,6 +1100,7 @@ namespace FutureLending
             // 
             resources.ApplyResources(pnlClientes, "pnlClientes");
             pnlClientes.BackColor = SystemColors.ButtonHighlight;
+            pnlClientes.Controls.Add(label87);
             pnlClientes.Controls.Add(btnCalcular1);
             pnlClientes.Controls.Add(btnGuardar1);
             pnlClientes.Controls.Add(dateTimePickerPersonalizado2);
@@ -1134,6 +1136,12 @@ namespace FutureLending
             pnlClientes.Controls.Add(cmbPromotor);
             pnlClientes.Name = "pnlClientes";
             pnlClientes.Paint += pnlClientes_Paint;
+            // 
+            // label87
+            // 
+            resources.ApplyResources(label87, "label87");
+            label87.ForeColor = Color.DarkSlateGray;
+            label87.Name = "label87";
             // 
             // btnCalcular1
             // 
@@ -3667,11 +3675,11 @@ namespace FutureLending
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pnlListas);
             Controls.Add(PanelBien);
-            Controls.Add(panel2);
             Controls.Add(pnlRegPago);
             Controls.Add(pnlClientes);
+            Controls.Add(pnlListas);
+            Controls.Add(panel2);
             Controls.Add(PanelEditar2_2);
             Controls.Add(PanelEditar);
             Controls.Add(PnlEditar2);
@@ -4034,5 +4042,6 @@ namespace FutureLending
         private Label LabelDineroAire;
         private FlowLayoutPanel flowLayoutPanel5;
         private ControlesPersonalizados.RJComboBox ComboBoxPromotoresListas;
+        private Label label87;
     }
 }

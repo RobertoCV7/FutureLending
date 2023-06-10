@@ -1018,7 +1018,7 @@ namespace FutureLending
             else
             {
                 fechas[index] += "-" + txtBoxMonto.Texts;
-                fechas[15] = totRes.ToString();//Asigno el nuevo monto restante
+                fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
                 Ediciones instancia22 = new();
                 string[] dato = fechas;
                 dato[30] = fechas[1];
