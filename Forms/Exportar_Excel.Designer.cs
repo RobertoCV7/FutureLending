@@ -45,9 +45,10 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(52, 269);
+            rjButton1.Location = new Point(46, 202);
+            rjButton1.Margin = new Padding(3, 2, 3, 2);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(243, 96);
+            rjButton1.Size = new Size(213, 72);
             rjButton1.TabIndex = 0;
             rjButton1.Text = "Exportar";
             rjButton1.TextColor = Color.White;
@@ -59,36 +60,39 @@
             comboBox1.BackColor = SystemColors.Info;
             comboBox1.Font = new Font("Consolas", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(37, 126);
+            comboBox1.Location = new Point(32, 94);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(275, 39);
+            comboBox1.Size = new Size(241, 32);
             comboBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(27, 40);
+            label1.Location = new Point(24, 30);
             label1.Name = "label1";
-            label1.Size = new Size(302, 39);
+            label1.Size = new Size(241, 31);
             label1.TabIndex = 2;
             label1.Text = "Exportar a Excel";
             // 
             // Exportar_Excel
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HighlightText;
-            ClientSize = new Size(355, 400);
+            ClientSize = new Size(311, 300);
             Controls.Add(label1);
             Controls.Add(comboBox1);
             Controls.Add(rjButton1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Exportar_Excel";
             ShowInTaskbar = false;
             Text = "Exportar_Excel";
+            FormClosing += Exportar_Excel_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,4 +1,5 @@
 using FutureLending.ControlesPersonalizados;
+using FutureLending.Forms;
 using Newtonsoft.Json;
 using System.ComponentModel;
 using System.IO.Ports;
@@ -998,55 +999,64 @@ namespace FutureLending
             index += 16;
             rjComboBox9.SelectedIndex = -1;
             //Restar el nuevo pago al monto restante 
-            double totRes = (Convert.ToDouble(fechas[15])) - (Convert.ToDouble(txtBoxMonto.Texts));
-            //Si el monto restante es 0, entonces se pasa a liquidados 
-            if (totRes == 0)
+            if (Convert.ToDouble(txtBoxMonto.Texts) > Convert.ToDouble(fechas[15]))
             {
-                Lectura_Base_Datos obj = new();
-                string[] mov = new string[12];
-                mov[0] = fechas[0];//Promotor
-                mov[1] = fechas[1];//Nombre
-                mov[2] = fechas[2];//Credito
-                mov[3] = fechas[4];//fecha inicio
-                mov[4] = fechas[8];//Calle
-                mov[5] = fechas[9];//Colonia
-                mov[6] = fechas[10];//Num_ext
-                mov[7] = fechas[11];//Num_int
-                mov[8] = fechas[12];//Telefono
-                mov[9] = fechas[13];//Correo
-                mov[10] = "Lista1";//Lista
-                obj.InsertarLiquidados(mov);//Lo mueve a liquidados
-                obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                MessageB("El monto a depositar no puede ser mayor al restante", "Advertencia", 2);
+                //Reseteo los valores
+                txtBoxMonto.Texts = "";
             }
             else
             {
-                fechas[index] += "-" + txtBoxMonto.Texts;
-                fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
-                Ediciones instancia22 = new();
-                string[] dato = fechas;
-                dato[30] = fechas[1];
-                _ = instancia22.EditarLista1(dato);
-            }
-            //Resetear valores 
-            ComBoxName.SelectedIndex = -1;
-            ComBoxName.Texts = "Introduzca nombre";
-            btnBuscarC.Enabled = false;
-            rjComboBox9.Items.Clear();
-            rjComboBox9.Visible = false;
-            txtBoxCredito.Visible = false;
-            txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
-            lblCredito.Visible = false;
-            label82.Visible = false;
-            TextBoxRestantepagos.Visible = false;
-            Monto_Recomendado.Visible = false;
-            lblMonto.Visible = false;
-            lblFecha.Visible = false;
-            label17.Visible = false;
-            btnMarcarP.Visible = false;
-            rjComboBox9.SelectedIndex = -1;
 
-            //Recargo de datos
-            BtnEstadoPagos_Click(sender, e);
+                double totRes = (Convert.ToDouble(fechas[15])) - (Convert.ToDouble(txtBoxMonto.Texts));
+                //Si el monto restante es 0, entonces se pasa a liquidados 
+                if (totRes == 0)
+                {
+                    Lectura_Base_Datos obj = new();
+                    string[] mov = new string[12];
+                    mov[0] = fechas[0];//Promotor
+                    mov[1] = fechas[1];//Nombre
+                    mov[2] = fechas[2];//Credito
+                    mov[3] = fechas[4];//fecha inicio
+                    mov[4] = fechas[8];//Calle
+                    mov[5] = fechas[9];//Colonia
+                    mov[6] = fechas[10];//Num_ext
+                    mov[7] = fechas[11];//Num_int
+                    mov[8] = fechas[12];//Telefono
+                    mov[9] = fechas[13];//Correo
+                    mov[10] = "Lista1";//Lista
+                    obj.InsertarLiquidados(mov);//Lo mueve a liquidados
+                    obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                }
+                else
+                {
+                    fechas[index] += "-" + txtBoxMonto.Texts;
+                    fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
+                    Ediciones instancia22 = new();
+                    string[] dato = fechas;
+                    dato[30] = fechas[1];
+                    _ = instancia22.EditarLista1(dato);
+                }
+                //Resetear valores 
+                ComBoxName.SelectedIndex = -1;
+                ComBoxName.Texts = "Introduzca nombre";
+                btnBuscarC.Enabled = false;
+                rjComboBox9.Items.Clear();
+                rjComboBox9.Visible = false;
+                txtBoxCredito.Visible = false;
+                txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
+                lblCredito.Visible = false;
+                label82.Visible = false;
+                TextBoxRestantepagos.Visible = false;
+                Monto_Recomendado.Visible = false;
+                lblMonto.Visible = false;
+                lblFecha.Visible = false;
+                label17.Visible = false;
+                btnMarcarP.Visible = false;
+                rjComboBox9.SelectedIndex = -1;
+                //Recargo de datos
+                BtnEstadoPagos_Click(sender, e);
+            }
         }
 
 
@@ -1539,7 +1549,7 @@ namespace FutureLending
         #region limitar a ingresar numeros
         private void TextBoxPago_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
                 // Cancela el evento KeyPress
                 e.Handled = true;
@@ -1894,30 +1904,40 @@ namespace FutureLending
 
         private void btnMover2_Click(object sender, EventArgs e)
         {
-            string[] Mov4 = new string[12];
-            Mov4[0] = informacion3[0]; //Promotor
-            Mov4[1] = informacion3[1]; //Nombre
-            Mov4[2] = informacion3[2]; //Credito
-            Mov4[3] = "-";//Fecha de Inicio
-            Mov4[4] = informacion3[4];//Calle
-            Mov4[5] = informacion3[5];//Colonia
-            Mov4[6] = informacion3[6];//NumInt
-            Mov4[7] = informacion3[7];//NumExt
-            Mov4[8] = informacion3[8];//Telefono
-            Mov4[9] = informacion3[9];//Correo
-            Mov4[10] = "Lista 3";
-            Lectura_Base_Datos Instancia2 = new();
-            bool av2 = Instancia2.InsertarLiquidados(Mov4);
-            if (av2)
+            Comprobacion_Mover_Liq obj = new();
+            obj.ShowDialog();
+            if (obj.Mover4)
             {
-                Instancia2.Erase(Cliente, "lista3");//Lo borro de la lista 3
-                EsconderPaneles(pnlListas);
-                btnLiquidados.PerformClick();
+                string[] Mov4 = new string[12];
+                Mov4[0] = informacion3[0]; //Promotor
+                Mov4[1] = informacion3[1]; //Nombre
+                Mov4[2] = informacion3[2]; //Credito
+                Mov4[3] = "-";//Fecha de Inicio
+                Mov4[4] = informacion3[4];//Calle
+                Mov4[5] = informacion3[5];//Colonia
+                Mov4[6] = informacion3[6];//NumInt
+                Mov4[7] = informacion3[7];//NumExt
+                Mov4[8] = informacion3[8];//Telefono
+                Mov4[9] = informacion3[9];//Correo
+                Mov4[10] = "Lista 3";
+                Lectura_Base_Datos Instancia2 = new();
+                bool av2 = Instancia2.InsertarLiquidados(Mov4);
+                if (av2)
+                {
+                    Instancia2.Erase(Cliente, "lista3");//Lo borro de la lista 3
+                    EsconderPaneles(pnlListas);
+                    btnLiquidados.PerformClick();
+                }
+                else
+                {
+                    MessageB("Error al mover a liquidados", "Error", 2);
+                }
             }
             else
             {
-                MessageB("Error al mover a liquidados", "Error", 2);
+                MessageB("Movimiento a Liquidados cancelado", "Mensaje", 1);
             }
+
         }
 
         private void PanelEditar3_Paint(object sender, PaintEventArgs e)
@@ -1932,58 +1952,75 @@ namespace FutureLending
                 case 0://Mover a lista 3
                     PedirDatos3 a = new();
                     a.ShowDialog();
-                    string[] Move3 = new string[14];
-                    Move3[0] = Informacion2[0]; //Promotor
-                    Move3[1] = Informacion2[1]; //Nombre
-                    Move3[2] = Informacion2[2]; //Credito
-                    Move3[3] = Informacion2[4];//Pagare
-                    Move3[4] = Informacion2[5];//Calle
-                    Move3[5] = Informacion2[6];//Colonia
-                    Move3[6] = Informacion2[7];//NumInt
-                    Move3[7] = Informacion2[8];//NumExt
-                    Move3[8] = Informacion2[9];//Telefono
-                    Move3[9] = Informacion2[10];//Correo
-                    Move3[10] = a.ComboBoxResolucion3.SelectedItem.ToString();//Resolucion
-                    Move3[11] = a.ComboBoxResolucionD.SelectedItem.ToString();//Resolucion Demanda Embargo o en Tramite
-                    Move3[12] = a.TextImporte3.Texts;//Importe
-                    Lectura_Base_Datos Instancia = new();
-
-                    bool av = Instancia.InsertarLista3(Move3);
-                    if (av)
+                    if (a.Mover3)
                     {
-                        Instancia.Erase(Cliente, "lista2");//Lo borro de la lista 2
-                        EsconderPaneles(pnlListas);
-                        btnLista3.PerformClick();
+                        string[] Move3 = new string[14];
+                        Move3[0] = Informacion2[0]; //Promotor
+                        Move3[1] = Informacion2[1]; //Nombre
+                        Move3[2] = Informacion2[2]; //Credito
+                        Move3[3] = Informacion2[4];//Pagare
+                        Move3[4] = Informacion2[5];//Calle
+                        Move3[5] = Informacion2[6];//Colonia
+                        Move3[6] = Informacion2[7];//NumInt
+                        Move3[7] = Informacion2[8];//NumExt
+                        Move3[8] = Informacion2[9];//Telefono
+                        Move3[9] = Informacion2[10];//Correo
+                        Move3[10] = a.ComboBoxResolucion3.SelectedItem.ToString();//Resolucion
+                        Move3[11] = a.ComboBoxResolucionD.SelectedItem.ToString();//Resolucion Demanda Embargo o en Tramite
+                        Move3[12] = a.TextImporte3.Texts;//Importe
+                        Lectura_Base_Datos Instancia = new();
+
+                        bool av = Instancia.InsertarLista3(Move3);
+                        if (av)
+                        {
+                            Instancia.Erase(Cliente, "lista2");//Lo borro de la lista 2
+                            EsconderPaneles(pnlListas);
+                            btnLista3.PerformClick();
+                        }
+                        else
+                        {
+                            MessageB("Error al mover a lista 3", "Error", 2);
+                        }
                     }
                     else
                     {
-                        MessageB("Error al mover a lista 3", "Error", 2);
+                        MessageB("Movimiento a lista 3 cancelado", "Mensaje", 1);
                     }
+
                     break;
                 case 1://mover a liquidados
-                    string[] Mov4 = new string[12];
-                    Mov4[0] = Informacion2[0]; //Promotor
-                    Mov4[1] = Informacion2[1]; //Nombre
-                    Mov4[2] = Informacion2[2]; //Credito
-                    Mov4[3] = "-";//Fecha de Inicio
-                    Mov4[4] = Informacion2[5];//Calle
-                    Mov4[5] = Informacion2[6];//Colonia
-                    Mov4[6] = Informacion2[7];//NumInt
-                    Mov4[7] = Informacion2[8];//NumExt
-                    Mov4[8] = Informacion2[9];//Telefono
-                    Mov4[9] = Informacion2[10];//Correo
-                    Mov4[10] = "Lista 2";
-                    Lectura_Base_Datos Instancia2 = new();
-                    bool av2 = Instancia2.InsertarLiquidados(Mov4);
-                    if (av2)
+                    Comprobacion_Mover_Liq obj = new();
+                    obj.ShowDialog();
+                    if (obj.Mover4)
                     {
-                        Instancia2.Erase(Cliente, "lista2");//Lo borro de la lista 2
-                        EsconderPaneles(pnlListas);
-                        btnLiquidados.PerformClick();
+                        string[] Mov4 = new string[12];
+                        Mov4[0] = Informacion2[0]; //Promotor
+                        Mov4[1] = Informacion2[1]; //Nombre
+                        Mov4[2] = Informacion2[2]; //Credito
+                        Mov4[3] = "-";//Fecha de Inicio
+                        Mov4[4] = Informacion2[5];//Calle
+                        Mov4[5] = Informacion2[6];//Colonia
+                        Mov4[6] = Informacion2[7];//NumInt
+                        Mov4[7] = Informacion2[8];//NumExt
+                        Mov4[8] = Informacion2[9];//Telefono
+                        Mov4[9] = Informacion2[10];//Correo
+                        Mov4[10] = "Lista 2";
+                        Lectura_Base_Datos Instancia2 = new();
+                        bool av2 = Instancia2.InsertarLiquidados(Mov4);
+                        if (av2)
+                        {
+                            Instancia2.Erase(Cliente, "lista2");//Lo borro de la lista 2
+                            EsconderPaneles(pnlListas);
+                            btnLiquidados.PerformClick();
+                        }
+                        else
+                        {
+                            MessageB("Error al mover a liquidados", "Error", 2);
+                        }
                     }
                     else
                     {
-                        MessageB("Error al mover a liquidados", "Error", 2);
+                        MessageB("Movimiento a Liquidados cancelado", "Mensaje", 1);
                     }
 
                     break;
@@ -2081,52 +2118,69 @@ namespace FutureLending
                 }
             }
         }
+        private static double Monto_Inicial = 0;
+        private static int IndiceFecha = 0;
+        private static int IndicePago = 0;
+        private static bool Edito = false;
         private void Botoncambiodefechamomentaneo_Click_1(object sender, EventArgs e)
         {
 
             string fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
             string pago = TextBoxPago.Texts;
-            if (ComboBoxDeFechas.SelectedIndex == 0)
+            if (Convert.ToDouble(pago) > Convert.ToDouble(Informacion2[42]))
             {
-                int indice = 14;
-                Informacion2[indice] = fecha;
-                Informacion2[indice + 1] = pago;
-                int resta = int.Parse(Informacion2[42]) - int.Parse(pago);
-                Informacion2[42] = resta.ToString();
-                TextBoxPagoExt.Texts = Informacion2[42];
-                if (TextBoxPagoExt.Texts == "0")
-                {
-                    Mover = true;
-                }
-                else
-                {
-                    Mover = false;
-                }
+                MessageB("El pago no puede ser mayor al monto restante", "Advertencia", 2);
+                return;
             }
             else
             {
-                int indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
-                Informacion2[indice] = fecha;
-                Informacion2[indice + 1] = pago;
-                int resta = int.Parse(Informacion2[42]) - int.Parse(pago);
-                Informacion2[42] = resta.ToString();
-                TextBoxPagoExt.Texts = Informacion2[42];
-                if (TextBoxPagoExt.Texts == "0")
+                if (ComboBoxDeFechas.SelectedIndex == 0)
                 {
-                    Mover = true;
+                    int indice = 14;
+                    Informacion2[indice] = fecha;
+                    IndiceFecha = indice;
+                    Informacion2[indice + 1] = pago;
+                    IndicePago = indice + 1;
+
+                    double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                    Monto_Inicial = Convert.ToDouble(Informacion2[42]); //Aqui recupero el valor original antes de la resta Por si se equivoca
+                    Informacion2[42] = resta.ToString();
+                    Edito = true;
+                    TextBoxPagoExt.Texts = Informacion2[42];
+                    if (TextBoxPagoExt.Texts == "0")
+                    {
+                        Mover = true;
+                    }
+                    else
+                    {
+                        Mover = false;
+                    }
                 }
                 else
                 {
-                    Mover = false;
+                    int indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                    Informacion2[indice] = fecha;
+                    Informacion2[indice + 1] = pago;
+                    double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                    Monto_Inicial = Convert.ToDouble(Informacion2[42]); //Aqui recupero el valor original antes de la resta por si se equivoca
+                    Informacion2[42] = resta.ToString();
+                    Edito = true;
+                    TextBoxPagoExt.Texts = Informacion2[42];
+                    if (TextBoxPagoExt.Texts == "0")
+                    {
+                        Mover = true;
+                    }
+                    else
+                    {
+                        Mover = false;
+                    }
                 }
             }
-
 
         }
 
         private void BotonVolverEditar2_Click_1(object sender, EventArgs e)
         {
-            btnEditarFechas2.Enabled = false;
             Botoncambiodefechamomentaneo.Enabled = false;
             FechaEnLista2.Enabled = false;
             EsconderPaneles(PnlEditar2);
@@ -2172,116 +2226,143 @@ namespace FutureLending
                 case 0://Mover a lista 2
                     Pedir_Datos a = new();
                     a.ShowDialog();
-                    //Para mover a lista 2 copio valores que tiene la lista 1 y agrego otros que el usuario debe agregar
-                    string[] InfoMov = new string[43];
-                    InfoMov[0] = informacion[0]; //Promotor que lo atiende
-                    InfoMov[1] = informacion[1]; //Nombre del registro
-                    InfoMov[2] = informacion[2]; //Credito Prestado
-                    InfoMov[3] = informacion[15]; //Monto Restante
-                    InfoMov[4] = informacion[3]; //Pagare generado
-                    InfoMov[5] = informacion[8]; //calle
-                    InfoMov[6] = informacion[9]; //colonia
-                    InfoMov[7] = informacion[10]; //Numero de casa interior
-                    InfoMov[8] = informacion[11]; //Numero de casa exterior
-                    InfoMov[9] = informacion[12]; //Telefono
-                    InfoMov[10] = informacion[13]; //Correo
-                    InfoMov[11] = a.rjComboBox2.SelectedItem.ToString(); //Su forma de pago Liquidacion o Intencion
-                    #region Calculos del Excel
-                    if (a.rjComboBox2.SelectedItem.ToString() == "Liquidacion")
+
+                    if (a.Mover2)
                     {
 
-                        InfoMov[12] = a.TextLiquidacionPedir.Texts;//Monto de Liquidacion
-                        int pag = int.Parse(InfoMov[4]);
-                        int liquidacion = int.Parse(InfoMov[12]);
-                        uint Quita = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(liquidacion)); //en Uint para que no sea negativo jamas
-                        InfoMov[13] = Quita.ToString();//Monto de Quita que es la diferencia entre el liquidacion y el pagare por haber seleccionado liquidacion
-                        InfoMov[42] = liquidacion.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
+                        //Para mover a lista 2 copio valores que tiene la lista 1 y agrego otros que el usuario debe agregar
+                        string[] InfoMov = new string[43];
+                        InfoMov[0] = informacion[0]; //Promotor que lo atiende
+                        InfoMov[1] = informacion[1]; //Nombre del registro
+                        InfoMov[2] = informacion[2]; //Credito Prestado
+                        InfoMov[3] = informacion[15]; //Monto Restante
+                        InfoMov[4] = informacion[3]; //Pagare generado
+                        InfoMov[5] = informacion[8]; //calle
+                        InfoMov[6] = informacion[9]; //colonia
+                        InfoMov[7] = informacion[10]; //Numero de casa interior
+                        InfoMov[8] = informacion[11]; //Numero de casa exterior
+                        InfoMov[9] = informacion[12]; //Telefono
+                        InfoMov[10] = informacion[13]; //Correo
+                        InfoMov[11] = a.rjComboBox2.SelectedItem.ToString(); //Su forma de pago Liquidacion o Intencion
+                        #region Calculos del Excel
+                        if (a.rjComboBox2.SelectedItem.ToString() == "Liquidacion")
+                        {
+
+                            InfoMov[12] = a.TextLiquidacionPedir.Texts;//Monto de Liquidacion
+                            int pag = int.Parse(InfoMov[4]);
+                            int liquidacion = int.Parse(InfoMov[12]);
+                            uint Quita = ((uint)Convert.ToUInt64(pag)) - ((uint)Convert.ToUInt64(liquidacion)); //en Uint para que no sea negativo jamas
+                            InfoMov[13] = Quita.ToString();//Monto de Quita que es la diferencia entre el liquidacion y el pagare por haber seleccionado liquidacion
+                            InfoMov[42] = liquidacion.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
+                        }
+                        else
+                        {
+                            //Se toma encuenta 10% del Pagare y se le suma a su monto restante
+                            int pag = int.Parse(InfoMov[4]);
+                            double quita = (pag * .90);
+                            InfoMov[12] = quita.ToString();//Monto de Intencion es el 10% del pagare
+                            InfoMov[13] = "0";//Monto de Quita es 0 por ser de convenio
+                            InfoMov[42] = quita.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
+                        }
+                        //Lleno la parte de fechas con guiones
+                        for (int i = 14; i <= 41; i++)
+                        {
+                            InfoMov[i] = "-";
+                        }
+                        #endregion
+                        Lectura_Base_Datos instancia = new();
+                        bool rev = instancia.InsertarLista2(InfoMov);
+
+                        if (rev)
+                        {
+                            //Borro el registro de la lista 1 porque si se movio al 2
+                            instancia.Erase(InfoMov[1], "lista1");
+                            EsconderPaneles(pnlListas);
+                            btnLista2.PerformClick(); //Reactualizo los datos de la lista  2
+                        }
+                        else
+                        {
+                            MessageB("Error al mover el registro", "Aviso", 2);
+                        }
                     }
                     else
                     {
-                        //Se toma encuenta 10% del Pagare y se le suma a su monto restante
-                        int pag = int.Parse(InfoMov[4]);
-                        double quita = (pag * .90);
-                        InfoMov[12] = quita.ToString();//Monto de Intencion es el 10% del pagare
-                        InfoMov[13] = "0";//Monto de Quita es 0 por ser de convenio
-                        InfoMov[42] = quita.ToString();//Monto de Extencion - Al pagare se le resta el pago de intencion
-                    }
-                    //Lleno la parte de fechas con guiones
-                    for (int i = 14; i <= 41; i++)
-                    {
-                        InfoMov[i] = "-";
-                    }
-                    #endregion
-                    Lectura_Base_Datos instancia = new();
-                    bool rev = instancia.InsertarLista2(InfoMov);
-
-                    if (rev)
-                    {
-                        //Borro el registro de la lista 1 porque si se movio al 2
-                        instancia.Erase(InfoMov[1], "lista1");
-                        EsconderPaneles(pnlListas);
-                        btnLista2.PerformClick(); //Reactualizo los datos de la lista  2
-                    }
-                    else
-                    {
-                        MessageB("Error al mover el registro", "Aviso", 2);
+                        MessageB("Movimiento a Lista 2 cancelado", "Mensaje", 1);
                     }
                     break;
                 case 1: //Para mover a lista 3
                     PedirDatos3 a1 = new();
                     a1.ShowDialog();
-                    string[] InfoMov3 = new string[14];
-                    InfoMov3[0] = informacion[0]; //Promotor que lo atiende
-                    InfoMov3[1] = informacion[1]; //Nombre del registro
-                    InfoMov3[2] = informacion[2]; //Credito Prestado
-                    InfoMov3[3] = informacion[3]; //Pagare generado
-                    InfoMov3[4] = informacion[8]; //calle
-                    InfoMov3[5] = informacion[9]; //colonia
-                    InfoMov3[6] = informacion[10]; //Numero de casa interior
-                    InfoMov3[7] = informacion[11]; //Numero de casa exterior
-                    InfoMov3[8] = informacion[12]; //Telefono
-                    InfoMov3[9] = informacion[13]; //Correo
-                    InfoMov3[10] = a1.ComboBoxResolucion3.SelectedItem.ToString(); //Su forma de pago Liquidacion o Convenio
-                    InfoMov3[11] = a1.ComboBoxResolucionD.SelectedItem.ToString();//Monto de Liquidacion
-                    InfoMov3[12] = a1.TextImporte3.Texts;//Monto de Quita
-                    Lectura_Base_Datos instancia3 = new();
-                    bool rev3 = instancia3.InsertarLista3(InfoMov3);
-                    if (rev3)
+                    if (a1.Mover3)
                     {
-                        instancia3.Erase(InfoMov3[1], "lista1");
-                        EsconderPaneles(pnlListas);
-                        btnLista3.PerformClick(); //Reactualizo los datos de la lista  3
+                        string[] InfoMov3 = new string[14];
+                        InfoMov3[0] = informacion[0]; //Promotor que lo atiende
+                        InfoMov3[1] = informacion[1]; //Nombre del registro
+                        InfoMov3[2] = informacion[2]; //Credito Prestado
+                        InfoMov3[3] = informacion[3]; //Pagare generado
+                        InfoMov3[4] = informacion[8]; //calle
+                        InfoMov3[5] = informacion[9]; //colonia
+                        InfoMov3[6] = informacion[10]; //Numero de casa interior
+                        InfoMov3[7] = informacion[11]; //Numero de casa exterior
+                        InfoMov3[8] = informacion[12]; //Telefono
+                        InfoMov3[9] = informacion[13]; //Correo
+                        InfoMov3[10] = a1.ComboBoxResolucion3.SelectedItem.ToString(); //Su forma de pago Liquidacion o Convenio
+                        InfoMov3[11] = a1.ComboBoxResolucionD.SelectedItem.ToString();//Monto de Liquidacion
+                        InfoMov3[12] = a1.TextImporte3.Texts;//Monto de Quita
+                        Lectura_Base_Datos instancia3 = new();
+                        bool rev3 = instancia3.InsertarLista3(InfoMov3);
+                        if (rev3)
+                        {
+                            instancia3.Erase(InfoMov3[1], "lista1");
+                            EsconderPaneles(pnlListas);
+                            btnLista3.PerformClick(); //Reactualizo los datos de la lista  3
+                        }
+                        else
+                        {
+                            MessageB("Error al mover el registro", "Aviso", 2);
+                        }
                     }
                     else
                     {
-                        MessageB("Error al mover el registro", "Aviso", 2);
+                        MessageB("Movimiento a Lista 3 cancelado", "Mensaje", 1);
                     }
+
                     break;
                 case 2: //Para mover a liquidados
-                    string[] InfoMov4 = new string[12];
-                    InfoMov4[0] = informacion[0]; //Promotor que lo atiende
-                    InfoMov4[1] = informacion[1]; //Nombre del registro
-                    InfoMov4[2] = informacion[2]; //Credito Prestado
-                    InfoMov4[3] = informacion[4];//Fecha de inicio
-                    InfoMov4[4] = informacion[8];//Calle
-                    InfoMov4[5] = informacion[9];//Colonia
-                    InfoMov4[6] = informacion[10];//Numero de casa interior
-                    InfoMov4[7] = informacion[11];//Numero de casa exterior
-                    InfoMov4[8] = informacion[12];//Telefono
-                    InfoMov4[9] = informacion[13];//Correo
-                    InfoMov4[10] = "Lista 1";
-                    Lectura_Base_Datos instancia4 = new();
-                    bool rev4 = instancia4.InsertarLiquidados(InfoMov4);
-                    if (rev4)
+                    Comprobacion_Mover_Liq ar2 = new();
+                    ar2.ShowDialog();
+                    if (ar2.Mover4)
                     {
-                        instancia4.Erase(InfoMov4[1], "lista1");
-                        EsconderPaneles(pnlListas);
-                        btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
+                        string[] InfoMov4 = new string[12];
+                        InfoMov4[0] = informacion[0]; //Promotor que lo atiende
+                        InfoMov4[1] = informacion[1]; //Nombre del registro
+                        InfoMov4[2] = informacion[2]; //Credito Prestado
+                        InfoMov4[3] = informacion[4];//Fecha de inicio
+                        InfoMov4[4] = informacion[8];//Calle
+                        InfoMov4[5] = informacion[9];//Colonia
+                        InfoMov4[6] = informacion[10];//Numero de casa interior
+                        InfoMov4[7] = informacion[11];//Numero de casa exterior
+                        InfoMov4[8] = informacion[12];//Telefono
+                        InfoMov4[9] = informacion[13];//Correo
+                        InfoMov4[10] = "Lista 1";
+                        Lectura_Base_Datos instancia4 = new();
+                        bool rev4 = instancia4.InsertarLiquidados(InfoMov4);
+                        if (rev4)
+                        {
+                            instancia4.Erase(InfoMov4[1], "lista1");
+                            EsconderPaneles(pnlListas);
+                            btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
+                        }
+                        else
+                        {
+                            MessageB("Error al mover el registro", "Aviso", 2);
+                        }
                     }
                     else
                     {
-                        MessageB("Error al mover el registro", "Aviso", 2);
+                        MessageB("Movimiento a Liquidados cancelado", "Mensaje", 1);
                     }
+
                     break;
             }
         }
@@ -2458,6 +2539,20 @@ namespace FutureLending
                 btnLiquidados.Enabled = false;
                 btnMostrarTodos.Enabled = false;
                 rjButton1.Enabled = false;
+            }
+        }
+
+        private void rjButton7_Click(object sender, EventArgs e)
+        {
+            if (Edito)
+            {
+                Informacion2[42] = Monto_Inicial.ToString("N2");
+                Informacion2[IndiceFecha] = "";
+                Informacion2[IndiceFecha + 1] = "";
+            }
+            else
+            {
+                MessageB("No se ha editado nada", "Alerta", 2);
             }
         }
     }

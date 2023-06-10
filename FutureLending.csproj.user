@@ -19,6 +19,9 @@
     <Compile Update="ControlesPersonalizados\TextBoxPersonalizado.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Comprobacion_Mover_Liq.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Configuracion_Inicio_Sesion.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -20566,7 +20566,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxQuita.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 564</value>
+    <value>365, 597</value>
   </data>
   <data name="TextBoxQuita.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20581,7 +20581,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 573</value>
+    <value>30, 606</value>
   </data>
   <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 39</value>
@@ -20596,7 +20596,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxLiquidacionIntencion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 486</value>
+    <value>365, 519</value>
   </data>
   <data name="TextBoxLiquidacionIntencion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20611,7 +20611,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label68.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 496</value>
+    <value>30, 529</value>
   </data>
   <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
     <value>326, 39</value>
@@ -20677,10 +20677,13 @@
     <value>SimSun, 24pt, style=Bold</value>
   </data>
   <data name="LabelPertenece.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 22</value>
+    <value>315, 16</value>
   </data>
   <data name="LabelPertenece.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 35</value>
+    <value>145, 35</value>
+  </data>
+  <data name="LabelPertenece.Text" xml:space="preserve">
+    <value>Lista 2</value>
   </data>
   <data name="label72.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -20701,7 +20704,7 @@
     <value>199, 68</value>
   </data>
   <data name="CmbLista2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 26</value>
+    <value>8, 32</value>
   </data>
   <data name="CmbLista2.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>200, 30</value>
@@ -20710,13 +20713,13 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="CmbLista2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 67</value>
+    <value>295, 61</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 656</value>
+    <value>98, 681</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 126</value>
+    <value>592, 102</value>
   </data>
   <data name="TextBoxCorreo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -20899,7 +20902,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label79.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 430</value>
+    <value>30, 450</value>
   </data>
   <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 39</value>
@@ -20920,7 +20923,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 51</value>
+    <value>442, 64</value>
   </data>
   <data name="label80.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -20983,7 +20986,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="rjComboBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 422</value>
+    <value>365, 442</value>
   </data>
   <data name="rjComboBox8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -20995,7 +20998,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 50</value>
+    <value>442, 64</value>
   </data>
   <data name="PnlEditar2.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 60</value>
@@ -21025,7 +21028,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="Monto_Recomendado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 342</value>
+    <value>414, 344</value>
   </data>
   <data name="Monto_Recomendado.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -21034,7 +21037,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="Monto_Recomendado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 54</value>
+    <value>563, 54</value>
   </data>
   <data name="Monto_Recomendado.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -21064,13 +21067,13 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxRestantepagos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 265</value>
+    <value>414, 267</value>
   </data>
   <data name="TextBoxRestantepagos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxRestantepagos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 54</value>
+    <value>563, 54</value>
   </data>
   <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21085,7 +21088,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="rjComboBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 490</value>
+    <value>410, 486</value>
   </data>
   <data name="rjComboBox9.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
@@ -21094,13 +21097,13 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 59</value>
+    <value>563, 73</value>
   </data>
   <data name="ComBoxName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="ComBoxName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 82</value>
+    <value>414, 82</value>
   </data>
   <data name="ComBoxName.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
@@ -21109,7 +21112,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ComBoxName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 57</value>
+    <value>563, 75</value>
   </data>
   <data name="label29.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21124,7 +21127,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnBuscarC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>829, 82</value>
+    <value>1075, 82</value>
   </data>
   <data name="btnBuscarC.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 56</value>
@@ -21142,13 +21145,13 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="txtBoxCredito.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 193</value>
+    <value>414, 195</value>
   </data>
   <data name="txtBoxCredito.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtBoxCredito.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 54</value>
+    <value>563, 54</value>
   </data>
   <data name="lblCredito.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21163,16 +21166,16 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="txtBoxMonto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 415</value>
+    <value>414, 417</value>
   </data>
   <data name="txtBoxMonto.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtBoxMonto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 54</value>
+    <value>563, 54</value>
   </data>
   <data name="btnMarcarP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>330, 638</value>
+    <value>955, 696</value>
   </data>
   <data name="btnMarcarP.Size" type="System.Drawing.Size, System.Drawing">
     <value>370, 76</value>
@@ -23193,20 +23196,38 @@
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
   </data>
+  <data name="rjButton7.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rjButton7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 18pt, style=Bold</value>
+  </data>
+  <data name="rjButton7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rjButton7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="rjButton7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 64</value>
+  </data>
+  <data name="rjButton7.Text" xml:space="preserve">
+    <value>Rervertir</value>
+  </data>
   <data name="BotonVolverEditar2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>938, 476</value>
+    <value>1045, 676</value>
   </data>
   <data name="BotonVolverEditar2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="BotonVolverEditar2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 103</value>
+    <value>252, 101</value>
   </data>
   <data name="Botoncambiodefechamomentaneo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="Botoncambiodefechamomentaneo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 472</value>
+    <value>544, 673</value>
   </data>
   <data name="Botoncambiodefechamomentaneo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -23221,40 +23242,40 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxPagoExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 377</value>
+    <value>464, 463</value>
   </data>
   <data name="TextBoxPagoExt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxPagoExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 54</value>
+    <value>530, 54</value>
   </data>
   <data name="label93.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 24pt, style=Bold</value>
+    <value>Corbel, 27.75pt, style=Bold</value>
   </data>
   <data name="label93.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 394</value>
+    <value>30, 476</value>
   </data>
   <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 39</value>
+    <value>183, 45</value>
   </data>
   <data name="LabelNombreEditar2_2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 24pt, style=Bold</value>
+    <value>Corbel, 36pt, style=Bold</value>
   </data>
   <data name="LabelNombreEditar2_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 34</value>
+    <value>255, 26</value>
   </data>
   <data name="LabelNombreEditar2_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 39</value>
+    <value>0, 59</value>
   </data>
   <data name="label89.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 24pt, style=Bold</value>
+    <value>Corbel, 36pt, style=Bold</value>
   </data>
   <data name="label89.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 36</value>
+    <value>32, 33</value>
   </data>
   <data name="label89.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 39</value>
+    <value>211, 59</value>
   </data>
   <data name="TextBoxPago.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
@@ -23263,55 +23284,55 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxPago.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 294</value>
+    <value>464, 380</value>
   </data>
   <data name="TextBoxPago.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxPago.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 54</value>
+    <value>530, 54</value>
   </data>
   <data name="label86.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 24pt, style=Bold</value>
+    <value>Corbel, 27.75pt, style=Bold</value>
   </data>
   <data name="label86.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 314</value>
+    <value>31, 396</value>
   </data>
   <data name="label86.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 39</value>
+    <value>294, 45</value>
   </data>
   <data name="label85.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 24pt, style=Bold</value>
+    <value>Corbel, 27.75pt, style=Bold</value>
   </data>
   <data name="label85.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 221</value>
+    <value>30, 303</value>
   </data>
   <data name="label85.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 39</value>
+    <value>255, 45</value>
   </data>
   <data name="FechaEnLista2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="FechaEnLista2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 210</value>
+    <value>464, 296</value>
   </data>
   <data name="FechaEnLista2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>405, 47</value>
+    <value>530, 47</value>
   </data>
   <data name="label71.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 24pt, style=Bold</value>
+    <value>Corbel, 27.75pt, style=Bold</value>
   </data>
   <data name="label71.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 130</value>
+    <value>30, 212</value>
   </data>
   <data name="label71.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 39</value>
+    <value>306, 45</value>
   </data>
   <data name="ComboBoxDeFechas.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="ComboBoxDeFechas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 129</value>
+    <value>463, 197</value>
   </data>
   <data name="ComboBoxDeFechas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -23323,7 +23344,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ComboBoxDeFechas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 52</value>
+    <value>531, 70</value>
   </data>
   <data name="PanelEditar2_2.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 60</value>

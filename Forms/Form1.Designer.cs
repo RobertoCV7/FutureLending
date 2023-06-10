@@ -295,6 +295,7 @@ namespace FutureLending
             label60 = new Label();
             label59 = new Label();
             PanelEditar2_2 = new Panel();
+            rjButton7 = new RJButton();
             BotonVolverEditar2 = new RJButton();
             Botoncambiodefechamomentaneo = new RJButton();
             TextBoxPagoExt = new TextBoxPersonalizado();
@@ -3238,6 +3239,7 @@ namespace FutureLending
             // 
             resources.ApplyResources(PanelEditar2_2, "PanelEditar2_2");
             PanelEditar2_2.BackColor = SystemColors.HighlightText;
+            PanelEditar2_2.Controls.Add(rjButton7);
             PanelEditar2_2.Controls.Add(BotonVolverEditar2);
             PanelEditar2_2.Controls.Add(Botoncambiodefechamomentaneo);
             PanelEditar2_2.Controls.Add(TextBoxPagoExt);
@@ -3251,6 +3253,21 @@ namespace FutureLending
             PanelEditar2_2.Controls.Add(label71);
             PanelEditar2_2.Controls.Add(ComboBoxDeFechas);
             PanelEditar2_2.Name = "PanelEditar2_2";
+            // 
+            // rjButton7
+            // 
+            resources.ApplyResources(rjButton7, "rjButton7");
+            rjButton7.BackColor = Color.SlateGray;
+            rjButton7.BackgroundColor = Color.SlateGray;
+            rjButton7.BorderColor = Color.PaleVioletRed;
+            rjButton7.BorderRadius = 20;
+            rjButton7.BorderSize = 0;
+            rjButton7.FlatAppearance.BorderSize = 0;
+            rjButton7.ForeColor = Color.White;
+            rjButton7.Name = "rjButton7";
+            rjButton7.TextColor = Color.White;
+            rjButton7.UseVisualStyleBackColor = false;
+            rjButton7.Click += rjButton7_Click;
             // 
             // BotonVolverEditar2
             // 
@@ -3677,14 +3694,14 @@ namespace FutureLending
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
-            Controls.Add(pnlClientes);
+            Controls.Add(PnlEditar2);
             Controls.Add(pnlRegPago);
+            Controls.Add(PanelEditar2_2);
+            Controls.Add(pnlClientes);
             Controls.Add(pnlListas);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar3);
-            Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar);
-            Controls.Add(PanelEditar2_2);
             Controls.Add(panel2);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
@@ -3793,7 +3810,6 @@ namespace FutureLending
         private DataGridView gridListas;
         private ControlesPersonalizados.RJComboBox cmbInteres;
         private FlowLayoutPanel flowLayoutPanel1;
-        private ControlesPersonalizados.RJComboBox ComBoxName;
         private Label label29;
         private Controles_personalizados.RJButton btnBuscarC;
         private Label lblFecha;
@@ -4044,5 +4060,7 @@ namespace FutureLending
         private ControlesPersonalizados.RJComboBox ComboBoxPromotoresListas;
         private Label labelDineroAire;
         private Label label87;
+        private ControlesPersonalizados.RJComboBox ComBoxName;
+        private RJButton rjButton7;
     }
 }

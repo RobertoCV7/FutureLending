@@ -17,7 +17,13 @@
         {
             if (ComboBoxResolucion3.SelectedIndex != -1)
             {
-                rjButton1.Enabled = true;
+                if (ComboBoxResolucionD.SelectedIndex != -1)
+                {
+                    if (TextImporte3.Texts != "" || TextImporte3.Texts != null)
+                    {
+                        rjButton1.Enabled = true;
+                    }
+                }
             }
             else
             {
@@ -33,6 +39,35 @@
                 // Cancela el evento KeyPress
                 e.Handled = true;
             }
+        }
+
+        private void PedirDatos3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Mover3)
+            {
+                if (ComboBoxResolucion3.SelectedIndex != -1)
+                {
+                    if (ComboBoxResolucionD.SelectedIndex != -1)
+                    {
+                        if (TextImporte3.Texts != "" || TextImporte3.Texts != null)
+                        {
+
+                        }
+                    }
+                }
+                else
+                {
+                    Form1.MessageB("No se puede dejar si  seleccionar nada", "Advertencia", 2);
+                    e.Cancel = true;
+                }
+            }
+   
+        }
+        public bool Mover3 = true;
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            Mover3 = false;
+            this.Close();
         }
     }
 }

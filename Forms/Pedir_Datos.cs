@@ -1,4 +1,6 @@
-﻿namespace FutureLending
+﻿using Windows.Devices.PointOfService;
+
+namespace FutureLending
 {
     //Este forms pide los datos faltantes para mover el registro de la lista 1 a la lista 2
     public partial class Pedir_Datos : Form
@@ -6,8 +8,9 @@
         public Pedir_Datos()
         {
             InitializeComponent();
+            this.FormClosing += Pedir_Datos_FormClosing;
         }
-
+        public bool Mover2 = true;
         public void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox2.SelectedIndex != -1)
@@ -56,6 +59,49 @@
                 // Cancela el evento KeyPress
                 e.Handled = true;
             }
+        }
+        private bool Mostrado = false;
+        private void Pedir_Datos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Mover2)
+            {
+                if (rjComboBox2.SelectedIndex != -1)
+                {
+                    if (rjComboBox2.SelectedIndex == 1)
+                    {
+                    }
+                    else
+                    {
+                        if (TextLiquidacionPedir.Texts == "")
+                        {
+                            if (!Mostrado)
+                            {
+                                Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
+                                Mostrado = true;
+                            }
+
+                            e.Cancel = true;
+                        }
+                    }
+                }
+                else
+                {
+
+                    if (!Mostrado)
+                    {
+                        Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
+                        Mostrado = true;
+                    }
+                    e.Cancel = true;
+                }
+            }
+           
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            Mover2 = false;
+            this.Close();
         }
     }
 }

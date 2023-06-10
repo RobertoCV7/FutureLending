@@ -11,7 +11,7 @@
         void datos()
         {
 
-            if (Form1.Boton1 &&  Form1.Boton2 && Form1.Boton3 && Form1.Boton4)
+            if (Form1.Boton1 && Form1.Boton2 && Form1.Boton3 && Form1.Boton4)
             {
                 comboBox1.Items.Add("Lista 1");
                 comboBox1.Items.Add("Lista 2");
@@ -83,6 +83,15 @@
         void reiniciartodo()
         {
             comboBox1.SelectedIndex = -1;
+        }
+
+        private void Exportar_Excel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(comboBox1.SelectedIndex == -1)
+            {
+                Form1.MessageB("Debe Seleccionar una lista para exportar", "Advertencia", 2);
+                e.Cancel = true;
+            }
         }
     }
 }
