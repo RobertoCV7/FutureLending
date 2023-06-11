@@ -48,34 +48,12 @@
                         {
 
                         }
-                        else
-                        {
-                            if (!mostrado)
-                            {
-                                Form1.MessageB("No puede dejar nada vacio ni sin seleccionar", "Advertencia", 2);
-                                e.Cancel = true;
-                                mostrado = true;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (!mostrado)
-                        {
-                            Form1.MessageB("No puede dejar nada vacio ni sin seleccionar", "Advertencia", 2);
-                            e.Cancel = true;
-                            mostrado = true;
-                        }
                     }
                 }
                 else
                 {
-                    if (!mostrado)
-                    {
-                        Form1.MessageB("No puede dejar nada vacio ni sin seleccionar", "Advertencia", 2);
-                        e.Cancel = true;
-                        mostrado = true;
-                    }
+                    Form1.MessageB("No se puede dejar si  seleccionar nada", "Advertencia", 2);
+                    e.Cancel = true;
                 }
             }
         }

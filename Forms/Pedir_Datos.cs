@@ -57,38 +57,31 @@
                 e.Handled = true;
             }
         }
-
+        private bool Mostrado = false;
         private void Pedir_Datos_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Mover2)
             {
-                if (rjComboBox2.SelectedIndex != -1)
+                if (rjComboBox2.SelectedIndex != -1 && rjComboBox2.SelectedIndex != 1)
                 {
-                    if (rjComboBox2.SelectedIndex != 0)
+                    if (TextLiquidacionPedir.Texts == null || TextLiquidacionPedir.Texts == "")
                     {
-                        if (TextLiquidacionPedir.Texts == "" || TextLiquidacionPedir.Texts == null)
-                        {
-                            if (!mostrado)
-                            {
-                                Form1.MessageB("No puedes dejar nada sin seleccionar", "Aviso", 2);
-                                e.Cancel = true;
-                                mostrado = true;
-                            }
-                        }
+                        Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
+                        Mostrado = true;
                     }
                 }
                 else
                 {
-                    if (!mostrado)
+                    if (!Mostrado)
                     {
-                        Form1.MessageB("No puedes dejar nada sin seleccionar", "Aviso", 2);
-                        e.Cancel = true;
-                        mostrado = true;
+                        Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
+                        Mostrado = true;
+
                     }
+                    e.Cancel = true;
 
                 }
             }
-           
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
