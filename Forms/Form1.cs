@@ -1,7 +1,9 @@
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Forms;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.IO.Ports;
 using System.Windows.Automation.Peers;
 using System.Windows.Controls;
@@ -119,6 +121,10 @@ namespace FutureLending
             EsconderPaneles(pnlClientes);
             lblTitle.Text = "Ingresar Clientes";
             CargarPromotoresEnComboBox(cmbPromotor, false);
+            if (panelRg)
+            {
+                recargarDatosPnlRegPagos();
+            }
 
         }
         Double credito2;
@@ -344,7 +350,7 @@ namespace FutureLending
 
             lblTitle.Text = "Listas Completas";
             EsconderPaneles(pnlListas);
-            if(panelRg)
+            if (panelRg)
             {
                 recargarDatosPnlRegPagos();
             }
@@ -389,9 +395,13 @@ namespace FutureLending
 
             panel1.Visible = true;
             panel1.BringToFront();
-            if(panel1 == pnlRegPago)
+            if (panel1 == pnlRegPago)
             {
                 panelRg = true;
+            }
+            else
+            {
+                panelRg = false;
             }
         }
 
@@ -515,6 +525,7 @@ namespace FutureLending
         public string[] Pagos = new string[14]; //Pagos de lista 2
         public string pertenece; //De que lista viene
         public string Cliente; //Nombre del cliente
+        private string TipoPago; //Tipo de pago
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             Lecturas_Especificas a = new();
@@ -544,6 +555,7 @@ namespace FutureLending
                 rjComboBox1.SelectedItem = informacion[6]; //Interes Que tiene
                 textBoxPersonalizado8.Texts = informacion[7]; //Monto Total del prestamo + intereses
                 rjComboBox2.SelectedItem = informacion[14]; //Su forma de pago quincenales o semanales
+                TipoPago = informacion[14];
                 rjComboBox3.SelectedItem = informacion[0]; //Promotor que lo atiende
                 textBoxPersonalizado7.Texts = informacion[15]; //Monto Restante
                 textBoxPersonalizado6.Texts = informacion[8]; //Calle
@@ -1104,6 +1116,10 @@ namespace FutureLending
             }
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
+            if (panelRg)
+            {
+                recargarDatosPnlRegPagos();
+            }
         }
 
         private bool changingCheckedState = false;
@@ -1335,187 +1351,176 @@ namespace FutureLending
         #region Promotores
 
 
-        public class Promotor
-        {
-            public string Nombre { get; set; }
-        }
-
         public static void CargarPromotoresEnComboBox(RJComboBox box, bool a)
         {
             if (a)
             {
-
                 Lectura_Base_Datos lec = new();
                 try
                 {
-                    // Ruta del archivo JSON
-                    string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Promotores.json");
+                    // Establecer la conexión a la base de datos
+                 
 
-                    // Leer el archivo JSON
-                    string json = File.ReadAllText(jsonFilePath);
+                    using (MySqlConnection connection = lec.Conector())
+                    {
+                     
 
-                    // Deserializar el JSON en una lista de objetos Promotor
-                    var promotores = JsonConvert.DeserializeObject<dynamic>(json);
+                        // Crear la consulta SQL para obtener los nombres de los promotores
+                        string query = "SELECT Nombre FROM promotores";
 
-                    // Obtener los nombres de los promotores
-                    var nombresPromotores = promotores.promotores.ToObject<string[]>();
+                        // Ejecutar la consulta SQL y obtener los resultados
+                        using (MySqlCommand command = new(query, connection))
+                        {
+                            using (MySqlDataReader reader = command.ExecuteReader())
+                            {
+                                // Limpiar el ComboBox antes de agregar los nuevos elementos
+                                box.Items.Clear();
 
-                    // Limpiar el ComboBox antes de agregar los nuevos elementos
-                    box.Items.Clear();
-
-                    // Agregar los nombres de los promotores al ComboBox
-                    box.Items.Add("Seleccionar Promotor");
-                    box.Items.AddRange(nombresPromotores);
+                                // Agregar los nombres de los promotores al ComboBox
+                                box.Items.Add("Seleccionar Promotor");
+                                while (reader.Read())
+                                {
+                                    string nombrePromotor = reader.GetString(0);
+                                    box.Items.Add(nombrePromotor);
+                                }
+                            }
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    // Manejar cualquier error que ocurra al leer o cargar el JSON
-                    lec.Registro_errores("Error al cargar los promotores: " + ex.Message);
+                    // Manejar cualquier error que ocurra al leer o cargar desde la base de datos
+                    lec.Registro_errores("Error al cargar los promotores desde la base de datos: " + ex.Message);
                 }
             }
             else
             {
-
                 Lectura_Base_Datos lec = new();
                 try
                 {
-                    // Ruta del archivo JSON
-                    string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Promotores.json");
+                    using (MySqlConnection connection = lec.Conector())
+                    {
+                     
 
-                    // Leer el archivo JSON
-                    string json = File.ReadAllText(jsonFilePath);
+                        // Crear la consulta SQL para obtener los nombres de los promotores
+                        string query = "SELECT Nombre FROM promotores";
 
-                    // Deserializar el JSON en una lista de objetos Promotor
-                    var promotores = JsonConvert.DeserializeObject<dynamic>(json);
+                        // Ejecutar la consulta SQL y obtener los resultados
+                        using (MySqlCommand command = new (query, connection))
+                        {
+                            using (MySqlDataReader reader = command.ExecuteReader())
+                            {
+                                // Limpiar el ComboBox antes de agregar los nuevos elementos
+                                box.Items.Clear();
 
-                    // Obtener los nombres de los promotores
-                    var nombresPromotores = promotores.promotores.ToObject<string[]>();
-
-                    // Limpiar el ComboBox antes de agregar los nuevos elementos
-                    box.Items.Clear();
-
-                    // Agregar los nombres de los promotores al ComboBox
-                    box.Items.AddRange(nombresPromotores);
+                                // Agregar los nombres de los promotores al ComboBox
+                                while (reader.Read())
+                                {
+                                    string nombrePromotor = reader.GetString(0);
+                                    box.Items.Add(nombrePromotor);
+                                }
+                            }
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    // Manejar cualquier error que ocurra al leer o cargar el JSON
-                    lec.Registro_errores("Error al cargar los promotores: " + ex.Message);
+                    // Manejar cualquier error que ocurra al leer o cargar desde la base de datos
+                    lec.Registro_errores("Error al cargar los promotores desde la base de datos: " + ex.Message);
                 }
             }
-
-
-
         }
-        public static void AgregarPromotor(string nombre)
+
+        public static void AgregarPromotor(string nombrePromotor)
         {
             Lectura_Base_Datos lec = new();
             try
             {
-                string jsonFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Promotores.json";
+                // Establecer la conexión a la base de datos
+                using (MySqlConnection connection = lec.Conector())
+                {
+                 
 
-                // Leer el archivo JSON actual
-                string json = File.ReadAllText(jsonFilePath);
+                    // Crear la consulta SQL para insertar el promotor en la tabla
+                    string query = "INSERT INTO promotores (Nombre) VALUES (@nombre)";
 
-                // Deserializar el JSON en un objeto dynamic
-                dynamic jsonObject = JsonConvert.DeserializeObject(json);
+                    // Crear un objeto MySqlCommand y asignar la conexión y la consulta
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Asignar el parámetro del nombre del promotor
+                        command.Parameters.AddWithValue("@nombre", nombrePromotor);
 
-                // Obtener la lista de promotores
-                List<string> promotores = jsonObject.promotores.ToObject<List<string>>();
-
-                // Agregar el nuevo promotor a la lista
-                promotores.Add(nombre);
-
-                // Serializar la lista de promotores de nuevo a JSON
-                string nuevoJson = JsonConvert.SerializeObject(new { promotores });
-
-                // Escribir el JSON actualizado en el archivo
-                File.WriteAllText(jsonFilePath, nuevoJson);
+                        // Ejecutar la consulta
+                        command.ExecuteNonQuery();
+                    }
+                }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra al leer o escribir el JSON
-                lec.Registro_errores("Error al agregar el promotor: " + ex.Message);
+                // Manejar cualquier error que ocurra al agregar el promotor a la base de datos
+                lec.Registro_errores("Error al agregar el promotor a la base de datos: " + ex.Message);
             }
         }
-        public static void EditarPromotor(string nombreOriginal, string nombreEditado)
+        public static void EditarPromotor(string nombreOriginal, string nuevoNombre)
         {
             Lectura_Base_Datos lec = new();
             try
             {
-                string jsonFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Promotores.json";
-
-                // Leer el archivo JSON actual
-                string json = File.ReadAllText(jsonFilePath);
-
-                // Deserializar el JSON en un objeto dynamic
-                dynamic jsonObject = JsonConvert.DeserializeObject(json);
-
-                // Obtener la lista de promotores
-                List<string> promotores = jsonObject.promotores.ToObject<List<string>>();
-
-                // Buscar el nombre original en la lista
-                int index = promotores.IndexOf(nombreOriginal);
-                if (index != -1)
+                // Establecer la conexión a la base de datos
+                using (MySqlConnection connection = lec.Conector())
                 {
-                    // Actualizar el nombre en la lista
-                    promotores[index] = nombreEditado;
+               
 
-                    // Serializar la lista de promotores de nuevo a JSON
-                    string nuevoJson = JsonConvert.SerializeObject(new { promotores });
+                    // Crear la consulta SQL para actualizar el nombre del promotor en la tabla
+                    string query = "UPDATE promotores SET Nombre = @nuevoNombre WHERE Nombre = @nombreOriginal";
 
-                    // Escribir el JSON actualizado en el archivo
-                    File.WriteAllText(jsonFilePath, nuevoJson);
-                }
-                else
-                {
-                    MessageB("El promotor no existe en el JSON.", "Aviso", 2);
+                    // Crear un objeto MySqlCommand y asignar la conexión y la consulta
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Asignar los parámetros del nombre original y el nuevo nombre del promotor
+                        command.Parameters.AddWithValue("@nombreOriginal", nombreOriginal);
+                        command.Parameters.AddWithValue("@nuevoNombre", nuevoNombre);
+
+                        // Ejecutar la consulta
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra al leer o escribir el JSON
-                lec.Registro_errores("Error al editar el promotor: " + ex.Message);
+                // Manejar cualquier error que ocurra al editar el promotor en la base de datos
+                lec.Registro_errores("Error al editar el promotor en la base de datos: " + ex.Message);
             }
         }
 
-        public static void EliminarPromotor(string nombre)
+        public static void EliminarPromotor(string nombrePromotor)
         {
             Lectura_Base_Datos lec = new();
             try
             {
-                string jsonFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Promotores.json";
-
-                // Leer el archivo JSON actual
-                string json = File.ReadAllText(jsonFilePath);
-
-                // Deserializar el JSON en un objeto dynamic
-                dynamic jsonObject = JsonConvert.DeserializeObject(json);
-
-                // Obtener la lista de promotores
-                List<string> promotores = jsonObject.promotores.ToObject<List<string>>();
-
-                // Buscar el nombre en la lista
-                if (promotores.Contains(nombre))
+                // Establecer la conexión a la base de datos
+                using (MySqlConnection connection = lec.Conector())
                 {
-                    // Eliminar el nombre de la lista
-                    promotores.Remove(nombre);
+                    
 
-                    // Serializar la lista de promotores de nuevo a JSON
-                    string nuevoJson = JsonConvert.SerializeObject(new { promotores });
+                    // Crear la consulta SQL para eliminar el promotor de la tabla
+                    string query = "DELETE FROM promotores WHERE Nombre = @nombre";
 
-                    // Escribir el JSON actualizado en el archivo
-                    File.WriteAllText(jsonFilePath, nuevoJson);
-                }
-                else
-                {
-                    MessageB("El promotor no existe en el JSON.", "Aviso", 2);
+                    // Crear un objeto MySqlCommand y asignar la conexión y la consulta
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Asignar el parámetro del nombre del promotor
+                        command.Parameters.AddWithValue("@nombre", nombrePromotor);
+
+                        // Ejecutar la consulta
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra al leer o escribir el JSON
-                lec.Registro_errores("Error al eliminar el promotor: " + ex.Message);
+                // Manejar cualquier error que ocurra al eliminar el promotor de la base de datos
+                lec.Registro_errores("Error al eliminar el promotor de la base de datos: " + ex.Message);
             }
         }
         private void RjComboBox4_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -2416,7 +2421,42 @@ namespace FutureLending
             Informacion[14] = rjComboBox2.SelectedItem.ToString(); //Su forma de pago quincenales o semanales
             Informacion[15] = textBoxPersonalizado7.Texts; //Monto Restante
             Informacion[30] = Cliente;
-            bool revisar = e1.EditarLista1(Informacion);
+            bool revisar;
+            if (Informacion[14] != TipoPago)
+            {
+                MessageBox.Show("Cambio de forma de pago");
+                switch (rjComboBox2.SelectedItem.ToString())
+                {
+                    case "Semanales":
+                        string[] fechSem = new string[30]; 
+                            
+                           fechSem = SumarSemanas(Informacion[4]);
+                        for (int i = 16; i <= 29; i++)
+                        {
+                            Informacion[i] = fechSem[i-16]; MessageBox.Show(fechSem[i - 16]);
+                        }
+                  
+                        break;
+                    case "Quincenales":
+                        string[] fechQuin = new string[30];
+                            fechQuin= SumarQuincenas(Informacion[4]);
+                        for (int i = 16; i <= 29; i++)
+                        {
+                            if(i >=23)
+                            {
+                                Informacion[i] = "-";
+                            }
+                            else
+                            {
+                                Informacion[i] = fechQuin[i - 16] ;
+                                MessageBox.Show(fechQuin[i-16]);
+                            }
+                        }
+                      
+                        break;
+                }
+            }
+            revisar = e1.EditarLista1(Informacion);
             if (revisar)
             {
                 EsconderPaneles(pnlListas);
@@ -2427,7 +2467,33 @@ namespace FutureLending
                 MessageB("Error al guardar los cambios", "Alerta", 2);
             }
         }
+        public static string[] SumarSemanas(string fechaInicial)
+        {
+            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", null);
+            string[] fechasSumadas = new string[14];
 
+            for (int i = 0; i < 14; i++)
+            {
+                fecha = fecha.AddDays(7);
+                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy");
+            }
+
+            return fechasSumadas;
+        }
+
+        public static string[] SumarQuincenas(string fechaInicial)
+        {
+            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", null);
+            string[] fechasSumadas = new string[7];
+
+            for (int i = 0; i < 7; i++)
+            {
+                fecha = fecha.AddDays(15);
+                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy");
+            }
+
+            return fechasSumadas;
+        }
         private void textBoxPersonalizado4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
