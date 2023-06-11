@@ -21100,13 +21100,13 @@
     <value>Informacion:</value>
   </data>
   <data name="btnCalcular1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>504, 577</value>
+    <value>542, 577</value>
   </data>
   <data name="btnCalcular1.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 37</value>
   </data>
   <data name="btnGuardar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>883, 524</value>
+    <value>834, 573</value>
   </data>
   <data name="btnGuardar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 47</value>
@@ -21139,13 +21139,13 @@
     <value>445, 46</value>
   </data>
   <data name="txtTotal_I.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 589</value>
+    <value>331, 589</value>
   </data>
   <data name="txtTotal_I.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtTotal_I.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 47</value>
+    <value>157, 47</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 601</value>
@@ -21154,13 +21154,13 @@
     <value>282, 29</value>
   </data>
   <data name="txtTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 529</value>
+    <value>331, 529</value>
   </data>
   <data name="txtTotal.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 47</value>
+    <value>157, 47</value>
   </data>
   <data name="txtCorreo.Location" type="System.Drawing.Point, System.Drawing">
     <value>745, 450</value>
@@ -22744,7 +22744,10 @@
     <value>188, 28</value>
   </data>
   <data name="LabelNombreEditar2_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 39</value>
+    <value>77, 39</value>
+  </data>
+  <data name="LabelNombreEditar2_2.Text" xml:space="preserve">
+    <value>asas</value>
   </data>
   <data name="label89.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>

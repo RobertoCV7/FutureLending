@@ -59,6 +59,7 @@ namespace FutureLending
                     rjButton4.Enabled = false;
                     TextBoxPagoExt.Enabled = false;
                     label57.Visible = false;
+                    btnCalcular1.Enabled = false;
                     BarradeProgreso.Visible = false;
                     label17.Visible = false;
                     ComboBoxPromotoresListas.Enabled = true;
@@ -2041,6 +2042,7 @@ namespace FutureLending
         private void btnEditarFechas2_Click(object sender, EventArgs e)
         {
             TextBoxPago.Texts = "";
+            LabelNombreEditar2_2.Text = Cliente;
             ComboBoxDeFechas.SelectedIndex = -1;
             Lecturas_Especificas instancia = new();
             EsconderPaneles(PanelEditar2_2);
