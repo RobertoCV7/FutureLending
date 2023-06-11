@@ -1,5 +1,6 @@
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Forms;
+using FutureLending.Funciones.cs;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.ComponentModel;
@@ -2648,6 +2649,12 @@ namespace FutureLending
             {
                 MessageB("No se ha editado nada", "Alerta", 2);
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BackupService ob = new();
+            ob.StopBackup();
         }
     }
 }

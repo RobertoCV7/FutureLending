@@ -3707,6 +3707,7 @@ namespace FutureLending
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
+            FormClosing += Form1_FormClosing;
             FormClosed += Form1_FormClosed;
             panelMenu.ResumeLayout(false);
             panel1.ResumeLayout(false);

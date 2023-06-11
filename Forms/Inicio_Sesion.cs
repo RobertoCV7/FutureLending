@@ -1,4 +1,6 @@
-﻿namespace FutureLending
+﻿using FutureLending.Funciones.cs;
+
+namespace FutureLending
 {
     public partial class Inicio_Sesion : Form
     {
@@ -11,7 +13,10 @@
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
+            BackupService ob = new();
+            ob.StopBackup();
             this.Close();
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -23,6 +28,7 @@
             cerrar = Accesos.Accesar(usuariop, contrap);
             if (cerrar == true)
             {
+               
                 // Crear e iniciar el nuevo formulario
                 Form1 form2 = new Form1();
                 form2.Size = new(1600, 900);
@@ -56,5 +62,8 @@
             }
         }
 
+        private void Inicio_Sesion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

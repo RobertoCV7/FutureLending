@@ -1,3 +1,5 @@
+using FutureLending.Funciones.cs;
+
 namespace FutureLending
 {
     internal static class Program
@@ -8,10 +10,16 @@ namespace FutureLending
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            BackupService backupService = new BackupService();
+
+            // Ejecutar StartBackup() en un hilo separado
+            Task backupTask = Task.Run(() => backupService.StartBackup(true));
+
+            // Continuar con otras tareas en el hilo principal
             ApplicationConfiguration.Initialize();
             Application.Run(new Inicio_Sesion());
+
+            // Esperar a que finalice la copia de seguridad en el hilo separado
 
         }
 
