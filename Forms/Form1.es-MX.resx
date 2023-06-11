@@ -21214,7 +21214,7 @@
     <value>Informacion:</value>
   </data>
   <data name="btnCalcular1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>601, 694</value>
+    <value>666, 696</value>
   </data>
   <data name="btnCalcular1.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 56</value>
@@ -21232,7 +21232,7 @@
     <value>304, 334</value>
   </data>
   <data name="dateTimePickerPersonalizado2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 47</value>
+    <value>530, 47</value>
   </data>
   <data name="label65.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21259,7 +21259,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbInteres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 53</value>
+    <value>530, 53</value>
   </data>
   <data name="txtTotal_I.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21271,7 +21271,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtTotal_I.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 54</value>
+    <value>208, 54</value>
   </data>
   <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21292,7 +21292,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 54</value>
+    <value>208, 54</value>
   </data>
   <data name="txtCorreo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21463,7 +21463,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbTipo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 53</value>
+    <value>530, 53</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21490,7 +21490,7 @@
     <value>304, 273</value>
   </data>
   <data name="dateFechaInicio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 47</value>
+    <value>530, 47</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21511,7 +21511,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtCredito.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 54</value>
+    <value>530, 54</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21532,7 +21532,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="txtNombre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 54</value>
+    <value>530, 54</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -21559,7 +21559,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="cmbPromotor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 53</value>
+    <value>530, 53</value>
   </data>
   <data name="pnlClientes.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 60</value>
@@ -23266,10 +23266,13 @@
     <value>Corbel, 36pt, style=Bold</value>
   </data>
   <data name="LabelNombreEditar2_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 26</value>
+    <value>245, 33</value>
   </data>
   <data name="LabelNombreEditar2_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 59</value>
+    <value>160, 59</value>
+  </data>
+  <data name="LabelNombreEditar2_2.Text" xml:space="preserve">
+    <value>asasas</value>
   </data>
   <data name="label89.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 36pt, style=Bold</value>

@@ -62,6 +62,7 @@ namespace FutureLending
                     label57.Visible = false;
                     BarradeProgreso.Visible = false;
                     label17.Visible = false;
+                    btnCalcular1.Enabled = false;
                     rjButton5.Enabled = false;
                     label82.Visible = false;
                     ComboBoxPromotoresListas.Enabled = true;
@@ -400,12 +401,7 @@ namespace FutureLending
             {
                 panelRg = true;
             }
-        
         }
-
-
-
-
         private void RjButton1_Click_1(object sender, EventArgs e)
         {
             Exportar_Excel a = new();
@@ -2060,6 +2056,7 @@ namespace FutureLending
 
         private void btnEditarFechas2_Click(object sender, EventArgs e)
         {
+            LabelNombreEditar2_2.Text = Cliente;
             TextBoxPago.Texts = "";
             ComboBoxDeFechas.SelectedIndex = -1;
             Lecturas_Especificas instancia = new();
@@ -2068,6 +2065,7 @@ namespace FutureLending
             //acomodamos el combobox de Fechas para agregar las fechas que se necesiten
             ComboBoxDeFechas.Items.Clear();
             string[] Info = instancia.LectName2(Cliente);
+
             for (int i = 14; i < 42; i += 2)
             {
                 if (Info[i] == "-")
@@ -2651,7 +2649,7 @@ namespace FutureLending
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             BackupService ob = new();
-            ob.StopBackup(); 
+            ob.StopBackup();
         }
     }
 }
