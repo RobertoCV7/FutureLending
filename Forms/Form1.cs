@@ -259,6 +259,7 @@ namespace FutureLending
         bool revisado = false;
         private void BtnListas_Click(object sender, EventArgs e)
         {
+
             CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
             ComboBoxPromotoresListas.SelectedIndex = 0;
             int a = 0;
@@ -343,6 +344,10 @@ namespace FutureLending
 
             lblTitle.Text = "Listas Completas";
             EsconderPaneles(pnlListas);
+            if(panelRg)
+            {
+                recargarDatosPnlRegPagos();
+            }
         }
         void Habilitartodos()
         {
@@ -361,16 +366,19 @@ namespace FutureLending
             btnMostrarTodos.TabStop = false;
 
         }
-        //Funcion para esconder los paneles menos el enviado
+        private bool panelRg = false;
+
         void EsconderPaneles(System.Windows.Forms.Panel panel1)
         {
             timer.Start();
+
+            // Reiniciar objetos del panel mostrado anteriormente
+
+
             foreach (System.Windows.Forms.Control control in this.Controls)
             {
-                if (control is System.Windows.Forms.Panel)
+                if (control is System.Windows.Forms.Panel panel)
                 {
-                    System.Windows.Forms.Panel panel = (System.Windows.Forms.Panel)control;
-
                     // Verificar si el panel debe mantenerse visible o no
                     if (panel.Name != "panelTitleBar" && panel.Name != "panelMenu")
                     {
@@ -378,10 +386,18 @@ namespace FutureLending
                     }
                 }
             }
+
             panel1.Visible = true;
             panel1.BringToFront();
-
+            if(panel1 == pnlRegPago)
+            {
+                panelRg = true;
+            }
         }
+
+
+
+
         private void RjButton1_Click_1(object sender, EventArgs e)
         {
             Exportar_Excel a = new();
@@ -1039,28 +1055,29 @@ namespace FutureLending
                     dato[30] = fechas[1];
                     _ = instancia22.EditarLista1(dato);
                 }
-                //Resetear valores 
-                ComBoxName.SelectedIndex = -1;
-                ComBoxName.Texts = "Introduzca nombre";
-                btnBuscarC.Enabled = false;
-                rjComboBox9.Items.Clear();
-                rjComboBox9.Visible = false;
-                txtBoxCredito.Visible = false;
-                txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
-                lblCredito.Visible = false;
-                label82.Visible = false;
-                TextBoxRestantepagos.Visible = false;
-                Monto_Recomendado.Visible = false;
-                lblMonto.Visible = false;
-                lblFecha.Visible = false;
-                label17.Visible = false;
-                btnMarcarP.Visible = false;
-                rjComboBox9.SelectedIndex = -1;
-                //Recargo de datos
-                BtnEstadoPagos_Click(sender, e);
+                recargarDatosPnlRegPagos();
+                BtnEstadoPagos_Click(null, null);
             }
         }
-
+        void recargarDatosPnlRegPagos()
+        {
+            ComBoxName.SelectedIndex = -1;
+            ComBoxName.Texts = "Introduzca nombre";
+            btnBuscarC.Enabled = false;
+            rjComboBox9.Items.Clear();
+            rjComboBox9.Visible = false;
+            txtBoxCredito.Visible = false;
+            txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
+            lblCredito.Visible = false;
+            label82.Visible = false;
+            TextBoxRestantepagos.Visible = false;
+            Monto_Recomendado.Visible = false;
+            lblMonto.Visible = false;
+            lblFecha.Visible = false;
+            label17.Visible = false;
+            btnMarcarP.Visible = false;
+            rjComboBox9.SelectedIndex = -1;
+        }
 
 
 
