@@ -2358,8 +2358,8 @@ namespace FutureLending
             // BtnMover
             // 
             resources.ApplyResources(BtnMover, "BtnMover");
-            BtnMover.BackColor = Color.MediumSlateBlue;
-            BtnMover.BackgroundColor = Color.MediumSlateBlue;
+            BtnMover.BackColor = Color.Gray;
+            BtnMover.BackgroundColor = Color.Gray;
             BtnMover.BorderColor = Color.PaleVioletRed;
             BtnMover.BorderRadius = 20;
             BtnMover.BorderSize = 0;
@@ -3694,19 +3694,18 @@ namespace FutureLending
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
-            Controls.Add(PnlEditar2);
             Controls.Add(pnlRegPago);
+            Controls.Add(PanelEditar);
+            Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar2_2);
             Controls.Add(pnlClientes);
             Controls.Add(pnlListas);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar3);
-            Controls.Add(PanelEditar);
             Controls.Add(panel2);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
             Name = "Form1";
             FormClosed += Form1_FormClosed;
             panelMenu.ResumeLayout(false);

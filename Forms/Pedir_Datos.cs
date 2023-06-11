@@ -65,37 +65,30 @@ namespace FutureLending
         {
             if (Mover2)
             {
-                if (rjComboBox2.SelectedIndex != -1)
+                if (rjComboBox2.SelectedIndex != -1 && rjComboBox2.SelectedIndex != 1)
                 {
-                    if (rjComboBox2.SelectedIndex == 1)
+                    if(TextLiquidacionPedir.Texts == null || TextLiquidacionPedir.Texts == "")
                     {
-                    }
-                    else
-                    {
-                        if (TextLiquidacionPedir.Texts == "")
-                        {
-                            if (!Mostrado)
-                            {
-                                Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
-                                Mostrado = true;
-                            }
-
-                            e.Cancel = true;
-                        }
+                        Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
+                        Mostrado = true;
                     }
                 }
                 else
                 {
 
+
+
                     if (!Mostrado)
                     {
                         Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
                         Mostrado = true;
+                  
                     }
                     e.Cancel = true;
+
                 }
             }
-           
+          
         }
 
         private void rjButton1_Click(object sender, EventArgs e)

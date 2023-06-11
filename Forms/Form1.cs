@@ -959,35 +959,37 @@ namespace FutureLending
             int f = 0;
             for (int i = 16; i < 30; i++)
             {
-                if (datos[i] != null && !datos[i].Contains("-"))
+                if (datos[i].Contains("/"))
                 {
-                    rjComboBox9.Items.Add(datos[i]);
-                    f++;
-                }
-                else
-                {
-                    if (datos[i] != null)
+                    if (datos[i].Contains("-"))
                     {
-                        rjComboBox9.Items.Add(datos[i] + "(PAGADA)");
+                        rjComboBox9.Items.Add(datos[i] + "-(PAGADA)");
                         f++;
                     }
+                    else
+                    {
+                        rjComboBox9.Items.Add(datos[i]);
+                        f++;
+                    }
+
                 }
-                label17.Visible = true;
-                lblCredito.Visible = true;
-                txtBoxCredito.Visible = true;
-                txtBoxMonto.Visible = true;
-                lblFecha.Visible = true;
-                lblMonto.Visible = true;
-                rjComboBox9.Visible = true;
-                btnMarcarP.Visible = true;
-                TextBoxRestantepagos.Visible = true;
-                TextBoxRestantepagos.Texts = datos[15];
-                TextBoxRestantepagos.Enabled = false;
-                txtBoxCredito.Texts = datos[7];
-                Monto_Recomendado.Visible = true;
-                label82.Visible = true;
-                Monto_Recomendado.Texts = (Convert.ToDouble(datos[7]) / Convert.ToDouble(f)).ToString("N2");
             }
+            label17.Visible = true;
+            lblCredito.Visible = true;
+            txtBoxCredito.Visible = true;
+            txtBoxMonto.Visible = true;
+            lblFecha.Visible = true;
+            lblMonto.Visible = true;
+            rjComboBox9.Visible = true;
+            btnMarcarP.Visible = true;
+            TextBoxRestantepagos.Visible = true;
+            TextBoxRestantepagos.Texts = datos[15];
+            TextBoxRestantepagos.Enabled = false;
+            txtBoxCredito.Texts = datos[7];
+            Monto_Recomendado.Visible = true;
+            label82.Visible = true;
+            Monto_Recomendado.Texts = (Convert.ToDouble(datos[7]) / Convert.ToDouble(f)).ToString("N2");
+
         }
         private void BtnMarcarP_Click(object sender, EventArgs e)
         {
@@ -1073,7 +1075,16 @@ namespace FutureLending
             lblTitle.Text = "Configuracion";
             EsconderPaneles(panel2);
             _ = new Accesos();
-            string[] usuarios = Accesos.CargarUsuarios().ToArray();
+            string[] usuarios = new string[100];
+            try
+            {
+                usuarios = Accesos.CargarUsuarios().ToArray();
+            }
+            catch (Exception ex)
+            {
+                Lectura_Base_Datos obj = new();
+                obj.Registro_errores(ex.ToString());
+            }
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
         }
