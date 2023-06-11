@@ -393,10 +393,6 @@ namespace FutureLending
             {
                 panelRg = true;
             }
-            else
-            {
-                panelRg = false;
-            }
         }
         private void RjButton1_Click_1(object sender, EventArgs e)
         {
