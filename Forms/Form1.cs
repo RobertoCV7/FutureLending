@@ -1359,11 +1359,11 @@ namespace FutureLending
                 try
                 {
                     // Establecer la conexión a la base de datos
-                 
+
 
                     using (MySqlConnection connection = lec.Conector())
                     {
-                     
+
 
                         // Crear la consulta SQL para obtener los nombres de los promotores
                         string query = "SELECT Nombre FROM promotores";
@@ -1400,13 +1400,13 @@ namespace FutureLending
                 {
                     using (MySqlConnection connection = lec.Conector())
                     {
-                     
+
 
                         // Crear la consulta SQL para obtener los nombres de los promotores
                         string query = "SELECT Nombre FROM promotores";
 
                         // Ejecutar la consulta SQL y obtener los resultados
-                        using (MySqlCommand command = new (query, connection))
+                        using (MySqlCommand command = new(query, connection))
                         {
                             using (MySqlDataReader reader = command.ExecuteReader())
                             {
@@ -1439,7 +1439,7 @@ namespace FutureLending
                 // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-                 
+
 
                     // Crear la consulta SQL para insertar el promotor en la tabla
                     string query = "INSERT INTO promotores (Nombre) VALUES (@nombre)";
@@ -1469,7 +1469,7 @@ namespace FutureLending
                 // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-               
+
 
                     // Crear la consulta SQL para actualizar el nombre del promotor en la tabla
                     string query = "UPDATE promotores SET Nombre = @nuevoNombre WHERE Nombre = @nombreOriginal";
@@ -1501,7 +1501,7 @@ namespace FutureLending
                 // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-                    
+
 
                     // Crear la consulta SQL para eliminar el promotor de la tabla
                     string query = "DELETE FROM promotores WHERE Nombre = @nombre";
@@ -2428,31 +2428,31 @@ namespace FutureLending
                 switch (rjComboBox2.SelectedItem.ToString())
                 {
                     case "Semanales":
-                        string[] fechSem = new string[30]; 
-                            
-                           fechSem = SumarSemanas(Informacion[4]);
+                        string[] fechSem = new string[30];
+
+                        fechSem = SumarSemanas(Informacion[4]);
                         for (int i = 16; i <= 29; i++)
                         {
-                            Informacion[i] = fechSem[i-16]; MessageBox.Show(fechSem[i - 16]);
+                            Informacion[i] = fechSem[i - 16]; MessageBox.Show(fechSem[i - 16]);
                         }
-                  
+
                         break;
                     case "Quincenales":
                         string[] fechQuin = new string[30];
-                            fechQuin= SumarQuincenas(Informacion[4]);
+                        fechQuin = SumarQuincenas(Informacion[4]);
                         for (int i = 16; i <= 29; i++)
                         {
-                            if(i >=23)
+                            if (i >= 23)
                             {
                                 Informacion[i] = "-";
                             }
                             else
                             {
-                                Informacion[i] = fechQuin[i - 16] ;
-                                MessageBox.Show(fechQuin[i-16]);
+                                Informacion[i] = fechQuin[i - 16];
+                                MessageBox.Show(fechQuin[i - 16]);
                             }
                         }
-                      
+
                         break;
                 }
             }

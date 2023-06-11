@@ -22078,7 +22078,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="textBoxPersonalizado11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 54</value>
+    <value>539, 54</value>
   </data>
   <data name="label66.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22096,7 +22096,7 @@
     <value>295, 331</value>
   </data>
   <data name="dateTimeLimite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 47</value>
+    <value>539, 47</value>
   </data>
   <data name="LabelLimite.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22141,7 +22141,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="textBoxPersonalizado8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>514, 54</value>
+    <value>540, 54</value>
   </data>
   <data name="label27.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22357,7 +22357,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>514, 54</value>
+    <value>540, 54</value>
   </data>
   <data name="label28.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22384,7 +22384,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 54</value>
+    <value>539, 54</value>
   </data>
   <data name="label30.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22411,7 +22411,7 @@
     <value>295, 257</value>
   </data>
   <data name="dateTimePickerPersonalizado1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 47</value>
+    <value>539, 47</value>
   </data>
   <data name="label32.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22432,7 +22432,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="textBoxPersonalizado9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>509, 54</value>
+    <value>536, 54</value>
   </data>
   <data name="label33.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22453,7 +22453,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="textBoxPersonalizado10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 54</value>
+    <value>534, 54</value>
   </data>
   <data name="label34.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22480,7 +22480,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>514, 54</value>
+    <value>540, 54</value>
   </data>
   <data name="PanelEditar.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 60</value>
