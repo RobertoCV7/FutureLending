@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO.Ports;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using Windows.Devices.Enumeration;
 using Button = System.Windows.Forms.Button;
 using Timer = System.Windows.Forms.Timer;
 
@@ -118,7 +119,10 @@ namespace FutureLending
             EsconderPaneles(pnlClientes);
             lblTitle.Text = "Ingresar Clientes";
             CargarPromotoresEnComboBox(cmbPromotor, false);
-
+            if (panelRg)
+            {
+                recargarDatosPnllRegPagos();
+            }
         }
         Double credito2;
         private void SoloNumerosDecimal(object sender, KeyPressEventArgs e)
@@ -341,6 +345,10 @@ namespace FutureLending
 
             lblTitle.Text = "Listas Completas";
             EsconderPaneles(pnlListas);
+            if (panelRg)
+            {
+                recargarDatosPnllRegPagos();
+            }
         }
         void Habilitartodos()
         {
@@ -359,6 +367,7 @@ namespace FutureLending
             btnMostrarTodos.TabStop = false;
 
         }
+        private bool panelRg = false;
         //Funcion para esconder los paneles menos el enviado
         void EsconderPaneles(System.Windows.Forms.Panel panel1)
         {
@@ -378,7 +387,14 @@ namespace FutureLending
             }
             panel1.Visible = true;
             panel1.BringToFront();
-
+            if (panel1 == pnlRegPago)
+            {
+                panelRg = true;
+            }
+            else
+            {
+                panelRg = false;
+            }
         }
         private void RjButton1_Click_1(object sender, EventArgs e)
         {
@@ -1035,28 +1051,31 @@ namespace FutureLending
                     _ = instancia22.EditarLista1(dato);
                 }
                 //Resetear valores 
-                ComBoxName.SelectedIndex = -1;
-                ComBoxName.Texts = "Introduzca nombre";
-                btnBuscarC.Enabled = false;
-                rjComboBox9.Items.Clear();
-                rjComboBox9.Visible = false;
-                txtBoxCredito.Visible = false;
-                txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
-                lblCredito.Visible = false;
-                label82.Visible = false;
-                TextBoxRestantepagos.Visible = false;
-                Monto_Recomendado.Visible = false;
-                lblMonto.Visible = false;
-                lblFecha.Visible = false;
-                label17.Visible = false;
-                btnMarcarP.Visible = false;
-                rjComboBox9.SelectedIndex = -1;
 
+                recargarDatosPnllRegPagos();
                 //Recargo de datos
                 BtnEstadoPagos_Click(sender, e);
             }
         }
-
+        void recargarDatosPnllRegPagos()
+        {
+            ComBoxName.SelectedIndex = -1;
+            ComBoxName.Texts = "Introduzca nombre";
+            btnBuscarC.Enabled = false;
+            rjComboBox9.Items.Clear();
+            rjComboBox9.Visible = false;
+            txtBoxCredito.Visible = false;
+            txtBoxMonto.Visible = false; txtBoxMonto.Texts = "";
+            lblCredito.Visible = false;
+            label82.Visible = false;
+            TextBoxRestantepagos.Visible = false;
+            Monto_Recomendado.Visible = false;
+            lblMonto.Visible = false;
+            lblFecha.Visible = false;
+            label17.Visible = false;
+            btnMarcarP.Visible = false;
+            rjComboBox9.SelectedIndex = -1;
+        }
 
 
 
@@ -1074,6 +1093,10 @@ namespace FutureLending
             string[] usuarios = Accesos.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
             comboBox1.Items.AddRange(usuarios);
+            if (panelRg)
+            {
+                recargarDatosPnllRegPagos();
+            }
         }
 
         private bool changingCheckedState = false;
