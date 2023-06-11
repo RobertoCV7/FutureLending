@@ -1,5 +1,6 @@
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Forms;
+using FutureLending.Funciones.cs;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.ComponentModel;
@@ -514,7 +515,7 @@ namespace FutureLending
         public string pertenece; //De que lista viene
         public string Cliente; //Nombre del cliente
         private string TipoPago; //Tipo de pago 
-        
+
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             Lecturas_Especificas a = new();
@@ -1346,7 +1347,7 @@ namespace FutureLending
 
                     using (MySqlConnection connection = lec.Conector())
                     {
-                   
+
 
                         // Crear la consulta SQL para obtener los nombres de los promotores
                         string query = "SELECT Nombre FROM promotores";
@@ -1383,7 +1384,7 @@ namespace FutureLending
                 {
                     using (MySqlConnection connection = lec.Conector())
                     {
-                    
+
 
                         // Crear la consulta SQL para obtener los nombres de los promotores
                         string query = "SELECT Nombre FROM promotores";
@@ -1421,7 +1422,7 @@ namespace FutureLending
                 // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-                    
+
 
                     // Crear la consulta SQL para insertar el promotor en la tabla
                     string query = "INSERT INTO promotores (Nombre) VALUES (@nombre)";
@@ -1451,7 +1452,7 @@ namespace FutureLending
                 // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-                   
+
 
                     // Crear la consulta SQL para actualizar el nombre del promotor en la tabla
                     string query = "UPDATE promotores SET Nombre = @nuevoNombre WHERE Nombre = @nombreOriginal";
@@ -1483,7 +1484,7 @@ namespace FutureLending
                 // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-                  
+
 
                     // Crear la consulta SQL para eliminar el promotor de la tabla
                     string query = "DELETE FROM promotores WHERE Nombre = @nombre";
@@ -2615,6 +2616,12 @@ namespace FutureLending
             TextBoxPago.Texts = "";
             Informacion2[index_fecha] = "";
             Informacion2[index_pago] = "";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BackupService ob = new();
+            ob.StopBackup();
         }
     }
 }

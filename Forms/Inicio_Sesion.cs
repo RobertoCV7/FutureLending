@@ -1,4 +1,6 @@
-﻿namespace FutureLending
+﻿using FutureLending.Funciones.cs;
+
+namespace FutureLending
 {
     public partial class Inicio_Sesion : Form
     {
@@ -11,6 +13,8 @@
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
+            BackupService ob = new();
+            ob.StopBackup();
             this.Close();
         }
 
