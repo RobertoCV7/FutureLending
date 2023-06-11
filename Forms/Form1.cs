@@ -400,10 +400,7 @@ namespace FutureLending
             {
                 panelRg = true;
             }
-            else
-            {
-                panelRg = false;
-            }
+        
         }
 
 
@@ -2654,7 +2651,7 @@ namespace FutureLending
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             BackupService ob = new();
-            ob.StopBackup();
+            ob.StopBackup(); 
         }
     }
 }

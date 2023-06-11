@@ -46,8 +46,8 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.MediumSlateBlue;
-            rjButton1.BackgroundColor = Color.MediumSlateBlue;
+            rjButton1.BackColor = Color.Gray;
+            rjButton1.BackgroundColor = Color.Gray;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
             rjButton1.BorderSize = 0;
@@ -66,8 +66,8 @@
             // 
             // rjButton2
             // 
-            rjButton2.BackColor = Color.MediumSlateBlue;
-            rjButton2.BackgroundColor = Color.MediumSlateBlue;
+            rjButton2.BackColor = Color.IndianRed;
+            rjButton2.BackgroundColor = Color.IndianRed;
             rjButton2.BorderColor = Color.PaleVioletRed;
             rjButton2.BorderRadius = 20;
             rjButton2.BorderSize = 0;
