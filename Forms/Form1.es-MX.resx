@@ -20539,25 +20539,25 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnEditarFechas2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>803, 494</value>
+    <value>720, 505</value>
   </data>
   <data name="btnEditarFechas2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 60</value>
+    <value>180, 60</value>
   </data>
   <data name="btnGuardarC.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="btnGuardarC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>803, 605</value>
+    <value>931, 508</value>
   </data>
   <data name="btnGuardarC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 60</value>
+    <value>180, 60</value>
   </data>
   <data name="TextBoxQuita.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
   </data>
   <data name="TextBoxQuita.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 503</value>
+    <value>290, 483</value>
   </data>
   <data name="TextBoxQuita.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20572,7 +20572,7 @@
     <value>False</value>
   </data>
   <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 518</value>
+    <value>33, 498</value>
   </data>
   <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 26</value>
@@ -20581,7 +20581,7 @@
     <value>Top, Left</value>
   </data>
   <data name="TextBoxLiquidacionIntencion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 452</value>
+    <value>290, 432</value>
   </data>
   <data name="TextBoxLiquidacionIntencion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20596,13 +20596,13 @@
     <value>False</value>
   </data>
   <data name="label68.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 470</value>
+    <value>33, 450</value>
   </data>
   <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 26</value>
   </data>
   <data name="TextBoxPagare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 202</value>
+    <value>290, 182</value>
   </data>
   <data name="TextBoxPagare.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20614,7 +20614,7 @@
     <value>False</value>
   </data>
   <data name="label67.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 218</value>
+    <value>33, 198</value>
   </data>
   <data name="label67.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 26</value>
@@ -20626,7 +20626,7 @@
     <value>True</value>
   </data>
   <data name="TextBoxRestante.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 256</value>
+    <value>290, 236</value>
   </data>
   <data name="TextBoxRestante.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20638,7 +20638,7 @@
     <value>Top, Left</value>
   </data>
   <data name="label69.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 269</value>
+    <value>33, 249</value>
   </data>
   <data name="label69.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 27</value>
@@ -20683,7 +20683,7 @@
     <value>295, 51</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 577</value>
+    <value>42, 549</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>558, 81</value>
@@ -20836,13 +20836,13 @@
     <value>False</value>
   </data>
   <data name="label79.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 409</value>
+    <value>33, 389</value>
   </data>
   <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 26</value>
   </data>
   <data name="rjComboBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 316</value>
+    <value>290, 296</value>
   </data>
   <data name="rjComboBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -20860,13 +20860,13 @@
     <value>False</value>
   </data>
   <data name="label80.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 336</value>
+    <value>33, 316</value>
   </data>
   <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 26</value>
   </data>
   <data name="TextBoxCredito.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 85</value>
+    <value>290, 126</value>
   </data>
   <data name="TextBoxCredito.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20878,13 +20878,13 @@
     <value>False</value>
   </data>
   <data name="label83.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 165</value>
+    <value>33, 145</value>
   </data>
   <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 26</value>
   </data>
   <data name="TextBoxNombre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 146</value>
+    <value>290, 71</value>
   </data>
   <data name="TextBoxNombre.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20896,13 +20896,13 @@
     <value>False</value>
   </data>
   <data name="label84.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 99</value>
+    <value>33, 79</value>
   </data>
   <data name="label84.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 26</value>
   </data>
   <data name="rjComboBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 394</value>
+    <value>290, 374</value>
   </data>
   <data name="rjComboBox8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>

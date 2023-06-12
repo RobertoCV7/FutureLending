@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.ComponentModel;
 using System.IO.Ports;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using Windows.Devices.Enumeration;
 using Button = System.Windows.Forms.Button;
@@ -57,6 +58,8 @@ namespace FutureLending
                     rjButton6.Enabled = false;
                     rjComboBox9.Visible = false;
                     rjButton4.Enabled = false;
+                    rjButton7.Enabled = false;
+                    Botoncambiodefechamomentaneo.Enabled = false;
                     TextBoxPagoExt.Enabled = false;
                     label57.Visible = false;
                     btnCalcular1.Enabled = false;
@@ -414,7 +417,8 @@ namespace FutureLending
                 List<string[]> Datos = ar.LectLista1Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
                 await TablaClientes.MostrarLista1Prom(gridListas, cmbCliente, BarradeProgreso, label57, Datos);
                 LabelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem.ToString() + " tiene $" + dinero_aire.ToString("N2") + " en Pagos pendientes";
-                ActivarListas();
+                btnLista1.Enabled = true;
+                btnLista2.Enabled = true;
                 ActivarEditar();
                 listaActual = "lista1";
             }
@@ -442,7 +446,8 @@ namespace FutureLending
                 List<string[]> datos = ar.LectLista2Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
                 await TablaClientes.MostrarLista2Prom(gridListas, cmbCliente, BarradeProgreso, label57, datos);
                 LabelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem.ToString() + " tiene $" + dinero_aire.ToString("N2") + " en Pagos pendientes";
-                ActivarListas();
+                btnLista1.Enabled = true;
+                btnLista2.Enabled = true;
                 ActivarEditar();
                 listaActual = "lista2";
             }
@@ -761,7 +766,10 @@ namespace FutureLending
         {
             if (TextBoxPago.Texts != null && TextBoxPago.Texts != "")
             {
-                Botoncambiodefechamomentaneo.Enabled = true;
+                if (ComboBoxDeFechas.SelectedIndex != -1)
+                {
+                    Botoncambiodefechamomentaneo.Enabled = true;
+                }
             }
             else
             {
@@ -951,7 +959,7 @@ namespace FutureLending
         {
             // Operaciones intensivas (lectura de datos, procesamiento, etc.)
             Lectura_Base_Datos instancia = new();
-            List<string[]> lista1 = instancia.LectLista1();
+            List<string[]> lista1 = instancia.LectLista1(false);
             // Agregar los nombres a ComBoxName
             // Acceder a los controles se realiza en el hilo de interfaz de usuario principal
             ComBoxName.BeginInvoke((MethodInvoker)delegate
@@ -2133,64 +2141,51 @@ namespace FutureLending
         }
         private double restante_original = 0;
         private int index_fecha = 0;
-        private int index_pago = 0;
+        private bool revertir;
+        private bool unclick = true;
         private void Botoncambiodefechamomentaneo_Click_1(object sender, EventArgs e)
         {
-            if (!revertir)
+            if (revertir)
             {
+                unclick = true;
+            }
+
+            int indice = 0;
+            if (unclick)
+            {
+                unclick = false;
+
                 string fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
                 string pago = TextBoxPago.Texts;
+                restante_original = Convert.ToDouble(Informacion2[42]);
                 if (Convert.ToDouble(pago) > Convert.ToDouble(Informacion2[42]))
                 {
                     MessageB("El pago no puede ser mayor al monto restante", "Advertencia", 2);
                 }
                 else
                 {
-                    if (ComboBoxDeFechas.SelectedIndex == 0)
+                    indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                    index_fecha = indice;
+                    Informacion2[indice] = fecha;
+                    Informacion2[indice + 1] = pago;
+                    double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                    Informacion2[42] = resta.ToString();
+                    TextBoxPagoExt.Texts = Informacion2[42];
+                    if (TextBoxPagoExt.Texts == "0")
                     {
-                        int indice = 14;
-                        Informacion2[indice] = fecha;
-                        index_fecha = indice;
-                        Informacion2[indice + 1] = pago;
-                        index_pago = indice + 1;
-                        double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
-                        restante_original = Convert.ToDouble(Informacion2[42]);
-                        Informacion2[42] = resta.ToString();
-                        TextBoxPagoExt.Texts = Informacion2[42];
-                        if (TextBoxPagoExt.Texts == "0")
-                        {
-                            Mover = true;
-                        }
-                        else
-                        {
-                            Mover = false;
-                        }
+                        Mover = true;
                     }
                     else
                     {
-                        int indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
-                        Informacion2[indice] = fecha;
-                        Informacion2[indice + 1] = pago;
-                        double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
-                        Informacion2[42] = resta.ToString();
-                        TextBoxPagoExt.Texts = Informacion2[42];
-                        if (TextBoxPagoExt.Texts == "0")
-                        {
-                            Mover = true;
-                        }
-                        else
-                        {
-                            Mover = false;
-                        }
+                        Mover = false;
                     }
                 }
-
+                rjButton7.Enabled = true;
             }
             else
             {
-                MessageB("Asignar Pago Cancelado", "Advertencia", 2);
-            }
 
+            }
         }
 
         private void BotonVolverEditar2_Click_1(object sender, EventArgs e)
@@ -2400,7 +2395,6 @@ namespace FutureLending
             Informacion[30] = Cliente;
             if (Informacion[14] != TipoPago)
             {
-                MessageBox.Show("Cambio de forma de pago");
                 switch (rjComboBox2.SelectedItem.ToString())
                 {
                     case "Semanales":
@@ -2409,7 +2403,7 @@ namespace FutureLending
                         fechSem = SumarSemanas(Informacion[4]);
                         for (int i = 16; i <= 29; i++)
                         {
-                            Informacion[i] = fechSem[i - 16]; MessageBox.Show(fechSem[i - 16]);
+                            Informacion[i] = fechSem[i - 16];
                         }
 
                         break;
@@ -2425,7 +2419,6 @@ namespace FutureLending
                             else
                             {
                                 Informacion[i] = fechQuin[i - 16];
-                                MessageBox.Show(fechQuin[i - 16]);
                             }
                         }
 
@@ -2606,14 +2599,16 @@ namespace FutureLending
                 rjButton1.Enabled = false;
             }
         }
-        private bool revertir = false;
+
         private void rjButton7_Click(object sender, EventArgs e)
         {
-            revertir = true;
             TextBoxPagoExt.Texts = restante_original.ToString();
             TextBoxPago.Texts = "";
             Informacion2[index_fecha] = "";
-            Informacion2[index_pago] = "";
+            Informacion2[index_fecha + 1] = "";
+            Informacion2[42] = restante_original.ToString();
+            revertir = true;
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
