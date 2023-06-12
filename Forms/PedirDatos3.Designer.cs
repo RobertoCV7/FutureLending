@@ -57,6 +57,7 @@
             TextImporte3.TabIndex = 136;
             TextImporte3.Texts = "";
             TextImporte3.UnderlinedStyle = true;
+            TextImporte3._TextChanged += TextImporte3__TextChanged;
             TextImporte3.KeyPress += TextImporte3_KeyPress;
             // 
             // label103
@@ -161,6 +162,7 @@
             ComboBoxResolucionD.TabIndex = 138;
             ComboBoxResolucionD.Tag = "Selecciones un tipo de pago";
             ComboBoxResolucionD.Texts = "Seleccione una opcion";
+            ComboBoxResolucionD.OnSelectedIndexChanged += ComboBoxResolucionD_OnSelectedIndexChanged;
             // 
             // rjButton2
             // 

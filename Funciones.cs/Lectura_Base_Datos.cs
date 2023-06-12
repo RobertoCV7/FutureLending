@@ -174,57 +174,126 @@ namespace FutureLending
 
 
         #region Lectura de Listas general
-        public List<string[]> LectLista1()
+        public List<string[]> LectLista1(bool exp)
         {
-            List<string[]> datos = new();
 
-            using (MySqlConnection connection = Conector())
+            if (exp)
             {
-                string query = "SELECT * FROM lista1 ORDER BY Promotor ASC";
-                using MySqlCommand command = new(query, connection);
-                try
+                List<string[]> datos = new();
+
+                using (MySqlConnection connection = Conector())
                 {
-                    using MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    string query = "SELECT * FROM lista1 ORDER BY Promotor ASC";
+                    using MySqlCommand command = new(query, connection);
+                    try
                     {
-                        string[] fila = new string[30];
-                        fila[0] = reader.GetString("Promotor");
-                        fila[1] = reader.GetString("Nombre_Completo");
-                        fila[2] = reader.GetString("Credito_Prestado");
-                        fila[3] = reader.GetString("Pagare");
-                        fila[4] = reader.GetString("Fecha_Inicio");
-                        fila[5] = reader.GetString("Fecha_Termino");
-                        fila[6] = reader.GetString("Interes");
-                        fila[7] = reader.GetString("Monto_Total");
-                        fila[8] = reader.GetString("Calle");
-                        fila[9] = reader.GetString("Colonia");
-                        fila[10] = reader.GetString("Num_int");
-                        fila[11] = reader.GetString("Num_ext");
-                        fila[12] = reader.GetString("Telefono");
-                        fila[13] = reader.GetString("Correo");
-                        fila[14] = reader.GetString("Tipo_pago");
-                        fila[15] = reader.GetString("Monto_Restante");
-
-                        for (int i = 0; i < 14; i++)
+                        using MySqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
                         {
-                            fila[16 + i] = reader.GetString("Fecha" + (i + 1));
-                            // En caso de que alguna fecha sea nula o vacía, se asigna "-"
-                            if (string.IsNullOrWhiteSpace(fila[16 + i]))
-                            {
-                                fila[16 + i] = "-";
-                            }
-                        }
+                            string[] fila = new string[45];
+                            fila[0] = reader.GetString("Promotor");
+                            fila[1] = reader.GetString("Nombre_Completo");
+                            fila[2] = reader.GetString("Credito_Prestado");
+                            fila[3] = reader.GetString("Pagare");
+                            fila[4] = reader.GetString("Fecha_Inicio");
+                            fila[5] = reader.GetString("Fecha_Termino");
+                            fila[6] = reader.GetString("Interes");
+                            fila[7] = reader.GetString("Monto_Total");
+                            fila[8] = reader.GetString("Calle");
+                            fila[9] = reader.GetString("Colonia");
+                            fila[10] = reader.GetString("Num_int");
+                            fila[11] = reader.GetString("Num_ext");
+                            fila[12] = reader.GetString("Telefono");
+                            fila[13] = reader.GetString("Correo");
+                            fila[14] = reader.GetString("Tipo_pago");
+                            fila[15] = reader.GetString("Monto_Restante");
 
-                        datos.Add(fila);
+                            for (int i = 0; i < 14; i++)
+                            {
+                                string dato = reader.GetString("Fecha" + (i + 1));
+                                if (dato.Contains("-") && dato.Contains("/"))
+                                {
+                                    string[] separado = dato.Split('-');
+                                    fila[16 + (i * 2)] = separado[0];
+                                    fila[17 + (i * 2)] = separado[1];
+                                }
+                                else if (dato.Contains("/"))
+                                {
+                                    fila[16 + (i * 2)] = dato;
+                                    fila[17 + (i * 2)] = "-";
+                                }
+
+                                // En caso de que alguna fecha sea nula o vacía, se asigna "-"
+                                if (string.IsNullOrWhiteSpace(fila[16 + i]))
+                                {
+                                    fila[16 + i] = "-";
+                                    fila[16 + (i + 1)] = "-";
+                                }
+                            }
+                            datos.Add(fila);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Registro_errores(ex.ToString());
                     }
                 }
-                catch (Exception ex)
+
+                return datos;
+            }
+            else
+            {
+                List<string[]> datos = new();
+
+                using (MySqlConnection connection = Conector())
                 {
-                    Registro_errores(ex.ToString());
+                    string query = "SELECT * FROM lista1 ORDER BY Promotor ASC";
+                    using MySqlCommand command = new(query, connection);
+                    try
+                    {
+                        using MySqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            string[] fila = new string[30];
+                            fila[0] = reader.GetString("Promotor");
+                            fila[1] = reader.GetString("Nombre_Completo");
+                            fila[2] = reader.GetString("Credito_Prestado");
+                            fila[3] = reader.GetString("Pagare");
+                            fila[4] = reader.GetString("Fecha_Inicio");
+                            fila[5] = reader.GetString("Fecha_Termino");
+                            fila[6] = reader.GetString("Interes");
+                            fila[7] = reader.GetString("Monto_Total");
+                            fila[8] = reader.GetString("Calle");
+                            fila[9] = reader.GetString("Colonia");
+                            fila[10] = reader.GetString("Num_int");
+                            fila[11] = reader.GetString("Num_ext");
+                            fila[12] = reader.GetString("Telefono");
+                            fila[13] = reader.GetString("Correo");
+                            fila[14] = reader.GetString("Tipo_pago");
+                            fila[15] = reader.GetString("Monto_Restante");
+
+                            for (int i = 0; i < 14; i++)
+                            {
+                                fila[16 + i] = reader.GetString("Fecha" + (i + 1));
+                                // En caso de que alguna fecha sea nula o vacía, se asigna "-"
+                                if (string.IsNullOrWhiteSpace(fila[16 + i]))
+                                {
+                                    fila[16 + i] = "-";
+                                }
+                            }
+
+                            datos.Add(fila);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Registro_errores(ex.ToString());
+                    }
                 }
+
+                return datos;
             }
 
-            return datos;
         }
         public List<string[]> LectLista2()
         {
@@ -401,7 +470,7 @@ namespace FutureLending
                             fila[10] = reader.GetString("Num_ext");
                             fila[11] = reader.GetString("Telefono");
                             fila[12] = reader.GetString("Correo");
-                            fila[13] = reader.GetString("Tipo_pago");
+                            fila[13] = reader.GetString("Tipo_de_pago");
                             datos.Add(fila);
                         }
                         else if (tabla == "lista3")

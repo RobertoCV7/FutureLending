@@ -423,7 +423,8 @@ namespace FutureLending
                 List<string[]> Datos = ar.LectLista1Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
                 await TablaClientes.MostrarLista1Prom(gridListas, cmbCliente, BarradeProgreso, label57, Datos);
                 labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem.ToString() + " tiene $" + dinero_aire.ToString("N2") + " en Pagos pendientes";
-                ActivarListas();
+                btnLista1.Enabled = true;
+                btnLista2.Enabled = true;
                 ActivarEditar();
                 listaActual = "lista1";
             }
@@ -451,7 +452,8 @@ namespace FutureLending
                 List<string[]> datos = ar.LectLista2Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
                 await TablaClientes.MostrarLista2Prom(gridListas, cmbCliente, BarradeProgreso, label57, datos);
                 labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem.ToString() + " tiene $" + dinero_aire.ToString("N2") + " en Pagos pendientes";
-                ActivarListas();
+                btnLista1.Enabled = true;
+                btnLista2.Enabled = true;
                 ActivarEditar();
                 listaActual = "lista2";
             }
@@ -958,7 +960,7 @@ namespace FutureLending
         {
             // Operaciones intensivas (lectura de datos, procesamiento, etc.)
             Lectura_Base_Datos instancia = new();
-            List<string[]> lista1 = instancia.LectLista1();
+            List<string[]> lista1 = instancia.LectLista1(false);
             // Agregar los nombres a ComBoxName
             // Acceder a los controles se realiza en el hilo de interfaz de usuario principal
             ComBoxName.BeginInvoke((MethodInvoker)delegate
@@ -2639,6 +2641,9 @@ namespace FutureLending
                 Informacion2[42] = Monto_Inicial.ToString("N2");
                 Informacion2[IndiceFecha] = "";
                 Informacion2[IndiceFecha + 1] = "";
+                TextBoxPagoExt.Texts = Monto_Inicial.ToString("N2");
+                TextBoxPago.Texts = "";
+                Edito = false;
             }
             else
             {

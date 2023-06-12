@@ -17,17 +17,13 @@
         {
             if (ComboBoxResolucion3.SelectedIndex != -1)
             {
-                if (ComboBoxResolucionD.SelectedIndex != -1)
-                {
-                    if (TextImporte3.Texts != "" || TextImporte3.Texts != null)
-                    {
-                        rjButton1.Enabled = true;
-                    }
-                }
+                uno = true;
+                activar();
             }
             else
             {
-                rjButton1.Enabled = false;
+                uno = false;
+                activar();
             }
 
         }
@@ -38,6 +34,18 @@
             {
                 // Cancela el evento KeyPress
                 e.Handled = true;
+            }
+        }
+        void activar()
+        {
+            if (uno && dos && tres)
+            {
+                rjButton1.Enabled = true;
+
+            }
+            else
+            {
+                rjButton1.Enabled = false;
             }
         }
 
@@ -61,13 +69,43 @@
                     e.Cancel = true;
                 }
             }
-   
+
         }
         public bool Mover3 = true;
         private void rjButton2_Click(object sender, EventArgs e)
         {
             Mover3 = false;
             this.Close();
+        }
+        private bool uno;
+        private bool dos;
+        private bool tres;
+        private void ComboBoxResolucionD_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxResolucion3.SelectedIndex != -1)
+            {
+                dos = true;
+                activar();
+            }
+            else
+            {
+                dos = false;
+                activar();
+            }
+        }
+
+        private void TextImporte3__TextChanged(object sender, EventArgs e)
+        {
+            if(TextImporte3.Texts != null && TextImporte3.Texts != "")
+            {
+                tres = true;
+                activar();
+            }
+            else
+            {
+                tres = false;
+                activar();
+            }
         }
     }
 }

@@ -9,7 +9,19 @@
             InitializeComponent();
             string rutaAplicacion = Application.StartupPath;
             this.Text = titulo;
+            // Obtén el tamaño del formulario
+            Size formSize = this.Size;
+
+            // Asigna el texto al Label
             Texto.Text = text;
+            Texto.TextAlign = ContentAlignment.MiddleCenter;
+
+            // Ajusta el tamaño de la fuente si es necesario
+            while (Texto.PreferredWidth > formSize.Width || Texto.PreferredHeight > formSize.Height)
+            {
+                Texto.Font = new Font(Texto.Font.FontFamily, Texto.Font.Size - 1); // Reduce el tamaño de fuente
+            }
+
             if (situacion == 1)
             {
                 this.Icon = new Icon(rutaAplicacion + "\\Resources\\Correcto.ico");

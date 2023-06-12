@@ -81,7 +81,7 @@
             List<string[]> datosList = await Task.Run(() =>
             {
                 Lectura_Base_Datos instancia = new();
-                return instancia.LectLista1();
+                return instancia.LectLista1(false);
             });
 
             // Añade las columnas correspondientes a la tabla y el nombre de cada una

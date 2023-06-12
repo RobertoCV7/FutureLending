@@ -32,7 +32,7 @@ namespace FutureLending
             }
 
             // Lectura de datos de la lista correspondiente en un hilo separado
-            List<string[]> datosList = a.LectLista1();
+            List<string[]> datosList = a.LectLista1(true);
 
             // Crear el archivo Excel y la hoja de trabajo
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -184,7 +184,7 @@ namespace FutureLending
         public void ExportarTodasLasTablas(string ruta)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            List<string[]> datosLista1 = a.LectLista1();
+            List<string[]> datosLista1 = a.LectLista1(true);
             List<string[]> datosLista2 = a.LectLista2();
             List<string[]> datosLista3 = a.LectLista3();
             List<string[]> datosLiquidados = a.LectLiquidados();

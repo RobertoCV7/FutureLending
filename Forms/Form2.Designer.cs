@@ -38,7 +38,7 @@
             Texto.AutoSize = true;
             Texto.Font = new Font("Cooper Black", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             Texto.ForeColor = SystemColors.Highlight;
-            Texto.Location = new Point(43, 23);
+            Texto.Location = new Point(44, 31);
             Texto.Margin = new Padding(3, 3, 3, 0);
             Texto.Name = "Texto";
             Texto.Size = new Size(517, 31);
@@ -57,7 +57,7 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(183, 125);
+            rjButton1.Location = new Point(162, 125);
             rjButton1.Name = "rjButton1";
             rjButton1.Size = new Size(254, 83);
             rjButton1.TabIndex = 1;

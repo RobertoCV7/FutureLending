@@ -71,20 +71,11 @@ namespace FutureLending
                     {
                         Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
                         Mostrado = true;
+                        e.Cancel = true;
                     }
                 }
                 else
                 {
-
-
-
-                    if (!Mostrado)
-                    {
-                        Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
-                        Mostrado = true;
-                  
-                    }
-                    e.Cancel = true;
 
                 }
             }
