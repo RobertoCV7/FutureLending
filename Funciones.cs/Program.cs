@@ -1,4 +1,7 @@
 using FutureLending.Funciones.cs;
+using System.Globalization;
+using Windows.ApplicationModel.Resources.Core;
+using ResourceManager = System.Resources.ResourceManager;
 
 namespace FutureLending
 {
@@ -17,11 +20,24 @@ namespace FutureLending
 
             // Continuar con otras tareas en el hilo principal
             ApplicationConfiguration.Initialize();
-            Application.Run(new Inicio_Sesion());
+            Inicio_Sesion ini = new();
+            ini.ShowDialog();
+            if (inicio)
+            {
+                Lectura_Base_Datos a = new();
+                a.CheckConnection(true);
+                CultureInfo culture = new CultureInfo("es-MX");
+                CultureInfo.DefaultThreadCurrentCulture = culture;
+                CultureInfo.DefaultThreadCurrentUICulture = culture;
 
-            // Esperar a que finalice la copia de seguridad en el hilo separado
+                // Cargar el archivo de recursos específico para "es-MX"
+                ResourceManager resourceManager = new ResourceManager("Form1.es-MX", typeof(Form1).Assembly);
+                Form1 form = new Form1();
+                Application.Run(form);
+            }
 
         }
-
+        public static bool inicio = false;
+        public static string NombreDeUsuario;
     }
 }

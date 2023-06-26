@@ -271,7 +271,7 @@ namespace FutureLending
             CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
             ComboBoxPromotoresListas.SelectedIndex = 0;
             int a = 0;
-            List<string> list = Accesos.ObtenerPermisosUsuario(Inicio_Sesion.NombreUsuario);
+            List<string> list = Accesos.ObtenerPermisosUsuario(Program.NombreDeUsuario);
             if (list != null && !revisado)
             {
                 revisado = true;
