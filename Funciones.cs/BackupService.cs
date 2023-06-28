@@ -11,7 +11,6 @@ namespace FutureLending.Funciones.cs
 {
     internal class BackupService
     {
-        private volatile bool isBackupRunning;
         public void StartBackup(bool continuar)
         {
 

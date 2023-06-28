@@ -38,8 +38,6 @@
                 e.Handled = true;
             }
         }
-        private bool mostrado = false;
-
         private void PedirDatos3_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Mover3)

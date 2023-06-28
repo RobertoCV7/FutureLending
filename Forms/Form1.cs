@@ -4,7 +4,9 @@ using FutureLending.Funciones.cs;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO.Ports;
+using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Forms;
@@ -486,6 +488,7 @@ namespace FutureLending
 
         private async void BtnLiquidados_Click(object sender, EventArgs e)
         {
+            listaActual = "liquidados";
             ListaEstado = 3;
             var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente, BarradeProgreso, label57);
             while (!mostrarListaTask.IsCompleted)
@@ -495,7 +498,6 @@ namespace FutureLending
             }
             ActivarListas();
             ActivarEditar();
-            listaActual = "liquidados";
         }
 
         //Activa los botones de editar y eliminar hasta que seleccione un cliente
@@ -1340,177 +1342,107 @@ namespace FutureLending
 
 
 
+        #region promotores principales
+        static Lectura_Base_Datos lec = new();
         public static void CargarPromotoresEnComboBox(RJComboBox box, bool a)
         {
-            if (a)
+            Lectura_Base_Datos lec = new Lectura_Base_Datos();
+            try
             {
-                Lectura_Base_Datos lec = new();
-                try
+                using (MySqlConnection connection = lec.Conector())
                 {
-                    // Establecer la conexión a la base de datos
+                    // Crear la consulta SQL para obtener los nombres de los promotores
+                    string query = "SELECT Nombre FROM promotores";
 
+                    // Limpiar el ComboBox antes de agregar los nuevos elementos
+                    box.Items.Clear();
+                    box.Items.Add("Seleccionar Promotor");
 
-                    using (MySqlConnection connection = lec.Conector())
+                    // Ejecutar la consulta SQL y obtener los resultados
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-
-
-                        // Crear la consulta SQL para obtener los nombres de los promotores
-                        string query = "SELECT Nombre FROM promotores";
-
-                        // Ejecutar la consulta SQL y obtener los resultados
-                        using (MySqlCommand command = new(query, connection))
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            using (MySqlDataReader reader = command.ExecuteReader())
+                            // Agregar los nombres de los promotores al ComboBox
+                            while (reader.Read())
                             {
-                                // Limpiar el ComboBox antes de agregar los nuevos elementos
-                                box.Items.Clear();
-
-                                // Agregar los nombres de los promotores al ComboBox
-                                box.Items.Add("Seleccionar Promotor");
-                                while (reader.Read())
-                                {
-                                    string nombrePromotor = reader.GetString(0);
-                                    box.Items.Add(nombrePromotor);
-                                }
+                                string nombrePromotor = reader.GetString(0);
+                                box.Items.Add(nombrePromotor);
                             }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    // Manejar cualquier error que ocurra al leer o cargar desde la base de datos
-                    lec.Registro_errores("Error al cargar los promotores desde la base de datos: " + ex.Message);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Lectura_Base_Datos lec = new();
-                try
-                {
-                    using (MySqlConnection connection = lec.Conector())
-                    {
-
-
-                        // Crear la consulta SQL para obtener los nombres de los promotores
-                        string query = "SELECT Nombre FROM promotores";
-
-                        // Ejecutar la consulta SQL y obtener los resultados
-                        using (MySqlCommand command = new(query, connection))
-                        {
-                            using (MySqlDataReader reader = command.ExecuteReader())
-                            {
-                                // Limpiar el ComboBox antes de agregar los nuevos elementos
-                                box.Items.Clear();
-
-                                // Agregar los nombres de los promotores al ComboBox
-                                while (reader.Read())
-                                {
-                                    string nombrePromotor = reader.GetString(0);
-                                    box.Items.Add(nombrePromotor);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Manejar cualquier error que ocurra al leer o cargar desde la base de datos
-                    lec.Registro_errores("Error al cargar los promotores desde la base de datos: " + ex.Message);
-                }
+                // Manejar cualquier error que ocurra al leer o cargar desde la base de datos
+                lec.Registro_errores("Error al cargar los promotores desde la base de datos: " + ex.Message);
             }
         }
         public static void AgregarPromotor(string nombrePromotor)
         {
-            Lectura_Base_Datos lec = new();
             try
             {
-                // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-
-
-                    // Crear la consulta SQL para insertar el promotor en la tabla
                     string query = "INSERT INTO promotores (Nombre) VALUES (@nombre)";
 
-                    // Crear un objeto MySqlCommand y asignar la conexión y la consulta
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Asignar el parámetro del nombre del promotor
                         command.Parameters.AddWithValue("@nombre", nombrePromotor);
-
-                        // Ejecutar la consulta
                         command.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra al agregar el promotor a la base de datos
                 lec.Registro_errores("Error al agregar el promotor a la base de datos: " + ex.Message);
             }
         }
         public static void EditarPromotor(string nombreOriginal, string nuevoNombre)
         {
-            Lectura_Base_Datos lec = new();
             try
             {
-                // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-
-
-                    // Crear la consulta SQL para actualizar el nombre del promotor en la tabla
                     string query = "UPDATE promotores SET Nombre = @nuevoNombre WHERE Nombre = @nombreOriginal";
 
-                    // Crear un objeto MySqlCommand y asignar la conexión y la consulta
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Asignar los parámetros del nombre original y el nuevo nombre del promotor
                         command.Parameters.AddWithValue("@nombreOriginal", nombreOriginal);
                         command.Parameters.AddWithValue("@nuevoNombre", nuevoNombre);
-
-                        // Ejecutar la consulta
                         command.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra al editar el promotor en la base de datos
                 lec.Registro_errores("Error al editar el promotor en la base de datos: " + ex.Message);
             }
         }
-
         public static void EliminarPromotor(string nombrePromotor)
         {
-            Lectura_Base_Datos lec = new();
             try
             {
-                // Establecer la conexión a la base de datos
                 using (MySqlConnection connection = lec.Conector())
                 {
-
-
-                    // Crear la consulta SQL para eliminar el promotor de la tabla
                     string query = "DELETE FROM promotores WHERE Nombre = @nombre";
 
-                    // Crear un objeto MySqlCommand y asignar la conexión y la consulta
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Asignar el parámetro del nombre del promotor
                         command.Parameters.AddWithValue("@nombre", nombrePromotor);
-
-                        // Ejecutar la consulta
                         command.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra al eliminar el promotor de la base de datos
                 lec.Registro_errores("Error al eliminar el promotor de la base de datos: " + ex.Message);
             }
         }
+        #endregion
+
+
         private void RjComboBox4_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox4.SelectedIndex != -1)
@@ -1520,7 +1452,6 @@ namespace FutureLending
             }
 
         }
-
         private void TextBox4_TextChanged(object sender, EventArgs e)
         {
             rjButton4.Enabled = true;
@@ -1871,28 +1802,35 @@ namespace FutureLending
         private void btnGuardar1_Click(object sender, EventArgs e)
         {
             Lectura_Base_Datos obj = new();
-            string Interes = cmbInteres.Texts;
-            string MontoTotal = txtTotal.Texts.Replace("$", "");
-            double p = (credito2 * 2);
-            obj.Create("lista1", cmbPromotor.Texts, txtNombre.Texts, txtCredito.Texts, p.ToString(), dateFechaInicio.Value, dateTimePickerPersonalizado2.Value, Interes, MontoTotal, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedItem.ToString(), MontoTotal);
-            //Borrar datos para poder agregar de nuevo 
-            txtNombre.Texts = "";
-            txtCredito.Texts = "";
-            dateFechaInicio.Value = DateTime.Now;
-            dateTimePickerPersonalizado2.Value = DateTime.Now;
-            cmbInteres.Texts = "Seleccione un interés";
-            cmbTipo.Texts = "Seleccione un tipo de pago";
-            cmbPromotor.Texts = "Seleccione al promotor";
-            txtTotal.Texts = "";
-            txtTotal_I.Texts = "";
-            txtCalle.Texts = "";
-            txtColonia.Texts = "";
-            txtNumExt.Texts = "";
-            txtNumInt.Texts = "";
-            txtTelefono.Texts = "";
-            txtCorreo.Texts = "";
+            bool ar = Lectura_Base_Datos.VerificarUsuarioEnListas(txtNombre.Texts);
+            if (ar)
+            {
+                string Interes = cmbInteres.Texts;
+                string MontoTotal = txtTotal.Texts.Replace("$", "");
+                double p = (credito2 * 2);
+                obj.Create("lista1", cmbPromotor.Texts, txtNombre.Texts, txtCredito.Texts, p.ToString(), dateFechaInicio.Value, dateTimePickerPersonalizado2.Value, Interes, MontoTotal, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedItem.ToString(), MontoTotal);
+                //Borrar datos para poder agregar de nuevo 
+                txtNombre.Texts = "";
+                txtCredito.Texts = "";
+                dateFechaInicio.Value = DateTime.Now;
+                dateTimePickerPersonalizado2.Value = DateTime.Now;
+                cmbInteres.Texts = "Seleccione un interés";
+                cmbTipo.Texts = "Seleccione un tipo de pago";
+                cmbPromotor.Texts = "Seleccione al promotor";
+                txtTotal.Texts = "";
+                txtTotal_I.Texts = "";
+                txtCalle.Texts = "";
+                txtColonia.Texts = "";
+                txtNumExt.Texts = "";
+                txtNumInt.Texts = "";
+                txtTelefono.Texts = "";
+                txtCorreo.Texts = "";
+            }
+            else
+            {
+                MessageB("El cliente ya existe en la lista", "Error", 3);
+            }
         }
-
         private void btnGuardar2_Click(object sender, EventArgs e)
         {
             Ediciones a = new();
@@ -2438,27 +2376,26 @@ namespace FutureLending
         }
         public static string[] SumarSemanas(string fechaInicial)
         {
-            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", null);
+            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             string[] fechasSumadas = new string[14];
 
             for (int i = 0; i < 14; i++)
             {
                 fecha = fecha.AddDays(7);
-                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy");
+                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
 
             return fechasSumadas;
         }
-
         public static string[] SumarQuincenas(string fechaInicial)
         {
-            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", null);
+            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             string[] fechasSumadas = new string[7];
 
             for (int i = 0; i < 7; i++)
             {
                 fecha = fecha.AddDays(15);
-                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy");
+                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
 
             return fechasSumadas;

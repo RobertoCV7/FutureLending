@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using MySql.Data.MySqlClient;
+using System.Data;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
@@ -8,103 +9,73 @@ namespace FutureLending
 {
     public class Lectura_Base_Datos
     {
-#pragma warning disable CS0649 // El campo 'Lectura_Base_Datos.conexion' nunca se asigna y siempre tendrá el valor predeterminado null
         private readonly MySqlConnection? conexion;
-#pragma warning restore CS0649 // El campo 'Lectura_Base_Datos.conexion' nunca se asigna y siempre tendrá el valor predeterminado null
         private static readonly object lockObj = new();
         #region Conexion
         //verificador de cambio de puerto
         public bool cambio_puerto = false;
-
-
         public MySqlConnection Conector()
         {
-
-            // Creamos la conexión verificando si se ha cambiado el puerto usando el archivo de configuración
+            // Almacenar los valores de configuración en variables locales
             string server = Properties.Settings1.Default.Servidor;
-            int port;
-            if (cambio_puerto == false)
-            {
-                port = Properties.Settings1.Default.Puerto;
-            }
-            else
-            {
-                Properties.Settings1.Default.Puerto = 3307;
-                port = Properties.Settings1.Default.Puerto;
-            }
+            int port = cambio_puerto ? 3307 : Properties.Settings1.Default.Puerto;
             string database = Properties.Settings1.Default.Base_de_datos;
             string uid = Properties.Settings1.Default.Usuario;
             string pwd = Properties.Settings1.Default.Contraseña;
-
             string connectionString = $"server={server};port={port};database={database};uid={uid};pwd={pwd};";
-            MySqlConnection? connection = null;
-
-            lock (lockObj) // Bloqueo para asegurar el acceso exclusivo
+            try
             {
-                try
-                {
-                    // Creamos la conexión
-                    connection = new MySqlConnection(connectionString);
-
-                    // Abrimos la conexión
+                // Crear y abrir la conexión utilizando el bloque 'using'
+                MySqlConnection connection = new MySqlConnection(connectionString);
                     connection.Open();
-                }
-                catch (MySqlException ex)
-                {
-                    Registro_errores(ex.ToString());
-                }
+                    // Devolver la conexión
+                    return connection;
+                
             }
-
-            // Devolvemos la conexión, que puede ser nula en caso de error
-            return connection;
+            catch (MySqlException ex)
+            {
+                Registro_errores(ex.ToString());
+                return null; // Devolver null en caso de error
+            }
         }
+
         #endregion
         #region Lectura
         #region Lectura de listas especificas promotores
         public List<string[]> LectLista1Prom(string prom)
         {
-            List<string[]> datos = new();
+            List<string[]> datos = new List<string[]>();
 
             using (MySqlConnection connection = Conector())
             {
-                string query = "SELECT * FROM lista1 Where Promotor = @Promotor";
-                using MySqlCommand command = new(query, connection);
+                string query = "SELECT * FROM lista1 WHERE Promotor = @Promotor";
+                using MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Promotor", prom);
+
                 try
                 {
-                    using MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        string[] fila = new string[30];
-                        fila[0] = reader.GetString("Promotor");
-                        fila[1] = reader.GetString("Nombre_Completo");
-                        fila[2] = reader.GetString("Credito_Prestado");
-                        fila[3] = reader.GetString("Pagare");
-                        fila[4] = reader.GetString("Fecha_Inicio");
-                        fila[5] = reader.GetString("Fecha_Termino");
-                        fila[6] = reader.GetString("Interes");
-                        fila[7] = reader.GetString("Monto_Total");
-                        fila[8] = reader.GetString("Calle");
-                        fila[9] = reader.GetString("Colonia");
-                        fila[10] = reader.GetString("Num_int");
-                        fila[11] = reader.GetString("Num_ext");
-                        fila[12] = reader.GetString("Telefono");
-                        fila[13] = reader.GetString("Correo");
-                        fila[14] = reader.GetString("Tipo_pago");
-                        fila[15] = reader.GetString("Monto_Restante");
-
-                        for (int i = 0; i < 14; i++)
+                        while (reader.Read())
                         {
-                            fila[16 + i] = reader.GetString("Fecha" + (i + 1));
-                            // En caso de que alguna fecha sea nula o vacía, se asigna "-"
-                            if (string.IsNullOrWhiteSpace(fila[16 + i]))
+                            string[] fila = new string[10];
+
+                            fila[0] = reader.GetString("Promotor");
+                            fila[1] = reader.GetString("Nombre_Completo");
+                            fila[2] = reader.GetString("Credito_Prestado");
+                            fila[3] = reader.GetString("Pagare");
+                            fila[4] = reader.GetString("Fecha_Inicio");
+                            fila[5] = reader.GetString("Interes");
+                            fila[6] = reader.GetString("Monto_Total");
+                            fila[7] = reader.GetString("Tipo_pago");
+                            fila[8] = reader.GetString("Monto_Restante");
+                            datos.Add(fila);
+                            double montoRestante;
+                            if (double.TryParse(fila[8], out montoRestante))
                             {
-                                fila[16 + i] = "-";
+                                Form1.dinero_aire += montoRestante;
                             }
                         }
-
-                        datos.Add(fila);
-                        Form1.dinero_aire += Convert.ToDouble(fila[15]);
                     }
                 }
                 catch (Exception ex)
@@ -130,33 +101,17 @@ namespace FutureLending
                     while (reader.Read())
                     {
                         string[] fila = new string[43]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
-
                         fila[0] = reader.GetString("Promotor");
                         fila[1] = reader.GetString("Nombre_Completo");
                         fila[2] = reader.GetString("Credito_Prestado");
                         fila[3] = reader.GetString("Monto_Restante");
                         fila[4] = reader.GetString("Pagare");
-                        fila[5] = reader.GetString("Calle");
-                        fila[6] = reader.GetString("Colonia");
-                        fila[7] = reader.GetString("Num_int");
-                        fila[8] = reader.GetString("Num_ext");
-                        fila[9] = reader.GetString("Telefono");
-                        fila[10] = reader.GetString("Correo");
-                        fila[11] = reader.GetString("Tipo_de_pago");
-                        fila[12] = reader.GetString("Liquidacion_Intencion");
-                        fila[13] = reader.GetString("Quita");
-
-                        for (int i = 0; i < 14; i++)
-                        {
-                            string fechaCampo = "FECHA" + (i + 1);
-                            string pagoCampo = "PAGO" + (i + 1);
-                            fila[14 + (i * 2)] = reader.GetString(fechaCampo);
-                            fila[15 + (i * 2)] = reader.GetString(pagoCampo);
-
-                        }
-                        fila[42] = reader.GetString("Pago_Total_EXT");
+                        fila[5] = reader.GetString("Tipo_de_pago");
+                        fila[6] = reader.GetString("Liquidacion_Intencion");
+                        fila[7] = reader.GetString("Quita");
+                        fila[8] = reader.GetString("Pago_Total_EXT");
                         datos.Add(fila);
-                        Form1.dinero_aire += Convert.ToDouble(fila[42]);
+                        Form1.dinero_aire += Convert.ToDouble(fila[8]);
                     }
                 }
                 catch (Exception ex)
@@ -521,8 +476,6 @@ namespace FutureLending
         #endregion
         #endregion
         #region editar, borrar y crear
-
-
         #region Borrar General
         public void Erase(string nombre, string tabla)
         {
@@ -532,10 +485,7 @@ namespace FutureLending
             try
             {
                 command.CommandText = "DELETE FROM " + tabla + " WHERE Nombre_Completo = '" + nombre + "'";
-
-                //esto nos devuelve el numero de filas que edito
-                int filasAfectadas = command.ExecuteNonQuery();
-                //cerramos la conexion
+                command.ExecuteNonQuery();
                 Connection.Close();
             }
             catch (Exception ex)
@@ -543,6 +493,57 @@ namespace FutureLending
                 Registro_errores(ex.ToString());
             }
         }
+        #endregion
+        #region Revisar existencia
+        public static bool VerificarUsuarioEnListas(string nombreUsuario)
+        {
+            Lectura_Base_Datos a = new Lectura_Base_Datos();
+            MySqlConnection connection = a.Conector();
+
+            try
+            {
+                // Verificar si el usuario existe en lista2
+                string queryLista2 = "SELECT COUNT(*) FROM lista2 WHERE Nombre_Completo = @nombreUsuario";
+                MySqlCommand commandLista2 = new MySqlCommand(queryLista2, connection);
+                commandLista2.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+                int countLista2 = Convert.ToInt32(commandLista2.ExecuteScalar());
+
+                // Verificar si el usuario existe en lista3
+                string queryLista3 = "SELECT COUNT(*) FROM lista3 WHERE Nombre_Completo = @nombreUsuario";
+                MySqlCommand commandLista3 = new MySqlCommand(queryLista3, connection);
+                commandLista3.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+                int countLista3 = Convert.ToInt32(commandLista3.ExecuteScalar());
+
+                if (countLista2 > 0 || countLista3 > 0)
+                {
+                    // El usuario ya existe en lista2 o lista3
+                    return false;
+                }
+                else
+                {
+                    // El usuario no existe en lista2 ni lista3
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                a.Registro_errores("Error al verificar el usuario en las listas: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión de la base de datos
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            // En caso de excepción, retornar false por defecto
+            return false;
+        }
+
+
+
         #endregion
         #region Crear registros, solo en la lista 1 y liquidados
         public void Create(string lista, string Promotor, string Nombre, string Credito, string Pagare, DateTime Fecha_inicio, DateTime Fecha_Termino, string Interes, string Monto_Total, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, string Tipo_pago, string Monto_Restante)
@@ -667,7 +668,6 @@ namespace FutureLending
             queryBuilder.Append("INSERT INTO lista2 (Promotor, Nombre_Completo, Credito_Prestado, Monto_Restante, Pagare, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_de_pago, Liquidacion_Intencion, Quita, FECHA1, PAGO1, FECHA2, PAGO2, FECHA3, PAGO3, FECHA4, PAGO4, FECHA5, PAGO5, FECHA6, PAGO6, FECHA7, PAGO7, FECHA8, PAGO8, FECHA9, PAGO9, FECHA10, PAGO10, FECHA11, PAGO11, FECHA12, PAGO12, FECHA13, PAGO13, FECHA14, PAGO14,Pago_Total_EXT)");
             queryBuilder.Append(" VALUES (@Promotor, @Nombre, @Credito, @MontoRestante, @Pagare, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @LiquidacionIntencion, @Quita, @Fecha1, @Pago1, @Fecha2, @Pago2, @Fecha3, @Pago3, @Fecha4, @Pago4, @Fecha5, @Pago5, @Fecha6, @Pago6, @Fecha7, @Pago7, @Fecha8, @Pago8, @Fecha9, @Pago9, @Fecha10, @Pago10, @Fecha11, @Pago11, @Fecha12, @Pago12, @Fecha13, @Pago13, @Fecha14, @Pago14,@PagoEXT)");
             string query = queryBuilder.ToString();
-
             using MySqlCommand command = new(query, connection);
             command.Parameters.AddWithValue("@Promotor", valores[0]);
             command.Parameters.AddWithValue("@Nombre", valores[1]);
@@ -764,28 +764,20 @@ namespace FutureLending
         #region reparar conexion
         public async Task CheckConnection(bool revisador)
         {
-            Form1 a = new();
-            ReacomodoDeScripts();
             string server = Properties.Settings1.Default.Servidor;
-            int port;
-            if (cambio_puerto == false)
-            {
-                port = Properties.Settings1.Default.Puerto;
-            }
-            else
-            {
-                Properties.Settings1.Default.Puerto = 3307;
-                port = Properties.Settings1.Default.Puerto;
-            }
+            int port = cambio_puerto == false ? Properties.Settings1.Default.Puerto : 3307;
             string database = Properties.Settings1.Default.Base_de_datos;
             string username = Properties.Settings1.Default.Usuario;
             string password = Properties.Settings1.Default.Contraseña;
             string connectionString = $"server={server};port={port};database={database};uid={username};pwd={password}";
-            using MySqlConnection connection = new(connectionString);
+
+            using MySqlConnection connection = new MySqlConnection(connectionString);
+
             try
             {
                 await connection.OpenAsync();
-                if (revisador == false)
+
+                if (!revisador)
                 {
                     Form1.MessageB("La Aplicacion Funciona Correctamente", "Funcionando", 1);
                 }
@@ -796,47 +788,39 @@ namespace FutureLending
             }
             catch (Exception ex)
             {
-                if (revisador == false)
+                if (!revisador)
                 {
+                    ReacomodoDeScripts();
                     Registro_errores(ex.ToString());
                     await RepairProgramAsync();
                 }
-                else
-                {
-                    return;
-                }
 
-            }
-            finally
-            {
-                connection.Close();
+                return;
             }
         }
         int attempts = 3;
-
-        public MySqlConnection? Conexion => conexion;
-
         private async Task RepairProgramAsync()
         {
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var tcs = new TaskCompletionSource<object>();
             var processStartInfo = new ProcessStartInfo
             {
-                FileName = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarMysql.bat",
+                FileName = Path.Combine(exeDirectory, "Scripts de reparacion e inicio automatico", "ReiniciarMysql.bat"),
                 CreateNoWindow = true,
                 UseShellExecute = false
             };
+
             var process = Process.Start(processStartInfo);
-            process.EnableRaisingEvents = true;
-            process.Exited += (s, e) => tcs.TrySetResult(null);
-            await Task.WhenAny(tcs.Task, Task.Delay(3000)); // Espera hasta que se complete la tarea o hasta 3 segundos
-            if (!process.HasExited) // Si el proceso aún no se ha cerrado después de esperar 3 segundos
+            var processExitTask = Task.Run(() => process.WaitForExit(3000));
+
+            if (await Task.WhenAny(processExitTask, Task.Delay(3000)) != processExitTask)
             {
-                process.Kill(); // Forzar la finalización del proceso
+                process.Kill();
             }
+
             if (process.ExitCode != 0 && process.ExitCode != -1073741510)
             {
                 attempts--;
+
                 while (attempts > 0)
                 {
                     try
@@ -850,15 +834,18 @@ namespace FutureLending
                         Registro_errores(ex.ToString());
                     }
                 }
-                Form1.MessageB("Cambiando de Puerto", "Cambio de Puerto", 2);
-                var processStartInfo2 = new ProcessStartInfo
+
+                Form1.MessageB("Cambiando de Puerto", "Alerta", 2);
+
+                var cambioPortProcessStartInfo = new ProcessStartInfo
                 {
-                    FileName = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\cambio_port.bat",
+                    FileName = Path.Combine(exeDirectory, "Scripts de reparacion e inicio automatico", "cambio_port.bat"),
                     CreateNoWindow = true,
                     UseShellExecute = false
                 };
 
-                await Task.Run(() => Process.Start(processStartInfo2));
+                await Task.Run(() => Process.Start(cambioPortProcessStartInfo));
+
                 cambio_puerto = true;
             }
         }
@@ -867,16 +854,20 @@ namespace FutureLending
         {
             string path = EncontrarXampp();
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string filePath = $"{exeDirectory}\\Scripts de reparacion e inicio automatico\\ReiniciarMysql.bat";
+            string filePath = Path.Combine(exeDirectory, "Scripts de reparacion e inicio automatico", "ReiniciarMysql.bat");
+
             // Lee el contenido del archivo .bat
             string contenido = File.ReadAllText(filePath);
+
             // Verifica si el valor ya está presente en el archivo .bat
             if (contenido.Contains("cd /d " + path))
             {
                 return;
             }
+
             // Realiza las modificaciones necesarias
             contenido = contenido.Replace("cd /d E:\\Xampp", "cd /d " + path);
+
             // Guarda los cambios en el archivo
             File.WriteAllText(filePath, contenido);
         }
@@ -884,24 +875,25 @@ namespace FutureLending
         public static string EncontrarXampp()
         {
             string xamppPath = GetXamppInstallationPath();
+
             if (!string.IsNullOrEmpty(xamppPath))
             {
                 return xamppPath;
             }
-            else
-            {
-                return "c:/Xampp";
-            }
+
+            return "c:/Xampp";
         }
 
         static string? GetXamppInstallationPath()
         {
             string xamppRegistryPath = @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\XAMPP";
+
             using (RegistryKey key = Registry.LocalMachine.OpenSubKey(xamppRegistryPath))
             {
                 if (key != null)
                 {
                     string installLocation = key.GetValue("InstallLocation") as string;
+
                     if (!string.IsNullOrEmpty(installLocation))
                     {
                         return installLocation;
@@ -911,62 +903,61 @@ namespace FutureLending
 
             // Buscar en todas las unidades en caso de no encontrar en el Registro
             DriveInfo[] drives = DriveInfo.GetDrives();
+
             foreach (DriveInfo drive in drives)
             {
                 if (drive.DriveType == DriveType.Fixed && drive.IsReady)
                 {
                     string drivePath = Path.Combine(drive.RootDirectory.FullName, "Xampp");
+
                     if (Directory.Exists(drivePath))
                     {
                         return drivePath;
-
                     }
                 }
             }
 
             return null;
         }
+
         #endregion
         #region registros
+        private static readonly object lockObject = new object(); // Objeto de bloqueo para asegurar acceso único al archivo
         public void Registro_errores(string error)
         {
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string logFilePath = $"{exeDirectory}\\Registro de Errores\\Errores.log";
+
             try
             {
-                // Crea un StreamWriter para escribir en el archivo de registro
-                using StreamWriter writer = new(logFilePath, true);
-                // Escribe la información del error en el archivo
-                writer.WriteLine(value: $"[{DateTime.Now}] Error: {error}");
+                lock (lockObject)
+                {
+                    using StreamWriter writer = new StreamWriter(logFilePath, true);
+                    writer.WriteLine($"[{DateTime.Now}] Error: {error}");
+                }
             }
             catch (Exception ex)
-            {
-                Registro_errores(ex.ToString());
-
+            { 
+                ex.ToString();
+                // Si ocurre un error al registrar el error, no se hace nada para evitar un ciclo infinito
             }
-
         }
         public void Registro_Usuarios(string acceso)
         {
-            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string logFilePath = $"{exeDirectory}\\Registro de Errores\\RegistroInicios.log";
+            using MySqlConnection connection = Conector();
+            string query = "INSERT INTO accesos (fecha, usuario) VALUES (@fecha, @usuario)";
             try
             {
-                // Crea un StreamWriter para escribir en el archivo de registro
-                using StreamWriter writer = new(logFilePath, true);
-                // Escribe la información del error en el archivo
-                writer.WriteLine($"[{DateTime.Now}] Acceso este usuario: {acceso}");
+                using MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@fecha", DateTime.Now.ToString("f"));
+                command.Parameters.AddWithValue("@usuario", acceso);
+                command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 Registro_errores(ex.ToString());
-
             }
-
         }
-
-
-
         #endregion
 
     }

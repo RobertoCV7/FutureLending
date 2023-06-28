@@ -17,15 +17,10 @@ namespace FutureLending
             InitializeComponent();
             rjButton3_Click(null, null);
         }
-        bool revisador;
         private async void rjButton3_Click(object sender, EventArgs e)
         {
-
             Lectura_Base_Datos a = new();
-
-            revisador = false;
             await a.CheckConnection(true);
-            revisador = true;
             if (!Form1.conect)
             {
                 LabelEstado.Text = "Inactivo";

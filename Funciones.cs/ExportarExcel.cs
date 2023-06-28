@@ -19,168 +19,153 @@ namespace FutureLending
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                               "TELÉFONO", "CORREO", "FORMA DE LIQUIDACION"};
 
-
         public void ExportarLista1AExcel(string rutaArchivo)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            // Añade los strings de cada fecha y pago a la lista
             List<string> nombresColumnas = new(Nombres_Lista1);
+
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
                 nombresColumnas.Add("PAGO " + i);
             }
 
-            // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = a.LectLista1(true);
-      
-            // Crear el archivo Excel y la hoja de trabajo
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            using var package = new ExcelPackage();
-            ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Lista1");
 
-            // Añadir los nombres de las columnas
-            for (int col = 0; col < nombresColumnas.Count; col++)
+            using (ExcelPackage package = new ExcelPackage())
             {
-                worksheet.Cells[1, col + 1].Value = nombresColumnas[col];
-                worksheet.Cells[1, col + 1].Style.Font.Bold = true;
-                worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-            }
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Lista1");
 
-            // Agregar los datos a las filas del archivo Excel
-            for (int row = 0; row < datosList.Count; row++)
-            {
-                string[] rowData = datosList[row];
-                for (int col = 0; col < rowData.Length; col++)
+                for (int col = 0; col < nombresColumnas.Count; col++)
                 {
-                    worksheet.Cells[row + 2, col + 1].Value = rowData[col];
+                    ExcelRange headerCell = worksheet.Cells[1, col + 1];
+                    headerCell.Value = nombresColumnas[col];
+                    headerCell.Style.Font.Bold = true;
+                    headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 }
+
+                for (int row = 0; row < datosList.Count; row++)
+                {
+                    string[] rowData = datosList[row];
+                    for (int col = 0; col < rowData.Length; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = rowData[col];
+                    }
+                }
+
+                worksheet.Cells.AutoFitColumns();
+
+                FileInfo file = new FileInfo(rutaArchivo);
+                package.SaveAs(file);
             }
-
-            // Ajustar el ancho de las columnas
-            worksheet.Cells.AutoFitColumns();
-
-            // Guardar el archivo Excel
-            FileInfo file = new(rutaArchivo);
-            package.SaveAs(file);
         }
         public void ExportarTabla2(string ruta)
         {
             List<string[]> datos = a.LectLista2();
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            // Crea un nuevo archivo Excel
-            using var package = new ExcelPackage();
-            // Agrega una hoja al libro de Excel
-            var worksheet = package.Workbook.Worksheets.Add("Lista2");
-            List<string> nombresColumnas = new(Nombres_Lisat2);
-            for (int i = 1; i <= 14; i++)
+            using (ExcelPackage package = new ExcelPackage())
             {
-                nombresColumnas.Add("FECHA " + i);
-                nombresColumnas.Add("PAGO " + i);
-            }
-            nombresColumnas.Add("PAGO TOTAL EXT");
-
-            // Escribe los nombres de las columnas en el archivo Excel
-            for (int col = 0; col < nombresColumnas.Count; col++)
-            {
-                worksheet.Cells[1, col + 1].Value = nombresColumnas[col];
-                worksheet.Cells[1, col + 1].Style.Font.Bold = true;
-                worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-            }
-
-            // Escribe los datos en el archivo Excel
-            for (int row = 0; row < datos.Count; row++)
-            {
-                string[] fila = datos[row];
-                for (int col = 0; col < fila.Length; col++)
+                var worksheet = package.Workbook.Worksheets.Add("Lista2");
+                List<string> nombresColumnas = new(Nombres_Lisat2);
+                for (int i = 1; i <= 14; i++)
                 {
-                    worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    nombresColumnas.Add("FECHA " + i);
+                    nombresColumnas.Add("PAGO " + i);
                 }
+                nombresColumnas.Add("PAGO TOTAL EXT");
+
+                for (int col = 0; col < nombresColumnas.Count; col++)
+                {
+                    ExcelRange headerCell = worksheet.Cells[1, col + 1];
+                    headerCell.Value = nombresColumnas[col];
+                    headerCell.Style.Font.Bold = true;
+                    headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                }
+
+                for (int row = 0; row < datos.Count; row++)
+                {
+                    string[] fila = datos[row];
+                    for (int col = 0; col < fila.Length; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    }
+                }
+
+                worksheet.Cells.AutoFitColumns();
+                worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+
+                package.SaveAs(new FileInfo(ruta));
             }
-
-            // Aplica formato a los datos en el archivo Excel
-            worksheet.Cells.AutoFitColumns();
-            worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-
-            // Guarda el archivo Excel en el disco
-            package.SaveAs(ruta);
         }
         public void ExportarTabla3(string ruta)
         {
             List<string[]> datos = a.LectLista3();
-
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            // Crea un nuevo archivo Excel
-            using var package = new ExcelPackage();
-            // Agrega una hoja al libro de Excel
-            var worksheet = package.Workbook.Worksheets.Add("Lista3");
 
-            // Escribe los nombres de las columnas en el archivo Excel
-            for (int col = 0; col < Nombres_Listas3.Length; col++)
+            using (ExcelPackage package = new ExcelPackage())
             {
-                worksheet.Cells[1, col + 1].Value = Nombres_Listas3[col];
-                worksheet.Cells[1, col + 1].Style.Font.Bold = true;
-                worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-            }
+                var worksheet = package.Workbook.Worksheets.Add("Lista3");
 
-            // Escribe los datos en el archivo Excel
-            for (int row = 0; row < datos.Count; row++)
-            {
-                string[] fila = datos[row];
-                for (int col = 0; col < fila.Length; col++)
+                for (int col = 0; col < Nombres_Listas3.Length; col++)
                 {
-                    worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    ExcelRange headerCell = worksheet.Cells[1, col + 1];
+                    headerCell.Value = Nombres_Listas3[col];
+                    headerCell.Style.Font.Bold = true;
+                    headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 }
+
+                for (int row = 0; row < datos.Count; row++)
+                {
+                    string[] fila = datos[row];
+                    for (int col = 0; col < fila.Length; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    }
+                }
+
+                worksheet.Cells.AutoFitColumns();
+                worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+
+                package.SaveAs(new FileInfo(ruta));
             }
-
-            // Aplica formato a los datos en el archivo Excel
-            worksheet.Cells.AutoFitColumns();
-            worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-
-            // Guarda el archivo Excel en el disco
-            package.SaveAs(ruta);
         }
         public void ExportarTablaLiquidados(string ruta)
         {
             List<string[]> datos = a.LectLiquidados();
-
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            // Crea un nuevo archivo Excel
-            using var package = new ExcelPackage();
-            // Agrega una hoja al libro de Excel
-            var worksheet = package.Workbook.Worksheets.Add("Liquidados");
 
-            // Escribe los nombres de las columnas en el archivo Excel
-            for (int col = 0; col < Nombres_ListasLiq.Length; col++)
+            using (ExcelPackage package = new ExcelPackage())
             {
-                worksheet.Cells[1, col + 1].Value = Nombres_ListasLiq[col];
-                worksheet.Cells[1, col + 1].Style.Font.Bold = true;
-                worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-            }
+                var worksheet = package.Workbook.Worksheets.Add("Liquidados");
 
-            // Escribe los datos en el archivo Excel
-            for (int row = 0; row < datos.Count; row++)
-            {
-                string[] fila = datos[row];
-                for (int col = 0; col < fila.Length; col++)
+                for (int col = 0; col < Nombres_ListasLiq.Length; col++)
                 {
-                    worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    ExcelRange headerCell = worksheet.Cells[1, col + 1];
+                    headerCell.Value = Nombres_ListasLiq[col];
+                    headerCell.Style.Font.Bold = true;
+                    headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 }
+
+                for (int row = 0; row < datos.Count; row++)
+                {
+                    string[] fila = datos[row];
+                    for (int col = 0; col < fila.Length; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    }
+                }
+
+                worksheet.Cells.AutoFitColumns();
+                worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+
+                package.SaveAs(new FileInfo(ruta));
             }
-
-            // Aplica formato a los datos en el archivo Excel
-            worksheet.Cells.AutoFitColumns();
-            worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-
-            // Guarda el archivo Excel en el disco
-            package.SaveAs(ruta);
         }
-
         public void ExportarTodasLasTablas(string ruta)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -189,31 +174,15 @@ namespace FutureLending
             List<string[]> datosLista3 = a.LectLista3();
             List<string[]> datosLiquidados = a.LectLiquidados();
 
-            // Crea un nuevo archivo Excel
-
-            List<string> nombresColumnas = new(Nombres_Lista1);
-            for (int i = 1; i <= 14; i++)
+            using (var package = new ExcelPackage())
             {
-                nombresColumnas.Add("FECHA " + i);
-                nombresColumnas.Add("PAGO " + i);
-            }
-            List<string> NombresColumnas2 = new(Nombres_Lisat2);
-            for (int i = 1; i <= 14; i++)
-            {
-                NombresColumnas2.Add("FECHA " + i);
-                NombresColumnas2.Add("PAGO " + i);
-            }
-            NombresColumnas2.Add("PAGO TOTAL EXT");
+                AgregarHojaDatos(package, datosLista1, "Lista1", Nombres_Lista1);
+                AgregarHojaDatos(package, datosLista2, "Lista2", Nombres_Lisat2);
+                AgregarHojaDatos(package, datosLista3, "Lista3", Nombres_Listas3);
+                AgregarHojaDatos(package, datosLiquidados, "Liquidados", Nombres_ListasLiq);
 
-            using var package = new ExcelPackage();
-            // Agrega una hoja para cada lista de datos
-            AgregarHojaDatos(package, datosLista1, "Lista1", nombresColumnas.ToArray());
-            AgregarHojaDatos(package, datosLista2, "Lista2", NombresColumnas2.ToArray());
-            AgregarHojaDatos(package, datosLista3, "Lista3", Nombres_Listas3);
-            AgregarHojaDatos(package, datosLiquidados, "Liquidados", Nombres_ListasLiq);
-
-            // Guarda el archivo Excel en el disco
-            package.SaveAs(ruta);
+                package.SaveAs(new FileInfo(ruta));
+            }
         }
         private static void AgregarHojaDatos(ExcelPackage package, List<string[]> datos, string nombreHoja, string[] nombresColumnas)
         {
@@ -231,32 +200,20 @@ namespace FutureLending
             // Verifica si los datos están vacíos
             if (datos.Count == 0)
             {
-                return;
                 throw new ArgumentException("Los datos están vacíos. No se puede agregar una hoja vacía.");
-            }
-            // Verifica el nombre de la hoja
-            if (string.IsNullOrWhiteSpace(nombreHoja) || nombreHoja.Length > 31 || nombreHoja.Any(c => Path.GetInvalidFileNameChars().Contains(c)))
-            {
-                throw new ArgumentException("El nombre de la hoja no es válido.");
-            }
-
-            // Verifica los nombres de las columnas
-            if (nombresColumnas.Length > 16384)
-            {
-                throw new ArgumentException("El número de columnas excede el límite máximo.");
             }
 
             // Agrega una hoja al libro de Excel
             var worksheet = package.Workbook.Worksheets.Add(nombreHoja);
 
-
             // Escribe los nombres de las columnas en el archivo Excel
             for (int col = 0; col < nombresColumnas.Length; col++)
             {
-                worksheet.Cells[1, col + 1].Value = nombresColumnas[col];
-                worksheet.Cells[1, col + 1].Style.Font.Bold = true;
-                worksheet.Cells[1, col + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                worksheet.Cells[1, col + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                ExcelRange headerCell = worksheet.Cells[1, col + 1];
+                headerCell.Value = nombresColumnas[col];
+                headerCell.Style.Font.Bold = true;
+                headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
             }
 
             // Escribe los datos en el archivo Excel
@@ -280,8 +237,6 @@ namespace FutureLending
                 columnCells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
             }
         }
-
-        // Función auxiliar para obtener el nombre de columna de Excel a partir de su índice
         private static string GetExcelColumnName(int columnNumber)
         {
             int dividend = columnNumber;
@@ -296,6 +251,7 @@ namespace FutureLending
 
             return columnName;
         }
+
 
 
     }

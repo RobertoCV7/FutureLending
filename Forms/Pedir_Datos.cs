@@ -48,7 +48,6 @@
                 BotonDeingresarPedir.Enabled = false;
             }
         }
-        private bool mostrado = false;
         private void TextLiquidacionPedir_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
