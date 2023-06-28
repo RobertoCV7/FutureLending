@@ -1,6 +1,4 @@
-using FutureLending.Funciones.cs;
 using System.Globalization;
-using Windows.ApplicationModel.Resources.Core;
 using ResourceManager = System.Resources.ResourceManager;
 
 namespace FutureLending
@@ -13,11 +11,6 @@ namespace FutureLending
         [STAThread]
         static void Main()
         {
-            BackupService backupService = new BackupService();
-
-            // Ejecutar StartBackup() en un hilo separado
-            Task backupTask = Task.Run(() => backupService.StartBackup(true));
-
             // Continuar con otras tareas en el hilo principal
             ApplicationConfiguration.Initialize();
             Inicio_Sesion ini = new();

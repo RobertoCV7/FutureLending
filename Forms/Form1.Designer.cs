@@ -1182,7 +1182,6 @@ namespace FutureLending
             dateTimePickerPersonalizado2.Name = "dateTimePickerPersonalizado2";
             dateTimePickerPersonalizado2.SkinColor = SystemColors.ButtonHighlight;
             dateTimePickerPersonalizado2.TextColor = Color.Black;
-            dateTimePickerPersonalizado2.ValueChanged += dateTimePickerPersonalizado2_ValueChanged;
             // 
             // label65
             // 
@@ -1358,6 +1357,7 @@ namespace FutureLending
             // label11
             // 
             resources.ApplyResources(label11, "label11");
+            label11.ForeColor = Color.DarkSlateGray;
             label11.Name = "label11";
             // 
             // txtCalle
@@ -3694,14 +3694,14 @@ namespace FutureLending
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
-            Controls.Add(PanelEditar2_2);
-            Controls.Add(PnlEditar2);
             Controls.Add(pnlClientes);
-            Controls.Add(PanelEditar);
+            Controls.Add(PanelEditar3);
+            Controls.Add(PanelEditar2_2);
             Controls.Add(pnlListas);
+            Controls.Add(PnlEditar2);
+            Controls.Add(PanelEditar);
             Controls.Add(pnlRegPago);
             Controls.Add(PanelEditarLiquidados);
-            Controls.Add(PanelEditar3);
             Controls.Add(panel2);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
@@ -3807,7 +3807,7 @@ namespace FutureLending
         private Label label16;
         private Controles_personalizados.TextBoxPersonalizado txtTotal_I;
         private Panel pnlClientes;
-        private DataGridView gridListas;
+        public DataGridView gridListas;
         private ControlesPersonalizados.RJComboBox cmbInteres;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label29;

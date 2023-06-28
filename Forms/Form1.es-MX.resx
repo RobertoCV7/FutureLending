@@ -23208,11 +23208,14 @@
   <data name="rjButton7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="rjButton7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1104, 418</value>
+  </data>
   <data name="rjButton7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="rjButton7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 64</value>
+    <value>213, 82</value>
   </data>
   <data name="rjButton7.Text" xml:space="preserve">
     <value>Rervertir</value>

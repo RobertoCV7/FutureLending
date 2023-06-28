@@ -1,6 +1,4 @@
-﻿using Windows.Devices.PointOfService;
-
-namespace FutureLending
+﻿namespace FutureLending
 {
     //Este forms pide los datos faltantes para mover el registro de la lista 1 a la lista 2
     public partial class Pedir_Datos : Form
@@ -67,7 +65,7 @@ namespace FutureLending
             {
                 if (rjComboBox2.SelectedIndex != -1 && rjComboBox2.SelectedIndex != 1)
                 {
-                    if(TextLiquidacionPedir.Texts == null || TextLiquidacionPedir.Texts == "")
+                    if (TextLiquidacionPedir.Texts == null || TextLiquidacionPedir.Texts == "")
                     {
                         Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
                         Mostrado = true;
@@ -79,7 +77,7 @@ namespace FutureLending
 
                 }
             }
-          
+
         }
 
         private void rjButton1_Click(object sender, EventArgs e)

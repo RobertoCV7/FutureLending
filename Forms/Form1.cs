@@ -2,13 +2,7 @@ using FutureLending.ControlesPersonalizados;
 using FutureLending.Forms;
 using FutureLending.Funciones.cs;
 using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
 using System.ComponentModel;
-using System.Data.SqlClient;
-using System.IO.Ports;
-using System.Windows.Automation.Peers;
-using System.Windows.Controls;
-using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
 using Timer = System.Windows.Forms.Timer;
 
@@ -46,35 +40,27 @@ namespace FutureLending
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarPromotoresEnComboBox(rjComboBox3, false);
             CargarPromotoresEnComboBox(cmbPromotor, false);
-            Task.Run(() =>
-            {
-                // Actualizar los controles de la interfaz de usuario desde el hilo de UI
-                this.Invoke(new Action(() =>
-                {
-                    CollapseMenu();
-                    dateTimePickerPersonalizado2.Enabled = false;
-                    rjButton6.Enabled = false;
-                    rjComboBox9.Visible = false;
-                    rjButton4.Enabled = false;
-                    TextBoxPagoExt.Enabled = false;
-                    label57.Visible = false;
-                    BarradeProgreso.Visible = false;
-                    label17.Visible = false;
-                    btnCalcular1.Enabled = false;
-                    rjButton5.Enabled = false;
-                    label82.Visible = false;
-                    ComboBoxPromotoresListas.Enabled = true;
-                    Monto_Recomendado.Visible = false;
-                    cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
-                    ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
-                    this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-                    dateTimePickerPersonalizado2.Enabled = false;
-                }));
-            });
+            CollapseMenu();
+            dateTimePickerPersonalizado2.Enabled = false;
+            rjButton6.Enabled = false;
+            rjComboBox9.Visible = false;
+            rjButton4.Enabled = false;
+            TextBoxPagoExt.Enabled = false;
+            label57.Visible = false;
+            BarradeProgreso.Visible = false;
+            label17.Visible = false;
+            btnCalcular1.Enabled = false;
+            rjButton5.Enabled = false;
+            label82.Visible = false;
+            ComboBoxPromotoresListas.Enabled = true;
+            Monto_Recomendado.Visible = false;
+            cmbCliente.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ComBoxName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            dateTimePickerPersonalizado2.Enabled = false;
         }
 
 
@@ -439,7 +425,6 @@ namespace FutureLending
                 listaActual = "lista1";
             }
         }
-
         private async void BtnLista2_Click(object sender, EventArgs e)
         {
             if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
@@ -467,14 +452,15 @@ namespace FutureLending
                 ActivarEditar();
                 listaActual = "lista2";
             }
-
         }
 
         private async void BtnLista3_Click(object sender, EventArgs e)
         {
             ListaEstado = 2;
             DesactivarBotones();
+
             await TablaClientes.MostrarLista3(gridListas, cmbCliente, BarradeProgreso, label57);
+
             ActivarListas();
             ActivarEditar();
             listaActual = "lista3";
@@ -492,12 +478,8 @@ namespace FutureLending
         private async void BtnLiquidados_Click(object sender, EventArgs e)
         {
             ListaEstado = 3;
-            var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente, BarradeProgreso, label57);
-            while (!mostrarListaTask.IsCompleted)
-            {
-                DesactivarBotones();
-                await Task.Delay(100);
-            }
+            DesactivarBotones();
+            await TablaClientes.MostrarLiquidados(gridListas, cmbCliente, BarradeProgreso, label57);
             ActivarListas();
             ActivarEditar();
             listaActual = "liquidados";
@@ -860,56 +842,56 @@ namespace FutureLending
         //Para desactivar los botones mientras se imprime una tabla
         private void DesactivarBotones()
         {
-
-            btnLista1.Enabled = false;
-            btnLista2.Enabled = false;
-            btnLista3.Enabled = false;
-            btnMostrarTodos.Enabled = false;
-            btnLiquidados.Enabled = false;
-            btnEditar.Enabled = false;
-            btnEliminar.Enabled = false;
-            cmbCliente.Enabled = false;
-            rjButton1.Enabled = false;
+            btnLista1.Invoke(new Action(() => btnLista1.Enabled = false));
+            btnLista2.Invoke(new Action(() => btnLista2.Enabled = false));
+            btnLista3.Invoke(new Action(() => btnLista3.Enabled = false));
+            btnMostrarTodos.Invoke(new Action(() => btnMostrarTodos.Enabled = false));
+            btnLiquidados.Invoke(new Action(() => btnLiquidados.Enabled = false));
+            btnEditar.Invoke(new Action(() => btnEditar.Enabled = false));
+            btnEliminar.Invoke(new Action(() => btnEliminar.Enabled = false));
+            cmbCliente.Invoke(new Action(() => cmbCliente.Enabled = false));
+            rjButton1.Invoke(new Action(() => rjButton1.Enabled = false));
         }
+
 
         //Se reactivan los botones una vez se imprime la tabla
         private void ActivarListas()
         {
             if (Boton1)
             {
-                btnLista1.Enabled = true;
+                btnLista1.Invoke(new Action(() => btnLista1.Enabled = true));
             }
             if (Boton2)
             {
-                btnLista2.Enabled = true;
+                btnLista2.Invoke(new Action(() => btnLista2.Enabled = true));
             }
             if (Boton3)
             {
-                btnLista3.Enabled = true;
+                btnLista3.Invoke(new Action(() => btnLista3.Enabled = true));
             }
             if (Boton4)
             {
-                btnLiquidados.Enabled = true;
+                btnLiquidados.Invoke(new Action(() => btnLiquidados.Enabled = true));
             }
             if (!Boton1 || !Boton2 || !Boton3 || !Boton4)
             {
-
+                // Código adicional si es necesario
             }
             else
             {
-                btnMostrarTodos.Enabled = true;
+                btnMostrarTodos.Invoke(new Action(() => btnMostrarTodos.Enabled = true));
             }
-            rjButton1.Enabled = true;
-
+            rjButton1.Invoke(new Action(() => rjButton1.Enabled = true));
         }
 
         private void ActivarEditar()
         {
             if (gridListas.Rows.Count > 0)
             {
-                cmbCliente.Enabled = true;
+                cmbCliente.Invoke(new Action(() => cmbCliente.Enabled = true));
             }
         }
+
 
         #endregion
         #region Cambio de listas

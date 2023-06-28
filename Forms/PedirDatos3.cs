@@ -96,7 +96,7 @@
 
         private void TextImporte3__TextChanged(object sender, EventArgs e)
         {
-            if(TextImporte3.Texts != null && TextImporte3.Texts != "")
+            if (TextImporte3.Texts != null && TextImporte3.Texts != "")
             {
                 tres = true;
                 activar();

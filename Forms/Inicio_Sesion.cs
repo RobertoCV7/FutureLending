@@ -23,7 +23,7 @@ namespace FutureLending
             cerrar = Accesos.Accesar(TextUsuario.Text, TextContra.Text);
             if (cerrar)
             {
-              Program.inicio = true;
+                Program.inicio = true;
                 Program.NombreDeUsuario = TextUsuario.Text;
                 this.Close();
             }

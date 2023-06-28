@@ -6,6 +6,7 @@
         {
             InitializeComponent();
             datos();
+            rjButton1.Enabled = false;
         }
 
         void datos()
@@ -87,10 +88,13 @@
 
         private void Exportar_Excel_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(comboBox1.SelectedIndex == -1)
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex != -1)
             {
-                Form1.MessageB("Debe Seleccionar una lista para exportar", "Advertencia", 2);
-                e.Cancel = true;
+                rjButton1.Enabled = true;
             }
         }
     }
