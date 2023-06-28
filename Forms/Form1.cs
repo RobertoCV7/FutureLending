@@ -2616,5 +2616,28 @@ namespace FutureLending
             BackupService ob = new();
             ob.StopBackup();
         }
+        private bool changingCheckedState5 = false;
+        private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (!changingCheckedState5)
+            {
+                changingCheckedState5 = true;
+
+                if (checkBox2.Checked)
+                {
+                    // Desactivar el uso de contraseña
+                    textBox3.UseSystemPasswordChar = false;
+
+                }
+                else
+                {
+                    // Activar el uso de contraseña
+                    textBox3.UseSystemPasswordChar = true;
+                }
+
+                changingCheckedState5 = false;
+
+            }
+        }
     }
 }

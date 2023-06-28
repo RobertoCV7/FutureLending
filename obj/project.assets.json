@@ -4923,11 +4923,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\donne\\Future_Lending_1360\\FutureLending.csproj",
+      "projectUniqueName": "D:\\Escritorio\\Future2\\FutureLending.csproj",
       "projectName": "FutureLending",
-      "projectPath": "C:\\Users\\donne\\Future_Lending_1360\\FutureLending.csproj",
+      "projectPath": "D:\\Escritorio\\Future2\\FutureLending.csproj",
       "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\donne\\Future_Lending_1360\\obj\\",
+      "outputPath": "D:\\Escritorio\\Future2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Visual studio\\cosas\\NuGetPackages"
@@ -5005,7 +5005,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   },
