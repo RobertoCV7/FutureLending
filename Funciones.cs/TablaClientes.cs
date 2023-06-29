@@ -170,7 +170,7 @@
 
             //Arreglo de strings con los nombres de cada columna
             string[] nombresString = {"LISTA", "PROMOTOR","NOMBRE", "CREDITO",
-                           "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+                           "FECHA INICIO","INTERES","MONTO TOTAL","CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                             "TELÉFONO", "CORREO", "TIPO DE PAGO"};
             List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
             nombresColumnas.AddRange(nombresString);

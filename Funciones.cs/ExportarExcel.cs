@@ -173,11 +173,25 @@ namespace FutureLending
             List<string[]> datosLista2 = a.LectLista2();
             List<string[]> datosLista3 = a.LectLista3();
             List<string[]> datosLiquidados = a.LectLiquidados();
+            List<string> nombresColumnas = new(Nombres_Lista1);
 
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas.Add("FECHA " + i);
+                nombresColumnas.Add("PAGO " + i);
+            }
+            List<string> nombresColumnas2 = new(Nombres_Lisat2);
+
+            for (int i = 1; i <= 14; i++)
+            {
+                nombresColumnas2.Add("FECHA " + i);
+                nombresColumnas2.Add("PAGO " + i);
+            }
+            nombresColumnas2.Add("PAGO_EXT");
             using (var package = new ExcelPackage())
             {
-                AgregarHojaDatos(package, datosLista1, "Lista1", Nombres_Lista1);
-                AgregarHojaDatos(package, datosLista2, "Lista2", Nombres_Lisat2);
+                AgregarHojaDatos(package, datosLista1, "Lista1", nombresColumnas.ToArray());
+                AgregarHojaDatos(package, datosLista2, "Lista2", nombresColumnas2.ToArray());
                 AgregarHojaDatos(package, datosLista3, "Lista3", Nombres_Listas3);
                 AgregarHojaDatos(package, datosLiquidados, "Liquidados", Nombres_ListasLiq);
 
