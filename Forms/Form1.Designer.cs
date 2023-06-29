@@ -1051,7 +1051,6 @@ namespace FutureLending
             txtBoxCredito.PlaceholderText = "";
             txtBoxCredito.Texts = "";
             txtBoxCredito.UnderlinedStyle = true;
-            txtBoxCredito._TextChanged += txtBoxCredito__TextChanged;
             // 
             // lblCredito
             // 
@@ -1136,7 +1135,6 @@ namespace FutureLending
             pnlClientes.Controls.Add(label1);
             pnlClientes.Controls.Add(cmbPromotor);
             pnlClientes.Name = "pnlClientes";
-            pnlClientes.Paint += pnlClientes_Paint;
             // 
             // label87
             // 
@@ -2188,7 +2186,6 @@ namespace FutureLending
             gridListas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             gridListas.RowTemplate.Height = 25;
             gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridListas.CellContentClick += gridListas_CellContentClick;
             // 
             // label8
             // 
@@ -2623,6 +2620,7 @@ namespace FutureLending
             textBoxPersonalizado10.PlaceholderText = "";
             textBoxPersonalizado10.Texts = "";
             textBoxPersonalizado10.UnderlinedStyle = true;
+            textBoxPersonalizado10._TextChanged += textBoxPersonalizado10__TextChanged;
             // 
             // label34
             // 
@@ -3693,13 +3691,13 @@ namespace FutureLending
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(PanelBien);
             Controls.Add(pnlClientes);
+            Controls.Add(PanelBien);
+            Controls.Add(PanelEditar);
             Controls.Add(PanelEditar3);
             Controls.Add(PanelEditar2_2);
             Controls.Add(pnlListas);
             Controls.Add(PnlEditar2);
-            Controls.Add(PanelEditar);
             Controls.Add(pnlRegPago);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(panel2);

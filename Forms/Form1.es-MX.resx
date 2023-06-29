@@ -22510,7 +22510,7 @@
     <value>912, 45</value>
   </data>
   <data name="label55.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 27.75pt, style=Bold</value>
+    <value>Corbel, 27.75pt, style=Bold, Underline</value>
   </data>
   <data name="label55.Location" type="System.Drawing.Point, System.Drawing">
     <value>49, 600</value>
