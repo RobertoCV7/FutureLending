@@ -48,7 +48,6 @@ namespace FutureLending
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarPromotoresEnComboBox(rjComboBox3, false);
             CargarPromotoresEnComboBox(cmbPromotor, false);
             Task.Run(() =>
             {
@@ -1828,7 +1827,7 @@ namespace FutureLending
             }
             else
             {
-                MessageB("El cliente ya existe en la lista", "Error", 3);
+                MessageB("El cliente ya existe en la Base de datos ", "Error", 3);
             }
         }
         private void btnGuardar2_Click(object sender, EventArgs e)

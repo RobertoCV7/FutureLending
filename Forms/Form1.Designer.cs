@@ -3693,8 +3693,8 @@ namespace FutureLending
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pnlClientes);
             Controls.Add(PanelBien);
+            Controls.Add(pnlClientes);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar);
             Controls.Add(PanelEditar3);
