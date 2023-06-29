@@ -20665,7 +20665,7 @@
     <value>287, 33</value>
   </data>
   <data name="btnMover3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 25</value>
+    <value>471, 26</value>
   </data>
   <data name="btnMover3.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 47</value>
@@ -20680,13 +20680,13 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="CmbLista2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 51</value>
+    <value>371, 52</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 549</value>
+    <value>38, 566</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 81</value>
+    <value>700, 81</value>
   </data>
   <data name="TextBoxCorreo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -20841,6 +20841,9 @@
   <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 26</value>
   </data>
+  <data name="rjComboBox7.Items1" xml:space="preserve">
+    <value>Convenio</value>
+  </data>
   <data name="rjComboBox7.Location" type="System.Drawing.Point, System.Drawing">
     <value>290, 296</value>
   </data>
@@ -20914,7 +20917,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="rjComboBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 49</value>
+    <value>371, 52</value>
   </data>
   <data name="PnlEditar2.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 60</value>
