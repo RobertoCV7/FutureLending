@@ -1342,8 +1342,6 @@ namespace FutureLending
 
                     // Limpiar el ComboBox antes de agregar los nuevos elementos
                     box.Items.Clear();
-                    box.Items.Add("Seleccionar Promotor");
-
                     // Ejecutar la consulta SQL y obtener los resultados
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
