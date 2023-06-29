@@ -20910,6 +20910,9 @@
   <data name="rjComboBox7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="rjComboBox7.Items1" xml:space="preserve">
+    <value>Convenio</value>
+  </data>
   <data name="rjComboBox7.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 355</value>
   </data>
