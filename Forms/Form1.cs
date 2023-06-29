@@ -41,7 +41,6 @@ namespace FutureLending
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarPromotoresEnComboBox(cmbPromotor, false);
             CollapseMenu();
             dateTimePickerPersonalizado2.Enabled = false;
             rjButton6.Enabled = false;
@@ -103,13 +102,17 @@ namespace FutureLending
         #region Botones centrales del menu
 
         #region Ingresar Clientes
-
+        private bool CambioEnPromotores = true;
         private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
 
             EsconderPaneles(pnlClientes);
             lblTitle.Text = "Ingresar Clientes";
-            CargarPromotoresEnComboBox(cmbPromotor, false);
+            if (CambioEnPromotores)
+            {
+                CargarPromotoresEnComboBox(cmbPromotor, false);
+                CambioEnPromotores = false;
+            }
             if (panelRg)
             {
                 recargarDatosPnlRegPagos();
@@ -252,10 +255,15 @@ namespace FutureLending
         public static bool Boton3 { get; private set; }
         public static bool Boton4 { get; private set; }
         bool revisado = false;
+        private bool CambioenPromotoresListas = true;
         private void BtnListas_Click(object sender, EventArgs e)
         {
 
-            CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
+            if (CambioenPromotoresListas)
+            {
+                CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
+                CambioenPromotoresListas = false;
+            }
             ComboBoxPromotoresListas.SelectedIndex = 0;
             int a = 0;
             List<string> list = Accesos.ObtenerPermisosUsuario(Program.NombreDeUsuario);
@@ -1347,6 +1355,10 @@ namespace FutureLending
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
+                            if (a)
+                            {
+                                box.Items.Add("Promotor:");
+                            }
                             // Agregar los nombres de los promotores al ComboBox
                             while (reader.Read())
                             {
@@ -1442,6 +1454,8 @@ namespace FutureLending
         {
             EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
             textBox4.Text = "";
+            CambioEnPromotores = true;
+            CambioenPromotoresListas = true;
             rjComboBox4.SelectedIndex = -1;
             CargarPromotoresEnComboBox(rjComboBox4, false);
         }
@@ -1449,6 +1463,8 @@ namespace FutureLending
         {
             EliminarPromotor(rjComboBox4.SelectedItem.ToString());
             rjComboBox4.SelectedIndex = -1;
+            CambioenPromotoresListas = true;
+            CambioEnPromotores = true;
             textBox4.Text = "";
             CargarPromotoresEnComboBox(rjComboBox4, false);
 
@@ -1461,6 +1477,8 @@ namespace FutureLending
         {
             AgregarPromotor(textBox5.Text);
             textBox5.Text = "";
+            CambioEnPromotores = true;
+            CambioenPromotoresListas = true;
             CargarPromotoresEnComboBox(rjComboBox4, false);
         }
         #endregion

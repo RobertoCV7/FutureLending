@@ -1951,7 +1951,7 @@ namespace FutureLending
             ComboBoxPromotoresListas.ListBackColor = SystemColors.ButtonHighlight;
             ComboBoxPromotoresListas.ListTextColor = Color.DimGray;
             ComboBoxPromotoresListas.Name = "ComboBoxPromotoresListas";
-            ComboBoxPromotoresListas.Tag = "Seleccione un cliente";
+            ComboBoxPromotoresListas.Tag = "Promotor:";
             ComboBoxPromotoresListas.Texts = "Promotor:";
             ComboBoxPromotoresListas.OnSelectedIndexChanged += ComboBoxPromotoresListas_OnSelectedIndexChanged;
             // 
@@ -3692,12 +3692,12 @@ namespace FutureLending
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
-            Controls.Add(PnlEditar2);
+            Controls.Add(pnlListas);
             Controls.Add(pnlClientes);
+            Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar);
             Controls.Add(PanelEditar3);
             Controls.Add(PanelEditar2_2);
-            Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(panel2);
