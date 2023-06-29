@@ -3694,15 +3694,15 @@ namespace FutureLending
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(pnlListas);
+            Controls.Add(panel2);
             Controls.Add(PnlEditar2);
             Controls.Add(pnlClientes);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar);
             Controls.Add(PanelEditar3);
             Controls.Add(pnlRegPago);
-            Controls.Add(panel2);
             Controls.Add(PanelEditar2_2);
-            Controls.Add(pnlListas);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             DoubleBuffered = true;

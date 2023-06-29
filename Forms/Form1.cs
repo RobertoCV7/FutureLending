@@ -48,7 +48,6 @@ namespace FutureLending
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarPromotoresEnComboBox(cmbPromotor, false);
             Task.Run(() =>
             {
                 // Actualizar los controles de la interfaz de usuario desde el hilo de UI
@@ -119,13 +118,17 @@ namespace FutureLending
         #region Botones centrales del menu
 
         #region Ingresar Clientes
-
+        private bool CambioEnPromotores = true;
         private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
 
             EsconderPaneles(pnlClientes);
             lblTitle.Text = "Ingresar Clientes";
-            CargarPromotoresEnComboBox(cmbPromotor, false);
+            if (CambioEnPromotores)
+            {
+                CargarPromotoresEnComboBox(cmbPromotor, false);
+                CambioEnPromotores = false;
+            }
             if (panelRg)
             {
                 recargarDatosPnllRegPagos();
@@ -267,9 +270,15 @@ namespace FutureLending
         public static bool Boton3 { get; private set; }
         public static bool Boton4 { get; private set; }
         bool revisado = false;
+        private bool CambioenPromotoresListas = true;
         private void BtnListas_Click(object sender, EventArgs e)
         {
-            CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
+            if (CambioenPromotoresListas)
+            {
+                CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
+                CambioenPromotoresListas = false;
+            }
+            ComboBoxPromotoresListas.SelectedIndex = 0;
             int a = 0;
             List<string> list = Accesos.ObtenerPermisosUsuario(Inicio_Sesion.NombreUsuario);
             if (list != null && !revisado)
@@ -1360,6 +1369,10 @@ namespace FutureLending
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
+                            if (a)
+                            {
+                                box.Items.Add("Promotor:");
+                            }
                             // Agregar los nombres de los promotores al ComboBox
                             while (reader.Read())
                             {
@@ -1456,6 +1469,8 @@ namespace FutureLending
         private void RjButton4_Click(object sender, EventArgs e)
         {
             EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
+            CambioEnPromotores = true;
+            CambioenPromotoresListas = true;
             textBox4.Text = "";
             rjComboBox4.SelectedIndex = -1;
             CargarPromotoresEnComboBox(rjComboBox4, false);
@@ -1463,6 +1478,8 @@ namespace FutureLending
         private void RjButton6_Click(object sender, EventArgs e)
         {
             EliminarPromotor(rjComboBox4.SelectedItem.ToString());
+            CambioEnPromotores = true;
+            CambioenPromotoresListas = true;
             rjComboBox4.SelectedIndex = -1;
             textBox4.Text = "";
             CargarPromotoresEnComboBox(rjComboBox4, false);
@@ -1475,6 +1492,8 @@ namespace FutureLending
         private void RjButton5_Click(object sender, EventArgs e)
         {
             AgregarPromotor(textBox5.Text);
+            CambioEnPromotores = true;
+            CambioenPromotoresListas = true;
             textBox5.Text = "";
             CargarPromotoresEnComboBox(rjComboBox4, false);
         }
@@ -1709,10 +1728,10 @@ namespace FutureLending
             bool a = Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), textBox2.Text, textBox3.Text);
             if (a)
             {
-                comboBox1.Items.Clear();
                 textBox2.Text = "";
                 textBox3.Text = "";
                 List<string> usuarios = Accesos.CargarUsuarios();
+                comboBox1.Items.Clear();
                 foreach (var users in usuarios)
                 {
                     comboBox1.Items.Add(users);
@@ -1731,6 +1750,7 @@ namespace FutureLending
             textBox2.Text = "";
             comboBox1.SelectedIndex = -1;
             List<string> usuarios = Accesos.CargarUsuarios();
+            comboBox1.Items.Clear();
             foreach (var users in usuarios)
             {
                 comboBox1.Items.Add(users);

@@ -187,6 +187,7 @@ namespace FutureLending
                 nombresColumnas2.Add("FECHA " + i);
                 nombresColumnas2.Add("PAGO " + i);
             }
+            nombresColumnas2.Add("PAGO_EXT");
             using (var package = new ExcelPackage())
             {
                 AgregarHojaDatos(package, datosLista1, "Lista1", nombresColumnas.ToArray());
