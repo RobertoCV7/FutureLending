@@ -4,7 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
-
+using AWSSDK;
 namespace FutureLending
 {
     public class Lectura_Base_Datos
@@ -14,6 +14,7 @@ namespace FutureLending
         #region Conexion
         //verificador de cambio de puerto
         public bool cambio_puerto = false;
+
         public MySqlConnection Conector()
         {
             // Almacenar los valores de configuración en variables locales

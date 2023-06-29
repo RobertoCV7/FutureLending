@@ -13,4 +13,8 @@
     <SourceRoot Include="C:\Users\donne\.nuget\packages\" />
     <SourceRoot Include="E:\Visual studio\cosas\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\donne\.nuget\packages\awssdk.core\3.7.107.8</PkgAWSSDK_Core>
+    <PkgAWSSDK_RDS Condition=" '$(PkgAWSSDK_RDS)' == '' ">C:\Users\donne\.nuget\packages\awssdk.rds\3.7.120</PkgAWSSDK_RDS>
+  </PropertyGroup>
 </Project>

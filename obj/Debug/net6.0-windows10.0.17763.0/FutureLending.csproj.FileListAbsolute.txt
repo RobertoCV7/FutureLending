@@ -1787,3 +1787,5 @@ D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\refint\FutureLending.
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.pdb
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.genruntimeconfig.cache
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\ref\FutureLending.dll
+D:\Escritorio\Future2\bin\Debug\net6.0-windows10.0.17763.0\AWSSDK.Core.dll
+D:\Escritorio\Future2\bin\Debug\net6.0-windows10.0.17763.0\AWSSDK.RDS.dll
