@@ -3705,6 +3705,7 @@ namespace FutureLending
             Controls.Add(pnlListas);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
             FormClosing += Form1_FormClosing;
