@@ -1,2 +1,0 @@
-Genera la base de datos prestamos y prestamos_copia, en prestamos exporta NewDB y en prestamos_copia NewDBCopia y listo
-NewDBCopia es para generar copias de seguridad constantemente por cualquier error o perdida de informacion

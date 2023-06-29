@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 11-06-2023 a las 09:21:05
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-06-2023 a las 03:17:19
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,8 +18,35 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `prestamos_copia`
+-- Base de datos: `prestamos`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `accesos`
+--
+
+CREATE TABLE `accesos` (
+  `Fecha` varchar(50) NOT NULL,
+  `Usuario` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `accesos`
+--
+
+INSERT INTO `accesos` (`Fecha`, `Usuario`) VALUES
+('miércoles, 28 de junio de 2023 03:46 p. m.', 'root'),
+('miércoles, 28 de junio de 2023 04:28 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 04:35 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 04:37 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 04:39 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 05:01 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 05:02 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 05:12 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 07:06 p. m.', 'admin'),
+('miércoles, 28 de junio de 2023 07:08 p. m.', 'admin');
 
 -- --------------------------------------------------------
 
@@ -40,13 +67,6 @@ CREATE TABLE `liquidados` (
   `Correo` varchar(30) NOT NULL,
   `Forma_Liquidacion` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `liquidados`
---
-
-INSERT INTO `liquidados` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Fecha_Inicio`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Forma_Liquidacion`) VALUES
-('Maria', 'Roberto Gonzales', '5000', '-', 'La peligrosa', 'La peor', '', '13', '333564543', 'golosa69@gmail.com', 'Lista 3');
 
 -- --------------------------------------------------------
 
@@ -92,7 +112,7 @@ CREATE TABLE `lista1` (
 --
 
 INSERT INTO `lista1` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Pagare`, `Fecha_Inicio`, `Fecha_Termino`, `Interes`, `Monto_Total`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_pago`, `Monto_Restante`, `Fecha1`, `Fecha2`, `Fecha3`, `Fecha4`, `Fecha5`, `Fecha6`, `Fecha7`, `Fecha8`, `Fecha9`, `Fecha10`, `Fecha11`, `Fecha12`, `Fecha13`, `Fecha14`) VALUES
-('Karely', 'Maria Elizabeth', '1236', '2472', '10/06/2023', '23/09/2023', 'Premier', '1,631.52', 'asasas', 'asas', '12', '', '12121212', 'asasasas', 'Quincenales', '1,000.00', '25/06/2023', '10/07/2023', '25/07/2023', '09/08/2023', '24/08/2023', '08/09/2023', '23/09/2023', '-', '-', '-', '-', '-', '-', '-');
+('Roberto', 'Cesar Donnet', '4800', '9600', '28/06/2023', '04/10/2023', 'Premier', '6,336.00', 'asas', 'asas', '12', '', '1212', 'asas', 'Semanales', '6,336.00', '05/07/2023', '12/07/2023', '19/07/2023', '26/07/2023', '02/08/2023', '09/08/2023', '16/08/2023', '23/08/2023', '30/08/2023', '06/09/2023', '13/09/2023', '20/09/2023', '27/09/2023', '04/10/2023');
 
 -- --------------------------------------------------------
 
@@ -146,14 +166,6 @@ CREATE TABLE `lista2` (
   `Pago_Total_EXT` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `lista2`
---
-
-INSERT INTO `lista2` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Monto_Restante`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_pago`, `Liquidacion_Intencion`, `Quita`, `FECHA1`, `PAGO1`, `FECHA2`, `PAGO2`, `FECHA3`, `PAGO3`, `FECHA4`, `PAGO4`, `FECHA5`, `PAGO5`, `FECHA6`, `PAGO6`, `FECHA7`, `PAGO7`, `FECHA8`, `PAGO8`, `FECHA9`, `PAGO9`, `FECHA10`, `PAGO10`, `FECHA11`, `PAGO11`, `FECHA12`, `PAGO12`, `FECHA13`, `PAGO13`, `FECHA14`, `PAGO14`, `Pago_Total_EXT`) VALUES
-('Luis Miguel', ' Cesar Donnet Hernandez Gastelum', '2300', '564.11', '4600', 'Paseo del rincon verde', 'Condominio San nicolas', '', '328', '4495919159', 'Donnetgastelum@gmail.com', 'Liquidacion', '1200', '3400', '10/06/2023', '300', '11/06/2023', '120', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '780'),
-('Bob Marley', 'Luis Angel', '7865', '10,067.20', '15730', 'asasas', 'asasas', '12', '', '12121212', 'asasas', 'Convenio', '14157', '0', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '14157');
-
 -- --------------------------------------------------------
 
 --
@@ -176,13 +188,6 @@ CREATE TABLE `lista3` (
   `Importe` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `lista3`
---
-
-INSERT INTO `lista3` (`Promotor`, `Nombre_Completo`, `Credito_Prestado`, `Pagare`, `Calle`, `Colonia`, `Num_int`, `Num_ext`, `Telefono`, `Correo`, `Tipo_de_Resolucion`, `Resolucion_Demanda`, `Importe`) VALUES
-('Juan', 'Eduardo Macias', '3241', '6482', 'asas', 'asas', '12', '', '121212', 'asassa', 'Liquidacion', 'En Tramite', '1000');
-
 -- --------------------------------------------------------
 
 --
@@ -198,8 +203,8 @@ CREATE TABLE `promotores` (
 --
 
 INSERT INTO `promotores` (`Nombre`) VALUES
-('Karely'),
-('Luis miguel');
+('Ramiro'),
+('Roberto');
 
 -- --------------------------------------------------------
 
@@ -221,18 +226,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`Usuario`, `Contraseña`, `lista1`, `lista2`, `lista3`, `liquidados`) VALUES
-('root', '', 1, 1, 1, 1),
-('admin', '', 1, 1, 1, 1);
+('admin', '', 1, 1, 1, 1),
+('root', '', 1, 1, 1, 1);
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `liquidados`
---
-ALTER TABLE `liquidados`
-  ADD PRIMARY KEY (`Nombre_Completo`);
 
 --
 -- Indices de la tabla `lista1`
@@ -251,6 +250,28 @@ ALTER TABLE `lista2`
 --
 ALTER TABLE `lista3`
   ADD PRIMARY KEY (`Nombre_Completo`);
+
+--
+-- Indices de la tabla `promotores`
+--
+ALTER TABLE `promotores`
+  ADD PRIMARY KEY (`Nombre`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`Usuario`);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `lista3`
+--
+ALTER TABLE `lista3`
+  ADD CONSTRAINT `FK_lista3_lista1` FOREIGN KEY (`Nombre_Completo`) REFERENCES `lista1` (`Nombre_Completo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

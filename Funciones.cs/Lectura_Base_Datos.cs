@@ -616,19 +616,19 @@ namespace FutureLending
                     command.Parameters.AddWithValue("@Fecha" + i, "-");
                 }
             }
-
-
             try
             {
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                Registro_errores(ex.ToString());
-
                 if (ex.ToString().Contains("Duplicate entry"))
                 {
                     Form1.MessageB("Este usuario ya existe!!!", "Alerta", 2);
+                }
+                else
+                {
+                    Registro_errores(ex.ToString());
                 }
             }
         }
