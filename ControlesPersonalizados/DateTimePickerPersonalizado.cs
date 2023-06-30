@@ -1,139 +1,147 @@
 ﻿using System.Drawing.Drawing2D;
+using FutureLending.Properties;
 
-namespace FutureLending.ControlesPersonalizados
+namespace FutureLending.ControlesPersonalizados;
+
+public class DateTimePickerPersonalizado : DateTimePicker
 {
-    public class DateTimePickerPersonalizado : DateTimePicker
+    private const int calendarIconWidth = 34;
+    private const int arrowIconWidth = 17;
+    private Color borderColor = Color.PaleVioletRed;
+    private int borderSize;
+    private Image calendarIcon = Resources.calendarWhite;
+
+    //-> Other Values
+    private bool droppedDown;
+
+    private RectangleF iconButtonArea;
+
+    //Fields
+    //-> Appearance
+    private Color skinColor = Color.MediumSlateBlue;
+    private Color textColor = Color.White;
+
+    //Constructor
+    public DateTimePickerPersonalizado()
     {
-        //Fields
-        //-> Appearance
-        private Color skinColor = Color.MediumSlateBlue;
-        private Color textColor = Color.White;
-        private Color borderColor = Color.PaleVioletRed;
-        private int borderSize = 0;
+        SetStyle(ControlStyles.UserPaint, true);
+        MinimumSize = new Size(0, 35);
+        Font = new Font(Font.Name, 9.5F);
+    }
 
-        //-> Other Values
-        private bool droppedDown = false;
-        private Image calendarIcon = Properties.Resources.calendarWhite;
-        private RectangleF iconButtonArea;
-        private const int calendarIconWidth = 34;
-        private const int arrowIconWidth = 17;
+    //Properties
+    public Color SkinColor
+    {
+        get => skinColor;
+        set
+        {
+            skinColor = value;
+            if (skinColor.GetBrightness() >= 0.8F)
+                calendarIcon = Resources.calendarDark;
+            else calendarIcon = Resources.calendarWhite;
+            Invalidate();
+        }
+    }
 
-        //Properties
-        public Color SkinColor
+    public Color TextColor
+    {
+        get => textColor;
+        set
         {
-            get { return skinColor; }
-            set
-            {
-                skinColor = value;
-                if (skinColor.GetBrightness() >= 0.8F)
-                    calendarIcon = Properties.Resources.calendarDark;
-                else calendarIcon = Properties.Resources.calendarWhite;
-                this.Invalidate();
-            }
+            textColor = value;
+            Invalidate();
         }
+    }
 
-        public Color TextColor
+    public Color BorderColor
+    {
+        get => borderColor;
+        set
         {
-            get { return textColor; }
-            set
-            {
-                textColor = value;
-                this.Invalidate();
-            }
+            borderColor = value;
+            Invalidate();
         }
+    }
 
-        public Color BorderColor
+    public int BorderSize
+    {
+        get => borderSize;
+        set
         {
-            get { return borderColor; }
-            set
-            {
-                borderColor = value;
-                this.Invalidate();
-            }
+            borderSize = value;
+            Invalidate();
         }
+    }
 
-        public int BorderSize
-        {
-            get { return borderSize; }
-            set
-            {
-                borderSize = value;
-                this.Invalidate();
-            }
-        }
+    //Overridden methods
+    protected override void OnDropDown(EventArgs eventargs)
+    {
+        base.OnDropDown(eventargs);
+        droppedDown = true;
+    }
 
-        //Constructor
-        public DateTimePickerPersonalizado()
-        {
-            this.SetStyle(ControlStyles.UserPaint, true);
-            this.MinimumSize = new Size(0, 35);
-            this.Font = new Font(this.Font.Name, 9.5F);
-        }
+    protected override void OnCloseUp(EventArgs eventargs)
+    {
+        base.OnCloseUp(eventargs);
+        droppedDown = false;
+    }
 
-        //Overridden methods
-        protected override void OnDropDown(EventArgs eventargs)
-        {
-            base.OnDropDown(eventargs);
-            droppedDown = true;
-        }
-        protected override void OnCloseUp(EventArgs eventargs)
-        {
-            base.OnCloseUp(eventargs);
-            droppedDown = false;
-        }
-        protected override void OnKeyPress(KeyPressEventArgs e)
-        {
-            base.OnKeyPress(e);
-            e.Handled = true;
-        }
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            using (Graphics graphics = this.CreateGraphics())
-            using (Pen penBorder = new Pen(borderColor, borderSize))
-            using (SolidBrush skinBrush = new SolidBrush(skinColor))
-            using (SolidBrush openIconBrush = new SolidBrush(Color.FromArgb(50, 64, 64, 64)))
-            using (SolidBrush textBrush = new SolidBrush(textColor))
-            using (StringFormat textFormat = new StringFormat())
-            {
-                RectangleF clientArea = new RectangleF(0, 0, this.Width - 0.5F, this.Height - 0.5F);
-                RectangleF iconArea = new RectangleF(clientArea.Width - calendarIconWidth, 0, calendarIconWidth, clientArea.Height);
-                penBorder.Alignment = PenAlignment.Inset;
-                textFormat.LineAlignment = StringAlignment.Center;
+    protected override void OnKeyPress(KeyPressEventArgs e)
+    {
+        base.OnKeyPress(e);
+        e.Handled = true;
+    }
 
-                //Draw surface
-                graphics.FillRectangle(skinBrush, clientArea);
-                //Draw text
-                graphics.DrawString("   " + this.Text, this.Font, textBrush, clientArea, textFormat);
-                //Draw open calendar icon highlight
-                if (droppedDown == true) graphics.FillRectangle(openIconBrush, iconArea);
-                //Draw border 
-                if (borderSize >= 1) graphics.DrawRectangle(penBorder, clientArea.X, clientArea.Y, clientArea.Width, clientArea.Height);
-                //Draw icon
-                graphics.DrawImage(calendarIcon, this.Width - calendarIcon.Width - 9, (this.Height - calendarIcon.Height) / 2);
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        using (var graphics = CreateGraphics())
+        using (var penBorder = new Pen(borderColor, borderSize))
+        using (var skinBrush = new SolidBrush(skinColor))
+        using (var openIconBrush = new SolidBrush(Color.FromArgb(50, 64, 64, 64)))
+        using (var textBrush = new SolidBrush(textColor))
+        using (var textFormat = new StringFormat())
+        {
+            var clientArea = new RectangleF(0, 0, Width - 0.5F, Height - 0.5F);
+            var iconArea = new RectangleF(clientArea.Width - calendarIconWidth, 0, calendarIconWidth,
+                clientArea.Height);
+            penBorder.Alignment = PenAlignment.Inset;
+            textFormat.LineAlignment = StringAlignment.Center;
 
-            }
+            //Draw surface
+            graphics.FillRectangle(skinBrush, clientArea);
+            //Draw text
+            graphics.DrawString("   " + Text, Font, textBrush, clientArea, textFormat);
+            //Draw open calendar icon highlight
+            if (droppedDown) graphics.FillRectangle(openIconBrush, iconArea);
+            //Draw border 
+            if (borderSize >= 1)
+                graphics.DrawRectangle(penBorder, clientArea.X, clientArea.Y, clientArea.Width, clientArea.Height);
+            //Draw icon
+            graphics.DrawImage(calendarIcon, Width - calendarIcon.Width - 9, (Height - calendarIcon.Height) / 2);
         }
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            int iconWidth = GetIconButtonWidth();
-            iconButtonArea = new RectangleF(this.Width - iconWidth, 0, iconWidth, this.Height);
-        }
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-            if (iconButtonArea.Contains(e.Location))
-                this.Cursor = Cursors.Hand;
-            else this.Cursor = Cursors.Default;
-        }
+    }
 
-        //Private methods
-        private int GetIconButtonWidth()
-        {
-            int textWidh = TextRenderer.MeasureText(this.Text, this.Font).Width;
-            if (textWidh <= this.Width - (calendarIconWidth + 20))
-                return calendarIconWidth;
-            else return arrowIconWidth;
-        }
+    protected override void OnHandleCreated(EventArgs e)
+    {
+        base.OnHandleCreated(e);
+        var iconWidth = GetIconButtonWidth();
+        iconButtonArea = new RectangleF(Width - iconWidth, 0, iconWidth, Height);
+    }
+
+    protected override void OnMouseMove(MouseEventArgs e)
+    {
+        base.OnMouseMove(e);
+        if (iconButtonArea.Contains(e.Location))
+            Cursor = Cursors.Hand;
+        else Cursor = Cursors.Default;
+    }
+
+    //Private methods
+    private int GetIconButtonWidth()
+    {
+        var textWidh = TextRenderer.MeasureText(Text, Font).Width;
+        if (textWidh <= Width - (calendarIconWidth + 20))
+            return calendarIconWidth;
+        return arrowIconWidth;
     }
 }

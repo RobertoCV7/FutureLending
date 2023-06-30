@@ -34,20 +34,21 @@ namespace FutureLending.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            components = new Container();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelMenu = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnTodosSistemas = new FontAwesome.Sharp.IconButton();
-            btnEstadoPagos = new FontAwesome.Sharp.IconButton();
-            btnListas = new FontAwesome.Sharp.IconButton();
-            btnIngresarClientes = new FontAwesome.Sharp.IconButton();
+            iconButton2 = new IconButton();
+            iconButton1 = new IconButton();
+            btnTodosSistemas = new IconButton();
+            btnEstadoPagos = new IconButton();
+            btnListas = new IconButton();
+            btnIngresarClientes = new IconButton();
             panel1 = new Panel();
-            btnMenu = new FontAwesome.Sharp.IconButton();
+            btnMenu = new IconButton();
             pictureBox1 = new PictureBox();
             PnlEditar2 = new Panel();
             btnEditarFechas2 = new RjButton();
@@ -64,7 +65,7 @@ namespace FutureLending.Forms
             label72 = new Label();
             groupBox2 = new GroupBox();
             btnMover3 = new RjButton();
-            CmbLista2 = new ControlesPersonalizados.RjComboBox();
+            CmbLista2 = new RjComboBox();
             TextBoxCorreo = new TextBoxPersonalizado();
             label73 = new Label();
             TextBoxTelefono = new TextBoxPersonalizado();
@@ -78,13 +79,13 @@ namespace FutureLending.Forms
             TextBoxCalle = new TextBoxPersonalizado();
             label78 = new Label();
             label79 = new Label();
-            rjComboBox7 = new ControlesPersonalizados.RjComboBox();
+            rjComboBox7 = new RjComboBox();
             label80 = new Label();
             TextBoxCredito = new TextBoxPersonalizado();
             label83 = new Label();
             TextBoxNombre = new TextBoxPersonalizado();
             label84 = new Label();
-            rjComboBox8 = new ControlesPersonalizados.RjComboBox();
+            rjComboBox8 = new RjComboBox();
             panelTitleBar = new Panel();
             lblTitle = new Label();
             pnlRegPago = new Panel();
@@ -92,8 +93,8 @@ namespace FutureLending.Forms
             label82 = new Label();
             TextBoxRestantepagos = new TextBoxPersonalizado();
             label17 = new Label();
-            rjComboBox9 = new ControlesPersonalizados.RjComboBox();
-            ComBoxName = new ControlesPersonalizados.RjComboBox();
+            rjComboBox9 = new RjComboBox();
+            ComBoxName = new RjComboBox();
             label29 = new Label();
             btnBuscarC = new RjButton();
             lblFecha = new Label();
@@ -108,7 +109,7 @@ namespace FutureLending.Forms
             btnGuardar1 = new RjButton();
             dateTimePickerPersonalizado2 = new DateTimePickerPersonalizado();
             label65 = new Label();
-            cmbInteres = new ControlesPersonalizados.RjComboBox();
+            cmbInteres = new RjComboBox();
             txtTotal_I = new TextBoxPersonalizado();
             label16 = new Label();
             txtTotal = new TextBoxPersonalizado();
@@ -127,7 +128,7 @@ namespace FutureLending.Forms
             label9 = new Label();
             label7 = new Label();
             label6 = new Label();
-            cmbTipo = new ControlesPersonalizados.RjComboBox();
+            cmbTipo = new RjComboBox();
             label5 = new Label();
             label4 = new Label();
             dateFechaInicio = new DateTimePickerPersonalizado();
@@ -136,13 +137,13 @@ namespace FutureLending.Forms
             label2 = new Label();
             txtNombre = new TextBoxPersonalizado();
             label1 = new Label();
-            cmbPromotor = new ControlesPersonalizados.RjComboBox();
+            cmbPromotor = new RjComboBox();
             PanelEditar3 = new Panel();
             btnGuardar2 = new RjButton();
-            ResolucionDemanda = new ControlesPersonalizados.RjComboBox();
+            ResolucionDemanda = new RjComboBox();
             groupBox3 = new GroupBox();
             btnMover2 = new RjButton();
-            rjComboBox5 = new ControlesPersonalizados.RjComboBox();
+            rjComboBox5 = new RjComboBox();
             TextImporte3 = new TextBoxPersonalizado();
             label103 = new Label();
             label92 = new Label();
@@ -163,21 +164,21 @@ namespace FutureLending.Forms
             TextBoxCalle3 = new TextBoxPersonalizado();
             label100 = new Label();
             label101 = new Label();
-            ComboBoxResolucion3 = new ControlesPersonalizados.RjComboBox();
+            ComboBoxResolucion3 = new RjComboBox();
             label102 = new Label();
             TextBoxCredito3 = new TextBoxPersonalizado();
             label105 = new Label();
             TextBoxNombre3 = new TextBoxPersonalizado();
             LabelNombre3 = new Label();
-            ComboBoxPromotor3 = new ControlesPersonalizados.RjComboBox();
+            ComboBoxPromotor3 = new RjComboBox();
             pnlListas = new Panel();
             labelDineroAire = new Label();
             flowLayoutPanel5 = new FlowLayoutPanel();
-            ComboBoxPromotoresListas = new ControlesPersonalizados.RjComboBox();
+            ComboBoxPromotoresListas = new RjComboBox();
             label57 = new Label();
             BarradeProgreso = new ProgressBar();
             flowLayoutPanel3 = new FlowLayoutPanel();
-            cmbCliente = new ControlesPersonalizados.RjComboBox();
+            cmbCliente = new RjComboBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
             btnEditar = new RjButton();
             btnEliminar = new RjButton();
@@ -204,7 +205,7 @@ namespace FutureLending.Forms
             label26 = new Label();
             groupBox1 = new GroupBox();
             BtnMover = new RjButton();
-            cmbLista = new ControlesPersonalizados.RjComboBox();
+            cmbLista = new RjComboBox();
             textBoxPersonalizado1 = new TextBoxPersonalizado();
             label18 = new Label();
             textBoxPersonalizado2 = new TextBoxPersonalizado();
@@ -217,9 +218,9 @@ namespace FutureLending.Forms
             label23 = new Label();
             textBoxPersonalizado6 = new TextBoxPersonalizado();
             label24 = new Label();
-            rjComboBox1 = new ControlesPersonalizados.RjComboBox();
+            rjComboBox1 = new RjComboBox();
             label28 = new Label();
-            rjComboBox2 = new ControlesPersonalizados.RjComboBox();
+            rjComboBox2 = new RjComboBox();
             label30 = new Label();
             label31 = new Label();
             dateTimePickerPersonalizado1 = new DateTimePickerPersonalizado();
@@ -228,8 +229,8 @@ namespace FutureLending.Forms
             label33 = new Label();
             textBoxPersonalizado10 = new TextBoxPersonalizado();
             label34 = new Label();
-            rjComboBox3 = new ControlesPersonalizados.RjComboBox();
-            bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
+            rjComboBox3 = new RjComboBox();
+            bunifuElipse1 = new BunifuElipse(components);
             PanelBien = new Panel();
             label58 = new Label();
             label56 = new Label();
@@ -256,7 +257,7 @@ namespace FutureLending.Forms
             flowLayoutPanel6 = new FlowLayoutPanel();
             label39 = new Label();
             label40 = new Label();
-            comboBox1 = new ControlesPersonalizados.RjComboBox();
+            comboBox1 = new RjComboBox();
             Boton_Permisos = new RjButton();
             label41 = new Label();
             textBox2 = new TextBox();
@@ -292,7 +293,7 @@ namespace FutureLending.Forms
             rjButton4 = new RjButton();
             label64 = new Label();
             textBox5 = new TextBox();
-            rjComboBox4 = new ControlesPersonalizados.RjComboBox();
+            rjComboBox4 = new RjComboBox();
             label62 = new Label();
             label63 = new Label();
             textBox4 = new TextBox();
@@ -312,15 +313,15 @@ namespace FutureLending.Forms
             label85 = new Label();
             FechaEnLista2 = new DateTimePickerPersonalizado();
             label71 = new Label();
-            ComboBoxDeFechas = new ControlesPersonalizados.RjComboBox();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            ComboBoxDeFechas = new RjComboBox();
+            backgroundWorker1 = new BackgroundWorker();
+            backgroundWorker2 = new BackgroundWorker();
             PanelEditarLiquidados = new Panel();
             BottonLiq = new RjButton();
             FechaInicioLiq = new DateTimePickerPersonalizado();
             label91 = new Label();
             label90 = new Label();
-            ComBoBoxLiquidacion = new ControlesPersonalizados.RjComboBox();
+            ComBoBoxLiquidacion = new RjComboBox();
             label104 = new Label();
             label106 = new Label();
             TextCorreoLiq = new TextBoxPersonalizado();
@@ -340,11 +341,10 @@ namespace FutureLending.Forms
             label115 = new Label();
             TextNombreLiq = new TextBoxPersonalizado();
             label116 = new Label();
-            ComboBoxPromotorLiq = new ControlesPersonalizados.RjComboBox();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
+            ComboBoxPromotorLiq = new RjComboBox();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((ISupportInitialize)pictureBox1).BeginInit();
             PnlEditar2.SuspendLayout();
             groupBox2.SuspendLayout();
             panelTitleBar.SuspendLayout();
@@ -357,7 +357,7 @@ namespace FutureLending.Forms
             flowLayoutPanel3.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridListas).BeginInit();
+            ((ISupportInitialize)gridListas).BeginInit();
             PanelEditar.SuspendLayout();
             groupBox1.SuspendLayout();
             PanelBien.SuspendLayout();
@@ -387,14 +387,27 @@ namespace FutureLending.Forms
             panelMenu.Controls.Add(panel1);
             panelMenu.Name = "panelMenu";
             // 
+            // iconButton2
+            // 
+            resources.ApplyResources(iconButton2, "iconButton2");
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.ForeColor = Color.White;
+            iconButton2.IconChar = IconChar.DoorOpen;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = IconFont.Auto;
+            iconButton2.Name = "iconButton2";
+            iconButton2.Tag = "Cerrar Sesión";
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
+            // 
             // iconButton1
             // 
             resources.ApplyResources(iconButton1, "iconButton1");
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Computer;
+            iconButton1.IconChar = IconChar.Computer;
             iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconFont = IconFont.Auto;
             iconButton1.Name = "iconButton1";
             iconButton1.Tag = "Configuración";
             iconButton1.UseVisualStyleBackColor = true;
@@ -405,9 +418,9 @@ namespace FutureLending.Forms
             resources.ApplyResources(btnTodosSistemas, "btnTodosSistemas");
             btnTodosSistemas.FlatAppearance.BorderSize = 0;
             btnTodosSistemas.ForeColor = Color.White;
-            btnTodosSistemas.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            btnTodosSistemas.IconChar = IconChar.Wrench;
             btnTodosSistemas.IconColor = Color.White;
-            btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTodosSistemas.IconFont = IconFont.Auto;
             btnTodosSistemas.Name = "btnTodosSistemas";
             btnTodosSistemas.Tag = "Reparar";
             btnTodosSistemas.UseVisualStyleBackColor = true;
@@ -418,9 +431,9 @@ namespace FutureLending.Forms
             resources.ApplyResources(btnEstadoPagos, "btnEstadoPagos");
             btnEstadoPagos.FlatAppearance.BorderSize = 0;
             btnEstadoPagos.ForeColor = Color.White;
-            btnEstadoPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            btnEstadoPagos.IconChar = IconChar.MoneyCheckDollar;
             btnEstadoPagos.IconColor = Color.White;
-            btnEstadoPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEstadoPagos.IconFont = IconFont.Auto;
             btnEstadoPagos.Name = "btnEstadoPagos";
             btnEstadoPagos.Tag = "  Estado de pagos";
             btnEstadoPagos.UseVisualStyleBackColor = true;
@@ -431,9 +444,9 @@ namespace FutureLending.Forms
             resources.ApplyResources(btnListas, "btnListas");
             btnListas.FlatAppearance.BorderSize = 0;
             btnListas.ForeColor = Color.White;
-            btnListas.IconChar = FontAwesome.Sharp.IconChar.ListNumeric;
+            btnListas.IconChar = IconChar.ListNumeric;
             btnListas.IconColor = Color.White;
-            btnListas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnListas.IconFont = IconFont.Auto;
             btnListas.Name = "btnListas";
             btnListas.Tag = "  Listas completas";
             btnListas.UseVisualStyleBackColor = true;
@@ -444,9 +457,9 @@ namespace FutureLending.Forms
             resources.ApplyResources(btnIngresarClientes, "btnIngresarClientes");
             btnIngresarClientes.FlatAppearance.BorderSize = 0;
             btnIngresarClientes.ForeColor = Color.White;
-            btnIngresarClientes.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            btnIngresarClientes.IconChar = IconChar.AddressCard;
             btnIngresarClientes.IconColor = Color.White;
-            btnIngresarClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnIngresarClientes.IconFont = IconFont.Auto;
             btnIngresarClientes.Name = "btnIngresarClientes";
             btnIngresarClientes.Tag = "   Ingresar clientes";
             btnIngresarClientes.UseVisualStyleBackColor = true;
@@ -463,9 +476,9 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(btnMenu, "btnMenu");
             btnMenu.FlatAppearance.BorderSize = 0;
-            btnMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
+            btnMenu.IconChar = IconChar.Navicon;
             btnMenu.IconColor = Color.White;
-            btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMenu.IconFont = IconFont.Auto;
             btnMenu.IconSize = 30;
             btnMenu.Name = "btnMenu";
             btnMenu.UseVisualStyleBackColor = true;
@@ -519,6 +532,7 @@ namespace FutureLending.Forms
             // btnEditarFechas2
             // 
             resources.ApplyResources(btnEditarFechas2, "btnEditarFechas2");
+            btnEditarFechas2.BackColor = SystemColors.ActiveCaption;
             btnEditarFechas2.BackgroundColor = SystemColors.ActiveCaption;
             btnEditarFechas2.BorderColor = SystemColors.ActiveCaption;
             btnEditarFechas2.BorderRadius = 15;
@@ -533,6 +547,7 @@ namespace FutureLending.Forms
             // btnGuardarC
             // 
             resources.ApplyResources(btnGuardarC, "btnGuardarC");
+            btnGuardarC.BackColor = Color.SteelBlue;
             btnGuardarC.BackgroundColor = Color.SteelBlue;
             btnGuardarC.BorderColor = Color.SteelBlue;
             btnGuardarC.BorderRadius = 15;
@@ -655,6 +670,7 @@ namespace FutureLending.Forms
             // btnMover3
             // 
             resources.ApplyResources(btnMover3, "btnMover3");
+            btnMover3.BackColor = Color.IndianRed;
             btnMover3.BackgroundColor = Color.IndianRed;
             btnMover3.BorderColor = SystemColors.ActiveCaption;
             btnMover3.BorderRadius = 15;
@@ -1023,6 +1039,7 @@ namespace FutureLending.Forms
             // btnBuscarC
             // 
             resources.ApplyResources(btnBuscarC, "btnBuscarC");
+            btnBuscarC.BackColor = SystemColors.ActiveCaption;
             btnBuscarC.BackgroundColor = SystemColors.ActiveCaption;
             btnBuscarC.BorderColor = SystemColors.ActiveCaption;
             btnBuscarC.BorderRadius = 10;
@@ -1081,6 +1098,7 @@ namespace FutureLending.Forms
             // btnMarcarP
             // 
             resources.ApplyResources(btnMarcarP, "btnMarcarP");
+            btnMarcarP.BackColor = Color.SteelBlue;
             btnMarcarP.BackgroundColor = Color.SteelBlue;
             btnMarcarP.BorderColor = Color.SteelBlue;
             btnMarcarP.BorderRadius = 10;
@@ -1147,6 +1165,7 @@ namespace FutureLending.Forms
             // btnCalcular1
             // 
             resources.ApplyResources(btnCalcular1, "btnCalcular1");
+            btnCalcular1.BackColor = SystemColors.ActiveCaption;
             btnCalcular1.BackgroundColor = SystemColors.ActiveCaption;
             btnCalcular1.BorderColor = SystemColors.ActiveCaption;
             btnCalcular1.BorderRadius = 15;
@@ -1161,6 +1180,7 @@ namespace FutureLending.Forms
             // btnGuardar1
             // 
             resources.ApplyResources(btnGuardar1, "btnGuardar1");
+            btnGuardar1.BackColor = Color.IndianRed;
             btnGuardar1.BackgroundColor = Color.IndianRed;
             btnGuardar1.BorderColor = Color.SteelBlue;
             btnGuardar1.BorderRadius = 15;
@@ -1554,6 +1574,7 @@ namespace FutureLending.Forms
             // btnGuardar2
             // 
             resources.ApplyResources(btnGuardar2, "btnGuardar2");
+            btnGuardar2.BackColor = Color.IndianRed;
             btnGuardar2.BackgroundColor = Color.IndianRed;
             btnGuardar2.BorderColor = Color.SteelBlue;
             btnGuardar2.BorderRadius = 15;
@@ -1596,6 +1617,7 @@ namespace FutureLending.Forms
             // btnMover2
             // 
             resources.ApplyResources(btnMover2, "btnMover2");
+            btnMover2.BackColor = SystemColors.ActiveCaption;
             btnMover2.BackgroundColor = SystemColors.ActiveCaption;
             btnMover2.BorderColor = SystemColors.ActiveCaption;
             btnMover2.BorderRadius = 15;
@@ -2003,6 +2025,7 @@ namespace FutureLending.Forms
             // btnEditar
             // 
             resources.ApplyResources(btnEditar, "btnEditar");
+            btnEditar.BackColor = SystemColors.ActiveCaption;
             btnEditar.BackgroundColor = SystemColors.ActiveCaption;
             btnEditar.BorderColor = SystemColors.ActiveCaption;
             btnEditar.BorderRadius = 15;
@@ -2017,6 +2040,7 @@ namespace FutureLending.Forms
             // btnEliminar
             // 
             resources.ApplyResources(btnEliminar, "btnEliminar");
+            btnEliminar.BackColor = Color.IndianRed;
             btnEliminar.BackgroundColor = Color.IndianRed;
             btnEliminar.BorderColor = Color.IndianRed;
             btnEliminar.BorderRadius = 15;
@@ -2042,6 +2066,7 @@ namespace FutureLending.Forms
             // btnLista1
             // 
             resources.ApplyResources(btnLista1, "btnLista1");
+            btnLista1.BackColor = SystemColors.ActiveCaption;
             btnLista1.BackgroundColor = SystemColors.ActiveCaption;
             btnLista1.BorderColor = SystemColors.ActiveCaption;
             btnLista1.BorderRadius = 15;
@@ -2057,6 +2082,7 @@ namespace FutureLending.Forms
             // btnLista2
             // 
             resources.ApplyResources(btnLista2, "btnLista2");
+            btnLista2.BackColor = Color.SteelBlue;
             btnLista2.BackgroundColor = Color.SteelBlue;
             btnLista2.BorderColor = Color.SteelBlue;
             btnLista2.BorderRadius = 15;
@@ -2072,6 +2098,7 @@ namespace FutureLending.Forms
             // btnLista3
             // 
             resources.ApplyResources(btnLista3, "btnLista3");
+            btnLista3.BackColor = SystemColors.ActiveCaption;
             btnLista3.BackgroundColor = SystemColors.ActiveCaption;
             btnLista3.BorderColor = SystemColors.ActiveCaption;
             btnLista3.BorderRadius = 15;
@@ -2087,6 +2114,7 @@ namespace FutureLending.Forms
             // btnMostrarTodos
             // 
             resources.ApplyResources(btnMostrarTodos, "btnMostrarTodos");
+            btnMostrarTodos.BackColor = SystemColors.ActiveCaption;
             btnMostrarTodos.BackgroundColor = SystemColors.ActiveCaption;
             btnMostrarTodos.BorderColor = SystemColors.ActiveCaption;
             btnMostrarTodos.BorderRadius = 15;
@@ -2102,6 +2130,7 @@ namespace FutureLending.Forms
             // btnLiquidados
             // 
             resources.ApplyResources(btnLiquidados, "btnLiquidados");
+            btnLiquidados.BackColor = Color.SteelBlue;
             btnLiquidados.BackgroundColor = Color.SteelBlue;
             btnLiquidados.BorderColor = Color.SteelBlue;
             btnLiquidados.BorderRadius = 15;
@@ -2117,6 +2146,7 @@ namespace FutureLending.Forms
             // rjButton1
             // 
             resources.ApplyResources(rjButton1, "rjButton1");
+            rjButton1.BackColor = Color.MidnightBlue;
             rjButton1.BackgroundColor = Color.MidnightBlue;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -2229,6 +2259,7 @@ namespace FutureLending.Forms
             // BtnGuardarCambio
             // 
             resources.ApplyResources(BtnGuardarCambio, "BtnGuardarCambio");
+            BtnGuardarCambio.BackColor = Color.IndianRed;
             BtnGuardarCambio.BackgroundColor = Color.IndianRed;
             BtnGuardarCambio.BorderColor = Color.PaleVioletRed;
             BtnGuardarCambio.BorderRadius = 20;
@@ -2344,6 +2375,7 @@ namespace FutureLending.Forms
             // BtnMover
             // 
             resources.ApplyResources(BtnMover, "BtnMover");
+            BtnMover.BackColor = Color.Gray;
             BtnMover.BackgroundColor = Color.Gray;
             BtnMover.BorderColor = Color.PaleVioletRed;
             BtnMover.BorderRadius = 20;
@@ -2794,6 +2826,7 @@ namespace FutureLending.Forms
             // Button1
             // 
             resources.ApplyResources(Button1, "Button1");
+            Button1.BackColor = SystemColors.ActiveCaption;
             Button1.BackgroundColor = SystemColors.ActiveCaption;
             Button1.BorderColor = Color.PaleVioletRed;
             Button1.BorderRadius = 20;
@@ -2856,6 +2889,7 @@ namespace FutureLending.Forms
             // Boton_Permisos
             // 
             resources.ApplyResources(Boton_Permisos, "Boton_Permisos");
+            Boton_Permisos.BackColor = SystemColors.ActiveCaption;
             Boton_Permisos.BackgroundColor = SystemColors.ActiveCaption;
             Boton_Permisos.BorderColor = Color.PaleVioletRed;
             Boton_Permisos.BorderRadius = 20;
@@ -2910,6 +2944,7 @@ namespace FutureLending.Forms
             // rjButton11
             // 
             resources.ApplyResources(rjButton11, "rjButton11");
+            rjButton11.BackColor = SystemColors.ActiveCaption;
             rjButton11.BackgroundColor = SystemColors.ActiveCaption;
             rjButton11.BorderColor = Color.PaleVioletRed;
             rjButton11.BorderRadius = 20;
@@ -2924,6 +2959,7 @@ namespace FutureLending.Forms
             // rjButton12
             // 
             resources.ApplyResources(rjButton12, "rjButton12");
+            rjButton12.BackColor = Color.IndianRed;
             rjButton12.BackgroundColor = Color.IndianRed;
             rjButton12.BorderColor = Color.PaleVioletRed;
             rjButton12.BorderRadius = 20;
@@ -2970,6 +3006,7 @@ namespace FutureLending.Forms
             // rjButton3
             // 
             resources.ApplyResources(rjButton3, "rjButton3");
+            rjButton3.BackColor = SystemColors.ActiveCaption;
             rjButton3.BackgroundColor = SystemColors.ActiveCaption;
             rjButton3.BorderColor = Color.PaleVioletRed;
             rjButton3.BorderRadius = 20;
@@ -2996,6 +3033,7 @@ namespace FutureLending.Forms
             // rjButton2
             // 
             resources.ApplyResources(rjButton2, "rjButton2");
+            rjButton2.BackColor = Color.IndianRed;
             rjButton2.BackgroundColor = Color.IndianRed;
             rjButton2.BorderColor = Color.PaleVioletRed;
             rjButton2.BorderRadius = 20;
@@ -3114,6 +3152,7 @@ namespace FutureLending.Forms
             // rjButton6
             // 
             resources.ApplyResources(rjButton6, "rjButton6");
+            rjButton6.BackColor = Color.IndianRed;
             rjButton6.BackgroundColor = Color.IndianRed;
             rjButton6.BorderColor = Color.PaleVioletRed;
             rjButton6.BorderRadius = 20;
@@ -3128,6 +3167,7 @@ namespace FutureLending.Forms
             // rjButton5
             // 
             resources.ApplyResources(rjButton5, "rjButton5");
+            rjButton5.BackColor = SystemColors.ActiveCaption;
             rjButton5.BackgroundColor = SystemColors.ActiveCaption;
             rjButton5.BorderColor = Color.PaleVioletRed;
             rjButton5.BorderRadius = 20;
@@ -3142,6 +3182,7 @@ namespace FutureLending.Forms
             // rjButton4
             // 
             resources.ApplyResources(rjButton4, "rjButton4");
+            rjButton4.BackColor = SystemColors.ActiveCaption;
             rjButton4.BackgroundColor = SystemColors.ActiveCaption;
             rjButton4.BorderColor = Color.PaleVioletRed;
             rjButton4.BorderRadius = 20;
@@ -3240,6 +3281,7 @@ namespace FutureLending.Forms
             // rjButton7
             // 
             resources.ApplyResources(rjButton7, "rjButton7");
+            rjButton7.BackColor = Color.SlateGray;
             rjButton7.BackgroundColor = Color.SlateGray;
             rjButton7.BorderColor = Color.PaleVioletRed;
             rjButton7.BorderRadius = 20;
@@ -3254,6 +3296,7 @@ namespace FutureLending.Forms
             // BotonVolverEditar2
             // 
             resources.ApplyResources(BotonVolverEditar2, "BotonVolverEditar2");
+            BotonVolverEditar2.BackColor = Color.SlateGray;
             BotonVolverEditar2.BackgroundColor = Color.SlateGray;
             BotonVolverEditar2.BorderColor = Color.PaleVioletRed;
             BotonVolverEditar2.BorderRadius = 20;
@@ -3268,6 +3311,7 @@ namespace FutureLending.Forms
             // Botoncambiodefechamomentaneo
             // 
             resources.ApplyResources(Botoncambiodefechamomentaneo, "Botoncambiodefechamomentaneo");
+            Botoncambiodefechamomentaneo.BackColor = Color.IndianRed;
             Botoncambiodefechamomentaneo.BackgroundColor = Color.IndianRed;
             Botoncambiodefechamomentaneo.BorderColor = Color.PaleVioletRed;
             Botoncambiodefechamomentaneo.BorderRadius = 20;
@@ -3409,6 +3453,7 @@ namespace FutureLending.Forms
             // BottonLiq
             // 
             resources.ApplyResources(BottonLiq, "BottonLiq");
+            BottonLiq.BackColor = Color.IndianRed;
             BottonLiq.BackgroundColor = Color.IndianRed;
             BottonLiq.BorderColor = Color.PaleVioletRed;
             BottonLiq.BorderRadius = 20;
@@ -3668,19 +3713,6 @@ namespace FutureLending.Forms
             ComboBoxPromotorLiq.Tag = "Seleccione al promotor";
             ComboBoxPromotorLiq.Texts = "Seleccione al promotor";
             // 
-            // iconButton2
-            // 
-            resources.ApplyResources(iconButton2, "iconButton2");
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.ForeColor = Color.White;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Name = "iconButton2";
-            iconButton2.Tag = "Cerrar Sesión";
-            iconButton2.UseVisualStyleBackColor = true;
-            iconButton2.Click += iconButton2_Click;
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -3703,7 +3735,7 @@ namespace FutureLending.Forms
             FormClosed += Form1_FormClosed;
             panelMenu.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((ISupportInitialize)pictureBox1).EndInit();
             PnlEditar2.ResumeLayout(false);
             PnlEditar2.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -3722,7 +3754,7 @@ namespace FutureLending.Forms
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gridListas).EndInit();
+            ((ISupportInitialize)gridListas).EndInit();
             PanelEditar.ResumeLayout(false);
             PanelEditar.PerformLayout();
             groupBox1.ResumeLayout(false);
