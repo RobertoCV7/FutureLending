@@ -337,6 +337,7 @@ namespace FutureLending
             TextNombreLiq = new TextBoxPersonalizado();
             label116 = new Label();
             ComboBoxPromotorLiq = new ControlesPersonalizados.RJComboBox();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -373,6 +374,7 @@ namespace FutureLending
             // 
             resources.ApplyResources(panelMenu, "panelMenu");
             panelMenu.BackColor = Color.LightSlateGray;
+            panelMenu.Controls.Add(iconButton2);
             panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnTodosSistemas);
             panelMenu.Controls.Add(btnEstadoPagos);
@@ -3697,6 +3699,19 @@ namespace FutureLending
             ComboBoxPromotorLiq.Tag = "Seleccione al promotor";
             ComboBoxPromotorLiq.Texts = "Seleccione al promotor";
             // 
+            // iconButton2
+            // 
+            resources.ApplyResources(iconButton2, "iconButton2");
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.ForeColor = Color.White;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.Name = "iconButton2";
+            iconButton2.Tag = "Cerrar Sesión";
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -3716,7 +3731,6 @@ namespace FutureLending
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
-            FormClosing += Form1_FormClosing;
             FormClosed += Form1_FormClosed;
             panelMenu.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -4072,5 +4086,6 @@ namespace FutureLending
         private Label label87;
         private RJButton rjButton7;
         private Label PingLabel;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

@@ -1,4 +1,4 @@
-using FutureLending.Funciones.cs;
+
 
 namespace FutureLending
 {
@@ -10,13 +10,18 @@ namespace FutureLending
         [STAThread]
         static void Main()
         {
-            BackupService backupService = new BackupService();
-            // Ejecutar StartBackup() en un hilo separado
-            Task backupTask = Task.Run(() => backupService.StartBackup(true));
             ApplicationConfiguration.Initialize();
-            Application.Run(new Inicio_Sesion());
+            Inicio_Sesion inicio_Sesion = new Inicio_Sesion();
+            inicio_Sesion.ShowDialog();
+            if (iniciado)
+            {
+
+                Application.Run(new Form1());
+            }
 
         }
-
+        public static bool iniciado = false;
+        public static string NombreUsuario;
     }
+    
 }

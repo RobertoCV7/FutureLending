@@ -60,10 +60,10 @@ def generar_datos_aleatorios():
 
 # Conexión a la base de datos MySQL
 conexion = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="prestamos"
+    host="prestamos.cixiiohalkzx.us-east-2.rds.amazonaws.com",
+    user="DespachoJuridico",
+    password="Controlador0506",
+    database="Prestamos"
 )
 
 # Obtener los registros generados

@@ -1,10 +1,8 @@
-﻿using FutureLending.Funciones.cs;
-
+﻿
 namespace FutureLending
 {
     public partial class Inicio_Sesion : Form
     {
-        public static string NombreUsuario { get; private set; }
         public Inicio_Sesion()
         {
             InitializeComponent();
@@ -13,26 +11,18 @@ namespace FutureLending
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            BackupService ob = new();
-            ob.StopBackup();
             this.Close();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string usuariop = TextUsuario.Text.ToString();
-            NombreUsuario = usuariop;
-            string contrap = TextContra.Text.ToString();
             bool cerrar;
-            cerrar = Accesos.Accesar(usuariop, contrap);
-            if (cerrar == true)
+            cerrar = Accesos.Accesar(TextUsuario.Text, TextContra.Text);
+            if (cerrar)
             {
-                // Crear e iniciar el nuevo formulario
-                Form1 form2 = new Form1();
-
-                form2.Show();
-
-                this.Hide();
+                Program.NombreUsuario = TextUsuario.Text;
+                Program.iniciado = true;
+                this.Close();
             }
             else
             {

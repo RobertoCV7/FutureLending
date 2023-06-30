@@ -1,6 +1,5 @@
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Forms;
-using FutureLending.Funciones.cs;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.ComponentModel;
@@ -282,7 +281,7 @@ namespace FutureLending
             }
             ComboBoxPromotoresListas.SelectedIndex = 0;
             int a = 0;
-            List<string> list = Accesos.ObtenerPermisosUsuario(Inicio_Sesion.NombreUsuario);
+            List<string> list = Accesos.ObtenerPermisosUsuario(Program.NombreUsuario);
             if (list != null && !revisado)
             {
                 revisado = true;
@@ -2612,8 +2611,7 @@ namespace FutureLending
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            BackupService ob = new();
-            ob.StopBackup();
+
         }
         private bool changingCheckedState5 = false;
         private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
@@ -2639,5 +2637,9 @@ namespace FutureLending
             }
         }
 
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
