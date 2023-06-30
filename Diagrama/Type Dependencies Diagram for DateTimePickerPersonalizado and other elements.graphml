@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by yFiles WPF 3.4.0.0-->
+<graphml xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/3.0" xmlns:y="http://www.yworks.com/xml/yfiles-common/3.0" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml.wpf/3.0/ygraphml.xsd " xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="d0" attr.type="boolean" attr.name="Expanded" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/Expanded">
+    <default>true</default>
+  </key>
+  <key id="d1" attr.name="metadata" for="node">
+    <default>
+      <x:Null />
+    </default>
+  </key>
+  <key id="d2" attr.type="boolean" attr.name="is_group_node" for="node">
+    <default>false</default>
+  </key>
+  <key id="d3" attr.type="string" attr.name="type_node" for="node" />
+  <key id="d4" attr.name="path" for="node">
+    <default>
+      <x:Null />
+    </default>
+  </key>
+  <key id="d5" attr.type="boolean" attr.name="is_static" for="node">
+    <default>false</default>
+  </key>
+  <key id="d6" attr.type="string" attr.name="type_element" for="node" />
+  <key id="d7" attr.type="string" attr.name="type" for="node" />
+  <key id="d8" attr.type="string" attr.name="access" for="node" />
+  <key id="d9" attr.type="string" attr.name="fqn" for="node" />
+  <key id="d10" attr.type="string" attr.name="display_name" for="node" />
+  <key id="d11" attr.name="NodeLabels" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/NodeLabels" />
+  <key id="d12" attr.name="NodeGeometry" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/NodeGeometry" />
+  <key id="d13" attr.name="UserTags" for="all" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/UserTags" />
+  <key id="d14" attr.name="NodeViewState" for="node" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/NodeViewState" />
+  <key id="d15" attr.type="string" attr.name="target" for="edge" />
+  <key id="d16" attr.type="string" attr.name="source" for="edge" />
+  <key id="d17" attr.type="string" attr.name="dependency_type" for="edge" />
+  <key id="d18" attr.name="EdgeLabels" for="edge" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/EdgeLabels" />
+  <key id="d19" attr.name="EdgeGeometry" for="edge" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/EdgeGeometry" />
+  <key id="d20" attr.name="EdgeViewState" for="edge" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/EdgeViewState" />
+  <key id="d21" attr.name="PortLabels" for="port" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/PortLabels" />
+  <key id="d22" attr.name="PortLocationParameter" for="port" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/PortLocationParameter">
+    <default>
+      <x:Static Member="y:FreeNodePortLocationModel.NodeCenterAnchored" />
+    </default>
+  </key>
+  <key id="d23" attr.name="PortViewState" for="port" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/PortViewState" />
+  <key id="d24" attr.name="SharedData" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/SharedData" />
+  <key id="d25" attr.name="layouting" />
+  <key id="d26" attr.name="graph_control_center" />
+  <key id="d27" attr.name="graph_control_zoom" />
+  <key id="d28" attr.name="grouping_depth" />
+  <key id="d29" attr.name="grouping_id" />
+  <data key="d24">
+    <y:SharedData>
+      <y:EdgeSegmentLabelModelParameter x:Key="1" SegmentIndex="1">
+        <y:EdgeSegmentLabelModelParameter.Model>
+          <y:EdgeSegmentLabelModel Distance="10" AutoRotationEnabled="False" />
+        </y:EdgeSegmentLabelModelParameter.Model>
+      </y:EdgeSegmentLabelModelParameter>
+    </y:SharedData>
+  </data>
+  <data key="d25">Component</data>
+  <data key="d26">
+    <y:PointD X="1091.2926697530875" Y="1807.4352492118812" />
+  </data>
+  <data key="d27">0.193230769230769</data>
+  <data key="d28">0</data>
+  <data key="d29">None</data>
+  <graph id="G">
+    <node id="n0">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\ControlesPersonalizados\DateTimePickerPersonalizado.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.DateTimePickerPersonalizado]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Controles_personalizados.DateTimePickerPersonalizado]]></data>
+      <data key="d10"><![CDATA[DateTimePickerPersonalizado]]></data>
+      <data key="d12">
+        <y:RectD X="84.740000000000009" Y="450" Width="527.92000000000007" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0831849522654947,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.889985856442895,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.206136819972723,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n1">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Properties\Resources.Designer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Resources]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[FutureLending.Properties.Resources]]></data>
+      <data key="d10"><![CDATA[Resources]]></data>
+      <data key="d12">
+        <y:RectD X="0" Y="0" Width="250.4" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.513797923322684,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.824620607028754,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n2">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\ControlesPersonalizados\RJButton.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d10"><![CDATA[RJButton]]></data>
+      <data key="d12">
+        <y:RectD X="638.81666666666672" Y="1519" Width="240.76666666666668" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.373284745159312,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.539638258736971,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.906438833214411,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.76085048829061,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.70599177231463,0" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.872345285892288,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.179545454545454" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.670454545454545" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.672564936793789,1" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.584279385296968,1" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.400489178088514,1" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.216698970880059,1" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0505607088467394,0" />
+        </data>
+      </port>
+      <port name="p13">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.133628686141492,0" />
+        </data>
+      </port>
+      <port name="p14">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.425000000000001" />
+        </data>
+      </port>
+      <port name="p15">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.897727272727273" />
+        </data>
+      </port>
+    </node>
+    <node id="n3">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\ControlesPersonalizados\RJComboBox.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d10"><![CDATA[RJComboBox]]></data>
+      <data key="d12">
+        <y:RectD X="1330.8566666666666" Y="2252" Width="298.68666666666667" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.257109596455595,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.188432554739638,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0510784713077248,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.119755513023681,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.695943910006027,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n4">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\ControlesPersonalizados\TextBoxPersonalizado.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\ControlesPersonalizados\TextBoxPersonalizado.Designer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d10"><![CDATA[TextBoxPersonalizado]]></data>
+      <data key="d12">
+        <y:RectD X="232.66000000000008" Y="2157" Width="419.08000000000004" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.937212664248671,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.988069103751074,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.384469696969699" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.157196969696971" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.505681818181818" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.403409090909091" />
+        </data>
+      </port>
+    </node>
+    <node id="n5">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Configuracion_Inicio_Sesion.Designer.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Configuracion_Inicio_Sesion.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d10"><![CDATA[Configuracion_Inicio_Sesion]]></data>
+      <data key="d12">
+        <y:RectD X="703.665" Y="776" Width="503.07000000000005" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0497469347728754,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.129362854927886,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.557682844876319,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.597585910230483,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.517779779522155,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.789590249203226,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0239449778360865,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n6">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Funciones.cs\Lectura_Base_Datos.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Lectura_Base_Datos]]></data>
+      <data key="d10"><![CDATA[Lectura_Base_Datos]]></data>
+      <data key="d12">
+        <y:RectD X="1280.7333333333333" Y="1065" Width="384.93333333333334" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.284090909090909" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.0568181818181818" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.767045454545455" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.738636363636364" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.320538621406303,0" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.19994804295116,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.812782516453065,0" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.928934664011084,0" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.278409090909091" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.721590909090909" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.800162365777624,1" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.987010737790094,1" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.441129199861448,0" />
+        </data>
+      </port>
+      <port name="p13">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0582443929684797,1" />
+        </data>
+      </port>
+      <port name="p14">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.329775177519917,1" />
+        </data>
+      </port>
+      <port name="p15">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.239264916002771,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n7">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Form1.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Form1.Designer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Form1]]></data>
+      <data key="d10"><![CDATA[Form1]]></data>
+      <data key="d12">
+        <y:RectD X="878.84833333333336" Y="1230" Width="200.70333333333332" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.424986167066867,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.849431818181818" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.962789191343775,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.950332995632028,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.452085167162147,1" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.551734732856123,1" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.670454545454545" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.22494927924518,0" />
+        </data>
+      </port>
+      <port name="p8">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.975087608576506,1" />
+        </data>
+      </port>
+      <port name="p9">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.925078386621084,0" />
+        </data>
+      </port>
+      <port name="p10">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.825059942710241,0" />
+        </data>
+      </port>
+      <port name="p11">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.975087608576506,1" />
+        </data>
+      </port>
+      <port name="p12">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.622159090909091" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p13">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.394886363636364" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p14">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.725041498799398,0" />
+        </data>
+      </port>
+      <port name="p15">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.153136470080219,1" />
+        </data>
+      </port>
+      <port name="p16">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.179545454545454" />
+        </data>
+      </port>
+      <port name="p17">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.352435601468171,1" />
+        </data>
+      </port>
+      <port name="p18">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.751033864244076,1" />
+        </data>
+      </port>
+      <port name="p19">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.850683429938052,1" />
+        </data>
+      </port>
+      <port name="p20">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.425000000000001" />
+        </data>
+      </port>
+      <port name="p21">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.897727272727273" />
+        </data>
+      </port>
+      <port name="p22">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.324967723156024,0" />
+        </data>
+      </port>
+      <port name="p23">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.024912391423494,0" />
+        </data>
+      </port>
+      <port name="p24">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.651384298550099,1" />
+        </data>
+      </port>
+      <port name="p25">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.975087608576506,1" />
+        </data>
+      </port>
+      <port name="p26">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.252786035774195,1" />
+        </data>
+      </port>
+      <port name="p27">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.167613636363636" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p28">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.124930835334337,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n8">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Properties\Settings1.Designer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Settings1]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[FutureLending.Properties.Settings1]]></data>
+      <data key="d10"><![CDATA[Settings1]]></data>
+      <data key="d12">
+        <y:RectD X="1236.6516666666666" Y="430" Width="242.09666666666666" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.278409090909091" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.308261162896363,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.883477674207272,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.116522325792727,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.721590909090909" />
+        </data>
+      </port>
+    </node>
+    <node id="n9">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Exportar_Excel.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Exportar_Excel.Designer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Exportar_Excel]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Exportar_Excel]]></data>
+      <data key="d10"><![CDATA[Exportar_Excel]]></data>
+      <data key="d12">
+        <y:RectD X="1306.8683333333333" Y="1643" Width="315.66333333333336" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0986038659331148,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.5" Offset="5.6843418860808E-14,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.869318181818182" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.897727272727273" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.159090909090909" />
+        </data>
+      </port>
+    </node>
+    <node id="n10">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Funciones.cs\ExportarExcel.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ExportarExcel]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[FutureLending.ExportarExcel]]></data>
+      <data key="d10"><![CDATA[ExportarExcel]]></data>
+      <data key="d12">
+        <y:RectD X="2046.5933333333335" Y="1270" Width="303.21333333333337" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.500000000000002,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.741754979992087,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.258245020007916,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n11">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Funciones.cs\Accesos.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Accesos]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Accesos]]></data>
+      <data key="d10"><![CDATA[Accesos]]></data>
+      <data key="d12">
+        <y:RectD X="814.77166666666676" Y="487" Width="220.85666666666668" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.920454545454545" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.34469696969697" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.935606060606061" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.715909090909091" Offset="1.13686837721616E-13,0" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.943181818181818" Offset="1.13686837721616E-13,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n12">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Funciones.cs\Program.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d5">true</data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Program]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[FutureLending.Program]]></data>
+      <data key="d10"><![CDATA[Program]]></data>
+      <data key="d12">
+        <y:RectD X="269.83833333333337" Y="841" Width="232.72333333333336" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.659090909090909" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.418181818181818" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.177272727272728" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.886363636363636" />
+        </data>
+      </port>
+    </node>
+    <node id="n13">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Funciones.cs\TablaClientes.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.TablaClientes]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[FutureLending.TablaClientes]]></data>
+      <data key="d10"><![CDATA[TablaClientes]]></data>
+      <data key="d12">
+        <y:RectD X="1447.9083333333333" Y="1932" Width="295.58333333333337" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.242033643454563,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.307248378911757,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.886146038906118,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.692269523541021,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n14">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Funciones.cs\Lecturas_Especificas.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lecturas_Especificas]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[FutureLending.Lecturas_Especificas]]></data>
+      <data key="d10"><![CDATA[Lecturas_Especificas]]></data>
+      <data key="d12">
+        <y:RectD X="1455.095" Y="1354" Width="390.21000000000004" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.122709566643602,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.342501473565516,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.526823163595671,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n15">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Funciones.cs\Ediciones.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Ediciones]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[internal]]></data>
+      <data key="d9"><![CDATA[FutureLending.Ediciones]]></data>
+      <data key="d10"><![CDATA[Ediciones]]></data>
+      <data key="d12">
+        <y:RectD X="1566.245" Y="719" Width="241.91" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.80206481749411,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.11308096675072,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.297905212682403,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n16">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Form2.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Form2.Designer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form2]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Form2]]></data>
+      <data key="d10"><![CDATA[Form2]]></data>
+      <data key="d12">
+        <y:RectD X="83.848333333333358" Y="1460" Width="200.70333333333332" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.262456195711747,1" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.85" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.737543804288253,1" />
+        </data>
+      </port>
+    </node>
+    <node id="n17">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Permisos_Lect.Designer.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Permisos_Lect.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Permisos_Lect]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Permisos_Lect]]></data>
+      <data key="d10"><![CDATA[Permisos_Lect]]></data>
+      <data key="d12">
+        <y:RectD X="370.8900000000001" Y="1171" Width="306.62" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.85" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.913508577392212,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.978735894592655,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.742713021546757,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n18">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Revision_Mover_Liquidados.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Revision_Mover_Liquidados.Designer.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Forms.Revision_Mover_Liquidados]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Forms.Revision_Mover_Liquidados]]></data>
+      <data key="d10"><![CDATA[Revision_Mover_Liquidados]]></data>
+      <data key="d12">
+        <y:RectD X="60.653333333333421" Y="1808" Width="498.09333333333336" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.936543853896191,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.829708120298739,0" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.616036653103836,0" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.722872386701288,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n19">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\PedirDatos3.Designer.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\PedirDatos3.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.PedirDatos3]]></data>
+      <data key="d10"><![CDATA[PedirDatos3]]></data>
+      <data key="d12">
+        <y:RectD X="774.49166666666667" Y="1836" Width="281.41666666666669" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.906455433816998,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.13344092389695,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0563251406573881,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.75" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="1,0.204545454545455" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0933001526161138,0" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.0177672490376073,0" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.835386437666568,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n20">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Pedir_Datos.Designer.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Pedir_Datos.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Pedir_Datos]]></data>
+      <data key="d10"><![CDATA[Pedir_Datos]]></data>
+      <data key="d12">
+        <y:RectD X="852.895" Y="2125" Width="276.61" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.873636768976779,0" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.259037995734066,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.740962004265934,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.869318181818182" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.767045454545455" />
+        </data>
+      </port>
+      <port name="p5">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.0662878787878805" />
+        </data>
+      </port>
+      <port name="p6">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.293560606060608" />
+        </data>
+      </port>
+      <port name="p7">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.945940734849307,0" />
+        </data>
+      </port>
+    </node>
+    <node id="n21">
+      <data key="d1">
+        <sys:Dictionary x:TypeArguments="sys:String,sys:String" />
+      </data>
+      <data key="d3"><![CDATA[Unknown]]></data>
+      <data key="d4">
+        <x:Array Type="sys:String">
+          <sys:String>D:\Escritorio\Future2\Forms\Inicio_Sesion.Designer.cs</sys:String>
+          <sys:String>D:\Escritorio\Future2\Forms\Inicio_Sesion.cs</sys:String>
+        </x:Array>
+      </data>
+      <data key="d6"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Inicio_Sesion]]></data>
+      <data key="d7"><![CDATA[class]]></data>
+      <data key="d8"><![CDATA[public]]></data>
+      <data key="d9"><![CDATA[FutureLending.Inicio_Sesion]]></data>
+      <data key="d10"><![CDATA[Inicio_Sesion]]></data>
+      <data key="d12">
+        <y:RectD X="492.62" Y="111" Width="291.16" Height="88" />
+      </data>
+      <port name="p0">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0,0.511363636363636" />
+        </data>
+      </port>
+      <port name="p1">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.910623025140816,1" />
+        </data>
+      </port>
+      <port name="p2">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.621805879928561,1" />
+        </data>
+      </port>
+      <port name="p3">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.766214452534689,1" />
+        </data>
+      </port>
+      <port name="p4">
+        <data key="d22">
+          <y:FreeNodePortLocationModelParameter Ratio="0.51531803819206,1" />
+        </data>
+      </port>
+    </node>
+    <edge id="e0" source="n0" target="n1" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Resources]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.DateTimePickerPersonalizado]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e1" source="n5" target="n2" sourceport="p0" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e2" source="n5" target="n2" sourceport="p1" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="81,23">
+            <y:Label.Text>rjButton2</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e3" source="n5" target="n6" sourceport="p2" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="12,23">
+            <y:Label.Text>a</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="984.21850877193,1059.21850877193" />
+          <y:Bend Location="1015,1090" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e4" source="n5" target="n6" sourceport="p3" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1004.29254385965,1039.29254385965" />
+          <y:Bend Location="1035,1070" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e5" source="n5" target="n7" sourceport="p4" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e6" source="n5" target="n8" sourceport="p5" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Settings1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1100.88416666667,474.615833333333" />
+          <y:Bend Location="1121,454.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e7" source="n9" target="n7" sourceport="p0" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Exportar_Excel]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1337.99395833333,1342.74395833333" />
+          <y:Bend Location="1300,1304.75" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e8" source="n9" target="n10" sourceport="p1" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ExportarExcel]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Exportar_Excel]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2149,1687" />
+          <y:Bend Location="2198.2,1637.8" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e9" source="n9" target="n2" sourceport="p2" targetport="p2">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Exportar_Excel]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="873,1719.5" />
+          <y:Bend Location="857.056923076923,1703.55692307692" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e10" source="n9" target="n2" sourceport="p3" targetport="p3">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Exportar_Excel]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="81,23">
+            <y:Label.Text>rjButton1</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="839,1722" />
+          <y:Bend Location="822.004102564103,1705.0041025641" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e11" source="n7" target="n3" sourceport="p2" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1072.08333333333,1517.5119047619" />
+          <y:Bend Location="1154.55166666667,1599.98023809524" />
+          <y:Bend Location="1154.55166666667,1747.55166666667" />
+          <y:Bend Location="1188,1781" />
+          <y:Bend Location="1370,1781" />
+          <y:Bend Location="1407.651875,1818.651875" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e12" source="n7" target="n3" sourceport="p3" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="77,23">
+            <y:Label.Text>cmbTipo</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1069.58333333333,1562.29761904762" />
+          <y:Bend Location="1134.55166666667,1627.26595238095" />
+          <y:Bend Location="1134.55166666667,1792.55166666667" />
+          <y:Bend Location="1143,1801" />
+          <y:Bend Location="1350,1801" />
+          <y:Bend Location="1387.13895833333,1838.13895833333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e13" source="n7" target="n4" sourceport="p4" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="969.583333333333,1702.41666666667" />
+          <y:Bend Location="955,1717" />
+          <y:Bend Location="677,1717" />
+          <y:Bend Location="625.427083333333,1768.57291666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e14" source="n7" target="n4" sourceport="p5" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="93,23">
+            <y:Label.Text>txtNombre</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="989.583333333333,1786.41666666667" />
+          <y:Bend Location="975,1801" />
+          <y:Bend Location="698,1801" />
+          <y:Bend Location="646.74,1852.26" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e15" source="n7" target="n11" sourceport="p6" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Accesos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="238,1289" />
+          <y:Bend Location="173.56375,1224.56375" />
+          <y:Bend Location="173.56375,619.43625" />
+          <y:Bend Location="225,568" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e16" source="n7" target="n12" sourceport="p7" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Program]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="923.996403508772,901.996403508772" />
+          <y:Bend Location="921,899" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e17" source="n7" target="n9" sourceport="p8" targetport="p4">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Exportar_Excel]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1074.55166666667,1649.55166666667" />
+          <y:Bend Location="1082,1657" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e18" source="n7" target="n6" sourceport="p9" targetport="p2">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1064.51464912281,1146.98535087719" />
+          <y:Bend Location="1079,1132.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e19" source="n7" target="n6" sourceport="p10" targetport="p3">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="158,23">
+            <y:Label.Text>lecturaBaseDatos</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1044.44061403509,1144.55938596491" />
+          <y:Bend Location="1059,1130" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e20" source="n7" target="n13" sourceport="p11" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.TablaClientes]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1074.55166666667,1718.55166666667" />
+          <y:Bend Location="1117,1761" />
+          <y:Bend Location="1494,1761" />
+          <y:Bend Location="1519.44944444444,1786.44944444444" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e21" source="n7" target="n14" sourceport="p12" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lecturas_Especificas]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1493,1284.75" />
+          <y:Bend Location="1502.9775,1294.7275" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e22" source="n7" target="n15" sourceport="p13" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Ediciones]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1696,1264.75" />
+          <y:Bend Location="1760.2725,1200.4775" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e23" source="n7" target="n8" sourceport="p14" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Settings1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1024.36657894737,999.633421052632" />
+          <y:Bend Location="1065,959" />
+          <y:Bend Location="1269,959" />
+          <y:Bend Location="1311.28066666667,916.719333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e24" source="n7" target="n16" sourceport="p15" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form2]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="909.583333333333,1622.41666666667" />
+          <y:Bend Location="895,1637" />
+          <y:Bend Location="149,1637" />
+          <y:Bend Location="136.524166666667,1624.52416666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e25" source="n7" target="n17" sourceport="p16" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Permisos_Lect]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e26" source="n7" target="n18" sourceport="p17" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Forms.Revision_Mover_Liquidados]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="949.583333333333,1682.41666666667" />
+          <y:Bend Location="935,1697" />
+          <y:Bend Location="543,1697" />
+          <y:Bend Location="527.139583333333,1712.86041666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e27" source="n7" target="n19" sourceport="p18" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e28" source="n7" target="n20" sourceport="p19" targetport="p0">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1049.58333333333,1789.58333333333" />
+          <y:Bend Location="1094.55166666667,1834.55166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e29" source="n7" target="n2" sourceport="p20" targetport="p4">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="819,1267.4" />
+          <y:Bend Location="808.795952380952,1277.60404761905" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e30" source="n7" target="n2" sourceport="p21" targetport="p5">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="82,23">
+            <y:Label.Text>btnLista1</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="853,1309" />
+          <y:Bend Location="848.848333333333,1313.15166666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e31" source="n7" target="n0" sourceport="p22" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.DateTimePickerPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="944.070438596491,982.070438596491" />
+          <y:Bend Location="901,939" />
+          <y:Bend Location="613,939" />
+          <y:Bend Location="554.581333333333,880.581333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e32" source="n7" target="n0" sourceport="p23" targetport="p2">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.DateTimePickerPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="142,23">
+            <y:Label.Text>dateFechaInicio</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="883.848333333333,1127.84833333333" />
+          <y:Bend Location="866,1110" />
+          <y:Bend Location="258,1110" />
+          <y:Bend Location="193.56375,1045.56375" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e33" source="n16" target="n2" sourceport="p1" targetport="p6">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form2]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e34" source="n16" target="n2" sourceport="p2" targetport="p7">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form2]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="81,23">
+            <y:Label.Text>rjButton1</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="231.875833333333,1573.87583333333" />
+          <y:Bend Location="236,1578" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e35" source="n21" target="n1" sourceport="p0" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Resources]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="216,156" />
+          <y:Bend Location="206.485,146.485" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e36" source="n21" target="n11" sourceport="p1" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Accesos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="757.757,509.090333333333" />
+          <y:Bend Location="766,517.333333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e37" source="n21" target="n12" sourceport="p2" targetport="p1">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Program]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="673.665,852.135" />
+          <y:Bend Location="648,877.8" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e38" source="n21" target="n5" sourceport="p3" targetport="p6">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Configuracion_Inicio_Sesion]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Inicio_Sesion]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e39" source="n19" target="n4" sourceport="p1" targetport="p2">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="812.044166666667,2168.78916666667" />
+          <y:Bend Location="790,2190.83333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e40" source="n19" target="n4" sourceport="p2" targetport="p3">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="116,23">
+            <y:Label.Text>TextImporte3</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="790.3425,2150.49083333333" />
+          <y:Bend Location="770,2170.83333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e41" source="n19" target="n3" sourceport="p3" targetport="p2">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1303,1902" />
+          <y:Bend Location="1346.113125,1945.113125" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e42" source="n19" target="n3" sourceport="p4" targetport="p3">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="210,23">
+            <y:Label.Text>ComboBoxResolucion3</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1323,1854" />
+          <y:Bend Location="1366.62604166667,1897.62604166667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e43" source="n19" target="n2" sourceport="p5" targetport="p8">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e44" source="n19" target="n2" sourceport="p6" targetport="p9">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="81,23">
+            <y:Label.Text>rjButton1</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e45" source="n19" target="n7" sourceport="p7" targetport="p24">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.PedirDatos3]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e46" source="n20" target="n3" sourceport="p1" targetport="p4">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="924.5475,2301.0475" />
+          <y:Bend Location="939,2315.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e47" source="n20" target="n3" sourceport="p2" targetport="p5">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="122,23">
+            <y:Label.Text>rjComboBox2</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1057.8525,2267.3525" />
+          <y:Bend Location="1067,2276.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e48" source="n20" target="n4" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e49" source="n20" target="n4" sourceport="p4" targetport="p5">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.TextBoxPersonalizado]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="185,23">
+            <y:Label.Text>TextLiquidacionPedir</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e50" source="n20" target="n2" sourceport="p5" targetport="p10">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="752,2130.83333333333" />
+          <y:Bend Location="735.241111111111,2114.07444444444" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e51" source="n20" target="n2" sourceport="p6" targetport="p11">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="197,23">
+            <y:Label.Text>BotonDeingresarPedir</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="715,2150.83333333333" />
+          <y:Bend Location="690.990555555556,2126.82388888889" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e52" source="n20" target="n7" sourceport="p7" targetport="p25">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Pedir_Datos]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1114.55166666667,1529.69452380952" />
+          <y:Bend Location="1074.55166666667,1489.69452380952" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e53" source="n17" target="n2" sourceport="p1" targetport="p12">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Permisos_Lect]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e54" source="n17" target="n2" sourceport="p2" targetport="p13">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Permisos_Lect]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="81,23">
+            <y:Label.Text>rjButton1</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e55" source="n17" target="n11" sourceport="p3" targetport="p2">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Accesos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Permisos_Lect]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="598.620666666667,593.712666666667" />
+          <y:Bend Location="623,569.333333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e56" source="n18" target="n7" sourceport="p1" targetport="p26">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Forms.Revision_Mover_Liquidados]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="473.925416666667,1696.07458333333" />
+          <y:Bend Location="493,1677" />
+          <y:Bend Location="915,1677" />
+          <y:Bend Location="929.583333333333,1662.41666666667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e57" source="n18" target="n2" sourceport="p2" targetport="p14">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Forms.Revision_Mover_Liquidados]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="367.497083333333,1593.90291666667" />
+          <y:Bend Location="405,1556.4" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e58" source="n18" target="n2" sourceport="p3" targetport="p15">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Controles_personalizados.RJButton]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Forms.Revision_Mover_Liquidados]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="81,23">
+            <y:Label.Text>rjButton1</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="420.71125,1629.28875" />
+          <y:Bend Location="452,1598" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e59" source="n11" target="n6" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Accesos]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="12,23">
+            <y:Label.Text>a</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1349,550" />
+          <y:Bend Location="1404.11933333333,605.119333333333" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e60" source="n11" target="n6" sourceport="p4" targetport="p5">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Accesos]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1310,570" />
+          <y:Bend Location="1357.7,617.7" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e61" source="n15" target="n6" sourceport="p1" targetport="p6">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Ediciones]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="33,23">
+            <y:Label.Text>con</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e62" source="n15" target="n6" sourceport="p2" targetport="p7">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Ediciones]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e63" source="n10" target="n6" sourceport="p1" targetport="p8">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ExportarExcel]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="12,23">
+            <y:Label.Text>a</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2271.50333333333,1116.00333333333" />
+          <y:Bend Location="2245,1089.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e64" source="n10" target="n6" sourceport="p2" targetport="p9">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ExportarExcel]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="2124.89666666667,1149.39666666667" />
+          <y:Bend Location="2104,1128.5" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e65" source="n14" target="n6" sourceport="p1" targetport="p10">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lecturas_Especificas]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="33,23">
+            <y:Label.Text>con</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e66" source="n14" target="n6" sourceport="p2" targetport="p11">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lecturas_Especificas]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e67" source="n6" target="n8" sourceport="p12" targetport="p2">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Settings1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e68" source="n6" target="n7" sourceport="p13" targetport="p27">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1303.15354166667,1231.59645833333" />
+          <y:Bend Location="1290,1244.75" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e69" source="n12" target="n21" sourceport="p2" targetport="p4">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Inicio_Sesion]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Program]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="622,856.6" />
+          <y:Bend Location="642.66,835.94" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e70" source="n12" target="n7" sourceport="p3" targetport="p28">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Form1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Program]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="858,919" />
+          <y:Bend Location="903.922368421053,964.922368421053" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e71" source="n13" target="n3" sourceport="p1" targetport="p6">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.ControlesPersonalizados.RJComboBox]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.TablaClientes]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+    </edge>
+    <edge id="e72" source="n13" target="n6" sourceport="p2" targetport="p14">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.TablaClientes]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="79,23">
+            <y:Label.Text>instancia</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1709.83833333333,1552.08833333333" />
+          <y:Bend Location="1665,1507.25" />
+          <y:Bend Location="1449,1507.25" />
+          <y:Bend Location="1407.67479166667,1465.92479166667" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e73" source="n13" target="n6" sourceport="p3" targetport="p15">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Lectura_Base_Datos]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.TablaClientes]]></data>
+      <data key="d17"><![CDATA[Usages]]></data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1652.53166666667,1610.28166666667" />
+          <y:Bend Location="1620,1577.75" />
+          <y:Bend Location="1414,1577.75" />
+          <y:Bend Location="1372.834375,1536.584375" />
+        </x:List>
+      </data>
+    </edge>
+    <edge id="e74" source="n8" target="n8" sourceport="p3" targetport="p4">
+      <data key="d15"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Settings1]]></data>
+      <data key="d16"><![CDATA[d97fa949-cd40-428f-9a17-ec66591afa1d%28FutureLending%29-13%5Bnet6.0-windows10.0.17763%5D/T%3AFutureLending.Properties.Settings1]]></data>
+      <data key="d17"><![CDATA[Aggregation]]></data>
+      <data key="d18">
+        <x:List>
+          <y:Label LayoutParameter="{y:GraphMLReference 1}" PreferredSize="136,23">
+            <y:Label.Text>defaultInstance</y:Label.Text>
+          </y:Label>
+        </x:List>
+      </data>
+      <data key="d19">
+        <x:List>
+          <y:Bend Location="1264.86133333333,582.138666666667" />
+          <y:Bend Location="1257,590" />
+          <y:Bend Location="1206.65166666667,590" />
+          <y:Bend Location="1206.65166666667,497.848333333333" />
+          <y:Bend Location="1211,493.5" />
+        </x:List>
+      </data>
+    </edge>
+  </graph>
+</graphml>
