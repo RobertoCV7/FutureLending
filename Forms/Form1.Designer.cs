@@ -37,6 +37,7 @@ namespace FutureLending.Forms
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelMenu = new Panel();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             btnTodosSistemas = new FontAwesome.Sharp.IconButton();
             btnEstadoPagos = new FontAwesome.Sharp.IconButton();
@@ -337,7 +338,6 @@ namespace FutureLending.Forms
             TextNombreLiq = new TextBoxPersonalizado();
             label116 = new Label();
             ComboBoxPromotorLiq = new ControlesPersonalizados.RJComboBox();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -382,6 +382,19 @@ namespace FutureLending.Forms
             panelMenu.Controls.Add(btnIngresarClientes);
             panelMenu.Controls.Add(panel1);
             panelMenu.Name = "panelMenu";
+            // 
+            // iconButton2
+            // 
+            resources.ApplyResources(iconButton2, "iconButton2");
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.ForeColor = Color.White;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.Name = "iconButton2";
+            iconButton2.Tag = "Cerrar Sesión";
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
             // 
             // iconButton1
             // 
@@ -3698,19 +3711,6 @@ namespace FutureLending.Forms
             ComboBoxPromotorLiq.Name = "ComboBoxPromotorLiq";
             ComboBoxPromotorLiq.Tag = "Seleccione al promotor";
             ComboBoxPromotorLiq.Texts = "Seleccione al promotor";
-            // 
-            // iconButton2
-            // 
-            resources.ApplyResources(iconButton2, "iconButton2");
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.ForeColor = Color.White;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Name = "iconButton2";
-            iconButton2.Tag = "Cerrar Sesión";
-            iconButton2.UseVisualStyleBackColor = true;
-            iconButton2.Click += iconButton2_Click;
             // 
             // Form1
             // 

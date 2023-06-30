@@ -779,7 +779,7 @@ namespace FutureLending.Funciones.cs
 
                 if (!revisador)
                 {
-                    Form1.MessageB("La Aplicacion Funciona Correctamente", "Funcionando", 1);
+                    Form1.MessageB("Conexion Correcta al Servidor", "Funcionando", 1);
                 }
                 else
                 {
@@ -788,139 +788,18 @@ namespace FutureLending.Funciones.cs
             }
             catch (Exception ex)
             {
-                if (!revisador)
+                if (revisador)
                 {
-                    ReacomodoDeScripts();
+                    Form1.Conect = false;
                     Registro_errores(ex.ToString());
-                    await RepairProgramAsync();
                 }
                 else
                 {
-                    Form1.Conect = false;
+                    Form1.MessageB("Error al conectar con el servidor", "Error", 2);
                 }
-            }
-        }
-        int attempts = 3;
-        private async Task RepairProgramAsync()
-        {
-            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var processStartInfo = new ProcessStartInfo
-            {
-                FileName = Path.Combine(exeDirectory, "Scripts de reparacion e inicio automatico", "ReiniciarMysql.bat"),
-                CreateNoWindow = true,
-                UseShellExecute = false
-            };
-
-            var process = Process.Start(processStartInfo);
-            var processExitTask = Task.Run(() => process.WaitForExit(3000));
-
-            if (await Task.WhenAny(processExitTask, Task.Delay(3000)) != processExitTask)
-            {
-                process.Kill();
-            }
-
-            if (process.ExitCode != 0 && process.ExitCode != -1073741510)
-            {
-                attempts--;
-
-                while (attempts > 0)
-                {
-                    try
-                    {
-                        await CheckConnection(false);
-                        return;
-                    }
-                    catch (Exception ex)
-                    {
-                        attempts--;
-                        Registro_errores(ex.ToString());
-                    }
                 }
-
-                Form1.MessageB("Cambiando de Puerto", "Alerta", 2);
-
-                var cambioPortProcessStartInfo = new ProcessStartInfo
-                {
-                    FileName = Path.Combine(exeDirectory, "Scripts de reparacion e inicio automatico", "cambio_port.bat"),
-                    CreateNoWindow = true,
-                    UseShellExecute = false
-                };
-
-                await Task.Run(() => Process.Start(cambioPortProcessStartInfo));
-
-                CambioPuerto = true;
-            }
         }
-
-        public static void ReacomodoDeScripts()
-        {
-            string path = EncontrarXampp();
-            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string filePath = Path.Combine(exeDirectory, "Scripts de reparacion e inicio automatico", "ReiniciarMysql.bat");
-
-            // Lee el contenido del archivo .bat
-            string contenido = File.ReadAllText(filePath);
-
-            // Verifica si el valor ya está presente en el archivo .bat
-            if (contenido.Contains("cd /d " + path))
-            {
-                return;
-            }
-
-            // Realiza las modificaciones necesarias
-            contenido = contenido.Replace("cd /d E:\\Xampp", "cd /d " + path);
-
-            // Guarda los cambios en el archivo
-            File.WriteAllText(filePath, contenido);
-        }
-
-        public static string EncontrarXampp()
-        {
-            string xamppPath = GetXamppInstallationPath();
-
-            if (!string.IsNullOrEmpty(xamppPath))
-            {
-                return xamppPath;
-            }
-
-            return "c:/Xampp";
-        }
-
-        static string? GetXamppInstallationPath()
-        {
-            string xamppRegistryPath = @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\XAMPP";
-
-            using (RegistryKey key = Registry.LocalMachine.OpenSubKey(xamppRegistryPath))
-            {
-                if (key != null)
-                {
-                    string installLocation = key.GetValue("InstallLocation") as string;
-
-                    if (!string.IsNullOrEmpty(installLocation))
-                    {
-                        return installLocation;
-                    }
-                }
-            }
-
-            // Buscar en todas las unidades en caso de no encontrar en el Registro
-            DriveInfo[] drives = DriveInfo.GetDrives();
-
-            foreach (DriveInfo drive in drives)
-            {
-                if (drive.DriveType == DriveType.Fixed && drive.IsReady)
-                {
-                    string drivePath = Path.Combine(drive.RootDirectory.FullName, "Xampp");
-
-                    if (Directory.Exists(drivePath))
-                    {
-                        return drivePath;
-                    }
-                }
-            }
-
-            return null;
-        }
+    
 
         #endregion
         #region registros
