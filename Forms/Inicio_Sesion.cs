@@ -1,4 +1,7 @@
 ﻿
+using FutureLending.Forms;
+using FutureLending.Funciones.cs;
+
 namespace FutureLending
 {
     public partial class Inicio_Sesion : Form
@@ -21,7 +24,7 @@ namespace FutureLending
             if (cerrar)
             {
                 Program.NombreUsuario = TextUsuario.Text;
-                Program.iniciado = true;
+                Program.Iniciado = true;
                 this.Close();
             }
             else

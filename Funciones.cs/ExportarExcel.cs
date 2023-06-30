@@ -1,28 +1,28 @@
 ﻿using OfficeOpenXml;
 using OfficeOpenXml.Style;
 
-namespace FutureLending
+namespace FutureLending.Funciones.cs
 {
     internal class ExportarExcel
     {
         readonly Lectura_Base_Datos a = new();
-        readonly string[] Nombres_Lista1 = {"PROMOTOR","NOMBRE", "CREDITO","PAGARE", "FECHA INICIO","FECHA TERMINO" ,"INTERESES", "MONTO TOTAL",
+        readonly string[] nombresLista1 = {"PROMOTOR","NOMBRE", "CREDITO","PAGARE", "FECHA INICIO","FECHA TERMINO" ,"INTERESES", "MONTO TOTAL",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                               "TIPO DE PAGO", "MONTO RESTANTE"};
-        readonly string[] Nombres_Lisat2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
+        readonly string[] nombresLisat2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                                 "TIPO DE PAGO", "LIQUIDACION/INTENCION","QUITA"};
-        readonly string[] Nombres_Listas3 =  {"PROMOTOR","NOMBRE", "CREDITO","PAGARE",
+        readonly string[] nombresListas3 =  {"PROMOTOR","NOMBRE", "CREDITO","PAGARE",
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                                 "TIPO DE RESOLUCION","RESOLUCION DEMANDA","IMPORTE"};
-        readonly string[] Nombres_ListasLiq = {"PROMOTOR","NOMBRE", "CREDITO", "FECHA INICIO",
+        readonly string[] nombresListasLiq = {"PROMOTOR","NOMBRE", "CREDITO", "FECHA INICIO",
                               "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
                               "TELÉFONO", "CORREO", "FORMA DE LIQUIDACION"};
 
         public void ExportarLista1AExcel(string rutaArchivo)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            List<string> nombresColumnas = new(Nombres_Lista1);
+            List<string> nombresColumnas = new(nombresLista1);
 
             for (int i = 1; i <= 14; i++)
             {
@@ -68,7 +68,7 @@ namespace FutureLending
             using (ExcelPackage package = new ExcelPackage())
             {
                 var worksheet = package.Workbook.Worksheets.Add("Lista2");
-                List<string> nombresColumnas = new(Nombres_Lisat2);
+                List<string> nombresColumnas = new(nombresLisat2);
                 for (int i = 1; i <= 14; i++)
                 {
                     nombresColumnas.Add("FECHA " + i);
@@ -109,10 +109,10 @@ namespace FutureLending
             {
                 var worksheet = package.Workbook.Worksheets.Add("Lista3");
 
-                for (int col = 0; col < Nombres_Listas3.Length; col++)
+                for (int col = 0; col < nombresListas3.Length; col++)
                 {
                     ExcelRange headerCell = worksheet.Cells[1, col + 1];
-                    headerCell.Value = Nombres_Listas3[col];
+                    headerCell.Value = nombresListas3[col];
                     headerCell.Style.Font.Bold = true;
                     headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -142,10 +142,10 @@ namespace FutureLending
             {
                 var worksheet = package.Workbook.Worksheets.Add("Liquidados");
 
-                for (int col = 0; col < Nombres_ListasLiq.Length; col++)
+                for (int col = 0; col < nombresListasLiq.Length; col++)
                 {
                     ExcelRange headerCell = worksheet.Cells[1, col + 1];
-                    headerCell.Value = Nombres_ListasLiq[col];
+                    headerCell.Value = nombresListasLiq[col];
                     headerCell.Style.Font.Bold = true;
                     headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
@@ -173,14 +173,14 @@ namespace FutureLending
             List<string[]> datosLista2 = a.LectLista2();
             List<string[]> datosLista3 = a.LectLista3();
             List<string[]> datosLiquidados = a.LectLiquidados();
-            List<string> nombresColumnas = new(Nombres_Lista1);
+            List<string> nombresColumnas = new(nombresLista1);
 
             for (int i = 1; i <= 14; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
                 nombresColumnas.Add("PAGO " + i);
             }
-            List<string> nombresColumnas2 = new(Nombres_Lisat2);
+            List<string> nombresColumnas2 = new(nombresLisat2);
 
             for (int i = 1; i <= 14; i++)
             {
@@ -192,8 +192,8 @@ namespace FutureLending
             {
                 AgregarHojaDatos(package, datosLista1, "Lista1", nombresColumnas.ToArray());
                 AgregarHojaDatos(package, datosLista2, "Lista2", nombresColumnas2.ToArray());
-                AgregarHojaDatos(package, datosLista3, "Lista3", Nombres_Listas3);
-                AgregarHojaDatos(package, datosLiquidados, "Liquidados", Nombres_ListasLiq);
+                AgregarHojaDatos(package, datosLista3, "Lista3", nombresListas3);
+                AgregarHojaDatos(package, datosLiquidados, "Liquidados", nombresListasLiq);
 
                 package.SaveAs(new FileInfo(ruta));
             }

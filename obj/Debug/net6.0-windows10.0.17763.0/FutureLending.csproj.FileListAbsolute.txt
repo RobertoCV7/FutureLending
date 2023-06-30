@@ -1763,9 +1763,7 @@ D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.csproj.
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Controles_personalizados.DateTimePickerPersonalizado.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.ControlesPersonalizados.RJComboBox.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Controles_personalizados.TextBoxPersonalizado.resources
-D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Configuracion_Inicio_Sesion.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Exportar_Excel.resources
-D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Form1.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Form2.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Inicio_Sesion.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.PedirDatos3.resources
@@ -1773,8 +1771,6 @@ D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Pedir_D
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Permisos_Lect.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Revision_Mover_Liquidados.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Properties.Resources.resources
-D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Configuracion_Inicio_Sesion.es-MX.resources
-D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Form1.es-MX.resources
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.csproj.GenerateResource.cache
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.GeneratedMSBuildEditorConfig.editorconfig
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.AssemblyInfoInputs.cache
@@ -1787,5 +1783,7 @@ D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\refint\FutureLending.
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.pdb
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.genruntimeconfig.cache
 D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\ref\FutureLending.dll
-D:\Escritorio\Future2\bin\Debug\net6.0-windows10.0.17763.0\AWSSDK.Core.dll
-D:\Escritorio\Future2\bin\Debug\net6.0-windows10.0.17763.0\AWSSDK.RDS.dll
+D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Configuracion_Inicio_Sesion.resources
+D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Form1.resources
+D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Configuracion_Inicio_Sesion.es-MX.resources
+D:\Escritorio\Future2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Form1.es-MX.resources

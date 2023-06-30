@@ -1,27 +1,24 @@
-﻿using Microsoft.Win32;
-using MySql.Data.MySqlClient;
-using System.Data;
+﻿using System.Data;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
-using AWSSDK;
-using System.Data.SqlClient;
+using FutureLending.Forms;
+using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 
-namespace FutureLending
+namespace FutureLending.Funciones.cs
 {
     public class Lectura_Base_Datos
     {
-        private readonly MySqlConnection? conexion;
-        private static readonly object lockObj = new();
         #region Conexion
         //verificador de cambio de puerto
-        public bool cambio_puerto = false;
+        public bool CambioPuerto;
 
         public MySqlConnection Conector()
         {
             // Almacenar los valores de configuración en variables locales
             string server = Properties.Settings1.Default.Servidor;
-            int port = cambio_puerto ? 3307 : Properties.Settings1.Default.Puerto;
+            int port = CambioPuerto ? 3307 : Properties.Settings1.Default.Puerto;
             string database = Properties.Settings1.Default.Base_de_datos;
             string uid = Properties.Settings1.Default.Usuario;
             string pwd = Properties.Settings1.Default.Contraseña;
@@ -76,7 +73,7 @@ namespace FutureLending
                             double montoRestante;
                             if (double.TryParse(fila[8], out montoRestante))
                             {
-                                Form1.dinero_aire += montoRestante;
+                                Form1.DineroAire += montoRestante;
                             }
                         }
                     }
@@ -114,7 +111,7 @@ namespace FutureLending
                         fila[7] = reader.GetString("Quita");
                         fila[8] = reader.GetString("Pago_Total_EXT");
                         datos.Add(fila);
-                        Form1.dinero_aire += Convert.ToDouble(fila[8]);
+                        Form1.DineroAire += Convert.ToDouble(fila[8]);
                     }
                 }
                 catch (Exception ex)
@@ -483,13 +480,13 @@ namespace FutureLending
         public void Erase(string nombre, string tabla)
         {
             //Llamamos al conector
-            using MySqlConnection Connection = Conector();
-            using MySqlCommand command = Connection.CreateCommand();
+            using MySqlConnection connection = Conector();
+            using MySqlCommand command = connection.CreateCommand();
             try
             {
                 command.CommandText = "DELETE FROM " + tabla + " WHERE Nombre_Completo = '" + nombre + "'";
                 command.ExecuteNonQuery();
-                Connection.Close();
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -535,7 +532,7 @@ namespace FutureLending
             finally
             {
                 // Cerrar la conexión de la base de datos
-                if (connection != null && connection.State == ConnectionState.Open)
+                if (connection.State == ConnectionState.Open)
                 {
                     connection.Close();
                 }
@@ -549,7 +546,7 @@ namespace FutureLending
 
         #endregion
         #region Crear registros, solo en la lista 1 y liquidados
-        public void Create(string lista, string Promotor, string Nombre, string Credito, string Pagare, DateTime Fecha_inicio, DateTime Fecha_Termino, string Interes, string Monto_Total, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, string Tipo_pago, string Monto_Restante)
+        public void Create(string lista, string promotor, string nombre, string credito, string pagare, DateTime Fecha_inicio, DateTime Fecha_Termino, string Interes, string Monto_Total, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, string Tipo_pago, string Monto_Restante)
         {
             DateTime fechaInicio = Fecha_inicio.Date;
             int cantidadFechas = Tipo_pago == "Semanales" ? 14 : 7;
@@ -588,10 +585,10 @@ namespace FutureLending
 
             using MySqlCommand command = new(consulta, connection);
 
-            command.Parameters.AddWithValue("@Promotor", Promotor);
-            command.Parameters.AddWithValue("@Nombre", Nombre);
-            command.Parameters.AddWithValue("@Credito", Credito);
-            command.Parameters.AddWithValue("@Pagare", Pagare);
+            command.Parameters.AddWithValue("@Promotor", promotor);
+            command.Parameters.AddWithValue("@Nombre", nombre);
+            command.Parameters.AddWithValue("@Credito", credito);
+            command.Parameters.AddWithValue("@Pagare", pagare);
             command.Parameters.AddWithValue("@Fecha_inicio", Fecha_inicio.ToString("dd/MM/yyyy"));
             command.Parameters.AddWithValue("@Fecha_Termino", Fecha_Termino.ToString("dd/MM/yyyy"));
             command.Parameters.AddWithValue("@Interes", Interes);
@@ -768,7 +765,7 @@ namespace FutureLending
         public async Task CheckConnection(bool revisador)
         {
             string server = Properties.Settings1.Default.Servidor;
-            int port = cambio_puerto == false ? Properties.Settings1.Default.Puerto : 3307;
+            int port = CambioPuerto == false ? Properties.Settings1.Default.Puerto : 3307;
             string database = Properties.Settings1.Default.Base_de_datos;
             string username = Properties.Settings1.Default.Usuario;
             string password = Properties.Settings1.Default.Contraseña;
@@ -786,7 +783,7 @@ namespace FutureLending
                 }
                 else
                 {
-                    Form1.conect = true;
+                    Form1.Conect = true;
                 }
             }
             catch (Exception ex)
@@ -799,10 +796,8 @@ namespace FutureLending
                 }
                 else
                 {
-                    Form1.conect = false;
+                    Form1.Conect = false;
                 }
-
-                return;
             }
         }
         int attempts = 3;
@@ -853,7 +848,7 @@ namespace FutureLending
 
                 await Task.Run(() => Process.Start(cambioPortProcessStartInfo));
 
-                cambio_puerto = true;
+                CambioPuerto = true;
             }
         }
 
@@ -929,7 +924,7 @@ namespace FutureLending
 
         #endregion
         #region registros
-        private static readonly object lockObject = new object(); // Objeto de bloqueo para asegurar acceso único al archivo
+        private static readonly object LockObject = new(); // Objeto de bloqueo para asegurar acceso único al archivo
         public void Registro_errores(string error)
         {
             string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -937,7 +932,7 @@ namespace FutureLending
 
             try
             {
-                lock (lockObject)
+                lock (LockObject)
                 {
                     using StreamWriter writer = new StreamWriter(logFilePath, true);
                     writer.WriteLine($"[{DateTime.Now}] Error: {error}");
@@ -945,7 +940,7 @@ namespace FutureLending
             }
             catch (Exception ex)
             { 
-                ex.ToString();
+
                 // Si ocurre un error al registrar el error, no se hace nada para evitar un ciclo infinito
             }
         }

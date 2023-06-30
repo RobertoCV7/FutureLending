@@ -1,4 +1,4 @@
-﻿namespace FutureLending
+﻿namespace FutureLending.Forms
 {
     partial class Configuracion_Inicio_Sesion
     {

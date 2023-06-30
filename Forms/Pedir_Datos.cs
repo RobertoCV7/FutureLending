@@ -1,4 +1,6 @@
-﻿namespace FutureLending
+﻿using FutureLending.Forms;
+
+namespace FutureLending
 {
     //Este forms pide los datos faltantes para mover el registro de la lista 1 a la lista 2
     public partial class Pedir_Datos : Form

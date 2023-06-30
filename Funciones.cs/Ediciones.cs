@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace FutureLending
+namespace FutureLending.Funciones.cs
 {
     internal class Ediciones
     {

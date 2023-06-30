@@ -1,4 +1,6 @@
-﻿namespace FutureLending
+﻿using FutureLending.Funciones.cs;
+
+namespace FutureLending
 {
     //Este Forms muestra los permisos que cada usuario tiene acerca de la lectura de las listas ademas de las exportaciones
     public partial class Permisos_Lect : Form

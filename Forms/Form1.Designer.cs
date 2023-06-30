@@ -1,6 +1,6 @@
 ﻿using FutureLending.Controles_personalizados;
 
-namespace FutureLending
+namespace FutureLending.Forms
 {
     partial class Form1
     {

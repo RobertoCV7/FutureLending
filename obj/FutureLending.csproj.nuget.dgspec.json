@@ -44,10 +44,6 @@
         "net6.0-windows10.0.17763": {
           "targetAlias": "net6.0-windows10.0.17763.0",
           "dependencies": {
-            "AWSSDK.RDS": {
-              "target": "Package",
-              "version": "[3.7.120, )"
-            },
             "Bunifu.UI.WinForms": {
               "target": "Package",
               "version": "[6.1.0, )"

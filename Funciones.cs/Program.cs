@@ -1,6 +1,8 @@
 
 
-namespace FutureLending
+using FutureLending.Forms;
+
+namespace FutureLending.Funciones.cs
 {
     internal static class Program
     {
@@ -11,16 +13,16 @@ namespace FutureLending
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Inicio_Sesion inicio_Sesion = new Inicio_Sesion();
-            inicio_Sesion.ShowDialog();
-            if (iniciado)
+            var inicioSesion = new Inicio_Sesion();
+            inicioSesion.ShowDialog();
+            if (Iniciado)
             {
 
                 Application.Run(new Form1());
             }
 
         }
-        public static bool iniciado = false;
+        public static bool Iniciado = false;
         public static string NombreUsuario;
     }
     

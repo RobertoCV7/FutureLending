@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using FutureLending.Funciones.cs;
 
-namespace FutureLending
+namespace FutureLending.Forms
 {
     public partial class Configuracion_Inicio_Sesion : Form
     {
@@ -18,17 +10,18 @@ namespace FutureLending
             PingLabel.Hide();
             rjButton3_Click(null, null);
         }
-        static Lectura_Base_Datos a = new();
+
+        private static readonly Lectura_Base_Datos A = new();
 
         private CancellationTokenSource cancellationTokenSource; // Variable para cancelar la tarea
 
         private async void rjButton3_Click(object sender, EventArgs e)
         {
-            await a.CheckConnection(true);
+            await A.CheckConnection(true);
 
-            if (!Form1.conect)
+            if (!Form1.Conect)
             {
-                LabelEstado.Text = "Inactivo";
+                LabelEstado.Text = @"Inactivo";
                 LabelEstado.ForeColor = Color.Red;
                 LabelEstado.Location = new Point(276, 111);
                 PingLabel.Hide();
@@ -36,7 +29,7 @@ namespace FutureLending
             }
             else
             {
-                LabelEstado.Text = "Activo";
+                LabelEstado.Text = @"Activo";
                 LabelEstado.ForeColor = Color.Green;
                 LabelEstado.Location = new Point(149, 112);
                 PingLabel.Location = new Point(384, 112);
@@ -51,26 +44,25 @@ namespace FutureLending
             PingLabel.Show();
             while (!cancellationTokenSource.Token.IsCancellationRequested)
             {
-                await a.CheckConnection(true);
+                await A.CheckConnection(true);
 
-                if (Form1.conect)
+                var pin = await Task.Run(() => A.Ping());
+                if (Form1.Conect)
                 {
-   
-                    string Pin = await Task.Run(() => a.Ping());
-                    if (Convert.ToInt32(Pin) > 75 && Convert.ToInt32(Pin) < 120)
+                    switch (Convert.ToInt32(pin))
                     {
-                        PingLabel.ForeColor = Color.Orange;
-                        PingLabel.Text = "Ping: " + Pin;
-                    }
-                    else if (Convert.ToInt32(Pin) >= 120)
-                    {
-                        PingLabel.ForeColor = Color.Red;
-                        PingLabel.Text = "Ping: " + Pin;
-                    }
-                    else
-                    {
-                        PingLabel.ForeColor = Color.Green;
-                        PingLabel.Text = "Ping: " + Pin;
+                        case > 75 and < 120:
+                            PingLabel.ForeColor = Color.Orange;
+                            PingLabel.Text = @"Ping: " + pin;
+                            break;
+                        case >= 120:
+                            PingLabel.ForeColor = Color.Red;
+                            PingLabel.Text = @"Ping: " + pin;
+                            break;
+                        default:
+                            PingLabel.ForeColor = Color.Green;
+                            PingLabel.Text = @"Ping: " + pin;
+                            break;
                     }
                 }
                 else
@@ -79,7 +71,7 @@ namespace FutureLending
                 }
             }
         }
-        private bool isTabPageLoaded = false;
+        private bool isTabPageLoaded;
         private async void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -117,13 +109,13 @@ namespace FutureLending
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
-            string server = TextServer.Text.ToString();
-            string puerto = TextPuerto.Text.ToString();
-            string base_de_datos = TextBase.Text.ToString();
-            string usuario = TextUsuario.Text.ToString();
-            string contraseña = TextContra.Text.ToString();
+            var server = TextServer.Text;
+            var puerto = TextPuerto.Text;
+            var baseDeDatos = TextBase.Text;
+            var usuario = TextUsuario.Text;
+            var contraseña = TextContra.Text;
 
-            if (string.IsNullOrEmpty(server) || string.IsNullOrEmpty(puerto) || string.IsNullOrEmpty(base_de_datos) || string.IsNullOrEmpty(usuario))
+            if (string.IsNullOrEmpty(server) || string.IsNullOrEmpty(puerto) || string.IsNullOrEmpty(baseDeDatos) || string.IsNullOrEmpty(usuario))
             {
                 Form1.MessageB("No puede haber nada vacio", "Error", 2);
             }
@@ -131,7 +123,7 @@ namespace FutureLending
             {
                 Properties.Settings1.Default.Servidor = server;
                 Properties.Settings1.Default.Puerto = Convert.ToInt32(puerto);
-                Properties.Settings1.Default.Base_de_datos = base_de_datos;
+                Properties.Settings1.Default.Base_de_datos = baseDeDatos;
                 Properties.Settings1.Default.Usuario = usuario;
                 Properties.Settings1.Default.Contraseña = contraseña;
                 Properties.Settings1.Default.Save();
@@ -141,10 +133,10 @@ namespace FutureLending
 
         private async void rjButton1_Click(object sender, EventArgs e)
         {
-            Lectura_Base_Datos a = new();
-            await a.CheckConnection(false);
+            Lectura_Base_Datos baseDatos = new();
+            await baseDatos.CheckConnection(false);
         }
-        private bool changingCheckedState3 = false;
+        private bool changingCheckedState3;
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (!changingCheckedState3)

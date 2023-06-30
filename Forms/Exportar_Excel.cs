@@ -1,4 +1,7 @@
-﻿namespace FutureLending
+﻿using FutureLending.Forms;
+using FutureLending.Funciones.cs;
+
+namespace FutureLending
 {
     public partial class Exportar_Excel : Form
     {

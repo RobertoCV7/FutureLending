@@ -1,4 +1,4 @@
-﻿namespace FutureLending
+﻿namespace FutureLending.Funciones.cs
 {
     internal class TablaClientes
     {
@@ -38,10 +38,7 @@
         }
         #endregion
 
-       static Lectura_Base_Datos instancia = new();
-        //Aquí se guardan los datos de todas las consultas
-        private static readonly List<string[]> datos = new();
- 
+        private static readonly Lectura_Base_Datos Instancia = new();
         //Muestra en la tabla los datos de la lista 1
         public static async Task MostrarLista1(DataGridView gridListas,
             ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar,Label lab)
@@ -63,7 +60,7 @@
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                return instancia.LectLista1(false);
+                return Instancia.LectLista1(false);
             });
             // Añade las columnas correspondientes a la tabla y el nombre de cada una
             gridListas.ColumnCount = nombresColumnas.Count;
@@ -95,7 +92,7 @@
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                return instancia.LectLista2();
+                return Instancia.LectLista2();
             });
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
 
@@ -123,7 +120,7 @@
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                return instancia.LectLista3();
+                return Instancia.LectLista3();
             });
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
@@ -151,7 +148,7 @@
             // Lectura de datos de la lista correspondiente en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                return instancia.LectLiquidados();
+                return Instancia.LectLiquidados();
             });
 
             //Añade las columnas correspondientes a la tabla y el nombre de cada una
@@ -178,10 +175,10 @@
             //Lectura de datos comunes de todas las listas y clientes liquidados en un hilo separado
             List<string[]> datosList = await Task.Run(() =>
             {
-                List<string[]> todas = instancia.LectTodos("lista1", "1");
-                todas.AddRange(instancia.LectTodos("lista2", "2"));
-                todas.AddRange(instancia.LectTodos("lista3", "3"));
-                todas.AddRange(instancia.LectTodos("liquidados", "Liquidados"));
+                List<string[]> todas = Instancia.LectTodos("lista1", "1");
+                todas.AddRange(Instancia.LectTodos("lista2", "2"));
+                todas.AddRange(Instancia.LectTodos("lista3", "3"));
+                todas.AddRange(Instancia.LectTodos("liquidados", "Liquidados"));
                 return todas;
             });
 
@@ -216,7 +213,7 @@
         }
 
         //Añade los datos a la tabla y ComboBox
-        static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, ControlesPersonalizados.RJComboBox cmbCliente, bool todos, ProgressBar bar, Label Lab)
+        static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, ControlesPersonalizados.RJComboBox cmbCliente, bool todos, ProgressBar bar, Label lab)
         {
             if (datosList.Count == 0)
             {
@@ -238,16 +235,16 @@
             else
             {
                 bar.Visible = true;
-                Lab.Visible = true;
+                lab.Visible = true;
             }
 
             await Task.Run(() =>
             {
                 int i = 0;
 
-                foreach (string[] row in datosList)
+                foreach (object[] row in datosList)
                 {
-                    gridListas.Invoke(new Action(() =>
+                    gridListas.Invoke(() =>
                     {
                         gridListas.Rows.Add(row);
 
@@ -255,7 +252,7 @@
                         {
                             int valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
 
-                            bar.Invoke(new Action(() =>
+                            bar.Invoke(() =>
                             {
                                 bar.Value = valorProgressBar;
 
@@ -263,27 +260,27 @@
                                 {
                                     bar.Visible = false;
                                     bar.Value = 0;
-                                    Lab.Visible = false;
+                                    lab.Visible = false;
                                 }
                                 else
                                 {
                                     if (mostrarTextoCargando)
                                     {
-                                        Lab.Text = "Cargando...(" + valorProgressBar + "%)";
+                                        lab.Text = @"Cargando...(" + valorProgressBar + @"%)";
                                     }
                                 }
-                            }));
+                            });
                         }
 
                         i++;
-                    }));
+                    });
 
                     if (!todos)
                     {
-                        cmbCliente.Invoke(new Action(() =>
+                        cmbCliente.Invoke(() =>
                         {
                             cmbCliente.Items.Add(row[1]);
-                        }));
+                        });
                     }
                 }
             });
