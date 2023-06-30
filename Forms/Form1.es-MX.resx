@@ -22422,14 +22422,29 @@
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1106, 636</value>
   </data>
+  <data name="PingLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PingLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 22.2pt, style=Bold</value>
+  </data>
+  <data name="PingLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 41</value>
+  </data>
+  <data name="PingLabel.Text" xml:space="preserve">
+    <value>Ping:</value>
+  </data>
   <data name="rjButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 221</value>
+    <value>719, 278</value>
   </data>
   <data name="rjButton3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="rjButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 40</value>
+    <value>228, 62</value>
   </data>
   <data name="LabelEstado.Location" type="System.Drawing.Point, System.Drawing">
     <value>751, 162</value>
@@ -22438,7 +22453,7 @@
     <value>127, 41</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 98</value>
+    <value>676, 83</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 45</value>
@@ -22450,7 +22465,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="rjButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 44</value>
+    <value>192, 50</value>
   </data>
   <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>519, 379</value>

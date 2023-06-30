@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.IO.Ports;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Forms;
@@ -29,7 +30,7 @@ namespace FutureLending
             timer = new Timer();
             timer.Interval = 10; // Intervalo de tiempo para la animación (en milisegundos)
             timer.Tick += Timer_Tick;
-
+            PingLabel.Hide();
 
         }
         private double opacity = 1.0;
@@ -121,7 +122,7 @@ namespace FutureLending
         private bool CambioEnPromotores = true;
         private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
-
+            cancellationTokenSource?.Cancel();
             EsconderPaneles(pnlClientes);
             lblTitle.Text = "Ingresar Clientes";
             if (CambioEnPromotores)
@@ -273,6 +274,7 @@ namespace FutureLending
         private bool CambioenPromotoresListas = true;
         private void BtnListas_Click(object sender, EventArgs e)
         {
+            cancellationTokenSource?.Cancel();
             if (CambioenPromotoresListas)
             {
                 CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
@@ -957,6 +959,7 @@ namespace FutureLending
         #region Estado de Pagos
         private void BtnEstadoPagos_Click(object sender, EventArgs e)
         {
+            cancellationTokenSource?.Cancel();
             EsconderPaneles(pnlRegPago);
             lblTitle.Text = "Registrar pago";
 
@@ -1303,6 +1306,7 @@ namespace FutureLending
                 MessageB("Se guardaron los cambios", "Exito", 1);
             }
         }
+        private CancellationTokenSource cancellationTokenSource; // Variable para cancelar la tarea
         private async void RjButton3_ClickAsync(object sender, EventArgs e)
         {
             Lectura_Base_Datos a = new();
@@ -1313,11 +1317,52 @@ namespace FutureLending
             {
                 LabelEstado.Text = "Inactivo";
                 LabelEstado.ForeColor = Color.Red;
+                LabelEstado.Location = new Point(751, 162);
+                PingLabel.Hide();
+                PingLabel.Location = new Point(966, 12);
             }
             else
             {
                 LabelEstado.Text = "Activo";
                 LabelEstado.ForeColor = Color.Green;
+                LabelEstado.Location = new Point(648, 161);
+                PingLabel.Location = new Point(831, 163);
+                cancellationTokenSource = new CancellationTokenSource();
+                await Ping();
+            }
+        }
+        Lectura_Base_Datos a = new();
+        private async Task Ping()
+        {
+            PingLabel.Show();
+            while (!cancellationTokenSource.Token.IsCancellationRequested)
+            {
+                await a.CheckConnection(true);
+
+                if (Form1.conect)
+                {
+
+                    string Pin = await Task.Run(() => a.Ping());
+                    if (Convert.ToInt32(Pin) > 75 && Convert.ToInt32(Pin) < 120)
+                    {
+                        PingLabel.ForeColor = Color.Orange;
+                        PingLabel.Text = "Ping: " + Pin;
+                    }
+                    else if (Convert.ToInt32(Pin) >= 120)
+                    {
+                        PingLabel.ForeColor = Color.Red;
+                        PingLabel.Text = "Ping: " + Pin;
+                    }
+                    else
+                    {
+                        PingLabel.ForeColor = Color.Green;
+                        PingLabel.Text = "Ping: " + Pin;
+                    }
+                }
+                else
+                {
+                    cancellationTokenSource.Cancel(); // Detener la tarea si la conexión no está activa
+                }
             }
         }
         #endregion
@@ -2593,5 +2638,6 @@ namespace FutureLending
 
             }
         }
+
     }
 }

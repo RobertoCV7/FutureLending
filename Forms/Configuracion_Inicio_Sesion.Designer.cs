@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuracion_Inicio_Sesion));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            PingLabel = new Label();
             rjButton1 = new Controles_personalizados.RJButton();
             rjButton3 = new Controles_personalizados.RJButton();
             LabelEstado = new Label();
@@ -60,18 +61,25 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.SizeMode = TabSizeMode.FillToRight;
+            tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
             resources.ApplyResources(tabPage1, "tabPage1");
+            tabPage1.Controls.Add(PingLabel);
             tabPage1.Controls.Add(rjButton1);
             tabPage1.Controls.Add(rjButton3);
             tabPage1.Controls.Add(LabelEstado);
             tabPage1.Controls.Add(label51);
             tabPage1.Name = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // PingLabel
+            // 
+            resources.ApplyResources(PingLabel, "PingLabel");
+            PingLabel.ForeColor = Color.Red;
+            PingLabel.Name = "PingLabel";
             // 
             // rjButton1
             // 
@@ -228,6 +236,7 @@
             MinimizeBox = false;
             Name = "Configuracion_Inicio_Sesion";
             ShowInTaskbar = false;
+            Load += Configuracion_Inicio_Sesion_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -257,5 +266,6 @@
         private Controles_personalizados.RJButton rjButton3;
         private Label LabelEstado;
         private Label label51;
+        private Label PingLabel;
     }
 }
