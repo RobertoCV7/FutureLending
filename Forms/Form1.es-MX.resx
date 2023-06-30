@@ -22860,29 +22860,41 @@
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1346, 768</value>
   </data>
+  <data name="PingLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PingLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 22.2pt, style=Bold</value>
+  </data>
+  <data name="PingLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 41</value>
+  </data>
+  <data name="PingLabel.Text" xml:space="preserve">
+    <value>Ping:</value>
+  </data>
   <data name="rjButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>771, 278</value>
+    <value>856, 320</value>
   </data>
   <data name="rjButton3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="rjButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 74</value>
-  </data>
-  <data name="LabelEstado.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>257, 74</value>
   </data>
   <data name="LabelEstado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>807, 195</value>
+    <value>906, 206</value>
   </data>
   <data name="LabelEstado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 58</value>
+    <value>127, 41</value>
   </data>
   <data name="label51.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 36pt</value>
   </data>
   <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 98</value>
+    <value>771, 78</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
     <value>429, 65</value>
@@ -22900,7 +22912,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="checkBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>574, 494</value>
+    <value>750, 495</value>
   </data>
   <data name="checkBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -22936,7 +22948,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TextContra.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 47</value>
+    <value>369, 47</value>
   </data>
   <data name="TextUsuario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22948,7 +22960,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TextUsuario.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 47</value>
+    <value>370, 47</value>
   </data>
   <data name="TextBase.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22960,7 +22972,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TextBase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 47</value>
+    <value>370, 47</value>
   </data>
   <data name="TextPuerto.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22972,7 +22984,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TextPuerto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 47</value>
+    <value>370, 47</value>
   </data>
   <data name="TextServer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -22984,7 +22996,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="TextServer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 47</value>
+    <value>370, 47</value>
   </data>
   <data name="label48.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -23186,6 +23198,9 @@
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
     <value>1346, 768</value>
+  </data>
+  <data name="tabControl1.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>450, 25</value>
   </data>
   <data name="tabControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>

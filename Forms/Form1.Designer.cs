@@ -263,6 +263,7 @@ namespace FutureLending
             rjButton11 = new RJButton();
             rjButton12 = new RJButton();
             Conexion_Sql = new TabPage();
+            PingLabel = new Label();
             rjButton3 = new RJButton();
             LabelEstado = new Label();
             label51 = new Label();
@@ -2956,6 +2957,7 @@ namespace FutureLending
             // 
             resources.ApplyResources(Conexion_Sql, "Conexion_Sql");
             Conexion_Sql.BackColor = SystemColors.ButtonHighlight;
+            Conexion_Sql.Controls.Add(PingLabel);
             Conexion_Sql.Controls.Add(rjButton3);
             Conexion_Sql.Controls.Add(LabelEstado);
             Conexion_Sql.Controls.Add(label51);
@@ -2976,6 +2978,12 @@ namespace FutureLending
             Conexion_Sql.Controls.Add(label43);
             Conexion_Sql.ForeColor = SystemColors.ControlDarkDark;
             Conexion_Sql.Name = "Conexion_Sql";
+            // 
+            // PingLabel
+            // 
+            resources.ApplyResources(PingLabel, "PingLabel");
+            PingLabel.ForeColor = Color.Red;
+            PingLabel.Name = "PingLabel";
             // 
             // rjButton3
             // 
@@ -3692,6 +3700,7 @@ namespace FutureLending
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(panel2);
             Controls.Add(pnlListas);
             Controls.Add(pnlClientes);
             Controls.Add(PnlEditar2);
@@ -3700,7 +3709,6 @@ namespace FutureLending
             Controls.Add(PanelEditar2_2);
             Controls.Add(pnlRegPago);
             Controls.Add(PanelEditarLiquidados);
-            Controls.Add(panel2);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             DoubleBuffered = true;
@@ -4061,5 +4069,6 @@ namespace FutureLending
         private Label label87;
         private ControlesPersonalizados.RJComboBox ComBoxName;
         private RJButton rjButton7;
+        private Label PingLabel;
     }
 }

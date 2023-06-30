@@ -5,26 +5,66 @@
         public Configuracion_Inicio_Sesion()
         {
             InitializeComponent();
+            PingLabel.Hide();
             rjButton3_Click(null, null);
         }
-        bool revisador;
+        Lectura_Base_Datos a = new();
+        private CancellationTokenSource cancellationTokenSource; // Variable para cancelar la tarea
         private async void rjButton3_Click(object sender, EventArgs e)
         {
 
-            Lectura_Base_Datos a = new();
-
-            revisador = false;
             await a.CheckConnection(true);
-            revisador = true;
+
             if (!Form1.conect)
             {
                 LabelEstado.Text = "Inactivo";
                 LabelEstado.ForeColor = Color.Red;
+                LabelEstado.Location = new Point(266, 90);
+                PingLabel.Hide();
+                PingLabel.Location = new Point(577, 11);
             }
             else
             {
                 LabelEstado.Text = "Activo";
                 LabelEstado.ForeColor = Color.Green;
+                LabelEstado.Location = new Point(143, 89);
+                PingLabel.Location = new Point(386, 89);
+
+                cancellationTokenSource = new CancellationTokenSource();
+                await Ping();
+            }
+        }
+        private async Task Ping()
+        {
+            PingLabel.Show();
+            while (!cancellationTokenSource.Token.IsCancellationRequested)
+            {
+                await a.CheckConnection(true);
+
+                if (Form1.conect)
+                {
+
+                    string Pin = await Task.Run(() => a.Ping());
+                    if (Convert.ToInt32(Pin) > 75 && Convert.ToInt32(Pin) < 120)
+                    {
+                        PingLabel.ForeColor = Color.Orange;
+                        PingLabel.Text = "Ping: " + Pin;
+                    }
+                    else if (Convert.ToInt32(Pin) >= 120)
+                    {
+                        PingLabel.ForeColor = Color.Red;
+                        PingLabel.Text = "Ping: " + Pin;
+                    }
+                    else
+                    {
+                        PingLabel.ForeColor = Color.Green;
+                        PingLabel.Text = "Ping: " + Pin;
+                    }
+                }
+                else
+                {
+                    cancellationTokenSource.Cancel(); // Detener la tarea si la conexión no está activa
+                }
             }
         }
         private bool isTabPageLoaded = false;

@@ -797,6 +797,10 @@ namespace FutureLending
                     Registro_errores(ex.ToString());
                     await RepairProgramAsync();
                 }
+                else
+                {
+                    Form1.conect = false;
+                }
 
                 return;
             }
@@ -961,6 +965,21 @@ namespace FutureLending
                 Registro_errores(ex.ToString());
             }
         }
+        #endregion
+        #region Ping
+        public string Ping()
+        {
+            MySqlConnection connection = Conector();
+            Stopwatch stopwatch = new Stopwatch();
+            // Inicia el cronómetro
+            stopwatch.Start();
+            // Realiza el ping
+            connection.Ping();
+            // Detiene el cronómetro
+            stopwatch.Stop();
+            return stopwatch.ElapsedMilliseconds.ToString();
+        }
+
         #endregion
     }
 }

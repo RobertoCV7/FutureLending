@@ -228,10 +228,10 @@
             btnTodosSistemas.IconColor = Color.White;
             btnTodosSistemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTodosSistemas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodosSistemas.Location = new Point(565, 429);
+            btnTodosSistemas.Location = new Point(573, 425);
             btnTodosSistemas.Name = "btnTodosSistemas";
             btnTodosSistemas.Padding = new Padding(10, 0, 0, 0);
-            btnTodosSistemas.Size = new Size(60, 35);
+            btnTodosSistemas.Size = new Size(60, 56);
             btnTodosSistemas.TabIndex = 11;
             btnTodosSistemas.Tag = "Reparar";
             btnTodosSistemas.TextImageRelation = TextImageRelation.ImageBeforeText;

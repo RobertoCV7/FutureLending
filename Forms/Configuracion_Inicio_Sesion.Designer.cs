@@ -48,6 +48,7 @@
             label46 = new Label();
             label45 = new Label();
             label44 = new Label();
+            PingLabel = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -60,12 +61,13 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.SizeMode = TabSizeMode.FillToRight;
+            tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
             resources.ApplyResources(tabPage1, "tabPage1");
+            tabPage1.Controls.Add(PingLabel);
             tabPage1.Controls.Add(rjButton1);
             tabPage1.Controls.Add(rjButton3);
             tabPage1.Controls.Add(LabelEstado);
@@ -217,6 +219,12 @@
             label44.ForeColor = Color.LightSlateGray;
             label44.Name = "label44";
             // 
+            // PingLabel
+            // 
+            resources.ApplyResources(PingLabel, "PingLabel");
+            PingLabel.ForeColor = Color.Red;
+            PingLabel.Name = "PingLabel";
+            // 
             // Configuracion_Inicio_Sesion
             // 
             resources.ApplyResources(this, "$this");
@@ -257,5 +265,6 @@
         private Controles_personalizados.RJButton rjButton3;
         private Label LabelEstado;
         private Label label51;
+        private Label PingLabel;
     }
 }
