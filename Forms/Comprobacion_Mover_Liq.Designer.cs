@@ -1,11 +1,15 @@
-﻿namespace FutureLending.Forms
+﻿using System.ComponentModel;
+using FutureLending.Controles_personalizados;
+using FutureLending.ControlesPersonalizados;
+
+namespace FutureLending.Forms
 {
-    partial class Comprobacion_Mover_Liq
+    partial class ComprobacionMoverLiq
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,10 +32,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comprobacion_Mover_Liq));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprobacionMoverLiq));
             label1 = new Label();
-            rjButton1 = new Controles_personalizados.RJButton();
-            rjButton2 = new Controles_personalizados.RJButton();
+            rjButton1 = new RjButton();
+            rjButton2 = new RjButton();
             SuspendLayout();
             // 
             // label1
@@ -46,7 +50,6 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.Gray;
             rjButton1.BackgroundColor = Color.Gray;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -66,7 +69,6 @@
             // 
             // rjButton2
             // 
-            rjButton2.BackColor = Color.IndianRed;
             rjButton2.BackgroundColor = Color.IndianRed;
             rjButton2.BorderColor = Color.PaleVioletRed;
             rjButton2.BorderRadius = 20;
@@ -95,7 +97,7 @@
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "Comprobacion_Mover_Liq";
+            Name = "ComprobacionMoverLiq";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Comprobacion_Mover_Liq";
             FormClosing += Comprobacion_Mover_Liq_FormClosing;
@@ -106,7 +108,7 @@
         #endregion
 
         private Label label1;
-        private Controles_personalizados.RJButton rjButton1;
-        private Controles_personalizados.RJButton rjButton2;
+        private RjButton rjButton1;
+        private RjButton rjButton2;
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Drawing.Drawing2D;
 
-namespace FutureLending.Controles_personalizados
+namespace FutureLending.ControlesPersonalizados
 {
-    [DefaultEvent("_TextChanged")]
+    [DefaultEvent("TextChanged2EventHandler")]
     //Es un textbox con bordes redondeados
     public partial class TextBoxPersonalizado : UserControl
     {
@@ -16,14 +16,14 @@ namespace FutureLending.Controles_personalizados
         private Color borderColor = Color.MediumSlateBlue;
         private Color borderFocusColor = Color.HotPink;
         private int borderSize = 2;
-        private bool underlinedStyle = false;
-        private bool isFocused = false;
+        private bool underlinedStyle;
+        private bool isFocused;
 
-        private int borderRadius = 0;
+        private int borderRadius;
         private Color placeholderColor = Color.DarkGray;
         private string placeholderText = "";
-        private bool isPlaceholder = false;
-        private bool isPasswordChar = false;
+        private bool isPlaceholder;
+        private bool isPasswordChar;
 
         #region -> Private methods
         private void SetPlaceholder()
@@ -275,7 +275,7 @@ namespace FutureLending.Controles_personalizados
                     this.Region = new Region(pathBorderSmooth);//Set the rounded region of UserControl
                     if (borderRadius > 15) SetTextBoxRoundedRegion();//Set the rounded region of TextBox component
                     graph.SmoothingMode = SmoothingMode.AntiAlias;
-                    penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
+                    penBorder.Alignment = PenAlignment.Center;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
                     if (underlinedStyle) //Line Style
@@ -301,7 +301,7 @@ namespace FutureLending.Controles_personalizados
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     this.Region = new Region(this.ClientRectangle);
-                    penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                    penBorder.Alignment = PenAlignment.Inset;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
                     if (underlinedStyle) //Line Style
@@ -314,12 +314,12 @@ namespace FutureLending.Controles_personalizados
         #endregion
 
         //Default Event
-        public event EventHandler _TextChanged;
+        public event EventHandler TextChanged2EventHandler;
         //TextBox-> TextChanged event
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (_TextChanged != null)
-                _TextChanged.Invoke(sender, e);
+            if (TextChanged2EventHandler != null)
+                TextChanged2EventHandler.Invoke(sender, e);
         }
 
         private void textBox1_Enter(object sender, EventArgs e)

@@ -1,10 +1,12 @@
-﻿using FutureLending.Funciones.cs;
+﻿
 
-namespace FutureLending
+using FutureLending.Funciones.cs;
+
+namespace FutureLending.Forms
 {
-    public partial class Inicio_Sesion : Form
+    public partial class InicioSesion : Form
     {
-        public Inicio_Sesion()
+        public InicioSesion()
         {
             InitializeComponent();
             button1.Enabled = false;
@@ -12,45 +14,33 @@ namespace FutureLending
 
         private void PictureBox2_Click(object sender, EventArgs e)
         {
-            BackupService ob = new();
-            ob.StopBackup();
-            this.Close();
+            Close();
 
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            bool cerrar;
-            cerrar = Accesos.Accesar(TextUsuario.Text, TextContra.Text);
+            var cerrar = Accesos.Accesar(TextUsuario.Text, TextContra.Text);
             if (cerrar)
             {
-                Program.inicio = true;
+                Program.Inicio = true;
                 Program.NombreDeUsuario = TextUsuario.Text;
-                this.Close();
+                Close();
             }
             else
             {
-                Mensaje.Text = "Usuario o Contraseña incorrectos ";
+                Mensaje.Text = @"Usuario o Contraseña incorrectos ";
             }
         }
 
         private void BtnTodosSistemas_Click(object sender, EventArgs e)
         {
-            using (Configuracion_Inicio_Sesion a = new Configuracion_Inicio_Sesion())
-            {
-                a.ShowDialog();
-            }
+            using var a = new ConfiguracionInicioSesion();
+            a.ShowDialog();
         }
 
         private void TextUsuario_TextChanged(object sender, EventArgs e)
         {
-            if (TextUsuario.Text != null && TextUsuario.Text != "")
-            {
-                button1.Enabled = true;
-            }
-            else
-            {
-                button1.Enabled = false;
-            }
+            button1.Enabled = !string.IsNullOrEmpty(TextUsuario.Text);
         }
 
         private void Inicio_Sesion_FormClosing(object sender, FormClosingEventArgs e)

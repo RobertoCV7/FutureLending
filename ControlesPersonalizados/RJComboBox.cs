@@ -6,7 +6,7 @@ namespace FutureLending.ControlesPersonalizados
 {
     [DefaultEvent("OnSelectedIndexChanged")]
     //Este es un combobox modificado para que se vea mas bonito
-    public class RJComboBox : UserControl
+    public class RjComboBox : UserControl
     {
         //Fields
         private Color backColor = Color.WhiteSmoke;
@@ -25,7 +25,7 @@ namespace FutureLending.ControlesPersonalizados
         public event EventHandler OnSelectedIndexChanged;//Default event
 
         //Constructor
-        public RJComboBox()
+        public RjComboBox()
         {
             cmbList = new ComboBox();
             lblText = new Label();

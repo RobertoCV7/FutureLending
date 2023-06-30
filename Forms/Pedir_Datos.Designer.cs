@@ -1,11 +1,15 @@
-﻿namespace FutureLending
+﻿using System.ComponentModel;
+using FutureLending.Controles_personalizados;
+using FutureLending.ControlesPersonalizados;
+
+namespace FutureLending.Forms
 {
-    partial class Pedir_Datos
+    partial class PedirDatos
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,13 +32,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedir_Datos));
-            rjComboBox2 = new ControlesPersonalizados.RJComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedirDatos));
+            rjComboBox2 = new ControlesPersonalizados.RjComboBox();
             label30 = new Label();
-            TextLiquidacionPedir = new Controles_personalizados.TextBoxPersonalizado();
+            TextLiquidacionPedir = new TextBoxPersonalizado();
             label33 = new Label();
-            BotonDeingresarPedir = new Controles_personalizados.RJButton();
-            rjButton1 = new Controles_personalizados.RJButton();
+            BotonDeingresarPedir = new RjButton();
+            rjButton1 = new RjButton();
             SuspendLayout();
             // 
             // rjComboBox2
@@ -91,7 +95,7 @@
             TextLiquidacionPedir.TabIndex = 59;
             TextLiquidacionPedir.Texts = "";
             TextLiquidacionPedir.UnderlinedStyle = true;
-            TextLiquidacionPedir._TextChanged += TextLiquidacionPedir__TextChanged;
+            TextLiquidacionPedir.TextChanged2EventHandler += TextLiquidacionPedirTextChanged2EventHandler;
             TextLiquidacionPedir.KeyPress += TextLiquidacionPedir_KeyPress;
             // 
             // label33
@@ -107,7 +111,6 @@
             // 
             // BotonDeingresarPedir
             // 
-            BotonDeingresarPedir.BackColor = Color.IndianRed;
             BotonDeingresarPedir.BackgroundColor = Color.IndianRed;
             BotonDeingresarPedir.BorderColor = Color.PaleVioletRed;
             BotonDeingresarPedir.BorderRadius = 20;
@@ -128,7 +131,6 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.Gray;
             rjButton1.BackgroundColor = Color.Gray;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -163,7 +165,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
-            Name = "Pedir_Datos";
+            Name = "PedirDatos";
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Datos Para Lista 2";
@@ -174,11 +176,11 @@
 
         #endregion
 
-        public ControlesPersonalizados.RJComboBox rjComboBox2;
+        public RjComboBox rjComboBox2;
         private Label label30;
-        public Controles_personalizados.TextBoxPersonalizado TextLiquidacionPedir;
+        public TextBoxPersonalizado TextLiquidacionPedir;
         private Label label33;
-        public Controles_personalizados.RJButton BotonDeingresarPedir;
-        public Controles_personalizados.RJButton rjButton1;
+        public RjButton BotonDeingresarPedir;
+        public RjButton rjButton1;
     }
 }

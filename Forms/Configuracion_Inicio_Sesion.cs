@@ -1,23 +1,25 @@
-﻿namespace FutureLending
+﻿using FutureLending.Properties;
+
+namespace FutureLending.Forms
 {
-    public partial class Configuracion_Inicio_Sesion : Form
+    public partial class ConfiguracionInicioSesion : Form
     {
-        public Configuracion_Inicio_Sesion()
+        public ConfiguracionInicioSesion()
         {
             InitializeComponent();
             PingLabel.Hide();
             rjButton3_Click(null, null);
         }
-        Lectura_Base_Datos a = new();
+        LecturaBaseDatos a = new();
         private CancellationTokenSource cancellationTokenSource; // Variable para cancelar la tarea
         private async void rjButton3_Click(object sender, EventArgs e)
         {
 
             await a.CheckConnection(true);
 
-            if (!Form1.conect)
+            if (!Form1.Conect)
             {
-                LabelEstado.Text = "Inactivo";
+                LabelEstado.Text = @"Inactivo";
                 LabelEstado.ForeColor = Color.Red;
                 LabelEstado.Location = new Point(266, 90);
                 PingLabel.Hide();
@@ -25,7 +27,7 @@
             }
             else
             {
-                LabelEstado.Text = "Activo";
+                LabelEstado.Text = @"Activo";
                 LabelEstado.ForeColor = Color.Green;
                 LabelEstado.Location = new Point(143, 89);
                 PingLabel.Location = new Point(386, 89);
@@ -41,24 +43,23 @@
             {
                 await a.CheckConnection(true);
 
-                if (Form1.conect)
+                if (Form1.Conect)
                 {
-
-                    string Pin = await Task.Run(() => a.Ping());
-                    if (Convert.ToInt32(Pin) > 75 && Convert.ToInt32(Pin) < 120)
+                    var pin = await Task.Run(() => a.Ping());
+                    switch (Convert.ToInt32(pin))
                     {
-                        PingLabel.ForeColor = Color.Orange;
-                        PingLabel.Text = "Ping: " + Pin;
-                    }
-                    else if (Convert.ToInt32(Pin) >= 120)
-                    {
-                        PingLabel.ForeColor = Color.Red;
-                        PingLabel.Text = "Ping: " + Pin;
-                    }
-                    else
-                    {
-                        PingLabel.ForeColor = Color.Green;
-                        PingLabel.Text = "Ping: " + Pin;
+                        case > 75 and < 120:
+                            PingLabel.ForeColor = Color.Orange;
+                            PingLabel.Text = @"Ping: " + pin;
+                            break;
+                        case >= 120:
+                            PingLabel.ForeColor = Color.Red;
+                            PingLabel.Text = @"Ping: " + pin;
+                            break;
+                        default:
+                            PingLabel.ForeColor = Color.Green;
+                            PingLabel.Text = @"Ping: " + pin;
+                            break;
                     }
                 }
                 else
@@ -67,25 +68,23 @@
                 }
             }
         }
-        private bool isTabPageLoaded = false;
+        private bool isTabPageLoaded;
         private async void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (tabControl1.SelectedIndex == 0)
+            switch (tabControl1.SelectedIndex)
             {
-
-            }
-            else if (tabControl1.SelectedIndex == 1)
-            {
-                if (!isTabPageLoaded)
+                case 0:
+                    break;
+                case 1:
                 {
-                    await LoadTabPage1Async();
-                    isTabPageLoaded = true;
-                }
-            }
-            else
-            {
+                    if (!isTabPageLoaded)
+                    {
+                        await LoadTabPage1Async();
+                        isTabPageLoaded = true;
+                    }
 
+                    break;
+                }
             }
         }
         private async Task LoadTabPage1Async()
@@ -94,65 +93,54 @@
             {
                 Invoke((Action)(() =>
                 {
-                    TextServer.Text = Properties.Settings1.Default.Servidor;
-                    TextPuerto.Text = Properties.Settings1.Default.Puerto.ToString();
-                    TextBase.Text = Properties.Settings1.Default.Base_de_datos;
-                    TextUsuario.Text = Properties.Settings1.Default.Usuario;
-                    TextContra.Text = Properties.Settings1.Default.Contraseña;
+                    TextServer.Text = Settings1.Default.Servidor;
+                    TextPuerto.Text = Settings1.Default.Puerto.ToString();
+                    TextBase.Text = Settings1.Default.Base_de_datos;
+                    TextUsuario.Text = Settings1.Default.Usuario;
+                    TextContra.Text = Settings1.Default.Contraseña;
                 }));
             });
         }
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
-            string server = TextServer.Text.ToString();
-            string puerto = TextPuerto.Text.ToString();
-            string base_de_datos = TextBase.Text.ToString();
-            string usuario = TextUsuario.Text.ToString();
-            string contraseña = TextContra.Text.ToString();
+            var server = TextServer.Text;
+            var puerto = TextPuerto.Text;
+            var baseDeDatos = TextBase.Text ?? throw new ArgumentNullException(nameof(sender));
+            var usuario = TextUsuario.Text;
+            var contraseña = TextContra.Text;
 
-            if (string.IsNullOrEmpty(server) || string.IsNullOrEmpty(puerto) || string.IsNullOrEmpty(base_de_datos) || string.IsNullOrEmpty(usuario))
+            if (string.IsNullOrEmpty(server) || string.IsNullOrEmpty(puerto) || string.IsNullOrEmpty(baseDeDatos) || string.IsNullOrEmpty(usuario))
             {
                 Form1.MessageB("No puede haber nada vacio", "Error", 2);
             }
             else
             {
-                Properties.Settings1.Default.Servidor = server;
-                Properties.Settings1.Default.Puerto = Convert.ToInt32(puerto);
-                Properties.Settings1.Default.Base_de_datos = base_de_datos;
-                Properties.Settings1.Default.Usuario = usuario;
-                Properties.Settings1.Default.Contraseña = contraseña;
-                Properties.Settings1.Default.Save();
+                Settings1.Default.Servidor = server;
+                Settings1.Default.Puerto = Convert.ToInt32(puerto);
+                Settings1.Default.Base_de_datos = baseDeDatos;
+                Settings1.Default.Usuario = usuario;
+                Settings1.Default.Contraseña = contraseña;
+                Settings1.Default.Save();
                 Form1.MessageB("Se guardaron los cambios", "Exito", 1);
             }
         }
 
         private async void rjButton1_Click(object sender, EventArgs e)
         {
-            Lectura_Base_Datos a = new();
-            await a.CheckConnection(false);
+            LecturaBaseDatos datos = new();
+            await datos.CheckConnection(false);
         }
-        private bool changingCheckedState3 = false;
+        private bool changingCheckedState3;
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (!changingCheckedState3)
-            {
-                changingCheckedState3 = true;
+            if (changingCheckedState3) return;
+            changingCheckedState3 = true;
 
-                if (checkBox3.Checked)
-                {
-                    // Desactivar el uso de contraseña
-                    TextContra.UseSystemPasswordChar = false;
-
-                }
-                else
-                {
-                    // Activar el uso de contraseña
-                    TextContra.UseSystemPasswordChar = true;
-                }
-
-                changingCheckedState3 = false;
-            }
+            // Desactivar el uso de contraseña
+            TextContra.UseSystemPasswordChar = !checkBox3.Checked;
+            // Activar el uso de contraseña
+            changingCheckedState3 = false;
         }
     }
 }

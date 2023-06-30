@@ -1,12 +1,12 @@
-﻿namespace FutureLending
+﻿namespace FutureLending.Forms
 {
     //Este forms pide los datos faltantes para mover el registro de la lista 1 a la lista 2
-    public partial class Pedir_Datos : Form
+    public partial class PedirDatos : Form
     {
-        public Pedir_Datos()
+        public PedirDatos()
         {
             InitializeComponent();
-            this.FormClosing += Pedir_Datos_FormClosing;
+            FormClosing += Pedir_Datos_FormClosing;
         }
         public bool Mover2 = true;
         public void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -18,7 +18,7 @@
                 if (rjComboBox2.SelectedIndex == 1)
                 {
                     TextLiquidacionPedir.Enabled = false;
-                    TextLiquidacionPedir.Text = "0";
+                    TextLiquidacionPedir.Text = @"0";
                 }
                 else
                 {
@@ -35,19 +35,12 @@
 
         private void BotonDeingresarPedir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void TextLiquidacionPedir__TextChanged(object sender, EventArgs e)
+        private void TextLiquidacionPedirTextChanged2EventHandler(object sender, EventArgs e)
         {
-            if (TextLiquidacionPedir.Texts != "")
-            {
-                BotonDeingresarPedir.Enabled = true;
-            }
-            else
-            {
-                BotonDeingresarPedir.Enabled = false;
-            }
+            BotonDeingresarPedir.Enabled = TextLiquidacionPedir.Texts != "";
         }
 
         private void TextLiquidacionPedir_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,32 +51,22 @@
                 e.Handled = true;
             }
         }
-        private bool Mostrado = false;
+
+        public bool Mostrado;
         private void Pedir_Datos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Mover2)
-            {
-                if (rjComboBox2.SelectedIndex != -1 && rjComboBox2.SelectedIndex != 1)
-                {
-                    if (TextLiquidacionPedir.Texts == null || TextLiquidacionPedir.Texts == "")
-                    {
-                        Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
-                        Mostrado = true;
-                        e.Cancel = true;
-                    }
-                }
-                else
-                {
-
-                }
-            }
-
+            if (!Mover2) return;
+            if (rjComboBox2.SelectedIndex == -1 || rjComboBox2.SelectedIndex == 1) return;
+            if (TextLiquidacionPedir.Texts != "") return;
+            Form1.MessageB("No se puede dejar el campo vacio", "Advertencia", 2);
+            Mostrado = true;
+            e.Cancel = true;
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             Mover2 = false;
-            this.Close();
+            Close();
         }
     }
 }

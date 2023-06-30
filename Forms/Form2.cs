@@ -1,4 +1,4 @@
-﻿namespace FutureLending
+﻿namespace FutureLending.Forms
 {
     //Lo que hace este forms es mostrar un mensaje de error, alerta o correcto 
     //Basicamente remplaza el MessageBox.Show de windows forms
@@ -7,10 +7,10 @@
         public Form2(string text, string titulo, int situacion)
         {
             InitializeComponent();
-            string rutaAplicacion = Application.StartupPath;
-            this.Text = titulo;
+            var rutaAplicacion = Application.StartupPath ?? throw new ArgumentNullException(nameof(text));
+            Text = titulo;
             // Obtén el tamaño del formulario
-            Size formSize = this.Size;
+            var formSize = Size;
 
             // Asigna el texto al Label
             Texto.Text = text;
@@ -22,22 +22,24 @@
                 Texto.Font = new Font(Texto.Font.FontFamily, Texto.Font.Size - 1); // Reduce el tamaño de fuente
             }
 
-            if (situacion == 1)
+            Icon = situacion switch
             {
-                this.Icon = new Icon(rutaAplicacion + "\\Resources\\Correcto.ico");
-            }
-            else if (situacion == 2)
-            {
-                this.Icon = new Icon(rutaAplicacion + "\\Resources\\Alerta.ico");
-            }
-            else if (situacion == 3)
-            {
-                this.Icon = new Icon(rutaAplicacion + "\\Resources\\TodoMal.ico");
-            }
+                1 => new Icon(rutaAplicacion + "\\Resources\\Correcto.ico"),
+                2 => new Icon(rutaAplicacion + "\\Resources\\Alerta.ico"),
+                3 => new Icon(rutaAplicacion + "\\Resources\\TodoMal.ico"),
+                _ => Icon
+            };
         }
+
+        public sealed override string Text
+        {
+            get => base.Text;
+            set => base.Text = value;
+        }
+
         private void RjButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

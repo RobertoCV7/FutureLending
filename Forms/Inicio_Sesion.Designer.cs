@@ -1,11 +1,15 @@
-﻿namespace FutureLending
+﻿using System.ComponentModel;
+using Bunifu.Framework.UI;
+using FontAwesome.Sharp;
+
+namespace FutureLending.Forms
 {
-    partial class Inicio_Sesion
+    partial class InicioSesion
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,7 +33,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio_Sesion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
@@ -264,7 +268,7 @@
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
-            Name = "Inicio_Sesion";
+            Name = "InicioSesion";
             ShowIcon = false;
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
@@ -291,12 +295,12 @@
         private TextBox TextContra;
         private Button button1;
         private Label Mensaje;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
-        private FontAwesome.Sharp.IconButton btnTodosSistemas;
+        private BunifuElipse bunifuElipse1;
+        private BunifuElipse bunifuElipse2;
+        private BunifuElipse bunifuElipse3;
+        private BunifuElipse bunifuElipse4;
+        private BunifuElipse bunifuElipse5;
+        private BunifuElipse bunifuElipse6;
+        private IconButton btnTodosSistemas;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace FutureLending
+﻿namespace FutureLending.Forms
 {
     //Este forms pide los daros faltantes para mover algun usuario de lista1 o lista 2 a la lista 3
     public partial class PedirDatos3 : Form
@@ -10,7 +10,7 @@
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ComboBoxResolucion3_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -18,12 +18,12 @@
             if (ComboBoxResolucion3.SelectedIndex != -1)
             {
                 uno = true;
-                activar();
+                Activar();
             }
             else
             {
                 uno = false;
-                activar();
+                Activar();
             }
 
         }
@@ -36,7 +36,8 @@
                 e.Handled = true;
             }
         }
-        void activar()
+
+        private void Activar()
         {
             if (uno && dos && tres)
             {
@@ -51,31 +52,25 @@
 
         private void PedirDatos3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Mover3)
+            if (!Mover3) return;
+            if (ComboBoxResolucion3.SelectedIndex != -1)
             {
-                if (ComboBoxResolucion3.SelectedIndex != -1)
-                {
-                    if (ComboBoxResolucionD.SelectedIndex != -1)
-                    {
-                        if (TextImporte3.Texts != "" || TextImporte3.Texts != null)
-                        {
-
-                        }
-                    }
-                }
-                else
-                {
-                    Form1.MessageB("No se puede dejar si  seleccionar nada", "Advertencia", 2);
-                    e.Cancel = true;
-                }
+                // ReSharper disable once RedundantJumpStatement
+                if (ComboBoxResolucionD.SelectedIndex == -1)return;
+            }
+            else
+            {
+                Form1.MessageB("No se puede dejar si  seleccionar nada", "Advertencia", 2);
+                e.Cancel = true;
             }
 
         }
         public bool Mover3 = true;
-        private void rjButton2_Click(object sender, EventArgs e)
+
+        public void rjButton2_Click(object sender, EventArgs e)
         {
             Mover3 = false;
-            this.Close();
+            Close();
         }
         private bool uno;
         private bool dos;
@@ -85,26 +80,26 @@
             if (ComboBoxResolucion3.SelectedIndex != -1)
             {
                 dos = true;
-                activar();
+                Activar();
             }
             else
             {
                 dos = false;
-                activar();
+                Activar();
             }
         }
 
-        private void TextImporte3__TextChanged(object sender, EventArgs e)
+        private void TextImporte3TextChanged2EventHandler(object sender, EventArgs e)
         {
-            if (TextImporte3.Texts != null && TextImporte3.Texts != "")
+            if (TextImporte3.Texts != "")
             {
                 tres = true;
-                activar();
+                Activar();
             }
             else
             {
                 tres = false;
-                activar();
+                Activar();
             }
         }
     }

@@ -1,34 +1,32 @@
 ﻿namespace FutureLending.Forms
 {
-    public partial class Comprobacion_Mover_Liq : Form
+    public partial class ComprobacionMoverLiq : Form
     {
-        public Comprobacion_Mover_Liq()
+        public ComprobacionMoverLiq()
         {
             InitializeComponent();
         }
-        private bool click = false;
+        private bool click;
         public bool Mover4;
         private void rjButton2_Click(object sender, EventArgs e)
         {
             Mover4 = true;
             click = true;
-            this.Close();
+            Close();
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             Mover4 = false;
             click = true;
-            this.Close();
+            Close();
         }
 
         private void Comprobacion_Mover_Liq_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!click)
-            {
-                Form1.MessageB("Debes seleccionar una opcion", "Advertencia", 2);
-                e.Cancel = true;
-            }
+            if (click) return;
+            Form1.MessageB("Debes seleccionar una opcion", "Advertencia", 2);
+            e.Cancel = true;
         }
     }
 }

@@ -1,11 +1,15 @@
-﻿namespace FutureLending
+﻿using System.ComponentModel;
+using FutureLending.Controles_personalizados;
+using FutureLending.ControlesPersonalizados;
+
+namespace FutureLending.Forms
 {
     partial class Form2
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +34,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             Texto = new Label();
-            rjButton1 = new Controles_personalizados.RJButton();
+            rjButton1 = new RjButton();
             SuspendLayout();
             // 
             // Texto
@@ -48,7 +52,6 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.LightCoral;
             rjButton1.BackgroundColor = Color.LightCoral;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -87,7 +90,7 @@
         }
 
         #endregion
-        private Controles_personalizados.RJButton rjButton1;
+        private RjButton rjButton1;
         private Label Texto;
     }
 }

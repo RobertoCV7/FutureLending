@@ -4,7 +4,8 @@ using System.Drawing.Drawing2D;
 namespace FutureLending.Controles_personalizados
 {
     //Simplemente es un boton con bordes redondeados
-    public class RJButton : Button
+
+    public class RjButton : Button
     {
         //Fields
         private int borderSize = 0;
@@ -59,7 +60,7 @@ namespace FutureLending.Controles_personalizados
         }
 
         //Constructor
-        public RJButton()
+        public RjButton()
         {
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;

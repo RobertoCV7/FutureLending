@@ -1,11 +1,15 @@
-﻿namespace FutureLending
+﻿using System.ComponentModel;
+using FutureLending.Controles_personalizados;
+using FutureLending.ControlesPersonalizados;
+
+namespace FutureLending.Forms
 {
-    partial class Configuracion_Inicio_Sesion
+    partial class ConfiguracionInicioSesion
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,15 +32,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuracion_Inicio_Sesion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracionInicioSesion));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            rjButton1 = new Controles_personalizados.RJButton();
-            rjButton3 = new Controles_personalizados.RJButton();
+            rjButton1 = new RjButton();
+            rjButton3 = new RjButton();
             LabelEstado = new Label();
             label51 = new Label();
             tabPage2 = new TabPage();
-            rjButton2 = new Controles_personalizados.RJButton();
+            rjButton2 = new RjButton();
             checkBox3 = new CheckBox();
             TextContra = new TextBox();
             TextUsuario = new TextBox();
@@ -78,7 +82,6 @@
             // rjButton1
             // 
             resources.ApplyResources(rjButton1, "rjButton1");
-            rjButton1.BackColor = Color.IndianRed;
             rjButton1.BackgroundColor = Color.IndianRed;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -93,7 +96,6 @@
             // rjButton3
             // 
             resources.ApplyResources(rjButton3, "rjButton3");
-            rjButton3.BackColor = SystemColors.ActiveCaption;
             rjButton3.BackgroundColor = SystemColors.ActiveCaption;
             rjButton3.BorderColor = Color.PaleVioletRed;
             rjButton3.BorderRadius = 20;
@@ -138,7 +140,6 @@
             // rjButton2
             // 
             resources.ApplyResources(rjButton2, "rjButton2");
-            rjButton2.BackColor = Color.IndianRed;
             rjButton2.BackgroundColor = Color.IndianRed;
             rjButton2.BorderColor = Color.PaleVioletRed;
             rjButton2.BorderRadius = 20;
@@ -234,7 +235,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Configuracion_Inicio_Sesion";
+            Name = "ConfiguracionInicioSesion";
             ShowInTaskbar = false;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -249,7 +250,7 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private Controles_personalizados.RJButton rjButton2;
+        private RjButton rjButton2;
         private CheckBox checkBox3;
         private TextBox TextContra;
         private TextBox TextUsuario;
@@ -261,8 +262,8 @@
         private Label label46;
         private Label label45;
         private Label label44;
-        private Controles_personalizados.RJButton rjButton1;
-        private Controles_personalizados.RJButton rjButton3;
+        private RjButton rjButton1;
+        private RjButton rjButton3;
         private Label LabelEstado;
         private Label label51;
         private Label PingLabel;

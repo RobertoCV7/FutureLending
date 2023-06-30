@@ -1,13 +1,17 @@
-﻿using FutureLending.Controles_personalizados;
+﻿using System.ComponentModel;
+using Bunifu.Framework.UI;
+using FontAwesome.Sharp;
+using FutureLending.Controles_personalizados;
+using FutureLending.ControlesPersonalizados;
 
-namespace FutureLending
+namespace FutureLending.Forms
 {
     partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         ///  Clean up any resources being used.
@@ -46,8 +50,8 @@ namespace FutureLending
             btnMenu = new FontAwesome.Sharp.IconButton();
             pictureBox1 = new PictureBox();
             PnlEditar2 = new Panel();
-            btnEditarFechas2 = new RJButton();
-            btnGuardarC = new RJButton();
+            btnEditarFechas2 = new RjButton();
+            btnGuardarC = new RjButton();
             TextBoxQuita = new TextBoxPersonalizado();
             label70 = new Label();
             TextBoxLiquidacionIntencion = new TextBoxPersonalizado();
@@ -59,8 +63,8 @@ namespace FutureLending
             LabelPertenece = new Label();
             label72 = new Label();
             groupBox2 = new GroupBox();
-            btnMover3 = new RJButton();
-            CmbLista2 = new ControlesPersonalizados.RJComboBox();
+            btnMover3 = new RjButton();
+            CmbLista2 = new ControlesPersonalizados.RjComboBox();
             TextBoxCorreo = new TextBoxPersonalizado();
             label73 = new Label();
             TextBoxTelefono = new TextBoxPersonalizado();
@@ -74,13 +78,13 @@ namespace FutureLending
             TextBoxCalle = new TextBoxPersonalizado();
             label78 = new Label();
             label79 = new Label();
-            rjComboBox7 = new ControlesPersonalizados.RJComboBox();
+            rjComboBox7 = new ControlesPersonalizados.RjComboBox();
             label80 = new Label();
             TextBoxCredito = new TextBoxPersonalizado();
             label83 = new Label();
             TextBoxNombre = new TextBoxPersonalizado();
             label84 = new Label();
-            rjComboBox8 = new ControlesPersonalizados.RJComboBox();
+            rjComboBox8 = new ControlesPersonalizados.RjComboBox();
             panelTitleBar = new Panel();
             lblTitle = new Label();
             pnlRegPago = new Panel();
@@ -88,23 +92,23 @@ namespace FutureLending
             label82 = new Label();
             TextBoxRestantepagos = new TextBoxPersonalizado();
             label17 = new Label();
-            rjComboBox9 = new ControlesPersonalizados.RJComboBox();
-            ComBoxName = new ControlesPersonalizados.RJComboBox();
+            rjComboBox9 = new ControlesPersonalizados.RjComboBox();
+            ComBoxName = new ControlesPersonalizados.RjComboBox();
             label29 = new Label();
-            btnBuscarC = new RJButton();
+            btnBuscarC = new RjButton();
             lblFecha = new Label();
             txtBoxCredito = new TextBoxPersonalizado();
             lblCredito = new Label();
             txtBoxMonto = new TextBoxPersonalizado();
-            btnMarcarP = new RJButton();
+            btnMarcarP = new RjButton();
             lblMonto = new Label();
             pnlClientes = new Panel();
             label87 = new Label();
-            btnCalcular1 = new RJButton();
-            btnGuardar1 = new RJButton();
+            btnCalcular1 = new RjButton();
+            btnGuardar1 = new RjButton();
             dateTimePickerPersonalizado2 = new DateTimePickerPersonalizado();
             label65 = new Label();
-            cmbInteres = new ControlesPersonalizados.RJComboBox();
+            cmbInteres = new ControlesPersonalizados.RjComboBox();
             txtTotal_I = new TextBoxPersonalizado();
             label16 = new Label();
             txtTotal = new TextBoxPersonalizado();
@@ -123,7 +127,7 @@ namespace FutureLending
             label9 = new Label();
             label7 = new Label();
             label6 = new Label();
-            cmbTipo = new ControlesPersonalizados.RJComboBox();
+            cmbTipo = new ControlesPersonalizados.RjComboBox();
             label5 = new Label();
             label4 = new Label();
             dateFechaInicio = new DateTimePickerPersonalizado();
@@ -132,13 +136,13 @@ namespace FutureLending
             label2 = new Label();
             txtNombre = new TextBoxPersonalizado();
             label1 = new Label();
-            cmbPromotor = new ControlesPersonalizados.RJComboBox();
+            cmbPromotor = new ControlesPersonalizados.RjComboBox();
             PanelEditar3 = new Panel();
-            btnGuardar2 = new RJButton();
-            ResolucionDemanda = new ControlesPersonalizados.RJComboBox();
+            btnGuardar2 = new RjButton();
+            ResolucionDemanda = new ControlesPersonalizados.RjComboBox();
             groupBox3 = new GroupBox();
-            btnMover2 = new RJButton();
-            rjComboBox5 = new ControlesPersonalizados.RJComboBox();
+            btnMover2 = new RjButton();
+            rjComboBox5 = new ControlesPersonalizados.RjComboBox();
             TextImporte3 = new TextBoxPersonalizado();
             label103 = new Label();
             label92 = new Label();
@@ -159,35 +163,35 @@ namespace FutureLending
             TextBoxCalle3 = new TextBoxPersonalizado();
             label100 = new Label();
             label101 = new Label();
-            ComboBoxResolucion3 = new ControlesPersonalizados.RJComboBox();
+            ComboBoxResolucion3 = new ControlesPersonalizados.RjComboBox();
             label102 = new Label();
             TextBoxCredito3 = new TextBoxPersonalizado();
             label105 = new Label();
             TextBoxNombre3 = new TextBoxPersonalizado();
             LabelNombre3 = new Label();
-            ComboBoxPromotor3 = new ControlesPersonalizados.RJComboBox();
+            ComboBoxPromotor3 = new ControlesPersonalizados.RjComboBox();
             pnlListas = new Panel();
             labelDineroAire = new Label();
             flowLayoutPanel5 = new FlowLayoutPanel();
-            ComboBoxPromotoresListas = new ControlesPersonalizados.RJComboBox();
+            ComboBoxPromotoresListas = new ControlesPersonalizados.RjComboBox();
             label57 = new Label();
             BarradeProgreso = new ProgressBar();
             flowLayoutPanel3 = new FlowLayoutPanel();
-            cmbCliente = new ControlesPersonalizados.RJComboBox();
+            cmbCliente = new ControlesPersonalizados.RjComboBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            btnEditar = new RJButton();
-            btnEliminar = new RJButton();
+            btnEditar = new RjButton();
+            btnEliminar = new RjButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            btnLista1 = new RJButton();
-            btnLista2 = new RJButton();
-            btnLista3 = new RJButton();
-            btnMostrarTodos = new RJButton();
-            btnLiquidados = new RJButton();
-            rjButton1 = new RJButton();
+            btnLista1 = new RjButton();
+            btnLista2 = new RjButton();
+            btnLista3 = new RjButton();
+            btnMostrarTodos = new RjButton();
+            btnLiquidados = new RjButton();
+            rjButton1 = new RjButton();
             gridListas = new DataGridView();
             label8 = new Label();
             PanelEditar = new Panel();
-            BtnGuardarCambio = new RJButton();
+            BtnGuardarCambio = new RjButton();
             textBoxPersonalizado11 = new TextBoxPersonalizado();
             label66 = new Label();
             dateTimeLimite = new DateTimePickerPersonalizado();
@@ -199,8 +203,8 @@ namespace FutureLending
             LblPerte = new Label();
             label26 = new Label();
             groupBox1 = new GroupBox();
-            BtnMover = new RJButton();
-            cmbLista = new ControlesPersonalizados.RJComboBox();
+            BtnMover = new RjButton();
+            cmbLista = new ControlesPersonalizados.RjComboBox();
             textBoxPersonalizado1 = new TextBoxPersonalizado();
             label18 = new Label();
             textBoxPersonalizado2 = new TextBoxPersonalizado();
@@ -213,9 +217,9 @@ namespace FutureLending
             label23 = new Label();
             textBoxPersonalizado6 = new TextBoxPersonalizado();
             label24 = new Label();
-            rjComboBox1 = new ControlesPersonalizados.RJComboBox();
+            rjComboBox1 = new ControlesPersonalizados.RjComboBox();
             label28 = new Label();
-            rjComboBox2 = new ControlesPersonalizados.RJComboBox();
+            rjComboBox2 = new ControlesPersonalizados.RjComboBox();
             label30 = new Label();
             label31 = new Label();
             dateTimePickerPersonalizado1 = new DateTimePickerPersonalizado();
@@ -224,7 +228,7 @@ namespace FutureLending
             label33 = new Label();
             textBoxPersonalizado10 = new TextBoxPersonalizado();
             label34 = new Label();
-            rjComboBox3 = new ControlesPersonalizados.RJComboBox();
+            rjComboBox3 = new ControlesPersonalizados.RjComboBox();
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             PanelBien = new Panel();
             label58 = new Label();
@@ -247,27 +251,27 @@ namespace FutureLending
             label38 = new Label();
             TextboxConfirm = new TextBox();
             checkBox1 = new CheckBox();
-            Button1 = new RJButton();
+            Button1 = new RjButton();
             AvisoVacio = new Label();
             flowLayoutPanel6 = new FlowLayoutPanel();
             label39 = new Label();
             label40 = new Label();
-            comboBox1 = new ControlesPersonalizados.RJComboBox();
-            Boton_Permisos = new RJButton();
+            comboBox1 = new ControlesPersonalizados.RjComboBox();
+            Boton_Permisos = new RjButton();
             label41 = new Label();
             textBox2 = new TextBox();
             label42 = new Label();
             textBox3 = new TextBox();
             checkBox2 = new CheckBox();
             panel3 = new Panel();
-            rjButton11 = new RJButton();
-            rjButton12 = new RJButton();
+            rjButton11 = new RjButton();
+            rjButton12 = new RjButton();
             Conexion_Sql = new TabPage();
             PingLabel = new Label();
-            rjButton3 = new RJButton();
+            rjButton3 = new RjButton();
             LabelEstado = new Label();
             label51 = new Label();
-            rjButton2 = new RJButton();
+            rjButton2 = new RjButton();
             checkBox3 = new CheckBox();
             label50 = new Label();
             label49 = new Label();
@@ -283,12 +287,12 @@ namespace FutureLending
             label44 = new Label();
             label43 = new Label();
             tabPage2 = new TabPage();
-            rjButton6 = new RJButton();
-            rjButton5 = new RJButton();
-            rjButton4 = new RJButton();
+            rjButton6 = new RjButton();
+            rjButton5 = new RjButton();
+            rjButton4 = new RjButton();
             label64 = new Label();
             textBox5 = new TextBox();
-            rjComboBox4 = new ControlesPersonalizados.RJComboBox();
+            rjComboBox4 = new ControlesPersonalizados.RjComboBox();
             label62 = new Label();
             label63 = new Label();
             textBox4 = new TextBox();
@@ -296,9 +300,9 @@ namespace FutureLending
             label60 = new Label();
             label59 = new Label();
             PanelEditar2_2 = new Panel();
-            rjButton7 = new RJButton();
-            BotonVolverEditar2 = new RJButton();
-            Botoncambiodefechamomentaneo = new RJButton();
+            rjButton7 = new RjButton();
+            BotonVolverEditar2 = new RjButton();
+            Botoncambiodefechamomentaneo = new RjButton();
             TextBoxPagoExt = new TextBoxPersonalizado();
             label93 = new Label();
             LabelNombreEditar2_2 = new Label();
@@ -308,15 +312,15 @@ namespace FutureLending
             label85 = new Label();
             FechaEnLista2 = new DateTimePickerPersonalizado();
             label71 = new Label();
-            ComboBoxDeFechas = new ControlesPersonalizados.RJComboBox();
+            ComboBoxDeFechas = new ControlesPersonalizados.RjComboBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             PanelEditarLiquidados = new Panel();
-            BottonLiq = new RJButton();
+            BottonLiq = new RjButton();
             FechaInicioLiq = new DateTimePickerPersonalizado();
             label91 = new Label();
             label90 = new Label();
-            ComBoBoxLiquidacion = new ControlesPersonalizados.RJComboBox();
+            ComBoBoxLiquidacion = new ControlesPersonalizados.RjComboBox();
             label104 = new Label();
             label106 = new Label();
             TextCorreoLiq = new TextBoxPersonalizado();
@@ -336,7 +340,8 @@ namespace FutureLending
             label115 = new Label();
             TextNombreLiq = new TextBoxPersonalizado();
             label116 = new Label();
-            ComboBoxPromotorLiq = new ControlesPersonalizados.RJComboBox();
+            ComboBoxPromotorLiq = new ControlesPersonalizados.RjComboBox();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -373,6 +378,7 @@ namespace FutureLending
             // 
             resources.ApplyResources(panelMenu, "panelMenu");
             panelMenu.BackColor = Color.LightSlateGray;
+            panelMenu.Controls.Add(iconButton2);
             panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnTodosSistemas);
             panelMenu.Controls.Add(btnEstadoPagos);
@@ -513,7 +519,6 @@ namespace FutureLending
             // btnEditarFechas2
             // 
             resources.ApplyResources(btnEditarFechas2, "btnEditarFechas2");
-            btnEditarFechas2.BackColor = SystemColors.ActiveCaption;
             btnEditarFechas2.BackgroundColor = SystemColors.ActiveCaption;
             btnEditarFechas2.BorderColor = SystemColors.ActiveCaption;
             btnEditarFechas2.BorderRadius = 15;
@@ -528,7 +533,6 @@ namespace FutureLending
             // btnGuardarC
             // 
             resources.ApplyResources(btnGuardarC, "btnGuardarC");
-            btnGuardarC.BackColor = Color.SteelBlue;
             btnGuardarC.BackgroundColor = Color.SteelBlue;
             btnGuardarC.BorderColor = Color.SteelBlue;
             btnGuardarC.BorderRadius = 15;
@@ -651,7 +655,6 @@ namespace FutureLending
             // btnMover3
             // 
             resources.ApplyResources(btnMover3, "btnMover3");
-            btnMover3.BackColor = Color.IndianRed;
             btnMover3.BackgroundColor = Color.IndianRed;
             btnMover3.BorderColor = SystemColors.ActiveCaption;
             btnMover3.BorderRadius = 15;
@@ -1020,7 +1023,6 @@ namespace FutureLending
             // btnBuscarC
             // 
             resources.ApplyResources(btnBuscarC, "btnBuscarC");
-            btnBuscarC.BackColor = SystemColors.ActiveCaption;
             btnBuscarC.BackgroundColor = SystemColors.ActiveCaption;
             btnBuscarC.BorderColor = SystemColors.ActiveCaption;
             btnBuscarC.BorderRadius = 10;
@@ -1073,13 +1075,12 @@ namespace FutureLending
             txtBoxMonto.PlaceholderText = "";
             txtBoxMonto.Texts = "";
             txtBoxMonto.UnderlinedStyle = true;
-            txtBoxMonto._TextChanged += ActivarBtnMarcar;
+            txtBoxMonto.TextChanged2EventHandler += ActivarBtnMarcar;
             txtBoxMonto.KeyPress += SoloNumerosDecimal;
             // 
             // btnMarcarP
             // 
             resources.ApplyResources(btnMarcarP, "btnMarcarP");
-            btnMarcarP.BackColor = Color.SteelBlue;
             btnMarcarP.BackgroundColor = Color.SteelBlue;
             btnMarcarP.BorderColor = Color.SteelBlue;
             btnMarcarP.BorderRadius = 10;
@@ -1146,7 +1147,6 @@ namespace FutureLending
             // btnCalcular1
             // 
             resources.ApplyResources(btnCalcular1, "btnCalcular1");
-            btnCalcular1.BackColor = SystemColors.ActiveCaption;
             btnCalcular1.BackgroundColor = SystemColors.ActiveCaption;
             btnCalcular1.BorderColor = SystemColors.ActiveCaption;
             btnCalcular1.BorderRadius = 15;
@@ -1161,7 +1161,6 @@ namespace FutureLending
             // btnGuardar1
             // 
             resources.ApplyResources(btnGuardar1, "btnGuardar1");
-            btnGuardar1.BackColor = Color.IndianRed;
             btnGuardar1.BackgroundColor = Color.IndianRed;
             btnGuardar1.BorderColor = Color.SteelBlue;
             btnGuardar1.BorderRadius = 15;
@@ -1222,7 +1221,7 @@ namespace FutureLending
             txtTotal_I.PlaceholderText = "";
             txtTotal_I.Texts = "";
             txtTotal_I.UnderlinedStyle = true;
-            txtTotal_I._TextChanged += ActivarBtnGuardar;
+            txtTotal_I.TextChanged2EventHandler += ActivarBtnGuardar;
             // 
             // label16
             // 
@@ -1244,7 +1243,7 @@ namespace FutureLending
             txtTotal.PlaceholderText = "";
             txtTotal.Texts = "";
             txtTotal.UnderlinedStyle = true;
-            txtTotal._TextChanged += ActivarBtnGuardar;
+            txtTotal.TextChanged2EventHandler += ActivarBtnGuardar;
             // 
             // txtCorreo
             // 
@@ -1260,7 +1259,7 @@ namespace FutureLending
             txtCorreo.PlaceholderText = "Introduzca el correo";
             txtCorreo.Texts = "";
             txtCorreo.UnderlinedStyle = true;
-            txtCorreo._TextChanged += ActivarBtnGuardar;
+            txtCorreo.TextChanged2EventHandler += ActivarBtnGuardar;
             // 
             // label15
             // 
@@ -1282,7 +1281,7 @@ namespace FutureLending
             txtTelefono.PlaceholderText = "Introduzca el número";
             txtTelefono.Texts = "";
             txtTelefono.UnderlinedStyle = true;
-            txtTelefono._TextChanged += ActivarBtnGuardar;
+            txtTelefono.TextChanged2EventHandler += ActivarBtnGuardar;
             txtTelefono.KeyPress += SoloNumerosEnteros;
             // 
             // label14
@@ -1305,7 +1304,7 @@ namespace FutureLending
             txtNumExt.PlaceholderText = "Num. ext.";
             txtNumExt.Texts = "";
             txtNumExt.UnderlinedStyle = true;
-            txtNumExt._TextChanged += ActivarBtnGuardar;
+            txtNumExt.TextChanged2EventHandler += ActivarBtnGuardar;
             txtNumExt.KeyPress += SoloNumerosEnteros;
             // 
             // label13
@@ -1328,7 +1327,7 @@ namespace FutureLending
             txtNumInt.PlaceholderText = "Num. int.";
             txtNumInt.Texts = "";
             txtNumInt.UnderlinedStyle = true;
-            txtNumInt._TextChanged += ActivarBtnGuardar;
+            txtNumInt.TextChanged2EventHandler += ActivarBtnGuardar;
             txtNumInt.KeyPress += SoloNumerosEnteros;
             // 
             // label12
@@ -1351,7 +1350,7 @@ namespace FutureLending
             txtColonia.PlaceholderText = "Introduzca la colonia";
             txtColonia.Texts = "";
             txtColonia.UnderlinedStyle = true;
-            txtColonia._TextChanged += ActivarBtnGuardar;
+            txtColonia.TextChanged2EventHandler += ActivarBtnGuardar;
             // 
             // label11
             // 
@@ -1373,7 +1372,7 @@ namespace FutureLending
             txtCalle.PlaceholderText = "Introduzca la calle";
             txtCalle.Texts = "";
             txtCalle.UnderlinedStyle = true;
-            txtCalle._TextChanged += ActivarBtnGuardar;
+            txtCalle.TextChanged2EventHandler += ActivarBtnGuardar;
             // 
             // label10
             // 
@@ -1463,7 +1462,7 @@ namespace FutureLending
             txtCredito.PlaceholderText = "Introduzca monto total";
             txtCredito.Texts = "";
             txtCredito.UnderlinedStyle = true;
-            txtCredito._TextChanged += ActivarBtnCalcular;
+            txtCredito.TextChanged2EventHandler += ActivarBtnCalcular;
             txtCredito.KeyPress += SoloNumerosDecimal;
             // 
             // label2
@@ -1487,7 +1486,7 @@ namespace FutureLending
             txtNombre.PlaceholderText = "Introduzca el nombre";
             txtNombre.Texts = "";
             txtNombre.UnderlinedStyle = true;
-            txtNombre._TextChanged += ActivarBtnGuardar;
+            txtNombre.TextChanged2EventHandler += ActivarBtnGuardar;
             // 
             // label1
             // 
@@ -1555,7 +1554,6 @@ namespace FutureLending
             // btnGuardar2
             // 
             resources.ApplyResources(btnGuardar2, "btnGuardar2");
-            btnGuardar2.BackColor = Color.IndianRed;
             btnGuardar2.BackgroundColor = Color.IndianRed;
             btnGuardar2.BorderColor = Color.SteelBlue;
             btnGuardar2.BorderRadius = 15;
@@ -1598,7 +1596,6 @@ namespace FutureLending
             // btnMover2
             // 
             resources.ApplyResources(btnMover2, "btnMover2");
-            btnMover2.BackColor = SystemColors.ActiveCaption;
             btnMover2.BackgroundColor = SystemColors.ActiveCaption;
             btnMover2.BorderColor = SystemColors.ActiveCaption;
             btnMover2.BorderRadius = 15;
@@ -1861,7 +1858,7 @@ namespace FutureLending
             TextBoxCredito3.PlaceholderText = "";
             TextBoxCredito3.Texts = "";
             TextBoxCredito3.UnderlinedStyle = true;
-            TextBoxCredito3._TextChanged += TextBoxCredito3__TextChanged;
+            TextBoxCredito3.TextChanged2EventHandler += TextBoxCredito3TextChanged2EventHandler;
             TextBoxCredito3.KeyPress += TextBoxCredito3_KeyPress;
             // 
             // label105
@@ -2006,7 +2003,6 @@ namespace FutureLending
             // btnEditar
             // 
             resources.ApplyResources(btnEditar, "btnEditar");
-            btnEditar.BackColor = SystemColors.ActiveCaption;
             btnEditar.BackgroundColor = SystemColors.ActiveCaption;
             btnEditar.BorderColor = SystemColors.ActiveCaption;
             btnEditar.BorderRadius = 15;
@@ -2021,7 +2017,6 @@ namespace FutureLending
             // btnEliminar
             // 
             resources.ApplyResources(btnEliminar, "btnEliminar");
-            btnEliminar.BackColor = Color.IndianRed;
             btnEliminar.BackgroundColor = Color.IndianRed;
             btnEliminar.BorderColor = Color.IndianRed;
             btnEliminar.BorderRadius = 15;
@@ -2047,7 +2042,6 @@ namespace FutureLending
             // btnLista1
             // 
             resources.ApplyResources(btnLista1, "btnLista1");
-            btnLista1.BackColor = SystemColors.ActiveCaption;
             btnLista1.BackgroundColor = SystemColors.ActiveCaption;
             btnLista1.BorderColor = SystemColors.ActiveCaption;
             btnLista1.BorderRadius = 15;
@@ -2063,7 +2057,6 @@ namespace FutureLending
             // btnLista2
             // 
             resources.ApplyResources(btnLista2, "btnLista2");
-            btnLista2.BackColor = Color.SteelBlue;
             btnLista2.BackgroundColor = Color.SteelBlue;
             btnLista2.BorderColor = Color.SteelBlue;
             btnLista2.BorderRadius = 15;
@@ -2079,7 +2072,6 @@ namespace FutureLending
             // btnLista3
             // 
             resources.ApplyResources(btnLista3, "btnLista3");
-            btnLista3.BackColor = SystemColors.ActiveCaption;
             btnLista3.BackgroundColor = SystemColors.ActiveCaption;
             btnLista3.BorderColor = SystemColors.ActiveCaption;
             btnLista3.BorderRadius = 15;
@@ -2095,7 +2087,6 @@ namespace FutureLending
             // btnMostrarTodos
             // 
             resources.ApplyResources(btnMostrarTodos, "btnMostrarTodos");
-            btnMostrarTodos.BackColor = SystemColors.ActiveCaption;
             btnMostrarTodos.BackgroundColor = SystemColors.ActiveCaption;
             btnMostrarTodos.BorderColor = SystemColors.ActiveCaption;
             btnMostrarTodos.BorderRadius = 15;
@@ -2111,7 +2102,6 @@ namespace FutureLending
             // btnLiquidados
             // 
             resources.ApplyResources(btnLiquidados, "btnLiquidados");
-            btnLiquidados.BackColor = Color.SteelBlue;
             btnLiquidados.BackgroundColor = Color.SteelBlue;
             btnLiquidados.BorderColor = Color.SteelBlue;
             btnLiquidados.BorderRadius = 15;
@@ -2127,7 +2117,6 @@ namespace FutureLending
             // rjButton1
             // 
             resources.ApplyResources(rjButton1, "rjButton1");
-            rjButton1.BackColor = Color.MidnightBlue;
             rjButton1.BackgroundColor = Color.MidnightBlue;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -2240,7 +2229,6 @@ namespace FutureLending
             // BtnGuardarCambio
             // 
             resources.ApplyResources(BtnGuardarCambio, "BtnGuardarCambio");
-            BtnGuardarCambio.BackColor = Color.IndianRed;
             BtnGuardarCambio.BackgroundColor = Color.IndianRed;
             BtnGuardarCambio.BorderColor = Color.PaleVioletRed;
             BtnGuardarCambio.BorderRadius = 20;
@@ -2356,7 +2344,6 @@ namespace FutureLending
             // BtnMover
             // 
             resources.ApplyResources(BtnMover, "BtnMover");
-            BtnMover.BackColor = Color.Gray;
             BtnMover.BackgroundColor = Color.Gray;
             BtnMover.BorderColor = Color.PaleVioletRed;
             BtnMover.BorderRadius = 20;
@@ -2621,7 +2608,6 @@ namespace FutureLending
             textBoxPersonalizado10.PlaceholderText = "";
             textBoxPersonalizado10.Texts = "";
             textBoxPersonalizado10.UnderlinedStyle = true;
-            textBoxPersonalizado10._TextChanged += textBoxPersonalizado10__TextChanged;
             // 
             // label34
             // 
@@ -2808,7 +2794,6 @@ namespace FutureLending
             // Button1
             // 
             resources.ApplyResources(Button1, "Button1");
-            Button1.BackColor = SystemColors.ActiveCaption;
             Button1.BackgroundColor = SystemColors.ActiveCaption;
             Button1.BorderColor = Color.PaleVioletRed;
             Button1.BorderRadius = 20;
@@ -2871,7 +2856,6 @@ namespace FutureLending
             // Boton_Permisos
             // 
             resources.ApplyResources(Boton_Permisos, "Boton_Permisos");
-            Boton_Permisos.BackColor = SystemColors.ActiveCaption;
             Boton_Permisos.BackgroundColor = SystemColors.ActiveCaption;
             Boton_Permisos.BorderColor = Color.PaleVioletRed;
             Boton_Permisos.BorderRadius = 20;
@@ -2926,7 +2910,6 @@ namespace FutureLending
             // rjButton11
             // 
             resources.ApplyResources(rjButton11, "rjButton11");
-            rjButton11.BackColor = SystemColors.ActiveCaption;
             rjButton11.BackgroundColor = SystemColors.ActiveCaption;
             rjButton11.BorderColor = Color.PaleVioletRed;
             rjButton11.BorderRadius = 20;
@@ -2941,7 +2924,6 @@ namespace FutureLending
             // rjButton12
             // 
             resources.ApplyResources(rjButton12, "rjButton12");
-            rjButton12.BackColor = Color.IndianRed;
             rjButton12.BackgroundColor = Color.IndianRed;
             rjButton12.BorderColor = Color.PaleVioletRed;
             rjButton12.BorderRadius = 20;
@@ -2988,7 +2970,6 @@ namespace FutureLending
             // rjButton3
             // 
             resources.ApplyResources(rjButton3, "rjButton3");
-            rjButton3.BackColor = SystemColors.ActiveCaption;
             rjButton3.BackgroundColor = SystemColors.ActiveCaption;
             rjButton3.BorderColor = Color.PaleVioletRed;
             rjButton3.BorderRadius = 20;
@@ -3015,7 +2996,6 @@ namespace FutureLending
             // rjButton2
             // 
             resources.ApplyResources(rjButton2, "rjButton2");
-            rjButton2.BackColor = Color.IndianRed;
             rjButton2.BackgroundColor = Color.IndianRed;
             rjButton2.BorderColor = Color.PaleVioletRed;
             rjButton2.BorderRadius = 20;
@@ -3134,7 +3114,6 @@ namespace FutureLending
             // rjButton6
             // 
             resources.ApplyResources(rjButton6, "rjButton6");
-            rjButton6.BackColor = Color.IndianRed;
             rjButton6.BackgroundColor = Color.IndianRed;
             rjButton6.BorderColor = Color.PaleVioletRed;
             rjButton6.BorderRadius = 20;
@@ -3149,7 +3128,6 @@ namespace FutureLending
             // rjButton5
             // 
             resources.ApplyResources(rjButton5, "rjButton5");
-            rjButton5.BackColor = SystemColors.ActiveCaption;
             rjButton5.BackgroundColor = SystemColors.ActiveCaption;
             rjButton5.BorderColor = Color.PaleVioletRed;
             rjButton5.BorderRadius = 20;
@@ -3164,7 +3142,6 @@ namespace FutureLending
             // rjButton4
             // 
             resources.ApplyResources(rjButton4, "rjButton4");
-            rjButton4.BackColor = SystemColors.ActiveCaption;
             rjButton4.BackgroundColor = SystemColors.ActiveCaption;
             rjButton4.BorderColor = Color.PaleVioletRed;
             rjButton4.BorderRadius = 20;
@@ -3263,7 +3240,6 @@ namespace FutureLending
             // rjButton7
             // 
             resources.ApplyResources(rjButton7, "rjButton7");
-            rjButton7.BackColor = Color.SlateGray;
             rjButton7.BackgroundColor = Color.SlateGray;
             rjButton7.BorderColor = Color.PaleVioletRed;
             rjButton7.BorderRadius = 20;
@@ -3278,7 +3254,6 @@ namespace FutureLending
             // BotonVolverEditar2
             // 
             resources.ApplyResources(BotonVolverEditar2, "BotonVolverEditar2");
-            BotonVolverEditar2.BackColor = Color.SlateGray;
             BotonVolverEditar2.BackgroundColor = Color.SlateGray;
             BotonVolverEditar2.BorderColor = Color.PaleVioletRed;
             BotonVolverEditar2.BorderRadius = 20;
@@ -3293,7 +3268,6 @@ namespace FutureLending
             // Botoncambiodefechamomentaneo
             // 
             resources.ApplyResources(Botoncambiodefechamomentaneo, "Botoncambiodefechamomentaneo");
-            Botoncambiodefechamomentaneo.BackColor = Color.IndianRed;
             Botoncambiodefechamomentaneo.BackgroundColor = Color.IndianRed;
             Botoncambiodefechamomentaneo.BorderColor = Color.PaleVioletRed;
             Botoncambiodefechamomentaneo.BorderRadius = 20;
@@ -3352,7 +3326,7 @@ namespace FutureLending
             TextBoxPago.PlaceholderText = "";
             TextBoxPago.Texts = "";
             TextBoxPago.UnderlinedStyle = true;
-            TextBoxPago._TextChanged += TextBoxPago__TextChanged;
+            TextBoxPago.TextChanged2EventHandler += TextBoxPagoTextChanged2EventHandler;
             TextBoxPago.KeyPress += TextBoxPago_KeyPress;
             // 
             // label86
@@ -3435,7 +3409,6 @@ namespace FutureLending
             // BottonLiq
             // 
             resources.ApplyResources(BottonLiq, "BottonLiq");
-            BottonLiq.BackColor = Color.IndianRed;
             BottonLiq.BackgroundColor = Color.IndianRed;
             BottonLiq.BorderColor = Color.PaleVioletRed;
             BottonLiq.BorderRadius = 20;
@@ -3695,6 +3668,19 @@ namespace FutureLending
             ComboBoxPromotorLiq.Tag = "Seleccione al promotor";
             ComboBoxPromotorLiq.Texts = "Seleccione al promotor";
             // 
+            // iconButton2
+            // 
+            resources.ApplyResources(iconButton2, "iconButton2");
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.ForeColor = Color.White;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.Name = "iconButton2";
+            iconButton2.Tag = "Cerrar Sesión";
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -3714,7 +3700,6 @@ namespace FutureLending
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
-            FormClosing += Form1_FormClosing;
             FormClosed += Form1_FormClosed;
             panelMenu.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -3771,106 +3756,106 @@ namespace FutureLending
         private Panel panelTitleBar;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton btnMenu;
-        private FontAwesome.Sharp.IconButton btnIngresarClientes;
-        private FontAwesome.Sharp.IconButton btnListas;
-        private FontAwesome.Sharp.IconButton btnEstadoPagos;
-        private FontAwesome.Sharp.IconButton btnTodosSistemas;
+        private IconButton btnMenu;
+        private IconButton btnIngresarClientes;
+        private IconButton btnListas;
+        private IconButton btnEstadoPagos;
+        private IconButton btnTodosSistemas;
         private Label lblTitle;
         private Panel pnlListas;
-        private Controles_personalizados.RJButton btnLista1;
-        private Controles_personalizados.RJButton btnLista3;
-        private Controles_personalizados.RJButton btnLista2;
+        private RjButton btnLista1;
+        private RjButton btnLista3;
+        private RjButton btnLista2;
         private Label label8;
-        private Controles_personalizados.RJButton btnLiquidados;
-        private Controles_personalizados.RJButton btnMostrarTodos;
+        private RjButton btnLiquidados;
+        private RjButton btnMostrarTodos;
         private Panel pnlRegPago;
         private Label label1;
-        private Controles_personalizados.TextBoxPersonalizado txtNombre;
+        private TextBoxPersonalizado txtNombre;
         private Label label2;
-        private Controles_personalizados.TextBoxPersonalizado txtCredito;
+        private TextBoxPersonalizado txtCredito;
         private Label label3;
-        private Controles_personalizados.DateTimePickerPersonalizado dateFechaInicio;
+        private DateTimePickerPersonalizado dateFechaInicio;
         private Label label4;
         private Label label5;
-        private ControlesPersonalizados.RJComboBox cmbTipo;
+        private RjComboBox cmbTipo;
         private Label label6;
-        private ControlesPersonalizados.RJComboBox cmbPromotor;
+        private RjComboBox cmbPromotor;
         private Label label7;
         private Label label9;
         private Label label10;
-        private Controles_personalizados.TextBoxPersonalizado txtCalle;
+        private TextBoxPersonalizado txtCalle;
         private Label label11;
-        private Controles_personalizados.TextBoxPersonalizado txtColonia;
+        private TextBoxPersonalizado txtColonia;
         private Label label12;
-        private Controles_personalizados.TextBoxPersonalizado txtNumInt;
+        private TextBoxPersonalizado txtNumInt;
         private Label label13;
-        private Controles_personalizados.TextBoxPersonalizado txtNumExt;
+        private TextBoxPersonalizado txtNumExt;
         private Label label14;
-        private Controles_personalizados.TextBoxPersonalizado txtTelefono;
+        private TextBoxPersonalizado txtTelefono;
         private Label label15;
-        private Controles_personalizados.TextBoxPersonalizado txtCorreo;
-        private Controles_personalizados.TextBoxPersonalizado txtTotal;
+        private TextBoxPersonalizado txtCorreo;
+        private TextBoxPersonalizado txtTotal;
         private Label label16;
-        private Controles_personalizados.TextBoxPersonalizado txtTotal_I;
+        private TextBoxPersonalizado txtTotal_I;
         private Panel pnlClientes;
         public DataGridView gridListas;
-        private ControlesPersonalizados.RJComboBox cmbInteres;
+        private RjComboBox cmbInteres;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label29;
-        private Controles_personalizados.RJButton btnBuscarC;
+        private RjButton btnBuscarC;
         private Label lblFecha;
-        private Controles_personalizados.TextBoxPersonalizado txtBoxCredito;
+        private TextBoxPersonalizado txtBoxCredito;
         private Label lblCredito;
-        private Controles_personalizados.TextBoxPersonalizado txtBoxMonto;
-        private Controles_personalizados.RJButton btnMarcarP;
+        private TextBoxPersonalizado txtBoxMonto;
+        private RjButton btnMarcarP;
         private Label lblMonto;
         private FlowLayoutPanel flowLayoutPanel2;
-        private ControlesPersonalizados.RJComboBox cmbCliente;
-        private Controles_personalizados.RJButton btnEditar;
-        private Controles_personalizados.RJButton btnEliminar;
+        private RjComboBox cmbCliente;
+        private RjButton btnEditar;
+        private RjButton btnEliminar;
         private FlowLayoutPanel flowLayoutPanel3;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private BunifuElipse bunifuElipse1;
         private Panel PanelBien;
         private Label label19;
-        private Controles_personalizados.RJButton rjButton1;
+        private RjButton rjButton1;
         private Panel PanelEditar;
         private GroupBox groupBox1;
-        private Controles_personalizados.RJButton btnMover;
-        private ControlesPersonalizados.RJComboBox cmbLista;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado1;
+        private RjButton btnMover;
+        private RjComboBox cmbLista;
+        private TextBoxPersonalizado textBoxPersonalizado1;
         private Label label18;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado2;
+        private TextBoxPersonalizado textBoxPersonalizado2;
         private Label label20;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado3;
+        private TextBoxPersonalizado textBoxPersonalizado3;
         private Label label21;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado4;
+        private TextBoxPersonalizado textBoxPersonalizado4;
         private Label label22;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado5;
+        private TextBoxPersonalizado textBoxPersonalizado5;
         private Label label23;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado6;
+        private TextBoxPersonalizado textBoxPersonalizado6;
         private Label label24;
-        private ControlesPersonalizados.RJComboBox rjComboBox1;
+        private RjComboBox rjComboBox1;
         private Label label28;
-        private ControlesPersonalizados.RJComboBox rjComboBox2;
+        private RjComboBox rjComboBox2;
         private Label label30;
         private Label label31;
-        private Controles_personalizados.DateTimePickerPersonalizado dateTimePickerPersonalizado1;
+        private DateTimePickerPersonalizado dateTimePickerPersonalizado1;
         private Label label32;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado9;
+        private TextBoxPersonalizado textBoxPersonalizado9;
         private Label label33;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado10;
+        private TextBoxPersonalizado textBoxPersonalizado10;
         private Label label34;
-        private ControlesPersonalizados.RJComboBox rjComboBox3;
+        private RjComboBox rjComboBox3;
         private Label LblPerte;
         private Label label26;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado8;
+        private TextBoxPersonalizado textBoxPersonalizado8;
         private Label label27;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado7;
+        private TextBoxPersonalizado textBoxPersonalizado7;
         private Label label25;
-        private Controles_personalizados.DateTimePickerPersonalizado dateTimeLimite;
+        private DateTimePickerPersonalizado dateTimeLimite;
         private Label LabelLimite;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private IconButton iconButton1;
         private Panel panel2;
         private TableLayoutPanel tableLayoutPanel1;
         private FlowLayoutPanel flowLayoutPanel4;
@@ -3889,7 +3874,7 @@ namespace FutureLending
         private TabPage Conexion_Sql;
         private Label LabelEstado;
         private Label label51;
-        private Controles_personalizados.RJButton rjButton2;
+        private RjButton rjButton2;
         private CheckBox checkBox3;
         private Label label50;
         private Label label49;
@@ -3904,7 +3889,7 @@ namespace FutureLending
         private Label label45;
         private Label label44;
         private Label label43;
-        private Controles_personalizados.RJButton rjButton3;
+        private RjButton rjButton3;
         private Label label58;
         private Label label56;
         private Label label55;
@@ -3918,10 +3903,10 @@ namespace FutureLending
         private TextBox textBox4;
         private Label label61;
         private Label label60;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox4;
-        private RJButton rjButton6;
-        private RJButton rjButton5;
-        private RJButton rjButton4;
+        private RjComboBox rjComboBox4;
+        private RjButton rjButton6;
+        private RjButton rjButton5;
+        private RjButton rjButton4;
         private Label label64;
         private TextBox textBox5;
         private DateTimePickerPersonalizado dateTimePickerPersonalizado2;
@@ -3937,7 +3922,7 @@ namespace FutureLending
         private Label LabelPertenece;
         private Label label72;
         private GroupBox groupBox2;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox CmbLista2;
+        private RjComboBox CmbLista2;
         private TextBoxPersonalizado TextBoxCorreo;
         private Label label73;
         private TextBoxPersonalizado TextBoxTelefono;
@@ -3951,14 +3936,14 @@ namespace FutureLending
         private TextBoxPersonalizado TextBoxCalle;
         private Label label78;
         private Label label79;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox7;
+        private RjComboBox rjComboBox7;
         private Label label80;
         private Label LabelNombreEditar2_2;
         private TextBoxPersonalizado TextBoxCredito;
         private Label label83;
         private TextBoxPersonalizado TextBoxNombre;
         private Label label84;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox8;
+        private RjComboBox rjComboBox8;
         private Label label70;
         private TextBoxPersonalizado TextBoxLiquidacionIntencion;
         private TextBoxPersonalizado TextBoxQuita;
@@ -3969,9 +3954,9 @@ namespace FutureLending
         private Label label85;
         private DateTimePickerPersonalizado FechaEnLista2;
         private Label label71;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxDeFechas;
-        private global::System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private global::System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private RjComboBox ComboBoxDeFechas;
+        private BackgroundWorker backgroundWorker1;
+        private BackgroundWorker backgroundWorker2;
         private Panel PanelEditar3;
         private TextBoxPersonalizado TextImporte3;
         private Label label103;
@@ -3993,23 +3978,23 @@ namespace FutureLending
         private TextBoxPersonalizado TextBoxCalle3;
         private Label label100;
         private Label label101;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxResolucion3;
+        private RjComboBox ComboBoxResolucion3;
         private Label label102;
         private TextBoxPersonalizado TextBoxCredito3;
         private Label label105;
         private TextBoxPersonalizado TextBoxNombre3;
         private Label LabelNombre3;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxPromotor3;
+        private RjComboBox ComboBoxPromotor3;
         private GroupBox groupBox3;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox5;
+        private RjComboBox rjComboBox5;
         private Panel PanelEditarLiquidados;
         private DateTimePickerPersonalizado FechaInicioLiq;
         private Label label91;
         private Label label90;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ComBoBoxLiquidacion;
+        private RjComboBox ComBoBoxLiquidacion;
         private Label label104;
         private Label label106;
-        private RJButton BottonLiq;
+        private RjButton BottonLiq;
         private TextBoxPersonalizado TextCorreoLiq;
         private Label label107;
         private TextBoxPersonalizado TextTelefonoLiq;
@@ -4027,16 +4012,16 @@ namespace FutureLending
         private Label label115;
         private TextBoxPersonalizado TextNombreLiq;
         private Label label116;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxPromotorLiq;
+        private RjComboBox ComboBoxPromotorLiq;
         private TextBoxPersonalizado TextBoxPagoExt;
         private Label label93;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox9;
+        private RjComboBox rjComboBox9;
         private TextBoxPersonalizado TextBoxRestantepagos;
         private Label label17;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ResolucionDemanda;
+        private RjComboBox ResolucionDemanda;
         private FlowLayoutPanel flowLayoutPanel6;
         private Panel panel3;
-        private RJButton Boton_Permisos;
+        private RjButton Boton_Permisos;
         private Label label41;
         private TextBox textBox2;
         private Label label42;
@@ -4044,31 +4029,32 @@ namespace FutureLending
         private CheckBox checkBox2;
         private Label label39;
         private Label label40;
-        private ControlesPersonalizados.RJComboBox comboBox1;
+        private RjComboBox comboBox1;
         private ProgressBar BarradeProgreso;
         private Label label57;
-        private RJButton Button1;
-        private RJButton rjButton11;
-        private RJButton rjButton12;
-        private RJButton btnCalcular1;
-        private RJButton btnGuardar1;
-        private RJButton btnMover2;
-        private RJButton btnGuardar2;
-        private RJButton btnMover3;
-        private RJButton btnGuardarC;
-        private RJButton btnEditarFechas2;
-        private RJButton Botoncambiodefechamomentaneo;
-        private RJButton BotonVolverEditar2;
-        private RJButton BtnMover;
-        private RJButton BtnGuardarCambio;
+        private RjButton Button1;
+        private RjButton rjButton11;
+        private RjButton rjButton12;
+        private RjButton btnCalcular1;
+        private RjButton btnGuardar1;
+        private RjButton btnMover2;
+        private RjButton btnGuardar2;
+        private RjButton btnMover3;
+        private RjButton btnGuardarC;
+        private RjButton btnEditarFechas2;
+        private RjButton Botoncambiodefechamomentaneo;
+        private RjButton BotonVolverEditar2;
+        private RjButton BtnMover;
+        private RjButton BtnGuardarCambio;
         private TextBoxPersonalizado Monto_Recomendado;
         private Label label82;
         private FlowLayoutPanel flowLayoutPanel5;
-        private ControlesPersonalizados.RJComboBox ComboBoxPromotoresListas;
+        private RjComboBox ComboBoxPromotoresListas;
         private Label labelDineroAire;
         private Label label87;
-        private ControlesPersonalizados.RJComboBox ComBoxName;
-        private RJButton rjButton7;
+        private RjComboBox ComBoxName;
+        private RjButton rjButton7;
         private Label PingLabel;
+        private IconButton iconButton2;
     }
 }

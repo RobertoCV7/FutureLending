@@ -1,4 +1,4 @@
-﻿namespace FutureLending.Controles_personalizados
+﻿namespace FutureLending.ControlesPersonalizados
 {
     partial class TextBoxPersonalizado
     {

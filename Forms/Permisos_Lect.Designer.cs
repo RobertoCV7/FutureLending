@@ -1,11 +1,15 @@
-﻿namespace FutureLending
+﻿using System.ComponentModel;
+using FutureLending.Controles_personalizados;
+using FutureLending.ControlesPersonalizados;
+
+namespace FutureLending.Forms
 {
-    partial class Permisos_Lect
+    partial class PermisosLect
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,11 +32,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Permisos_Lect));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermisosLect));
             checkedListBox1 = new CheckedListBox();
             label1 = new Label();
             Label_User = new Label();
-            rjButton1 = new Controles_personalizados.RJButton();
+            rjButton1 = new RjButton();
             SuspendLayout();
             // 
             // checkedListBox1
@@ -70,7 +74,6 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.IndianRed;
             rjButton1.BackgroundColor = Color.IndianRed;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -101,7 +104,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "Permisos_Lect";
+            Name = "PermisosLect";
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Permisos de Lectura";
@@ -114,6 +117,6 @@
         private CheckedListBox checkedListBox1;
         private Label label1;
         private Label Label_User;
-        private Controles_personalizados.RJButton rjButton1;
+        private RjButton rjButton1;
     }
 }

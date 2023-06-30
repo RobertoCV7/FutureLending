@@ -1,11 +1,15 @@
-﻿namespace FutureLending
+﻿using System.ComponentModel;
+using FutureLending.Controles_personalizados;
+using FutureLending.ControlesPersonalizados;
+
+namespace FutureLending.Forms
 {
     partial class PedirDatos3
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,14 +33,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedirDatos3));
-            TextImporte3 = new Controles_personalizados.TextBoxPersonalizado();
+            TextImporte3 = new TextBoxPersonalizado();
             label103 = new Label();
             label92 = new Label();
-            ComboBoxResolucion3 = new ControlesPersonalizados.RJComboBox();
+            ComboBoxResolucion3 = new ControlesPersonalizados.RjComboBox();
             label102 = new Label();
-            rjButton1 = new Controles_personalizados.RJButton();
-            ComboBoxResolucionD = new ControlesPersonalizados.RJComboBox();
-            rjButton2 = new Controles_personalizados.RJButton();
+            rjButton1 = new RjButton();
+            ComboBoxResolucionD = new ControlesPersonalizados.RjComboBox();
+            rjButton2 = new RjButton();
             SuspendLayout();
             // 
             // TextImporte3
@@ -57,7 +61,7 @@
             TextImporte3.TabIndex = 136;
             TextImporte3.Texts = "";
             TextImporte3.UnderlinedStyle = true;
-            TextImporte3._TextChanged += TextImporte3__TextChanged;
+            TextImporte3.TextChanged2EventHandler += TextImporte3TextChanged2EventHandler;
             TextImporte3.KeyPress += TextImporte3_KeyPress;
             // 
             // label103
@@ -120,7 +124,6 @@
             // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.IndianRed;
             rjButton1.BackgroundColor = Color.IndianRed;
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 20;
@@ -166,7 +169,6 @@
             // 
             // rjButton2
             // 
-            rjButton2.BackColor = Color.Gray;
             rjButton2.BackgroundColor = Color.Gray;
             rjButton2.BorderColor = Color.PaleVioletRed;
             rjButton2.BorderRadius = 20;
@@ -214,13 +216,13 @@
 
         #endregion
 
-        public Controles_personalizados.TextBoxPersonalizado TextImporte3;
+        public TextBoxPersonalizado TextImporte3;
         private Label label103;
         private Label label92;
-        public ControlesPersonalizados.RJComboBox ComboBoxResolucion3;
+        public RjComboBox ComboBoxResolucion3;
         private Label label102;
-        public Controles_personalizados.RJButton rjButton1;
-        public ControlesPersonalizados.RJComboBox ComboBoxResolucionD;
-        public Controles_personalizados.RJButton rjButton2;
+        public RjButton rjButton1;
+        public RjComboBox ComboBoxResolucionD;
+        public RjButton rjButton2;
     }
 }

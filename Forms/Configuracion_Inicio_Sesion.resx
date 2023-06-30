@@ -3910,7 +3910,7 @@
     <value>Usuario:</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Configuracion_Inicio_Sesion</value>
+    <value>ConfiguracionInicioSesion</value>
   </data>
   <data name="label44.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 13.8pt</value>
