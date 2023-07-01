@@ -749,24 +749,25 @@ public partial class Form1 : Form
         strings[14] = rjComboBox2.SelectedItem.ToString(); //Su forma de pago quincenales o semanales
         strings[15] = textBoxPersonalizado7.Texts; //Monto Restante
         strings[30] = Cliente;
-        if (strings[14] != tipoPago)
+        if (strings[14] != tipoPago || dateTimePickerPersonalizado1.Value.ToString("d") != temporal[4])
         {
-            MessageBox.Show(@"Cambio de forma de pago");
-            switch (rjComboBox2.SelectedItem.ToString())
+            switch (rjComboBox2.SelectedItem)
             {
                 case "Semanales":
+                    string[] fechSem;
 
-                    var fechSem = SumarSemanas(strings[4]);
-                    for (var i = 16; i <= 29; i++)
+                    fechSem = SumarSemanas(dateTimePickerPersonalizado1.Value.ToString("d"));
+                    for (int i = 16; i <= 29; i++)
                     {
                         strings[i] = fechSem[i - 16];
-                        MessageBox.Show(fechSem[i - 16]);
                     }
 
                     break;
                 case "Quincenales":
-                    var fechQuin = SumarQuincenas(strings[4]);
-                    for (var i = 16; i <= 29; i++)
+                    string[] fechQuin;
+                    fechQuin = SumarQuincenas(dateTimePickerPersonalizado1.Value.ToString("d"));
+                    for (int i = 16; i <= 29; i++)
+                    {
                         if (i >= 23)
                         {
                             strings[i] = "-";
@@ -774,9 +775,8 @@ public partial class Form1 : Form
                         else
                         {
                             strings[i] = fechQuin[i - 16];
-                            MessageBox.Show(fechQuin[i - 16]);
                         }
-
+                    }
                     break;
             }
         }
@@ -795,13 +795,13 @@ public partial class Form1 : Form
 
     public static string[] SumarSemanas(string fechaInicial)
     {
-        var fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-        var fechasSumadas = new string[14];
+        DateTime fecha = Convert.ToDateTime(fechaInicial);
+        string[] fechasSumadas = new string[14];
 
-        for (var i = 0; i < 14; i++)
+        for (int i = 0; i < 14; i++)
         {
+            fechasSumadas[i] = fecha.ToString("d");
             fecha = fecha.AddDays(7);
-            fechasSumadas[i] = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
         }
 
         return fechasSumadas;
@@ -809,13 +809,13 @@ public partial class Form1 : Form
 
     public static string[] SumarQuincenas(string fechaInicial)
     {
-        var fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-        var fechasSumadas = new string[7];
+        DateTime fecha = Convert.ToDateTime(fechaInicial);
+        string[] fechasSumadas = new string[7];
 
-        for (var i = 0; i < 7; i++)
+        for (int i = 0; i < 7; i++)
         {
+            fechasSumadas[i] = fecha.ToString("d");
             fecha = fecha.AddDays(15);
-            fechasSumadas[i] = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
         }
 
         return fechasSumadas;
@@ -1387,6 +1387,7 @@ public partial class Form1 : Form
     public string Pertenece; //De que lista viene
     public string Cliente; //Nombre del cliente
     private string tipoPago; //Tipo de pago
+    private string[] temporal = new string[31];
 
     private void BtnEditar_Click(object sender, EventArgs e)
     {
@@ -1408,6 +1409,7 @@ public partial class Form1 : Form
             Cliente = cmbCliente.Texts;
             //Empieza leyendo su informacion de la base de datos
             Informacion = especificas.LectName(Cliente);
+            temporal = especificas.LectName(Cliente);
             //Tuve que convertir de List<string[]> a string[] para poder usarlo en los objetos del Panel (Editar)
             textBoxPersonalizado10.Texts = Cliente;
             textBoxPersonalizado9.Texts = Informacion[2]; //Credito Prestado
@@ -2309,4 +2311,27 @@ public partial class Form1 : Form
     }
 
     #endregion
+
+    private void dateTimePickerPersonalizado1_ValueChanged(object sender, EventArgs e)
+    {
+        DateTime dateTime = new();
+        switch (rjComboBox2.SelectedItem)
+        {
+            case "Semanales":
+                dateTime = dateTimePickerPersonalizado1.Value;
+                var fechaFinal = dateTime.AddDays(7 * 13);
+                dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
+                break;
+            case "Quincenales":
+                dateTime = dateTimePickerPersonalizado1.Value;
+                fechaFinal = dateTime.AddDays(15 * 6);
+                dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
+                break;
+        }
+    }
+
+    private void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
+    {
+        dateTimePickerPersonalizado1_ValueChanged(null, null);
+    }
 }

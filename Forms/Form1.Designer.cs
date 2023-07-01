@@ -2575,6 +2575,7 @@ namespace FutureLending.Forms
             rjComboBox2.Name = "rjComboBox2";
             rjComboBox2.Tag = "Selecciones un tipo de pago";
             rjComboBox2.Texts = "Seleccione un tipo de pago";
+            rjComboBox2.OnSelectedIndexChanged += rjComboBox2_OnSelectedIndexChanged;
             // 
             // label30
             // 
@@ -2596,6 +2597,7 @@ namespace FutureLending.Forms
             dateTimePickerPersonalizado1.Name = "dateTimePickerPersonalizado1";
             dateTimePickerPersonalizado1.SkinColor = SystemColors.Info;
             dateTimePickerPersonalizado1.TextColor = Color.Black;
+            dateTimePickerPersonalizado1.ValueChanged += dateTimePickerPersonalizado1_ValueChanged;
             // 
             // label32
             // 
@@ -3718,11 +3720,11 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(PanelEditar);
             Controls.Add(panel2);
             Controls.Add(pnlListas);
             Controls.Add(pnlClientes);
             Controls.Add(PnlEditar2);
-            Controls.Add(PanelEditar);
             Controls.Add(PanelEditar3);
             Controls.Add(PanelEditar2_2);
             Controls.Add(pnlRegPago);
