@@ -1,7 +1,9 @@
+using System;
 using System.ComponentModel;
 using System.Globalization;
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Funciones.cs;
+using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using Button = System.Windows.Forms.Button;
 using Timer = System.Windows.Forms.Timer;
@@ -515,7 +517,7 @@ namespace FutureLending.Forms
         public string Pertenece; //De que lista viene
         public string Cliente; //Nombre del cliente
         private string tipoPago; //Tipo de pago 
-
+        private string[] temporal =  new string[31];
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             Lecturas_Especificas lecturasEspecificas = new();
@@ -535,7 +537,8 @@ namespace FutureLending.Forms
                 //Obtengo el nombre del cliente
                 Cliente = cmbCliente.Texts;
                 //Empieza leyendo su informacion de la base de datos
-                Informacion = lecturasEspecificas.LectName(Cliente);
+                Informacion= lecturasEspecificas.LectName(Cliente);
+                temporal = lecturasEspecificas.LectName(Cliente);
                 //Tuve que convertir de List<string[]> a string[] para poder usarlo en los objetos del Panel (Editar)
                 textBoxPersonalizado10.Texts = Cliente;
                 textBoxPersonalizado9.Texts = Informacion[2]; //Credito Prestado
@@ -2242,14 +2245,14 @@ namespace FutureLending.Forms
             informacion[14] = rjComboBox2.SelectedItem.ToString(); //Su forma de pago quincenales o semanales
             informacion[15] = textBoxPersonalizado7.Texts; //Monto Restante
             informacion[30] = Cliente;
-            if (informacion[14] != tipoPago)
+            if (informacion[14] != tipoPago || dateTimePickerPersonalizado1.Value.ToString("d") != temporal[4])
             {
-                switch (rjComboBox2.SelectedItem.ToString())
+                switch (rjComboBox2.SelectedItem)
                 {
                     case "Semanales":
                         string[] fechSem;
 
-                        fechSem = SumarSemanas(informacion[4]);
+                        fechSem = SumarSemanas(dateTimePickerPersonalizado1.Value.ToString("d"));
                         for (int i = 16; i <= 29; i++)
                         {
                             informacion[i] = fechSem[i - 16];
@@ -2258,7 +2261,7 @@ namespace FutureLending.Forms
                         break;
                     case "Quincenales":
                         string[] fechQuin;
-                        fechQuin = SumarQuincenas(informacion[4]);
+                        fechQuin = SumarQuincenas(dateTimePickerPersonalizado1.Value.ToString("d"));
                         for (int i = 16; i <= 29; i++)
                         {
                             if (i >= 23)
@@ -2270,7 +2273,6 @@ namespace FutureLending.Forms
                                 informacion[i] = fechQuin[i - 16];
                             }
                         }
-
                         break;
                 }
             }
@@ -2287,26 +2289,26 @@ namespace FutureLending.Forms
         }
         public static string[] SumarSemanas(string fechaInicial)
         {
-            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime fecha = Convert.ToDateTime(fechaInicial);
             string[] fechasSumadas = new string[14];
-
+     
             for (int i = 0; i < 14; i++)
             {
+                fechasSumadas[i] = fecha.ToString("d");
                 fecha = fecha.AddDays(7);
-                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
 
             return fechasSumadas;
         }
         public static string[] SumarQuincenas(string fechaInicial)
         {
-            DateTime fecha = DateTime.ParseExact(fechaInicial, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime fecha = Convert.ToDateTime(fechaInicial);
             string[] fechasSumadas = new string[7];
-
+            
             for (int i = 0; i < 7; i++)
             {
+                fechasSumadas[i] = fecha.ToString("d");
                 fecha = fecha.AddDays(15);
-                fechasSumadas[i] = fecha.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
 
             return fechasSumadas;
@@ -2488,5 +2490,31 @@ namespace FutureLending.Forms
             Application.Restart();
         }
 
+
+
+        private void dateTimePickerPersonalizado1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dateTime = new();
+            switch (rjComboBox2.SelectedItem)
+            {
+                case "Semanales":
+                    dateTime = dateTimePickerPersonalizado1.Value;
+                    var fechaFinal = dateTime.AddDays(7* 13);
+                    dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
+                    break;
+                case "Quincenales":
+                    dateTime = dateTimePickerPersonalizado1.Value;
+                    fechaFinal = dateTime.AddDays(15 * 6);
+                    dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
+                    break;
+            }
+
+
+        }
+
+        private void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            dateTimePickerPersonalizado1_ValueChanged(null, null);
+        }
     }
 }
