@@ -517,7 +517,7 @@ namespace FutureLending.Forms
         public string Pertenece; //De que lista viene
         public string Cliente; //Nombre del cliente
         private string tipoPago; //Tipo de pago 
-        private string[] temporal =  new string[31];
+        private string[] temporal = new string[31];
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             Lecturas_Especificas lecturasEspecificas = new();
@@ -537,7 +537,7 @@ namespace FutureLending.Forms
                 //Obtengo el nombre del cliente
                 Cliente = cmbCliente.Texts;
                 //Empieza leyendo su informacion de la base de datos
-                Informacion= lecturasEspecificas.LectName(Cliente);
+                Informacion = lecturasEspecificas.LectName(Cliente);
                 temporal = lecturasEspecificas.LectName(Cliente);
                 //Tuve que convertir de List<string[]> a string[] para poder usarlo en los objetos del Panel (Editar)
                 textBoxPersonalizado10.Texts = Cliente;
@@ -2291,7 +2291,7 @@ namespace FutureLending.Forms
         {
             DateTime fecha = Convert.ToDateTime(fechaInicial);
             string[] fechasSumadas = new string[14];
-     
+
             for (int i = 0; i < 14; i++)
             {
                 fechasSumadas[i] = fecha.ToString("d");
@@ -2304,7 +2304,7 @@ namespace FutureLending.Forms
         {
             DateTime fecha = Convert.ToDateTime(fechaInicial);
             string[] fechasSumadas = new string[7];
-            
+
             for (int i = 0; i < 7; i++)
             {
                 fechasSumadas[i] = fecha.ToString("d");
@@ -2499,7 +2499,7 @@ namespace FutureLending.Forms
             {
                 case "Semanales":
                     dateTime = dateTimePickerPersonalizado1.Value;
-                    var fechaFinal = dateTime.AddDays(7* 13);
+                    var fechaFinal = dateTime.AddDays(7 * 13);
                     dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
                     break;
                 case "Quincenales":
