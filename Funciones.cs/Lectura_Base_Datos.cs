@@ -559,8 +559,8 @@ public class LecturaBaseDatos
         var dias_de_pago = new string[cantidadFechas];
 
         var incremento = Tipo_pago == "Semanales" ? 7 : 15;
-
-        for (var i = 0; i < cantidadFechas; i++)
+        dias_de_pago[0] = fechaInicio.ToString("dd/MM/yyyy");
+        for (var i = 1; i < cantidadFechas; i++)
             dias_de_pago[i] = fechaInicio.AddDays(incremento * (i + 1)).ToString("dd/MM/yyyy");
 
         using var connection = Conector();

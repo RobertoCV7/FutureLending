@@ -186,8 +186,9 @@ public partial class Form1 : Form
     private void btnCalcular1_Click(object sender, EventArgs e)
     {
         var dateTime = dateFechaInicio.Value;
-        var multiplicador = cmbTipo.SelectedIndex == 0 ? 14 : 15;
-        var fechaFinal = dateTime.AddDays(multiplicador * 7);
+        var multiplicador = cmbTipo.SelectedIndex == 0 ? 13 : 14;
+        int exponente = cmbTipo.SelectedIndex == 0 ? 7 : 6;
+        var fechaFinal = dateTime.AddDays(multiplicador * exponente);
         dateTimePickerPersonalizado2.Value = fechaFinal;
         var credito = txtCredito.Texts;
         credito2 = Convert.ToDouble(credito);
