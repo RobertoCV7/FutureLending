@@ -186,9 +186,8 @@ public partial class Form1 : Form
     private void btnCalcular1_Click(object sender, EventArgs e)
     {
         var dateTime = dateFechaInicio.Value;
-        var multiplicador = cmbTipo.SelectedIndex == 0 ? 13 : 14;
-        int exponente = cmbTipo.SelectedIndex == 0 ? 7 : 6;
-        var fechaFinal = dateTime.AddDays(multiplicador * exponente);
+        var multiplicador = cmbTipo.SelectedIndex == 0 ? 14 : 15;
+        var fechaFinal = dateTime.AddDays(multiplicador * 7);
         dateTimePickerPersonalizado2.Value = fechaFinal;
         var credito = txtCredito.Texts;
         credito2 = Convert.ToDouble(credito);
@@ -801,8 +800,8 @@ public partial class Form1 : Form
 
         for (int i = 0; i < 14; i++)
         {
-            fechasSumadas[i] = fecha.ToString("d");
             fecha = fecha.AddDays(7);
+            fechasSumadas[i] = fecha.ToString("d");
         }
 
         return fechasSumadas;
@@ -815,8 +814,8 @@ public partial class Form1 : Form
 
         for (int i = 0; i < 7; i++)
         {
-            fechasSumadas[i] = fecha.ToString("d");
             fecha = fecha.AddDays(15);
+            fechasSumadas[i] = fecha.ToString("d");
         }
 
         return fechasSumadas;
@@ -2320,12 +2319,12 @@ public partial class Form1 : Form
         {
             case "Semanales":
                 dateTime = dateTimePickerPersonalizado1.Value;
-                var fechaFinal = dateTime.AddDays(7 * 13);
+                var fechaFinal = dateTime.AddDays(7 * 14);
                 dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
                 break;
             case "Quincenales":
                 dateTime = dateTimePickerPersonalizado1.Value;
-                fechaFinal = dateTime.AddDays(15 * 6);
+                fechaFinal = dateTime.AddDays(15 * 7);
                 dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
                 break;
         }
