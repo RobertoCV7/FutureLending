@@ -1672,9 +1672,8 @@ namespace FutureLending.Forms
         private void btnCalcular1_Click(object sender, EventArgs e)
         {
             DateTime dateTime = dateFechaInicio.Value;
-            int multiplicador = cmbTipo.SelectedIndex == 0 ? 13 : 15;
-            int exponente = cmbTipo.SelectedIndex == 0 ? 7 : 6;
-            var fechaFinal = dateTime.AddDays(multiplicador * exponente);
+            int multiplicador = cmbTipo.SelectedIndex == 0 ? 14 : 15;
+            var fechaFinal = dateTime.AddDays(multiplicador * 7);
             dateTimePickerPersonalizado2.Value = fechaFinal;
             String credito = txtCredito.Texts;
             credito2 = Convert.ToDouble(credito);
@@ -2295,8 +2294,8 @@ namespace FutureLending.Forms
 
             for (int i = 0; i < 14; i++)
             {
-                fechasSumadas[i] = fecha.ToString("d");
                 fecha = fecha.AddDays(7);
+                fechasSumadas[i] = fecha.ToString("d");
             }
 
             return fechasSumadas;
@@ -2308,8 +2307,8 @@ namespace FutureLending.Forms
 
             for (int i = 0; i < 7; i++)
             {
-                fechasSumadas[i] = fecha.ToString("d");
                 fecha = fecha.AddDays(15);
+                fechasSumadas[i] = fecha.ToString("d");
             }
 
             return fechasSumadas;
@@ -2500,12 +2499,12 @@ namespace FutureLending.Forms
             {
                 case "Semanales":
                     dateTime = dateTimePickerPersonalizado1.Value;
-                    var fechaFinal = dateTime.AddDays(7 * 13);
+                    var fechaFinal = dateTime.AddDays(7 * 14);
                     dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
                     break;
                 case "Quincenales":
                     dateTime = dateTimePickerPersonalizado1.Value;
-                    fechaFinal = dateTime.AddDays(15 * 6);
+                    fechaFinal = dateTime.AddDays(15 * 7);
                     dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
                     break;
             }
