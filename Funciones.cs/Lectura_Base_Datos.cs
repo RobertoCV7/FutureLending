@@ -553,8 +553,8 @@ namespace FutureLending.Funciones.cs
             string[] dias_de_pago = new string[cantidadFechas];
 
             int incremento = Tipo_pago == "Semanales" ? 7 : 15;
-
-            for (int i = 0; i < cantidadFechas; i++)
+            dias_de_pago[0]= fechaInicio.ToString("dd/MM/yyyy");
+            for (int i = 1; i < cantidadFechas; i++)
             {
                 dias_de_pago[i] = fechaInicio.AddDays(incremento * (i + 1)).ToString("dd/MM/yyyy");
             }

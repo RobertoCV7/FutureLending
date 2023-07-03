@@ -1672,8 +1672,9 @@ namespace FutureLending.Forms
         private void btnCalcular1_Click(object sender, EventArgs e)
         {
             DateTime dateTime = dateFechaInicio.Value;
-            int multiplicador = cmbTipo.SelectedIndex == 0 ? 14 : 15;
-            var fechaFinal = dateTime.AddDays(multiplicador * 7);
+            int multiplicador = cmbTipo.SelectedIndex == 0 ? 13 : 15;
+            int exponente = cmbTipo.SelectedIndex == 0 ? 7 : 6;
+            var fechaFinal = dateTime.AddDays(multiplicador * exponente);
             dateTimePickerPersonalizado2.Value = fechaFinal;
             String credito = txtCredito.Texts;
             credito2 = Convert.ToDouble(credito);
