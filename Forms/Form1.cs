@@ -116,6 +116,7 @@ namespace FutureLending.Forms
         private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
             cancellationTokenSource?.Cancel();
+            Guardar = false;
             EsconderPaneles(pnlClientes);
             lblTitle.Text = @"Ingresar Clientes";
             if (cambioEnPromotores)
@@ -268,6 +269,7 @@ namespace FutureLending.Forms
         private void BtnListas_Click(object sender, EventArgs e)
         {
             cancellationTokenSource?.Cancel();
+            Guardar = false;
             if (cambioenPromotoresListas)
             {
                 CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
@@ -520,6 +522,7 @@ namespace FutureLending.Forms
         private string[] temporal = new string[31];
         private void BtnEditar_Click(object sender, EventArgs e)
         {
+            Guardar = false;
             Lecturas_Especificas lecturasEspecificas = new();
             if (listaEstado == 0) //Si viene de la lista 1
             {
@@ -561,6 +564,8 @@ namespace FutureLending.Forms
             }
             else if (listaEstado == 1) //Si viene de la lista 2
             {
+                TextBoxPagoExt.Enabled = false;
+                groupBox2.Show();
                 //Cargar los promotores en el ComboBox
                 CargarPromotoresEnComboBox(rjComboBox8, false);
                 //Llamo al panel editar de la lista 2
@@ -592,7 +597,14 @@ namespace FutureLending.Forms
                 TextBoxNumExt.Texts = Informacion2[8]; //Numero de casa exterior
                 TextBoxTelefono.Texts = Informacion2[9]; //Telefono
                 TextBoxCorreo.Texts = Informacion2[10]; //Correo
-                rjComboBox7.SelectedItem = Informacion2[11]; //Liquidacion o Intencion
+                if (Informacion2[11] == "Liquidacion")
+                {
+                    rjComboBox7.SelectedIndex = 0;
+                }
+                else
+                {
+                    rjComboBox7.SelectedIndex = 1;
+                }
                 TextBoxLiquidacionIntencion.Texts = Informacion2[12]; //Monto de liquidacion o intencion
                 TextBoxQuita.Texts = Informacion2[13]; //Monto de Quita
                 TextBoxPagoExt.Texts = Informacion2[42];
@@ -711,11 +723,14 @@ namespace FutureLending.Forms
                 }
 
             }
-
-            if (ComboBoxDeFechas.SelectedItem.ToString().Contains("Pagado"))
+            if (ComboBoxDeFechas.SelectedItem != null)
             {
-                ComboBoxDeFechas.SelectedIndex = -1;
+                if (ComboBoxDeFechas.SelectedItem.ToString().Contains("Pagado"))
+                {
+                    ComboBoxDeFechas.SelectedIndex = -1;
+                }
             }
+
 
 
         }
@@ -869,6 +884,7 @@ namespace FutureLending.Forms
         #region Estado de Pagos
         private void BtnEstadoPagos_Click(object sender, EventArgs e)
         {
+            Guardar = false;
             cancellationTokenSource?.Cancel();
             EsconderPaneles(pnlRegPago);
             lblTitle.Text = @"Registrar pago";
@@ -1019,6 +1035,7 @@ namespace FutureLending.Forms
         private void IconButton1_Click(object sender, EventArgs e)
         {
             Boton_Permisos.Enabled = false;
+            Guardar = false;
             CargarPromotoresEnComboBox(rjComboBox4, false);
 
             lblTitle.Text = @"Configuracion";
@@ -1414,56 +1431,32 @@ namespace FutureLending.Forms
         #region limitar a ingresar numeros
         private void TextBoxPago_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxCredito_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxPagare_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxRestante_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxLiquidacionIntencion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxQuita_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxPagare3_KeyPress(object sender, KeyPressEventArgs e)
@@ -1909,24 +1902,35 @@ namespace FutureLending.Forms
             int i1 = 1;
             //acomodamos el combobox de Fechas para agregar las fechas que se necesiten
             ComboBoxDeFechas.Items.Clear();
-            string[] info = instancia.LectName2(Cliente);
-            for (int i = 14; i < 42; i += 2)
+            if (!Guardar)
             {
-                if (info[i] == "-")
+                string[] info = instancia.LectName2(Cliente);
+                for (int i = 14; i < 42; i += 2)
                 {
-                    ComboBoxDeFechas.Items.Add("Fecha " + i1);
+                    if (info[i] == "-")
+                    {
+                        ComboBoxDeFechas.Items.Add("Fecha " + i1);
 
-                }
-                else
-                {
-                    ComboBoxDeFechas.Items.Add("Fecha " + i1 + "-Pagado");
-                }
+                    }
+                    else
+                    {
+                        ComboBoxDeFechas.Items.Add("Fecha " + i1 + "-Pagado");
+                    }
 
-                if (i % 2 == 0)
-                {
-                    i1++;
+                    if (i % 2 == 0)
+                    {
+                        i1++;
+                    }
                 }
             }
+            else
+            {
+                for (int i = 1; i < 15; i++)
+                {
+                    ComboBoxDeFechas.Items.Add("Fecha " + i);
+                }
+            }
+
         }
 
         private void btnGuardarC_Click(object sender, EventArgs e)
@@ -1960,57 +1964,134 @@ namespace FutureLending.Forms
             }
             else
             {
-
-                Ediciones e2 = new();
-                string[] infoListaNueva2 = Informacion2;
-                infoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
-                infoListaNueva2[1] = TextBoxNombre.Texts; //Nombre del registro
-                infoListaNueva2[2] = TextBoxCredito.Texts; //Credito Prestado
-                infoListaNueva2[3] = TextBoxRestante.Texts; //Monto Restante
-                infoListaNueva2[4] = TextBoxPagare.Texts; //Pagare generado
-                infoListaNueva2[5] = TextBoxCalle.Texts; //Calle
-                infoListaNueva2[6] = TextBoxColonia.Texts; //Colonia
-                infoListaNueva2[7] = TextBoxNumInt.Texts; //Numero de casa interior
-                infoListaNueva2[8] = TextBoxNumExt.Texts; //Numero de casa exterior
-                infoListaNueva2[9] = TextBoxTelefono.Texts; //Telefono
-                infoListaNueva2[10] = TextBoxCorreo.Texts; //Correo
-                infoListaNueva2[11] = rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
-                infoListaNueva2[12] = TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
-                infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
-                infoListaNueva2[43] = Cliente; //Nombre del que va a editar
-                bool editarLista2 = e2.EditarLista2(infoListaNueva2);
-                if (editarLista2)
+                if (!Guardar) //Si es false es porque esta editando y no guardando
                 {
-                    EsconderPaneles(pnlListas);
-                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    Ediciones e2 = new();
+                    string[] infoListaNueva2 = Informacion2;
+                    infoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
+                    infoListaNueva2[1] = TextBoxNombre.Texts; //Nombre del registro
+                    infoListaNueva2[2] = TextBoxCredito.Texts; //Credito Prestado
+                    infoListaNueva2[3] = TextBoxRestante.Texts; //Monto Restante
+                    infoListaNueva2[4] = TextBoxPagare.Texts; //Pagare generado
+                    infoListaNueva2[5] = TextBoxCalle.Texts; //Calle
+                    infoListaNueva2[6] = TextBoxColonia.Texts; //Colonia
+                    infoListaNueva2[7] = TextBoxNumInt.Texts; //Numero de casa interior
+                    infoListaNueva2[8] = TextBoxNumExt.Texts; //Numero de casa exterior
+                    infoListaNueva2[9] = TextBoxTelefono.Texts; //Telefono
+                    infoListaNueva2[10] = TextBoxCorreo.Texts; //Correo
+                    infoListaNueva2[11] = rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
+                    infoListaNueva2[12] = TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
+                    infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
+                    infoListaNueva2[43] = Cliente; //Nombre del que va a editar
+                    bool editarLista2 = e2.EditarLista2(infoListaNueva2);
+                    if (editarLista2)
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los cambios", "Advertencia", 2);
+                    }
+                }
+                else //Si es verdadero esta guardando un usuario y no editandolo
+                {
+                    Guardar = false;
+                    Lectura_Base_Datos obj = new();
+                    string[] infoListaNueva2 = InformacionPagos;
+                    infoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
+                    infoListaNueva2[1] = TextBoxNombre.Texts; //Nombre del registro
+                    infoListaNueva2[2] = TextBoxCredito.Texts; //Credito Prestado
+                    infoListaNueva2[3] = TextBoxRestante.Texts; //Monto Restante
+                    infoListaNueva2[4] = TextBoxPagare.Texts; //Pagare generado
+                    infoListaNueva2[5] = TextBoxCalle.Texts; //Calle
+                    infoListaNueva2[6] = TextBoxColonia.Texts; //Colronia
+                    infoListaNueva2[7] = TextBoxNumInt.Texts; //Numeoo de casa exterior
+                    infoListaNueva2[8] = TextBoxNumExt.Texts; //Numerefono
+                    infoListaNueva2[9] = TextBoxTelefono.Texts; //Tel de casa interior
+                    infoListaNueva2[10] = TextBoxCorreo.Texts; //Correo
+                    infoListaNueva2[11] = rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
+                    infoListaNueva2[12] = TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
+                    infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
+                    infoListaNueva2[42] = TextBoxPagoExt.Texts;
+                    if (obj.InsertarLista2(infoListaNueva2))
+                    {
+                        rjComboBox8.SelectedItem = -1;
+                        rjComboBox8.Texts = "Seleccione un promotor";
+                        TextBoxNombre.Texts = "";
+                        TextBoxCredito.Texts = "";
+                        TextBoxRestante.Texts = "";
+                        TextBoxPagare.Texts = "";
+                        TextBoxCalle.Texts = "";
+                        TextBoxColonia.Texts = "";
+                        TextBoxNumInt.Texts = "";
+                        TextBoxNumExt.Texts = "";
+                        TextBoxTelefono.Texts = "";
+                        TextBoxCorreo.Texts = "";
+                        rjComboBox7.SelectedItem = -1;
+                        rjComboBox7.Texts = "Seleccione una opcion";
+                        TextBoxLiquidacionIntencion.Texts = "";
+                        TextBoxQuita.Texts = "";
+                    }
+                    else
+                    {
+                        MessageB("Error al ingresar el usuario", "Alerta", 2);
+                    }
 
                 }
-                else
-                {
-                    MessageB("Error al guardar los cambios", "Advertencia", 2);
-                }
+
+
             }
         }
         private double restanteOriginal;
         private int indexFecha;
         private bool revertir;
         private bool unclick = true;
+        private string[] InformacionPagos = new string[45];
         private void Botoncambiodefechamomentaneo_Click_1(object sender, EventArgs e)
         {
-            if (revertir)
+            if (!Guardar)
             {
-                unclick = true;
+                int indice;
+                if (unclick)
+                {
+                    string fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
+                    string pago = TextBoxPago.Texts;
+                    restanteOriginal = Convert.ToDouble(Informacion2[42]);
+                    if (Convert.ToDouble(pago) > Convert.ToDouble(Informacion2[42]))
+                    {
+                        MessageB("El pago no puede ser mayor al monto restante", "Advertencia", 2);
+                    }
+                    else
+                    {
+                        indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                        indexFecha = indice;
+                        Informacion2[indice] = fecha;
+                        Informacion2[indice + 1] = pago;
+                        double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                        Informacion2[42] = resta.ToString(CultureInfo.InvariantCulture);
+                        TextBoxPagoExt.Texts = Informacion2[42];
+                        if (TextBoxPagoExt.Texts == "0")
+                        {
+                            mover = true;
+                        }
+                        else
+                        {
+                            mover = false;
+                        }
+                    }
+                    rjButton7.Enabled = true;
+                }
+
             }
-
-            int indice;
-            if (unclick)
+            else
             {
-                unclick = false;
-
+                int indice;
                 string fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
                 string pago = TextBoxPago.Texts;
-                restanteOriginal = Convert.ToDouble(Informacion2[42]);
-                if (Convert.ToDouble(pago) > Convert.ToDouble(Informacion2[42]))
+
+                if (Convert.ToDouble(pago) > Convert.ToDouble(TextBoxPagoExt.Texts))
                 {
                     MessageB("El pago no puede ser mayor al monto restante", "Advertencia", 2);
                 }
@@ -2018,11 +2099,11 @@ namespace FutureLending.Forms
                 {
                     indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
                     indexFecha = indice;
-                    Informacion2[indice] = fecha;
-                    Informacion2[indice + 1] = pago;
-                    double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
-                    Informacion2[42] = resta.ToString(CultureInfo.InvariantCulture);
-                    TextBoxPagoExt.Texts = Informacion2[42];
+                    InformacionPagos[indice] = fecha;
+                    InformacionPagos[indice + 1] = pago;
+                    double resta = Convert.ToDouble(TextBoxPagoExt.Texts) - Convert.ToDouble(pago);
+                    InformacionPagos[42] = resta.ToString(CultureInfo.InvariantCulture);
+                    TextBoxPagoExt.Texts = InformacionPagos[42];
                     if (TextBoxPagoExt.Texts == "0")
                     {
                         mover = true;
@@ -2031,13 +2112,11 @@ namespace FutureLending.Forms
                     {
                         mover = false;
                     }
-                }
-                rjButton7.Enabled = true;
-            }
-            else
-            {
 
+                    rjButton7.Enabled = true;
+                }
             }
+
         }
 
         private void BotonVolverEditar2_Click_1(object sender, EventArgs e)
@@ -2396,29 +2475,17 @@ namespace FutureLending.Forms
 
         private void TextBoxNumExt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Cancela el evento KeyPress
-                e.Handled = true;
-            }
+
         }
 
         private void TextTelefonoLiq_KeyPress(object sender, KeyPressEventArgs e)
@@ -2457,7 +2524,6 @@ namespace FutureLending.Forms
             Informacion2[indexFecha] = "";
             Informacion2[indexFecha + 1] = "";
             Informacion2[42] = restanteOriginal.ToString(CultureInfo.InvariantCulture);
-            revertir = true;
 
         }
 
@@ -2515,6 +2581,32 @@ namespace FutureLending.Forms
         private void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             dateTimePickerPersonalizado1_ValueChanged(null, null);
+        }
+        private bool Guardar = false;
+        private void iconButton3_Click(object sender, EventArgs e)//Boton para ingresar cliente a la lista 2
+        {
+            Guardar = true;
+            groupBox2.Hide(); //Escondemos el apartado para mover el usuario
+            CargarPromotoresEnComboBox(rjComboBox8, false);//Cargamos los promotores que puede escoger
+            EsconderPaneles(PnlEditar2);
+            TextBoxPagoExt.Enabled = true;
+            rjComboBox8.SelectedItem = -1;
+            rjComboBox8.Texts = "Seleccione un promotor";
+            TextBoxNombre.Texts = "";
+            TextBoxCredito.Texts = "";
+            TextBoxRestante.Texts = "";
+            TextBoxPagare.Texts = "";
+            TextBoxCalle.Texts = "";
+            TextBoxColonia.Texts = "";
+            TextBoxNumInt.Texts = "";
+            TextBoxNumExt.Texts = "";
+            TextBoxTelefono.Texts = "";
+            TextBoxCorreo.Texts = "";
+            rjComboBox7.SelectedItem = -1;
+            rjComboBox7.Texts = "Seleccione una opcion";
+            TextBoxLiquidacionIntencion.Texts = "";
+            TextBoxQuita.Texts = "";
+            TextBoxPagoExt.Texts = "";
         }
     }
 }

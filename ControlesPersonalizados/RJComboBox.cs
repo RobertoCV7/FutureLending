@@ -340,6 +340,8 @@ namespace FutureLending.ControlesPersonalizados
             set { cmbList.ValueMember = value; }
         }
 
+        public int Selectedindex { get; internal set; }
+
         //->Attach label events to user control event
         private void Surface_MouseLeave(object sender, EventArgs e)
         {

@@ -37,6 +37,7 @@ namespace FutureLending.Forms
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelMenu = new Panel();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             btnTodosSistemas = new FontAwesome.Sharp.IconButton();
@@ -374,6 +375,7 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(panelMenu, "panelMenu");
             panelMenu.BackColor = Color.LightSlateGray;
+            panelMenu.Controls.Add(iconButton3);
             panelMenu.Controls.Add(iconButton2);
             panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnTodosSistemas);
@@ -382,6 +384,19 @@ namespace FutureLending.Forms
             panelMenu.Controls.Add(btnIngresarClientes);
             panelMenu.Controls.Add(panel1);
             panelMenu.Name = "panelMenu";
+            // 
+            // iconButton3
+            // 
+            resources.ApplyResources(iconButton3, "iconButton3");
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.ForeColor = Color.White;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
+            iconButton3.IconColor = Color.White;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.Name = "iconButton3";
+            iconButton3.Tag = "   Ingresar Lista 2";
+            iconButton3.UseVisualStyleBackColor = true;
+            iconButton3.Click += iconButton3_Click;
             // 
             // iconButton2
             // 
@@ -3719,15 +3734,15 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(PanelEditar2_2);
+            Controls.Add(pnlListas);
+            Controls.Add(PnlEditar2);
             Controls.Add(pnlClientes);
             Controls.Add(PanelEditar);
             Controls.Add(panel2);
-            Controls.Add(pnlListas);
-            Controls.Add(PnlEditar2);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar3);
             Controls.Add(pnlRegPago);
-            Controls.Add(PanelEditar2_2);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             DoubleBuffered = true;
@@ -4089,5 +4104,6 @@ namespace FutureLending.Forms
         private RJButton rjButton7;
         private Label PingLabel;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }
