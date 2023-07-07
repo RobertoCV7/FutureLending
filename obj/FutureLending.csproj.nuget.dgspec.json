@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Escritorio\\FutureLending\\FutureLending.csproj": {}
+    "E:\\Escritorio\\FutureLending2\\FutureLending.csproj": {}
   },
   "projects": {
-    "D:\\Escritorio\\FutureLending\\FutureLending.csproj": {
+    "E:\\Escritorio\\FutureLending2\\FutureLending.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Escritorio\\FutureLending\\FutureLending.csproj",
+        "projectUniqueName": "E:\\Escritorio\\FutureLending2\\FutureLending.csproj",
         "projectName": "FutureLending",
-        "projectPath": "D:\\Escritorio\\FutureLending\\FutureLending.csproj",
+        "projectPath": "E:\\Escritorio\\FutureLending2\\FutureLending.csproj",
         "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-        "outputPath": "D:\\Escritorio\\FutureLending\\obj\\",
+        "outputPath": "E:\\Escritorio\\FutureLending2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Visual studio\\cosas\\NuGetPackages"
+          "E:\\Programas\\Visual Studio\\Componentes\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\donne\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

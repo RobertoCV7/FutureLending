@@ -167,6 +167,7 @@ public partial class Form1 : Form
             textBox3.Text = "";
             foreach (var users in usuarios) comboBox1.Items.Add(users);
             comboBox1.SelectedIndex = -1;
+            comboBox1.Text = "Seleccione un usuario";
         }
         else
         {
@@ -178,9 +179,11 @@ public partial class Form1 : Form
     {
         Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
         textBox2.Text = "";
-        comboBox1.SelectedIndex = -1;
+        comboBox1.Items.Clear();
         var usuarios = Accesos.CargarUsuarios();
         foreach (var users in usuarios) comboBox1.Items.Add(users);
+        comboBox1.SelectedIndex = -1;
+        comboBox1.Text = "Seleccione un usuario";
     }
 
     private void btnCalcular1_Click(object sender, EventArgs e)
@@ -2333,5 +2336,26 @@ public partial class Form1 : Form
     private void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
     {
         dateTimePickerPersonalizado1_ValueChanged(null, null);
+    }
+    private bool changingCheckedState5;
+    private void checkBox2_CheckedChanged(object sender, EventArgs e)
+    {
+        if (!changingCheckedState5)
+        {
+            changingCheckedState5 = true;
+
+            if (checkBox2.Checked)
+            {
+                // Desactivar el uso de contraseña
+                textBox3.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                // Activar el uso de contraseña
+                textBox3.UseSystemPasswordChar = true;
+            }
+            changingCheckedState5 = false;
+
+        }
     }
 }

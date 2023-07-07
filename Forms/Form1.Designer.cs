@@ -2935,6 +2935,7 @@ namespace FutureLending.Forms
             checkBox2.ForeColor = Color.LightSlateGray;
             checkBox2.Name = "checkBox2";
             checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // panel3
             // 
@@ -3720,9 +3721,9 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
-            Controls.Add(PanelEditar);
             Controls.Add(panel2);
             Controls.Add(pnlListas);
+            Controls.Add(PanelEditar);
             Controls.Add(pnlClientes);
             Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar3);

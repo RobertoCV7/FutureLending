@@ -8,56 +8,59 @@ internal class TablaClientes
 
     //Muestra en la tabla los datos de la lista 1
     public static async Task MostrarLista1(DataGridView gridListas,
-        RjComboBox cmbCliente, ProgressBar bar, Label lab)
+         RjComboBox cmbCliente, ProgressBar bar, Label lab)
     {
         // Se borran los registros
         LimpiarDatos(gridListas, cmbCliente);
 
         // Arreglo de strings con los nombres de cada columna
-        string[] nombresString =
-        {
-            "PROMOTOR", "NOMBRE", "CREDITO", "PAGARE", "FECHA INICIO", "FECHA TERMINO", "INTERESES", "MONTO TOTAL",
-            "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-            "TIPO DE PAGO", "MONTO RESTANTE"
-        };
+        string[] nombresString ={"PROMOTOR","NOMBRE", "CREDITO","PAGARE", "FECHA INICIO","FECHA TERMINO" ,"INTERESES", "MONTO TOTAL",
+                              "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                              "TIPO DE PAGO", "MONTO RESTANTE"};
 
         // Añade los strings de cada fecha y pago a la lista
         List<string> nombresColumnas = new(nombresString);
-        for (var i = 1; i <= 14; i++) nombresColumnas.Add("FECHA " + i);
+        for (int i = 1; i <= 14; i++)
+        {
+            nombresColumnas.Add("FECHA " + i);
+        }
         // Lectura de datos de la lista correspondiente en un hilo separado
-        var datosList = await Task.Run(() => Instancia.LectLista1(false));
+        List<string[]> datosList = await Task.Run(() =>
+        {
+            return Instancia.LectLista1(false);
+        });
         // Añade las columnas correspondientes a la tabla y el nombre de cada una
         gridListas.ColumnCount = nombresColumnas.Count;
         AñadirEncabezado(nombresColumnas, gridListas);
         // Agrega los datos al DataGridView en un hilo separado y los nombres al ComboBox
         await AñadirDatos(datosList, gridListas, cmbCliente, false, bar, lab);
+
     }
 
     //Muestra en la tabla los datos de la lista 2
     public static async Task MostrarLista2(DataGridView gridListas,
-        RjComboBox cmbCliente, ProgressBar bar, Label lab)
+          RjComboBox cmbCliente, ProgressBar bar, Label lab)
     {
         //Se borran los registros
         LimpiarDatos(gridListas, cmbCliente);
 
         //Arreglo de strings con los nombres de cada columna
-        string[] nombresString2 =
-        {
-            "PROMOTOR", "NOMBRE", "CREDITO", "MONTO RESTANTE", "PAGARE",
-            "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-            "TIPO DE PAGO", "LIQUIDACION/CONVENIO", "QUITA"
-        };
+        string[] nombresString2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE PAGO", "LIQUIDACION/CONVENIO","QUITA"};
         List<string> nombresColumnas2 = new(nombresString2);
-        for (var i = 1; i <= 14; i++)
+        for (int i = 1; i <= 14; i++)
         {
             nombresColumnas2.Add("FECHA " + i);
             nombresColumnas2.Add("PAGO " + i);
         }
-
         nombresColumnas2.Add("Pago EXT");
 
         // Lectura de datos de la lista correspondiente en un hilo separado
-        var datosList = await Task.Run(() => Instancia.LectLista2());
+        List<string[]> datosList = await Task.Run(() =>
+        {
+            return Instancia.LectLista2();
+        });
         //Añade las columnas correspondientes a la tabla y el nombre de cada una
 
         gridListas.ColumnCount = nombresColumnas2.Count;
@@ -75,17 +78,17 @@ internal class TablaClientes
         LimpiarDatos(gridListas, cmbCliente);
 
         //Arreglo de strings con los nombres de cada columna
-        string[] nombresString =
-        {
-            "PROMOTOR", "NOMBRE", "CREDITO", "PAGARE",
-            "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
-            "TIPO DE RESOLUCION", "RESOLUCION DEMANDA", "IMPORTE"
-        };
+        string[] nombresString = {"PROMOTOR","NOMBRE", "CREDITO","PAGARE",
+                                "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
+                                "TIPO DE RESOLUCION","RESOLUCION DEMANDA","IMPORTE"};
         List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
         nombresColumnas.AddRange(nombresString);
 
         // Lectura de datos de la lista correspondiente en un hilo separado
-        var datosList = await Task.Run(() => Instancia.LectLista3());
+        List<string[]> datosList = await Task.Run(() =>
+        {
+            return Instancia.LectLista3();
+        });
 
         //Añade las columnas correspondientes a la tabla y el nombre de cada una
         gridListas.ColumnCount = nombresColumnas.Count;
@@ -97,23 +100,23 @@ internal class TablaClientes
 
     //Muestra en la tabla los datos de la liquidados
     public static async Task MostrarLiquidados(DataGridView gridListas,
-        RjComboBox cmbCliente, ProgressBar bar, Label lab)
+            RjComboBox cmbCliente, ProgressBar bar, Label lab)
     {
         //Se borran los registros
         LimpiarDatos(gridListas, cmbCliente);
 
         //Arreglo de strings con los nombres de cada columna
-        string[] nombresString =
-        {
-            "PROMOTOR", "NOMBRE", "CREDITO", "FECHA INICIO",
-            "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
-            "TELÉFONO", "CORREO", "FORMA DE LIQUIDACION"
-        };
+        string[] nombresString = {"PROMOTOR","NOMBRE", "CREDITO", "FECHA INICIO",
+                              "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+                              "TELÉFONO", "CORREO", "FORMA DE LIQUIDACION"};
         List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
         nombresColumnas.AddRange(nombresString);
 
         // Lectura de datos de la lista correspondiente en un hilo separado
-        var datosList = await Task.Run(() => Instancia.LectLiquidados());
+        List<string[]> datosList = await Task.Run(() =>
+        {
+            return Instancia.LectLiquidados();
+        });
 
         //Añade las columnas correspondientes a la tabla y el nombre de cada una
         gridListas.ColumnCount = nombresColumnas.Count;
@@ -122,28 +125,24 @@ internal class TablaClientes
         // Agrega los datos al DataGridView en un hilo separado
         await AñadirDatos(datosList, gridListas, cmbCliente, false, bar, lab);
     }
-
     //Muestra en la tabla los datos de todos los clientes y su lista perteneciente
     public static async Task MostrarTodos(DataGridView gridListas,
-        RjComboBox cmbCliente, ProgressBar bar, Label lab)
+           RjComboBox cmbCliente, ProgressBar bar, Label lab)
     {
         //Se borran los registros
         LimpiarDatos(gridListas, cmbCliente);
 
         //Arreglo de strings con los nombres de cada columna
-        string[] nombresString =
-        {
-            "LISTA", "PROMOTOR", "NOMBRE", "CREDITO",
-            "FECHA INICIO", "INTERES", "MONTO TOTAL", "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
-            "TELÉFONO", "CORREO", "TIPO DE PAGO"
-        };
+        string[] nombresString = {"LISTA", "PROMOTOR","NOMBRE", "CREDITO",
+                           "FECHA INICIO","INTERES","MONTO TOTAL","CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.",
+                            "TELÉFONO", "CORREO", "TIPO DE PAGO"};
         List<string> nombresColumnas = new(); //Lista con los nombres de las columnas
         nombresColumnas.AddRange(nombresString);
 
         //Lectura de datos comunes de todas las listas y clientes liquidados en un hilo separado
-        var datosList = await Task.Run(() =>
+        List<string[]> datosList = await Task.Run(() =>
         {
-            var todas = Instancia.LectTodos("lista1", "1");
+            List<string[]> todas = Instancia.LectTodos("lista1", "1");
             todas.AddRange(Instancia.LectTodos("lista2", "2"));
             todas.AddRange(Instancia.LectTodos("lista3", "3"));
             todas.AddRange(Instancia.LectTodos("liquidados", "Liquidados"));
@@ -161,13 +160,16 @@ internal class TablaClientes
 
 
     //Añade los datos en cualquier tabla
-    private static void AñadirEncabezado(List<string> nombresColumnas, DataGridView gridListas)
+    static void AñadirEncabezado(List<string> nombresColumnas, DataGridView gridListas)
     {
-        for (var i = 0; i < gridListas.ColumnCount; i++) gridListas.Columns[i].Name = nombresColumnas[i];
+        for (int i = 0; i < gridListas.ColumnCount; i++)
+        {
+            gridListas.Columns[i].Name = nombresColumnas[i];
+        }
     }
 
     //Borra el contenido de la tabla
-    private static void LimpiarDatos(DataGridView gridListas,
+    static void LimpiarDatos(DataGridView gridListas,
         RjComboBox cmbCliente)
     {
         gridListas.Rows.Clear();
@@ -178,8 +180,7 @@ internal class TablaClientes
     }
 
     //Añade los datos a la tabla y ComboBox
-    private static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, RjComboBox cmbCliente,
-        bool todos, ProgressBar bar, Label lab)
+    static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, RjComboBox cmbCliente, bool todos, ProgressBar bar, Label lab)
     {
         if (datosList.Count == 0)
         {
@@ -190,9 +191,9 @@ internal class TablaClientes
         bar.Maximum = 100;
         bar.Minimum = 0;
 
-        var porcentajePaso = 100.0 / datosList.Count;
-        var mostrarBarraProgreso = datosList.Count > 100;
-        var mostrarTextoCargando = mostrarBarraProgreso;
+        double porcentajePaso = 100.0 / datosList.Count;
+        bool mostrarBarraProgreso = datosList.Count > 100;
+        bool mostrarTextoCargando = mostrarBarraProgreso;
 
         if (!mostrarBarraProgreso)
         {
@@ -206,7 +207,7 @@ internal class TablaClientes
 
         await Task.Run(() =>
         {
-            var i = 0;
+            int i = 0;
 
             foreach (object[] row in datosList)
             {
@@ -216,7 +217,7 @@ internal class TablaClientes
 
                     if (mostrarBarraProgreso)
                     {
-                        var valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
+                        int valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
 
                         bar.Invoke(() =>
                         {
@@ -230,7 +231,10 @@ internal class TablaClientes
                             }
                             else
                             {
-                                if (mostrarTextoCargando) lab.Text = @"Cargando...(" + valorProgressBar + @"%)";
+                                if (mostrarTextoCargando)
+                                {
+                                    lab.Text = @"Cargando...(" + valorProgressBar + @"%)";
+                                }
                             }
                         });
                     }
@@ -239,7 +243,12 @@ internal class TablaClientes
                 });
 
                 if (!todos)
-                    cmbCliente.Invoke(() => { cmbCliente.Items.Add(row[1]); });
+                {
+                    cmbCliente.Invoke(() =>
+                    {
+                        cmbCliente.Items.Add(row[1]);
+                    });
+                }
             }
         });
     }
@@ -248,17 +257,14 @@ internal class TablaClientes
     #region Muestra solo a los promotores
 
     public static async Task MostrarLista1Prom(DataGridView gridListas,
-        RjComboBox cmbCliente, ProgressBar bar, Label lab, List<string[]> info)
+         RjComboBox cmbCliente, ProgressBar bar, Label lab, List<string[]> info)
     {
         // Se borran los registros
         LimpiarDatos(gridListas, cmbCliente);
 
         // Arreglo de strings con los nombres de cada columna
-        string[] nombresString =
-        {
-            "PROMOTOR", "NOMBRE", "CREDITO", "PAGARE", "FECHA INICIO", "INTERESES", "MONTO TOTAL",
-            "TIPO DE PAGO", "MONTO RESTANTE"
-        };
+        string[] nombresString ={"PROMOTOR","NOMBRE", "CREDITO","PAGARE", "FECHA INICIO" ,"INTERESES", "MONTO TOTAL",
+                              "TIPO DE PAGO", "MONTO RESTANTE"};
         List<string> nombresColumnas = new(nombresString);
         // Añade las columnas correspondientes a la tabla y el nombre de cada una
         gridListas.ColumnCount = nombresColumnas.Count;
@@ -268,16 +274,13 @@ internal class TablaClientes
     }
 
     public static async Task MostrarLista2Prom(DataGridView gridListas,
-        RjComboBox cmbCliente, ProgressBar bar, Label lab, List<string[]> info)
+            RjComboBox cmbCliente, ProgressBar bar, Label lab, List<string[]> info)
     {
         //Se borran los registros
         LimpiarDatos(gridListas, cmbCliente);
         //Arreglo de strings con los nombres de cada columna
-        string[] nombresString2 =
-        {
-            "PROMOTOR", "NOMBRE", "CREDITO", "MONTO RESTANTE", "PAGARE",
-            "TIPO DE PAGO", "LIQUIDACION/CONVENIO", "QUITA"
-        };
+        string[] nombresString2 = {"PROMOTOR","NOMBRE", "CREDITO", "MONTO RESTANTE","PAGARE",
+                                "TIPO DE PAGO", "LIQUIDACION/CONVENIO","QUITA"};
         List<string> nombresColumnas2 = new(nombresString2);
         nombresColumnas2.Add("Pago EXT");
         gridListas.ColumnCount = nombresColumnas2.Count;
