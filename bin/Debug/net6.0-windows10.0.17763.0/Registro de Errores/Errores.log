@@ -1,8 +1,5 @@
-[16/07/2023 09:35:27 p. m.] Error: System.IndexOutOfRangeException: Could not find specified column in results: Forma_Liquidacion
-   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
-   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
-   at FutureLending.Funciones.cs.Lectura_Base_Datos.VerificarLiquidados(String nombre) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 581
-[16/07/2023 09:37:14 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Column 'Nombre_Completo' cannot be null
+
+[17/07/2023 01:22:58 a. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Column 'Nombre_Completo' cannot be null
    at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
    at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
    at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
@@ -14,17 +11,4 @@
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
-   at FutureLending.Funciones.cs.Lectura_Base_Datos.CrearAvales(String[] datos) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 837
-[16/07/2023 09:39:01 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Column 'Nombre_Completo' cannot be null
-   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
-   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
-   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
-   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
-   at FutureLending.Funciones.cs.Lectura_Base_Datos.CrearAvales(String[] datos) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 836
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CrearAvales(String[] datos) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 835

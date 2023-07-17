@@ -690,8 +690,19 @@ namespace FutureLending.Forms
         bool mover;
 
         //Si selecciona una fecha de lista 2 se muestra en el datetimepicker
+
+        private static bool requierAdmin = false;
+        private static double PagoOriginal = 0;
         private void ComboBoxDeFechas_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if (ComboBoxDeFechas.SelectedItem != null)
+            {
+                if (ComboBoxDeFechas.SelectedItem.ToString().Contains("Pagado"))
+                {
+                    requierAdmin = true;
+                }
+            }
             int apuntador;
             FechaEnLista2.Enabled = true;
             if (string.IsNullOrEmpty(Informacion2[2]))
@@ -709,8 +720,11 @@ namespace FutureLending.Forms
                         FechaEnLista2.Value = DateTime.Today;
                     }
                     else
+
                     {
                         FechaEnLista2.Value = DateTime.Parse(Informacion2[apuntador]);
+                        TextBoxPago.Texts = Informacion2[apuntador + 1];
+                        PagoOriginal = Convert.ToDouble(Informacion2[apuntador + 1]);
                     }
                 }
                 else
@@ -731,18 +745,14 @@ namespace FutureLending.Forms
                     else
                     {
                         FechaEnLista2.Value = DateTime.Parse(Informacion2[apuntador]);
+                        TextBoxPago.Texts = Informacion2[apuntador + 1];
+                        PagoOriginal = Convert.ToDouble(Informacion2[apuntador + 1]);
                     }
 
                 }
 
             }
-            if (ComboBoxDeFechas.SelectedItem != null)
-            {
-                if (ComboBoxDeFechas.SelectedItem.ToString().Contains("Pagado"))
-                {
-                    ComboBoxDeFechas.SelectedIndex = -1;
-                }
-            }
+
 
 
 
@@ -923,6 +933,7 @@ namespace FutureLending.Forms
                 }
             });
         }
+        private static string[] datos = new string[50];
         private void BtnBuscarC_Click(object sender, EventArgs e)
         {
             //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
@@ -930,7 +941,7 @@ namespace FutureLending.Forms
             //Agregamos los datos del cliente al form
             rjComboBox9.Texts = "Seleccione la Fecha";
             Lecturas_Especificas instancia = new();
-            string[] datos = instancia.LectName(ComBoxName.SelectedItem.ToString());
+            datos = instancia.LectName(ComBoxName.SelectedItem.ToString());
             int f = 0;
             for (int i = 16; i < 30; i++)
             {
@@ -979,41 +990,82 @@ namespace FutureLending.Forms
             else
             {
                 //Leer las fechas registradas 
-                int index = rjComboBox9.SelectedIndex; //Fecha seleccionada por el cliente
-                index += 16;
+                int index = rjComboBox9.SelectedIndex + 16; //Fecha seleccionada por el cliente
                 rjComboBox9.SelectedIndex = -1;
-                //Restar el nuevo pago al monto restante 
-                double totRes = (Convert.ToDouble(fechas[15])) - (Convert.ToDouble(txtBoxMonto.Texts));
-                //Si el monto restante es 0, entonces se pasa a liquidados 
-                if (totRes == 0)
+                if (requierAdmin2)
                 {
-                    Lectura_Base_Datos obj = new();
-                    string[] mov = new string[12];
-                    mov[0] = fechas[0];//Promotor
-                    mov[1] = fechas[1];//Nombre
-                    mov[2] = fechas[2];//Credito
-                    mov[3] = fechas[4];//fecha inicio
-                    mov[4] = fechas[8];//Calle
-                    mov[5] = fechas[9];//Colonia
-                    mov[6] = fechas[10];//Num_ext
-                    mov[7] = fechas[11];//Num_int
-                    mov[8] = fechas[12];//Telefono
-                    mov[9] = fechas[13];//Correo
-                    mov[10] = "Lista1";//Lista
-                    obj.InsertarLiquidados(mov);//Lo mueve a liquidados
-                    obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                    requierAdmin2 = false;
+                    Administrador_Acceso acc = new();
+                    acc.ShowDialog();
+                    if (admin)
+                    {
+                        string[] pag = datos[index].Split("-");
+
+                        if (Convert.ToDouble(pag[1]) > Convert.ToDouble(txtBoxMonto.Texts))
+                        {
+                            double diferencia = Convert.ToDouble(pag[1]) - Convert.ToDouble(txtBoxMonto.Texts);
+                            double suma = Convert.ToDouble(fechas[15]) + diferencia;
+                            string[] fecha = datos[index].Split("-");
+                            fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
+                            fechas[15] = suma.ToString("N2");
+                            string[] dato = fechas;
+                            dato[30] = fechas[1];
+                            Ediciones instancia22 = new();
+                            _ = instancia22.EditarLista1(dato);
+                        }
+                        else
+                        {
+                            double diferencia = Convert.ToDouble(txtBoxMonto.Texts) - Convert.ToDouble(pag[1]);
+                            double resta = Convert.ToDouble(fechas[15]) - diferencia;
+                            string[] fecha = datos[index].Split("-");
+                            fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
+                            fechas[15] = resta.ToString("N2");
+                            string[] dato = fechas;
+                            dato[30] = fechas[1];
+                            Ediciones instancia22 = new();
+                            _ = instancia22.EditarLista1(dato);
+                        }
+                    }
+                    else
+                    {
+                        RecargarDatosPnllRegPagos();
+                    }
+
                 }
                 else
                 {
-                    fechas[index] += "-" + txtBoxMonto.Texts;
-                    fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
-                    Ediciones instancia22 = new();
-                    string[] dato = fechas;
-                    dato[30] = fechas[1];
-                    _ = instancia22.EditarLista1(dato);
+                    //Restar el nuevo pago al monto restante 
+                    double totRes = (Convert.ToDouble(fechas[15])) - (Convert.ToDouble(txtBoxMonto.Texts));
+                    //Si el monto restante es 0, entonces se pasa a liquidados 
+                    if (totRes == 0)
+                    {
+                        Lectura_Base_Datos obj = new();
+                        string[] mov = new string[12];
+                        mov[0] = fechas[0];//Promotor
+                        mov[1] = fechas[1];//Nombre
+                        mov[2] = fechas[2];//Credito
+                        mov[3] = fechas[4];//fecha inicio
+                        mov[4] = fechas[8];//Calle
+                        mov[5] = fechas[9];//Colonia
+                        mov[6] = fechas[10];//Num_ext
+                        mov[7] = fechas[11];//Num_int
+                        mov[8] = fechas[12];//Telefono
+                        mov[9] = fechas[13];//Correo
+                        mov[10] = "Lista1";//Lista
+                        obj.InsertarLiquidados(mov);//Lo mueve a liquidados
+                        obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                    }
+                    else
+                    {
+                        fechas[index] += "-" + txtBoxMonto.Texts;
+                        fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
+                        Ediciones instancia22 = new();
+                        string[] dato = fechas;
+                        dato[30] = fechas[1];
+                        _ = instancia22.EditarLista1(dato);
+                    }
                 }
                 //Resetear valores 
-
                 RecargarDatosPnllRegPagos();
                 //Recargo de datos
                 BtnEstadoPagos_Click(sender, e);
@@ -1444,6 +1496,7 @@ namespace FutureLending.Forms
         }
         #endregion
 
+        private static bool requierAdmin2 = false;
         private void RjComboBox9_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox9.SelectedIndex != -1)
@@ -1451,7 +1504,9 @@ namespace FutureLending.Forms
                 btnMarcarP.Enabled = true;
                 if (rjComboBox9.SelectedItem.ToString().Contains("(PAGADA)"))
                 {
-                    rjComboBox9.SelectedIndex = -1;
+                    requierAdmin2 = true;
+                    string[] pago = datos[rjComboBox9.SelectedIndex + 16].Split("-");
+                    txtBoxMonto.Texts = pago[1];
                 }
             }
             else
@@ -2105,10 +2160,10 @@ namespace FutureLending.Forms
                     infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
                     infoListaNueva2[43] = Cliente; //Nombre del que va a editar
                     bool editarLista2 = e2.EditarLista2(infoListaNueva2);
-                    bool av = e2.EditarAval(Cliente, NuevosAvales);
+
                     if (editarLista2)
                     {
-                        if (av)
+                        if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
                         {
                             EsconderPaneles(pnlListas);
                             btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
@@ -2193,20 +2248,82 @@ namespace FutureLending.Forms
                     }
                     else
                     {
-                        indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
-                        indexFecha = indice;
-                        Informacion2[indice] = fecha;
-                        Informacion2[indice + 1] = pago;
-                        double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
-                        Informacion2[42] = resta.ToString(CultureInfo.InvariantCulture);
-                        TextBoxPagoExt.Texts = Informacion2[42];
-                        if (TextBoxPagoExt.Texts == "0")
+                        if (Convert.ToDouble(pago) < PagoOriginal)
                         {
-                            mover = true;
+                            Administrador_Acceso a = new();
+                            a.ShowDialog();
+                            if (admin)
+                            {
+                                indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                                indexFecha = indice;
+                                Informacion2[indice] = fecha;
+                                Informacion2[indice + 1] = pago;
+                                double diferencia = PagoOriginal - Convert.ToDouble(pago);
+                                double suma = Convert.ToDouble(Informacion2[42]) + diferencia;
+                                Informacion2[42] = suma.ToString(CultureInfo.InvariantCulture);
+                                TextBoxPagoExt.Texts = Informacion2[42];
+                                if (TextBoxPagoExt.Texts == "0")
+                                {
+                                    mover = true;
+                                }
+                                else
+                                {
+                                    mover = false;
+                                }
+                            }
+                            else
+                            {
+                                ComboBoxDeFechas_OnSelectedIndexChanged(null, null);
+                            }
                         }
                         else
                         {
-                            mover = false;
+                            if (requierAdmin)
+                            {
+                                Administrador_Acceso a = new();
+                                a.ShowDialog();
+                                if (admin)
+                                {
+                                    indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                                    indexFecha = indice;
+                                    Informacion2[indice] = fecha;
+                                    Informacion2[indice + 1] = pago;
+                                    double resta2 = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                                    Informacion2[42] = resta2.ToString(CultureInfo.InvariantCulture);
+                                    TextBoxPagoExt.Texts = Informacion2[42];
+                                    if (TextBoxPagoExt.Texts == "0")
+                                    {
+                                        mover = true;
+                                    }
+                                    else
+                                    {
+                                        mover = false;
+                                    }
+                                }
+                                else
+                                {
+                                    ComboBoxDeFechas_OnSelectedIndexChanged(null, null);
+                                }
+                            }
+                            else
+                            {
+                                indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                                indexFecha = indice;
+                                Informacion2[indice] = fecha;
+                                Informacion2[indice + 1] = pago;
+                                double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                                Informacion2[42] = resta.ToString(CultureInfo.InvariantCulture);
+                                TextBoxPagoExt.Texts = Informacion2[42];
+                                if (TextBoxPagoExt.Texts == "0")
+                                {
+                                    mover = true;
+                                }
+                                else
+                                {
+                                    mover = false;
+                                }
+                            }
+
                         }
                     }
                     rjButton7.Enabled = true;
@@ -2766,8 +2883,12 @@ namespace FutureLending.Forms
                     int horizontalOffset = gridListas.HorizontalScrollingOffset;
 
                     // Asegurarse de que las dos primeras columnas estén siempre visibles
-                    gridListas.Columns[0].Frozen = true;
-                    gridListas.Columns[1].Frozen = true;
+                    if (gridListas.Columns.Count > 0)
+                    {
+                        gridListas.Columns[0].Frozen = true;
+                        gridListas.Columns[1].Frozen = true;
+                    }
+
 
                     // Recorrer todas las columnas a partir de la tercera columna
                     for (int i = 2; i < gridListas.ColumnCount; i++)

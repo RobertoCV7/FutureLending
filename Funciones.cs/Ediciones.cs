@@ -209,7 +209,7 @@ namespace FutureLending.Funciones.cs
 
         public bool EditarAval(string Nombre_Completo, string[] nuevosDatos)
         {
-            Lectura_Base_Datos or = new();
+            Lectura_Base_Datos or = new Lectura_Base_Datos();
             using (MySqlConnection connection = or.Conector())
             {
                 StringBuilder queryBuilder = new StringBuilder();
@@ -241,17 +241,18 @@ namespace FutureLending.Funciones.cs
                     try
                     {
                         int rowsAffected = command.ExecuteNonQuery();
-                        return rowsAffected > 0;
+
+                        return true;
                     }
                     catch (Exception ex)
                     {
-                        Lectura_Base_Datos con = new();
+                        Lectura_Base_Datos con = new Lectura_Base_Datos();
                         con.Registro_errores(ex.ToString());
+                        MessageBox.Show(ex.ToString());
                         return false;
                     }
                 }
             }
         }
-
     }
 }
