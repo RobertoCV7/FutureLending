@@ -523,28 +523,35 @@ public class LecturaBaseDatos
 
     #region Revisar existencia
 
-    public static bool VerificarUsuarioEnListas(string nombreUsuario)
+    public static int VerificarUsuarioEnListas(string nombreUsuario)
     {
-        var a = new LecturaBaseDatos();
-        var connection = a.Conector();
+        LecturaBaseDatos a = new();
+        MySqlConnection connection = a.Conector();
 
         try
         {
             // Verificar si el usuario existe en lista2
-            const string queryLista2 = "SELECT COUNT(*) FROM lista2 WHERE Nombre_Completo = @nombreUsuario";
-            var commandLista2 = new MySqlCommand(queryLista2, connection);
+            string queryLista2 = "SELECT COUNT(*) FROM lista2 WHERE Nombre_Completo = @nombreUsuario";
+            MySqlCommand commandLista2 = new MySqlCommand(queryLista2, connection);
             commandLista2.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
-            var countLista2 = Convert.ToInt32(commandLista2.ExecuteScalar());
+            int countLista2 = Convert.ToInt32(commandLista2.ExecuteScalar());
 
             // Verificar si el usuario existe en lista3
-            const string queryLista3 = "SELECT COUNT(*) FROM lista3 WHERE Nombre_Completo = @nombreUsuario";
-            var commandLista3 = new MySqlCommand(queryLista3, connection);
+            string queryLista3 = "SELECT COUNT(*) FROM lista3 WHERE Nombre_Completo = @nombreUsuario";
+            MySqlCommand commandLista3 = new MySqlCommand(queryLista3, connection);
             commandLista3.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
-            var countLista3 = Convert.ToInt32(commandLista3.ExecuteScalar());
+            int countLista3 = Convert.ToInt32(commandLista3.ExecuteScalar());
 
-            return countLista2 <= 0 && countLista3 <= 0;
-            // El usuario ya existe en lista2 o lista3
-            // El usuario no existe en lista2 ni lista3
+            if (countLista2 > 0)
+            {
+                return 2;
+            }
+            else if (countLista3 > 0)
+            {
+                return 3;
+            }
+
+            return 0;
         }
         catch (Exception ex)
         {
@@ -553,11 +560,42 @@ public class LecturaBaseDatos
         finally
         {
             // Cerrar la conexión de la base de datos
-            if (connection.State == ConnectionState.Open) connection.Close();
+            if (connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+            }
         }
 
-        // En caso de excepción, retornar false por defecto
-        return false;
+        return 0;
+    }
+
+    public string VerificarLiquidados(string nombre)
+    {
+        using (MySqlConnection connection = Conector())
+        {
+            string query = $"SELECT Forma_Liquidacion FROM liquidados WHERE Nombre_Completo = @Nombre";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre", nombre);
+
+                try
+                {
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
+                    return null;
+                }
+            }
+        }
+
+        return null; // Si no se encuentra ningún registro con el nombre dado
     }
 
     #endregion
@@ -773,6 +811,81 @@ public class LecturaBaseDatos
             Registro_errores(ex.ToString());
             return false;
         }
+    }
+
+    public bool CrearAvales(string[] datos)
+    {
+        using MySqlConnection connection = Conector();
+        StringBuilder queryBuilder = new();
+        queryBuilder.Append("INSERT INTO Avales (Nombre_Completo, Aval1_Nombre, Aval1_Calle, Aval1_Colonia, Aval1_Num_int, Aval1_Num_ext, Aval1_Telefono, Aval1_Correo,Aval2_Nombre,Aval2_Calle,Aval2_Colonia,Aval2_Num_int,Aval2_Num_ext,Aval2_Telefono,Aval2_Correo)");
+        queryBuilder.Append(" VALUES (@Nombre_Completo, @Aval1_Nombre, @Aval1_Calle, @Aval1_Colonia, @Aval1_Num_int, @Aval1_Num_ext, @Aval1_Telefono, @Aval1_Correo,@Aval2_Nombre,@Aval2_Calle,@Aval2_Colonia,@Aval2_Num_int,@Aval2_Num_ext,@Aval2_Telefono,@Aval2_Correo)");
+        string query = queryBuilder.ToString();
+
+        using MySqlCommand command = new(query, connection);
+        command.Parameters.AddWithValue("@Nombre_Completo", datos[0]);
+        command.Parameters.AddWithValue("@Aval1_Nombre", datos[1]);
+        command.Parameters.AddWithValue("@Aval1_Calle", datos[2]);
+        command.Parameters.AddWithValue("@Aval1_Colonia", datos[3]);
+        command.Parameters.AddWithValue("@Aval1_Num_int", datos[4]);
+        command.Parameters.AddWithValue("@Aval1_Num_ext", datos[5]);
+        command.Parameters.AddWithValue("@Aval1_Telefono", datos[6]);
+        command.Parameters.AddWithValue("@Aval1_Correo", datos[7]);
+        command.Parameters.AddWithValue("@Aval2_Nombre", datos[8]);
+        command.Parameters.AddWithValue("@Aval2_Calle", datos[9]);
+        command.Parameters.AddWithValue("@Aval2_Colonia", datos[10]);
+        command.Parameters.AddWithValue("@Aval2_Num_int", datos[11]);
+        command.Parameters.AddWithValue("@Aval2_Num_ext", datos[12]);
+        command.Parameters.AddWithValue("@Aval2_Telefono", datos[13]);
+        command.Parameters.AddWithValue("@Aval2_Correo", datos[14]);
+        try
+        {
+            command.ExecuteNonQuery();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Registro_errores(ex.ToString());
+            return false;
+        }
+
+    }
+    public string[] ObtenerAvales(string Nombre_Completo)
+    {
+        List<string> datosRecuperados = new List<string>();
+
+        using (MySqlConnection connection = Conector())
+        {
+            string query = "SELECT Aval1_Nombre, Aval1_Calle, Aval1_Colonia, Aval1_Num_int, Aval1_Num_ext, Aval1_Telefono, Aval1_Correo, Aval2_Nombre, Aval2_Calle, Aval2_Colonia, Aval2_Num_int, Aval2_Num_ext, Aval2_Telefono, Aval2_Correo FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre_Completo", Nombre_Completo);
+
+                try
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                if (reader.GetName(i) != "Nombre_Completo")
+                                {
+                                    datosRecuperados.Add(reader.GetString(i));
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
+                    return null;
+                }
+            }
+        }
+
+        return datosRecuperados.ToArray();
     }
 
     #endregion

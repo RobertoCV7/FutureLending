@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Globalization;
+using System.Windows.Documents;
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Funciones.cs;
 using FutureLending.Properties;
@@ -14,7 +15,7 @@ public partial class Form1 : Form
     private static int _indiceFecha;
     private static bool _edito;
     private readonly Timer timer;
-
+    public static bool Guar = true;
     //Variable que se utiliza a la hora de borrar o editar un registro
     private string listaActual = "";
     private double opacity = 1.0;
@@ -68,7 +69,12 @@ public partial class Form1 : Form
         if (rjComboBox9.SelectedIndex != -1)
         {
             btnMarcarP.Enabled = true;
-            if (rjComboBox9.SelectedItem.ToString().Contains("(PAGADA)")) rjComboBox9.SelectedIndex = -1;
+            if (rjComboBox9.SelectedItem.ToString().Contains("(PAGADA)"))
+            {
+                requierAdmin2 = true;
+                string[] pago = datos[rjComboBox9.SelectedIndex + 16].Split("-");
+                txtBoxMonto.Texts = pago[1];
+            }
         }
         else
         {
@@ -78,9 +84,14 @@ public partial class Form1 : Form
 
     private void Boton_Permisos_Click(object sender, EventArgs e)
     {
-        PermisosLect per = new(comboBox1.SelectedItem.ToString());
+        Administrador_Acceso admin2 = new();
+        admin2.ShowDialog();
+        if (admin)
+        {
+            PermisosLect per = new(comboBox1.SelectedItem.ToString());
+            per.ShowDialog();
+        }
 
-        per.ShowDialog();
     }
 
     private void BtnLista1_MouseDown(object sender, MouseEventArgs e)
@@ -126,64 +137,82 @@ public partial class Form1 : Form
 
     private void Button1_Click_2(object sender, EventArgs e)
     {
-        _ = new Accesos();
-        var user = textBox1.Text;
-        var password = TextboxContr.Text;
-        if (string.IsNullOrEmpty(user))
+
+        Administrador_Acceso admin2 = new();
+        admin2.ShowDialog();
+        if (admin)
         {
-            AvisoVacio.Text = @"No puede haber nada vacio";
-        }
-        else
-        {
-            var mensaje = Accesos.AgregarUsuario(user, password);
-            if (mensaje)
+
+
+            _ = new Accesos();
+            var user = textBox1.Text;
+            var password = TextboxContr.Text;
+            if (string.IsNullOrEmpty(user))
             {
-                textBox1.Text = "";
-                TextboxContr.Text = "";
-                TextboxConfirm.Text = "";
-                AvisoVacio.Text = "";
+                AvisoVacio.Text = @"No puede haber nada vacio";
             }
             else
             {
-                AvisoVacio.Text = @"El usuario ya existe. No se pudo agregar";
+                var mensaje = Accesos.AgregarUsuario(user, password);
+                if (mensaje)
+                {
+                    textBox1.Text = "";
+                    TextboxContr.Text = "";
+                    TextboxConfirm.Text = "";
+                    AvisoVacio.Text = "";
+                }
+                else
+                {
+                    AvisoVacio.Text = @"El usuario ya existe. No se pudo agregar";
+                }
             }
-        }
 
-        _ = new Accesos();
-        var usuarios = Accesos.CargarUsuarios().ToArray();
-        comboBox1.Items.Clear();
-        comboBox1.Items.AddRange(usuarios);
+            _ = new Accesos();
+            var usuarios = Accesos.CargarUsuarios().ToArray();
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(usuarios);
+        }
     }
 
     private void rjButton11_Click(object sender, EventArgs e)
     {
-        var editarUsuarioContraseña =
+        Administrador_Acceso admin2 = new();
+        admin2.ShowDialog();
+        if (admin)
+        {
+            var editarUsuarioContraseña =
             Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), textBox2.Text, textBox3.Text);
-        var usuarios = Accesos.CargarUsuarios();
-        if (editarUsuarioContraseña)
-        {
-            comboBox1.Items.Clear();
-            textBox2.Text = "";
-            textBox3.Text = "";
-            foreach (var users in usuarios) comboBox1.Items.Add(users);
-            comboBox1.SelectedIndex = -1;
-            comboBox1.Text = "Seleccione un usuario";
-        }
-        else
-        {
-            MessageB("Error al editar al usuario", "Error", 3);
+            var usuarios = Accesos.CargarUsuarios();
+            if (editarUsuarioContraseña)
+            {
+                comboBox1.Items.Clear();
+                textBox2.Text = "";
+                textBox3.Text = "";
+                foreach (var users in usuarios) comboBox1.Items.Add(users);
+                comboBox1.SelectedIndex = -1;
+                comboBox1.Text = "Seleccione un usuario";
+            }
+            else
+            {
+                MessageB("Error al editar al usuario", "Error", 3);
+            }
         }
     }
 
     private void rjButton12_Click(object sender, EventArgs e)
     {
-        Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
-        textBox2.Text = "";
-        comboBox1.Items.Clear();
-        var usuarios = Accesos.CargarUsuarios();
-        foreach (var users in usuarios) comboBox1.Items.Add(users);
-        comboBox1.SelectedIndex = -1;
-        comboBox1.Text = "Seleccione un usuario";
+        Administrador_Acceso admin2 = new();
+        admin2.ShowDialog();
+        if (admin)
+        {
+            Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
+            textBox2.Text = "";
+            comboBox1.Items.Clear();
+            var usuarios = Accesos.CargarUsuarios();
+            foreach (var users in usuarios) comboBox1.Items.Add(users);
+            comboBox1.SelectedIndex = -1;
+            comboBox1.Text = "Seleccione un usuario";
+        }
     }
 
     private void btnCalcular1_Click(object sender, EventArgs e)
@@ -222,18 +251,45 @@ public partial class Form1 : Form
 
     private void btnGuardar1_Click(object sender, EventArgs e)
     {
+        string list = "";
+        int ar = 0;
         LecturaBaseDatos obj = new();
-        var ar = LecturaBaseDatos.VerificarUsuarioEnListas(txtNombre.Texts);
-        var interes = cmbInteres.Texts;
-        if (ar)
+        ar = LecturaBaseDatos.VerificarUsuarioEnListas(txtNombre.Texts);
+        string lista = obj.VerificarLiquidados(txtNombre.Texts);
+        if (ar != 0 || lista != null)
         {
-            var montoTotal = txtTotal.Texts.Replace("$", "");
-            var p = credito2 * 2;
-            obj.Create("lista1", cmbPromotor.Texts, txtNombre.Texts, txtCredito.Texts,
-                p.ToString(CultureInfo.InvariantCulture), dateFechaInicio.Value, dateTimePickerPersonalizado2.Value,
-                interes, montoTotal, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts,
-                txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedItem.ToString(), montoTotal);
-            //Borrar datos para poder agregar de nuevo 
+
+            if (ar == 2)
+            {
+                list = "Lista 2";
+            }
+            else if (ar == 3)
+            {
+                list = "Lista 3";
+            }
+            else if (ar == 0)
+            {
+                list = "Liquidados";
+            }
+            if (lista != null)
+            {
+                Existencia.ListaLiq = lista;
+                Existencia.Nombre = txtNombre.Texts;
+                Existencia.Lista = list;
+            }
+            Existencia ex = new();
+            Existencia.Nombre = txtNombre.Texts;
+            Existencia.Lista = list;
+            ex.ShowDialog();
+        }
+        if (Guar)
+        {
+            string interes = cmbInteres.Texts;
+            string montoTotal = txtTotal.Texts.Replace("$", "");
+            double p = (credito2 * 2);
+            obj.Create("lista1", cmbPromotor.Texts, txtNombre.Texts, txtCredito.Texts, p.ToString(CultureInfo.InvariantCulture), dateFechaInicio.Value, dateTimePickerPersonalizado2.Value, interes, montoTotal, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedItem.ToString(), montoTotal);
+            obj.CrearAvales(Avales); //Agrega los avales a la base de datos
+                                     //Borrar datos para poder agregar de nuevo 
             txtNombre.Texts = "";
             txtCredito.Texts = "";
             dateFechaInicio.Value = DateTime.Now;
@@ -252,7 +308,35 @@ public partial class Form1 : Form
         }
         else
         {
-            MessageB("El cliente ya existe en la Base de datos", "Error", 3);
+            txtNombre.Texts = "";
+            txtCredito.Texts = "";
+            dateFechaInicio.Value = DateTime.Now;
+            dateTimePickerPersonalizado2.Value = DateTime.Now;
+            cmbInteres.Texts = "Seleccione un interés";
+            cmbTipo.Texts = "Seleccione un tipo de pago";
+            cmbPromotor.Texts = "Seleccione al promotor";
+            txtTotal.Texts = "";
+            txtTotal_I.Texts = "";
+            txtCalle.Texts = "";
+            txtColonia.Texts = "";
+            txtNumExt.Texts = "";
+            txtNumInt.Texts = "";
+            txtTelefono.Texts = "";
+            txtCorreo.Texts = "";
+            TextBoxNombreaval1.Texts = "";
+            TextBoxCalleaval1.Texts = "";
+            TextBoxColoniaaval1.Texts = "";
+            TextBoxNumIntaval1.Texts = "";
+            TextBoxNumExtaval1.Texts = "";
+            TextBoxTelefonoaval1.Texts = "";
+            TextBoxCorreoaval1.Texts = "";
+            TextBoxNombreaval2.Texts = "";
+            TextBoxCalleaval2.Texts = "";
+            TextBoxColoniaaval2.Texts = "";
+            TextBoxNumIntaval2.Texts = "";
+            TextBoxNumExtaval2.Texts = "";
+            TextBoxTelefonoaval2.Texts = "";
+            TextBoxCorreoaval2.Texts = "";
         }
     }
 
@@ -493,7 +577,7 @@ public partial class Form1 : Form
             }
         }
     }
-
+    private int indexFecha;
     private void Botoncambiodefechamomentaneo_Click_1(object sender, EventArgs e)
     {
         var fecha = FechaEnLista2.Value.ToString("dd/MM/yyyy");
@@ -503,36 +587,83 @@ public partial class Form1 : Form
             MessageB("El pago no puede ser mayor al monto restante", "Advertencia", 2);
             return;
         }
-
-        var indice = 14;
-        if (ComboBoxDeFechas.SelectedIndex == 0)
+        int indice;
+        if (Convert.ToDouble(pago) < PagoOriginal)
         {
-            Informacion2[indice] = fecha;
-            _indiceFecha = indice;
-            Informacion2[indice + 1] = pago;
-
-            var resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
-            _montoInicial =
-                Convert.ToDouble(
-                    Informacion2[42]); //Aqui recupero el valor original antes de la resta Por si se equivoca
-            Informacion2[42] = resta.ToString(CultureInfo.InvariantCulture);
-            _edito = true;
-            TextBoxPagoExt.Texts = Informacion2[42];
-            mover = TextBoxPagoExt.Texts == "0";
+            Administrador_Acceso a = new();
+            a.ShowDialog();
+            if (admin)
+            {
+                indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                indexFecha = indice;
+                Informacion2[indice] = fecha;
+                Informacion2[indice + 1] = pago;
+                double diferencia = PagoOriginal - Convert.ToDouble(pago);
+                double suma = Convert.ToDouble(Informacion2[42]) + diferencia;
+                Informacion2[42] = suma.ToString(CultureInfo.InvariantCulture);
+                TextBoxPagoExt.Texts = Informacion2[42];
+                if (TextBoxPagoExt.Texts == "0")
+                {
+                    mover = true;
+                }
+                else
+                {
+                    mover = false;
+                }
+            }
+            else
+            {
+                ComboBoxDeFechas_OnSelectedIndexChanged(null, null);
+            }
         }
         else
         {
-            indice = 14 + ComboBoxDeFechas.SelectedIndex * 2;
-            Informacion2[indice] = fecha;
-            Informacion2[indice + 1] = pago;
-            var resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
-            _montoInicial =
-                Convert.ToDouble(
-                    Informacion2[42]); //Aqui recupero el valor original antes de la resta por si se equivoca
-            Informacion2[42] = resta.ToString(CultureInfo.InvariantCulture);
-            _edito = true;
-            TextBoxPagoExt.Texts = Informacion2[42];
-            mover = TextBoxPagoExt.Texts == "0";
+            if (requierAdmin)
+            {
+                Administrador_Acceso a = new();
+                a.ShowDialog();
+                if (admin)
+                {
+                    indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                    indexFecha = indice;
+                    Informacion2[indice] = fecha;
+                    Informacion2[indice + 1] = pago;
+                    double resta2 = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                    Informacion2[42] = resta2.ToString(CultureInfo.InvariantCulture);
+                    TextBoxPagoExt.Texts = Informacion2[42];
+                    if (TextBoxPagoExt.Texts == "0")
+                    {
+                        mover = true;
+                    }
+                    else
+                    {
+                        mover = false;
+                    }
+                }
+                else
+                {
+                    ComboBoxDeFechas_OnSelectedIndexChanged(null, null);
+                }
+            }
+            else
+            {
+                indice = 14 + (ComboBoxDeFechas.SelectedIndex * 2);
+                indexFecha = indice;
+                Informacion2[indice] = fecha;
+                Informacion2[indice + 1] = pago;
+                double resta = Convert.ToDouble(Informacion2[42]) - Convert.ToDouble(pago);
+                Informacion2[42] = resta.ToString(CultureInfo.InvariantCulture);
+                TextBoxPagoExt.Texts = Informacion2[42];
+                if (TextBoxPagoExt.Texts == "0")
+                {
+                    mover = true;
+                }
+                else
+                {
+                    mover = false;
+                }
+            }
+
         }
     }
 
@@ -549,7 +680,7 @@ public partial class Form1 : Form
         var datos = Informacion4;
         datos[1] = TextNombreLiq.Texts; //Nombre del registro
         datos[2] = TextCreditoLiq.Texts; //Credito Prestado
-        datos[3] = FechaInicioLiq.Value.ToString("dd/MM/yyyy"); //Fecha de inicio
+        datos[3] = FechaInicioLiq.Value.ToString("dd/MM/yyyy") ?? "-";
         datos[0] = ComboBoxPromotorLiq.SelectedItem.ToString(); //Promotor que lo atiende
         datos[10] = ComBoBoxLiquidacion.SelectedItem.ToString(); //De que lista viene
         datos[4] = TextCalleLiq.Texts; //Calle
@@ -1516,11 +1647,16 @@ public partial class Form1 : Form
             //Rellenamos los objetos del panel editar liquidados
             TextNombreLiq.Texts = Cliente; //Nombre del registro
             TextCreditoLiq.Texts = Informacion4[2]; //Credito Prestado
-            FechaInicioLiq.Value = DateTime.Parse(Informacion4[3]); //Fecha de inicio
+            try
+            {
+                FechaInicioLiq.Value = DateTime.Parse(Informacion4[3]);
+            }
+            catch
+            {
+                FechaInicioLiq.Enabled = false; // Bloquear el objeto FechaInicioLiq
+            }
             ComboBoxPromotorLiq.SelectedItem = Informacion4[0]; //Promotor que lo atiende
             ComBoBoxLiquidacion.SelectedItem = Informacion4[10]; //De que lista viene
-
-
             TextCalleLiq.Texts = Informacion4[4]; //Calle
             TextColoniaLiq.Texts = Informacion4[5]; //Colonia
             TextNumIntLiq.Texts = Informacion4[6]; //Numero de casa interior
@@ -1541,8 +1677,19 @@ public partial class Form1 : Form
     private bool mover;
 
     //Si selecciona una fecha de lista 2 se muestra en el datetimepicker
+    private static bool requierAdmin = false;
+    private static double PagoOriginal = 0;
     private void ComboBoxDeFechas_OnSelectedIndexChanged(object sender, EventArgs e)
     {
+
+        if (ComboBoxDeFechas.SelectedItem != null)
+        {
+            if (ComboBoxDeFechas.SelectedItem.ToString().Contains("Pagado"))
+            {
+                requierAdmin = true;
+            }
+        }
+        int apuntador;
         FechaEnLista2.Enabled = true;
         if (string.IsNullOrEmpty(Informacion2[2]))
         {
@@ -1550,31 +1697,51 @@ public partial class Form1 : Form
         }
         else
         {
-            int apuntador;
             if (ComboBoxDeFechas.SelectedIndex == 0)
             {
                 apuntador = 14;
 
                 if (Informacion2[apuntador] == "-" || Informacion2[apuntador] == "")
+                {
                     FechaEnLista2.Value = DateTime.Today;
+                }
                 else
+
+                {
                     FechaEnLista2.Value = DateTime.Parse(Informacion2[apuntador]);
+                    TextBoxPago.Texts = Informacion2[apuntador + 1];
+                    PagoOriginal = Convert.ToDouble(Informacion2[apuntador + 1]);
+                }
             }
             else
             {
                 if (ComboBoxDeFechas.SelectedIndex != -1)
-                    apuntador = ComboBoxDeFechas.SelectedIndex * 2 + 14;
+                {
+                    apuntador = ((ComboBoxDeFechas.SelectedIndex * 2) + (14));
+                }
                 else
+                {
                     apuntador = 14;
+                }
 
                 if (Informacion2[apuntador] == "-" || Informacion2[apuntador] == "")
+                {
                     FechaEnLista2.Value = DateTime.Today;
+                }
                 else
+                {
                     FechaEnLista2.Value = DateTime.Parse(Informacion2[apuntador]);
+                    TextBoxPago.Texts = Informacion2[apuntador + 1];
+                    PagoOriginal = Convert.ToDouble(Informacion2[apuntador + 1]);
+                }
+
             }
+
         }
 
-        if (ComboBoxDeFechas.SelectedItem.ToString().Contains("Pagado")) ComboBoxDeFechas.SelectedIndex = -1;
+
+
+
     }
 
     //Si ya puso un pago se activa el boton
@@ -1718,7 +1885,7 @@ public partial class Form1 : Form
             foreach (var item in lista1) ComBoxName.Items.Add(item[1]);
         });
     }
-
+    string[] datos = new string[50];
     private void BtnBuscarC_Click(object sender, EventArgs e)
     {
         //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
@@ -1726,9 +1893,10 @@ public partial class Form1 : Form
         //Agregamos los datos del cliente al form
         rjComboBox9.Texts = "Seleccione la Fecha";
         LecturasEspecificas instancia = new();
-        var datos = instancia.LectName(ComBoxName.SelectedItem.ToString());
-        var f = 0;
-        for (var i = 16; i < 30; i++)
+        datos = instancia.LectName(ComBoxName.SelectedItem.ToString());
+        int f = 0;
+        for (int i = 16; i < 30; i++)
+        {
             if (datos[i].Contains("/"))
             {
                 if (datos[i].Contains("-"))
@@ -1742,7 +1910,7 @@ public partial class Form1 : Form
                     f++;
                 }
             }
-
+        }
         label17.Visible = true;
         lblCredito.Visible = true;
         txtBoxCredito.Visible = true;
@@ -1758,58 +1926,102 @@ public partial class Form1 : Form
         Monto_Recomendado.Visible = true;
         label82.Visible = true;
         Monto_Recomendado.Texts = (Convert.ToDouble(datos[7]) / Convert.ToDouble(f)).ToString("N2");
-    }
 
+    }
+    private static bool requierAdmin2 = false;
     private void BtnMarcarP_Click(object sender, EventArgs e)
     {
         //Obtener el valor seleccionado de fecha por el nombre del cliente
         LecturasEspecificas instancia2 = new();
-        var fechas = instancia2.LectName(ComBoxName.SelectedItem.ToString());
-        //Leer las fechas registradas 
-        var index = rjComboBox9.SelectedIndex; //Fecha seleccionada por el cliente
-        index += 16;
-        rjComboBox9.SelectedIndex = -1;
-        //Restar el nuevo pago al monto restante 
+        string[] fechas = instancia2.LectName(ComBoxName.SelectedItem.ToString());
+
         if (Convert.ToDouble(txtBoxMonto.Texts) > Convert.ToDouble(fechas[15]))
         {
-            MessageB("El monto a depositar no puede ser mayor al restante", "Advertencia", 2);
-            //Reseteo los valores
+            MessageB("No puedes depositar mas de lo que debe", "Aviso", 2);
             txtBoxMonto.Texts = "";
         }
         else
         {
-            var totRes = Convert.ToDouble(fechas[15]) - Convert.ToDouble(txtBoxMonto.Texts);
-            //Si el monto restante es 0, entonces se pasa a liquidados 
-            if (totRes == 0)
+            //Leer las fechas registradas 
+            int index = rjComboBox9.SelectedIndex + 16; //Fecha seleccionada por el cliente
+            rjComboBox9.SelectedIndex = -1;
+            if (requierAdmin2)
             {
-                LecturaBaseDatos obj = new();
-                var mov = new string[12];
-                mov[0] = fechas[0]; //Promotor
-                mov[1] = fechas[1]; //Nombre
-                mov[2] = fechas[2]; //Credito
-                mov[3] = fechas[4]; //fecha inicio
-                mov[4] = fechas[8]; //Calle
-                mov[5] = fechas[9]; //Colonia
-                mov[6] = fechas[10]; //Num_ext
-                mov[7] = fechas[11]; //Num_int
-                mov[8] = fechas[12]; //Telefono
-                mov[9] = fechas[13]; //Correo
-                mov[10] = "Lista1"; //Lista
-                obj.InsertarLiquidados(mov); //Lo mueve a liquidados
-                obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                requierAdmin2 = false;
+                Administrador_Acceso acc = new();
+                acc.ShowDialog();
+                if (admin)
+                {
+                    string[] pag = datos[index].Split("-");
+
+                    if (Convert.ToDouble(pag[1]) > Convert.ToDouble(txtBoxMonto.Texts))
+                    {
+                        double diferencia = Convert.ToDouble(pag[1]) - Convert.ToDouble(txtBoxMonto.Texts);
+                        double suma = Convert.ToDouble(fechas[15]) + diferencia;
+                        string[] fecha = datos[index].Split("-");
+                        fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
+                        fechas[15] = suma.ToString("N2");
+                        string[] dato = fechas;
+                        dato[30] = fechas[1];
+                        Ediciones instancia22 = new();
+                        _ = instancia22.EditarLista1(dato);
+                    }
+                    else
+                    {
+                        double diferencia = Convert.ToDouble(txtBoxMonto.Texts) - Convert.ToDouble(pag[1]);
+                        double resta = Convert.ToDouble(fechas[15]) - diferencia;
+                        string[] fecha = datos[index].Split("-");
+                        fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
+                        fechas[15] = resta.ToString("N2");
+                        string[] dato = fechas;
+                        dato[30] = fechas[1];
+                        Ediciones instancia22 = new();
+                        _ = instancia22.EditarLista1(dato);
+                    }
+                }
+                else
+                {
+                    RecargarDatosPnlRegPagos();
+                }
+
             }
             else
             {
-                fechas[index] += "-" + txtBoxMonto.Texts;
-                fechas[15] = totRes.ToString("N2"); //Asigno el nuevo monto restante
-                Ediciones instancia22 = new();
-                var dato = fechas;
-                dato[30] = fechas[1];
-                _ = instancia22.EditarLista1(dato);
+                //Restar el nuevo pago al monto restante 
+                double totRes = (Convert.ToDouble(fechas[15])) - (Convert.ToDouble(txtBoxMonto.Texts));
+                //Si el monto restante es 0, entonces se pasa a liquidados 
+                if (totRes == 0)
+                {
+                    LecturaBaseDatos obj = new();
+                    string[] mov = new string[12];
+                    mov[0] = fechas[0];//Promotor
+                    mov[1] = fechas[1];//Nombre
+                    mov[2] = fechas[2];//Credito
+                    mov[3] = fechas[4];//fecha inicio
+                    mov[4] = fechas[8];//Calle
+                    mov[5] = fechas[9];//Colonia
+                    mov[6] = fechas[10];//Num_ext
+                    mov[7] = fechas[11];//Num_int
+                    mov[8] = fechas[12];//Telefono
+                    mov[9] = fechas[13];//Correo
+                    mov[10] = "Lista1";//Lista
+                    obj.InsertarLiquidados(mov);//Lo mueve a liquidados
+                    obj.Erase(ComBoxName.Texts, "lista1"); //Lo elimino de lista 1
+                }
+                else
+                {
+                    fechas[index] += "-" + txtBoxMonto.Texts;
+                    fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
+                    Ediciones instancia22 = new();
+                    string[] dato = fechas;
+                    dato[30] = fechas[1];
+                    _ = instancia22.EditarLista1(dato);
+                }
             }
-
+            //Resetear valores 
             RecargarDatosPnlRegPagos();
-            BtnEstadoPagos_Click(null, null);
+            //Recargo de datos
+            BtnEstadoPagos_Click(sender, e);
         }
     }
 
@@ -2182,22 +2394,32 @@ public partial class Form1 : Form
 
     private void RjButton4_Click(object sender, EventArgs e)
     {
-        EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
-        textBox4.Text = "";
-        cambioEnPromotores = true;
-        cambioenPromotoresListas = true;
-        rjComboBox4.SelectedIndex = -1;
-        CargarPromotoresEnComboBox(rjComboBox4, false);
+        Administrador_Acceso admin2 = new();
+        admin2.ShowDialog();
+        if (admin)
+        {
+            EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
+            textBox4.Text = "";
+            cambioEnPromotores = true;
+            cambioenPromotoresListas = true;
+            rjComboBox4.SelectedIndex = -1;
+            CargarPromotoresEnComboBox(rjComboBox4, false);
+        }
     }
 
     private void RjButton6_Click(object sender, EventArgs e)
     {
-        EliminarPromotor(rjComboBox4.SelectedItem.ToString());
-        rjComboBox4.SelectedIndex = -1;
-        cambioenPromotoresListas = true;
-        cambioEnPromotores = true;
-        textBox4.Text = "";
-        CargarPromotoresEnComboBox(rjComboBox4, false);
+        Administrador_Acceso admin2 = new();
+        admin2.ShowDialog();
+        if (admin)
+        {
+            EliminarPromotor(rjComboBox4.SelectedItem.ToString());
+            rjComboBox4.SelectedIndex = -1;
+            cambioenPromotoresListas = true;
+            cambioEnPromotores = true;
+            textBox4.Text = "";
+            CargarPromotoresEnComboBox(rjComboBox4, false);
+        }
     }
 
     private void TextBox5_TextChanged(object sender, EventArgs e)
@@ -2207,11 +2429,16 @@ public partial class Form1 : Form
 
     private void RjButton5_Click(object sender, EventArgs e)
     {
-        AgregarPromotor(textBox5.Text);
-        textBox5.Text = "";
-        cambioEnPromotores = true;
-        cambioenPromotoresListas = true;
-        CargarPromotoresEnComboBox(rjComboBox4, false);
+        Administrador_Acceso admin2 = new();
+        admin2.ShowDialog();
+        if (admin)
+        {
+            AgregarPromotor(textBox5.Text);
+            textBox5.Text = "";
+            cambioEnPromotores = true;
+            cambioenPromotoresListas = true;
+            CargarPromotoresEnComboBox(rjComboBox4, false);
+        }
     }
 
     #endregion
@@ -2357,5 +2584,209 @@ public partial class Form1 : Form
             changingCheckedState5 = false;
 
         }
+    }
+    public static bool admin = false;
+    private void gridListas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+    {
+        // Obtener el índice de la fila actual
+        int rowIndex = e.RowIndex;
+
+        // Alternar colores para las filas
+        Color evenRowColor = ColorTranslator.FromHtml("#778899");
+        Color oddRowColor = ColorTranslator.FromHtml("#CCCCCC");
+
+        // Establecer el color de fondo de la fila actual
+        if (rowIndex % 2 == 0)
+        {
+            // Fila par
+            gridListas.Rows[rowIndex].DefaultCellStyle.BackColor = evenRowColor;
+        }
+        else
+        {
+            // Fila impar
+            gridListas.Rows[rowIndex].DefaultCellStyle.BackColor = oddRowColor;
+        }
+    }
+
+    private void gridListas_Scroll(object sender, ScrollEventArgs e)
+    {
+        if (ComboBoxPromotoresListas.SelectedIndex == 0)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+            {
+                // Obtener el desplazamiento horizontal actual
+                int horizontalOffset = gridListas.HorizontalScrollingOffset;
+
+                // Asegurarse de que las dos primeras columnas estén siempre visibles
+                if (gridListas.Columns.Count > 0)
+                {
+                    gridListas.Columns[0].Frozen = true;
+                    gridListas.Columns[1].Frozen = true;
+                }
+               
+
+                // Recorrer todas las columnas a partir de la tercera columna
+                for (int i = 2; i < gridListas.ColumnCount; i++)
+                {
+                    // Obtener el ancho de la columna actual
+                    int columnWidth = gridListas.Columns[i].Width;
+
+                    // Verificar si la columna actual está completamente visible
+                    if (horizontalOffset >= gridListas.Columns.GetColumnsWidth(DataGridViewElementStates.Visible))
+                    {
+                        // Hacer visible la siguiente columna
+                        gridListas.Columns[i].Visible = true;
+
+                        // Actualizar el desplazamiento horizontal para incluir el ancho de la columna actual
+                        horizontalOffset += columnWidth;
+
+                        // Ocultar la columna actual para mantener solo dos columnas visibles
+                        gridListas.Columns[i].Visible = false;
+                    }
+                    else
+                    {
+                        // La columna actual está visible, así que la mostramos
+                        gridListas.Columns[i].Visible = true;
+                    }
+                }
+            }
+        }
+    }
+    private static bool editaravales = false;
+    private void rjButton8_Click(object sender, EventArgs e)
+    {
+        editaravales = false;
+        PnlAvales.BringToFront();
+        PnlAvales.Visible = true;
+    }
+    private string[] Avales = new string[15];
+    private string[] NuevosAvales = new string[15];
+    private int panel = 0;
+    private void rjButton9_Click(object sender, EventArgs e)
+    {
+        if (editaravales)
+        {
+            NuevosAvales[0] = txtNombre.Texts;
+            NuevosAvales[1] = TextBoxNombreaval1.Texts;
+            NuevosAvales[2] = TextBoxCalleaval1.Texts;
+            NuevosAvales[3] = TextBoxColoniaaval1.Texts;
+            NuevosAvales[4] = TextBoxNumIntaval1.Texts;
+            NuevosAvales[5] = TextBoxNumExtaval1.Texts;
+            NuevosAvales[6] = TextBoxTelefonoaval1.Texts;
+            NuevosAvales[7] = TextBoxCorreoaval1.Texts;
+            NuevosAvales[8] = TextBoxNombreaval2.Texts;
+            NuevosAvales[9] = TextBoxCalleaval2.Texts;
+            NuevosAvales[10] = TextBoxColoniaaval2.Texts;
+            NuevosAvales[11] = TextBoxNumIntaval2.Texts;
+            NuevosAvales[12] = TextBoxNumExtaval2.Texts;
+            NuevosAvales[13] = TextBoxTelefonoaval2.Texts;
+            NuevosAvales[14] = TextBoxCorreoaval2.Texts;
+            if (listaEstado == 0)
+            {
+                PanelEditar.BringToFront();
+                PanelEditar.Visible = true;
+                editaravales = false;
+            }
+            else if (listaEstado == 1)
+            {
+                PnlEditar2.BringToFront();
+                PnlEditar2.Visible = true;
+                editaravales = false;
+            }
+            else if (listaEstado == 2)
+            {
+                PanelEditar3.BringToFront();
+                PanelEditar3.Visible = true;
+                editaravales = false;
+            }
+            else
+            {
+                PanelEditarLiquidados.BringToFront();
+                PanelEditarLiquidados.Visible = true;
+                editaravales = false;
+            }
+
+        }
+        else
+        {
+
+            Avales[0] = txtNombre.Texts;
+            Avales[1] = TextBoxNombreaval1.Texts;
+            Avales[2] = TextBoxCalleaval1.Texts;
+            Avales[3] = TextBoxColoniaaval1.Texts;
+            Avales[4] = TextBoxNumIntaval1.Texts;
+            Avales[5] = TextBoxNumExtaval1.Texts;
+            Avales[6] = TextBoxTelefonoaval1.Texts;
+            Avales[7] = TextBoxCorreoaval1.Texts;
+            Avales[8] = TextBoxNombreaval2.Texts;
+            Avales[9] = TextBoxCalleaval2.Texts;
+            Avales[10] = TextBoxColoniaaval2.Texts;
+            Avales[11] = TextBoxNumIntaval2.Texts;
+            Avales[12] = TextBoxNumExtaval2.Texts;
+            Avales[13] = TextBoxTelefonoaval2.Texts;
+            Avales[14] = TextBoxCorreoaval2.Texts;
+            //Vaciamos los valores
+            TextBoxNombreaval1.Texts = "";
+            TextBoxCalleaval1.Texts = "";
+            TextBoxColoniaaval1.Texts = "";
+            TextBoxNumIntaval1.Texts = "";
+            TextBoxNumExtaval1.Texts = "";
+            TextBoxTelefonoaval1.Texts = "";
+            TextBoxCorreoaval1.Texts = "";
+            TextBoxNombreaval2.Texts = "";
+            TextBoxCalleaval2.Texts = "";
+            TextBoxColoniaaval2.Texts = "";
+            TextBoxNumIntaval2.Texts = "";
+            TextBoxNumExtaval2.Texts = "";
+            TextBoxTelefonoaval2.Texts = "";
+            TextBoxCorreoaval2.Texts = "";
+            pnlClientes.BringToFront();
+            pnlClientes.Visible = true;
+        }
+    }
+
+    private void rjButton10_Click(object sender, EventArgs e)
+    {
+        //Primero leemos los datos del aval
+        LecturaBaseDatos er = new();
+        string[] datos = er.ObtenerAvales(cmbCliente.Texts);
+        if (datos != null && datos.Length >= 14)
+        {
+            TextBoxNombreaval1.Texts = datos[0] ?? "";
+            TextBoxCalleaval1.Texts = datos[1] ?? "";
+            TextBoxColoniaaval1.Texts = datos[2] ?? "";
+            TextBoxNumIntaval1.Texts = datos[3] ?? "";
+            TextBoxNumExtaval1.Texts = datos[4] ?? "";
+            TextBoxTelefonoaval1.Texts = datos[5] ?? "";
+            TextBoxCorreoaval1.Texts = datos[6] ?? "";
+            TextBoxNombreaval2.Texts = datos[7] ?? "";
+            TextBoxCalleaval2.Texts = datos[8] ?? "";
+            TextBoxColoniaaval2.Texts = datos[9] ?? "";
+            TextBoxNumIntaval2.Texts = datos[10] ?? "";
+            TextBoxNumExtaval2.Texts = datos[11] ?? "";
+            TextBoxTelefonoaval2.Texts = datos[12] ?? "";
+            TextBoxCorreoaval2.Texts = datos[13] ?? "";
+        }
+        //Ahora mostramos el panel de avales
+        PnlAvales.BringToFront();
+        PnlAvales.Visible = true;
+    }
+
+    private void rjButton13_Click(object sender, EventArgs e)
+    {
+        editaravales = true;
+        rjButton10_Click(null, null);
+    }
+
+    private void rjButton14_Click(object sender, EventArgs e)
+    {
+        editaravales = true;
+        rjButton10_Click(null, null);
+    }
+
+    private void rjButton15_Click(object sender, EventArgs e)
+    {
+        editaravales = true;
+        rjButton10_Click(null, null);
     }
 }

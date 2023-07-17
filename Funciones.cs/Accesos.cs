@@ -266,5 +266,30 @@ public class Accesos
         return false;
     }
 
+    public bool ValidarAsministrador(string nombre, string contraseña)
+    {
+        bool isAdmin = false;
+
+        using (MySqlConnection connection = A.Conector())
+        {
+            string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @nombre AND Contraseña = @contraseña AND Administrador = 1";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@nombre", nombre);
+                command.Parameters.AddWithValue("@contraseña", contraseña);
+
+                long count = (long)command.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    isAdmin = true;
+                }
+            }
+        }
+
+        return isAdmin;
+    }
+
     #endregion
 }

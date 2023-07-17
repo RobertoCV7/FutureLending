@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Escritorio\\FutureLending2\\FutureLending.csproj": {}
+    "E:\\Escritorio\\Esc\\FutureLending2\\FutureLending.csproj": {}
   },
   "projects": {
-    "E:\\Escritorio\\FutureLending2\\FutureLending.csproj": {
+    "E:\\Escritorio\\Esc\\FutureLending2\\FutureLending.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Escritorio\\FutureLending2\\FutureLending.csproj",
+        "projectUniqueName": "E:\\Escritorio\\Esc\\FutureLending2\\FutureLending.csproj",
         "projectName": "FutureLending",
-        "projectPath": "E:\\Escritorio\\FutureLending2\\FutureLending.csproj",
+        "projectPath": "E:\\Escritorio\\Esc\\FutureLending2\\FutureLending.csproj",
         "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-        "outputPath": "E:\\Escritorio\\FutureLending2\\obj\\",
+        "outputPath": "E:\\Escritorio\\Esc\\FutureLending2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Programas\\Visual Studio\\Componentes\\NuGetPackages"

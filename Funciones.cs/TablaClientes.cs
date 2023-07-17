@@ -180,7 +180,7 @@ internal class TablaClientes
     }
 
     //Añade los datos a la tabla y ComboBox
-    static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, RjComboBox cmbCliente, bool todos, ProgressBar bar, Label lab)
+    static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, ControlesPersonalizados.RjComboBox cmbCliente, bool todos, ProgressBar bar, Label lab)
     {
         if (datosList.Count == 0)
         {
@@ -213,8 +213,28 @@ internal class TablaClientes
             {
                 gridListas.Invoke(() =>
                 {
-                    gridListas.Rows.Add(row);
+                    DataGridViewRow newRow = new DataGridViewRow();
 
+                    for (int j = 0; j < row.Length; j++)
+                    {
+                        DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
+                        cell.Value = row[j]?.ToString();
+
+                        if (row[j] != null && row[j].ToString().Contains("-"))
+                        {
+                            cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
+                        }
+                        else
+                        {
+                            cell.Style.Font = new Font("Dubai", 14);
+                        }
+                        if (row[j] != null)
+                        {
+                            newRow.Cells.Add(cell);
+                        }
+
+                    }
+                    gridListas.Rows.Add(newRow);
                     if (mostrarBarraProgreso)
                     {
                         int valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
@@ -246,13 +266,12 @@ internal class TablaClientes
                 {
                     cmbCliente.Invoke(() =>
                     {
-                        cmbCliente.Items.Add(row[1]);
+                        cmbCliente.Items.Add(row[1]?.ToString());
                     });
                 }
             }
         });
     }
-
 
     #region Muestra solo a los promotores
 

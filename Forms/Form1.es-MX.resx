@@ -20571,11 +20571,32 @@
   <data name="PnlEditar2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="rjButton13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="rjButton13.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rjButton13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 16.2pt, style=Bold</value>
+  </data>
+  <data name="rjButton13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rjButton13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="rjButton13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 60</value>
+  </data>
+  <data name="rjButton13.Text" xml:space="preserve">
+    <value>Avales</value>
+  </data>
   <data name="btnEditarFechas2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="btnEditarFechas2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>894, 722</value>
+    <value>894, 634</value>
   </data>
   <data name="btnEditarFechas2.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 61</value>
@@ -20584,7 +20605,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnGuardarC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1129, 722</value>
+    <value>1043, 730</value>
   </data>
   <data name="btnGuardarC.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 60</value>
@@ -20764,7 +20785,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxCorreo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>963, 623</value>
+    <value>961, 571</value>
   </data>
   <data name="TextBoxCorreo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20779,7 +20800,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label73.Location" type="System.Drawing.Point, System.Drawing">
-    <value>960, 580</value>
+    <value>958, 528</value>
   </data>
   <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 39</value>
@@ -20794,7 +20815,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxTelefono.Location" type="System.Drawing.Point, System.Drawing">
-    <value>960, 520</value>
+    <value>958, 468</value>
   </data>
   <data name="TextBoxTelefono.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20809,7 +20830,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label74.Location" type="System.Drawing.Point, System.Drawing">
-    <value>960, 483</value>
+    <value>958, 431</value>
   </data>
   <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 39</value>
@@ -20821,7 +20842,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxNumExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1168, 415</value>
+    <value>1166, 363</value>
   </data>
   <data name="TextBoxNumExt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20836,7 +20857,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label75.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1158, 358</value>
+    <value>1156, 306</value>
   </data>
   <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 39</value>
@@ -20851,7 +20872,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxNumInt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>963, 414</value>
+    <value>961, 362</value>
   </data>
   <data name="TextBoxNumInt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20866,7 +20887,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label76.Location" type="System.Drawing.Point, System.Drawing">
-    <value>960, 357</value>
+    <value>958, 305</value>
   </data>
   <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 39</value>
@@ -20881,7 +20902,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxColonia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>957, 279</value>
+    <value>955, 227</value>
   </data>
   <data name="TextBoxColonia.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20896,7 +20917,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
-    <value>960, 222</value>
+    <value>958, 170</value>
   </data>
   <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 39</value>
@@ -20911,7 +20932,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="TextBoxCalle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>957, 151</value>
+    <value>955, 99</value>
   </data>
   <data name="TextBoxCalle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 7, 10, 7</value>
@@ -20926,7 +20947,7 @@
     <value>Corbel, 24pt, style=Bold</value>
   </data>
   <data name="label78.Location" type="System.Drawing.Point, System.Drawing">
-    <value>957, 92</value>
+    <value>955, 40</value>
   </data>
   <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 39</value>
@@ -21231,6 +21252,27 @@
   <data name="pnlRegPago.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
   </data>
+  <data name="rjButton8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="rjButton8.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rjButton8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 16.2pt, style=Bold</value>
+  </data>
+  <data name="rjButton8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rjButton8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="rjButton8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 60</value>
+  </data>
+  <data name="rjButton8.Text" xml:space="preserve">
+    <value>Avales</value>
+  </data>
   <data name="label87.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -21256,7 +21298,7 @@
     <value>195, 56</value>
   </data>
   <data name="btnGuardar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1063, 694</value>
+    <value>1026, 727</value>
   </data>
   <data name="btnGuardar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 60</value>
@@ -21603,11 +21645,32 @@
   <data name="pnlClientes.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
   </data>
+  <data name="rjButton14.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="rjButton14.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rjButton14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 16.2pt, style=Bold</value>
+  </data>
+  <data name="rjButton14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rjButton14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="rjButton14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 72</value>
+  </data>
+  <data name="rjButton14.Text" xml:space="preserve">
+    <value>Avales</value>
+  </data>
   <data name="btnGuardar2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1023, 694</value>
+    <value>1026, 715</value>
   </data>
   <data name="btnGuardar2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 48</value>
+    <value>249, 72</value>
   </data>
   <data name="ResolucionDemanda.Location" type="System.Drawing.Point, System.Drawing">
     <value>354, 491</value>
@@ -22094,6 +22157,27 @@
   </data>
   <data name="pnlListas.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
+  </data>
+  <data name="rjButton10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 16.2pt, style=Bold</value>
+  </data>
+  <data name="rjButton10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rjButton10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>883, 709</value>
+  </data>
+  <data name="rjButton10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="rjButton10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 69</value>
+  </data>
+  <data name="rjButton10.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="rjButton10.Text" xml:space="preserve">
+    <value>Avales</value>
   </data>
   <data name="BtnGuardarCambio.Location" type="System.Drawing.Point, System.Drawing">
     <value>1107, 709</value>
@@ -23415,8 +23499,26 @@
   <data name="PanelEditar2_2.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
   </data>
+  <data name="rjButton15.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rjButton15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 22.2pt, style=Bold</value>
+  </data>
+  <data name="rjButton15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rjButton15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="rjButton15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 71</value>
+  </data>
+  <data name="rjButton15.Text" xml:space="preserve">
+    <value>Avales</value>
+  </data>
   <data name="BottonLiq.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 683</value>
+    <value>1074, 686</value>
   </data>
   <data name="BottonLiq.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -23668,6 +23770,552 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="PanelEditarLiquidados.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1354, 801</value>
+  </data>
+  <data name="rjButton9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="rjButton9.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rjButton9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 36pt, style=Bold</value>
+  </data>
+  <data name="rjButton9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>571, 348</value>
+  </data>
+  <data name="rjButton9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 77</value>
+  </data>
+  <data name="rjButton9.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="TextBoxNombreaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TextBoxNombreaval2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxNombreaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxNombreaval2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxNombreaval2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 54</value>
+  </data>
+  <data name="label131.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label131.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label131.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label131.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label131.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 39</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>Nombre completo:</value>
+  </data>
+  <data name="TextBoxNombreaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="TextBoxNombreaval1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxNombreaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxNombreaval1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxNombreaval1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 54</value>
+  </data>
+  <data name="label130.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label130.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label130.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label130.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label130.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 39</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>Nombre completo:</value>
+  </data>
+  <data name="label129.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="label129.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label129.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 27.75pt, style=Bold</value>
+  </data>
+  <data name="label129.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label129.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 45</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Aval 2:</value>
+  </data>
+  <data name="label128.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="label128.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label128.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 27.75pt, style=Bold</value>
+  </data>
+  <data name="label128.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label128.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 45</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Aval 1:</value>
+  </data>
+  <data name="label127.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="label127.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label127.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 48pt, style=Bold</value>
+  </data>
+  <data name="label127.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 78</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Avales</value>
+  </data>
+  <data name="TextBoxCorreoaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TextBoxCorreoaval2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxCorreoaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxCorreoaval2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxCorreoaval2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label121.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label121.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label121.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label121.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label121.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 39</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>Correo electrónico:</value>
+  </data>
+  <data name="TextBoxTelefonoaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TextBoxTelefonoaval2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxTelefonoaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxTelefonoaval2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxTelefonoaval2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label122.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label122.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label122.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label122.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label122.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 39</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
+  <data name="TextBoxNumExtaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TextBoxNumExtaval2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxNumExtaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxNumExtaval2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxNumExtaval2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 54</value>
+  </data>
+  <data name="label123.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label123.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label123.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label123.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label123.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 39</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>Núm. ext.:</value>
+  </data>
+  <data name="TextBoxNumIntaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TextBoxNumIntaval2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxNumIntaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxNumIntaval2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxNumIntaval2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 54</value>
+  </data>
+  <data name="label124.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label124.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label124.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label124.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label124.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 39</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>Núm. int.:</value>
+  </data>
+  <data name="TextBoxColoniaaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TextBoxColoniaaval2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxColoniaaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxColoniaaval2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxColoniaaval2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label125.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label125.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label125.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label125.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 39</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Colonia:</value>
+  </data>
+  <data name="TextBoxCalleaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="TextBoxCalleaval2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxCalleaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxCalleaval2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxCalleaval2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label126.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label126.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label126.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label126.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label126.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 39</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Calle:</value>
+  </data>
+  <data name="TextBoxCorreoaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="TextBoxCorreoaval1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxCorreoaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxCorreoaval1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxCorreoaval1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label88.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label88.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label88.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label88.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label88.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 691</value>
+  </data>
+  <data name="label88.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 39</value>
+  </data>
+  <data name="label88.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>Correo electrónico:</value>
+  </data>
+  <data name="TextBoxTelefonoaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="TextBoxTelefonoaval1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxTelefonoaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxTelefonoaval1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxTelefonoaval1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label114.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label114.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label114.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label114.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label114.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 39</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
+  <data name="TextBoxNumExtaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="TextBoxNumExtaval1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxNumExtaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxNumExtaval1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxNumExtaval1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 54</value>
+  </data>
+  <data name="label117.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label117.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label117.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label117.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label117.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 39</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>Núm. ext.:</value>
+  </data>
+  <data name="TextBoxNumIntaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="TextBoxNumIntaval1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxNumIntaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxNumIntaval1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxNumIntaval1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 54</value>
+  </data>
+  <data name="label118.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label118.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label118.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label118.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label118.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 39</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>Núm. int.:</value>
+  </data>
+  <data name="TextBoxColoniaaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="TextBoxColoniaaval1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxColoniaaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxColoniaaval1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxColoniaaval1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label119.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label119.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label119.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label119.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label119.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 39</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>Colonia:</value>
+  </data>
+  <data name="TextBoxCalleaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="TextBoxCalleaval1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxCalleaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="TextBoxCalleaval1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 7, 10, 7</value>
+  </data>
+  <data name="TextBoxCalleaval1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 54</value>
+  </data>
+  <data name="label120.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label120.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label120.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="label120.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label120.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 39</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>Calle:</value>
+  </data>
+  <data name="PnlAvales.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PnlAvales.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
