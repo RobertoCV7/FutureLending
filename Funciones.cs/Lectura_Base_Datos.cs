@@ -59,7 +59,6 @@ namespace FutureLending.Funciones.cs
                         while (reader.Read())
                         {
                             string[] fila = new string[10];
-
                             fila[0] = reader.GetString("Promotor");
                             fila[1] = reader.GetString("Nombre_Completo");
                             fila[2] = reader.GetString("Credito_Prestado");
@@ -493,9 +492,33 @@ namespace FutureLending.Funciones.cs
                 Registro_errores(ex.ToString());
             }
         }
+
+        public bool BorrarAval(string Nombre_Completo)
+        {
+            using (MySqlConnection connection = Conector())
+            {
+                string query = "DELETE FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre_Completo", Nombre_Completo);
+
+                    try
+                    {
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        Registro_errores(ex.ToString());
+                        return false;
+                    }
+                }
+            }
+        }
         #endregion
         #region Revisar existencia
-        public static bool VerificarUsuarioEnListas(string nombreUsuario)
+        public static int VerificarUsuarioEnListas(string nombreUsuario)
         {
             Lectura_Base_Datos a = new Lectura_Base_Datos();
             MySqlConnection connection = a.Conector();
@@ -514,16 +537,16 @@ namespace FutureLending.Funciones.cs
                 commandLista3.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
                 int countLista3 = Convert.ToInt32(commandLista3.ExecuteScalar());
 
-                if (countLista2 > 0 || countLista3 > 0)
+                if (countLista2 > 0 )
                 {
-                    // El usuario ya existe en lista2 o lista3
-                    return false;
+                    return 2;
                 }
-                else
+                else if (countLista3 > 0)
                 {
-                    // El usuario no existe en lista2 ni lista3
-                    return true;
+                    return 3;
                 }
+
+                return 0;
             }
             catch (Exception ex)
             {
@@ -538,14 +561,40 @@ namespace FutureLending.Funciones.cs
                 }
             }
 
-            // En caso de excepción, retornar false por defecto
-            return false;
+            return 0;
         }
 
+        public string VerificarLiquidados(string nombre)
+        {
+            using (MySqlConnection connection = Conector())
+            {
+                string query = $"SELECT Forma_Liquidacion FROM liquidados WHERE Nombre_Completo = @Nombre";
 
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre", nombre);
+
+                    try
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return result.ToString();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Registro_errores(ex.ToString());
+                        return null;
+                    }
+                }
+            }
+
+            return null; // Si no se encuentra ningún registro con el nombre dado
+        }
 
         #endregion
-        #region Crear registros, solo en la lista 1 y liquidados
+        #region Crear registros, solo en la lista 1, liquidados y Avales
         public void Create(string lista, string promotor, string nombre, string credito, string pagare, DateTime Fecha_inicio, DateTime Fecha_Termino, string Interes, string Monto_Total, string Calle, string Colonia, string Num_int, string Num_ext, string Telefono, string Correo, string Tipo_pago, string Monto_Restante)
         {
             DateTime fechaInicio = Fecha_inicio.Date;
@@ -757,7 +806,81 @@ namespace FutureLending.Funciones.cs
                 return false;
             }
         }
+        public bool CrearAvales(string[] datos)
+        {
+            using MySqlConnection connection = Conector();
+            StringBuilder queryBuilder = new();
+            queryBuilder.Append("INSERT INTO Avales (Nombre_Completo, Aval1_Nombre, Aval1_Calle, Aval1_Colonia, Aval1_Num_int, Aval1_Num_ext, Aval1_Telefono, Aval1_Correo,Aval2_Nombre,Aval2_Calle,Aval2_Colonia,Aval2_Num_int,Aval2_Num_ext,Aval2_Telefono,Aval2_Correo)");
+            queryBuilder.Append(" VALUES (@Nombre_Completo, @Aval1_Nombre, @Aval1_Calle, @Aval1_Colonia, @Aval1_Num_int, @Aval1_Num_ext, @Aval1_Telefono, @Aval1_Correo,@Aval2_Nombre,@Aval2_Calle,@Aval2_Colonia,@Aval2_Num_int,@Aval2_Num_ext,@Aval2_Telefono,@Aval2_Correo)");
+            string query = queryBuilder.ToString();
 
+            using MySqlCommand command = new(query, connection);
+            command.Parameters.AddWithValue("@Nombre_Completo", datos[0]);
+            command.Parameters.AddWithValue("@Aval1_Nombre", datos[1]);
+            command.Parameters.AddWithValue("@Aval1_Calle", datos[2]);
+            command.Parameters.AddWithValue("@Aval1_Colonia", datos[3]);
+            command.Parameters.AddWithValue("@Aval1_Num_int", datos[4]);
+            command.Parameters.AddWithValue("@Aval1_Num_ext", datos[5]);
+            command.Parameters.AddWithValue("@Aval1_Telefono", datos[6]);
+            command.Parameters.AddWithValue("@Aval1_Correo", datos[7]);
+            command.Parameters.AddWithValue("@Aval2_Nombre", datos[8]);
+            command.Parameters.AddWithValue("@Aval2_Calle", datos[9]);
+            command.Parameters.AddWithValue("@Aval2_Colonia", datos[10]);
+            command.Parameters.AddWithValue("@Aval2_Num_int", datos[11]);
+            command.Parameters.AddWithValue("@Aval2_Num_ext", datos[12]);
+            command.Parameters.AddWithValue("@Aval2_Telefono", datos[13]);
+            command.Parameters.AddWithValue("@Aval2_Correo", datos[14]);
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Registro_errores(ex.ToString());
+                return false;
+            }
+
+        }
+        public string[] ObtenerAvales(string Nombre_Completo)
+        {
+            List<string> datosRecuperados = new List<string>();
+
+            using (MySqlConnection connection = Conector())
+            {
+                string query = "SELECT Aval1_Nombre, Aval1_Calle, Aval1_Colonia, Aval1_Num_int, Aval1_Num_ext, Aval1_Telefono, Aval1_Correo, Aval2_Nombre, Aval2_Calle, Aval2_Colonia, Aval2_Num_int, Aval2_Num_ext, Aval2_Telefono, Aval2_Correo FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre_Completo", Nombre_Completo);
+
+                    try
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    if (reader.GetName(i) != "Nombre_Completo")
+                                    {
+                                        datosRecuperados.Add(reader.GetString(i));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Registro_errores(ex.ToString());
+                        return null;
+                    }
+                }
+            }
+
+            return datosRecuperados.ToArray();
+        }
+       
         #endregion
         #endregion
         #region reparar conexion

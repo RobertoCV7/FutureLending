@@ -41,7 +41,7 @@
         private static readonly Lectura_Base_Datos Instancia = new();
         //Muestra en la tabla los datos de la lista 1
         public static async Task MostrarLista1(DataGridView gridListas,
-            ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar,Label lab)
+            ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar, Label lab)
         {
             // Se borran los registros
             LimpiarDatos(gridListas, cmbCliente);
@@ -66,13 +66,13 @@
             gridListas.ColumnCount = nombresColumnas.Count;
             AñadirEncabezado(nombresColumnas, gridListas);
             // Agrega los datos al DataGridView en un hilo separado y los nombres al ComboBox
-            await AñadirDatos(datosList, gridListas, cmbCliente, false, bar,lab);
-            
+            await AñadirDatos(datosList, gridListas, cmbCliente, false, bar, lab);
+
         }
 
         //Muestra en la tabla los datos de la lista 2
         public static async Task MostrarLista2(DataGridView gridListas,
-             ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar,Label lab)
+             ControlesPersonalizados.RJComboBox cmbCliente, ProgressBar bar, Label lab)
         {
             //Se borran los registros
             LimpiarDatos(gridListas, cmbCliente);
@@ -100,7 +100,7 @@
             AñadirEncabezado(nombresColumnas2, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
-            await AñadirDatos(datosList, gridListas, cmbCliente, false, bar,lab);
+            await AñadirDatos(datosList, gridListas, cmbCliente, false, bar, lab);
         }
 
         //Muestra en la tabla los datos de la lista 3
@@ -188,7 +188,7 @@
             AñadirEncabezado(nombresColumnas, gridListas);
 
             // Agrega los datos al DataGridView en un hilo separado
-            await AñadirDatos(datosList, gridListas, cmbCliente, true,bar, lab);
+            await AñadirDatos(datosList, gridListas, cmbCliente, true, bar, lab);
         }
 
 
@@ -246,8 +246,28 @@
                 {
                     gridListas.Invoke(() =>
                     {
-                        gridListas.Rows.Add(row);
+                        DataGridViewRow newRow = new DataGridViewRow();
 
+                        for (int j = 0; j < row.Length; j++)
+                        {
+                            DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
+                            cell.Value = row[j]?.ToString();
+
+                            if (row[j] != null && row[j].ToString().Contains("-"))
+                            {
+                                cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
+                            }
+                            else
+                            {
+                                cell.Style.Font = new Font("Dubai", 14);
+                            }
+                            if(row[j] != null)
+                            {
+                                newRow.Cells.Add(cell);
+                            }
+                           
+                        }
+                         gridListas.Rows.Add(newRow);
                         if (mostrarBarraProgreso)
                         {
                             int valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
@@ -279,12 +299,11 @@
                     {
                         cmbCliente.Invoke(() =>
                         {
-                            cmbCliente.Items.Add(row[1]);
+                            cmbCliente.Items.Add(row[1]?.ToString());
                         });
                     }
                 }
             });
         }
-
     }
 }

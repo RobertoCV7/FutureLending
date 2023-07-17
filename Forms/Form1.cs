@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.Windows.Forms;
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Funciones.cs;
 using Microsoft.VisualBasic;
@@ -49,6 +50,7 @@ namespace FutureLending.Forms
                 {
                     CollapseMenu();
                     dateTimePickerPersonalizado2.Enabled = false;
+                    rjButton8.Enabled = false;
                     rjButton6.Enabled = false;
                     rjComboBox9.Visible = false;
                     rjButton4.Enabled = false;
@@ -195,6 +197,7 @@ namespace FutureLending.Forms
         private void ActivarBtnGuardar(object sender, EventArgs e)
         {
             btnGuardar1.Enabled = VerificarLlenadoGuardar();
+            rjButton8.Enabled = true;
         }
 
         private bool VerificarLlenadoCalcular()
@@ -520,12 +523,15 @@ namespace FutureLending.Forms
         public string Cliente; //Nombre del cliente
         private string tipoPago; //Tipo de pago 
         private string[] temporal = new string[31];
+
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             Guardar = false;
+            editaravales = true;
             Lecturas_Especificas lecturasEspecificas = new();
             if (listaEstado == 0) //Si viene de la lista 1
             {
+
                 //Cargar los promotores en el ComboBox
                 CargarPromotoresEnComboBox(rjComboBox3, false);
                 //Muestro el panel de editar
@@ -564,6 +570,7 @@ namespace FutureLending.Forms
             }
             else if (listaEstado == 1) //Si viene de la lista 2
             {
+
                 TextBoxPagoExt.Enabled = false;
                 groupBox2.Show();
                 //Cargar los promotores en el ComboBox
@@ -654,11 +661,17 @@ namespace FutureLending.Forms
                 //Rellenamos los objetos del panel editar liquidados
                 TextNombreLiq.Texts = Cliente; //Nombre del registro
                 TextCreditoLiq.Texts = Informacion4[2]; //Credito Prestado
-                FechaInicioLiq.Value = DateTime.Parse(Informacion4[3]); //Fecha de inicio
+                DateTime fechaInicio;
+                if (DateTime.TryParse(Informacion4[3], out fechaInicio))
+                {
+                    FechaInicioLiq.Value = fechaInicio;
+                }
+                else
+                {
+                    FechaInicioLiq.Enabled = false;
+                }
                 ComboBoxPromotorLiq.SelectedItem = Informacion4[0]; //Promotor que lo atiende
                 ComBoBoxLiquidacion.SelectedItem = Informacion4[10]; //De que lista viene
-
-
                 TextCalleLiq.Texts = Informacion4[4]; //Calle
                 TextColoniaLiq.Texts = Informacion4[5]; //Colonia
                 TextNumIntLiq.Texts = Informacion4[6]; //Numero de casa interior
@@ -785,7 +798,7 @@ namespace FutureLending.Forms
         {
             Lectura_Base_Datos instancia = new();
             instancia.Erase(cmbCliente.Texts, listaActual);
-
+            instancia.BorrarAval(cmbCliente.Texts);//Borra los avales de ese cliente
             //Verifica de cuál lista se eliminó y la recarga
             if (listaActual == "lista1") btnLista1.PerformClick();
             else if (listaActual == "lista2") btnLista2.PerformClick();
@@ -1382,21 +1395,33 @@ namespace FutureLending.Forms
         }
         private void RjButton4_Click(object sender, EventArgs e)
         {
-            EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
-            cambioEnPromotores = true;
-            cambioenPromotoresListas = true;
-            textBox4.Text = "";
-            rjComboBox4.SelectedIndex = -1;
-            CargarPromotoresEnComboBox(rjComboBox4, false);
+
+            Administrador_Acceso admin2 = new();
+            admin2.ShowDialog();
+            if (admin)
+            {
+                EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
+                cambioEnPromotores = true;
+                cambioenPromotoresListas = true;
+                textBox4.Text = "";
+                rjComboBox4.SelectedIndex = -1;
+                CargarPromotoresEnComboBox(rjComboBox4, false);
+            }
         }
         private void RjButton6_Click(object sender, EventArgs e)
         {
-            EliminarPromotor(rjComboBox4.SelectedItem.ToString());
-            cambioEnPromotores = true;
-            cambioenPromotoresListas = true;
-            rjComboBox4.SelectedIndex = -1;
-            textBox4.Text = "";
-            CargarPromotoresEnComboBox(rjComboBox4, false);
+
+            Administrador_Acceso admin2 = new();
+            admin2.ShowDialog();
+            if (admin)
+            {
+                EliminarPromotor(rjComboBox4.SelectedItem.ToString());
+                cambioEnPromotores = true;
+                cambioenPromotoresListas = true;
+                rjComboBox4.SelectedIndex = -1;
+                textBox4.Text = "";
+                CargarPromotoresEnComboBox(rjComboBox4, false);
+            }
 
         }
         private void TextBox5_TextChanged(object sender, EventArgs e)
@@ -1405,11 +1430,17 @@ namespace FutureLending.Forms
         }
         private void RjButton5_Click(object sender, EventArgs e)
         {
-            AgregarPromotor(textBox5.Text);
-            cambioEnPromotores = true;
-            cambioenPromotoresListas = true;
-            textBox5.Text = "";
-            CargarPromotoresEnComboBox(rjComboBox4, false);
+
+            Administrador_Acceso admin2 = new();
+            admin2.ShowDialog();
+            if (admin)
+            {
+                AgregarPromotor(textBox5.Text);
+                cambioEnPromotores = true;
+                cambioenPromotoresListas = true;
+                textBox5.Text = "";
+                CargarPromotoresEnComboBox(rjComboBox4, false);
+            }
         }
         #endregion
 
@@ -1528,11 +1559,16 @@ namespace FutureLending.Forms
         }
         #endregion
 
+        public static bool admin = false;
         private void Boton_Permisos_Click(object sender, EventArgs e)
         {
-            Permisos_Lect per = new(comboBox1.SelectedItem.ToString());
-
-            per.ShowDialog();
+            Administrador_Acceso acc = new();
+            acc.ShowDialog();
+            if (admin)
+            {
+                Permisos_Lect a = new(comboBox1.SelectedItem.ToString());
+                a.ShowDialog();
+            }
         }
 
         private void BtnLista1_MouseDown(object sender, MouseEventArgs e)
@@ -1583,27 +1619,34 @@ namespace FutureLending.Forms
 
         private void Button1_Click_2(object sender, EventArgs e)
         {
-            bool mensaje;
-            _ = new Accesos();
-            string user = textBox1.Text;
-            string password = TextboxContr.Text;
-            if (string.IsNullOrEmpty(user))
+
+            Administrador_Acceso admin2 = new();
+            admin2.ShowDialog();
+            if (admin)
             {
-                AvisoVacio.Text = @"No puede haber nada vacio";
-            }
-            else
-            {
-                mensaje = Accesos.AgregarUsuario(user, password);
-                if (mensaje)
+
+                bool mensaje;
+                _ = new Accesos();
+                string user = textBox1.Text;
+                string password = TextboxContr.Text;
+                if (string.IsNullOrEmpty(user))
                 {
-                    textBox1.Text = "";
-                    TextboxContr.Text = "";
-                    TextboxConfirm.Text = "";
-                    AvisoVacio.Text = "";
+                    AvisoVacio.Text = @"No puede haber nada vacio";
                 }
                 else
                 {
-                    AvisoVacio.Text = @"El usuario ya existe. No se pudo agregar";
+                    mensaje = Accesos.AgregarUsuario(user, password);
+                    if (mensaje)
+                    {
+                        textBox1.Text = "";
+                        TextboxContr.Text = "";
+                        TextboxConfirm.Text = "";
+                        AvisoVacio.Text = "";
+                    }
+                    else
+                    {
+                        AvisoVacio.Text = @"El usuario ya existe. No se pudo agregar";
+                    }
                 }
             }
 
@@ -1615,35 +1658,45 @@ namespace FutureLending.Forms
 
         private void rjButton11_Click(object sender, EventArgs e)
         {
-            bool editarUsuarioContraseña = Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), textBox2.Text, textBox3.Text);
-            if (editarUsuarioContraseña)
+            Administrador_Acceso admin2 = new();
+            admin2.ShowDialog();
+            if (admin)
             {
+                bool editarUsuarioContraseña = Accesos.EditarUsuarioContraseña(comboBox1.SelectedItem.ToString(), textBox2.Text, textBox3.Text);
+                if (editarUsuarioContraseña)
+                {
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    List<string> usuarios = Accesos.CargarUsuarios();
+                    comboBox1.Items.Clear();
+                    foreach (var users in usuarios)
+                    {
+                        comboBox1.Items.Add(users);
+                    }
+                    comboBox1.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageB("Error al editar al usuario", "Error", 3);
+                }
+            }
+        }
+
+        private void rjButton12_Click(object sender, EventArgs e)
+        {
+            Administrador_Acceso admin2 = new();
+            admin2.ShowDialog();
+            if (admin)
+            {
+                Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
                 textBox2.Text = "";
-                textBox3.Text = "";
+                comboBox1.SelectedIndex = -1;
                 List<string> usuarios = Accesos.CargarUsuarios();
                 comboBox1.Items.Clear();
                 foreach (var users in usuarios)
                 {
                     comboBox1.Items.Add(users);
                 }
-                comboBox1.SelectedIndex = -1;
-            }
-            else
-            {
-                MessageB("Error al editar al usuario", "Error", 3);
-            }
-        }
-
-        private void rjButton12_Click(object sender, EventArgs e)
-        {
-            Accesos.EliminarUsuario(comboBox1.SelectedItem.ToString());
-            textBox2.Text = "";
-            comboBox1.SelectedIndex = -1;
-            List<string> usuarios = Accesos.CargarUsuarios();
-            comboBox1.Items.Clear();
-            foreach (var users in usuarios)
-            {
-                comboBox1.Items.Add(users);
             }
         }
 
@@ -1706,16 +1759,47 @@ namespace FutureLending.Forms
             txtTotal_I.Texts = $"${total}";
         }
 
+        public static bool Guar = true;
         private void btnGuardar1_Click(object sender, EventArgs e)
         {
+            string list = "";
+            int ar = 0;
             Lectura_Base_Datos obj = new();
-            bool ar = Lectura_Base_Datos.VerificarUsuarioEnListas(txtNombre.Texts);
-            if (ar)
+            ar = Lectura_Base_Datos.VerificarUsuarioEnListas(txtNombre.Texts);
+            string lista = obj.VerificarLiquidados(txtNombre.Texts);
+            if (ar != 0 || lista != null)
+            {
+
+                if (ar == 2)
+                {
+                    list = "Lista 2";
+                }
+                else if (ar == 3)
+                {
+                    list = "Lista 3";
+                }
+                else if (ar == 0)
+                {
+                    list = "Liquidados";
+                }
+                if (lista != null)
+                {
+                    Existencia.ListaLiq = lista;
+                    Existencia.Nombre = txtNombre.Texts;
+                    Existencia.Lista = list;
+                }
+                Existencia ex = new();
+                Existencia.Nombre = txtNombre.Texts;
+                Existencia.Lista = list;
+                ex.ShowDialog();
+            }
+            if (Guar)
             {
                 string interes = cmbInteres.Texts;
                 string montoTotal = txtTotal.Texts.Replace("$", "");
                 double p = (credito2 * 2);
                 obj.Create("lista1", cmbPromotor.Texts, txtNombre.Texts, txtCredito.Texts, p.ToString(CultureInfo.InvariantCulture), dateFechaInicio.Value, dateTimePickerPersonalizado2.Value, interes, montoTotal, txtCalle.Texts, txtColonia.Texts, txtNumInt.Texts, txtNumExt.Texts, txtTelefono.Texts, txtCorreo.Texts, cmbTipo.SelectedItem.ToString(), montoTotal);
+                obj.CrearAvales(Avales); //Agrega los avales a la base de datos
                 //Borrar datos para poder agregar de nuevo 
                 txtNombre.Texts = "";
                 txtCredito.Texts = "";
@@ -1735,7 +1819,35 @@ namespace FutureLending.Forms
             }
             else
             {
-                MessageB("El cliente ya existe en la Base de datos ", "Error", 3);
+                txtNombre.Texts = "";
+                txtCredito.Texts = "";
+                dateFechaInicio.Value = DateTime.Now;
+                dateTimePickerPersonalizado2.Value = DateTime.Now;
+                cmbInteres.Texts = "Seleccione un interés";
+                cmbTipo.Texts = "Seleccione un tipo de pago";
+                cmbPromotor.Texts = "Seleccione al promotor";
+                txtTotal.Texts = "";
+                txtTotal_I.Texts = "";
+                txtCalle.Texts = "";
+                txtColonia.Texts = "";
+                txtNumExt.Texts = "";
+                txtNumInt.Texts = "";
+                txtTelefono.Texts = "";
+                txtCorreo.Texts = "";
+                TextBoxNombreaval1.Texts = "";
+                TextBoxCalleaval1.Texts = "";
+                TextBoxColoniaaval1.Texts = "";
+                TextBoxNumIntaval1.Texts = "";
+                TextBoxNumExtaval1.Texts = "";
+                TextBoxTelefonoaval1.Texts = "";
+                TextBoxCorreoaval1.Texts = "";
+                TextBoxNombreaval2.Texts = "";
+                TextBoxCalleaval2.Texts = "";
+                TextBoxColoniaaval2.Texts = "";
+                TextBoxNumIntaval2.Texts = "";
+                TextBoxNumExtaval2.Texts = "";
+                TextBoxTelefonoaval2.Texts = "";
+                TextBoxCorreoaval2.Texts = "";
             }
         }
         private void btnGuardar2_Click(object sender, EventArgs e)
@@ -1757,10 +1869,18 @@ namespace FutureLending.Forms
             strings[10] = ComboBoxResolucion3.SelectedItem.ToString(); //Resolucion
             strings[13] = Cliente;
             bool es = ediciones.EditarLista3(strings);
+            bool re = ediciones.EditarAval(Cliente, NuevosAvales);
             if (es)
             {
-                EsconderPaneles(pnlListas);
-                btnLista3.PerformClick(); //Reactualizo los datos de la lista 3
+                if (re)
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista3.PerformClick(); //Reactualizo los datos de la lista 3
+                }
+                else
+                {
+                    MessageB("Error al Mover Avales", "Alerta", 2);
+                }
             }
             else
             {
@@ -1951,6 +2071,7 @@ namespace FutureLending.Forms
                 mov5[10] = "Lista 2";
                 Lectura_Base_Datos instancia5 = new();
                 bool rev5 = instancia5.InsertarLiquidados(mov5);
+
                 if (rev5)
                 {
                     instancia5.Erase(mov5[1], "lista2"); //Eliminamos el registro 
@@ -1984,11 +2105,18 @@ namespace FutureLending.Forms
                     infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
                     infoListaNueva2[43] = Cliente; //Nombre del que va a editar
                     bool editarLista2 = e2.EditarLista2(infoListaNueva2);
+                    bool av = e2.EditarAval(Cliente, NuevosAvales);
                     if (editarLista2)
                     {
-                        EsconderPaneles(pnlListas);
-                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
-
+                        if (av)
+                        {
+                            EsconderPaneles(pnlListas);
+                            btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                        }
+                        else
+                        {
+                            MessageB("Error al guardar los avales", "Advertencia", 2);
+                        }
                     }
                     else
                     {
@@ -2132,7 +2260,7 @@ namespace FutureLending.Forms
             string[] informacion4 = this.Informacion4;
             informacion4[1] = TextNombreLiq.Texts; //Nombre del registro
             informacion4[2] = TextCreditoLiq.Texts; //Credito Prestado
-            informacion4[3] = FechaInicioLiq.Value.ToString("dd/MM/yyyy"); //Fecha de inicio
+            informacion4[3] = FechaInicioLiq.Value.ToString("dd/MM/yyyy") ?? "-";
             informacion4[0] = ComboBoxPromotorLiq.SelectedItem.ToString(); //Promotor que lo atiende
             informacion4[10] = ComBoBoxLiquidacion.SelectedItem.ToString(); //De que lista viene
             informacion4[4] = TextCalleLiq.Texts; //Calle
@@ -2143,10 +2271,18 @@ namespace FutureLending.Forms
             informacion4[9] = TextCorreoLiq.Texts; //Correo
             informacion4[11] = Cliente;
             bool saber2 = e2.EditarListaLiquidados(informacion4);
+            bool er = e2.EditarAval(Cliente, NuevosAvales);
             if (saber2)
             {
-                EsconderPaneles(pnlListas);
-                btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
+                if (er)
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Alerta", 2);
+                }
             }
             else
             {
@@ -2356,15 +2492,25 @@ namespace FutureLending.Forms
                 }
             }
             bool revisar = e1.EditarLista1(informacion);
+            bool av = e1.EditarAval(textBoxPersonalizado10.Texts, NuevosAvales);
             if (revisar)
             {
-                EsconderPaneles(pnlListas);
-                btnLista1.PerformClick(); //Reactualizo los datos de la lista 1
+                if (av)
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista1.PerformClick(); //Reactualizo los datos de la lista 1
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Alerta", 2);
+                }
             }
             else
             {
                 MessageB("Error al guardar los cambios", "Alerta", 2);
             }
+
+
         }
         public static string[] SumarSemanas(string fechaInicial)
         {
@@ -2607,6 +2753,210 @@ namespace FutureLending.Forms
             TextBoxLiquidacionIntencion.Texts = "";
             TextBoxQuita.Texts = "";
             TextBoxPagoExt.Texts = "";
+        }
+
+        private void gridListas_Scroll(object sender, ScrollEventArgs e)
+        {
+
+            if (ComboBoxPromotoresListas.SelectedIndex == 0)
+            {
+                if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+                {
+                    // Obtener el desplazamiento horizontal actual
+                    int horizontalOffset = gridListas.HorizontalScrollingOffset;
+
+                    // Asegurarse de que las dos primeras columnas estén siempre visibles
+                    gridListas.Columns[0].Frozen = true;
+                    gridListas.Columns[1].Frozen = true;
+
+                    // Recorrer todas las columnas a partir de la tercera columna
+                    for (int i = 2; i < gridListas.ColumnCount; i++)
+                    {
+                        // Obtener el ancho de la columna actual
+                        int columnWidth = gridListas.Columns[i].Width;
+
+                        // Verificar si la columna actual está completamente visible
+                        if (horizontalOffset >= gridListas.Columns.GetColumnsWidth(DataGridViewElementStates.Visible))
+                        {
+                            // Hacer visible la siguiente columna
+                            gridListas.Columns[i].Visible = true;
+
+                            // Actualizar el desplazamiento horizontal para incluir el ancho de la columna actual
+                            horizontalOffset += columnWidth;
+
+                            // Ocultar la columna actual para mantener solo dos columnas visibles
+                            gridListas.Columns[i].Visible = false;
+                        }
+                        else
+                        {
+                            // La columna actual está visible, así que la mostramos
+                            gridListas.Columns[i].Visible = true;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void gridListas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Obtener el índice de la fila actual
+            int rowIndex = e.RowIndex;
+
+            // Alternar colores para las filas
+            Color evenRowColor = ColorTranslator.FromHtml("#778899");
+            Color oddRowColor = ColorTranslator.FromHtml("#CCCCCC");
+            // Establecer el color de fondo de la fila actual
+            if (rowIndex % 2 == 0)
+            {
+                // Fila par
+                gridListas.Rows[rowIndex].DefaultCellStyle.BackColor = evenRowColor;
+            }
+            else
+            {
+                // Fila impar
+                gridListas.Rows[rowIndex].DefaultCellStyle.BackColor = oddRowColor;
+            }
+        }
+        private bool Aval = false;
+        private string[] Avales = new string[15];
+        private string[] NuevosAvales = new string[15];
+        private int panel = 0;
+        private void BtnGuardarAval_Click(object sender, EventArgs e)
+        {
+            if (editaravales)
+            {
+                NuevosAvales[0] = txtNombre.Texts;
+                NuevosAvales[1] = TextBoxNombreaval1.Texts;
+                NuevosAvales[2] = TextBoxCalleaval1.Texts;
+                NuevosAvales[3] = TextBoxColoniaaval1.Texts;
+                NuevosAvales[4] = TextBoxNumIntaval1.Texts;
+                NuevosAvales[5] = TextBoxNumExtaval1.Texts;
+                NuevosAvales[6] = TextBoxTelefonoaval1.Texts;
+                NuevosAvales[7] = TextBoxCorreoaval1.Texts;
+                NuevosAvales[8] = TextBoxNombreaval2.Texts;
+                NuevosAvales[9] = TextBoxCalleaval2.Texts;
+                NuevosAvales[10] = TextBoxColoniaaval2.Texts;
+                NuevosAvales[11] = TextBoxNumIntaval2.Texts;
+                NuevosAvales[12] = TextBoxNumExtaval2.Texts;
+                NuevosAvales[13] = TextBoxTelefonoaval2.Texts;
+                NuevosAvales[14] = TextBoxCorreoaval2.Texts;
+                if (listaEstado == 0)
+                {
+                    PanelEditar.BringToFront();
+                    PanelEditar.Visible = true;
+                    editaravales = false;
+                }
+                else if (listaEstado == 1)
+                {
+                    PnlEditar2.BringToFront();
+                    PnlEditar2.Visible = true;
+                    editaravales = false;
+                }
+                else if (listaEstado == 2)
+                {
+                    PanelEditar3.BringToFront();
+                    PanelEditar3.Visible = true;
+                    editaravales = false;
+                }
+                else
+                {
+                    PanelEditarLiquidados.BringToFront();
+                    PanelEditarLiquidados.Visible = true;
+                    editaravales = false;
+                }
+
+            }
+            else
+            {
+
+
+                Avales[0] = txtNombre.Texts;
+                Avales[1] = TextBoxNombreaval1.Texts;
+                Avales[2] = TextBoxCalleaval1.Texts;
+                Avales[3] = TextBoxColoniaaval1.Texts;
+                Avales[4] = TextBoxNumIntaval1.Texts;
+                Avales[5] = TextBoxNumExtaval1.Texts;
+                Avales[6] = TextBoxTelefonoaval1.Texts;
+                Avales[7] = TextBoxCorreoaval1.Texts;
+                Avales[8] = TextBoxNombreaval2.Texts;
+                Avales[9] = TextBoxCalleaval2.Texts;
+                Avales[10] = TextBoxColoniaaval2.Texts;
+                Avales[11] = TextBoxNumIntaval2.Texts;
+                Avales[12] = TextBoxNumExtaval2.Texts;
+                Avales[13] = TextBoxTelefonoaval2.Texts;
+                Avales[14] = TextBoxCorreoaval2.Texts;
+                //Vaciamos los valores
+                TextBoxNombreaval1.Texts = "";
+                TextBoxCalleaval1.Texts = "";
+                TextBoxColoniaaval1.Texts = "";
+                TextBoxNumIntaval1.Texts = "";
+                TextBoxNumExtaval1.Texts = "";
+                TextBoxTelefonoaval1.Texts = "";
+                TextBoxCorreoaval1.Texts = "";
+                TextBoxNombreaval2.Texts = "";
+                TextBoxCalleaval2.Texts = "";
+                TextBoxColoniaaval2.Texts = "";
+                TextBoxNumIntaval2.Texts = "";
+                TextBoxNumExtaval2.Texts = "";
+                TextBoxTelefonoaval2.Texts = "";
+                TextBoxCorreoaval2.Texts = "";
+                pnlClientes.BringToFront();
+                pnlClientes.Visible = true;
+            }
+        }
+
+        private void rjButton8_Click(object sender, EventArgs e)
+        {
+            editaravales = false;
+            PnlAvales.BringToFront();
+            PnlAvales.Visible = true;
+        }
+        private bool editaravales = false;
+        private void BtnAvalesEditar_Click(object sender, EventArgs e)//Boton para editar avales
+        {
+            //Primero leemos los datos del aval
+            Lectura_Base_Datos er = new();
+            string[] datos = er.ObtenerAvales(cmbCliente.Texts);
+            if (datos != null && datos.Length >= 14)
+            {
+                TextBoxNombreaval1.Texts = datos[0] ?? "";
+                TextBoxCalleaval1.Texts = datos[1] ?? "";
+                TextBoxColoniaaval1.Texts = datos[2] ?? "";
+                TextBoxNumIntaval1.Texts = datos[3] ?? "";
+                TextBoxNumExtaval1.Texts = datos[4] ?? "";
+                TextBoxTelefonoaval1.Texts = datos[5] ?? "";
+                TextBoxCorreoaval1.Texts = datos[6] ?? "";
+                TextBoxNombreaval2.Texts = datos[7] ?? "";
+                TextBoxCalleaval2.Texts = datos[8] ?? "";
+                TextBoxColoniaaval2.Texts = datos[9] ?? "";
+                TextBoxNumIntaval2.Texts = datos[10] ?? "";
+                TextBoxNumExtaval2.Texts = datos[11] ?? "";
+                TextBoxTelefonoaval2.Texts = datos[12] ?? "";
+                TextBoxCorreoaval2.Texts = datos[13] ?? "";
+            }
+            //Ahora mostramos el panel de avales
+            PnlAvales.BringToFront();
+            PnlAvales.Visible = true;
+        }
+
+        private void rjButton9_Click(object sender, EventArgs e)
+        {
+            editaravales = true;
+            BtnAvalesEditar_Click(null, null);
+
+        }
+
+        private void rjButton10_Click(object sender, EventArgs e)
+        {
+            editaravales = true;
+            BtnAvalesEditar_Click(null, null);
+        }
+
+        private void rjButton13_Click(object sender, EventArgs e)
+        {
+            editaravales = true;
+            BtnAvalesEditar_Click(null, null);
         }
     }
 }

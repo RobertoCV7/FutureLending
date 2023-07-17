@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UqfeqIZYnYNvxG6LduIX5ktwqMrB6+6hFK1nNfxxv+dTqaMRd436LsV/nW2DxtcH+AVBqHrebCLS+mhLIaMH5w==",
+  "dgSpecHash": "6AsnHD9X1wkVwYipR+HCJpRMErAWkrGjP1M68od8HM59jma3tWsM7ao2Mx34HhPb+3QMKv4ddzpAgrZURYZT/A==",
   "success": true,
-  "projectFilePath": "E:\\Escritorio\\Future\\FutureLending.csproj",
+  "projectFilePath": "E:\\Escritorio\\Esc\\Future\\FutureLending.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\donne\\.nuget\\packages\\bunifu.licensing\\5.0.0\\bunifu.licensing.5.0.0.nupkg.sha512",
     "C:\\Users\\donne\\.nuget\\packages\\bunifu.ui.winforms\\6.1.0\\bunifu.ui.winforms.6.1.0.nupkg.sha512",

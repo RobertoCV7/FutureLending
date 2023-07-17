@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace FutureLending.Funciones.cs
 {
@@ -75,6 +76,7 @@ namespace FutureLending.Funciones.cs
                         insertarUsuarioCommand.Parameters.AddWithValue("@Lista2", false);
                         insertarUsuarioCommand.Parameters.AddWithValue("@Lista3", false);
                         insertarUsuarioCommand.Parameters.AddWithValue("@Liquidados", false);
+                        insertarUsuarioCommand.Parameters.AddWithValue("@Administrador", false);
                         insertarUsuarioCommand.ExecuteNonQuery();
                     }
 
@@ -324,6 +326,31 @@ namespace FutureLending.Funciones.cs
             }
 
             return false;
+        }
+
+        public bool ValidarAsministrador(string nombre, string contraseña)
+        {
+            bool isAdmin = false;
+
+            using (MySqlConnection connection = A.Conector())
+            {
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @nombre AND Contraseña = @contraseña AND Administrador = 1";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@contraseña", contraseña);
+
+                    long count = (long)command.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        isAdmin = true;
+                    }
+                }
+            }
+
+            return isAdmin;
         }
 
         #endregion

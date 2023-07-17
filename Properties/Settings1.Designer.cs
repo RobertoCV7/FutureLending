@@ -12,8 +12,8 @@ namespace FutureLending.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
-    internal sealed partial class Settings1 : global::System.Configuration.ApplicationSettingsBase {
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0")]
+    public sealed partial class Settings1 : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings1 defaultInstance = ((Settings1)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings1())));
         
@@ -25,7 +25,7 @@ namespace FutureLending.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DespachoJuridico")]
         public string Usuario {
             get {
                 return ((string)(this["Usuario"]));
@@ -37,7 +37,7 @@ namespace FutureLending.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Controlador0506")]
         public string Contraseña {
             get {
                 return ((string)(this["Contraseña"]));
@@ -49,7 +49,7 @@ namespace FutureLending.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        [global::System.Configuration.DefaultSettingValueAttribute("prestamos.cixiiohalkzx.us-east-2.rds.amazonaws.com")]
         public string Servidor {
             get {
                 return ((string)(this["Servidor"]));
@@ -73,13 +73,22 @@ namespace FutureLending.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("prestamos")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Prestamos")]
         public string Base_de_datos {
             get {
                 return ((string)(this["Base_de_datos"]));
             }
             set {
                 this["Base_de_datos"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.0")]
+        public string version {
+            get {
+                return ((string)(this["version"]));
             }
         }
     }
