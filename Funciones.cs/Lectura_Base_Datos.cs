@@ -493,29 +493,7 @@ namespace FutureLending.Funciones.cs
             }
         }
 
-        public bool BorrarAval(string Nombre_Completo)
-        {
-            using (MySqlConnection connection = Conector())
-            {
-                string query = "DELETE FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
-
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Nombre_Completo", Nombre_Completo);
-
-                    try
-                    {
-                        int rowsAffected = command.ExecuteNonQuery();
-                        return rowsAffected > 0;
-                    }
-                    catch (Exception ex)
-                    {
-                        Registro_errores(ex.ToString());
-                        return false;
-                    }
-                }
-            }
-        }
+        
         #endregion
         #region Revisar existencia
         public static int VerificarUsuarioEnListas(string nombreUsuario)
@@ -806,6 +784,8 @@ namespace FutureLending.Funciones.cs
                 return false;
             }
         }
+
+        #region Avales
         public bool CrearAvales(string[] datos)
         {
             using MySqlConnection connection = Conector();
@@ -880,7 +860,57 @@ namespace FutureLending.Funciones.cs
 
             return datosRecuperados.ToArray();
         }
-       
+        public bool Existencia_Aval(string Nombre)
+        {
+            MySqlConnection connection = Conector();
+            string query = "SELECT COUNT(*) FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre_Completo", Nombre);
+                try
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count != 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }catch(Exception Ex)
+                {
+                    Registro_errores(Ex.ToString());
+                    return false;
+                }
+               
+            }
+
+        } //Funcion que sirve para saber si existe un aval en la base de datos
+        public bool BorrarAval(string Nombre_Completo)
+        {
+            using (MySqlConnection connection = Conector())
+            {
+                string query = "DELETE FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre_Completo", Nombre_Completo);
+
+                    try
+                    {
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        Registro_errores(ex.ToString());
+                        return false;
+                    }
+                }
+            }
+        }
+        #endregion
         #endregion
         #endregion
         #region reparar conexion

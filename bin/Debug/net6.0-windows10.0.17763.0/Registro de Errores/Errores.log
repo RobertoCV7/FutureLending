@@ -1,5 +1,4 @@
-
-[17/07/2023 01:22:58 a. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Column 'Nombre_Completo' cannot be null
+[18/07/2023 07:15:39 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Column 'Nombre_Completo' cannot be null
    at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
    at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
    at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
@@ -11,4 +10,4 @@
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
-   at FutureLending.Funciones.cs.Lectura_Base_Datos.CrearAvales(String[] datos) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 835
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CrearAvales(String[] datos) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 815

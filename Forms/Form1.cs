@@ -1924,17 +1924,42 @@ namespace FutureLending.Forms
             strings[10] = ComboBoxResolucion3.SelectedItem.ToString(); //Resolucion
             strings[13] = Cliente;
             bool es = ediciones.EditarLista3(strings);
-            bool re = ediciones.EditarAval(Cliente, NuevosAvales);
             if (es)
             {
-                if (re)
+                Ediciones e2 = new();
+                Lectura_Base_Datos obj = new();
+                bool Existe = obj.Existencia_Aval(TextBoxNombre3.Texts);
+                if (Existe)
                 {
-                    EsconderPaneles(pnlListas);
-                    btnLista3.PerformClick(); //Reactualizo los datos de la lista 3
+                    if (e2.EditarAval(TextBoxNombre3.Texts, NuevosAvales))
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
                 }
                 else
                 {
-                    MessageB("Error al Mover Avales", "Alerta", 2);
+                    string[] DatosAvales = new string[16];
+                    DatosAvales[0] = TextBoxNombre3.Texts; //Convertirmos al orden para guardado
+                    for (int i = 1; i < 15; i++)
+                    {
+                        DatosAvales[i] = Avales[i];
+                    }
+
+                    bool creado = obj.CrearAvales(DatosAvales);
+                    if (creado)
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
                 }
             }
             else
@@ -2110,6 +2135,7 @@ namespace FutureLending.Forms
 
         private void btnGuardarC_Click(object sender, EventArgs e)
         {
+
             if (mover)
             {
                 string[] mov5 = new string[12];
@@ -2161,17 +2187,44 @@ namespace FutureLending.Forms
                     infoListaNueva2[43] = Cliente; //Nombre del que va a editar
                     bool editarLista2 = e2.EditarLista2(infoListaNueva2);
 
+
                     if (editarLista2)
                     {
-                        if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
+                        Lectura_Base_Datos obj = new();
+                        bool Existe = obj.Existencia_Aval(TextBoxNombre.Texts);
+                        if (Existe)
                         {
-                            EsconderPaneles(pnlListas);
-                            btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                            if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
+                            {
+                                EsconderPaneles(pnlListas);
+                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                            }
+                            else
+                            {
+                                MessageB("Error al guardar los avales", "Advertencia", 2);
+                            }
                         }
                         else
                         {
-                            MessageB("Error al guardar los avales", "Advertencia", 2);
+                            string[] DatosAvales = new string[17];
+                            DatosAvales[0] = TextBoxNombre.Texts; //Convertirmos al orden para guardado
+                            for (int i = 1; i < 15; i++)
+                            {
+                                DatosAvales[i] = NuevosAvales[i - 1];
+                            }
+
+                            bool creado = obj.CrearAvales(DatosAvales);
+                            if (creado)
+                            {
+                                EsconderPaneles(pnlListas);
+                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                            }
+                            else
+                            {
+                                MessageB("Error al guardar los avales", "Advertencia", 2);
+                            }
                         }
+
                     }
                     else
                     {
@@ -2200,22 +2253,77 @@ namespace FutureLending.Forms
                     infoListaNueva2[42] = TextBoxPagoExt.Texts;
                     if (obj.InsertarLista2(infoListaNueva2))
                     {
-                        rjComboBox8.SelectedItem = -1;
-                        rjComboBox8.Texts = "Seleccione un promotor";
-                        TextBoxNombre.Texts = "";
-                        TextBoxCredito.Texts = "";
-                        TextBoxRestante.Texts = "";
-                        TextBoxPagare.Texts = "";
-                        TextBoxCalle.Texts = "";
-                        TextBoxColonia.Texts = "";
-                        TextBoxNumInt.Texts = "";
-                        TextBoxNumExt.Texts = "";
-                        TextBoxTelefono.Texts = "";
-                        TextBoxCorreo.Texts = "";
-                        rjComboBox7.SelectedItem = -1;
-                        rjComboBox7.Texts = "Seleccione una opcion";
-                        TextBoxLiquidacionIntencion.Texts = "";
-                        TextBoxQuita.Texts = "";
+                        Ediciones e2 = new();
+                        bool Existe = obj.Existencia_Aval(TextBoxNombre.Texts);
+
+                        if (Existe)
+                        {
+
+                            if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
+                            {
+
+                                EsconderPaneles(pnlListas);
+                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                                rjComboBox8.SelectedItem = -1;
+                                rjComboBox8.Texts = "Seleccione un promotor";
+                                TextBoxNombre.Texts = "";
+                                TextBoxCredito.Texts = "";
+                                TextBoxRestante.Texts = "";
+                                TextBoxPagare.Texts = "";
+                                TextBoxCalle.Texts = "";
+                                TextBoxColonia.Texts = "";
+                                TextBoxNumInt.Texts = "";
+                                TextBoxNumExt.Texts = "";
+                                TextBoxTelefono.Texts = "";
+                                TextBoxCorreo.Texts = "";
+                                rjComboBox7.SelectedItem = -1;
+                                rjComboBox7.Texts = "Seleccione una opcion";
+                                TextBoxLiquidacionIntencion.Texts = "";
+                                TextBoxQuita.Texts = "";
+                            }
+                            else
+                            {
+                                MessageB("Error al guardar los avales", "Advertencia", 2);
+                            }
+                        }
+                        else
+                        {
+
+                            string[] DatosAvales = new string[16];
+                            DatosAvales[0] = TextBoxNombre.Texts; //Convertirmos al orden para guardado
+                            for (int i = 1; i < 15; i++)
+                            {
+                                DatosAvales[i] = Avales[i - 1];
+                            }
+
+                            bool creado = obj.CrearAvales(DatosAvales);
+                            if (creado)
+                            {
+                                EsconderPaneles(pnlListas);
+                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                                rjComboBox8.SelectedItem = -1;
+                                rjComboBox8.Texts = "Seleccione un promotor";
+                                TextBoxNombre.Texts = "";
+                                TextBoxCredito.Texts = "";
+                                TextBoxRestante.Texts = "";
+                                TextBoxPagare.Texts = "";
+                                TextBoxCalle.Texts = "";
+                                TextBoxColonia.Texts = "";
+                                TextBoxNumInt.Texts = "";
+                                TextBoxNumExt.Texts = "";
+                                TextBoxTelefono.Texts = "";
+                                TextBoxCorreo.Texts = "";
+                                rjComboBox7.SelectedItem = -1;
+                                rjComboBox7.Texts = "Seleccione una opcion";
+                                TextBoxLiquidacionIntencion.Texts = "";
+                                TextBoxQuita.Texts = "";
+                            }
+                            else
+                            {
+                                MessageB("Error al guardar los avales", "Advertencia", 2);
+                            }
+                        }
+
                     }
                     else
                     {
@@ -2391,14 +2499,39 @@ namespace FutureLending.Forms
             bool er = e2.EditarAval(Cliente, NuevosAvales);
             if (saber2)
             {
-                if (er)
+                Lectura_Base_Datos obj = new();
+                bool Existe = obj.Existencia_Aval(Cliente);
+                if (Existe)
                 {
-                    EsconderPaneles(pnlListas);
-                    btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
+                    if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
                 }
                 else
                 {
-                    MessageB("Error al guardar los avales", "Alerta", 2);
+                    string[] DatosAvales = new string[16];
+                    DatosAvales[0] = Cliente; //Convertirmos al orden para guardado
+                    for (int i = 1; i < 15; i++)
+                    {
+                        DatosAvales[i] = NuevosAvales[i];
+                    }
+
+                    bool creado = obj.CrearAvales(DatosAvales);
+                    if (creado)
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
                 }
             }
             else
@@ -2608,18 +2741,43 @@ namespace FutureLending.Forms
                         break;
                 }
             }
+            Ediciones e2 = new();
             bool revisar = e1.EditarLista1(informacion);
-            bool av = e1.EditarAval(textBoxPersonalizado10.Texts, NuevosAvales);
             if (revisar)
             {
-                if (av)
+                Lectura_Base_Datos obj = new();
+                bool Existe = obj.Existencia_Aval(textBoxPersonalizado10.Texts);
+                if (Existe)
                 {
-                    EsconderPaneles(pnlListas);
-                    btnLista1.PerformClick(); //Reactualizo los datos de la lista 1
+                    if (e2.EditarAval(textBoxPersonalizado10.Texts, NuevosAvales))
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
                 }
                 else
                 {
-                    MessageB("Error al guardar los avales", "Alerta", 2);
+                    string[] DatosAvales = new string[16];
+                    DatosAvales[0] = textBoxPersonalizado10.Texts; //Convertirmos al orden para guardado
+                    for (int i = 1; i < 15; i++)
+                    {
+                        DatosAvales[i] = Avales[i];
+                    }
+
+                    bool creado = obj.CrearAvales(DatosAvales);
+                    if (creado)
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
                 }
             }
             else
@@ -2848,6 +3006,7 @@ namespace FutureLending.Forms
         private bool Guardar = false;
         private void iconButton3_Click(object sender, EventArgs e)//Boton para ingresar cliente a la lista 2
         {
+            listaEstado = 4;
             Guardar = true;
             groupBox2.Hide(); //Escondemos el apartado para mover el usuario
             CargarPromotoresEnComboBox(rjComboBox8, false);//Cargamos los promotores que puede escoger
@@ -2941,27 +3100,27 @@ namespace FutureLending.Forms
         }
         private bool Aval = false;
         private string[] Avales = new string[15];
-        private string[] NuevosAvales = new string[15];
+        private string[] NuevosAvales = new string[16];
         private int panel = 0;
         private void BtnGuardarAval_Click(object sender, EventArgs e)
         {
+
             if (editaravales)
             {
-                NuevosAvales[0] = txtNombre.Texts;
-                NuevosAvales[1] = TextBoxNombreaval1.Texts;
-                NuevosAvales[2] = TextBoxCalleaval1.Texts;
-                NuevosAvales[3] = TextBoxColoniaaval1.Texts;
-                NuevosAvales[4] = TextBoxNumIntaval1.Texts;
-                NuevosAvales[5] = TextBoxNumExtaval1.Texts;
-                NuevosAvales[6] = TextBoxTelefonoaval1.Texts;
-                NuevosAvales[7] = TextBoxCorreoaval1.Texts;
-                NuevosAvales[8] = TextBoxNombreaval2.Texts;
-                NuevosAvales[9] = TextBoxCalleaval2.Texts;
-                NuevosAvales[10] = TextBoxColoniaaval2.Texts;
-                NuevosAvales[11] = TextBoxNumIntaval2.Texts;
-                NuevosAvales[12] = TextBoxNumExtaval2.Texts;
-                NuevosAvales[13] = TextBoxTelefonoaval2.Texts;
-                NuevosAvales[14] = TextBoxCorreoaval2.Texts;
+                NuevosAvales[0] = TextBoxNombreaval1.Texts;
+                NuevosAvales[1] = TextBoxCalleaval1.Texts;
+                NuevosAvales[2] = TextBoxColoniaaval1.Texts;
+                NuevosAvales[3] = TextBoxNumIntaval1.Texts;
+                NuevosAvales[4] = TextBoxNumExtaval1.Texts;
+                NuevosAvales[5] = TextBoxTelefonoaval1.Texts;
+                NuevosAvales[6] = TextBoxCorreoaval1.Texts;
+                NuevosAvales[7] = TextBoxNombreaval2.Texts;
+                NuevosAvales[8] = TextBoxCalleaval2.Texts;
+                NuevosAvales[9] = TextBoxColoniaaval2.Texts;
+                NuevosAvales[10] = TextBoxNumIntaval2.Texts;
+                NuevosAvales[11] = TextBoxNumExtaval2.Texts;
+                NuevosAvales[12] = TextBoxTelefonoaval2.Texts;
+                NuevosAvales[13] = TextBoxCorreoaval2.Texts;
                 if (listaEstado == 0)
                 {
                     PanelEditar.BringToFront();
@@ -2980,18 +3139,20 @@ namespace FutureLending.Forms
                     PanelEditar3.Visible = true;
                     editaravales = false;
                 }
-                else
+                else if (listaEstado == 3)
                 {
                     PanelEditarLiquidados.BringToFront();
                     PanelEditarLiquidados.Visible = true;
                     editaravales = false;
                 }
 
+
+
+
+
             }
             else
             {
-
-
                 Avales[0] = txtNombre.Texts;
                 Avales[1] = TextBoxNombreaval1.Texts;
                 Avales[2] = TextBoxCalleaval1.Texts;
@@ -3022,8 +3183,18 @@ namespace FutureLending.Forms
                 TextBoxNumExtaval2.Texts = "";
                 TextBoxTelefonoaval2.Texts = "";
                 TextBoxCorreoaval2.Texts = "";
-                pnlClientes.BringToFront();
-                pnlClientes.Visible = true;
+                if (listaEstado == 4)
+                {
+                    PnlEditar2.BringToFront();
+                    PnlEditar2.Visible = true;
+                    listaEstado = 0;
+                }
+                else
+                {
+                    pnlClientes.BringToFront();
+                    pnlClientes.Visible = true;
+                }
+
             }
         }
 
@@ -3063,8 +3234,20 @@ namespace FutureLending.Forms
 
         private void rjButton9_Click(object sender, EventArgs e)
         {
-            editaravales = true;
-            BtnAvalesEditar_Click(null, null);
+            if (listaEstado != 4)
+            {
+                editaravales = true;
+                BtnAvalesEditar_Click(null, null);
+            }
+            else
+            {
+                editaravales = false;
+                PnlAvales.BringToFront();
+                PnlAvales.Visible = true;
+            }
+
+
+
 
         }
 
