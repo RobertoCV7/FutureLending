@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Text;
 
 namespace FutureLending.Funciones.cs;
 
@@ -200,6 +201,54 @@ internal class Ediciones
         {
             con.Registro_errores(ex.ToString());
             return false;
+        }
+    }
+
+    public bool EditarAval(string Nombre_Completo, string[] nuevosDatos)
+    {
+        LecturaBaseDatos or = new LecturaBaseDatos();
+        using (MySqlConnection connection = or.Conector())
+        {
+            StringBuilder queryBuilder = new StringBuilder();
+            queryBuilder.Append("UPDATE Avales SET ");
+            queryBuilder.Append("Aval1_Nombre = @Aval1_Nombre, Aval1_Calle = @Aval1_Calle, Aval1_Colonia = @Aval1_Colonia, Aval1_Num_int = @Aval1_Num_int, Aval1_Num_ext = @Aval1_Num_ext, Aval1_Telefono = @Aval1_Telefono, Aval1_Correo = @Aval1_Correo, ");
+            queryBuilder.Append("Aval2_Nombre = @Aval2_Nombre, Aval2_Calle = @Aval2_Calle, Aval2_Colonia = @Aval2_Colonia, Aval2_Num_int = @Aval2_Num_int, Aval2_Num_ext = @Aval2_Num_ext, Aval2_Telefono = @Aval2_Telefono, Aval2_Correo = @Aval2_Correo ");
+            queryBuilder.Append("WHERE Nombre_Completo = @Nombre_Completo");
+
+            string query = queryBuilder.ToString();
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Aval1_Nombre", nuevosDatos[0]);
+                command.Parameters.AddWithValue("@Aval1_Calle", nuevosDatos[1]);
+                command.Parameters.AddWithValue("@Aval1_Colonia", nuevosDatos[2]);
+                command.Parameters.AddWithValue("@Aval1_Num_int", nuevosDatos[3]);
+                command.Parameters.AddWithValue("@Aval1_Num_ext", nuevosDatos[4]);
+                command.Parameters.AddWithValue("@Aval1_Telefono", nuevosDatos[5]);
+                command.Parameters.AddWithValue("@Aval1_Correo", nuevosDatos[6]);
+                command.Parameters.AddWithValue("@Aval2_Nombre", nuevosDatos[7]);
+                command.Parameters.AddWithValue("@Aval2_Calle", nuevosDatos[8]);
+                command.Parameters.AddWithValue("@Aval2_Colonia", nuevosDatos[9]);
+                command.Parameters.AddWithValue("@Aval2_Num_int", nuevosDatos[10]);
+                command.Parameters.AddWithValue("@Aval2_Num_ext", nuevosDatos[11]);
+                command.Parameters.AddWithValue("@Aval2_Telefono", nuevosDatos[12]);
+                command.Parameters.AddWithValue("@Aval2_Correo", nuevosDatos[13]);
+                command.Parameters.AddWithValue("@Nombre_Completo", Nombre_Completo);
+
+                try
+                {
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    LecturaBaseDatos con = new LecturaBaseDatos();
+                    con.Registro_errores(ex.ToString());
+                    MessageBox.Show(ex.ToString());
+                    return false;
+                }
+            }
         }
     }
 

@@ -501,7 +501,29 @@ public class LecturaBaseDatos
     #region editar, borrar y crear
 
     #region Borrar General
+    public bool BorrarAval(string Nombre_Completo)
+    {
+        using (MySqlConnection connection = Conector())
+        {
+            string query = "DELETE FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
 
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre_Completo", Nombre_Completo);
+
+                try
+                {
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Registro_errores(ex.ToString());
+                    return false;
+                }
+            }
+        }
+    }
     public void Erase(string nombre, string tabla)
     {
         //Llamamos al conector
@@ -887,6 +909,34 @@ public class LecturaBaseDatos
 
         return datosRecuperados.ToArray();
     }
+    public bool Existencia_Aval(string Nombre)
+    {
+        MySqlConnection connection = Conector();
+        string query = "SELECT COUNT(*) FROM Avales WHERE Nombre_Completo = @Nombre_Completo";
+        using (MySqlCommand command = new MySqlCommand(query, connection))
+        {
+            command.Parameters.AddWithValue("@Nombre_Completo", Nombre);
+            try
+            {
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                if (count != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception Ex)
+            {
+                Registro_errores(Ex.ToString());
+                return false;
+            }
+
+        }
+
+    } //Funcion que sirve para saber si existe un aval en la base de datos
 
     #endregion
 

@@ -21672,6 +21672,9 @@
   <data name="btnGuardar2.Size" type="System.Drawing.Size, System.Drawing">
     <value>249, 72</value>
   </data>
+  <data name="ResolucionDemanda.Items" xml:space="preserve">
+    <value>En Tramite</value>
+  </data>
   <data name="ResolucionDemanda.Location" type="System.Drawing.Point, System.Drawing">
     <value>354, 491</value>
   </data>

@@ -3901,7 +3901,7 @@ namespace FutureLending.Forms
             TextBoxNombreaval2.Name = "TextBoxNombreaval2";
             TextBoxNombreaval2.PasswordChar = false;
             TextBoxNombreaval2.PlaceholderColor = Color.DimGray;
-            TextBoxNombreaval2.PlaceholderText = "Introduzca el nombre";
+            TextBoxNombreaval2.PlaceholderText = "";
             TextBoxNombreaval2.Texts = "";
             TextBoxNombreaval2.UnderlinedStyle = true;
             // 
@@ -3923,7 +3923,7 @@ namespace FutureLending.Forms
             TextBoxNombreaval1.Name = "TextBoxNombreaval1";
             TextBoxNombreaval1.PasswordChar = false;
             TextBoxNombreaval1.PlaceholderColor = Color.DimGray;
-            TextBoxNombreaval1.PlaceholderText = "Introduzca el nombre";
+            TextBoxNombreaval1.PlaceholderText = "";
             TextBoxNombreaval1.Texts = "";
             TextBoxNombreaval1.UnderlinedStyle = true;
             // 
@@ -3963,7 +3963,7 @@ namespace FutureLending.Forms
             TextBoxCorreoaval2.Name = "TextBoxCorreoaval2";
             TextBoxCorreoaval2.PasswordChar = false;
             TextBoxCorreoaval2.PlaceholderColor = Color.DimGray;
-            TextBoxCorreoaval2.PlaceholderText = "Introduzca el correo";
+            TextBoxCorreoaval2.PlaceholderText = "";
             TextBoxCorreoaval2.Texts = "";
             TextBoxCorreoaval2.UnderlinedStyle = true;
             // 
@@ -3984,7 +3984,7 @@ namespace FutureLending.Forms
             TextBoxTelefonoaval2.Name = "TextBoxTelefonoaval2";
             TextBoxTelefonoaval2.PasswordChar = false;
             TextBoxTelefonoaval2.PlaceholderColor = Color.DimGray;
-            TextBoxTelefonoaval2.PlaceholderText = "Introduzca el número";
+            TextBoxTelefonoaval2.PlaceholderText = "";
             TextBoxTelefonoaval2.Texts = "";
             TextBoxTelefonoaval2.UnderlinedStyle = true;
             // 
@@ -4005,7 +4005,7 @@ namespace FutureLending.Forms
             TextBoxNumExtaval2.Name = "TextBoxNumExtaval2";
             TextBoxNumExtaval2.PasswordChar = false;
             TextBoxNumExtaval2.PlaceholderColor = Color.DimGray;
-            TextBoxNumExtaval2.PlaceholderText = "Num. ext.";
+            TextBoxNumExtaval2.PlaceholderText = "";
             TextBoxNumExtaval2.Texts = "";
             TextBoxNumExtaval2.UnderlinedStyle = true;
             // 
@@ -4026,7 +4026,7 @@ namespace FutureLending.Forms
             TextBoxNumIntaval2.Name = "TextBoxNumIntaval2";
             TextBoxNumIntaval2.PasswordChar = false;
             TextBoxNumIntaval2.PlaceholderColor = Color.DimGray;
-            TextBoxNumIntaval2.PlaceholderText = "Num. int.";
+            TextBoxNumIntaval2.PlaceholderText = "";
             TextBoxNumIntaval2.Texts = "";
             TextBoxNumIntaval2.UnderlinedStyle = true;
             // 
@@ -4047,7 +4047,7 @@ namespace FutureLending.Forms
             TextBoxColoniaaval2.Name = "TextBoxColoniaaval2";
             TextBoxColoniaaval2.PasswordChar = false;
             TextBoxColoniaaval2.PlaceholderColor = Color.DimGray;
-            TextBoxColoniaaval2.PlaceholderText = "Introduzca la colonia";
+            TextBoxColoniaaval2.PlaceholderText = "";
             TextBoxColoniaaval2.Texts = "";
             TextBoxColoniaaval2.UnderlinedStyle = true;
             // 
@@ -4068,7 +4068,7 @@ namespace FutureLending.Forms
             TextBoxCalleaval2.Name = "TextBoxCalleaval2";
             TextBoxCalleaval2.PasswordChar = false;
             TextBoxCalleaval2.PlaceholderColor = Color.DimGray;
-            TextBoxCalleaval2.PlaceholderText = "Introduzca la calle";
+            TextBoxCalleaval2.PlaceholderText = "";
             TextBoxCalleaval2.Texts = "";
             TextBoxCalleaval2.UnderlinedStyle = true;
             // 
@@ -4089,7 +4089,7 @@ namespace FutureLending.Forms
             TextBoxCorreoaval1.Name = "TextBoxCorreoaval1";
             TextBoxCorreoaval1.PasswordChar = false;
             TextBoxCorreoaval1.PlaceholderColor = Color.DimGray;
-            TextBoxCorreoaval1.PlaceholderText = "Introduzca el correo";
+            TextBoxCorreoaval1.PlaceholderText = "";
             TextBoxCorreoaval1.Texts = "";
             TextBoxCorreoaval1.UnderlinedStyle = true;
             // 
@@ -4110,7 +4110,7 @@ namespace FutureLending.Forms
             TextBoxTelefonoaval1.Name = "TextBoxTelefonoaval1";
             TextBoxTelefonoaval1.PasswordChar = false;
             TextBoxTelefonoaval1.PlaceholderColor = Color.DimGray;
-            TextBoxTelefonoaval1.PlaceholderText = "Introduzca el número";
+            TextBoxTelefonoaval1.PlaceholderText = "";
             TextBoxTelefonoaval1.Texts = "";
             TextBoxTelefonoaval1.UnderlinedStyle = true;
             // 
@@ -4131,7 +4131,7 @@ namespace FutureLending.Forms
             TextBoxNumExtaval1.Name = "TextBoxNumExtaval1";
             TextBoxNumExtaval1.PasswordChar = false;
             TextBoxNumExtaval1.PlaceholderColor = Color.DimGray;
-            TextBoxNumExtaval1.PlaceholderText = "Num. ext.";
+            TextBoxNumExtaval1.PlaceholderText = "";
             TextBoxNumExtaval1.Texts = "";
             TextBoxNumExtaval1.UnderlinedStyle = true;
             // 
@@ -4152,7 +4152,7 @@ namespace FutureLending.Forms
             TextBoxNumIntaval1.Name = "TextBoxNumIntaval1";
             TextBoxNumIntaval1.PasswordChar = false;
             TextBoxNumIntaval1.PlaceholderColor = Color.DimGray;
-            TextBoxNumIntaval1.PlaceholderText = "Num. int.";
+            TextBoxNumIntaval1.PlaceholderText = "";
             TextBoxNumIntaval1.Texts = "";
             TextBoxNumIntaval1.UnderlinedStyle = true;
             // 
@@ -4173,7 +4173,7 @@ namespace FutureLending.Forms
             TextBoxColoniaaval1.Name = "TextBoxColoniaaval1";
             TextBoxColoniaaval1.PasswordChar = false;
             TextBoxColoniaaval1.PlaceholderColor = Color.DimGray;
-            TextBoxColoniaaval1.PlaceholderText = "Introduzca la colonia";
+            TextBoxColoniaaval1.PlaceholderText = "";
             TextBoxColoniaaval1.Texts = "";
             TextBoxColoniaaval1.UnderlinedStyle = true;
             // 
@@ -4194,7 +4194,7 @@ namespace FutureLending.Forms
             TextBoxCalleaval1.Name = "TextBoxCalleaval1";
             TextBoxCalleaval1.PasswordChar = false;
             TextBoxCalleaval1.PlaceholderColor = Color.DimGray;
-            TextBoxCalleaval1.PlaceholderText = "Introduzca la calle";
+            TextBoxCalleaval1.PlaceholderText = "";
             TextBoxCalleaval1.Texts = "";
             TextBoxCalleaval1.UnderlinedStyle = true;
             // 
@@ -4210,11 +4210,11 @@ namespace FutureLending.Forms
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
             Controls.Add(PnlAvales);
+            Controls.Add(PnlEditar2);
             Controls.Add(pnlListas);
             Controls.Add(PanelEditarLiquidados);
-            Controls.Add(PanelEditar3);
-            Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar);
+            Controls.Add(PanelEditar3);
             Controls.Add(pnlClientes);
             Controls.Add(panel2);
             Controls.Add(PanelEditar2_2);

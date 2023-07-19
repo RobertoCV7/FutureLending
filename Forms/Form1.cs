@@ -361,8 +361,43 @@ public partial class Form1 : Form
         var es = ediciones.EditarLista3(datos);
         if (es)
         {
-            EsconderPaneles(pnlListas);
-            btnLista3.PerformClick(); //Reactualizo los datos de la lista 3
+
+            Ediciones e2 = new();
+            LecturaBaseDatos obj = new();
+            bool Existe = obj.Existencia_Aval(TextBoxNombre3.Texts);
+            if (Existe)
+            {
+                if (e2.EditarAval(TextBoxNombre3.Texts, NuevosAvales))
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                }
+            }
+            else
+            {
+                string[] DatosAvales = new string[16];
+                DatosAvales[0] = TextBoxNombre3.Texts; //Convertirmos al orden para guardado
+                for (int i = 1; i < 15; i++)
+                {
+                    DatosAvales[i] = Avales
+                        [i];
+                }
+
+                bool creado = obj.CrearAvales(DatosAvales);
+                if (creado)
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                }
+            }
         }
         else
         {
@@ -536,11 +571,11 @@ public partial class Form1 : Form
             mov5[10] = "Lista 2";
             LecturaBaseDatos instancia5 = new();
             var rev5 = instancia5.InsertarLiquidados(mov5);
+
             if (rev5)
             {
-                instancia5.Erase(mov5[1], "lista2"); //Eliminamos el registro 
                 EsconderPaneles(pnlListas);
-                btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados ya que se paso para alla
+                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
             }
             else
             {
@@ -568,8 +603,42 @@ public partial class Form1 : Form
             var lista2 = e2.EditarLista2(infoListaNueva2);
             if (lista2)
             {
-                EsconderPaneles(pnlListas);
-                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+
+                Ediciones e212 = new();
+                LecturaBaseDatos obj = new();
+                bool Existe = obj.Existencia_Aval(Cliente);
+                if (Existe)
+                {
+                    if (e212.EditarAval(TextBoxNombre.Texts, NuevosAvales))
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
+                }
+                else
+                {
+                    string[] DatosAvales = new string[16];
+                    DatosAvales[0] = Cliente; //Convertirmos al orden para guardado
+                    for (int i = 1; i < 15; i++)
+                    {
+                        DatosAvales[i] = NuevosAvales[i];
+                    }
+
+                    bool creado = obj.CrearAvales(DatosAvales);
+                    if (creado)
+                    {
+                        EsconderPaneles(pnlListas);
+                        btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    }
+                    else
+                    {
+                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                    }
+                }
             }
             else
             {
@@ -690,11 +759,45 @@ public partial class Form1 : Form
         datos[8] = TextTelefonoLiq.Texts; //Telefono
         datos[9] = TextCorreoLiq.Texts; //Correo
         datos[11] = Cliente;
+        Ediciones e21 = new();
         var saber2 = e2.EditarListaLiquidados(datos);
         if (saber2)
         {
-            EsconderPaneles(pnlListas);
-            btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados
+
+            LecturaBaseDatos obj = new();
+            bool Existe = obj.Existencia_Aval(Cliente);
+            if (Existe)
+            {
+                if (e21.EditarAval(TextBoxNombre.Texts, NuevosAvales))
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                }
+            }
+            else
+            {
+                string[] DatosAvales = new string[16];
+                DatosAvales[0] = Cliente; //Convertirmos al orden para guardado
+                for (int i = 1; i < 15; i++)
+                {
+                    DatosAvales[i] = NuevosAvales[i];
+                }
+
+                bool creado = obj.CrearAvales(DatosAvales);
+                if (creado)
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                }
+            }
         }
         else
         {
@@ -918,8 +1021,42 @@ public partial class Form1 : Form
         var revisar = e1.EditarLista1(strings);
         if (revisar)
         {
-            EsconderPaneles(pnlListas);
-            btnLista1.PerformClick(); //Reactualizo los datos de la lista 1
+
+            Ediciones e2 = new();
+            LecturaBaseDatos obj = new();
+            bool Existe = obj.Existencia_Aval(textBoxPersonalizado10.Texts);
+            if (Existe)
+            {
+                if (e2.EditarAval(textBoxPersonalizado10.Texts, NuevosAvales))
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                }
+            }
+            else
+            {
+                string[] DatosAvales = new string[16];
+                DatosAvales[0] = textBoxPersonalizado10.Texts; //Convertirmos al orden para guardado
+                for (int i = 1; i < 15; i++)
+                {
+                    DatosAvales[i] = NuevosAvales[i];
+                }
+
+                bool creado = obj.CrearAvales(DatosAvales);
+                if (creado)
+                {
+                    EsconderPaneles(pnlListas);
+                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                }
+                else
+                {
+                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                }
+            }
         }
         else
         {
@@ -1525,6 +1662,7 @@ public partial class Form1 : Form
 
     private void BtnEditar_Click(object sender, EventArgs e)
     {
+        editaravales = true;
         LecturasEspecificas especificas = new();
         if (listaEstado == 0) //Si viene de la lista 1
         {
@@ -1774,7 +1912,7 @@ public partial class Form1 : Form
     {
         LecturaBaseDatos instancia = new();
         instancia.Erase(cmbCliente.Texts, listaActual);
-
+        instancia.BorrarAval(cmbCliente.Texts);
         switch (listaActual)
         {
             //Verifica de cuál lista se eliminó y la recarga
@@ -2623,7 +2761,7 @@ public partial class Form1 : Form
                     gridListas.Columns[0].Frozen = true;
                     gridListas.Columns[1].Frozen = true;
                 }
-               
+
 
                 // Recorrer todas las columnas a partir de la tercera columna
                 for (int i = 2; i < gridListas.ColumnCount; i++)
@@ -2666,21 +2804,20 @@ public partial class Form1 : Form
     {
         if (editaravales)
         {
-            NuevosAvales[0] = txtNombre.Texts;
-            NuevosAvales[1] = TextBoxNombreaval1.Texts;
-            NuevosAvales[2] = TextBoxCalleaval1.Texts;
-            NuevosAvales[3] = TextBoxColoniaaval1.Texts;
-            NuevosAvales[4] = TextBoxNumIntaval1.Texts;
-            NuevosAvales[5] = TextBoxNumExtaval1.Texts;
-            NuevosAvales[6] = TextBoxTelefonoaval1.Texts;
-            NuevosAvales[7] = TextBoxCorreoaval1.Texts;
-            NuevosAvales[8] = TextBoxNombreaval2.Texts;
-            NuevosAvales[9] = TextBoxCalleaval2.Texts;
-            NuevosAvales[10] = TextBoxColoniaaval2.Texts;
-            NuevosAvales[11] = TextBoxNumIntaval2.Texts;
-            NuevosAvales[12] = TextBoxNumExtaval2.Texts;
-            NuevosAvales[13] = TextBoxTelefonoaval2.Texts;
-            NuevosAvales[14] = TextBoxCorreoaval2.Texts;
+            NuevosAvales[0] = TextBoxNombreaval1.Texts;
+            NuevosAvales[1] = TextBoxCalleaval1.Texts;
+            NuevosAvales[2] = TextBoxColoniaaval1.Texts;
+            NuevosAvales[3] = TextBoxNumIntaval1.Texts;
+            NuevosAvales[4] = TextBoxNumExtaval1.Texts;
+            NuevosAvales[5] = TextBoxTelefonoaval1.Texts;
+            NuevosAvales[6] = TextBoxCorreoaval1.Texts;
+            NuevosAvales[7] = TextBoxNombreaval2.Texts;
+            NuevosAvales[8] = TextBoxCalleaval2.Texts;
+            NuevosAvales[9] = TextBoxColoniaaval2.Texts;
+            NuevosAvales[10] = TextBoxNumIntaval2.Texts;
+            NuevosAvales[11] = TextBoxNumExtaval2.Texts;
+            NuevosAvales[12] = TextBoxTelefonoaval2.Texts;
+            NuevosAvales[13] = TextBoxCorreoaval2.Texts;
             if (listaEstado == 0)
             {
                 PanelEditar.BringToFront();
@@ -2709,6 +2846,7 @@ public partial class Form1 : Form
         }
         else
         {
+
 
             Avales[0] = txtNombre.Texts;
             Avales[1] = TextBoxNombreaval1.Texts;
