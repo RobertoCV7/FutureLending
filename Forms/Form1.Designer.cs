@@ -803,7 +803,6 @@ namespace FutureLending.Forms
             TextBoxTelefono.PlaceholderText = "";
             TextBoxTelefono.Texts = "";
             TextBoxTelefono.UnderlinedStyle = true;
-            TextBoxTelefono.KeyPress += TextBoxTelefono_KeyPress;
             // 
             // label74
             // 
@@ -825,7 +824,6 @@ namespace FutureLending.Forms
             TextBoxNumExt.PlaceholderText = "";
             TextBoxNumExt.Texts = "";
             TextBoxNumExt.UnderlinedStyle = true;
-            TextBoxNumExt.KeyPress += TextBoxNumExt_KeyPress;
             // 
             // label75
             // 
@@ -963,7 +961,6 @@ namespace FutureLending.Forms
             TextBoxNombre.PlaceholderText = "";
             TextBoxNombre.Texts = "";
             TextBoxNombre.UnderlinedStyle = true;
-            TextBoxNombre.KeyPress += TextBoxNombre_KeyPress;
             // 
             // label84
             // 
@@ -1139,7 +1136,6 @@ namespace FutureLending.Forms
             txtBoxCredito.PlaceholderText = "";
             txtBoxCredito.Texts = "";
             txtBoxCredito.UnderlinedStyle = true;
-            txtBoxCredito._TextChanged += txtBoxCredito__TextChanged;
             // 
             // lblCredito
             // 
@@ -1225,7 +1221,6 @@ namespace FutureLending.Forms
             pnlClientes.Controls.Add(label1);
             pnlClientes.Controls.Add(cmbPromotor);
             pnlClientes.Name = "pnlClientes";
-            pnlClientes.Paint += pnlClientes_Paint;
             // 
             // rjButton8
             // 
@@ -1656,7 +1651,6 @@ namespace FutureLending.Forms
             PanelEditar3.Controls.Add(LabelNombre3);
             PanelEditar3.Controls.Add(ComboBoxPromotor3);
             PanelEditar3.Name = "PanelEditar3";
-            PanelEditar3.Paint += PanelEditar3_Paint;
             // 
             // rjButton10
             // 
@@ -2308,7 +2302,6 @@ namespace FutureLending.Forms
             gridListas.RowsDefaultCellStyle = dataGridViewCellStyle8;
             gridListas.RowTemplate.Height = 25;
             gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridListas.CellContentClick += gridListas_CellContentClick;
             gridListas.CellFormatting += gridListas_CellFormatting;
             gridListas.Scroll += gridListas_Scroll;
             // 

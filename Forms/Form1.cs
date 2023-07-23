@@ -428,6 +428,7 @@ namespace FutureLending.Forms
             }
             else
             {
+                LabelDineroAire.Text = "";
                 listaEstado = 0;
                 DesactivarBotones();
                 await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso, label57);
@@ -455,6 +456,7 @@ namespace FutureLending.Forms
             }
             else
             {
+                LabelDineroAire.Text = "";
                 listaEstado = 1;
                 DesactivarBotones();
                 await TablaClientes.MostrarLista2(gridListas, cmbCliente, BarradeProgreso, label57);
@@ -468,9 +470,7 @@ namespace FutureLending.Forms
         {
             listaEstado = 2;
             DesactivarBotones();
-
             await TablaClientes.MostrarLista3(gridListas, cmbCliente, BarradeProgreso, label57);
-
             ActivarListas();
             ActivarEditar();
             listaActual = "lista3";
@@ -479,9 +479,7 @@ namespace FutureLending.Forms
         private async void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
             DesactivarBotones();
-
             await TablaClientes.MostrarTodos(gridListas, cmbCliente, BarradeProgreso, label57);
-
             ActivarListas();
         }
 
@@ -1726,22 +1724,6 @@ namespace FutureLending.Forms
                 }
             }
         }
-
-        private void gridListas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtBoxCredito__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlClientes_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCalcular1_Click(object sender, EventArgs e)
         {
             DateTime dateTime = dateFechaInicio.Value;
@@ -1979,12 +1961,6 @@ namespace FutureLending.Forms
             }
 
         }
-
-        private void PanelEditar3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnMover3_Click(object sender, EventArgs e)
         {
             switch (CmbLista2.SelectedIndex)
@@ -2868,22 +2844,6 @@ namespace FutureLending.Forms
                 e.Handled = true;
             }
         }
-
-        private void TextBoxNumExt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void TextBoxTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void TextBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void TextTelefonoLiq_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -2951,8 +2911,6 @@ namespace FutureLending.Forms
         {
             Application.Restart();
         }
-
-
 
         private void dateTimePickerPersonalizado1_ValueChanged(object sender, EventArgs e)
         {
@@ -3124,11 +3082,6 @@ namespace FutureLending.Forms
                     editaravales = false;
                     rjButton13.Enabled = false;
                 }
-
-
-
-
-
             }
             else
             {
