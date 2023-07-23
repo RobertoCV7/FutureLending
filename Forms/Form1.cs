@@ -1537,8 +1537,6 @@ public partial class Form1 : Form
         timer.Start();
 
         // Reiniciar objetos del panel mostrado anteriormente
-
-
         foreach (Control control in Controls)
             if (control is Panel panel)
                 // Verificar si el panel debe mantenerse visible o no
