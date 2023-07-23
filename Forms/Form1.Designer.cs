@@ -32,10 +32,10 @@ namespace FutureLending.Forms
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panelMenu = new Panel();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -345,6 +345,8 @@ namespace FutureLending.Forms
             label116 = new Label();
             ComboBoxPromotorLiq = new ControlesPersonalizados.RJComboBox();
             PnlAvales = new Panel();
+            LabelAvalCliente = new Label();
+            rjButton14 = new RJButton();
             label131 = new Label();
             label128 = new Label();
             BtnGuardarAval = new RJButton();
@@ -2269,41 +2271,41 @@ namespace FutureLending.Forms
             gridListas.BorderStyle = BorderStyle.None;
             gridListas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle1.Font = new Font("Dubai", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            gridListas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle5.Font = new Font("Dubai", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.SelectionBackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            gridListas.DefaultCellStyle = dataGridViewCellStyle6;
             gridListas.EnableHeadersVisualStyles = false;
             gridListas.GridColor = SystemColors.Desktop;
             gridListas.Name = "gridListas";
             gridListas.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            gridListas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle7.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            gridListas.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             gridListas.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new Font("Dubai", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle4.SelectionBackColor = Color.LightSlateGray;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlLightLight;
-            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.Font = new Font("Dubai", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle8.SelectionBackColor = Color.LightSlateGray;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlLightLight;
+            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle8;
             gridListas.RowTemplate.Height = 25;
             gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
             gridListas.CellContentClick += gridListas_CellContentClick;
@@ -2358,7 +2360,6 @@ namespace FutureLending.Forms
             PanelEditar.Controls.Add(label34);
             PanelEditar.Controls.Add(rjComboBox3);
             PanelEditar.Name = "PanelEditar";
-            PanelEditar.Paint += PanelEditar_Paint;
             // 
             // BtnAvalesEditar
             // 
@@ -3855,6 +3856,8 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(PnlAvales, "PnlAvales");
             PnlAvales.BackColor = SystemColors.HighlightText;
+            PnlAvales.Controls.Add(LabelAvalCliente);
+            PnlAvales.Controls.Add(rjButton14);
             PnlAvales.Controls.Add(label131);
             PnlAvales.Controls.Add(label128);
             PnlAvales.Controls.Add(BtnGuardarAval);
@@ -3888,6 +3891,28 @@ namespace FutureLending.Forms
             PnlAvales.Controls.Add(TextBoxCalleaval1);
             PnlAvales.Controls.Add(label120);
             PnlAvales.Name = "PnlAvales";
+            // 
+            // LabelAvalCliente
+            // 
+            resources.ApplyResources(LabelAvalCliente, "LabelAvalCliente");
+            LabelAvalCliente.BackColor = SystemColors.ButtonHighlight;
+            LabelAvalCliente.ForeColor = Color.DarkSlateGray;
+            LabelAvalCliente.Name = "LabelAvalCliente";
+            // 
+            // rjButton14
+            // 
+            resources.ApplyResources(rjButton14, "rjButton14");
+            rjButton14.BackColor = Color.IndianRed;
+            rjButton14.BackgroundColor = Color.IndianRed;
+            rjButton14.BorderColor = Color.PaleVioletRed;
+            rjButton14.BorderRadius = 20;
+            rjButton14.BorderSize = 0;
+            rjButton14.FlatAppearance.BorderSize = 0;
+            rjButton14.ForeColor = Color.White;
+            rjButton14.Name = "rjButton14";
+            rjButton14.TextColor = Color.White;
+            rjButton14.UseVisualStyleBackColor = false;
+            rjButton14.Click += rjButton14_Click;
             // 
             // label131
             // 
@@ -4226,15 +4251,15 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
-            Controls.Add(PanelEditar);
             Controls.Add(PnlAvales);
+            Controls.Add(PanelEditar3);
+            Controls.Add(PanelEditarLiquidados);
+            Controls.Add(PanelEditar);
             Controls.Add(PnlEditar2);
             Controls.Add(pnlRegPago);
             Controls.Add(PanelEditar2_2);
-            Controls.Add(PanelEditarLiquidados);
             Controls.Add(pnlClientes);
             Controls.Add(pnlListas);
-            Controls.Add(PanelEditar3);
             Controls.Add(panel2);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
@@ -4638,5 +4663,7 @@ namespace FutureLending.Forms
         private RJButton rjButton9;
         private RJButton rjButton10;
         private RJButton rjButton13;
+        private Label LabelAvalCliente;
+        private RJButton rjButton14;
     }
 }

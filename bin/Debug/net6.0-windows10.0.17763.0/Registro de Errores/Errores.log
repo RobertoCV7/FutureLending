@@ -1,13 +1,4 @@
-[18/07/2023 07:15:39 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): Column 'Nombre_Completo' cannot be null
-   at MySql.Data.MySqlClient.MySqlStream.ReadPacketAsync(Boolean execAsync)
-   at MySql.Data.MySqlClient.NativeDriver.GetResultAsync(Int32 affectedRow, Int64 insertedId, Boolean execAsync)
-   at MySql.Data.MySqlClient.Driver.GetResultAsync(Int32 statementId, Int32 affectedRows, Int64 insertedId, Boolean execAsync)
-   at MySql.Data.MySqlClient.Driver.NextResultAsync(Int32 statementId, Boolean force, Boolean execAsync)
-   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlDataReader.NextResultAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
-   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
-   at FutureLending.Funciones.cs.Lectura_Base_Datos.CrearAvales(String[] datos) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 815
+[20/07/2023 10:55:25 p. m.] Error: System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.ObtenerAvales(String Nombre_Completo) in E:\Escritorio\Esc\Future\Funciones.cs\Lectura_Base_Datos.cs:line 847
