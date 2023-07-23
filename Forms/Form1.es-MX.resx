@@ -23775,8 +23775,47 @@
   <data name="PanelEditarLiquidados.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
   </data>
+  <data name="rjButton16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="rjButton16.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rjButton16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 36pt, style=Bold</value>
+  </data>
+  <data name="rjButton16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rjButton16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 97</value>
+  </data>
+  <data name="rjButton16.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="LabelAvalCliente.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="LabelAvalCliente.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelAvalCliente.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 36pt, style=Bold</value>
+  </data>
+  <data name="LabelAvalCliente.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelAvalCliente.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 0</value>
+  </data>
+  <data name="LabelAvalCliente.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 59</value>
+  </data>
+  <data name="LabelAvalCliente.Text" xml:space="preserve">
+    <value>....</value>
+  </data>
   <data name="rjButton9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Left, Right</value>
   </data>
   <data name="rjButton9.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -23788,7 +23827,7 @@
     <value>571, 348</value>
   </data>
   <data name="rjButton9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 77</value>
+    <value>211, 97</value>
   </data>
   <data name="rjButton9.Text" xml:space="preserve">
     <value>Guardar</value>
@@ -23895,23 +23934,23 @@
   <data name="label128.Text" xml:space="preserve">
     <value>Aval 1:</value>
   </data>
-  <data name="label127.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="label127.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label127.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Corbel, 48pt, style=Bold</value>
+    <value>Corbel, 36pt, style=Bold</value>
   </data>
   <data name="label127.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label127.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 0</value>
+  </data>
   <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 78</value>
+    <value>186, 59</value>
   </data>
   <data name="label127.Text" xml:space="preserve">
-    <value>Avales</value>
+    <value>Cliente:</value>
   </data>
   <data name="TextBoxCorreoaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>

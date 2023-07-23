@@ -348,6 +348,8 @@ namespace FutureLending.Forms
             label116 = new Label();
             ComboBoxPromotorLiq = new RjComboBox();
             PnlAvales = new Panel();
+            rjButton16 = new RjButton();
+            LabelAvalCliente = new Label();
             rjButton9 = new RjButton();
             TextBoxNombreaval2 = new TextBoxPersonalizado();
             label131 = new Label();
@@ -3841,6 +3843,8 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(PnlAvales, "PnlAvales");
             PnlAvales.BackColor = SystemColors.HighlightText;
+            PnlAvales.Controls.Add(rjButton16);
+            PnlAvales.Controls.Add(LabelAvalCliente);
             PnlAvales.Controls.Add(rjButton9);
             PnlAvales.Controls.Add(TextBoxNombreaval2);
             PnlAvales.Controls.Add(label131);
@@ -3874,6 +3878,27 @@ namespace FutureLending.Forms
             PnlAvales.Controls.Add(TextBoxCalleaval1);
             PnlAvales.Controls.Add(label120);
             PnlAvales.Name = "PnlAvales";
+            // 
+            // rjButton16
+            // 
+            resources.ApplyResources(rjButton16, "rjButton16");
+            rjButton16.BackColor = Color.IndianRed;
+            rjButton16.BackgroundColor = Color.IndianRed;
+            rjButton16.BorderColor = Color.PaleVioletRed;
+            rjButton16.BorderRadius = 20;
+            rjButton16.BorderSize = 0;
+            rjButton16.FlatAppearance.BorderSize = 0;
+            rjButton16.ForeColor = Color.White;
+            rjButton16.Name = "rjButton16";
+            rjButton16.TextColor = Color.White;
+            rjButton16.UseVisualStyleBackColor = false;
+            rjButton16.Click += rjButton16_Click;
+            // 
+            // LabelAvalCliente
+            // 
+            resources.ApplyResources(LabelAvalCliente, "LabelAvalCliente");
+            LabelAvalCliente.ForeColor = Color.DarkSlateGray;
+            LabelAvalCliente.Name = "LabelAvalCliente";
             // 
             // rjButton9
             // 
@@ -4211,10 +4236,10 @@ namespace FutureLending.Forms
             Controls.Add(PanelBien);
             Controls.Add(PnlAvales);
             Controls.Add(PnlEditar2);
-            Controls.Add(pnlListas);
-            Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar);
+            Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar3);
+            Controls.Add(pnlListas);
             Controls.Add(pnlClientes);
             Controls.Add(panel2);
             Controls.Add(PanelEditar2_2);
@@ -4620,5 +4645,7 @@ namespace FutureLending.Forms
         private RjButton rjButton13;
         private RjButton rjButton14;
         private RjButton rjButton15;
+        private Label LabelAvalCliente;
+        private RjButton rjButton16;
     }
 }

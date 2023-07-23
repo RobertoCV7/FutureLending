@@ -42,6 +42,7 @@ public partial class Form1 : Form
 
     private void Form1_Load(object sender, EventArgs e)
     {
+        CargaMasiva();
         CollapseMenu();
         dateTimePickerPersonalizado2.Enabled = false;
         rjButton6.Enabled = false;
@@ -63,6 +64,23 @@ public partial class Form1 : Form
         MaximizedBounds = Screen.FromHandle(Handle).WorkingArea;
         dateTimePickerPersonalizado2.Enabled = false;
     }
+
+
+    void CargaMasiva()
+    {
+        if (cambioEnPromotores)
+        {
+            CargarPromotoresEnComboBox(cmbPromotor, false);
+            CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
+            CargarPromotoresEnComboBox(rjComboBox3, false);
+            CargarPromotoresEnComboBox(rjComboBox8, false);
+            CargarPromotoresEnComboBox(ComboBoxPromotor3, false);
+            CargarPromotoresEnComboBox(ComboBoxPromotorLiq, false);
+            CargarPromotoresEnComboBox(rjComboBox4, false);
+            cambioEnPromotores = false;
+        }
+    }
+
 
     private void RjComboBox9_OnSelectedIndexChanged(object sender, EventArgs e)
     {
@@ -370,7 +388,8 @@ public partial class Form1 : Form
                 if (e2.EditarAval(TextBoxNombre3.Texts, NuevosAvales))
                 {
                     EsconderPaneles(pnlListas);
-                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    btnLista3.PerformClick(); //Reactualizo los datos de la lista 2
+                    rjButton14.Enabled = true;
                 }
                 else
                 {
@@ -391,7 +410,8 @@ public partial class Form1 : Form
                 if (creado)
                 {
                     EsconderPaneles(pnlListas);
-                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    btnLista3.PerformClick(); //Reactualizo los datos de la lista 2
+                    rjButton14.Enabled = true;
                 }
                 else
                 {
@@ -576,6 +596,7 @@ public partial class Form1 : Form
             {
                 EsconderPaneles(pnlListas);
                 btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                rjButton13.Enabled = true;
             }
             else
             {
@@ -613,6 +634,7 @@ public partial class Form1 : Form
                     {
                         EsconderPaneles(pnlListas);
                         btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                        rjButton13.Enabled = true;
                     }
                     else
                     {
@@ -771,7 +793,8 @@ public partial class Form1 : Form
                 if (e21.EditarAval(TextBoxNombre.Texts, NuevosAvales))
                 {
                     EsconderPaneles(pnlListas);
-                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    btnLiquidados.PerformClick(); //Reactualizo los datos de la lista 2
+                    rjButton15.Enabled = true;
                 }
                 else
                 {
@@ -791,7 +814,8 @@ public partial class Form1 : Form
                 if (creado)
                 {
                     EsconderPaneles(pnlListas);
-                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    btnLiquidados.PerformClick(); //Reactualizo los datos de la lista 2
+                    rjButton15.Enabled = true;
                 }
                 else
                 {
@@ -1030,7 +1054,8 @@ public partial class Form1 : Form
                 if (e2.EditarAval(textBoxPersonalizado10.Texts, NuevosAvales))
                 {
                     EsconderPaneles(pnlListas);
-                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    btnLista1.PerformClick(); //Reactualizo los datos de la lista 2
+                    rjButton10.Enabled = true;
                 }
                 else
                 {
@@ -1050,7 +1075,8 @@ public partial class Form1 : Form
                 if (creado)
                 {
                     EsconderPaneles(pnlListas);
-                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                    btnLista1.PerformClick(); //Reactualizo los datos de la lista 2
+                    rjButton10.Enabled = true;
                 }
                 else
                 {
@@ -1273,13 +1299,7 @@ public partial class Form1 : Form
         cancellationTokenSource?.Cancel();
         EsconderPaneles(pnlClientes);
         lblTitle.Text = @"Ingresar Clientes";
-        if (cambioEnPromotores)
-        {
-            CargarPromotoresEnComboBox(cmbPromotor, false);
-            cambioEnPromotores = false;
-        }
 
-        if (panelRg) RecargarDatosPnlRegPagos();
     }
 
     private double credito2;
@@ -1412,17 +1432,11 @@ public partial class Form1 : Form
     public static bool Boton3 { get; private set; }
     public static bool Boton4 { get; private set; }
     private bool revisado;
-    private bool cambioenPromotoresListas = true;
+
 
     private void BtnListas_Click(object sender, EventArgs e)
     {
         cancellationTokenSource?.Cancel();
-        if (cambioenPromotoresListas)
-        {
-            CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
-            cambioenPromotoresListas = false;
-        }
-
         ComboBoxPromotoresListas.SelectedIndex = 0;
         var i = 0;
         var list = Accesos.ObtenerPermisosUsuario(Program.NombreDeUsuario);
@@ -1497,7 +1511,6 @@ public partial class Form1 : Form
 
         lblTitle.Text = @"Listas Completas";
         EsconderPaneles(pnlListas);
-        if (panelRg) RecargarDatosPnlRegPagos();
     }
 
     private void Habilitartodos()
@@ -1534,7 +1547,10 @@ public partial class Form1 : Form
 
         panelsitoPanel.Visible = true;
         panelsitoPanel.BringToFront();
-        if (panelsitoPanel == pnlRegPago) panelRg = true;
+        if(panelsitoPanel == pnlRegPago)
+        {
+            RecargarDatosPnlRegPagos();
+        }
     }
 
     private void RjButton1_Click_1(object sender, EventArgs e)
@@ -1666,8 +1682,6 @@ public partial class Form1 : Form
         LecturasEspecificas especificas = new();
         if (listaEstado == 0) //Si viene de la lista 1
         {
-            //Cargar los promotores en el ComboBox
-            CargarPromotoresEnComboBox(rjComboBox3, false);
             //Muestro el panel de editar
             EsconderPaneles(PanelEditar);
             //Limpio las listas donde es posible  mover al registro
@@ -1704,12 +1718,8 @@ public partial class Form1 : Form
         }
         else if (listaEstado == 1) //Si viene de la lista 2
         {
-            //Cargar los promotores en el ComboBox
-            CargarPromotoresEnComboBox(rjComboBox8, false);
             //Llamo al panel editar de la lista 2
             EsconderPaneles(PnlEditar2);
-            //Lleno el rjcombobox de promotores con la info correspondiente
-            CargarPromotoresEnComboBox(rjComboBox8, false);
             //Limpio las listas donde es posible  mover al registro
             CmbLista2.Items.Clear();
             CmbLista2.Enabled = true;
@@ -1743,12 +1753,8 @@ public partial class Form1 : Form
         }
         else if (listaEstado == 2) //Si viene de la lista 3
         {
-            //Cargar los promotores en el ComboBox
-            CargarPromotoresEnComboBox(ComboBoxPromotor3, false);
             //Traer panel de edicion3
             EsconderPaneles(PanelEditar3);
-            //Llenar el rjcombobox de promotores con la info correspondiente
-            CargarPromotoresEnComboBox(ComboBoxPromotor3, false);
             //Limpio las listas donde es posible  mover al registro
             rjComboBox5.Items.Clear();
             rjComboBox5.Enabled = true;
@@ -1774,8 +1780,7 @@ public partial class Form1 : Form
         }
         else if (listaEstado == 3) //Si viene de liquidados
         {
-            //Cargo lo promotres en el combobox de liquidados
-            CargarPromotoresEnComboBox(ComboBoxPromotorLiq, false);
+     
             //Traigo el panel editar de liquidados
             EsconderPaneles(PanelEditarLiquidados);
             //Nombre del registro
@@ -2003,7 +2008,6 @@ public partial class Form1 : Form
         cancellationTokenSource?.Cancel();
         EsconderPaneles(pnlRegPago);
         lblTitle.Text = @"Registrar pago";
-
         // Iniciar el hilo de fondo
         BackgroundWorker worker = new();
         worker.DoWork += Worker_DoWork;
@@ -2191,8 +2195,6 @@ public partial class Form1 : Form
     private void IconButton1_Click(object sender, EventArgs e)
     {
         Boton_Permisos.Enabled = false;
-        CargarPromotoresEnComboBox(rjComboBox4, false);
-
         lblTitle.Text = @"Configuracion";
         EsconderPaneles(panel2);
         _ = new Accesos();
@@ -2209,7 +2211,7 @@ public partial class Form1 : Form
 
         comboBox1.Items.Clear();
         comboBox1.Items.AddRange(usuarios);
-        if (panelRg) RecargarDatosPnlRegPagos();
+       
     }
 
     private bool changingCheckedState;
@@ -2539,9 +2541,9 @@ public partial class Form1 : Form
             EditarPromotor(rjComboBox4.SelectedItem.ToString(), textBox4.Text);
             textBox4.Text = "";
             cambioEnPromotores = true;
-            cambioenPromotoresListas = true;
             rjComboBox4.SelectedIndex = -1;
-            CargarPromotoresEnComboBox(rjComboBox4, false);
+            CargaMasiva();
+           
         }
     }
 
@@ -2553,10 +2555,9 @@ public partial class Form1 : Form
         {
             EliminarPromotor(rjComboBox4.SelectedItem.ToString());
             rjComboBox4.SelectedIndex = -1;
-            cambioenPromotoresListas = true;
             cambioEnPromotores = true;
             textBox4.Text = "";
-            CargarPromotoresEnComboBox(rjComboBox4, false);
+            CargaMasiva();
         }
     }
 
@@ -2574,8 +2575,7 @@ public partial class Form1 : Form
             AgregarPromotor(textBox5.Text);
             textBox5.Text = "";
             cambioEnPromotores = true;
-            cambioenPromotoresListas = true;
-            CargarPromotoresEnComboBox(rjComboBox4, false);
+            CargaMasiva();
         }
     }
 
@@ -2823,24 +2823,28 @@ public partial class Form1 : Form
                 PanelEditar.BringToFront();
                 PanelEditar.Visible = true;
                 editaravales = false;
+                rjButton10.Enabled = false;
             }
             else if (listaEstado == 1)
             {
                 PnlEditar2.BringToFront();
                 PnlEditar2.Visible = true;
                 editaravales = false;
+                rjButton13.Enabled = false;
             }
             else if (listaEstado == 2)
             {
                 PanelEditar3.BringToFront();
                 PanelEditar3.Visible = true;
                 editaravales = false;
+                rjButton14.Enabled = false;
             }
             else
             {
                 PanelEditarLiquidados.BringToFront();
                 PanelEditarLiquidados.Visible = true;
                 editaravales = false;
+                rjButton15.Enabled = false;
             }
 
         }
@@ -2888,8 +2892,28 @@ public partial class Form1 : Form
         //Primero leemos los datos del aval
         LecturaBaseDatos er = new();
         string[] datos = er.ObtenerAvales(cmbCliente.Texts);
-        if (datos != null && datos.Length >= 14)
+        LabelAvalCliente.Text = cmbCliente.Texts;
+        if (datos == null || datos.Length < 14)
         {
+            // Si datos es nulo o no tiene al menos 14 elementos, llenar campos con cadenas vacías
+            TextBoxNombreaval1.Texts = "";
+            TextBoxCalleaval1.Texts = "";
+            TextBoxColoniaaval1.Texts = "";
+            TextBoxNumIntaval1.Texts = "";
+            TextBoxNumExtaval1.Texts = "";
+            TextBoxTelefonoaval1.Texts = "";
+            TextBoxCorreoaval1.Texts = "";
+            TextBoxNombreaval2.Texts = "";
+            TextBoxCalleaval2.Texts = "";
+            TextBoxColoniaaval2.Texts = "";
+            TextBoxNumIntaval2.Texts = "";
+            TextBoxNumExtaval2.Texts = "";
+            TextBoxTelefonoaval2.Texts = "";
+            TextBoxCorreoaval2.Texts = "";
+        }
+        else
+        {
+            // Si datos no es nulo y tiene al menos 14 elementos, llenar campos con valores de datos
             TextBoxNombreaval1.Texts = datos[0] ?? "";
             TextBoxCalleaval1.Texts = datos[1] ?? "";
             TextBoxColoniaaval1.Texts = datos[2] ?? "";
@@ -2926,5 +2950,23 @@ public partial class Form1 : Form
     {
         editaravales = true;
         rjButton10_Click(null, null);
+    }
+
+    private void rjButton16_Click(object sender, EventArgs e)
+    {
+        TextBoxNombreaval1.Texts = "";
+        TextBoxCalleaval1.Texts = "";
+        TextBoxColoniaaval1.Texts = "";
+        TextBoxNumIntaval1.Texts = "";
+        TextBoxNumExtaval1.Texts = "";
+        TextBoxTelefonoaval1.Texts = "";
+        TextBoxCorreoaval1.Texts = "";
+        TextBoxNombreaval2.Texts = "";
+        TextBoxCalleaval2.Texts = "";
+        TextBoxColoniaaval2.Texts = "";
+        TextBoxNumIntaval2.Texts = "";
+        TextBoxNumExtaval2.Texts = "";
+        TextBoxTelefonoaval2.Texts = "";
+        TextBoxCorreoaval2.Texts = "";
     }
 }
