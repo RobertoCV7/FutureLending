@@ -180,8 +180,10 @@ internal class TablaClientes
     }
 
     //Añade los datos a la tabla y ComboBox
+
     static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, ControlesPersonalizados.RjComboBox cmbCliente, bool todos, ProgressBar bar, Label lab)
     {
+       
         if (datosList.Count == 0)
         {
             bar.Visible = false;

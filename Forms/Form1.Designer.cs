@@ -1293,7 +1293,7 @@ namespace FutureLending.Forms
             cmbInteres.ForeColor = Color.Black;
             cmbInteres.IconColor = Color.DarkSlateGray;
             cmbInteres.Items.AddRange(new object[] { resources.GetString("cmbInteres.Items"), resources.GetString("cmbInteres.Items1"), resources.GetString("cmbInteres.Items2") });
-            cmbInteres.ListBackColor = SystemColors.Info;
+            cmbInteres.ListBackColor = SystemColors.ButtonHighlight;
             cmbInteres.ListTextColor = Color.DimGray;
             cmbInteres.Name = "cmbInteres";
             cmbInteres.Tag = "Seleccione un interés";
@@ -1600,7 +1600,7 @@ namespace FutureLending.Forms
             cmbPromotor.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPromotor.ForeColor = Color.Black;
             cmbPromotor.IconColor = Color.DarkSlateGray;
-            cmbPromotor.ListBackColor = SystemColors.HighlightText;
+            cmbPromotor.ListBackColor = SystemColors.ButtonHighlight;
             cmbPromotor.ListTextColor = Color.DimGray;
             cmbPromotor.Name = "cmbPromotor";
             cmbPromotor.Tag = "Seleccione al promotor";
@@ -2255,8 +2255,7 @@ namespace FutureLending.Forms
             gridListas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             gridListas.BackgroundColor = SystemColors.InactiveCaption;
             gridListas.BorderStyle = BorderStyle.None;
-            gridListas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.DarkSlateGray;
             dataGridViewCellStyle1.Font = new Font("Dubai", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
@@ -2277,6 +2276,7 @@ namespace FutureLending.Forms
             gridListas.GridColor = Color.Black;
             gridListas.Name = "gridListas";
             gridListas.ReadOnly = true;
+            gridListas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle3.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -2289,11 +2289,11 @@ namespace FutureLending.Forms
             dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
             dataGridViewCellStyle4.Font = new Font("Dubai", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle4.SelectionBackColor = Color.LightSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkOliveGreen;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlLightLight;
             gridListas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             gridListas.RowTemplate.Height = 25;
-            gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            gridListas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridListas.CellFormatting += gridListas_CellFormatting;
             gridListas.Scroll += gridListas_Scroll;
             // 
@@ -4232,13 +4232,13 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(pnlListas);
+            Controls.Add(pnlClientes);
             Controls.Add(PnlAvales);
             Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar);
             Controls.Add(PanelEditarLiquidados);
             Controls.Add(PanelEditar3);
-            Controls.Add(pnlListas);
-            Controls.Add(pnlClientes);
             Controls.Add(panel2);
             Controls.Add(PanelEditar2_2);
             Controls.Add(pnlRegPago);

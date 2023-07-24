@@ -271,30 +271,29 @@ public partial class Form1 : Form
         LecturaBaseDatos obj = new();
         ar = LecturaBaseDatos.VerificarUsuarioEnListas(txtNombre.Texts);
         string lista = obj.VerificarLiquidados(txtNombre.Texts);
-        if (ar != 0 || lista != null)
+        if (ar != 0)
         {
 
             if (ar == 2)
             {
                 list = "Lista 2";
             }
-            else if (ar == 3)
+            else
             {
                 list = "Lista 3";
             }
-            else if (ar == 0)
-            {
-                list = "Liquidados";
-            }
-            if (lista != null)
-            {
-                Existencia.ListaLiq = lista;
-                Existencia.Nombre = txtNombre.Texts;
-                Existencia.Lista = list;
-            }
-            Existencia ex = new();
+
             Existencia.Nombre = txtNombre.Texts;
             Existencia.Lista = list;
+            Existencia ex = new();
+            ex.ShowDialog();
+        }
+        if (lista != null)
+        {
+            Existencia.ListaLiq = lista;
+            Existencia.Nombre = txtNombre.Texts;
+            Existencia.Lista = "Liquidados";
+            Existencia ex = new();
             ex.ShowDialog();
         }
         if (Guar)
@@ -1530,7 +1529,7 @@ public partial class Form1 : Form
 
         panelsitoPanel.Visible = true;
         panelsitoPanel.BringToFront();
-        if(panelsitoPanel == pnlRegPago)
+        if (panelsitoPanel == pnlRegPago)
         {
             RecargarDatosPnlRegPagos();
         }
@@ -1551,7 +1550,7 @@ public partial class Form1 : Form
     private async void BtnLista1_Click(object sender, EventArgs e)
     {
         if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
-        { 
+        {
             DineroAire = 0;
             listaEstado = 0;
             DesactivarBotones();
@@ -1569,7 +1568,9 @@ public partial class Form1 : Form
             labelDineroAire.Text = "";
             listaEstado = 0;
             DesactivarBotones();
+
             await TablaClientes.MostrarLista1(gridListas, cmbCliente, BarradeProgreso, label57);
+
             ActivarListas();
             ActivarEditar();
             listaActual = "lista1";
@@ -1586,7 +1587,7 @@ public partial class Form1 : Form
             LecturaBaseDatos ar = new();
             var datos = ar.LectLista2Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
             await TablaClientes.MostrarLista2Prom(gridListas, cmbCliente, BarradeProgreso, label57, datos);
-            labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem + @" tiene $" + DineroAire.ToString("N2") +  @" en Pagos pendientes";
+            labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem + @" tiene $" + DineroAire.ToString("N2") + @" en Pagos pendientes";
             btnLista1.Enabled = true;
             btnLista2.Enabled = true;
             ActivarEditar();
@@ -1755,7 +1756,7 @@ public partial class Form1 : Form
         }
         else if (listaEstado == 3) //Si viene de liquidados
         {
-     
+
             //Traigo el panel editar de liquidados
             EsconderPaneles(PanelEditarLiquidados);
             //Nombre del registro
@@ -2186,7 +2187,7 @@ public partial class Form1 : Form
 
         comboBox1.Items.Clear();
         comboBox1.Items.AddRange(usuarios);
-       
+
     }
 
     private bool changingCheckedState;
@@ -2518,7 +2519,7 @@ public partial class Form1 : Form
             cambioEnPromotores = true;
             rjComboBox4.SelectedIndex = -1;
             CargaMasiva();
-           
+
         }
     }
 
@@ -2703,6 +2704,7 @@ public partial class Form1 : Form
     {
         // Obtener el índice de la fila actual
         int rowIndex = e.RowIndex;
+        int columnIndex = e.ColumnIndex;
 
         // Alternar colores para las filas
         Color evenRowColor = ColorTranslator.FromHtml("#778899");
@@ -2720,6 +2722,8 @@ public partial class Form1 : Form
             gridListas.Rows[rowIndex].DefaultCellStyle.BackColor = oddRowColor;
         }
     }
+
+
 
     private void gridListas_Scroll(object sender, ScrollEventArgs e)
     {
@@ -2944,4 +2948,6 @@ public partial class Form1 : Form
         TextBoxTelefonoaval2.Texts = "";
         TextBoxCorreoaval2.Texts = "";
     }
+
+
 }
