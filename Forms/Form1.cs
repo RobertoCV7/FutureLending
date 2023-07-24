@@ -1769,39 +1769,42 @@ namespace FutureLending.Forms
         }
 
         public static bool Guar = true;
+        public static string Liq = null;
+        public static string Nom;
+        public static string Lis;
         private void btnGuardar1_Click(object sender, EventArgs e)
         {
+
             string list = "";
             int ar = 0;
             Lectura_Base_Datos obj = new();
             ar = Lectura_Base_Datos.VerificarUsuarioEnListas(txtNombre.Texts);
             string lista = obj.VerificarLiquidados(txtNombre.Texts);
-            if (ar != 0 || lista != null)
+            if (ar != 0)
             {
 
                 if (ar == 2)
                 {
                     list = "Lista 2";
                 }
-                else if (ar == 3)
+                else
                 {
                     list = "Lista 3";
                 }
-                else if (ar == 0)
-                {
-                    list = "Liquidados";
-                }
-                if (lista != null)
-                {
-                    Existencia.ListaLiq = lista;
-                    Existencia.Nombre = txtNombre.Texts;
-                    Existencia.Lista = list;
-                }
+                Nom = txtNombre.Texts;
+                Lis = list;
                 Existencia ex = new();
-                Existencia.Nombre = txtNombre.Texts;
-                Existencia.Lista = list;
                 ex.ShowDialog();
             }
+            if (lista != null)
+            {
+                Liq = lista;
+                Nom = txtNombre.Texts;
+                Lis = "Liquidados";
+                Existencia ex = new();
+                ex.ShowDialog();
+            }
+
             if (Guar)
             {
                 string interes = cmbInteres.Texts;

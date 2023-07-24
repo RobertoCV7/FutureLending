@@ -2263,8 +2263,7 @@ namespace FutureLending.Forms
             gridListas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             gridListas.BackgroundColor = SystemColors.InactiveCaption;
             gridListas.BorderStyle = BorderStyle.None;
-            gridListas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.DarkSlateGray;
             dataGridViewCellStyle1.Font = new Font("Dubai", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
@@ -2297,11 +2296,11 @@ namespace FutureLending.Forms
             dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
             dataGridViewCellStyle4.Font = new Font("Dubai", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle4.SelectionBackColor = Color.LightSlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkOliveGreen;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlLightLight;
             gridListas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             gridListas.RowTemplate.Height = 25;
-            gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            gridListas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridListas.CellFormatting += gridListas_CellFormatting;
             gridListas.Scroll += gridListas_Scroll;
             // 
