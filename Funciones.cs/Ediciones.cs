@@ -207,6 +207,7 @@ namespace FutureLending.Funciones.cs
         }
         #endregion
 
+        #region Editar Avales
         public bool EditarAval(string Nombre_Completo, string[] nuevosDatos)
         {
             Lectura_Base_Datos or = new Lectura_Base_Datos();
@@ -254,5 +255,6 @@ namespace FutureLending.Funciones.cs
                 }
             }
         }
+        #endregion
     }
 }

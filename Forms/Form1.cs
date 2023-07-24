@@ -130,13 +130,13 @@ namespace FutureLending.Forms
         #region Botones centrales del menu
 
         #region Ingresar Clientes
-       
+
         private void BtnIngresarClientes_Click(object sender, EventArgs e)
         {
             cancellationTokenSource?.Cancel();
             Guardar = false;
             EsconderPaneles(pnlClientes);
-            lblTitle.Text = @"Ingresar Clientes";    
+            lblTitle.Text = @"Ingresar Clientes";
         }
         Double credito2;
         private void SoloNumerosDecimal(object sender, KeyPressEventArgs e)
@@ -359,7 +359,7 @@ namespace FutureLending.Forms
 
             lblTitle.Text = @"Listas Completas";
             EsconderPaneles(pnlListas);
-         
+
         }
         void Habilitartodos()
         {
@@ -2519,7 +2519,7 @@ namespace FutureLending.Forms
                         infoMov[9] = Informacion[12]; //Telefono
                         infoMov[10] = Informacion[13]; //Correo
                         infoMov[11] = pedirDatos.rjComboBox2.SelectedItem.ToString(); //Su forma de pago Liquidacion o Intencion
-                        #region Calculos del Excel
+                        #region Calculos Automaticos para el cambio
                         if (pedirDatos.rjComboBox2.SelectedItem.ToString() == "Liquidacion")
                         {
 
@@ -2534,10 +2534,9 @@ namespace FutureLending.Forms
                         {
                             //Se toma encuenta 10% del Pagare y se le suma a su monto restante
                             int pag = int.Parse(infoMov[4]);
-                            double quita = (pag * .90);
-                            infoMov[12] = quita.ToString(CultureInfo.InvariantCulture);//Monto de Intencion es el 10% del pagare
+                            infoMov[12] = (pag * .10).ToString(CultureInfo.InvariantCulture);//Monto de Intencion
                             infoMov[13] = "0";//Monto de Quita es 0 por ser de convenio
-                            infoMov[42] = quita.ToString(CultureInfo.InvariantCulture);//Monto de Extencion - Al pagare se le resta el pago de intencion
+                            infoMov[42] = (pag * .90).ToString(CultureInfo.InvariantCulture);//Monto de Extencion - Al pagare se le resta el pago de intencion
                         }
                         //Lleno la parte de fechas con guiones
                         for (int i = 14; i <= 41; i++)
