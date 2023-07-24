@@ -65,7 +65,7 @@ public partial class Form1 : Form
         dateTimePickerPersonalizado2.Enabled = false;
     }
 
-
+    //Con esta funcion cargo todos los promotores solo cuando se inicia el programa o se edita/elimina/agrega algun promotor
     void CargaMasiva()
     {
         if (cambioEnPromotores)
@@ -160,8 +160,6 @@ public partial class Form1 : Form
         admin2.ShowDialog();
         if (admin)
         {
-
-
             _ = new Accesos();
             var user = textBox1.Text;
             var password = TextboxContr.Text;
@@ -184,7 +182,6 @@ public partial class Form1 : Form
                     AvisoVacio.Text = @"El usuario ya existe. No se pudo agregar";
                 }
             }
-
             _ = new Accesos();
             var usuarios = Accesos.CargarUsuarios().ToArray();
             comboBox1.Items.Clear();
@@ -461,11 +458,6 @@ public partial class Form1 : Form
             MessageB("Movimiento a Liquidados cancelado", "Mensaje", 1);
         }
     }
-
-    private void PanelEditar3_Paint(object sender, PaintEventArgs e)
-    {
-    }
-
     private void btnMover3_Click(object sender, EventArgs e)
     {
         switch (CmbLista2.SelectedIndex)
@@ -829,10 +821,6 @@ public partial class Form1 : Form
         }
     }
 
-    private void PanelEditar_Paint(object sender, PaintEventArgs e)
-    {
-    }
-
     private void BtnMover_Click_1(object sender, EventArgs e)
     {
         var infoMov4 = new string[12];
@@ -877,12 +865,9 @@ public partial class Form1 : Form
                     {
                         //Se toma encuenta 10% del Pagare y se le suma a su monto restante
                         var pag = int.Parse(infoMov[4]);
-                        var quita = pag * .90;
-                        infoMov[12] =
-                            quita.ToString(CultureInfo.InvariantCulture); //Monto de Intencion es el 10% del pagare
+                        infoMov[12] = (pag * .10).ToString(CultureInfo.InvariantCulture);//Monto de Intencion es el 10% del pagare
                         infoMov[13] = "0"; //Monto de Quita es 0 por ser de convenio
-                        infoMov[42] =
-                            quita.ToString(CultureInfo
+                        infoMov[42] = (pag * .90).ToString(CultureInfo
                                 .InvariantCulture); //Monto de Extencion - Al pagare se le resta el pago de intencion
                     }
 
@@ -1566,16 +1551,14 @@ public partial class Form1 : Form
     private async void BtnLista1_Click(object sender, EventArgs e)
     {
         if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
-        {
-            labelDineroAire.Text = "";
+        { 
             DineroAire = 0;
             listaEstado = 0;
             DesactivarBotones();
             LecturaBaseDatos ar = new();
             var datos = ar.LectLista1Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
             await TablaClientes.MostrarLista1Prom(gridListas, cmbCliente, BarradeProgreso, label57, datos);
-            labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem + @" tiene $" + DineroAire.ToString("N2") +
-                                   @" en Pagos pendientes";
+            labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem + @" tiene $" + DineroAire.ToString("N2") + @" en Pagos pendientes";
             btnLista1.Enabled = true;
             btnLista2.Enabled = true;
             ActivarEditar();
@@ -1597,15 +1580,13 @@ public partial class Form1 : Form
     {
         if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
         {
-            labelDineroAire.Text = "";
             DineroAire = 0;
             listaEstado = 1;
             DesactivarBotones();
             LecturaBaseDatos ar = new();
             var datos = ar.LectLista2Prom(ComboBoxPromotoresListas.SelectedItem.ToString());
             await TablaClientes.MostrarLista2Prom(gridListas, cmbCliente, BarradeProgreso, label57, datos);
-            labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem + @" tiene $" + DineroAire.ToString("N2") +
-                                   @" en Pagos pendientes";
+            labelDineroAire.Text = ComboBoxPromotoresListas.SelectedItem + @" tiene $" + DineroAire.ToString("N2") +  @" en Pagos pendientes";
             btnLista1.Enabled = true;
             btnLista2.Enabled = true;
             ActivarEditar();
@@ -1627,9 +1608,7 @@ public partial class Form1 : Form
     {
         listaEstado = 2;
         DesactivarBotones();
-
         await TablaClientes.MostrarLista3(gridListas, cmbCliente, BarradeProgreso, label57);
-
         ActivarListas();
         ActivarEditar();
         listaActual = "lista3";
@@ -1638,9 +1617,7 @@ public partial class Form1 : Form
     private async void BtnMostrarTodos_Click(object sender, EventArgs e)
     {
         DesactivarBotones();
-
         await TablaClientes.MostrarTodos(gridListas, cmbCliente, BarradeProgreso, label57);
-
         ActivarListas();
     }
 

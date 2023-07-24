@@ -1643,7 +1643,6 @@ namespace FutureLending.Forms
             PanelEditar3.Controls.Add(LabelNombre3);
             PanelEditar3.Controls.Add(ComboBoxPromotor3);
             PanelEditar3.Name = "PanelEditar3";
-            PanelEditar3.Paint += PanelEditar3_Paint;
             // 
             // rjButton14
             // 
@@ -2346,7 +2345,6 @@ namespace FutureLending.Forms
             PanelEditar.Controls.Add(label34);
             PanelEditar.Controls.Add(rjComboBox3);
             PanelEditar.Name = "PanelEditar";
-            PanelEditar.Paint += PanelEditar_Paint;
             // 
             // rjButton10
             // 
