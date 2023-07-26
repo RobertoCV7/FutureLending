@@ -53,7 +53,7 @@
 
             // Añade los strings de cada fecha y pago a la lista
             List<string> nombresColumnas = new(nombresString);
-            for (int i = 1; i <= 14; i++)
+            for (int i = 1; i <= 15; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
             }
@@ -82,7 +82,9 @@
                                 "CALLE", "COLONIA", "NÚM. INT.", "NÚM. EXT.", "TELÉFONO", "CORREO",
                                 "TIPO DE PAGO", "LIQUIDACION/CONVENIO","QUITA"};
             List<string> nombresColumnas2 = new(nombresString2);
-            for (int i = 1; i <= 14; i++)
+            Ediciones ed = new();
+            int max = ed.ObtenerNumeroUltimaColumna("lista2");
+            for (int i = 1; i <= max; i++)
             {
                 nombresColumnas2.Add("FECHA " + i);
                 nombresColumnas2.Add("PAGO " + i);
@@ -99,6 +101,7 @@
             gridListas.ColumnCount = nombresColumnas2.Count;
             AñadirEncabezado(nombresColumnas2, gridListas);
 
+     
             // Agrega los datos al DataGridView en un hilo separado
             await AñadirDatos(datosList, gridListas, cmbCliente, false, bar, lab);
         }
@@ -215,100 +218,108 @@
         //Añade los datos a la tabla y ComboBox
         static async Task AñadirDatos(List<string[]> datosList, DataGridView gridListas, ControlesPersonalizados.RJComboBox cmbCliente, bool todos, ProgressBar bar, Label lab)
         {
-            if (datosList.Count == 0)
+            try
             {
-                bar.Visible = false;
-                return;
-            }
-
-            bar.Maximum = 100;
-            bar.Minimum = 0;
-
-            double porcentajePaso = 100.0 / datosList.Count;
-            bool mostrarBarraProgreso = datosList.Count > 100;
-            bool mostrarTextoCargando = mostrarBarraProgreso;
-
-            if (!mostrarBarraProgreso)
-            {
-                bar.Visible = false;
-            }
-            else
-            {
-                bar.Visible = true;
-                lab.Visible = true;
-            }
-
-            await Task.Run(() =>
-            {
-                int i = 0;
-
-                foreach (object[] row in datosList)
+                if (datosList.Count == 0)
                 {
-                    gridListas.Invoke(() =>
+                    bar.Visible = false;
+                    return;
+                }
+
+                bar.Maximum = 100;
+                bar.Minimum = 0;
+
+                double porcentajePaso = 100.0 / datosList.Count;
+                bool mostrarBarraProgreso = datosList.Count > 100;
+                bool mostrarTextoCargando = mostrarBarraProgreso;
+
+                if (!mostrarBarraProgreso)
+                {
+                    bar.Visible = false;
+                }
+                else
+                {
+                    bar.Visible = true;
+                    lab.Visible = true;
+                }
+
+                await Task.Run(() =>
+                {
+                    int i = 0;
+
+                    foreach (object[] row in datosList)
                     {
-                        DataGridViewRow newRow = new DataGridViewRow();
-
-                        for (int j = 0; j < row.Length; j++)
+                        gridListas.Invoke(() =>
                         {
-                            DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-                            cell.Value = row[j]?.ToString();
+                            DataGridViewRow newRow = new DataGridViewRow();
 
-                            if (row[j] != null && row[j].ToString().Contains("-"))
+                            for (int j = 0; j < row.Length; j++)
                             {
-                                if(j > 15)
+                                DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
+                                cell.Value = row[j]?.ToString();
+                              
+                                if (row[j] != null && row[j].ToString().Contains("-"))
                                 {
-                                    cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
-                                    cell.Style.BackColor = Color.LightYellow;
-                                }
-                                
-                            }
-                            else
-                            {
-                                cell.Style.Font = new Font("Dubai", 14);
-                            }
-                            if(row[j] != null)
-                            {
-                                newRow.Cells.Add(cell);
-                            }
-                           
-                        }
-                         gridListas.Rows.Add(newRow);
-                        if (mostrarBarraProgreso)
-                        {
-                            int valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
+                                    if (j > 15)
+                                    {
+                                        cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
+                                        cell.Style.BackColor = Color.LightYellow;
+                                    }
 
-                            bar.Invoke(() =>
-                            {
-                                bar.Value = valorProgressBar;
-
-                                if (valorProgressBar == 100)
-                                {
-                                    bar.Visible = false;
-                                    bar.Value = 0;
-                                    lab.Visible = false;
                                 }
                                 else
                                 {
-                                    if (mostrarTextoCargando)
-                                    {
-                                        lab.Text = @"Cargando...(" + valorProgressBar + @"%)";
-                                    }
+                                    cell.Style.Font = new Font("Dubai", 14);
                                 }
+                                if (row[j] != null)
+                                {
+                                    newRow.Cells.Add(cell);
+                                }
+
+                            }
+                            gridListas.Rows.Add(newRow);
+                            if (mostrarBarraProgreso)
+                            {
+                                int valorProgressBar = (int)Math.Ceiling((i + 1) * porcentajePaso);
+
+                                bar.Invoke(() =>
+                                {
+                                    bar.Value = valorProgressBar;
+
+                                    if (valorProgressBar == 100)
+                                    {
+                                        bar.Visible = false;
+                                        bar.Value = 0;
+                                        lab.Visible = false;
+                                    }
+                                    else
+                                    {
+                                        if (mostrarTextoCargando)
+                                        {
+                                            lab.Text = @"Cargando...(" + valorProgressBar + @"%)";
+                                        }
+                                    }
+                                });
+                            }
+
+                            i++;
+                        });
+
+                        if (!todos)
+                        {
+                            cmbCliente.Invoke(() =>
+                            {
+                                cmbCliente.Items.Add(row[1]?.ToString());
                             });
                         }
-
-                        i++;
-                    });
-
-                    if (!todos)
-                    {
-                        cmbCliente.Invoke(() =>
-                        {
-                            cmbCliente.Items.Add(row[1]?.ToString());
-                        });
                     }
-                }
-            });
+                });
+            }
+            catch (Exception ex)
+            {
+                Lectura_Base_Datos ed = new();
+                ed.Registro_errores(ex.ToString());
+            }
         }
     }
 }

@@ -2245,3 +2245,4 @@ E:\Escritorio\Esc\Future\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.genr
 E:\Escritorio\Esc\Future\obj\Debug\net6.0-windows10.0.17763.0\ref\FutureLending.dll
 E:\Escritorio\Esc\Future\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Administrador_Acceso.resources
 E:\Escritorio\Esc\Future\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Existencia.resources
+E:\Escritorio\Esc\Future\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Agregar_Columnas.resources

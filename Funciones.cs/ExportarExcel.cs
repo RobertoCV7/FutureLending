@@ -24,7 +24,7 @@ namespace FutureLending.Funciones.cs
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             List<string> nombresColumnas = new(nombresLista1);
 
-            for (int i = 1; i <= 14; i++)
+            for (int i = 1; i <= 15; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
                 nombresColumnas.Add("PAGO " + i);
@@ -68,8 +68,10 @@ namespace FutureLending.Funciones.cs
             using (ExcelPackage package = new ExcelPackage())
             {
                 var worksheet = package.Workbook.Worksheets.Add("Lista2");
-                List<string> nombresColumnas = new(nombresLisat2);
-                for (int i = 1; i <= 14; i++)
+                List<string> nombresColumnas = new List<string>(nombresLisat2);
+                Ediciones ed = new();
+                int max = ed.ObtenerNumeroUltimaColumna("lista2");
+                for (int i = 1; i <= max; i++)
                 {
                     nombresColumnas.Add("FECHA " + i);
                     nombresColumnas.Add("PAGO " + i);
@@ -90,7 +92,19 @@ namespace FutureLending.Funciones.cs
                     string[] fila = datos[row];
                     for (int col = 0; col < fila.Length; col++)
                     {
-                        worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                        if (string.IsNullOrEmpty(fila[col]))
+                        {
+                            // Si PAGO_EXT está vacío, tomamos el siguiente valor y lo ponemos en la celda correspondiente.
+                            if (col + 1 < fila.Length)
+                            {
+                                worksheet.Cells[row + 2, col + 1].Value = fila[col + 1];
+                                col++; // Incrementamos col para saltar el siguiente valor que ya hemos agregado.
+                            }
+                        }
+                        else
+                        {
+                            worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                        }
                     }
                 }
 
@@ -175,14 +189,16 @@ namespace FutureLending.Funciones.cs
             List<string[]> datosLiquidados = a.LectLiquidados();
             List<string> nombresColumnas = new(nombresLista1);
 
-            for (int i = 1; i <= 14; i++)
+            for (int i = 1; i <= 15; i++)
             {
                 nombresColumnas.Add("FECHA " + i);
                 nombresColumnas.Add("PAGO " + i);
             }
             List<string> nombresColumnas2 = new(nombresLisat2);
+            Ediciones ed = new();
+            int max = ed.ObtenerNumeroUltimaColumna("lista2");
 
-            for (int i = 1; i <= 14; i++)
+            for (int i = 1; i <= max; i++)
             {
                 nombresColumnas2.Add("FECHA " + i);
                 nombresColumnas2.Add("PAGO " + i);
@@ -236,7 +252,20 @@ namespace FutureLending.Funciones.cs
                 string[] fila = datos[row];
                 for (int col = 0; col < fila.Length; col++)
                 {
-                    worksheet.Cells[row + 2, col + 1].Value = fila[col];
+
+                    if (string.IsNullOrEmpty(fila[col]))
+                    {
+                        // Si PAGO_EXT está vacío, tomamos el siguiente valor y lo ponemos en la celda correspondiente.
+                        if (col + 1 < fila.Length)
+                        {
+                            worksheet.Cells[row + 2, col + 1].Value = fila[col + 1];
+                            col++; // Incrementamos col para saltar el siguiente valor que ya hemos agregado.
+                        }
+                    }
+                    else
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    }
                 }
             }
 

@@ -13,11 +13,9 @@ namespace FutureLending.Funciones.cs
             using (MySqlConnection connection = con.Conector())
             {
                 string query = "SELECT * FROM lista1 WHERE Nombre_Completo = @nombre";
-
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@nombre", nombre);
-
                     try
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -40,8 +38,7 @@ namespace FutureLending.Funciones.cs
                                 fila[13] = reader.GetString(reader.GetOrdinal("Correo"));
                                 fila[14] = reader.GetString(reader.GetOrdinal("Tipo_pago"));
                                 fila[15] = reader.GetString(reader.GetOrdinal("Monto_Restante"));
-
-                                for (int i = 0; i < 14; i++)
+                                for (int i = 0; i < 15; i++)
                                 {
                                     string fechaCampo = "Fecha" + (i + 1);
                                     int fechaIndex = reader.GetOrdinal(fechaCampo);
@@ -61,7 +58,7 @@ namespace FutureLending.Funciones.cs
         }
         public string[] LectName2(string nombre)
         {
-            string[] fila = new string[44];
+            string[] fila = new string[100];
 
             using (MySqlConnection connection = con.Conector())
             {
@@ -89,16 +86,18 @@ namespace FutureLending.Funciones.cs
                         fila[11] = reader.GetString(reader.GetOrdinal("Tipo_de_pago"));
                         fila[12] = reader.GetString(reader.GetOrdinal("Liquidacion_Intencion"));
                         fila[13] = reader.GetString(reader.GetOrdinal("Quita"));
-
-                        for (int i = 0; i < 14; i++)
+                        Ediciones ed = new();
+                        int maxpag = ed.ObtenerNumeroUltimaColumna("lista2");
+                        for (int i = 0; i < maxpag; i++)
                         {
                             string fechaCampo = "FECHA" + (i + 1);
                             string pagoCampo = "PAGO" + (i + 1);
-                            fila[14 + (2 * i)] = reader.GetString(reader.GetOrdinal(fechaCampo));
-                            fila[15 + (2 * i)] = reader.GetString(reader.GetOrdinal(pagoCampo));
+                            fila[14 + (i * 2)] = reader.IsDBNull(reader.GetOrdinal(fechaCampo)) ? "-" : reader.GetString(fechaCampo);
+                            fila[15 + (i * 2)] = reader.IsDBNull(reader.GetOrdinal(pagoCampo)) ? "-" : reader.GetString(pagoCampo);
                         }
-
-                        fila[42] = reader.GetString(reader.GetOrdinal("Pago_Total_EXT"));
+                       
+                        int max = ed.ObtenerNumeroColumnas("lista2");
+                        fila[max] = reader.GetString(reader.GetOrdinal("Pago_Total_EXT"));
                     }
                 }
                 catch (Exception ex)
