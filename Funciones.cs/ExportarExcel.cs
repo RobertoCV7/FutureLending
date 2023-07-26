@@ -40,7 +40,7 @@ internal class ExportarExcel
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         List<string> nombresColumnas = new(nombresLista1);
 
-        for (var i = 1; i <= 14; i++)
+        for (var i = 1; i <= 15; i++)
         {
             nombresColumnas.Add("FECHA " + i);
             nombresColumnas.Add("PAGO " + i);
@@ -74,39 +74,57 @@ internal class ExportarExcel
 
     public void ExportarTabla2(string ruta)
     {
-        var datos = a.LectLista2();
+        List<string[]> datos = a.LectLista2();
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-        using var package = new ExcelPackage();
-        var worksheet = package.Workbook.Worksheets.Add("Lista2");
-        List<string> nombresColumnas = new(nombresLisat2);
-        for (var i = 1; i <= 14; i++)
+        using (ExcelPackage package = new ExcelPackage())
         {
-            nombresColumnas.Add("FECHA " + i);
-            nombresColumnas.Add("PAGO " + i);
+            var worksheet = package.Workbook.Worksheets.Add("Lista2");
+            List<string> nombresColumnas = new List<string>(nombresLisat2);
+            Ediciones ed = new();
+            int max = ed.ObtenerNumeroUltimaColumna("lista2");
+            for (int i = 1; i <= max; i++)
+            {
+                nombresColumnas.Add("FECHA " + i);
+                nombresColumnas.Add("PAGO " + i);
+            }
+            nombresColumnas.Add("PAGO TOTAL EXT");
+
+            for (int col = 0; col < nombresColumnas.Count; col++)
+            {
+                ExcelRange headerCell = worksheet.Cells[1, col + 1];
+                headerCell.Value = nombresColumnas[col];
+                headerCell.Style.Font.Bold = true;
+                headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+            }
+
+            for (int row = 0; row < datos.Count; row++)
+            {
+                string[] fila = datos[row];
+                for (int col = 0; col < fila.Length; col++)
+                {
+                    if (string.IsNullOrEmpty(fila[col]))
+                    {
+                        // Si PAGO_EXT está vacío, tomamos el siguiente valor y lo ponemos en la celda correspondiente.
+                        if (col + 1 < fila.Length)
+                        {
+                            worksheet.Cells[row + 2, col + 1].Value = fila[col + 1];
+                            col++; // Incrementamos col para saltar el siguiente valor que ya hemos agregado.
+                        }
+                    }
+                    else
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                    }
+                }
+            }
+
+            worksheet.Cells.AutoFitColumns();
+            worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+
+            package.SaveAs(new FileInfo(ruta));
         }
-
-        nombresColumnas.Add("PAGO TOTAL EXT");
-
-        for (var col = 0; col < nombresColumnas.Count; col++)
-        {
-            var headerCell = worksheet.Cells[1, col + 1];
-            headerCell.Value = nombresColumnas[col];
-            headerCell.Style.Font.Bold = true;
-            headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-            headerCell.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-        }
-
-        for (var row = 0; row < datos.Count; row++)
-        {
-            var fila = datos[row];
-            for (var col = 0; col < fila.Length; col++) worksheet.Cells[row + 2, col + 1].Value = fila[col];
-        }
-
-        worksheet.Cells.AutoFitColumns();
-        worksheet.Cells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-
-        package.SaveAs(new FileInfo(ruta));
     }
 
     public void ExportarTabla3(string ruta)
@@ -176,15 +194,17 @@ internal class ExportarExcel
         var datosLiquidados = a.LectLiquidados();
         List<string> nombresColumnas = new(nombresLista1);
 
-        for (var i = 1; i <= 14; i++)
+        for (var i = 1; i <= 15; i++)
         {
             nombresColumnas.Add("FECHA " + i);
             nombresColumnas.Add("PAGO " + i);
         }
 
         List<string> nombresColumnas2 = new(nombresLisat2);
+        Ediciones ed = new();
+        int max = ed.ObtenerNumeroUltimaColumna("lista2");
 
-        for (var i = 1; i <= 14; i++)
+        for (int i = 1; i <= max; i++)
         {
             nombresColumnas2.Add("FECHA " + i);
             nombresColumnas2.Add("PAGO " + i);
@@ -200,28 +220,32 @@ internal class ExportarExcel
         package.SaveAs(new FileInfo(ruta));
     }
 
-    private static void AgregarHojaDatos(ExcelPackage package, List<string[]> datos, string nombreHoja,
-        string[] nombresColumnas)
+    private static void AgregarHojaDatos(ExcelPackage package, List<string[]> datos, string nombreHoja, string[] nombresColumnas)
     {
-        if (string.IsNullOrWhiteSpace(nombreHoja) || nombreHoja.Length > 31 ||
-            nombreHoja.Any(c => Path.GetInvalidFileNameChars().Contains(c)))
+        if (string.IsNullOrWhiteSpace(nombreHoja) || nombreHoja.Length > 31 || nombreHoja.Any(c => Path.GetInvalidFileNameChars().Contains(c)))
+        {
             throw new ArgumentException("El nombre de la hoja no es válido.");
+        }
 
         // Verifica los nombres de las columnas
         if (nombresColumnas.Length > 16384)
+        {
             throw new ArgumentException("El número de columnas excede el límite máximo.");
+        }
 
         // Verifica si los datos están vacíos
         if (datos.Count == 0)
-            throw new ArgumentException("Los datos están vacíos. No se puede agregar una hoja vacía.");
+        {
+            return;
+        }
 
         // Agrega una hoja al libro de Excel
         var worksheet = package.Workbook.Worksheets.Add(nombreHoja);
 
         // Escribe los nombres de las columnas en el archivo Excel
-        for (var col = 0; col < nombresColumnas.Length; col++)
+        for (int col = 0; col < nombresColumnas.Length; col++)
         {
-            var headerCell = worksheet.Cells[1, col + 1];
+            ExcelRange headerCell = worksheet.Cells[1, col + 1];
             headerCell.Value = nombresColumnas[col];
             headerCell.Style.Font.Bold = true;
             headerCell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -229,19 +253,35 @@ internal class ExportarExcel
         }
 
         // Escribe los datos en el archivo Excel
-        for (var row = 0; row < datos.Count; row++)
+        for (int row = 0; row < datos.Count; row++)
         {
-            var fila = datos[row];
-            for (var col = 0; col < fila.Length; col++) worksheet.Cells[row + 2, col + 1].Value = fila[col];
+            string[] fila = datos[row];
+            for (int col = 0; col < fila.Length; col++)
+            {
+
+                if (string.IsNullOrEmpty(fila[col]))
+                {
+                    // Si PAGO_EXT está vacío, tomamos el siguiente valor y lo ponemos en la celda correspondiente.
+                    if (col + 1 < fila.Length)
+                    {
+                        worksheet.Cells[row + 2, col + 1].Value = fila[col + 1];
+                        col++; // Incrementamos col para saltar el siguiente valor que ya hemos agregado.
+                    }
+                }
+                else
+                {
+                    worksheet.Cells[row + 2, col + 1].Value = fila[col];
+                }
+            }
         }
 
         // Ajusta automáticamente el ancho de las columnas
         worksheet.Cells.AutoFitColumns();
 
         // Establece el formato de las celdas para los datos numéricos
-        for (var col = 0; col < nombresColumnas.Length; col++)
+        for (int col = 0; col < nombresColumnas.Length; col++)
         {
-            var columnName = GetExcelColumnName(col + 1);
+            string columnName = GetExcelColumnName(col + 1);
             var columnCells = worksheet.Cells[$"{columnName}2:{columnName}{datos.Count + 1}"];
             columnCells.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
         }

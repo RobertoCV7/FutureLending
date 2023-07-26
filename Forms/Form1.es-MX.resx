@@ -21078,6 +21078,18 @@
   <data name="panelTitleBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 60</value>
   </data>
+  <data name="DateTimePago15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="DateTimePago15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="DateTimePago15.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>4, 35</value>
+  </data>
+  <data name="DateTimePago15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>530, 47</value>
+  </data>
   <data name="Monto_Recomendado.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -21989,6 +22001,27 @@
   </data>
   <data name="PanelEditar3.Size" type="System.Drawing.Size, System.Drawing">
     <value>1354, 801</value>
+  </data>
+  <data name="BtnAgregarColumnas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="BtnAgregarColumnas.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnAgregarColumnas.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 12pt, style=Bold</value>
+  </data>
+  <data name="BtnAgregarColumnas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnAgregarColumnas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="BtnAgregarColumnas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 63</value>
+  </data>
+  <data name="BtnAgregarColumnas.Text" xml:space="preserve">
+    <value>Agregar Columnas</value>
   </data>
   <data name="labelDineroAire.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

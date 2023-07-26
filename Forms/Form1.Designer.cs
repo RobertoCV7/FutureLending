@@ -90,6 +90,7 @@ namespace FutureLending.Forms
             panelTitleBar = new Panel();
             lblTitle = new Label();
             pnlRegPago = new Panel();
+            DateTimePago15 = new DateTimePickerPersonalizado();
             Monto_Recomendado = new TextBoxPersonalizado();
             label82 = new Label();
             TextBoxRestantepagos = new TextBoxPersonalizado();
@@ -175,6 +176,7 @@ namespace FutureLending.Forms
             LabelNombre3 = new Label();
             ComboBoxPromotor3 = new RjComboBox();
             pnlListas = new Panel();
+            BtnAgregarColumnas = new RjButton();
             labelDineroAire = new Label();
             flowLayoutPanel5 = new FlowLayoutPanel();
             ComboBoxPromotoresListas = new RjComboBox();
@@ -995,6 +997,7 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(pnlRegPago, "pnlRegPago");
             pnlRegPago.BackColor = SystemColors.ButtonHighlight;
+            pnlRegPago.Controls.Add(DateTimePago15);
             pnlRegPago.Controls.Add(Monto_Recomendado);
             pnlRegPago.Controls.Add(label82);
             pnlRegPago.Controls.Add(TextBoxRestantepagos);
@@ -1010,6 +1013,15 @@ namespace FutureLending.Forms
             pnlRegPago.Controls.Add(btnMarcarP);
             pnlRegPago.Controls.Add(lblMonto);
             pnlRegPago.Name = "pnlRegPago";
+            // 
+            // DateTimePago15
+            // 
+            resources.ApplyResources(DateTimePago15, "DateTimePago15");
+            DateTimePago15.BorderColor = Color.DarkSlateGray;
+            DateTimePago15.BorderSize = 3;
+            DateTimePago15.Name = "DateTimePago15";
+            DateTimePago15.SkinColor = SystemColors.ButtonHighlight;
+            DateTimePago15.TextColor = Color.Black;
             // 
             // Monto_Recomendado
             // 
@@ -2020,6 +2032,7 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(pnlListas, "pnlListas");
             pnlListas.BackColor = SystemColors.ButtonHighlight;
+            pnlListas.Controls.Add(BtnAgregarColumnas);
             pnlListas.Controls.Add(labelDineroAire);
             pnlListas.Controls.Add(flowLayoutPanel5);
             pnlListas.Controls.Add(label57);
@@ -2030,6 +2043,21 @@ namespace FutureLending.Forms
             pnlListas.Controls.Add(gridListas);
             pnlListas.Controls.Add(label8);
             pnlListas.Name = "pnlListas";
+            // 
+            // BtnAgregarColumnas
+            // 
+            resources.ApplyResources(BtnAgregarColumnas, "BtnAgregarColumnas");
+            BtnAgregarColumnas.BackColor = Color.IndianRed;
+            BtnAgregarColumnas.BackgroundColor = Color.IndianRed;
+            BtnAgregarColumnas.BorderColor = SystemColors.ActiveCaption;
+            BtnAgregarColumnas.BorderRadius = 15;
+            BtnAgregarColumnas.BorderSize = 2;
+            BtnAgregarColumnas.FlatAppearance.BorderSize = 0;
+            BtnAgregarColumnas.ForeColor = Color.Transparent;
+            BtnAgregarColumnas.Name = "BtnAgregarColumnas";
+            BtnAgregarColumnas.TextColor = Color.Transparent;
+            BtnAgregarColumnas.UseVisualStyleBackColor = false;
+            BtnAgregarColumnas.Click += BtnAgregarColumnas_Click;
             // 
             // labelDineroAire
             // 
@@ -4232,8 +4260,9 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
-            Controls.Add(pnlListas);
+            Controls.Add(pnlRegPago);
             Controls.Add(pnlClientes);
+            Controls.Add(pnlListas);
             Controls.Add(PnlAvales);
             Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar);
@@ -4241,7 +4270,6 @@ namespace FutureLending.Forms
             Controls.Add(PanelEditar3);
             Controls.Add(panel2);
             Controls.Add(PanelEditar2_2);
-            Controls.Add(pnlRegPago);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             DoubleBuffered = true;
@@ -4645,5 +4673,7 @@ namespace FutureLending.Forms
         private RjButton rjButton15;
         private Label LabelAvalCliente;
         private RjButton rjButton16;
+        private RjButton BtnAgregarColumnas;
+        private DateTimePickerPersonalizado DateTimePago15;
     }
 }

@@ -1489,3 +1489,4 @@ E:\Escritorio\Esc\FutureLending2\obj\Debug\net6.0-windows10.0.17763.0\FutureLend
 E:\Escritorio\Esc\FutureLending2\obj\Debug\net6.0-windows10.0.17763.0\ref\FutureLending.dll
 E:\Escritorio\Esc\FutureLending2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Administrador_Acceso.resources
 E:\Escritorio\Esc\FutureLending2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Existencia.resources
+E:\Escritorio\Esc\FutureLending2\obj\Debug\net6.0-windows10.0.17763.0\FutureLending.Forms.Agregar_Columnas.resources
