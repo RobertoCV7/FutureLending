@@ -255,7 +255,12 @@
 
                             if (row[j] != null && row[j].ToString().Contains("-"))
                             {
-                                cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
+                                if(j > 15)
+                                {
+                                    cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
+                                    cell.Style.BackColor = Color.LightYellow;
+                                }
+                                
                             }
                             else
                             {

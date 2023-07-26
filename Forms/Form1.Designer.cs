@@ -2267,7 +2267,7 @@ namespace FutureLending.Forms
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.DarkSlateGray;
             dataGridViewCellStyle1.Font = new Font("Dubai", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
@@ -2287,7 +2287,7 @@ namespace FutureLending.Forms
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle3.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.ForeColor = Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = Color.DarkSlateGray;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
@@ -2295,12 +2295,12 @@ namespace FutureLending.Forms
             gridListas.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
             dataGridViewCellStyle4.Font = new Font("Dubai", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle4.ForeColor = Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = Color.DarkOliveGreen;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlLightLight;
             gridListas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             gridListas.RowTemplate.Height = 25;
-            gridListas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
             gridListas.CellFormatting += gridListas_CellFormatting;
             gridListas.Scroll += gridListas_Scroll;
             // 
