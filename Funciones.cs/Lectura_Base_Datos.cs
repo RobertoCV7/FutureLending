@@ -552,16 +552,19 @@ public class LecturaBaseDatos
 
         try
         {
-            // Verificar si el usuario existe en lista2
-            string queryLista2 = "SELECT COUNT(*) FROM lista2 WHERE Nombre_Completo = @nombreUsuario";
+            // Convertir el nombre de usuario a minúsculas
+            string nombreUsuarioMin = nombreUsuario.ToLower();
+
+            // Verificar si el usuario existe en lista2 (ignorando mayúsculas y minúsculas)
+            string queryLista2 = "SELECT COUNT(*) FROM lista2 WHERE LOWER(Nombre_Completo) = @nombreUsuario";
             MySqlCommand commandLista2 = new MySqlCommand(queryLista2, connection);
-            commandLista2.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+            commandLista2.Parameters.AddWithValue("@nombreUsuario", nombreUsuarioMin);
             int countLista2 = Convert.ToInt32(commandLista2.ExecuteScalar());
 
-            // Verificar si el usuario existe en lista3
-            string queryLista3 = "SELECT COUNT(*) FROM lista3 WHERE Nombre_Completo = @nombreUsuario";
+            // Verificar si el usuario existe en lista3 (ignorando mayúsculas y minúsculas)
+            string queryLista3 = "SELECT COUNT(*) FROM lista3 WHERE LOWER(Nombre_Completo) = @nombreUsuario";
             MySqlCommand commandLista3 = new MySqlCommand(queryLista3, connection);
-            commandLista3.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+            commandLista3.Parameters.AddWithValue("@nombreUsuario", nombreUsuarioMin);
             int countLista3 = Convert.ToInt32(commandLista3.ExecuteScalar());
 
             if (countLista2 > 0)
@@ -595,11 +598,14 @@ public class LecturaBaseDatos
     {
         using (MySqlConnection connection = Conector())
         {
-            string query = $"SELECT Forma_Liquidacion FROM liquidados WHERE Nombre_Completo = @Nombre";
+            // Convertir el nombre a minúsculas
+            string nombreMin = nombre.ToLower();
+
+            string query = $"SELECT Forma_Liquidacion FROM liquidados WHERE LOWER(Nombre_Completo) = @Nombre";
 
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Nombre", nombre);
+                command.Parameters.AddWithValue("@Nombre", nombreMin);
 
                 try
                 {
@@ -619,6 +625,7 @@ public class LecturaBaseDatos
 
         return null; // Si no se encuentra ningún registro con el nombre dado
     }
+
 
     #endregion
 
