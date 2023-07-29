@@ -21777,6 +21777,27 @@
   <data name="PanelEditar3.Size" type="System.Drawing.Size, System.Drawing">
     <value>1114, 669</value>
   </data>
+  <data name="BtnGraficar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="BtnGraficar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BtnGraficar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Corbel, 12pt, style=Bold</value>
+  </data>
+  <data name="BtnGraficar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnGraficar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="BtnGraficar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 55</value>
+  </data>
+  <data name="BtnGraficar.Text" xml:space="preserve">
+    <value>Graficar</value>
+  </data>
   <data name="BtnAgregarColumnas.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>

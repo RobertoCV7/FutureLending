@@ -55,6 +55,7 @@ namespace FutureLending.Forms
                     DateTimePago15.Hide();
                     DateTimePago15.Enabled = false;
                     rjButton6.Enabled = false;
+                    BtnGraficar.Hide();
                     rjComboBox9.Visible = false;
                     rjButton4.Enabled = false;
                     rjButton7.Enabled = false;
@@ -129,6 +130,7 @@ namespace FutureLending.Forms
         }
         #endregion
         public static double DineroAire;
+        public static double MontoTotal;
         #region Botones centrales del menu
 
         #region Ingresar Clientes
@@ -418,6 +420,7 @@ namespace FutureLending.Forms
             BtnAgregarColumnas.Hide();
             if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
             {
+                BtnGraficar.Show();
                 DineroAire = 0;
                 listaEstado = 0;
                 DesactivarBotones();
@@ -432,6 +435,7 @@ namespace FutureLending.Forms
             }
             else
             {
+                BtnGraficar.Hide();
                 LabelDineroAire.Text = "";
                 listaEstado = 0;
                 DesactivarBotones();
@@ -447,6 +451,7 @@ namespace FutureLending.Forms
             BtnAgregarColumnas.Show();
             if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
             {
+                BtnGraficar.Show();
                 DineroAire = 0;
                 listaEstado = 1;
                 DesactivarBotones();
@@ -461,6 +466,7 @@ namespace FutureLending.Forms
             }
             else
             {
+                BtnGraficar.Hide();
                 LabelDineroAire.Text = "";
                 listaEstado = 1;
                 DesactivarBotones();
@@ -473,6 +479,7 @@ namespace FutureLending.Forms
 
         private async void BtnLista3_Click(object sender, EventArgs e)
         {
+            BtnGraficar.Hide();
             BtnAgregarColumnas.Hide();
             listaEstado = 2;
             DesactivarBotones();
@@ -484,6 +491,7 @@ namespace FutureLending.Forms
 
         private async void BtnMostrarTodos_Click(object sender, EventArgs e)
         {
+            BtnGraficar.Hide();
             BtnAgregarColumnas.Hide();
             DesactivarBotones();
             await TablaClientes.MostrarTodos(gridListas, cmbCliente, BarradeProgreso, label57);
@@ -493,6 +501,7 @@ namespace FutureLending.Forms
         private async void BtnLiquidados_Click(object sender, EventArgs e)
         {
             BtnAgregarColumnas.Hide();
+            BtnGraficar.Hide();
             listaActual = "liquidados";
             listaEstado = 3;
             var mostrarListaTask = TablaClientes.MostrarLiquidados(gridListas, cmbCliente, BarradeProgreso, label57);
@@ -935,23 +944,23 @@ namespace FutureLending.Forms
                 {
                     if (datos[i].Contains("-"))
                     {
-                       
+
                         rjComboBox9.Items.Add(datos[i] + "-(PAGADA)");
                         f++;
                     }
                     else
                     {
-                      
-                            rjComboBox9.Items.Add(datos[i]);
-                        
+
+                        rjComboBox9.Items.Add(datos[i]);
+
                         f++;
                     }
                 }
                 else
                 {
-                    
-                        rjComboBox9.Items.Add("FECHA 15");
-                    
+
+                    rjComboBox9.Items.Add("FECHA 15");
+
                 }
             }
             label17.Visible = true;
@@ -1030,7 +1039,7 @@ namespace FutureLending.Forms
                 else
                 {
 
-                    if(index == 30)
+                    if (index == 30)
                     {
                         Ediciones instancia22 = new();
                         //Resta del pago al monto restante
@@ -1086,7 +1095,7 @@ namespace FutureLending.Forms
                             _ = instancia22.EditarLista1(dato);
                         }
                     }
-                    
+
                 }
                 //Resetear valores 
                 RecargarDatosPnllRegPagos();
@@ -1117,7 +1126,7 @@ namespace FutureLending.Forms
             DateTimePago15.Hide();
             DateTimePago15.Enabled = false;
             Monto_Recomendado.Location = new Point(298, 306);
-            Monto_Recomendado.Visible = false ;
+            Monto_Recomendado.Visible = false;
             label82.Text = "Monto Fijo:";
 
         }
@@ -1530,9 +1539,9 @@ namespace FutureLending.Forms
                     string[] pago = datos[rjComboBox9.SelectedIndex + 16].Split("-");
                     txtBoxMonto.Texts = pago[1];
                 }
-                if(rjComboBox9.SelectedIndex == 14)
+                if (rjComboBox9.SelectedIndex == 14)
                 {
-                    Monto_Recomendado.Location =  new Point(33, 611);
+                    Monto_Recomendado.Location = new Point(33, 611);
                     Monto_Recomendado.Visible = false;
                     label82.Text = "Fecha:";
                     DateTimePago15.Location = new Point(298, 315);
@@ -3313,6 +3322,20 @@ namespace FutureLending.Forms
         {
             Agregar_Columnas ag = new();
             ag.ShowDialog();
+        }
+        public static string nombre;
+        public static int valor1;
+        public static int valor2;
+        public static int valor3;
+        private void BtnGraficar_Click(object sender, EventArgs e)
+        {
+            double total = MontoTotal - DineroAire;
+            valor1 = Convert.ToInt32(DineroAire);
+            valor2 = Convert.ToInt32(total);
+            valor3 = Convert.ToInt32(MontoTotal);
+            nombre = ComboBoxPromotoresListas.SelectedItem.ToString();
+            Grafica gra = new();
+            gra.ShowDialog();
         }
     }
 }

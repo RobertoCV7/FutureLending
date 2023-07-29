@@ -173,6 +173,7 @@ namespace FutureLending.Forms
             LabelNombre3 = new Label();
             ComboBoxPromotor3 = new ControlesPersonalizados.RJComboBox();
             pnlListas = new Panel();
+            BtnGraficar = new RJButton();
             BtnAgregarColumnas = new RJButton();
             LabelDineroAire = new Label();
             flowLayoutPanel5 = new FlowLayoutPanel();
@@ -2040,6 +2041,7 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(pnlListas, "pnlListas");
             pnlListas.BackColor = SystemColors.ButtonHighlight;
+            pnlListas.Controls.Add(BtnGraficar);
             pnlListas.Controls.Add(BtnAgregarColumnas);
             pnlListas.Controls.Add(LabelDineroAire);
             pnlListas.Controls.Add(flowLayoutPanel5);
@@ -2051,6 +2053,21 @@ namespace FutureLending.Forms
             pnlListas.Controls.Add(gridListas);
             pnlListas.Controls.Add(label8);
             pnlListas.Name = "pnlListas";
+            // 
+            // BtnGraficar
+            // 
+            resources.ApplyResources(BtnGraficar, "BtnGraficar");
+            BtnGraficar.BackColor = Color.LightCoral;
+            BtnGraficar.BackgroundColor = Color.LightCoral;
+            BtnGraficar.BorderColor = SystemColors.ActiveCaption;
+            BtnGraficar.BorderRadius = 15;
+            BtnGraficar.BorderSize = 2;
+            BtnGraficar.FlatAppearance.BorderSize = 0;
+            BtnGraficar.ForeColor = Color.Transparent;
+            BtnGraficar.Name = "BtnGraficar";
+            BtnGraficar.TextColor = Color.Transparent;
+            BtnGraficar.UseVisualStyleBackColor = false;
+            BtnGraficar.Click += BtnGraficar_Click;
             // 
             // BtnAgregarColumnas
             // 
@@ -4271,11 +4288,11 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
             Controls.Add(pnlClientes);
             Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar2_2);
-            Controls.Add(pnlListas);
             Controls.Add(PanelEditar);
             Controls.Add(PnlAvales);
             Controls.Add(PanelEditar3);
@@ -4687,5 +4704,6 @@ namespace FutureLending.Forms
         private RJButton rjButton14;
         private RJButton BtnAgregarColumnas;
         private DateTimePickerPersonalizado DateTimePago15;
+        private RJButton BtnGraficar;
     }
 }

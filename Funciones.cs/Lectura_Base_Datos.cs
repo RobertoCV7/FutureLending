@@ -70,9 +70,14 @@ namespace FutureLending.Funciones.cs
                             fila[8] = reader.GetString("Monto_Restante");
                             datos.Add(fila);
                             double montoRestante;
+                            double montoTotal;
                             if (double.TryParse(fila[8], out montoRestante))
                             {
                                 Form1.DineroAire += montoRestante;
+                            }
+                            if (double.TryParse(fila[6], out montoTotal))
+                            {
+                                Form1.MontoTotal += montoTotal;
                             }
                         }
                     }
@@ -96,6 +101,8 @@ namespace FutureLending.Funciones.cs
                 command.Parameters.AddWithValue("@Promotor", prom);
                 try
                 {
+                    Form1.DineroAire = 0;
+                    Form1.MontoTotal = 0;
                     using MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -111,6 +118,7 @@ namespace FutureLending.Funciones.cs
                         fila[8] = reader.GetString("Pago_Total_EXT");
                         datos.Add(fila);
                         Form1.DineroAire += Convert.ToDouble(fila[8]);
+                        Form1.MontoTotal += Convert.ToDouble(fila[2]);
                     }
                 }
                 catch (Exception ex)

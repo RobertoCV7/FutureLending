@@ -257,19 +257,19 @@
                             {
                                 DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
                                 cell.Value = row[j]?.ToString();
-                              
-                                if (row[j] != null && row[j].ToString().Contains("-"))
+                                if (j > 15)
                                 {
-                                    if (j > 15)
-                                    {
+                                
+                                     if (row[j] != null && row[j].ToString().Contains("-"))
+                                     { 
                                         cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
                                         cell.Style.BackColor = Color.LightYellow;
-                                    }
-
-                                }
-                                else
-                                {
-                                    cell.Style.Font = new Font("Dubai", 14);
+                                     }
+                                     else
+                                     {
+                                        cell.Style.Font = new Font("Dubai", 14);
+                                        cell.Style.BackColor = Color.Yellow;
+                                     }
                                 }
                                 if (row[j] != null)
                                 {
