@@ -54,6 +54,8 @@ namespace FutureLending.Funciones.cs
 
                 try
                 {
+                    Form1.DineroAire = 0;
+                    Form1.MontoTotal = 0;
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

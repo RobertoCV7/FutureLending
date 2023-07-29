@@ -78,6 +78,7 @@ namespace FutureLending.Forms
             // Agregar una leyenda
             chart.Legends.Add(new Legend("Legend"));
             chart.Legends["Legend"].Docking = Docking.Bottom; // Posicionar la leyenda debajo del gráfico
+            chart.Legends["Legend"].Font = new Font("Corbel", 16, FontStyle.Bold); // Tamaño de fuente de la leyenda "Legend"
             chart.Series["Data"].Legend = "Legend";
             chart.Series["Data"].IsVisibleInLegend = true;
 
