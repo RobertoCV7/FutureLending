@@ -1,5 +1,5 @@
-using System.Globalization;
 using FutureLending.Forms;
+using System.Globalization;
 
 namespace FutureLending.Funciones.cs;
 
@@ -24,7 +24,7 @@ internal static class Program
         CultureInfo.DefaultThreadCurrentUICulture = culture;
 
         // Cargar el archivo de recursos específico para "es-MX"
-        var form = new Form1();
+        Form1 form = new();
         Application.Run(form);
     }
 }

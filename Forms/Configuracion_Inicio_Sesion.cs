@@ -80,15 +80,15 @@ public partial class ConfiguracionInicioSesion : Form
             case 0:
                 break;
             case 1:
-            {
-                if (!isTabPageLoaded)
                 {
-                    await LoadTabPage1Async();
-                    isTabPageLoaded = true;
-                }
+                    if (!isTabPageLoaded)
+                    {
+                        await LoadTabPage1Async();
+                        isTabPageLoaded = true;
+                    }
 
-                break;
-            }
+                    break;
+                }
         }
     }
 

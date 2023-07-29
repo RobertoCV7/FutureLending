@@ -334,7 +334,7 @@ internal class Ediciones
         int temp = ObtenerNumeroUltimaColumna("lista2");
         try
         {
-            LecturaBaseDatos con = new ();
+            LecturaBaseDatos con = new();
             using (MySqlConnection connection = con.Conector())
             {
                 // Obtener el nombre de la tabla (puedes modificar esto para obtener el nombre dinámicamente)

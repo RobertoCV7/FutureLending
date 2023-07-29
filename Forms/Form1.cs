@@ -1,18 +1,21 @@
-using System.ComponentModel;
-using System.Globalization;
-using System.Windows.Documents;
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Funciones.cs;
 using FutureLending.Properties;
 using MySql.Data.MySqlClient;
+using System.ComponentModel;
+using System.Globalization;
 using Timer = System.Windows.Forms.Timer;
 
 namespace FutureLending.Forms;
 
 public partial class Form1 : Form
 {
+#pragma warning disable CS0649 // El campo 'Form1._montoInicial' nunca se asigna y siempre tendrá el valor predeterminado 0
     private static double _montoInicial;
+#pragma warning restore CS0649 // El campo 'Form1._montoInicial' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'Form1._indiceFecha' nunca se asigna y siempre tendrá el valor predeterminado 0
     private static int _indiceFecha;
+#pragma warning restore CS0649 // El campo 'Form1._indiceFecha' nunca se asigna y siempre tendrá el valor predeterminado 0
     private static bool _edito;
     private readonly Timer timer;
     public static bool Guar = true;
@@ -46,6 +49,7 @@ public partial class Form1 : Form
         CollapseMenu();
         dateTimePickerPersonalizado2.Enabled = false;
         rjButton6.Enabled = false;
+        BtnGraficar.Hide();
         rjComboBox9.Visible = false;
         rjButton4.Enabled = false;
         TextBoxPagoExt.Enabled = false;
@@ -1550,7 +1554,9 @@ public partial class Form1 : Form
         btnMostrarTodos.TabStop = false;
     }
 
+#pragma warning disable CS0169 // El campo 'Form1.panelRg' nunca se usa
     private bool panelRg;
+#pragma warning restore CS0169 // El campo 'Form1.panelRg' nunca se usa
 
     private void EsconderPaneles(Panel panelsitoPanel)
     {
@@ -1582,12 +1588,15 @@ public partial class Form1 : Form
     private int listaEstado;
 
     public static double DineroAire;
+    public static double MontoTotal;
 
     private async void BtnLista1_Click(object sender, EventArgs e)
     {
         BtnAgregarColumnas.Hide();
         if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
         {
+            BtnGraficar.Show();
+            BtnGraficar.Enabled = true;
             DineroAire = 0;
             listaEstado = 0;
             DesactivarBotones();
@@ -1602,6 +1611,8 @@ public partial class Form1 : Form
         }
         else
         {
+            BtnGraficar.Hide();
+            BtnGraficar.Enabled = false;
             labelDineroAire.Text = "";
             listaEstado = 0;
             DesactivarBotones();
@@ -1619,6 +1630,8 @@ public partial class Form1 : Form
         BtnAgregarColumnas.Show();
         if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
         {
+            BtnGraficar.Show();
+            BtnGraficar.Enabled = true;
             DineroAire = 0;
             listaEstado = 1;
             DesactivarBotones();
@@ -1633,6 +1646,8 @@ public partial class Form1 : Form
         }
         else
         {
+            BtnGraficar.Hide();
+            BtnGraficar.Enabled = false;
             labelDineroAire.Text = "";
             listaEstado = 1;
             DesactivarBotones();
@@ -1645,6 +1660,7 @@ public partial class Form1 : Form
 
     private async void BtnLista3_Click(object sender, EventArgs e)
     {
+        BtnGraficar.Hide();
         BtnAgregarColumnas.Hide();
         listaEstado = 2;
         DesactivarBotones();
@@ -1656,6 +1672,7 @@ public partial class Form1 : Form
 
     private async void BtnMostrarTodos_Click(object sender, EventArgs e)
     {
+        BtnGraficar.Hide();
         BtnAgregarColumnas.Hide();
         DesactivarBotones();
         await TablaClientes.MostrarTodos(gridListas, cmbCliente, BarradeProgreso, label57);
@@ -1664,6 +1681,7 @@ public partial class Form1 : Form
 
     private async void BtnLiquidados_Click(object sender, EventArgs e)
     {
+        BtnGraficar.Hide();
         BtnAgregarColumnas.Hide();
         listaEstado = 3;
         DesactivarBotones();
@@ -2864,7 +2882,9 @@ public partial class Form1 : Form
     }
     private string[] Avales = new string[15];
     private string[] NuevosAvales = new string[15];
+#pragma warning disable CS0414 // El campo 'Form1.panel' está asignado pero su valor nunca se usa
     private int panel = 0;
+#pragma warning restore CS0414 // El campo 'Form1.panel' está asignado pero su valor nunca se usa
     private void rjButton9_Click(object sender, EventArgs e)
     {
         if (editaravales)
@@ -3039,5 +3059,20 @@ public partial class Form1 : Form
     {
         Agregar_Columnas ar = new();
         ar.ShowDialog();
+    }
+
+    public static string nombre;
+    public static int valor1;
+    public static int valor2;
+    public static int valor3;
+    private void BtnGraficar_Click(object sender, EventArgs e)
+    {
+        double total = MontoTotal - DineroAire;
+        valor1 = Convert.ToInt32(DineroAire);
+        valor2 = Convert.ToInt32(total);
+        valor3 = Convert.ToInt32(MontoTotal);
+        nombre = ComboBoxPromotoresListas.SelectedItem.ToString();
+        Grafica gra = new();
+        gra.ShowDialog();
     }
 }

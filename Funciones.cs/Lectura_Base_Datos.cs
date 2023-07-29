@@ -1,12 +1,11 @@
-﻿using System.Data;
+﻿using FutureLending.Forms;
+using FutureLending.Funciones.cs;
+using FutureLending.Properties;
+using MySql.Data.MySqlClient;
+using System.Data;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
-using FutureLending.Forms;
-using FutureLending.Funciones.cs;
-using FutureLending.Properties;
-using Microsoft.Win32;
-using MySql.Data.MySqlClient;
 
 namespace FutureLending;
 
@@ -78,6 +77,8 @@ public class LecturaBaseDatos
 
             try
             {
+                Form1.DineroAire = 0;
+                Form1.MontoTotal = 0;
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -95,9 +96,14 @@ public class LecturaBaseDatos
                         fila[8] = reader.GetString("Monto_Restante");
                         datos.Add(fila);
                         double montoRestante;
+                        double montoTotal;
                         if (double.TryParse(fila[8], out montoRestante))
                         {
                             Form1.DineroAire += montoRestante;
+                        }
+                        if (double.TryParse(fila[6], out montoTotal))
+                        {
+                            Form1.MontoTotal += montoTotal;
                         }
                     }
                 }
@@ -121,6 +127,8 @@ public class LecturaBaseDatos
         command.Parameters.AddWithValue("@Promotor", prom);
         try
         {
+            Form1.DineroAire = 0;
+            Form1.MontoTotal = 0;
             using var reader = command.ExecuteReader();
             var fila = new string[43]; // Modificar el tamaño del arreglo para ajustarlo a la cantidad de campos
             while (reader.Read())
@@ -136,6 +144,7 @@ public class LecturaBaseDatos
                 fila[8] = reader.GetString("Pago_Total_EXT");
                 datos.Add(fila);
                 Form1.DineroAire += Convert.ToDouble(fila[8]);
+                Form1.MontoTotal += Convert.ToDouble(fila[2]);
             }
         }
         catch (Exception ex)
@@ -992,7 +1001,7 @@ public class LecturaBaseDatos
         {
             if (!revisador)
             {
-               Form1.MessageB("La Aplicacion no se puede conectar a la base de datos", "Error", 3);
+                Form1.MessageB("La Aplicacion no se puede conectar a la base de datos", "Error", 3);
                 Registro_errores(ex.ToString());
             }
             else

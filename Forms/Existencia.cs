@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FutureLending.Forms
+﻿namespace FutureLending.Forms
 {
     public partial class Existencia : Form
     {
         public static string Nombre;
-        public static string Lista ;
-        public static string ListaLiq =  null;
+        public static string Lista;
+        public static string ListaLiq = null;
         public Existencia()
         {
             InitializeComponent();
@@ -28,7 +18,7 @@ namespace FutureLending.Forms
                 label4.Show();
                 LabelLiquidacion.Show();
             }
-          
+
 
         }
         private bool cerrar = false;
@@ -52,7 +42,7 @@ namespace FutureLending.Forms
             {
                 e.Cancel = true;
             }
-            
+
         }
     }
 }

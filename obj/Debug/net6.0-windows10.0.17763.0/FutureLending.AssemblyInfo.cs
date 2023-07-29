@@ -8,18 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using System.Reflection;
-using System.Runtime.Versioning;
 
-[assembly: AssemblyCompany("FutureLending")]
-[assembly: AssemblyConfiguration("Debug")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyInformationalVersion("1.0.0")]
-[assembly: AssemblyProduct("FutureLending")]
-[assembly: AssemblyTitle("FutureLending")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: TargetPlatform("Windows10.0.17763.0")]
-[assembly: SupportedOSPlatform("Windows10.0.17763.0")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("FutureLending")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("FutureLending")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FutureLending")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows10.0.17763.0")]
+[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows10.0.22621.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

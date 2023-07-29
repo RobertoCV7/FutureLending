@@ -176,6 +176,7 @@ namespace FutureLending.Forms
             LabelNombre3 = new Label();
             ComboBoxPromotor3 = new RjComboBox();
             pnlListas = new Panel();
+            BtnGraficar = new RjButton();
             BtnAgregarColumnas = new RjButton();
             labelDineroAire = new Label();
             flowLayoutPanel5 = new FlowLayoutPanel();
@@ -2032,6 +2033,7 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(pnlListas, "pnlListas");
             pnlListas.BackColor = SystemColors.ButtonHighlight;
+            pnlListas.Controls.Add(BtnGraficar);
             pnlListas.Controls.Add(BtnAgregarColumnas);
             pnlListas.Controls.Add(labelDineroAire);
             pnlListas.Controls.Add(flowLayoutPanel5);
@@ -2043,6 +2045,21 @@ namespace FutureLending.Forms
             pnlListas.Controls.Add(gridListas);
             pnlListas.Controls.Add(label8);
             pnlListas.Name = "pnlListas";
+            // 
+            // BtnGraficar
+            // 
+            resources.ApplyResources(BtnGraficar, "BtnGraficar");
+            BtnGraficar.BackColor = Color.Coral;
+            BtnGraficar.BackgroundColor = Color.Coral;
+            BtnGraficar.BorderColor = SystemColors.ActiveCaption;
+            BtnGraficar.BorderRadius = 15;
+            BtnGraficar.BorderSize = 2;
+            BtnGraficar.FlatAppearance.BorderSize = 0;
+            BtnGraficar.ForeColor = Color.Transparent;
+            BtnGraficar.Name = "BtnGraficar";
+            BtnGraficar.TextColor = Color.Transparent;
+            BtnGraficar.UseVisualStyleBackColor = false;
+            BtnGraficar.Click += BtnGraficar_Click;
             // 
             // BtnAgregarColumnas
             // 
@@ -4260,9 +4277,9 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
             Controls.Add(pnlClientes);
-            Controls.Add(pnlListas);
             Controls.Add(PnlAvales);
             Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar);
@@ -4398,7 +4415,9 @@ namespace FutureLending.Forms
         private RjButton rjButton1;
         private Panel PanelEditar;
         private GroupBox groupBox1;
+#pragma warning disable CS0169 // El campo 'Form1.btnMover' nunca se usa
         private RjButton btnMover;
+#pragma warning restore CS0169 // El campo 'Form1.btnMover' nunca se usa
         private RjComboBox cmbLista;
         private TextBoxPersonalizado textBoxPersonalizado1;
         private Label label18;
@@ -4444,7 +4463,9 @@ namespace FutureLending.Forms
         private Label label38;
         private TextBox TextboxConfirm;
         private CheckBox checkBox1;
+#pragma warning disable CS0169 // El campo 'Form1.button1' nunca se usa
         private Button button1;
+#pragma warning restore CS0169 // El campo 'Form1.button1' nunca se usa
         private Label AvisoVacio;
         private TabControl tabControl1;
         private TabPage tabPage1;
@@ -4675,5 +4696,6 @@ namespace FutureLending.Forms
         private RjButton rjButton16;
         private RjButton BtnAgregarColumnas;
         private DateTimePickerPersonalizado DateTimePago15;
+        private RjButton BtnGraficar;
     }
 }
