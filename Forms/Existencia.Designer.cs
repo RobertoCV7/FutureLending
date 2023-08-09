@@ -145,7 +145,7 @@
             rjButton2.Name = "rjButton2";
             rjButton2.Size = new Size(169, 53);
             rjButton2.TabIndex = 8;
-            rjButton2.Text = "Guardar";
+            rjButton2.Text = "Renovar";
             rjButton2.TextColor = Color.White;
             rjButton2.UseVisualStyleBackColor = false;
             rjButton2.Click += rjButton2_Click;

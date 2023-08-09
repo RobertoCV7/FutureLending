@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "A6k64/TsJ27OInBIHrFHZpuGk98gCLaJmX0dhIFTTx+2ke1WnRQXjATSWa03UiMA3w4MWX7lqYgenMIbema+Yg==",
+  "dgSpecHash": "xt6qkgnAolyghgob2jFl9qac6QKO8+99CxEnl+VgkUpC2uSiQmWcGN5c/cRx+QIQmZ5YyCpQnG3BpNRuKrQdMw==",
   "success": true,
   "projectFilePath": "E:\\Escritorio\\Esc\\Future\\FutureLending.csproj",
   "expectedPackageFiles": [
@@ -124,7 +124,7 @@
     "C:\\Users\\donne\\.nuget\\packages\\system.web.services.description\\4.9.0\\system.web.services.description.4.9.0.nupkg.sha512",
     "C:\\Users\\donne\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\donne\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512",
-    "C:\\Users\\donne\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.28\\microsoft.windows.sdk.net.ref.10.0.17763.28.nupkg.sha512"
+    "C:\\Users\\donne\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.29\\microsoft.windows.sdk.net.ref.10.0.17763.29.nupkg.sha512"
   ],
   "logs": [
     {

@@ -944,9 +944,8 @@ namespace FutureLending.Forms
                 {
                     if (datos[i].Contains("-"))
                     {
-
-                        rjComboBox9.Items.Add(datos[i] + "-(PAGADA)");
-                        f++;
+                            rjComboBox9.Items.Add(datos[i] + "-(PAGADA)");
+                            f++;
                     }
                     else
                     {
@@ -984,7 +983,12 @@ namespace FutureLending.Forms
         {
             //Obtener el valor seleccionado de fecha por el nombre del cliente
             Lecturas_Especificas instancia2 = new();
-            string[] fechas = instancia2.LectName(ComBoxName.SelectedItem.ToString());
+            string[] fecha2 = instancia2.LectName(ComBoxName.SelectedItem.ToString());
+            string[] fechas = new string[45];
+            for(int i = 0; i < fecha2.Length; i++)
+            {
+                fechas[i] = fecha2[i];
+            }
 
             if (Convert.ToDouble(txtBoxMonto.Texts) > Convert.ToDouble(fechas[15]))
             {
@@ -1012,8 +1016,13 @@ namespace FutureLending.Forms
                             string[] fecha = datos[index].Split("-");
                             fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
                             fechas[15] = suma.ToString("N2");
-                            string[] dato = fechas;
-                            dato[30] = fechas[1];
+                            string[] dato = new string [45];
+                            for(int i = 0; i < fechas.Length; i++)
+                            {
+                                dato[i] = fechas[i];
+
+                            }
+                            dato[31] = fechas[1];
                             Ediciones instancia22 = new();
                             _ = instancia22.EditarLista1(dato);
                         }
@@ -1024,7 +1033,12 @@ namespace FutureLending.Forms
                             string[] fecha = datos[index].Split("-");
                             fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
                             fechas[15] = resta.ToString("N2");
-                            string[] dato = fechas;
+                            string[] dato = new string[45];
+                            for (int i = 0; i < fechas.Length; i++)
+                            {
+                                dato[i] = fechas[i];
+
+                            }
                             dato[31] = fechas[1];
                             Ediciones instancia22 = new();
                             _ = instancia22.EditarLista1(dato);
@@ -1049,7 +1063,7 @@ namespace FutureLending.Forms
                         string fecha = a.ToString("dd/MM/yyyy");
                         fechas[index] = fecha + "-" + txtBoxMonto.Texts;
                         fechas[15] = totRes2.ToString("N2");
-                        string[] dato = new string[40];
+                        string[] dato = new string[45];
                         for (int i = 0; i < fechas.Length; i++)
                         {
                             dato[i] = fechas[i];
@@ -1085,7 +1099,7 @@ namespace FutureLending.Forms
                             fechas[index] += "-" + txtBoxMonto.Texts;
                             fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
                             Ediciones instancia22 = new();
-                            string[] dato = new string[40];
+                            string[] dato = new string[45];
                             for (int i = 0; i < fechas.Length; i++)
                             {
                                 dato[i] = fechas[i];

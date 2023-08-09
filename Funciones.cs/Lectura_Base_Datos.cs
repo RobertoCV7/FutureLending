@@ -193,14 +193,14 @@ namespace FutureLending.Funciones.cs
                                 }else if (dato.Contains("/"))
                                 {
                                     fila[16 + (i*2)] = dato;
-                                    fila[17 + (i *2)] = "-";
+                                    fila[17 + (i *2)] = "*";
                                 }
 
                                 // En caso de que alguna fecha sea nula o vacía, se asigna "-"
                                 if (string.IsNullOrWhiteSpace(fila[16 + i]))
                                 {
-                                    fila[16 + i] = "-";
-                                    fila[16 + (i + 1)] = "-";
+                                    fila[16 + i] = "*";
+                                    fila[16 + (i + 1)] = "*";
                                 }
                             }
                             datos.Add(fila);
@@ -666,7 +666,7 @@ namespace FutureLending.Funciones.cs
                 }
                 else
                 {
-                    command.Parameters.AddWithValue("@Fecha" + i, "-");
+                    command.Parameters.AddWithValue("@Fecha" + i, "*");
                 }
             }
 

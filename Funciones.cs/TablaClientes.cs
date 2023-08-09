@@ -261,9 +261,20 @@
                                 {
                                 
                                      if (row[j] != null && row[j].ToString().Contains("-"))
-                                     { 
-                                        cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
-                                        cell.Style.BackColor = Color.LightYellow;
+                                     {
+                                        string[] cantidad = row[j].ToString().Split('-');
+
+                                        if (Convert.ToDouble(cantidad[1]) > 0)
+                                        {
+                                            cell.Style.Font = new Font("Dubai", 14, FontStyle.Bold);
+                                            cell.Style.BackColor = Color.LightYellow;
+                                        }
+                                        else
+                                        {
+                                            cell.Style.Font = new Font("Dubai", 14);
+                                            cell.Style.BackColor = Color.Yellow;
+                                        }
+                                       
                                      }
                                      else
                                      {

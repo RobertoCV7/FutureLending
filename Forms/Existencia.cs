@@ -13,10 +13,10 @@ namespace FutureLending.Forms
 {
     public partial class Existencia : Form
     {
-        string nombre =  Form1.Nom;
-        string lista =  Form1.Lis;
-        string liquidacion =  Form1.Liq;
-     
+        string nombre = Form1.Nom;
+        string lista = Form1.Lis;
+        string liquidacion = Form1.Liq;
+
         public Existencia()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace FutureLending.Forms
                 label4.Hide();
                 LabelLiquidacion.Hide();
             }
-            
+
         }
 
         private bool cerrar = false;
@@ -60,7 +60,7 @@ namespace FutureLending.Forms
             {
                 e.Cancel = true;
             }
-            
+
         }
     }
 }
