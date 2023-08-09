@@ -716,7 +716,7 @@ public class LecturaBaseDatos
         command.Parameters.AddWithValue("@Monto_Restante", Monto_Restante);
 
         for (var i = 1; i <= 14; i++)
-            command.Parameters.AddWithValue("@Fecha" + i, i <= dias_de_pago.Length ? dias_de_pago[i - 1] : "-");
+            command.Parameters.AddWithValue("@Fecha" + i, i <= dias_de_pago.Length ? dias_de_pago[i - 1] : "*");
         try
         {
             command.ExecuteNonQuery();

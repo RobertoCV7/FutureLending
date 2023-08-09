@@ -44,7 +44,7 @@ internal class LecturasEspecificas
                             {
                                 string fechaCampo = "Fecha" + (i + 1);
                                 int fechaIndex = reader.GetOrdinal(fechaCampo);
-                                fila[16 + i] = reader.IsDBNull(fechaIndex) ? "-" : reader.GetString(fechaIndex);
+                                fila[16 + i] = reader.IsDBNull(fechaIndex) ? "*" : reader.GetString(fechaIndex);
                             }
                         }
                     }

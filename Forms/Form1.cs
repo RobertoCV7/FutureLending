@@ -2124,7 +2124,12 @@ public partial class Form1 : Form
     {
         //Obtener el valor seleccionado de fecha por el nombre del cliente
         LecturasEspecificas instancia2 = new();
-        string[] fechas = instancia2.LectName(ComBoxName.SelectedItem.ToString());
+        string[] fecha2 = instancia2.LectName(ComBoxName.SelectedItem.ToString());
+        string[] fechas = new string[45];
+        for (int i = 0; i < fecha2.Length; i++)
+        {
+            fechas[i] = fecha2[i];
+        }
 
         if (Convert.ToDouble(txtBoxMonto.Texts) > Convert.ToDouble(fechas[15]))
         {
@@ -2152,8 +2157,13 @@ public partial class Form1 : Form
                         string[] fecha = datos[index].Split("-");
                         fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
                         fechas[15] = suma.ToString("N2");
-                        string[] dato = fechas;
-                        dato[30] = fechas[1];
+                        string[] dato = new string[45];
+                        for (int i = 0; i < fechas.Length; i++)
+                        {
+                            dato[i] = fechas[i];
+
+                        }
+                        dato[31] = fechas[1];
                         Ediciones instancia22 = new();
                         _ = instancia22.EditarLista1(dato);
                     }
@@ -2164,8 +2174,13 @@ public partial class Form1 : Form
                         string[] fecha = datos[index].Split("-");
                         fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
                         fechas[15] = resta.ToString("N2");
-                        string[] dato = fechas;
-                        dato[30] = fechas[1];
+                        string[] dato = new string[45];
+                        for (int i = 0; i < fechas.Length; i++)
+                        {
+                            dato[i] = fechas[i];
+
+                        }
+                        dato[31] = fechas[1];
                         Ediciones instancia22 = new();
                         _ = instancia22.EditarLista1(dato);
                     }
@@ -2189,7 +2204,7 @@ public partial class Form1 : Form
                     string fecha = a.ToString("dd/MM/yyyy");
                     fechas[index] = fecha + "-" + txtBoxMonto.Texts;
                     fechas[15] = totRes2.ToString("N2");
-                    string[] dato = new string[40];
+                    string[] dato = new string[45];
                     for (int i = 0; i < fechas.Length; i++)
                     {
                         dato[i] = fechas[i];
@@ -2199,8 +2214,6 @@ public partial class Form1 : Form
                 }
                 else
                 {
-
-
                     //Restar el nuevo pago al monto restante 
                     double totRes = (Convert.ToDouble(fechas[15])) - (Convert.ToDouble(txtBoxMonto.Texts));
                     //Si el monto restante es 0, entonces se pasa a liquidados 
@@ -2227,11 +2240,17 @@ public partial class Form1 : Form
                         fechas[index] += "-" + txtBoxMonto.Texts;
                         fechas[15] = totRes.ToString("N2");//Asigno el nuevo monto restante
                         Ediciones instancia22 = new();
-                        string[] dato = fechas;
-                        dato[30] = fechas[1];
+                        string[] dato = new string[45];
+                        for (int i = 0; i < fechas.Length; i++)
+                        {
+                            dato[i] = fechas[i];
+                        }
+
+                        dato[31] = fechas[1];
                         _ = instancia22.EditarLista1(dato);
                     }
                 }
+
             }
             //Resetear valores 
             RecargarDatosPnlRegPagos();

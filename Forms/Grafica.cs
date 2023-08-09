@@ -59,15 +59,21 @@ namespace FutureLending.Forms
             chart.Series.Add(new Series("Data"));
             chart.Series["Data"].ChartType = SeriesChartType.Pie;
 
-            // Agregar los puntos a la serie con el texto personalizado en la leyenda
+            // Asignar colores a los segmentos de la gráfica de pastel
+            chart.Series["Data"].Points.AddXY("Morosidad", valor1);
+            chart.Series["Data"].Points[0].Font = new Font("Corbel", 16, FontStyle.Bold); // Tamaño de fuente de la leyenda "Legend"
+            chart.Series["Data"].Points[0].Color = Color.Red; // Color rojo para Morosidad
+
+            chart.Series["Data"].Points.AddXY("Pagos Completados", valor2);
+            chart.Series["Data"].Points[1].Font = new Font("Corbel", 16, FontStyle.Bold); // Tamaño de fuente de la leyenda "Legend"
+            chart.Series["Data"].Points[1].Color = Color.Yellow; // Color amarillo para Pagos Completados
+
+            // Agregar el porcentaje en la leyenda
             float porcen1 = (float)valor1 / (float)Form1.valor3 * 100;
             float porcen2 = (float)valor2 / (float)Form1.valor3 * 100;
 
-            chart.Series["Data"].Points.AddXY(valor1, valor1);
-            chart.Series["Data"].Points[0].LegendText = $"Morosidad ({porcen1.ToString("F2")}%)"; // Agregar el porcentaje en la leyenda
-
-            chart.Series["Data"].Points.AddXY(valor2, valor2);
-            chart.Series["Data"].Points[1].LegendText = $"Pagos Completos ({porcen2.ToString("F2")}%)"; // Agregar el porcentaje en la leyenda
+            chart.Series["Data"].Points[0].LegendText = $"Morosidad ({porcen1.ToString("F2")}%)";
+            chart.Series["Data"].Points[1].LegendText = $"Pagos Completados ({porcen2.ToString("F2")}%)";
 
             // Asignar el ChartArea a la Serie
             chart.Series["Data"].ChartArea = "Area";
@@ -78,8 +84,8 @@ namespace FutureLending.Forms
             // Agregar una leyenda
             chart.Legends.Add(new Legend("Legend"));
             chart.Legends["Legend"].Docking = Docking.Bottom; // Posicionar la leyenda debajo del gráfico
-            chart.Series["Data"].Legend = "Legend";
             chart.Legends["Legend"].Font = new Font("Corbel", 16, FontStyle.Bold); // Tamaño de fuente de la leyenda "Legend"
+            chart.Series["Data"].Legend = "Legend";
             chart.Series["Data"].IsVisibleInLegend = true;
 
             return chart;
