@@ -4288,12 +4288,12 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(PanelEditar);
             Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
             Controls.Add(pnlClientes);
             Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar2_2);
-            Controls.Add(PanelEditar);
             Controls.Add(PnlAvales);
             Controls.Add(PanelEditar3);
             Controls.Add(PanelEditarLiquidados);

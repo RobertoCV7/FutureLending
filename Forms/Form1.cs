@@ -944,8 +944,8 @@ namespace FutureLending.Forms
                 {
                     if (datos[i].Contains("-"))
                     {
-                            rjComboBox9.Items.Add(datos[i] + "-(PAGADA)");
-                            f++;
+                        rjComboBox9.Items.Add(datos[i] + "-(PAGADA)");
+                        f++;
                     }
                     else
                     {
@@ -985,7 +985,7 @@ namespace FutureLending.Forms
             Lecturas_Especificas instancia2 = new();
             string[] fecha2 = instancia2.LectName(ComBoxName.SelectedItem.ToString());
             string[] fechas = new string[45];
-            for(int i = 0; i < fecha2.Length; i++)
+            for (int i = 0; i < fecha2.Length; i++)
             {
                 fechas[i] = fecha2[i];
             }
@@ -1016,8 +1016,8 @@ namespace FutureLending.Forms
                             string[] fecha = datos[index].Split("-");
                             fechas[index] = fecha[0] + "-" + txtBoxMonto.Texts;
                             fechas[15] = suma.ToString("N2");
-                            string[] dato = new string [45];
-                            for(int i = 0; i < fechas.Length; i++)
+                            string[] dato = new string[45];
+                            for (int i = 0; i < fechas.Length; i++)
                             {
                                 dato[i] = fechas[i];
 
@@ -2747,7 +2747,11 @@ namespace FutureLending.Forms
         private void BtnGuardarCambio_Click(object sender, EventArgs e)
         {
             Ediciones e1 = new();
-            string[] informacion = this.Informacion; //Asigno los valores leidos anteriormente al nuevo string por si no hya cambios
+            string[] informacion = new string[50]; //Asigno los valores leidos anteriormente al nuevo string por si no hya cambios
+            for (int i = 0; i < this.Informacion.Length; i++)
+            {
+                informacion[i] = this.Informacion[i];
+            }
             informacion[0] = rjComboBox3.SelectedItem.ToString(); //Promotor que lo atiende
             informacion[1] = textBoxPersonalizado10.Texts;
             informacion[2] = textBoxPersonalizado9.Texts; //Credito Prestado
@@ -2764,7 +2768,7 @@ namespace FutureLending.Forms
             informacion[13] = textBoxPersonalizado1.Texts;//Correo
             informacion[14] = rjComboBox2.SelectedItem.ToString(); //Su forma de pago quincenales o semanales
             informacion[15] = textBoxPersonalizado7.Texts; //Monto Restante
-            informacion[30] = Cliente;
+            informacion[31] = Cliente;
             if (informacion[14] != tipoPago || dateTimePickerPersonalizado1.Value.ToString("d") != temporal[4])
             {
                 switch (rjComboBox2.SelectedItem)

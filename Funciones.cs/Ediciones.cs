@@ -33,11 +33,17 @@ namespace FutureLending.Funciones.cs
         "@NuevaFecha3", "@NuevaFecha4", "@NuevaFecha5", "@NuevaFecha6", "@NuevaFecha7", "@NuevaFecha8",
         "@NuevaFecha9", "@NuevaFecha10", "@NuevaFecha11", "@NuevaFecha12", "@NuevaFecha13", "@NuevaFecha14","@NuevaFecha15", "@Nombre"
     };
-
-            for (int i = 0; i < parametros.Length; i++)
+            try
             {
-                command.Parameters.AddWithValue(parametros[i], datos[i]);
+                for (int i = 0; i < parametros.Length; i++)
+                {
+                    command.Parameters.AddWithValue(parametros[i], datos[i]);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
+          
 
             try
             {
