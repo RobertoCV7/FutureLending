@@ -5864,23 +5864,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\donne\\.nuget\\packages\\": {},
-    "E:\\Programas\\Visual Studio\\Componentes\\NuGetPackages": {}
+    "C:\\Users\\donnet\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Escritorio\\Esc\\FutureLending2\\FutureLending.csproj",
+      "projectUniqueName": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\FutureLending.csproj",
       "projectName": "FutureLending",
-      "projectPath": "E:\\Escritorio\\Esc\\FutureLending2\\FutureLending.csproj",
-      "packagesPath": "C:\\Users\\donne\\.nuget\\packages\\",
-      "outputPath": "E:\\Escritorio\\Esc\\FutureLending2\\obj\\",
+      "projectPath": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\FutureLending.csproj",
+      "packagesPath": "C:\\Users\\donnet\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Programas\\Visual Studio\\Componentes\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\donne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\donnet\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5961,7 +5961,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },

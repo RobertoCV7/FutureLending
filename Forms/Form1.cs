@@ -1015,7 +1015,11 @@ public partial class Form1 : Form
     private void BtnGuardarCambio_Click(object sender, EventArgs e)
     {
         Ediciones e1 = new();
-        var strings = Informacion; //Asigno los valores leidos anteriormente al nuevo string por si no hya cambios
+        string[] strings = new string[50]; //Asigno los valores leidos anteriormente al nuevo string por si no hya cambios
+        for (int i = 0; i < this.Informacion.Length; i++)
+        {
+            strings[i] = this.Informacion[i];
+        }
         strings[0] = rjComboBox3.SelectedItem.ToString(); //Promotor que lo atiende
         strings[1] = textBoxPersonalizado10.Texts;
         strings[2] = textBoxPersonalizado9.Texts; //Credito Prestado
@@ -1032,7 +1036,7 @@ public partial class Form1 : Form
         strings[13] = textBoxPersonalizado1.Texts; //Correo
         strings[14] = rjComboBox2.SelectedItem.ToString(); //Su forma de pago quincenales o semanales
         strings[15] = textBoxPersonalizado7.Texts; //Monto Restante
-        strings[30] = Cliente;
+        strings[31] = Cliente;
         if (strings[14] != tipoPago || dateTimePickerPersonalizado1.Value.ToString("d") != temporal[4])
         {
             switch (rjComboBox2.SelectedItem)

@@ -4277,10 +4277,10 @@ namespace FutureLending.Forms
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
+            Controls.Add(PnlAvales);
             Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
             Controls.Add(pnlClientes);
-            Controls.Add(PnlAvales);
             Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar);
             Controls.Add(PanelEditarLiquidados);

@@ -18,7 +18,7 @@
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
     <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
         <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
@@ -23830,7 +23830,7 @@
     <value>1354, 801</value>
   </data>
   <data name="rjButton16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
+    <value>None</value>
   </data>
   <data name="rjButton16.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -23869,7 +23869,7 @@
     <value>....</value>
   </data>
   <data name="rjButton9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
+    <value>None</value>
   </data>
   <data name="rjButton9.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -23887,10 +23887,13 @@
     <value>Guardar</value>
   </data>
   <data name="TextBoxNombreaval2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="TextBoxNombreaval2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
+  </data>
+  <data name="TextBoxNombreaval2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>847, 201</value>
   </data>
   <data name="TextBoxNombreaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
@@ -23899,7 +23902,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxNombreaval2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 54</value>
+    <value>497, 54</value>
   </data>
   <data name="label131.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -23913,6 +23916,9 @@
   <data name="label131.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label131.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 161</value>
+  </data>
   <data name="label131.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 39</value>
   </data>
@@ -23920,7 +23926,7 @@
     <value>Nombre completo:</value>
   </data>
   <data name="TextBoxNombreaval1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="TextBoxNombreaval1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
@@ -23932,7 +23938,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxNombreaval1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 54</value>
+    <value>496, 54</value>
   </data>
   <data name="label130.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -24012,6 +24018,9 @@
   <data name="TextBoxCorreoaval2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxCorreoaval2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>847, 735</value>
+  </data>
   <data name="TextBoxCorreoaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24019,7 +24028,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxCorreoaval2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>499, 54</value>
   </data>
   <data name="label121.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -24033,6 +24042,9 @@
   <data name="label121.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label121.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 699</value>
+  </data>
   <data name="label121.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 39</value>
   </data>
@@ -24045,6 +24057,9 @@
   <data name="TextBoxTelefonoaval2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxTelefonoaval2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>847, 621</value>
+  </data>
   <data name="TextBoxTelefonoaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24052,7 +24067,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxTelefonoaval2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>499, 54</value>
   </data>
   <data name="label122.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -24066,6 +24081,9 @@
   <data name="label122.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label122.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 586</value>
+  </data>
   <data name="label122.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 39</value>
   </data>
@@ -24078,6 +24096,9 @@
   <data name="TextBoxNumExtaval2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxNumExtaval2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1168, 497</value>
+  </data>
   <data name="TextBoxNumExtaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24085,7 +24106,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxNumExtaval2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 54</value>
+    <value>176, 54</value>
   </data>
   <data name="label123.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -24111,6 +24132,9 @@
   <data name="TextBoxNumIntaval2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxNumIntaval2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>847, 501</value>
+  </data>
   <data name="TextBoxNumIntaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24118,7 +24142,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxNumIntaval2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 54</value>
+    <value>176, 54</value>
   </data>
   <data name="label124.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -24132,6 +24156,9 @@
   <data name="label124.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label124.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 470</value>
+  </data>
   <data name="label124.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 39</value>
   </data>
@@ -24144,6 +24171,9 @@
   <data name="TextBoxColoniaaval2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxColoniaaval2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>847, 390</value>
+  </data>
   <data name="TextBoxColoniaaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24151,7 +24181,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxColoniaaval2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>495, 54</value>
   </data>
   <data name="label125.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -24165,6 +24195,9 @@
   <data name="label125.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label125.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 355</value>
+  </data>
   <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 39</value>
   </data>
@@ -24177,6 +24210,9 @@
   <data name="TextBoxCalleaval2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxCalleaval2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>847, 290</value>
+  </data>
   <data name="TextBoxCalleaval2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24184,7 +24220,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxCalleaval2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>492, 54</value>
   </data>
   <data name="label126.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -24198,6 +24234,9 @@
   <data name="label126.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label126.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 257</value>
+  </data>
   <data name="label126.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 39</value>
   </data>
@@ -24210,6 +24249,9 @@
   <data name="TextBoxCorreoaval1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxCorreoaval1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 727</value>
+  </data>
   <data name="TextBoxCorreoaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24217,7 +24259,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxCorreoaval1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>497, 54</value>
   </data>
   <data name="label88.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -24232,7 +24274,7 @@
     <value>NoControl</value>
   </data>
   <data name="label88.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 691</value>
+    <value>23, 691</value>
   </data>
   <data name="label88.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 39</value>
@@ -24249,6 +24291,9 @@
   <data name="TextBoxTelefonoaval1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxTelefonoaval1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 613</value>
+  </data>
   <data name="TextBoxTelefonoaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24256,7 +24301,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxTelefonoaval1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>497, 54</value>
   </data>
   <data name="label114.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -24270,6 +24315,9 @@
   <data name="label114.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label114.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 575</value>
+  </data>
   <data name="label114.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 39</value>
   </data>
@@ -24282,6 +24330,9 @@
   <data name="TextBoxNumExtaval1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Corbel, 24pt, style=Bold</value>
   </data>
+  <data name="TextBoxNumExtaval1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 484</value>
+  </data>
   <data name="TextBoxNumExtaval1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
@@ -24289,7 +24340,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxNumExtaval1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 54</value>
+    <value>176, 54</value>
   </data>
   <data name="label117.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -24302,6 +24353,9 @@
   </data>
   <data name="label117.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label117.Location" type="System.Drawing.Point, System.Drawing">
+    <value>340, 451</value>
   </data>
   <data name="label117.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 39</value>
@@ -24322,7 +24376,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxNumIntaval1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 54</value>
+    <value>176, 54</value>
   </data>
   <data name="label118.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -24335,6 +24389,9 @@
   </data>
   <data name="label118.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label118.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 458</value>
   </data>
   <data name="label118.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 39</value>
@@ -24355,7 +24412,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxColoniaaval1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>495, 54</value>
   </data>
   <data name="label119.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -24368,6 +24425,9 @@
   </data>
   <data name="label119.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label119.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 352</value>
   </data>
   <data name="label119.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 39</value>
@@ -24388,7 +24448,7 @@
     <value>10, 7, 10, 7</value>
   </data>
   <data name="TextBoxCalleaval1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 54</value>
+    <value>498, 54</value>
   </data>
   <data name="label120.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -24401,6 +24461,9 @@
   </data>
   <data name="label120.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label120.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 251</value>
   </data>
   <data name="label120.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 39</value>
