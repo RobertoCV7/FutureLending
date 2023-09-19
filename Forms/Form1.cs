@@ -2291,7 +2291,12 @@ namespace FutureLending.Forms
                 {
                     Guardar = false;
                     Lectura_Base_Datos obj = new();
-                    string[] infoListaNueva2 = InformacionPagos;
+                    string[] infoListaNueva2 = new string [100];
+
+                    for (int i = 0; i < InformacionPagos.Length; i++)
+                    {
+                        infoListaNueva2[i] = InformacionPagos[i];
+                    }
                     infoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
                     infoListaNueva2[1] = TextBoxNombre.Texts; //Nombre del registro
                     infoListaNueva2[2] = TextBoxCredito.Texts; //Credito Prestado
@@ -2611,7 +2616,7 @@ namespace FutureLending.Forms
                     if (pedirDatos.Mover2)
                     {
                         //Para mover a lista 2 copio valores que tiene la lista 1 y agrego otros que el usuario debe agregar
-                        string[] infoMov = new string[43];
+                        string[] infoMov = new string[100];
                         infoMov[0] = Informacion[0]; //Promotor que lo atiende
                         infoMov[1] = Informacion[1]; //Nombre del registro
                         infoMov[2] = Informacion[2]; //Credito Prestado

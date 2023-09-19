@@ -721,7 +721,7 @@ namespace FutureLending.Funciones.cs
         {
             using MySqlConnection connection = Conector();
             StringBuilder queryBuilder = new();
-            queryBuilder.Append("INSERT INTO lista2 (Promotor, Nombre_Completo, Credito_Prestado, Monto_Restante, Pagare, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_de_pago, Liquidacion_Intencion, Quita, Pago_Total_EXT)");
+            queryBuilder.Append("INSERT INTO lista2 (Promotor, Nombre_Completo, Credito_Prestado, Monto_Restante, Pagare, Calle, Colonia, Num_int, Num_ext, Telefono, Correo, Tipo_de_pago, Liquidacion_Intencion, Quita, Pago_Total_EXT");
 
             // Agregar los campos de fechas y pagos dinámicamente
             Ediciones ed = new();
@@ -729,9 +729,9 @@ namespace FutureLending.Funciones.cs
             int numFechasPagos = ed.ObtenerNumeroUltimaColumna("lista2"); // Número de pares de campos (FECHA y PAGO)
             for (int i = 1; i <= numFechasPagos; i++)
             {
-                queryBuilder.Append($", FECHA{i}, PAGO{i}");
+                queryBuilder.Append($", FECHA{i} , PAGO{i}");
             }
-
+            queryBuilder.Append(")");
             queryBuilder.Append(" VALUES (@Promotor, @Nombre, @Credito, @MontoRestante, @Pagare, @Calle, @Colonia, @NumInt, @NumExt, @Telefono, @Correo, @TipoPago, @LiquidacionIntencion, @Quita, @PagoEXT");
 
             // Agregar los parámetros de fechas y pagos dinámicamente
@@ -765,8 +765,8 @@ namespace FutureLending.Funciones.cs
             {
                 int fechaIndex = 14 + (i - 1) * 2;
                 int pagoIndex = fechaIndex + 1;
-                string fechaParam = valores[fechaIndex] ?? "-";
-                string pagoParam = valores[pagoIndex] ?? "-";
+                string fechaParam =  "-";
+                string pagoParam =  "-";
                 command.Parameters.AddWithValue($"@Fecha{i}", fechaParam);
                 command.Parameters.AddWithValue($"@Pago{i}", pagoParam);
             }
