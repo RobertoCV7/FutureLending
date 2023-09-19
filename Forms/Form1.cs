@@ -868,7 +868,7 @@ public partial class Form1 : Form
                 PedirDatos datos = new();
                 datos.ShowDialog();
 
-                var infoMov = new string[43];
+                var infoMov = new string[1000];
                 if (datos.Mover2)
                 {
                     //Para mover a lista 2 copio valores que tiene la lista 1 y agrego otros que el usuario debe agregar
