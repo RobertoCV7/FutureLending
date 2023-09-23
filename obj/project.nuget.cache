@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yGSwM9ARhzllt8XgSZdNzchZ7FVy5CQi7r1bJjhxnrqBDdaDgtAseaDdfM+3w4Dj3sgUT646Ng0/qOQG9h8WQg==",
+  "dgSpecHash": "BGygUoPK2+pMO/0a+tzDCquoJVzgj0HkK5u3dI3UjRoyyv8nod0M1daddnzjkg2UYC17JN/dPEvIrHuALltseA==",
   "success": true,
   "projectFilePath": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\Future\\FutureLending.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "C:\\Users\\donnet\\.nuget\\packages\\bunifu.ui.winforms\\6.1.0\\bunifu.ui.winforms.6.1.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\bunifu.ui.winforms.1.5.3\\1.0.0\\bunifu.ui.winforms.1.5.3.1.0.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\costura.fody\\3.3.3\\costura.fody.3.3.3.nupkg.sha512",
-    "C:\\Users\\donnet\\.nuget\\packages\\epplus\\6.2.7\\epplus.6.2.7.nupkg.sha512",
+    "C:\\Users\\donnet\\.nuget\\packages\\epplus\\6.2.9\\epplus.6.2.9.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\fody\\4.0.2\\fody.4.0.2.nupkg.sha512",
@@ -49,7 +49,7 @@
     "C:\\Users\\donnet\\.nuget\\packages\\microsoft.windows.compatibility\\6.0.0\\microsoft.windows.compatibility.6.0.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\mysql.data\\8.1.0\\mysql.data.8.1.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
-    "C:\\Users\\donnet\\.nuget\\packages\\pdfsharpcore\\1.3.57\\pdfsharpcore.1.3.57.nupkg.sha512",
+    "C:\\Users\\donnet\\.nuget\\packages\\pdfsharpcore\\1.3.60\\pdfsharpcore.1.3.60.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\restsharp\\106.13.0\\restsharp.106.13.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\restsharpsigned\\105.2.3\\restsharpsigned.105.2.3.nupkg.sha512",

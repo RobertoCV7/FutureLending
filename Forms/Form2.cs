@@ -9,29 +9,27 @@
             InitializeComponent();
             string rutaAplicacion = Application.StartupPath;
             this.Text = titulo;
+
             Size formSize = this.Size;
 
             // Asigna el texto al Label
             Texto.Text = text;
-            Texto.TextAlign = ContentAlignment.MiddleCenter;
-
+            int a = Texto.Width;
+            a = this.Width - a;
+            a /= 2;
+            Texto.Location = new Point(a, 23);
             // Ajusta el tamaño de la fuente si es necesario
             while (Texto.PreferredWidth > formSize.Width || Texto.PreferredHeight > formSize.Height)
             {
                 Texto.Font = new Font(Texto.Font.FontFamily, Texto.Font.Size - 1); // Reduce el tamaño de fuente
             }
-            if (situacion == 1)
+            Icon = situacion switch
             {
-                this.Icon = new Icon(rutaAplicacion + "\\Resources\\Correcto.ico");
-            }
-            else if (situacion == 2)
-            {
-                this.Icon = new Icon(rutaAplicacion + "\\Resources\\Alerta.ico");
-            }
-            else if (situacion == 3)
-            {
-                this.Icon = new Icon(rutaAplicacion + "\\Resources\\TodoMal.ico");
-            }
+                1 => new Icon(rutaAplicacion + "\\Resources\\Correcto.ico"),
+                2 => new Icon(rutaAplicacion + "\\Resources\\Alerta.ico"),
+                3 => new Icon(rutaAplicacion + "\\Resources\\TodoMal.ico"),
+                _ => Icon
+            };
         }
         private void RjButton1_Click(object sender, EventArgs e)
         {

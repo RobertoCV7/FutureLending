@@ -38,10 +38,10 @@
             Texto.AutoSize = true;
             Texto.Font = new Font("Cooper Black", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             Texto.ForeColor = SystemColors.Highlight;
-            Texto.Location = new Point(43, 23);
+            Texto.Location = new Point(100, 23);
             Texto.Margin = new Padding(3, 3, 3, 0);
             Texto.Name = "Texto";
-            Texto.Size = new Size(654, 39);
+            Texto.Size = new Size(517, 31);
             Texto.TabIndex = 0;
             Texto.Text = "El programa funciona correctamente";
             Texto.TextAlign = ContentAlignment.MiddleLeft;
@@ -68,10 +68,10 @@
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
-            ClientSize = new Size(740, 220);
+            ClientSize = new Size(744, 220);
             Controls.Add(rjButton1);
             Controls.Add(Texto);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);

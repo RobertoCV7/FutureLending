@@ -1,0 +1,100 @@
+[18/09/2023 21:15:15] Error: System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'HandshakeFailure'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): Mensaje recibido inesperado, o bien su formato es incorrecto.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at MySql.Data.Common.Ssl.StartSSLAsync(Stream baseStream, Encoding encoding, String connectionString, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CheckConnection(Boolean revisador) in C:\Users\donnet\Cosas\Documentos\Trabajo\Future\Funciones.cs\Lectura_Base_Datos.cs:line 962
+[18/09/2023 21:15:18] Error: System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'HandshakeFailure'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): Mensaje recibido inesperado, o bien su formato es incorrecto.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at MySql.Data.Common.Ssl.StartSSLAsync(Stream baseStream, Encoding encoding, String connectionString, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CheckConnection(Boolean revisador) in C:\Users\donnet\Cosas\Documentos\Trabajo\Future\Funciones.cs\Lectura_Base_Datos.cs:line 962
+[18/09/2023 21:15:25] Error: System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'HandshakeFailure'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): Mensaje recibido inesperado, o bien su formato es incorrecto.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at MySql.Data.Common.Ssl.StartSSLAsync(Stream baseStream, Encoding encoding, String connectionString, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CheckConnection(Boolean revisador) in C:\Users\donnet\Cosas\Documentos\Trabajo\Future\Funciones.cs\Lectura_Base_Datos.cs:line 962
+[18/09/2023 21:16:05] Error: System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'HandshakeFailure'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): Mensaje recibido inesperado, o bien su formato es incorrecto.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at MySql.Data.Common.Ssl.StartSSLAsync(Stream baseStream, Encoding encoding, String connectionString, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CheckConnection(Boolean revisador) in C:\Users\donnet\Cosas\Documentos\Trabajo\Future\Funciones.cs\Lectura_Base_Datos.cs:line 962
+[18/09/2023 21:18:29] Error: System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'HandshakeFailure'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): Mensaje recibido inesperado, o bien su formato es incorrecto.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at MySql.Data.Common.Ssl.StartSSLAsync(Stream baseStream, Encoding encoding, String connectionString, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CheckConnection(Boolean revisador) in C:\Users\donnet\Cosas\Documentos\Trabajo\Future\Funciones.cs\Lectura_Base_Datos.cs:line 962
+[18/09/2023 21:18:31] Error: System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'HandshakeFailure'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): Mensaje recibido inesperado, o bien su formato es incorrecto.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at MySql.Data.Common.Ssl.StartSSLAsync(Stream baseStream, Encoding encoding, String connectionString, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CheckConnection(Boolean revisador) in C:\Users\donnet\Cosas\Documentos\Trabajo\Future\Funciones.cs\Lectura_Base_Datos.cs:line 962
+[22/09/2023 05:14:36 p. m.] Error: MySql.Data.MySqlClient.MySqlException (0x80004005): error connecting: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at FutureLending.Funciones.cs.Lectura_Base_Datos.CheckConnection(Boolean revisador) in C:\Users\donnet\Cosas\Documentos\Trabajo\Future\Funciones.cs\Lectura_Base_Datos.cs:line 962
+[22/09/2023 05:22:38 p. m.] Error: Error al cargar los promotores desde la base de datos: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[22/09/2023 05:22:38 p. m.] Error: Error al cargar los promotores desde la base de datos: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[22/09/2023 05:22:38 p. m.] Error: Error al cargar los promotores desde la base de datos: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[22/09/2023 05:22:38 p. m.] Error: Error al cargar los promotores desde la base de datos: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[22/09/2023 05:22:38 p. m.] Error: Error al cargar los promotores desde la base de datos: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.
+[22/09/2023 05:22:38 p. m.] Error: Error al cargar los promotores desde la base de datos: Operación no válida a través de subprocesos: Se tuvo acceso al control '' desde un subproceso distinto a aquel en que lo creó.

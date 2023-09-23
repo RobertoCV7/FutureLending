@@ -15,32 +15,61 @@ namespace FutureLending.Forms
     {
 
         //Variable que se utiliza a la hora de borrar o editar un registro
-        private string listaActual = "";
-        private Timer timer;
+    
         public Form1()
         {
             InitializeComponent();
             this.Load += Form1_Load;
             timer = new Timer();
-            timer.Interval = 10; // Intervalo de tiempo para la animación (en milisegundos)
+            timer.Interval = 100; // Intervalo de tiempo para la animación (en milisegundos)
             timer.Tick += Timer_Tick;
             PingLabel.Hide();
 
         }
+        //Declaracion de variables 
+        //privadas
+        private string listaActual = "";
+        private Timer timer;
         private double opacity = 1.0;
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            opacity -= 0.05; // Cantidad en la que disminuir la opacidad en cada intervalo
-            if (opacity <= 0)
-            {
-                timer.Stop();
-                // Realizar acciones después de que se complete la animación
-            }
-            else
-            {
-                panel1.BackColor = Color.FromArgb((int)(255 * opacity), panel1.BackColor);
-            }
-        }
+        private bool cambioEnPromotores = true;
+        private double restanteOriginal;
+        private int indexFecha;
+        private bool revertir;
+        private bool unclick = true;
+        private string[] InformacionPagos = new string[45];
+        private bool Guardar = false;
+        private bool changingCheckedState5;
+        private bool Aval = false;
+        private string[] Avales = new string[15];
+        private string[] NuevosAvales = new string[16];
+        private int panel = 0;
+        private static readonly Lectura_Base_Datos Lec = new();
+        private static bool requierAdmin2 = false;
+        private static string[] datos = new string[50];
+        private Double credito2;
+        private bool revisado;
+        //publicas
+        public static double DineroAire;
+        public static double MontoTotal;
+        public static bool admin = false;
+        public static bool Guar = true;
+        public static string Liq = null;
+        public static string Nom;
+        public static string Lis;
+        public static string nombre;
+        public static int valor1;
+        public static int valor2;
+        public static int valor3;
+        public static bool Boton1 { get; private set; }
+        public static bool Boton2 { get; private set; }
+        public static bool Boton3 { get; private set; }
+        public static bool Boton4 { get; private set; }
+       
+       
+        
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             CargaMasiva();
@@ -80,7 +109,7 @@ namespace FutureLending.Forms
         }
 
         //Cargar todos los promotores solo 1 vez y si se modifican se recargan de manera global asi no se llama cada vez
-        private bool cambioEnPromotores = true;
+        
         void CargaMasiva()
         {
             if (cambioEnPromotores)
@@ -96,13 +125,30 @@ namespace FutureLending.Forms
             }
         }
         #region Animacion de menu
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            opacity -= 0.05; // Cantidad en la que disminuir la opacidad en cada intervalo
+            if (opacity <= 0)
+            {
+                timer.Stop();
+                // Realizar acciones después de que se complete la animación
+            }
+            else
+            {
+                panel1.BackColor = Color.FromArgb((int)(255 * opacity), panel1.BackColor);
+            }
+        }
         private void CollapseMenu()
         {
-            if (this.panelMenu.Width > 200) //Collapse menu
+            const int collapsedWidth = 100;
+            const int expandedWidth = 250;
+
+            if (panelMenu.Width > collapsedWidth)
             {
-                panelMenu.Width = 100;
+                panelMenu.Width = collapsedWidth;
                 pictureBox1.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
+
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
                 {
                     menuButton.Text = "";
@@ -111,26 +157,25 @@ namespace FutureLending.Forms
                 }
             }
             else
-            { //Expand menu
-                panelMenu.Width = 250;
+            {
+                panelMenu.Width = expandedWidth;
                 pictureBox1.Visible = true;
                 btnMenu.Dock = DockStyle.None;
+
                 foreach (Button menuButton in panelMenu.Controls.OfType<Button>())
                 {
-                    menuButton.Text = @"   " + menuButton.Tag;
+                    menuButton.Text = $"   {menuButton.Tag}";
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
             }
         }
-
         private void BtnMenu_Click(object sender, EventArgs e)
         {
             CollapseMenu();
         }
         #endregion
-        public static double DineroAire;
-        public static double MontoTotal;
+       
         #region Botones centrales del menu
 
         #region Ingresar Clientes
@@ -142,7 +187,7 @@ namespace FutureLending.Forms
             EsconderPaneles(pnlClientes);
             lblTitle.Text = @"Ingresar Clientes";
         }
-        Double credito2;
+       
         private void SoloNumerosDecimal(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -274,11 +319,7 @@ namespace FutureLending.Forms
         #endregion
 
         #region Listas
-        public static bool Boton1 { get; private set; }
-        public static bool Boton2 { get; private set; }
-        public static bool Boton3 { get; private set; }
-        public static bool Boton4 { get; private set; }
-        bool revisado;
+      
         private void BtnListas_Click(object sender, EventArgs e)
         {
             BtnAgregarColumnas.Hide();
@@ -928,7 +969,7 @@ namespace FutureLending.Forms
                 }
             });
         }
-        private static string[] datos = new string[50];
+       
         private void BtnBuscarC_Click(object sender, EventArgs e)
         {
             //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
@@ -1378,7 +1419,7 @@ namespace FutureLending.Forms
 
         #region promotores principales
 
-        private static readonly Lectura_Base_Datos Lec = new();
+       
         public static void CargarPromotoresEnComboBox(RJComboBox box, bool a)
         {
             try
@@ -1540,7 +1581,7 @@ namespace FutureLending.Forms
         }
         #endregion
 
-        private static bool requierAdmin2 = false;
+      
         private void RjComboBox9_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox9.SelectedIndex != -1)
@@ -1677,7 +1718,7 @@ namespace FutureLending.Forms
         }
         #endregion
 
-        public static bool admin = false;
+        #region Permisos de lectura       
         private void Boton_Permisos_Click(object sender, EventArgs e)
         {
             Administrador_Acceso acc = new();
@@ -1713,11 +1754,8 @@ namespace FutureLending.Forms
         {
 
         }
-        private void label32_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #endregion
+     
         private void comboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex != -1)
@@ -1821,11 +1859,12 @@ namespace FutureLending.Forms
         {
             DateTime dateTime = dateFechaInicio.Value;
             int multiplicador = cmbTipo.SelectedIndex == 0 ? 14 : 15;
-            var fechaFinal = dateTime.AddDays(multiplicador * 7);
+            DateTime fechaFinal = dateTime.AddDays(multiplicador * 7);
             dateTimePickerPersonalizado2.Value = fechaFinal;
-            String credito = txtCredito.Texts;
-            credito2 = Convert.ToDouble(credito);
-            _ = cmbInteres.Texts;
+
+            string credito = txtCredito.Texts;
+            double credito2 = Convert.ToDouble(credito);
+
             string nuevoString;
 
             if (cmbInteres.Texts == "Preferencial")
@@ -1861,10 +1900,6 @@ namespace FutureLending.Forms
             txtTotal_I.Texts = $"${total}";
         }
 
-        public static bool Guar = true;
-        public static string Liq = null;
-        public static string Nom;
-        public static string Lis;
         private void btnGuardar1_Click(object sender, EventArgs e)
         {
 
@@ -2291,7 +2326,7 @@ namespace FutureLending.Forms
                 {
                     Guardar = false;
                     Lectura_Base_Datos obj = new();
-                    string[] infoListaNueva2 = new string [100];
+                    string[] infoListaNueva2 = new string[100];
 
                     for (int i = 0; i < InformacionPagos.Length; i++)
                     {
@@ -2397,11 +2432,7 @@ namespace FutureLending.Forms
 
             }
         }
-        private double restanteOriginal;
-        private int indexFecha;
-        private bool revertir;
-        private bool unclick = true;
-        private string[] InformacionPagos = new string[45];
+       
         private void Botoncambiodefechamomentaneo_Click_1(object sender, EventArgs e)
         {
             if (!Guardar)
@@ -2757,7 +2788,7 @@ namespace FutureLending.Forms
             {
                 informacion[i] = this.Informacion[i];
             }
-            informacion[0] = rjComboBox3.SelectedItem.ToString(); //Promotor que lo atiende
+            informacion[0] = rjComboBox3.SelectedItem.ToString() ?? "Seleccione un promotor"; //Promotor que lo atiende
             informacion[1] = textBoxPersonalizado10.Texts;
             informacion[2] = textBoxPersonalizado9.Texts; //Credito Prestado
             informacion[3] = textBoxPersonalizado11.Texts; //Pagare generado
@@ -2886,6 +2917,7 @@ namespace FutureLending.Forms
             }
         }
 
+        #region KeyPress
         private void TextNumIntLiq_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
@@ -2975,6 +3007,8 @@ namespace FutureLending.Forms
             }
         }
 
+        #endregion
+
         private void ComboBoxPromotoresListas_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxPromotoresListas.SelectedIndex != -1 && ComboBoxPromotoresListas.SelectedIndex != 0)
@@ -2996,7 +3030,7 @@ namespace FutureLending.Forms
 
         }
 
-        private bool changingCheckedState5;
+       
         private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
         {
             if (!changingCheckedState5)
@@ -3020,11 +3054,12 @@ namespace FutureLending.Forms
             }
         }
 
+        #region Boton de reincio
         private void iconButton2_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
-
+        #endregion
         private void dateTimePickerPersonalizado1_ValueChanged(object sender, EventArgs e)
         {
             DateTime dateTime = new();
@@ -3049,7 +3084,7 @@ namespace FutureLending.Forms
         {
             dateTimePickerPersonalizado1_ValueChanged(null, null);
         }
-        private bool Guardar = false;
+      
         private void iconButton3_Click(object sender, EventArgs e)//Boton para ingresar cliente a la lista 2
         {
             listaEstado = 4;
@@ -3076,6 +3111,7 @@ namespace FutureLending.Forms
             TextBoxPagoExt.Texts = "";
         }
 
+        #region GridListas
         private void gridListas_Scroll(object sender, ScrollEventArgs e)
         {
 
@@ -3143,10 +3179,10 @@ namespace FutureLending.Forms
                 gridListas.Rows[rowIndex].DefaultCellStyle.BackColor = oddRowColor;
             }
         }
-        private bool Aval = false;
-        private string[] Avales = new string[15];
-        private string[] NuevosAvales = new string[16];
-        private int panel = 0;
+        #endregion
+
+        #region Avales
+      
         private void BtnGuardarAval_Click(object sender, EventArgs e)
         {
 
@@ -3296,7 +3332,6 @@ namespace FutureLending.Forms
             PnlAvales.BringToFront();
             PnlAvales.Visible = true;
         }
-
         private void rjButton9_Click(object sender, EventArgs e)
         {
             if (listaEstado != 4)
@@ -3340,16 +3375,19 @@ namespace FutureLending.Forms
             TextBoxTelefonoaval2.Texts = "";
             TextBoxCorreoaval2.Texts = "";
         }
+        #endregion
 
+
+        #region Agregar Columnas
         private void BtnAgregarColumnas_Click(object sender, EventArgs e)
         {
             Agregar_Columnas ag = new();
             ag.ShowDialog();
         }
-        public static string nombre;
-        public static int valor1;
-        public static int valor2;
-        public static int valor3;
+        #endregion
+
+        #region Grafica de promotores
+       
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
             double total = MontoTotal - DineroAire;
@@ -3360,5 +3398,6 @@ namespace FutureLending.Forms
             Grafica gra = new();
             gra.ShowDialog();
         }
+        #endregion
     }
 }
