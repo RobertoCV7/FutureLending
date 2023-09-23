@@ -14,7 +14,12 @@ public partial class Form2 : Form
 
         // Asigna el texto al Label
         Texto.Text = text;
-        Texto.TextAlign = ContentAlignment.MiddleCenter;
+        // Asigna el texto al Label
+        Texto.Text = text;
+        int a = Texto.Width;
+        a = this.Width - a;
+        a /= 2;
+        Texto.Location = new Point(a, 23); ;
 
         // Ajusta el tamaño de la fuente si es necesario
         while (Texto.PreferredWidth > formSize.Width || Texto.PreferredHeight > formSize.Height)
