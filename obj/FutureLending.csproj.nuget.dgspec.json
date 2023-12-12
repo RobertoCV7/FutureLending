@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\FutureLending.csproj": {}
+    "F:\\Escritorio\\a\\FutureLending.csproj": {}
   },
   "projects": {
-    "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\FutureLending.csproj": {
+    "F:\\Escritorio\\a\\FutureLending.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\FutureLending.csproj",
+        "projectUniqueName": "F:\\Escritorio\\a\\FutureLending.csproj",
         "projectName": "FutureLending",
-        "projectPath": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\FutureLending.csproj",
+        "projectPath": "F:\\Escritorio\\a\\FutureLending.csproj",
         "packagesPath": "C:\\Users\\donnet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\obj\\",
+        "outputPath": "F:\\Escritorio\\a\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -84,7 +84,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.22621.29, 10.0.22621.29]"
+              "version": "[10.0.22621.31, 10.0.22621.31]"
             }
           ],
           "frameworkReferences": {
@@ -98,7 +98,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

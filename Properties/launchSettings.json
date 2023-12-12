@@ -2,7 +2,7 @@
   "profiles": {
     "FutureLending": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\FutureLending2\\bin\\Debug\\net6.0-windows10.0.22621.0",
+      "workingDirectory": "C:\\a\\bin\\Debug\\net6.0-windows10.0.22621.0",
       "nativeDebugging": false,
       "hotReloadEnabled": true
     },
