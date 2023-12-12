@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BGygUoPK2+pMO/0a+tzDCquoJVzgj0HkK5u3dI3UjRoyyv8nod0M1daddnzjkg2UYC17JN/dPEvIrHuALltseA==",
+  "dgSpecHash": "yBGI1PEdFJ037+BdaU/i4xTEhPFckGB/vW0uYx1jRSZvg2XU5H+HNriyiP5utpOAaeqpYbyK0V6fx3dSf6+xxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\donnet\\Cosas\\Documentos\\Trabajo\\Future\\FutureLending.csproj",
+  "projectFilePath": "C:\\Users\\donnet\\FutureLending\\FutureLending.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\donnet\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
@@ -124,7 +124,7 @@
     "C:\\Users\\donnet\\.nuget\\packages\\system.web.services.description\\4.9.0\\system.web.services.description.4.9.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\donnet\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512",
-    "C:\\Users\\donnet\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.29\\microsoft.windows.sdk.net.ref.10.0.17763.29.nupkg.sha512"
+    "C:\\Users\\donnet\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.31\\microsoft.windows.sdk.net.ref.10.0.17763.31.nupkg.sha512"
   ],
   "logs": [
     {

@@ -2,10 +2,12 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
+using FutureLending.Controles_personalizados;
 using FutureLending.ControlesPersonalizados;
 using FutureLending.Funciones.cs;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
+using static TheArtOfDev.HtmlRenderer.Adapters.RGraphicsPath;
 using Button = System.Windows.Forms.Button;
 using Timer = System.Windows.Forms.Timer;
 
@@ -15,7 +17,7 @@ namespace FutureLending.Forms
     {
 
         //Variable que se utiliza a la hora de borrar o editar un registro
-    
+
         public Form1()
         {
             InitializeComponent();
@@ -64,9 +66,9 @@ namespace FutureLending.Forms
         public static bool Boton2 { get; private set; }
         public static bool Boton3 { get; private set; }
         public static bool Boton4 { get; private set; }
-       
-       
-        
+
+
+
 
 
 
@@ -104,22 +106,23 @@ namespace FutureLending.Forms
                     ComBoxName.AutoCompleteSource = AutoCompleteSource.ListItems;
                     this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                     dateTimePickerPersonalizado2.Enabled = false;
+                    //Ocultar Objetos para Reutilizarlos
+                    BtnAvalesEditar.Hide();
+                    groupBox1.Hide();
+                    textBoxPersonalizado11.Hide();
+
                 });
             });
         }
 
         //Cargar todos los promotores solo 1 vez y si se modifican se recargan de manera global asi no se llama cada vez
-        
+
         void CargaMasiva()
         {
             if (cambioEnPromotores)
             {
                 CargarPromotoresEnComboBox(cmbPromotor, false);
                 CargarPromotoresEnComboBox(ComboBoxPromotoresListas, true);
-                CargarPromotoresEnComboBox(rjComboBox3, false);
-                CargarPromotoresEnComboBox(rjComboBox8, false);
-                CargarPromotoresEnComboBox(ComboBoxPromotor3, false);
-                CargarPromotoresEnComboBox(ComboBoxPromotorLiq, false);
                 CargarPromotoresEnComboBox(rjComboBox4, false);
                 cambioEnPromotores = false;
             }
@@ -175,7 +178,7 @@ namespace FutureLending.Forms
             CollapseMenu();
         }
         #endregion
-       
+
         #region Botones centrales del menu
 
         #region Ingresar Clientes
@@ -186,8 +189,9 @@ namespace FutureLending.Forms
             Guardar = false;
             EsconderPaneles(pnlClientes);
             lblTitle.Text = @"Ingresar Clientes";
+            agregar();
         }
-       
+
         private void SoloNumerosDecimal(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -319,7 +323,7 @@ namespace FutureLending.Forms
         #endregion
 
         #region Listas
-      
+
         private void BtnListas_Click(object sender, EventArgs e)
         {
             BtnAgregarColumnas.Hide();
@@ -581,38 +585,37 @@ namespace FutureLending.Forms
             Lecturas_Especificas lecturasEspecificas = new();
             if (listaEstado == 0) //Si viene de la lista 1
             {
-                //Muestro el panel de editar
-                EsconderPaneles(PanelEditar);
                 //Limpio las listas donde es posible  mover al registro
                 cmbLista.Items.Clear();
                 cmbLista.Enabled = true;
                 cmbLista.Items.AddRange(new object[] { "Lista 2", "Lista 3", "Liquidados" });
-                //Establezco de donde viene este registro
-                Pertenece = "Lista 1";
-                LblPerte.Text = Pertenece;
+                //Establezco de donde viene este registro y llamo a la funcion de los datos 
+                cmbTipo.Items.Clear();
+                cmbTipo.Items.AddRange(new object[] { "Semanales", "Quincenales" });
+                editar1("Lista 1");
                 //Obtengo el nombre del cliente
                 Cliente = cmbCliente.Texts;
                 //Empieza leyendo su informacion de la base de datos
                 Informacion = lecturasEspecificas.LectName(Cliente);
                 temporal = lecturasEspecificas.LectName(Cliente);
                 //Tuve que convertir de List<string[]> a string[] para poder usarlo en los objetos del Panel (Editar)
-                textBoxPersonalizado10.Texts = Cliente;
-                textBoxPersonalizado9.Texts = Informacion[2]; //Credito Prestado
+                txtNombre.Texts = Cliente;//Nombre del Cliente
+                txtCredito.Texts = Informacion[2];//Credito Prestado
                 textBoxPersonalizado11.Texts = Informacion[3]; //Pagare generado
-                dateTimePickerPersonalizado1.Value = DateTime.Parse(Informacion[4]); //Fecha de Inicio
-                dateTimeLimite.Value = DateTime.Parse(Informacion[5]);//Fecha de su ultimo pago (Limite)
-                rjComboBox1.SelectedItem = Informacion[6]; //Interes Que tiene
-                textBoxPersonalizado8.Texts = Informacion[7]; //Monto Total del prestamo + intereses
-                rjComboBox2.SelectedItem = Informacion[14]; //Su forma de pago quincenales o semanales
+                dateFechaInicio.Value = DateTime.Parse(Informacion[4]);//Fecha de Inicio
+                dateTimePickerPersonalizado2.Value = DateTime.Parse(Informacion[5]);//Fecha de su ultimo pago (Limite)
+                cmbInteres.SelectedItem = Informacion[6];//Interes Que tiene
+                txtTotal_I.Texts = Informacion[7];//Monto Total del prestamo + intereses
+                cmbTipo.SelectedItem = Informacion[14]; //Su forma de pago quincenales o semanales
                 tipoPago = Informacion[14];
-                rjComboBox3.SelectedItem = Informacion[0]; //Promotor que lo atiende
-                textBoxPersonalizado7.Texts = Informacion[15]; //Monto Restante
-                textBoxPersonalizado6.Texts = Informacion[8]; //Calle
-                textBoxPersonalizado5.Texts = Informacion[9]; //Colonia
-                textBoxPersonalizado4.Texts = Informacion[10]; //Numero de casa interior
-                textBoxPersonalizado3.Texts = Informacion[11];//Numero de casa exterior
-                textBoxPersonalizado2.Texts = Informacion[12];//Telefono
-                textBoxPersonalizado1.Texts = Informacion[13];//Correo
+                cmbPromotor.SelectedItem = Informacion[0];//Promotor que lo atiende
+                txtTotal.Texts = Informacion[15];//Monto Restante
+                txtCalle.Texts = Informacion[8];//Calle
+                txtColonia.Texts = Informacion[9];//Colonia
+                txtNumInt.Texts = Informacion[10];//Numero de casa interior
+                txtNumExt.Texts = Informacion[11];//Numero de casa exterior
+                txtTelefono.Texts = Informacion[12];//Telefono
+                txtCorreo.Texts = Informacion[13];//Correo
                 //Del 16 al 29 son los datos de las 14 fechas que solo ocupan 7 si sus pagos con quincenales
             }
             else if (listaEstado == 1) //Si viene de la lista 2
@@ -620,41 +623,42 @@ namespace FutureLending.Forms
 
                 TextBoxPagoExt.Enabled = false;
                 groupBox2.Show();
-                EsconderPaneles(PnlEditar2);
+
                 //Limpio las listas donde es posible  mover al registro
                 CmbLista2.Items.Clear();
                 CmbLista2.Enabled = true;
                 CmbLista2.Items.AddRange(new object[] { "Lista 3", "Liquidados" });
+                cmbTipo.Items.Clear();
+                cmbTipo.Items.AddRange(new object[] { "Liquidacion", "Intencion" });
                 //Nombre del registro
                 Cliente = cmbCliente.Texts;
+                editar2("Lista 2");
                 //activar boton de fechas
                 btnEditarFechas2.Enabled = true;
-                //Ahora de donde viene este registro
-                Pertenece = "Lista 2";
-                LabelPertenece.Text = Pertenece;
+
                 //Leo la informacion de ese registro en especifico
                 Informacion2 = lecturasEspecificas.LectName2(Cliente);
                 //Empiezo a llenar los objetos del panel editar2
-                rjComboBox8.SelectedItem = Informacion2[0]; //Promotor que lo atiende
-                TextBoxNombre.Texts = Cliente; //Nombre del registro
-                TextBoxCredito.Texts = Informacion2[2]; //Credito Prestado
-                TextBoxRestante.Texts = Informacion2[3]; //Monto Restante
-                TextBoxPagare.Texts = Informacion2[4]; //Pagare generado
-                TextBoxCalle.Texts = Informacion2[5]; //Calle
-                TextBoxColonia.Texts = Informacion2[6]; //Colonia
-                TextBoxNumInt.Texts = Informacion2[7]; //Numero de casa interior
-                TextBoxNumExt.Texts = Informacion2[8]; //Numero de casa exterior
-                TextBoxTelefono.Texts = Informacion2[9]; //Telefono
-                TextBoxCorreo.Texts = Informacion2[10]; //Correo
+                cmbPromotor.SelectedItem = Informacion2[0]; //Promotor que lo atiende
+                txtNombre.Texts = Cliente; //Nombre del registro
+                txtCredito.Texts = Informacion2[2]; //Credito Prestado
+                txtTotal.Texts = Informacion2[3]; //Monto Restante
+                TextBoxRestante.Texts = Informacion2[4]; //Pagare generado
+                txtCalle.Texts = Informacion2[5]; //Calle
+                txtColonia.Texts = Informacion2[6]; //Colonia
+                txtNumInt.Texts = Informacion2[7]; //Numero de casa interior
+                txtNumExt.Texts = Informacion2[8]; //Numero de casa exterior
+                txtTelefono.Texts = Informacion2[9]; //Telefono
+                txtCorreo.Texts = Informacion2[10]; //Correo
                 if (Informacion2[11] == "Liquidacion")
                 {
-                    rjComboBox7.SelectedIndex = 0;
+                    cmbTipo.SelectedIndex = 0;
                 }
                 else
                 {
-                    rjComboBox7.SelectedIndex = 1;
+                    cmbTipo.SelectedIndex = 1;
                 }
-                TextBoxLiquidacionIntencion.Texts = Informacion2[12]; //Monto de liquidacion o intencion
+                txtTotal_I.Texts = Informacion2[12]; //Monto de liquidacion o intencion
                 TextBoxQuita.Texts = Informacion2[13]; //Monto de Quita
                 Ediciones ed = new();
                 int max = ed.ObtenerNumeroColumnas("lista2");
@@ -664,7 +668,7 @@ namespace FutureLending.Forms
             else if (listaEstado == 2) //Si viene de la lista 3
             {
                 //Traer panel de edicion3
-                EsconderPaneles(PanelEditar3);
+                editar3("Lista 3");
                 //Llenar el rjcombobox de promotores con la info correspondiente
                 //Limpio las listas donde es posible  mover al registro
                 rjComboBox5.Items.Clear();
@@ -675,48 +679,60 @@ namespace FutureLending.Forms
                 //Leer la info
                 Informacion3 = lecturasEspecificas.LectName3(Cliente); //tamaño 14
                 //Empiezo a llenar los objetos del panel editar3
-                TextBoxNombre3.Texts = Cliente; //Nombre del registro
-                TextBoxCredito3.Texts = Informacion3[2]; //Credito Prestado
-                TextBoxPagare3.Texts = Informacion3[3]; //Pagare generado
-                TextBoxCalle3.Texts = Informacion3[4]; //Calle
-                TextBoxColonia3.Texts = Informacion3[5]; //Colonia
-                TextBoxNumInt3.Texts = Informacion3[6]; //Numero de casa interior
-                TextBoxNumExt3.Texts = Informacion3[7]; //Numero de casa exterior
-                TextBoxTelefono3.Texts = Informacion3[8]; //Telefono
-                TextBoxCorreo3.Texts = Informacion3[9]; //Correo
-                ComboBoxPromotor3.SelectedItem = Informacion3[0]; //Promotor que lo atiende
+                txtNombre.Texts = Cliente; //Nombre del registro
+                txtCredito.Texts = Informacion3[2]; //Credito Prestado
+                textBoxPersonalizado11.Texts = Informacion3[3]; //Pagare generado
+                txtCalle.Texts = Informacion3[4]; //Calle
+                txtColonia.Texts = Informacion3[5]; //Colonia
+                txtNumInt.Texts = Informacion3[6]; //Numero de casa interior
+                txtNumExt.Texts = Informacion3[7]; //Numero de casa exterior
+                txtTelefono.Texts = Informacion3[8]; //Telefono
+                txtCorreo.Texts = Informacion3[9]; //Correo
+                cmbPromotor.SelectedItem = Informacion3[0]; //Promotor que lo atiende
                 ResolucionDemanda.SelectedItem = Informacion3[11]; //Resolucion de la demanda
-                TextImporte3.Texts = Informacion3[12]; //Importe
+                txtTotal.Texts = Informacion3[12]; //Importe
                 ComboBoxResolucion3.SelectedItem = Informacion3[10]; //Resolucion
             }
             else if (listaEstado == 3)//Si viene de liquidados
             {
-                //Traigo el panel editar de liquidados
-                EsconderPaneles(PanelEditarLiquidados);
+
                 //Nombre del registro
                 Cliente = cmbCliente.Texts;
                 //Obtenemos la informacion de ese registro en especifico
                 Informacion4 = lecturasEspecificas.LectName4(Cliente); //tamaño 12
+                editarliq("Liquidados");
                 //Rellenamos los objetos del panel editar liquidados
-                TextNombreLiq.Texts = Cliente; //Nombre del registro
-                TextCreditoLiq.Texts = Informacion4[2]; //Credito Prestado
+                txtNombre.Texts = Cliente; //Nombre del registro
+                txtCredito.Texts = Informacion4[2]; //Credito Prestado
                 DateTime fechaInicio;
                 if (DateTime.TryParse(Informacion4[3], out fechaInicio))
                 {
-                    FechaInicioLiq.Value = fechaInicio;
+                    dateFechaInicio.Value = fechaInicio;
                 }
                 else
                 {
-                    FechaInicioLiq.Enabled = false;
+                    dateFechaInicio.Enabled = false;
                 }
-                ComboBoxPromotorLiq.SelectedItem = Informacion4[0]; //Promotor que lo atiende
-                ComBoBoxLiquidacion.SelectedItem = Informacion4[10]; //De que lista viene
-                TextCalleLiq.Texts = Informacion4[4]; //Calle
-                TextColoniaLiq.Texts = Informacion4[5]; //Colonia
-                TextNumIntLiq.Texts = Informacion4[6]; //Numero de casa interior
-                TextNumExtLiq.Texts = Informacion4[7]; //Numero de casa exterior
-                TextTelefonoLiq.Texts = Informacion4[8]; //Telefono
-                TextCorreoLiq.Texts = Informacion4[9]; //Correo
+                cmbPromotor.SelectedItem = Informacion4[0]; //Promotor que lo atiende
+                if (Informacion4[10] == "Lista1" || Informacion[10] == "Lista 1")
+                {
+                    ComBoBoxLiquidacion.SelectedIndex = 0;
+                }
+                else if (Informacion4[10] == "Lista2" || Informacion[10] == "Lista 2")
+                {
+                    ComBoBoxLiquidacion.SelectedIndex = 1;
+                }
+                else
+                {
+                    ComBoBoxLiquidacion.SelectedIndex = 2;
+                }
+
+                txtCalle.Texts = Informacion4[4]; //Calle
+                txtColonia.Texts = Informacion4[5]; //Colonia
+                txtNumInt.Texts = Informacion4[6]; //Numero de casa interior
+                txtNumExt.Texts = Informacion4[7]; //Numero de casa exterior
+                txtTelefono.Texts = Informacion4[8]; //Telefono
+                txtCorreo.Texts = Informacion4[9]; //Correo
             }
         }
 
@@ -969,7 +985,7 @@ namespace FutureLending.Forms
                 }
             });
         }
-       
+
         private void BtnBuscarC_Click(object sender, EventArgs e)
         {
             //Buscar el cliente por nombre dentro de la base de datos para registrar un nuevo pago semanal/quincenal
@@ -1419,7 +1435,7 @@ namespace FutureLending.Forms
 
         #region promotores principales
 
-       
+
         public static void CargarPromotoresEnComboBox(RJComboBox box, bool a)
         {
             try
@@ -1581,7 +1597,7 @@ namespace FutureLending.Forms
         }
         #endregion
 
-      
+
         private void RjComboBox9_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (rjComboBox9.SelectedIndex != -1)
@@ -1755,7 +1771,7 @@ namespace FutureLending.Forms
 
         }
         #endregion
-     
+
         private void comboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex != -1)
@@ -1992,67 +2008,7 @@ namespace FutureLending.Forms
         }
         private void btnGuardar2_Click(object sender, EventArgs e)
         {
-            Ediciones ediciones = new();
-            string[] strings = this.Informacion3;
-            strings[1] = TextBoxNombre3.Texts; //Nombre del registro
-            strings[2] = TextBoxCredito3.Texts; //Credito Prestado
-            strings[3] = TextBoxPagare3.Texts; //Pagare generado
-            strings[4] = TextBoxCalle3.Texts; //Calle
-            strings[5] = TextBoxColonia3.Texts; //Colonia
-            strings[6] = TextBoxNumInt3.Texts; //Numero de casa interior
-            strings[7] = TextBoxNumExt3.Texts; //Numero de casa exterior
-            strings[8] = TextBoxTelefono3.Texts; //Telefono
-            strings[9] = TextBoxCorreo3.Texts; //Correo
-            strings[0] = ComboBoxPromotor3.SelectedItem.ToString(); //Promotor que lo atiende
-            strings[11] = ResolucionDemanda.SelectedItem.ToString(); //Resolucion de la demanda
-            strings[12] = TextImporte3.Texts; //Importe
-            strings[10] = ComboBoxResolucion3.SelectedItem.ToString(); //Resolucion
-            strings[13] = Cliente;
-            bool es = ediciones.EditarLista3(strings);
-            if (es)
-            {
-                Ediciones e2 = new();
-                Lectura_Base_Datos obj = new();
-                bool Existe = obj.Existencia_Aval(TextBoxNombre3.Texts);
-                if (Existe)
-                {
-                    if (e2.EditarAval(TextBoxNombre3.Texts, NuevosAvales))
-                    {
-                        EsconderPaneles(pnlListas);
-                        btnLista3.PerformClick(); //Reactualizo los datos de la lista 2
-                        rjButton10.Enabled = true;
-                    }
-                    else
-                    {
-                        MessageB("Error al guardar los avales", "Advertencia", 2);
-                    }
-                }
-                else
-                {
-                    string[] DatosAvales = new string[16];
-                    DatosAvales[0] = TextBoxNombre3.Texts; //Convertirmos al orden para guardado
-                    for (int i = 1; i < 15; i++)
-                    {
-                        DatosAvales[i] = Avales[i];
-                    }
 
-                    bool creado = obj.CrearAvales(DatosAvales);
-                    if (creado)
-                    {
-                        EsconderPaneles(pnlListas);
-                        btnLista3.PerformClick(); //Reactualizo los datos de la lista 2
-                        rjButton10.Enabled = true;
-                    }
-                    else
-                    {
-                        MessageB("Error al guardar los avales", "Advertencia", 2);
-                    }
-                }
-            }
-            else
-            {
-                MessageB("Error al editar", "Alerta", 2);
-            }
         }
 
         private void btnMover2_Click(object sender, EventArgs e)
@@ -2216,223 +2172,7 @@ namespace FutureLending.Forms
 
         }
 
-        private void btnGuardarC_Click(object sender, EventArgs e)
-        {
 
-            if (mover)
-            {
-                string[] mov5 = new string[12];
-                mov5[0] = Informacion2[0]; //Promotor que lo atiende
-                mov5[1] = Informacion2[1]; //Nombre del registro
-                mov5[2] = Informacion2[2]; //Credito Prestado
-                mov5[3] = "-";//Fecha de inicio
-                mov5[4] = Informacion2[5];//Calle
-                mov5[5] = Informacion2[6];//Colonia
-                mov5[6] = Informacion2[7];//Numero de casa interior
-                mov5[7] = Informacion2[8];//Numero de casa exterior
-                mov5[8] = Informacion2[9];//Telefono
-                mov5[9] = Informacion2[10];//Correo
-                mov5[10] = "Lista 2";
-                Lectura_Base_Datos instancia5 = new();
-                bool rev5 = instancia5.InsertarLiquidados(mov5);
-
-                if (rev5)
-                {
-                    instancia5.Erase(mov5[1], "lista2"); //Eliminamos el registro 
-                    EsconderPaneles(pnlListas);
-                    btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados ya que se paso para alla
-                }
-                else
-                {
-                    MessageB("Error a Mover a Liquidados", "Advertencia", 2);
-                }
-            }
-            else
-            {
-                if (!Guardar) //Si es false es porque esta editando y no guardando
-                {
-                    Ediciones e2 = new();
-                    string[] infoListaNueva2 = new string[100];
-                    for (int i = 0; i < (Informacion2.Count()); i++)
-                    {
-                        infoListaNueva2[i] = Informacion2[i];
-                    }
-                    int max = e2.ObtenerNumeroColumnas("lista2");
-                    infoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
-                    infoListaNueva2[1] = TextBoxNombre.Texts; //Nombre del registro
-                    infoListaNueva2[2] = TextBoxCredito.Texts; //Credito Prestado
-                    infoListaNueva2[3] = TextBoxRestante.Texts; //Monto Restante
-                    infoListaNueva2[4] = TextBoxPagare.Texts; //Pagare generado
-                    infoListaNueva2[5] = TextBoxCalle.Texts; //Calle
-                    infoListaNueva2[6] = TextBoxColonia.Texts; //Colonia
-                    infoListaNueva2[7] = TextBoxNumInt.Texts; //Numero de casa interior
-                    infoListaNueva2[8] = TextBoxNumExt.Texts; //Numero de casa exterior
-                    infoListaNueva2[9] = TextBoxTelefono.Texts; //Telefono
-                    infoListaNueva2[10] = TextBoxCorreo.Texts; //Correo
-                    infoListaNueva2[11] = rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
-                    infoListaNueva2[12] = TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
-                    infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
-                    infoListaNueva2[max + 1] = Cliente; //Nombre del que va a editar
-                    bool editarLista2 = e2.EditarLista2(infoListaNueva2);
-
-
-                    if (editarLista2)
-                    {
-                        Lectura_Base_Datos obj = new();
-                        bool Existe = obj.Existencia_Aval(TextBoxNombre.Texts);
-                        if (Existe)
-                        {
-                            if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
-                            {
-                                EsconderPaneles(pnlListas);
-                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
-                                rjButton9.Enabled = true;
-                            }
-                            else
-                            {
-                                MessageB("Error al guardar los avales", "Advertencia", 2);
-                            }
-                        }
-                        else
-                        {
-                            string[] DatosAvales = new string[17];
-                            DatosAvales[0] = TextBoxNombre.Texts; //Convertirmos al orden para guardado
-                            for (int i = 1; i < 15; i++)
-                            {
-                                DatosAvales[i] = NuevosAvales[i - 1];
-                            }
-
-                            bool creado = obj.CrearAvales(DatosAvales);
-                            if (creado)
-                            {
-                                EsconderPaneles(pnlListas);
-                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
-                                rjButton9.Enabled = true;
-                            }
-                            else
-                            {
-                                MessageB("Error al guardar los avales", "Advertencia", 2);
-                            }
-                        }
-
-                    }
-                    else
-                    {
-                        MessageB("Error al guardar los cambios", "Advertencia", 2);
-                    }
-
-                }
-                else //Si es verdadero esta guardando un usuario y no editandolo
-                {
-                    Guardar = false;
-                    Lectura_Base_Datos obj = new();
-                    string[] infoListaNueva2 = new string[100];
-
-                    for (int i = 0; i < InformacionPagos.Length; i++)
-                    {
-                        infoListaNueva2[i] = InformacionPagos[i];
-                    }
-                    infoListaNueva2[0] = rjComboBox8.SelectedItem.ToString(); //Promotor que lo atiende
-                    infoListaNueva2[1] = TextBoxNombre.Texts; //Nombre del registro
-                    infoListaNueva2[2] = TextBoxCredito.Texts; //Credito Prestado
-                    infoListaNueva2[3] = TextBoxRestante.Texts; //Monto Restante
-                    infoListaNueva2[4] = TextBoxPagare.Texts; //Pagare generado
-                    infoListaNueva2[5] = TextBoxCalle.Texts; //Calle
-                    infoListaNueva2[6] = TextBoxColonia.Texts; //Colronia
-                    infoListaNueva2[7] = TextBoxNumInt.Texts; //Numeoo de casa exterior
-                    infoListaNueva2[8] = TextBoxNumExt.Texts; //Numerefono
-                    infoListaNueva2[9] = TextBoxTelefono.Texts; //Tel de casa interior
-                    infoListaNueva2[10] = TextBoxCorreo.Texts; //Correo
-                    infoListaNueva2[11] = rjComboBox7.SelectedItem.ToString(); //Liquidacion o Intencion
-                    infoListaNueva2[12] = TextBoxLiquidacionIntencion.Texts; //Monto de liquidacion o intencion
-                    infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
-                    infoListaNueva2[42] = TextBoxPagoExt.Texts;
-                    if (obj.InsertarLista2(infoListaNueva2))
-                    {
-                        Ediciones e2 = new();
-                        bool Existe = obj.Existencia_Aval(TextBoxNombre.Texts);
-
-                        if (Existe)
-                        {
-
-                            if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
-                            {
-
-                                EsconderPaneles(pnlListas);
-                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
-                                rjComboBox8.SelectedItem = -1;
-                                rjComboBox8.Texts = "Seleccione un promotor";
-                                TextBoxNombre.Texts = "";
-                                TextBoxCredito.Texts = "";
-                                TextBoxRestante.Texts = "";
-                                TextBoxPagare.Texts = "";
-                                TextBoxCalle.Texts = "";
-                                TextBoxColonia.Texts = "";
-                                TextBoxNumInt.Texts = "";
-                                TextBoxNumExt.Texts = "";
-                                TextBoxTelefono.Texts = "";
-                                TextBoxCorreo.Texts = "";
-                                rjComboBox7.SelectedItem = -1;
-                                rjComboBox7.Texts = "Seleccione una opcion";
-                                TextBoxLiquidacionIntencion.Texts = "";
-                                TextBoxQuita.Texts = "";
-                            }
-                            else
-                            {
-                                MessageB("Error al guardar los avales", "Advertencia", 2);
-                            }
-                        }
-                        else
-                        {
-
-                            string[] DatosAvales = new string[16];
-                            DatosAvales[0] = TextBoxNombre.Texts; //Convertirmos al orden para guardado
-                            for (int i = 1; i < 15; i++)
-                            {
-                                DatosAvales[i] = Avales[i - 1];
-                            }
-
-                            bool creado = obj.CrearAvales(DatosAvales);
-                            if (creado)
-                            {
-                                EsconderPaneles(pnlListas);
-                                btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
-                                rjComboBox8.SelectedItem = -1;
-                                rjComboBox8.Texts = "Seleccione un promotor";
-                                TextBoxNombre.Texts = "";
-                                TextBoxCredito.Texts = "";
-                                TextBoxRestante.Texts = "";
-                                TextBoxPagare.Texts = "";
-                                TextBoxCalle.Texts = "";
-                                TextBoxColonia.Texts = "";
-                                TextBoxNumInt.Texts = "";
-                                TextBoxNumExt.Texts = "";
-                                TextBoxTelefono.Texts = "";
-                                TextBoxCorreo.Texts = "";
-                                rjComboBox7.SelectedItem = -1;
-                                rjComboBox7.Texts = "Seleccione una opcion";
-                                TextBoxLiquidacionIntencion.Texts = "";
-                                TextBoxQuita.Texts = "";
-                                rjButton9.Enabled = true;
-                            }
-                            else
-                            {
-                                MessageB("Error al guardar los avales", "Advertencia", 2);
-                            }
-                        }
-
-                    }
-                    else
-                    {
-                        MessageB("Error al ingresar el usuario", "Alerta", 2);
-                    }
-
-                }
-
-
-            }
-        }
-       
         private void Botoncambiodefechamomentaneo_Click_1(object sender, EventArgs e)
         {
             if (!Guardar)
@@ -2571,24 +2311,24 @@ namespace FutureLending.Forms
         {
             Botoncambiodefechamomentaneo.Enabled = false;
             FechaEnLista2.Enabled = false;
-            EsconderPaneles(PnlEditar2);
+            editar2("Lista 2");
         }
 
         private void BottonLiq_Click_1(object sender, EventArgs e)
         {
             Ediciones e2 = new();
             string[] informacion4 = this.Informacion4;
-            informacion4[1] = TextNombreLiq.Texts; //Nombre del registro
-            informacion4[2] = TextCreditoLiq.Texts; //Credito Prestado
-            informacion4[3] = FechaInicioLiq.Value.ToString("dd/MM/yyyy") ?? "-";
-            informacion4[0] = ComboBoxPromotorLiq.SelectedItem.ToString(); //Promotor que lo atiende
+            informacion4[1] = txtNombre.Texts; //Nombre del registro
+            informacion4[2] = txtCredito.Texts; //Credito Prestado
+            informacion4[3] = dateFechaInicio.Value.ToString("dd/MM/yyyy") ?? "-";
+            informacion4[0] = cmbPromotor.SelectedItem.ToString(); //Promotor que lo atiende
             informacion4[10] = ComBoBoxLiquidacion.SelectedItem.ToString(); //De que lista viene
-            informacion4[4] = TextCalleLiq.Texts; //Calle
-            informacion4[5] = TextColoniaLiq.Texts; //Colonia
-            informacion4[6] = TextNumIntLiq.Texts; //Numero de casa interior
-            informacion4[7] = TextNumExtLiq.Texts; //Numero de casa exterior
-            informacion4[8] = TextTelefonoLiq.Texts; //Telefono
-            informacion4[9] = TextCorreoLiq.Texts; //Correo
+            informacion4[4] = txtCalle.Texts; //Calle
+            informacion4[5] = txtColonia.Texts; //Colonia
+            informacion4[6] = txtNumInt.Texts; //Numero de casa interior
+            informacion4[7] = txtNumExt.Texts; //Numero de casa exterior
+            informacion4[8] = txtTelefono.Texts; //Telefono
+            informacion4[9] = txtCorreo.Texts; //Correo
             informacion4[11] = Cliente;
             bool saber2 = e2.EditarListaLiquidados(informacion4);
             bool er = e2.EditarAval(Cliente, NuevosAvales);
@@ -2598,11 +2338,11 @@ namespace FutureLending.Forms
                 bool Existe = obj.Existencia_Aval(Cliente);
                 if (Existe)
                 {
-                    if (e2.EditarAval(TextBoxNombre.Texts, NuevosAvales))
+                    if (e2.EditarAval(txtNombre.Texts, NuevosAvales))
                     {
                         EsconderPaneles(pnlListas);
                         btnLiquidados.PerformClick(); //Reactualizo los datos de la lista 2
-                        rjButton13.Enabled = true;
+
                     }
                     else
                     {
@@ -2623,7 +2363,7 @@ namespace FutureLending.Forms
                     {
                         EsconderPaneles(pnlListas);
                         btnLiquidados.PerformClick(); //Reactualizo los datos de la lista 2
-                        rjButton13.Enabled = true;
+
                     }
                     else
                     {
@@ -2782,105 +2522,388 @@ namespace FutureLending.Forms
 
         private void BtnGuardarCambio_Click(object sender, EventArgs e)
         {
-            Ediciones e1 = new();
-            string[] informacion = new string[50]; //Asigno los valores leidos anteriormente al nuevo string por si no hya cambios
-            for (int i = 0; i < this.Informacion.Length; i++)
+            if (lista == 1)
             {
-                informacion[i] = this.Informacion[i];
-            }
-            informacion[0] = rjComboBox3.SelectedItem.ToString() ?? "Seleccione un promotor"; //Promotor que lo atiende
-            informacion[1] = textBoxPersonalizado10.Texts;
-            informacion[2] = textBoxPersonalizado9.Texts; //Credito Prestado
-            informacion[3] = textBoxPersonalizado11.Texts; //Pagare generado
-            informacion[4] = dateTimePickerPersonalizado1.Value.ToString("dd/MM/yyyy"); //Fecha de Inicio
-            informacion[5] = dateTimeLimite.Value.ToString("dd/MM/yyyy");//Fecha de su ultimo pago (Limite)
-            informacion[6] = rjComboBox1.SelectedItem.ToString(); //Interes Que tiene
-            informacion[7] = textBoxPersonalizado8.Texts; //Monto Total del prestamo + intereses
-            informacion[8] = textBoxPersonalizado6.Texts; //Calle
-            informacion[9] = textBoxPersonalizado5.Texts; //ColoniaIndex was outside the 
-            informacion[10] = textBoxPersonalizado4.Texts; //Numero de casa interior
-            informacion[11] = textBoxPersonalizado3.Texts;//Numero de casa exterior
-            informacion[12] = textBoxPersonalizado2.Texts;//Telefono
-            informacion[13] = textBoxPersonalizado1.Texts;//Correo
-            informacion[14] = rjComboBox2.SelectedItem.ToString(); //Su forma de pago quincenales o semanales
-            informacion[15] = textBoxPersonalizado7.Texts; //Monto Restante
-            informacion[31] = Cliente;
-            if (informacion[14] != tipoPago || dateTimePickerPersonalizado1.Value.ToString("d") != temporal[4])
-            {
-                switch (rjComboBox2.SelectedItem)
+
+
+                Ediciones e1 = new();
+                string[] informacion = new string[50]; //Asigno los valores leidos anteriormente al nuevo string por si no hya cambios
+                for (int i = 0; i < this.Informacion.Length; i++)
                 {
-                    case "Semanales":
-                        string[] fechSem;
-
-                        fechSem = SumarSemanas(dateTimePickerPersonalizado1.Value.ToString("d"));
-                        for (int i = 16; i <= 29; i++)
-                        {
-                            informacion[i] = fechSem[i - 16];
-                        }
-
-                        break;
-                    case "Quincenales":
-                        string[] fechQuin;
-                        fechQuin = SumarQuincenas(dateTimePickerPersonalizado1.Value.ToString("d"));
-                        for (int i = 16; i <= 29; i++)
-                        {
-                            if (i >= 23)
-                            {
-                                informacion[i] = "-";
-                            }
-                            else
-                            {
-                                informacion[i] = fechQuin[i - 16];
-                            }
-                        }
-                        break;
+                    informacion[i] = this.Informacion[i];
                 }
-            }
-            Ediciones e2 = new();
-            bool revisar = e1.EditarLista1(informacion);
-            if (revisar)
-            {
-                Lectura_Base_Datos obj = new();
-                bool Existe = obj.Existencia_Aval(textBoxPersonalizado10.Texts);
-                if (Existe)
+                informacion[0] = cmbPromotor.SelectedItem.ToString() ?? "Seleccione un promotor"; //Promotor que lo atiende
+                informacion[1] = txtNombre.Texts;
+                informacion[2] = txtCredito.Texts; //Credito Prestado
+                informacion[3] = textBoxPersonalizado11.Texts; //Pagare generado
+                informacion[4] = dateFechaInicio.Value.ToString("dd/MM/yyyy"); //Fecha de Inicio
+                informacion[5] = dateTimePickerPersonalizado2.Value.ToString("dd/MM/yyyy");//Fecha de su ultimo pago (Limite)
+                informacion[6] = cmbInteres.SelectedItem.ToString(); //Interes Que tiene
+                informacion[7] = txtTotal_I.Texts; //Monto Total del prestamo + intereses
+                informacion[8] = txtCalle.Texts; //Calle
+                informacion[9] = txtColonia.Texts; //ColoniaIndex was outside the 
+                informacion[10] = txtNumInt.Texts; //Numero de casa interior
+                informacion[11] = txtNumExt.Texts;//Numero de casa exterior
+                informacion[12] = txtTelefono.Texts;//Telefono
+                informacion[13] = txtCorreo.Texts;//Correo
+                informacion[14] = cmbTipo.SelectedItem.ToString(); //Su forma de pago quincenales o semanales
+                informacion[15] = txtTotal.Texts; //Monto Restante
+                informacion[31] = Cliente;
+                if (informacion[14] != tipoPago || dateFechaInicio.Value.ToString("d") != temporal[4])
                 {
-                    if (e2.EditarAval(textBoxPersonalizado10.Texts, NuevosAvales))
+                    switch (cmbTipo.SelectedItem)
                     {
-                        EsconderPaneles(pnlListas);
-                        btnLista1.PerformClick(); //Reactualizo los datos de la lista 2
+                        case "Semanales":
+                            string[] fechSem;
+
+                            fechSem = SumarSemanas(dateFechaInicio.Value.ToString("d"));
+                            for (int i = 16; i <= 29; i++)
+                            {
+                                informacion[i] = fechSem[i - 16];
+                            }
+
+                            break;
+                        case "Quincenales":
+                            string[] fechQuin;
+                            fechQuin = SumarQuincenas(dateFechaInicio.Value.ToString("d"));
+                            for (int i = 16; i <= 29; i++)
+                            {
+                                if (i >= 23)
+                                {
+                                    informacion[i] = "-";
+                                }
+                                else
+                                {
+                                    informacion[i] = fechQuin[i - 16];
+                                }
+                            }
+                            break;
+                    }
+                }
+                Ediciones e2 = new();
+                bool revisar = e1.EditarLista1(informacion);
+                if (revisar)
+                {
+                    Lectura_Base_Datos obj = new();
+                    bool Existe = obj.Existencia_Aval(txtNombre.Texts);
+                    if (Existe)
+                    {
+                        if (e2.EditarAval(txtNombre.Texts, NuevosAvales))
+                        {
+                            EsconderPaneles(pnlListas);
+                            btnLista1.PerformClick(); //Reactualizo los datos de la lista 2
+                        }
+                        else
+                        {
+                            MessageB("Error al guardar los avales", "Advertencia", 2);
+                        }
                     }
                     else
                     {
-                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                        string[] DatosAvales = new string[16];
+                        DatosAvales[0] = txtNombre.Texts; //Convertirmos al orden para guardado
+                        for (int i = 1; i < 15; i++)
+                        {
+                            DatosAvales[i] = Avales[i];
+                        }
+
+                        bool creado = obj.CrearAvales(DatosAvales);
+                        if (creado)
+                        {
+                            EsconderPaneles(pnlListas);
+                            btnLista1.PerformClick(); //Reactualizo los datos de la lista 2
+                        }
+                        else
+                        {
+                            MessageB("Error al guardar los avales", "Advertencia", 2);
+                        }
                     }
                 }
                 else
                 {
-                    string[] DatosAvales = new string[16];
-                    DatosAvales[0] = textBoxPersonalizado10.Texts; //Convertirmos al orden para guardado
-                    for (int i = 1; i < 15; i++)
-                    {
-                        DatosAvales[i] = Avales[i];
-                    }
+                    MessageB("Error al guardar los cambios", "Alerta", 2);
+                }
 
-                    bool creado = obj.CrearAvales(DatosAvales);
-                    if (creado)
+                BtnAvalesEditar.Enabled = true;
+            }
+            else if (lista == 2)
+            {
+                if (mover)
+                {
+                    string[] mov5 = new string[12];
+                    mov5[0] = Informacion2[0]; //Promotor que lo atiende
+                    mov5[1] = Informacion2[1]; //Nombre del registro
+                    mov5[2] = Informacion2[2]; //Credito Prestado
+                    mov5[3] = "-";//Fecha de inicio
+                    mov5[4] = Informacion2[5];//Calle
+                    mov5[5] = Informacion2[6];//Colonia
+                    mov5[6] = Informacion2[7];//Numero de casa interior
+                    mov5[7] = Informacion2[8];//Numero de casa exterior
+                    mov5[8] = Informacion2[9];//Telefono
+                    mov5[9] = Informacion2[10];//Correo
+                    mov5[10] = "Lista 2";
+                    Lectura_Base_Datos instancia5 = new();
+                    bool rev5 = instancia5.InsertarLiquidados(mov5);
+
+                    if (rev5)
                     {
+                        instancia5.Erase(mov5[1], "lista2"); //Eliminamos el registro 
                         EsconderPaneles(pnlListas);
-                        btnLista1.PerformClick(); //Reactualizo los datos de la lista 2
+                        btnLiquidados.PerformClick(); //Reactualizo los datos de la lista Liquidados ya que se paso para alla
                     }
                     else
                     {
-                        MessageB("Error al guardar los avales", "Advertencia", 2);
+                        MessageB("Error a Mover a Liquidados", "Advertencia", 2);
                     }
+                }
+                else
+                {
+                    if (!Guardar) //Si es false es porque esta editando y no guardando
+                    {
+                        Ediciones e2 = new();
+                        string[] infoListaNueva2 = new string[100];
+                        for (int i = 0; i < (Informacion2.Count()); i++)
+                        {
+                            infoListaNueva2[i] = Informacion2[i];
+                        }
+                        int max = e2.ObtenerNumeroColumnas("lista2");
+                        infoListaNueva2[0] = cmbPromotor.SelectedItem.ToString(); //Promotor que lo atiende
+                        infoListaNueva2[1] = txtNombre.Texts; //Nombre del registro
+                        infoListaNueva2[2] = txtCredito.Texts; //Credito Prestado
+                        infoListaNueva2[3] = txtTotal.Texts; //Monto Restante
+                        infoListaNueva2[4] = TextBoxRestante.Texts; //Pagare generado
+                        infoListaNueva2[5] = txtCalle.Texts; //Calle
+                        infoListaNueva2[6] = txtColonia.Texts; //Colonia
+                        infoListaNueva2[7] = txtNumInt.Texts; //Numero de casa interior
+                        infoListaNueva2[8] = txtNumExt.Texts; //Numero de casa exterior
+                        infoListaNueva2[9] = txtTelefono.Texts; //Telefono
+                        infoListaNueva2[10] = txtCorreo.Texts; //Correo
+                        infoListaNueva2[11] = cmbTipo.SelectedItem.ToString(); //Liquidacion o Intencion
+                        infoListaNueva2[12] = txtTotal_I.Texts; //Monto de liquidacion o intencion
+                        infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
+                        infoListaNueva2[max + 1] = Cliente; //Nombre del que va a editar
+                        bool editarLista2 = e2.EditarLista2(infoListaNueva2);
+
+
+                        if (editarLista2)
+                        {
+                            Lectura_Base_Datos obj = new();
+                            bool Existe = obj.Existencia_Aval(txtNombre.Texts);
+                            if (Existe)
+                            {
+                                if (e2.EditarAval(txtNombre.Texts, NuevosAvales))
+                                {
+                                    EsconderPaneles(pnlListas);
+                                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+
+                                }
+                                else
+                                {
+                                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                                }
+                            }
+                            else
+                            {
+                                string[] DatosAvales = new string[17];
+                                DatosAvales[0] = txtNombre.Texts; //Convertirmos al orden para guardado
+                                for (int i = 1; i < 15; i++)
+                                {
+                                    DatosAvales[i] = NuevosAvales[i - 1];
+                                }
+
+                                bool creado = obj.CrearAvales(DatosAvales);
+                                if (creado)
+                                {
+                                    EsconderPaneles(pnlListas);
+                                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+
+                                }
+                                else
+                                {
+                                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            MessageB("Error al guardar los cambios", "Advertencia", 2);
+                        }
+
+                    }
+                    else //Si es verdadero esta guardando un usuario y no editandolo
+                    {
+                        Guardar = false;
+                        Lectura_Base_Datos obj = new();
+                        string[] infoListaNueva2 = new string[100];
+
+                        for (int i = 0; i < InformacionPagos.Length; i++)
+                        {
+                            infoListaNueva2[i] = InformacionPagos[i];
+                        }
+                        infoListaNueva2[0] = cmbPromotor.SelectedItem.ToString(); //Promotor que lo atiende
+                        infoListaNueva2[1] = txtNombre.Texts; //Nombre del registro
+                        infoListaNueva2[2] = txtCredito.Texts; //Credito Prestado
+                        infoListaNueva2[3] = txtTotal.Texts; //Monto Restante
+                        infoListaNueva2[4] = TextBoxRestante.Texts; //Pagare generado
+                        infoListaNueva2[5] = txtCalle.Texts; //Calle
+                        infoListaNueva2[6] = txtColonia.Texts; //Colronia
+                        infoListaNueva2[7] = txtNumInt.Texts; //Numeoo de casa exterior
+                        infoListaNueva2[8] = txtNumExt.Texts; //Numerefono
+                        infoListaNueva2[9] = txtTelefono.Texts; //Tel de casa interior
+                        infoListaNueva2[10] = txtCorreo.Texts; //Correo
+                        infoListaNueva2[11] = cmbTipo.SelectedItem.ToString(); //Liquidacion o Intencion
+                        infoListaNueva2[12] = txtTotal_I.Texts; //Monto de liquidacion o intencion
+                        infoListaNueva2[13] = TextBoxQuita.Texts; //Monto de Quita
+                        infoListaNueva2[42] = TextBoxPagoExt.Texts;
+                        if (obj.InsertarLista2(infoListaNueva2))
+                        {
+                            Ediciones e2 = new();
+                            bool Existe = obj.Existencia_Aval(txtNombre.Texts);
+
+                            if (Existe)
+                            {
+
+                                if (e2.EditarAval(txtNombre.Texts, NuevosAvales))
+                                {
+
+                                    EsconderPaneles(pnlListas);
+                                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                                    cmbPromotor.SelectedItem = -1;
+                                    cmbPromotor.Texts = "Seleccione un promotor";
+                                    txtNombre.Texts = "";
+                                    txtCredito.Texts = "";
+                                    TextBoxRestante.Texts = "";
+                                    txtTotal.Texts = "";
+                                    txtCalle.Texts = "";
+                                    txtColonia.Texts = "";
+                                    txtNumInt.Texts = "";
+                                    txtNumExt.Texts = "";
+                                    txtTelefono.Texts = "";
+                                    txtCorreo.Texts = "";
+                                    cmbTipo.SelectedItem = -1;
+                                    cmbTipo.Texts = "Seleccione una opcion";
+                                    txtTotal_I.Texts = "";
+                                    TextBoxQuita.Texts = "";
+                                }
+                                else
+                                {
+                                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                                }
+                            }
+                            else
+                            {
+
+                                string[] DatosAvales = new string[16];
+                                DatosAvales[0] = txtNombre.Texts; //Convertirmos al orden para guardado
+                                for (int i = 1; i < 15; i++)
+                                {
+                                    DatosAvales[i] = Avales[i - 1];
+                                }
+
+                                bool creado = obj.CrearAvales(DatosAvales);
+                                if (creado)
+                                {
+                                    EsconderPaneles(pnlListas);
+                                    btnLista2.PerformClick(); //Reactualizo los datos de la lista 2
+                                    cmbPromotor.SelectedItem = -1;
+                                    cmbPromotor.Texts = "Seleccione un promotor";
+                                    txtNombre.Texts = "";
+                                    txtCredito.Texts = "";
+                                    txtTotal.Texts = "";
+                                    TextBoxRestante.Texts = "";
+                                    txtCalle.Texts = "";
+                                    txtColonia.Texts = "";
+                                    txtNumInt.Texts = "";
+                                    txtNumExt.Texts = "";
+                                    txtTelefono.Texts = "";
+                                    txtCorreo.Texts = "";
+                                    cmbTipo.SelectedItem = -1;
+                                    cmbTipo.Texts = "Seleccione una opcion";
+                                    txtTotal_I.Texts = "";
+                                    TextBoxQuita.Texts = "";
+                                }
+                                else
+                                {
+                                    MessageB("Error al guardar los avales", "Advertencia", 2);
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            MessageB("Error al ingresar el usuario", "Alerta", 2);
+                        }
+
+                    }
+
+
                 }
             }
             else
             {
-                MessageB("Error al guardar los cambios", "Alerta", 2);
-            }
+                Ediciones ediciones = new();
+                string[] strings = this.Informacion3;
+                strings[1] = txtNombre.Texts; //Nombre del registro
+                strings[2] = txtCredito.Texts; //Credito Prestado
+                strings[3] = textBoxPersonalizado11.Texts; //Pagare generado
+                strings[4] = txtCalle.Texts; //Calle
+                strings[5] = txtColonia.Texts; //Colonia
+                strings[6] = txtNumInt.Texts; //Numero de casa interior
+                strings[7] = txtNumExt.Texts; //Numero de casa exterior
+                strings[8] = txtTelefono.Texts; //Telefono
+                strings[9] = txtCorreo.Texts; //Correo
+                strings[0] = cmbPromotor.SelectedItem.ToString(); //Promotor que lo atiende
+                strings[11] = ResolucionDemanda.SelectedItem.ToString(); //Resolucion de la demanda
+                strings[12] = txtTotal.Texts; //Importe
+                strings[10] = ComboBoxResolucion3.SelectedItem.ToString(); //Resolucion
+                strings[13] = Cliente;
+                bool es = ediciones.EditarLista3(strings);
+                if (es)
+                {
+                    Ediciones e2 = new();
+                    Lectura_Base_Datos obj = new();
+                    bool Existe = obj.Existencia_Aval(txtNombre.Texts);
+                    if (Existe)
+                    {
+                        if (e2.EditarAval(txtNombre.Texts, NuevosAvales))
+                        {
+                            editar3("Lista 3");
+                            btnLista3.PerformClick();
 
-            BtnAvalesEditar.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageB("Error al guardar los avales", "Advertencia", 2);
+                        }
+                    }
+                    else
+                    {
+                        string[] DatosAvales = new string[16];
+                        DatosAvales[0] = txtNombre.Texts; //Convertirmos al orden para guardado
+                        for (int i = 1; i < 15; i++)
+                        {
+                            DatosAvales[i] = Avales[i];
+                        }
+
+                        bool creado = obj.CrearAvales(DatosAvales);
+                        if (creado)
+                        {
+                            editar3("Lista 3");
+                            btnLista3.PerformClick(); //Reactualizo los datos de la lista 2
+
+                        }
+                        else
+                        {
+                            MessageB("Error al guardar los avales", "Advertencia", 2);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageB("Error al editar", "Alerta", 2);
+                }
+            }
         }
         public static string[] SumarSemanas(string fechaInicial)
         {
@@ -3030,7 +3053,7 @@ namespace FutureLending.Forms
 
         }
 
-       
+
         private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
         {
             if (!changingCheckedState5)
@@ -3063,17 +3086,17 @@ namespace FutureLending.Forms
         private void dateTimePickerPersonalizado1_ValueChanged(object sender, EventArgs e)
         {
             DateTime dateTime = new();
-            switch (rjComboBox2.SelectedItem)
+            switch (cmbTipo.SelectedItem)
             {
                 case "Semanales":
-                    dateTime = dateTimePickerPersonalizado1.Value;
+                    dateTime = dateFechaInicio.Value;
                     var fechaFinal = dateTime.AddDays(7 * 14);
-                    dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
+                    dateTimePickerPersonalizado2.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
                     break;
                 case "Quincenales":
-                    dateTime = dateTimePickerPersonalizado1.Value;
+                    dateTime = dateFechaInicio.Value;
                     fechaFinal = dateTime.AddDays(15 * 7);
-                    dateTimeLimite.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
+                    dateTimePickerPersonalizado2.Value = Convert.ToDateTime(fechaFinal.ToString("d"));
                     break;
             }
 
@@ -3084,29 +3107,29 @@ namespace FutureLending.Forms
         {
             dateTimePickerPersonalizado1_ValueChanged(null, null);
         }
-      
+
         private void iconButton3_Click(object sender, EventArgs e)//Boton para ingresar cliente a la lista 2
         {
             listaEstado = 4;
             Guardar = true;
             groupBox2.Hide(); //Escondemos el apartado para mover el usuario
-            EsconderPaneles(PnlEditar2);
+            editar2("Lista 2");
             TextBoxPagoExt.Enabled = true;
-            rjComboBox8.SelectedItem = -1;
-            rjComboBox8.Texts = "Seleccione un promotor";
-            TextBoxNombre.Texts = "";
-            TextBoxCredito.Texts = "";
+            cmbPromotor.SelectedItem = -1;
+            cmbPromotor.Texts = "Seleccione un promotor";
+            txtNombre.Texts = "";
+            txtCredito.Texts = "";
             TextBoxRestante.Texts = "";
-            TextBoxPagare.Texts = "";
-            TextBoxCalle.Texts = "";
-            TextBoxColonia.Texts = "";
-            TextBoxNumInt.Texts = "";
-            TextBoxNumExt.Texts = "";
-            TextBoxTelefono.Texts = "";
-            TextBoxCorreo.Texts = "";
-            rjComboBox7.SelectedItem = -1;
-            rjComboBox7.Texts = "Seleccione una opcion";
-            TextBoxLiquidacionIntencion.Texts = "";
+            txtTotal.Texts = "";
+            txtCalle.Texts = "";
+            txtColonia.Texts = "";
+            txtNumInt.Texts = "";
+            txtNumExt.Texts = "";
+            txtTelefono.Texts = "";
+            txtCorreo.Texts = "";
+            cmbTipo.SelectedItem = -1;
+            cmbTipo.Texts = "Seleccione una opcion";
+            txtTotal_I.Texts = "";
             TextBoxQuita.Texts = "";
             TextBoxPagoExt.Texts = "";
         }
@@ -3182,7 +3205,7 @@ namespace FutureLending.Forms
         #endregion
 
         #region Avales
-      
+
         private void BtnGuardarAval_Click(object sender, EventArgs e)
         {
 
@@ -3204,32 +3227,27 @@ namespace FutureLending.Forms
                 NuevosAvales[13] = TextBoxCorreoaval2.Texts;
                 if (listaEstado == 0)
                 {
-                    PanelEditar.BringToFront();
-                    PanelEditar.Visible = true;
+                    pnlClientes.BringToFront();
+                    pnlClientes.Visible = true;
                     editaravales = false;
                     BtnAvalesEditar.Enabled = false;
 
                 }
                 else if (listaEstado == 1)
                 {
-                    PnlEditar2.BringToFront();
-                    PnlEditar2.Visible = true;
+                    editar2("Lista 2");
                     editaravales = false;
-                    rjButton9.Enabled = false;
                 }
                 else if (listaEstado == 2)
                 {
-                    PanelEditar3.BringToFront();
-                    PanelEditar3.Visible = true;
+                    editar3("Lista 3");
                     editaravales = false;
-                    rjButton10.Enabled = false;
                 }
                 else if (listaEstado == 3)
                 {
-                    PanelEditarLiquidados.BringToFront();
-                    PanelEditarLiquidados.Visible = true;
+
                     editaravales = false;
-                    rjButton13.Enabled = false;
+
                 }
             }
             else
@@ -3266,8 +3284,7 @@ namespace FutureLending.Forms
                 TextBoxCorreoaval2.Texts = "";
                 if (listaEstado == 4)
                 {
-                    PnlEditar2.BringToFront();
-                    PnlEditar2.Visible = true;
+                    editar2("Lista 2");
                     listaEstado = 0;
                 }
                 else
@@ -3377,6 +3394,7 @@ namespace FutureLending.Forms
         }
         #endregion
 
+        public int lista = 0;
 
         #region Agregar Columnas
         private void BtnAgregarColumnas_Click(object sender, EventArgs e)
@@ -3387,7 +3405,7 @@ namespace FutureLending.Forms
         #endregion
 
         #region Grafica de promotores
-       
+
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
             double total = MontoTotal - DineroAire;
@@ -3399,5 +3417,886 @@ namespace FutureLending.Forms
             gra.ShowDialog();
         }
         #endregion
+
+        #region Funciones para Reutilizacion de Panel
+
+
+        //Con esta funcion escondemos todos los objetos compartidos del panel de clientes para cuando se llame en situacion especifica otro tipo de gestion
+        //que comparte el panel solo llamar los  objetos que se necesitan y no batallar con esconderlos y llamarlos cada vez que se necesite
+        public void OcultarControlesEnControl<T>(T container) where T : Control
+        {
+            foreach (Control control in container.Controls)
+            {
+                control.Hide();
+
+
+            }
+        }
+
+        #region Agregar Clientes
+        void subsecuente_agregar()
+        {
+            lista = 0;
+            List<TextBoxPersonalizado> textBoxes = new List<TextBoxPersonalizado>
+{
+    txtTotal_I, txtTotal, txtCorreo, txtTelefono, txtNumExt, txtNumInt, txtColonia, txtCalle,
+    txtCredito, txtNombre
+};
+
+            // Asignar .Texts = "" a los controles de la lista
+            foreach (var textBox in textBoxes)
+            {
+                textBox.Texts = "";
+            }
+            rjButton8.Show();
+            label87.Show();
+            btnCalcular1.Show();
+            btnGuardar1.Show();
+            dateTimePickerPersonalizado2.Show();
+            label65.Show();
+            cmbInteres.Show();
+            txtTotal_I.Show();
+            txtTotal.Show();
+            txtCorreo.Show();
+            label15.Show();
+            txtTelefono.Show();
+            label14.Show();
+            txtNumExt.Show();
+            txtNumInt.Show();
+            txtColonia.Show();
+            label11.Show();
+            label13.Show();
+            label12.Show();
+            txtCalle.Show();
+            label3.Show();
+            label10.Show();
+            label9.Show();
+            label7.Show();
+            label6.Show();
+            cmbTipo.Show();
+            label5.Show();
+            label16.Show();
+            label4.Show();
+            dateFechaInicio.Show();
+            txtCredito.Show();
+            label2.Show();
+            txtNombre.Show();
+            label1.Show();
+            cmbPromotor.Show();
+            cmbPromotor.SelectedIndex = -1;
+            cmbPromotor.Texts = "Seleccione un promotor";
+            cmbTipo.Items.Clear();
+            cmbTipo.Texts = "Seleccione una opcion";
+            cmbTipo.Items.AddRange(new object[] { "Semanales", "Quincenales" });
+        }
+
+        public void agregar()
+        {
+            //llamo a la funcion para esconder todos los objetos compartidos 
+            OcultarControlesEnControl(pnlClientes);
+            //despues activo solo los que necesito para este caso 
+            subsecuente_agregar();
+            //Asignacion de datos de personalizacion a los objetos asi como de posicionamiento y tamaño
+            //Generacion de Fuentes de texto para los distintos objetos 
+            Font nuevaFuente3 = new Font("Dubai", 13.79f);
+            Font nuevaFuente = new Font("SimSun", 23.75f);
+            Font nuevaFuente4 = new Font("Dubai", 16.19f);
+            //Boton de calculo
+            rjButton8.Location = new Point(805, 508);
+            //label subtitulo 
+            label87.Location = new Point(133, 11);
+            label87.Text = "Informacion:";
+            label87.Font = nuevaFuente;
+            //Boton de calculo
+            btnCalcular1.Location = new Point(544, 566);
+            //Boton de Guardado
+            btnGuardar1.Location = new Point(805, 588);
+            btnGuardar1.Text = "Guardar";
+            btnGuardar1.Size = new Size(196, 63);
+            //DateTimePicker de fecha final
+            dateTimePickerPersonalizado2.Location = new Point(255, 271);
+            dateTimePickerPersonalizado2.Font = nuevaFuente3;
+            dateTimePickerPersonalizado2.Size = new Size(445, 52);
+            //label de Fecha Final o fecha limite
+            label65.Location = new Point(24, 278);
+            label65.Text = "Fecha Final:";
+            //opciones de intereses (Combobox)
+            cmbInteres.Location = new Point(255, 332);
+            //TextBox de Monto Total
+            txtTotal_I.Location = new Point(331, 589);
+            txtTotal_I.Size = new Size(157, 47);
+            txtTotal_I.Texts = "";
+            txtTotal_I.Font = nuevaFuente3;
+            //Label Monto Total 
+            label16.Location = new Point(19, 601);
+            label16.Text = "Monto Total:";
+            //TextBox de Monto Total con Intereses
+            txtTotal.Location = new Point(331, 529);
+            txtTotal.Size = new Size(157, 47);
+            txtTotal.Texts = "";
+            //textbox Correo
+            txtCorreo.Location = new Point(745, 450);
+            txtCorreo.Text = "";
+            //label Correo
+            label15.Location = new Point(741, 414);
+            label15.Text = "Correo:";
+            //TextBox de Telefono
+            txtTelefono.Location = new Point(745, 357);
+            txtTelefono.Texts = "";
+            //label Telefono
+            label14.Location = new Point(741, 319);
+            label14.Text = "Telefono:";
+            //TextBox de Numero Exterior
+            txtNumExt.Location = new Point(940, 249);
+            txtNumExt.Texts = "";
+            //label Numero Exterior
+            label13.Location = new Point(940, 216);
+            label13.Text = "Num. Ext.:";
+            //TextBox de Numero Interior
+            txtNumInt.Location = new Point(745, 249);
+            txtNumInt.Texts = "";
+            //label Numero Interior
+            label12.Location = new Point(741, 218);
+            label12.Text = "Num. Int.:";
+            //TextBox de Colonia
+            txtColonia.Location = new Point(745, 164);
+            txtColonia.Texts = "";
+            //label Colonia
+            label11.Location = new Point(741, 134);
+            label11.Text = "Colonia:";
+            //TextBox de Calle
+            txtCalle.Location = new Point(745, 76);
+            txtCalle.Texts = "";
+            //label Calle
+            label10.Location = new Point(741, 45);
+            label10.Text = "Calle:";
+            //label Subtitulo superior derecha
+            label9.Location = new Point(826, 10);
+            label9.Text = "Direccion:";
+            //label de monto total con interes
+            label7.Location = new Point(19, 547);
+            label7.Text = "Monto Total con Interes:";
+            //label Promotor: 
+            label6.Location = new Point(24, 489);
+            label6.Text = "Promotor:";
+            //Combobox de tipo de pago
+            cmbTipo.Location = new Point(255, 404);
+            cmbTipo.Font = nuevaFuente3;
+            cmbTipo.Size = new Size(445, 52);
+            //label tipo de pago
+            label5.Location = new Point(24, 420);
+            label5.Text = "Tipo de Pago:";
+            //label de interes
+            label4.Location = new Point(24, 335);
+            label4.Text = "Interes:";
+            //DateTimePicker de fecha de inicio
+            dateFechaInicio.Location = new Point(255, 199);
+            dateFechaInicio.Font = nuevaFuente3;
+            dateFechaInicio.Size = new Size(445, 52);
+            dateTimePickerPersonalizado2.Font = nuevaFuente3;
+            //label de fecha de inicio
+            label3.Location = new Point(24, 210);
+            label3.Text = "Fecha de Inicio:";
+            //Textbox Credito Prestado
+            txtCredito.Location = new Point(255, 111);
+            txtCredito.Font = nuevaFuente4;
+            txtCredito.Size = new Size(445, 52);
+            txtCredito.Texts = "";
+            //label Credito Prestado
+            label2.Location = new Point(24, 135);
+            label2.Text = "Credito Prestado:";
+            //Textbox Nombre
+            txtNombre.Location = new Point(255, 59);
+            txtNombre.Font = nuevaFuente4;
+            txtNombre.Size = new Size(445, 52);
+            txtNombre.Texts = "";
+            //label Nombre
+            label1.Location = new Point(24, 67);
+            label1.Text = "Nombre Completo:";
+            //Combobox de promotor
+            cmbPromotor.Location = new Point(255, 471);
+            cmbPromotor.Font = nuevaFuente3;
+            cmbPromotor.Size = new Size(445, 52);
+        }
+
+        #endregion
+
+        #region editar1
+        void subsecuente_editar1()
+        {
+            lista = 1;
+            BtnAvalesEditar.Show();
+            textBoxPersonalizado11.Show();
+            label66.Show();
+            dateTimePickerPersonalizado2.Show();
+            label65.Show();
+            txtTotal.Show();
+            label7.Show();
+            txtTotal_I.Show();
+            label16.Show();
+            label87.Show();
+            groupBox1.Show();
+            txtCorreo.Show();
+            label15.Show();
+            txtTelefono.Show();
+            label14.Show();
+            txtNumExt.Show();
+            label13.Show();
+            txtNumInt.Show();
+            label12.Show();
+            txtColonia.Show();
+            label11.Show();
+            txtCalle.Show();
+            label3.Show();
+            label10.Show();
+            cmbInteres.Show();
+            label4.Show();
+            cmbPromotor.Show();
+            label6.Show();
+            cmbTipo.Show();
+            label5.Show();
+            dateFechaInicio.Show();
+            txtCredito.Show();
+            label2.Show();
+            txtNombre.Show();
+            BtnGuardarCambio.Show();
+            label1.Show();
+
+        }
+        public void editar1(string pertenece)
+        {
+            //llamo al panel que reutilizare
+            EsconderPaneles(pnlClientes);
+            lblTitle.Text = @"Editar Cliente";
+            //Escondo todos los objetos 
+            OcultarControlesEnControl(pnlClientes);
+            //despues activo solo los que necesito para este caso
+            subsecuente_editar1();
+
+            //ahora establezo los datos para la pestañana  editar a clientes de la lista 1
+            BtnAvalesEditar.Location = new Point(761, 587);
+            BtnAvalesEditar.Show();
+            Font bold = new Font("Dubai", 13.79f, FontStyle.Bold);
+            Font bold2 = new Font("Dubai", 11.79f, FontStyle.Bold);
+            Font nuevaFuete5 = new Font("Corbel", 18f, FontStyle.Bold);
+            Font nuevaFuente3 = new Font("Corbel", 12.75f, FontStyle.Bold);
+            Font nuevaFuente4 = new Font("Corbel", 16.2f);
+            Font nuevaFuente = new Font("Corbel", 27.75f);
+            Font nuevaFuente2 = new Font("Corbel", 12.75f);
+            Font nuevaFuente6 = new Font("Corbel", 13.8f, FontStyle.Bold);
+            //Aqui comienza la reutilizacion de los objetos
+            //Boton de Guardado
+            BtnGuardarCambio.Location = new Point(994, 589);
+            //TexBox Pagare 
+            textBoxPersonalizado11.Location = new Point(242, 180);
+            textBoxPersonalizado11.Show();
+            textBoxPersonalizado11.Font = nuevaFuente3;
+            textBoxPersonalizado11.Size = new Size(358, 40);
+            //label Pagare
+            label66.Location = new Point(23, 192);
+            label66.Font = nuevaFuete5;
+            //DateTimePicker de fecha final
+            dateTimePickerPersonalizado2.Location = new Point(242, 274); //Fecha Final
+            dateTimePickerPersonalizado2.Font = nuevaFuente2;
+            dateTimePickerPersonalizado2.Size = new Size(358, 40);
+            //label de Fecha Final o fecha limite
+            label65.Location = new Point(23, 282);
+            label65.Text = "Fecha Limite:";
+            //TextBox de Monto Restante
+            txtTotal.Location = new Point(793, 490);
+            txtTotal.Size = new Size(358, 45);
+            txtTotal.Font = nuevaFuente3;
+            txtTotal.Enabled = true;
+            //Label Monto Restante
+            label7.Location = new Point(787, 452);
+            label7.Text = "Monto Restante:";
+            //TextBox de Monto Total con Intereses
+            txtTotal_I.Location = new Point(242, 385); //Monto Total 
+            txtTotal_I.Font = nuevaFuente3;
+            txtTotal_I.Size = new Size(358, 45);
+            txtTotal_I.Enabled = true;
+            //label credito prestado o monto total
+            label16.Location = new Point(23, 396);
+            label16.Text = "Monto Total:";
+            //label Titulo
+            label87.Location = new Point(23, 16);
+            label87.Text = "Lista de Origen: " + pertenece;
+            label87.Font = nuevaFuente;
+            //Grupo box para mover de lista 
+            groupBox1.Location = new Point(23, 585);
+            groupBox1.Show();
+            //Txbox de correo
+            txtCorreo.Location = new Point(793, 400);
+            txtCorreo.Font = bold;
+            //label correo
+            label15.Location = new Point(787, 362);
+            //txtbox de telefono
+            txtTelefono.Location = new Point(793, 311);
+            txtTelefono.Font = bold;
+            //label telefono
+            label14.Location = new Point(787, 270);
+            //txtbox de numero exterior
+            txtNumExt.Location = new Point(959, 216);
+            txtNumExt.Font = bold;
+            //label numero exterior
+            label13.Location = new Point(951, 188);
+            //txtbox de numero interior
+            txtNumInt.Location = new Point(793, 219);
+            txtNumInt.Font = bold;
+            //label numero interior
+            label12.Location = new Point(787, 189);
+            //txtbox de colonia
+            txtColonia.Location = new Point(793, 134);
+            txtColonia.Font = bold;
+            //label colonia
+            label11.Location = new Point(787, 107);
+            //txtbox de calle
+            txtCalle.Location = new Point(793, 54);
+            txtCalle.Font = bold;
+            //label calle
+            label10.Location = new Point(790, 30);
+            //combobox de interes
+            cmbInteres.Location = new Point(242, 320);
+            cmbInteres.Font = bold;
+            cmbInteres.Size = new Size(358, 45);
+            //label interes
+            label4.Location = new Point(23, 331);
+            //combobox de promotor
+            cmbPromotor.Location = new Point(242, 511);
+            cmbPromotor.Font = bold;
+            cmbPromotor.Size = new Size(358, 45);
+            //label promotor
+            label6.Location = new Point(23, 519);
+            //combobox de tipo de pago
+            cmbTipo.Location = new Point(242, 442);
+            cmbTipo.Font = bold;
+            cmbTipo.Size = new Size(358, 45);
+            //label tipo de pago
+            label5.Location = new Point(23, 456);
+            //datetime de fecha de inicio
+            dateFechaInicio.Location = new Point(242, 234);
+            dateFechaInicio.Font = nuevaFuente2;
+            dateFechaInicio.Size = new Size(358, 40);
+            //label fecha de inicio
+            label3.Location = new Point(23, 240);
+            label3.Text = "Fecha de Inicio:";
+            //texox de credito prestado
+            txtCredito.Location = new Point(242, 135);
+            txtCredito.Font = bold2;
+            txtCredito.Size = new Size(358, 40);
+            //label credito prestado
+            label2.Location = new Point(23, 145);
+            //textbox de nombre
+            txtNombre.Location = new Point(242, 83);
+            txtNombre.Font = bold2;
+            txtNombre.Size = new Size(358, 40);
+            //label nombre
+            label1.Location = new Point(23, 93);
+        }
+
+        #endregion
+
+        #region Eidtar lista 2
+        void subsecuente_editar2()
+        {
+            lista = 2;
+            BtnGuardarCambio.Show();
+            label66.Show();
+            TextBoxRestante.Show();
+            txtNombre.Show();
+            label1.Show();
+            txtCredito.Show();
+            label2.Show();
+            cmbTipo.Show();
+            label5.Show();
+            txtCorreo.Show();
+            label15.Show();
+            txtTelefono.Show();
+            label14.Show();
+            txtNumExt.Show();
+            label13.Show();
+            txtNumInt.Show();
+            label12.Show();
+            txtColonia.Show();
+            label11.Show();
+            txtCalle.Show();
+            label10.Show();
+            groupBox2.Show();
+            label87.Show();
+            TextBoxRestante.Show();
+            txtTotal.Show();
+            label7.Show();
+            txtTotal_I.Show();
+            label16.Show();
+            TextBoxQuita.Show();
+            label4.Show();
+            btnEditarFechas2.Show();
+            BtnAvalesEditar.Show();
+            cmbPromotor.Show();
+            label6.Show();
+            label66.Show();
+            txtTotal.Enabled = true;
+            txtTotal_I.Enabled = true;
+        }
+
+        void editar2(string pertenece)
+        {
+            //Llamo al panel que usare como reutilizacion
+            EsconderPaneles(pnlClientes);
+            lblTitle.Text = @"Editar Cliente";
+            //Escondo todos los objetos
+            OcultarControlesEnControl(pnlClientes);
+            //despues activo solo los que necesito para este caso
+            subsecuente_editar2();
+            //Asignacion de datos de personalizacion a los objetos asi como de posicionamiento y tamaño
+            Font nuevaFuente = new Font("Corbel", 16.2f, FontStyle.Bold);
+            Font nuevaFuente1 = new Font("Microsoft Sans Serif", 14.25f, FontStyle.Bold);
+            Font nuevaFuente2 = new Font("Corbel", 24f, FontStyle.Bold);
+            //textbox de nombre
+            txtNombre.Location = new Point(290, 71);
+            txtNombre.Font = nuevaFuente;
+            txtNombre.Size = new Size(371, 47);
+            //label nombre
+            label1.Location = new Point(33, 79);
+            label1.Text = "Nombre Completo:";
+            label1.Font = nuevaFuente1;
+            //textbox de credito prestado
+            txtCredito.Location = new Point(290, 126);
+            txtCredito.Font = nuevaFuente;
+            txtCredito.Size = new Size(371, 47);
+            //label credito prestado
+            label2.Location = new Point(33, 145);
+            label2.Text = "Credito:";
+            label2.Font = nuevaFuente1;
+            //combobox de tipo de pago
+            cmbTipo.Location = new Point(290, 296);
+            cmbTipo.Font = nuevaFuente;
+            cmbTipo.Size = new Size(371, 47);
+            //label tipo de pago
+            label5.Location = new Point(33, 316);
+            label5.Text = "Tipo de Pago:";
+            label5.Font = nuevaFuente1;
+            //textbox Correo
+            txtCorreo.Location = new Point(753, 427);
+            txtCorreo.Font = nuevaFuente;
+            //label correo
+            label15.Location = new Point(744, 394);
+            label15.Text = "Correo:";
+            label15.Font = nuevaFuente1;
+            //textbox telefono
+            txtTelefono.Location = new Point(753, 338);
+            txtTelefono.Font = nuevaFuente;
+            //label telefono
+            label14.Location = new Point(744, 311);
+            label14.Text = "Telefono:";
+            label14.Font = nuevaFuente1;
+            //textbox numero exterior
+            txtNumExt.Location = new Point(942, 238);
+            txtNumExt.Font = nuevaFuente;
+            txtNumExt.Size = new Size(151, 47);
+            //label numero exterior
+            label13.Location = new Point(946, 208);
+            label13.Text = "Num. Ext.:";
+            label13.Font = nuevaFuente1;
+            //textbox numero interior
+            txtNumInt.Location = new Point(753, 239);
+            txtNumInt.Font = nuevaFuente;
+            txtNumInt.Size = new Size(151, 47);
+            //label numero interior
+            label12.Location = new Point(744, 213);
+            label12.Text = "Num. Int.:";
+            label12.Font = nuevaFuente1;
+            //textbox colonia
+            txtColonia.Location = new Point(753, 155);
+            txtColonia.Font = nuevaFuente;
+            //label colonia
+            label11.Location = new Point(744, 125);
+            label11.Text = "Colonia:";
+            label11.Font = nuevaFuente1;
+            //textbox calle
+            txtCalle.Location = new Point(753, 75);
+            txtCalle.Font = nuevaFuente;
+            //label calle
+            label10.Location = new Point(744, 46);
+            label10.Text = "Calle:";
+            label10.Font = nuevaFuente1;
+            //grupo de movimiento 2
+            groupBox2.Location = new Point(38, 566);
+            groupBox2.Show();
+            //label Titulo
+            label87.Location = new Point(31, 24);
+            label87.Text = "Lista de Origen: " + pertenece;
+            //txt Monto Restante
+            TextBoxRestante.Location = new Point(290, 236);
+            TextBoxRestante.Font = nuevaFuente;
+            //txtPagare
+            txtTotal.Location = new Point(290, 182);
+            txtTotal.Font = nuevaFuente;
+            txtTotal.Size = new Size(371, 47);
+            //label Pagare
+            label7.Location = new Point(33, 249);
+            label7.Text = "Pagare:";
+            label7.Font = nuevaFuente1;
+            //txt Liquidacion Intencion
+            txtTotal_I.Location = new Point(290, 432);
+            txtTotal_I.Font = nuevaFuente;
+            txtTotal_I.Size = new Size(371, 47);
+            //label Liquidacion Intencion
+            label16.Location = new Point(33, 450);
+            label16.Text = "Liquidacion/Intencion:";
+            label16.Font = nuevaFuente1;
+            //TxtBox Quita
+            TextBoxQuita.Show();
+            TextBoxQuita.Location = new Point(290, 483);
+            TextBoxQuita.Font = nuevaFuente;
+            TextBoxQuita.Size = new Size(373, 47);
+            //label quita
+            label4.Location = new Point(33, 498);
+            label4.Text = "Quita:";
+            label4.Font = nuevaFuente1;
+            //btnEditarFechas
+            btnEditarFechas2.Show();
+            btnEditarFechas2.Location = new Point(764, 492);
+            //btn Avales
+            BtnAvalesEditar.Location = new Point(964, 492);
+            BtnAvalesEditar.Show();
+            BtnAvalesEditar.Size = new Size(153, 60);
+            //combobox de promotor
+            cmbPromotor.Location = new Point(290, 374);
+            cmbPromotor.Font = nuevaFuente;
+            cmbPromotor.Size = new Size(371, 47);
+            //label promotor
+            label6.Location = new Point(33, 389);
+            label6.Text = "Promotor:";
+            label6.Font = nuevaFuente1;
+            //label Monto Restante
+            label66.Location = new Point(33, 198);
+            label66.Text = "Monto restante:";
+            label66.Font = nuevaFuente1;
+        }
+
+        #endregion
+
+        #region Editar Lista 3
+        void subsecuente_editar3()
+        {
+
+            txtNombre.Show();
+            label1.Show();
+            txtCredito.Show();
+            label2.Show();
+            BtnAvalesEditar.Show();
+            BtnGuardarCambio.Show();
+            txtCalle.Show();
+            label10.Show();
+            txtColonia.Show();
+            label11.Show();
+            txtNumInt.Show();
+            label12.Show();
+            txtNumExt.Show();
+            label13.Show();
+            txtTelefono.Show();
+            label14.Show();
+            txtCorreo.Show();
+            label15.Show();
+            label87.Show();
+            textBoxPersonalizado11.Show();
+            label66.Show();
+            ResolucionDemanda.Show();
+            label4.Show();
+            ComboBoxResolucion3.Show();
+            label3.Show();
+            cmbPromotor.Show();
+            groupBox3.Show();
+            label6.Show();
+            txtTotal.Show();
+            label7.Show();
+
+        }
+
+        void editar3(string pertenece)
+        {
+            //Llamo al panel que usare como reutilizacion
+            EsconderPaneles(pnlClientes);
+            lblTitle.Text = @"Editar Cliente";
+            //Escondo todos los objetos
+            OcultarControlesEnControl(pnlClientes);
+            //despues activo solo los que necesito para este caso
+            subsecuente_editar3();
+
+
+            Font nuevaFuente = new Font("Corbel", 16.2f, FontStyle.Bold);
+            Font fuenteintermedia = new Font("Corbel", 13.8f, FontStyle.Bold);
+            Font nuevaFuente1 = new Font("Microsoft Sans Serif", 14.25f, FontStyle.Bold);
+            Font nuevaFuente2 = new Font("Corbel", 24f, FontStyle.Bold);
+
+            //txtNombre
+            txtNombre.Location = new Point(270, 97);
+            txtNombre.Font = nuevaFuente1;
+            txtNombre.Size = new Size(414, 38);
+            //label Nombre
+            label1.Location = new Point(31, 104);
+            label1.Font = nuevaFuente;
+            label1.Text = "Nombre Completo:";
+            //txt Credito prestado
+            txtCredito.Location = new Point(270, 143);
+            txtCredito.Font = nuevaFuente1;
+            txtCredito.Size = new Size(414, 38);
+            //label Credito prestado
+            label2.Location = new Point(31, 161);
+            label2.Font = nuevaFuente;
+            label2.Text = "Credito Prestado:";
+            //txt Calle
+            txtCalle.Location = new Point(744, 65);
+            txtCalle.Font = nuevaFuente;
+            //label Calle
+            label10.Location = new Point(744, 37);
+            label10.Font = nuevaFuente;
+            label10.Text = "Calle:";
+            //txt Colonia
+            txtColonia.Location = new Point(744, 147);
+            txtColonia.Font = nuevaFuente;
+            //label Colonia
+            label11.Location = new Point(744, 118);
+            label11.Font = nuevaFuente;
+            label11.Text = "Colonia:";
+            //txt Num Int
+            txtNumInt.Location = new Point(744, 245);
+            txtNumInt.Size = new Size(151, 47);
+            txtNumInt.Font = nuevaFuente;
+            //label Num Int
+            label12.Location = new Point(744, 210);
+            label12.Font = nuevaFuente;
+            label12.Text = "Num. Int.:";
+            //txtNumExt
+            txtNumExt.Location = new Point(947, 246);
+            txtNumExt.Size = new Size(151, 47);
+            txtNumExt.Font = nuevaFuente;
+            //label Num Ext
+            label13.Location = new Point(952, 207);
+            label13.Font = nuevaFuente;
+            label13.Text = "Num. Ext.:";
+            //txt Telefono
+            txtTelefono.Location = new Point(744, 344);
+            txtTelefono.Font = nuevaFuente;
+            //label Telefono
+            label14.Location = new Point(744, 315);
+            label14.Font = nuevaFuente;
+            label14.Text = "Telefono:";
+            //txt Correo
+            txtCorreo.Location = new Point(744, 449);
+            txtCorreo.Font = nuevaFuente;
+            //label Correo
+            label15.Location = new Point(744, 415);
+            label15.Font = nuevaFuente;
+            label15.Text = "Correo:";
+            //label Titulo
+            label87.Location = new Point(26, 33);
+            label87.Text = "Lista de Origen: " + pertenece;
+            label87.Font = nuevaFuente2;
+            //textBox Pagare
+            textBoxPersonalizado11.Location = new Point(270, 200);
+            textBoxPersonalizado11.Font = nuevaFuente;
+            textBoxPersonalizado11.Size = new Size(414, 38);
+            //label Pagare
+            label66.Location = new Point(31, 217);
+            label66.Font = nuevaFuente;
+            label66.Text = "Pagare:";
+            //combobox resolucion demanda
+            ResolucionDemanda.Location = new Point(270, 394);
+            ResolucionDemanda.Font = fuenteintermedia;
+            ResolucionDemanda.Size = new Size(416, 54);
+            //label resolucion demanda
+            label4.Location = new Point(31, 410);
+            label4.Font = nuevaFuente;
+            label4.Text = "Resolucion Demanda:";
+            //combobox tipo de resolucio
+            ComboBoxResolucion3.Location = new Point(270, 271);
+            ComboBoxResolucion3.Font = fuenteintermedia;
+            ComboBoxResolucion3.Size = new Size(416, 54);
+            //label tipo de resolucion
+            label3.Location = new Point(31, 287);
+            label3.Font = nuevaFuente;
+            label3.Text = "Tipo de Resolucion:";
+            //combobox de promotor
+            cmbPromotor.Location = new Point(270, 336);
+            cmbPromotor.Font = fuenteintermedia;
+            cmbPromotor.Size = new Size(414, 38);
+            //label promotor
+            label6.Location = new Point(31, 352);
+            label6.Font = nuevaFuente;
+            label6.Text = "Promotor:";
+            //txtImporte
+            txtTotal.Location = new Point(270, 465);
+            txtTotal.Font = fuenteintermedia;
+            txtTotal.Size = new Size(414, 48);
+            txtTotal.Enabled = true;
+            //label importe
+            label7.Location = new Point(31, 481);
+            label7.Font = nuevaFuente;
+            label7.Text = "Importe:";
+            //btnGuardar
+            BtnGuardarCambio.Location = new Point(798, 599);
+            BtnGuardarCambio.Text = "Guardar";
+            BtnGuardarCambio.Size = new Size(210, 65);
+            //btnAvales
+            BtnAvalesEditar.Location = new Point(793, 509);
+            BtnAvalesEditar.Size = new Size(210, 65);
+            //groupBox
+            groupBox3.Location = new Point(47, 573);
+
+
+        }
+
+        #endregion
+
+        #region Editar Liquidados
+
+        void subsecuente_editarliq()
+        {
+            lista = 4;
+            BtnAvalesEditar.Show();
+            txtNombre.Show();
+            txtCredito.Show();
+            dateFechaInicio.Show();
+            cmbPromotor.Show();
+            ComBoBoxLiquidacion.Show();
+            label1.Show();
+            txtCalle.Show();
+            label10.Show();
+            txtColonia.Show();
+            label11.Show();
+            txtNumInt.Show();
+            label12.Show();
+            txtNumExt.Show();
+            label13.Show();
+            txtTelefono.Show();
+            label14.Show();
+            txtCorreo.Show();
+            label15.Show();
+            label87.Show();
+            label65.Show();
+            label6.Show();
+            label3.Show();
+            BottonLiq.Show();
+            ComBoBoxLiquidacion.Show();
+            label2.Show();
+        }
+
+        void editarliq(string pertenece)
+        {
+            //Primero llamo al panel que reutilizare
+            EsconderPaneles(pnlClientes);
+            lblTitle.Text = @"Editar Cliente";
+            //Escondo todos los objetos
+            OcultarControlesEnControl(pnlClientes);
+            //despues activo solo los que necesito para este caso
+            subsecuente_editarliq();
+            //Asignacion de datos de personalizacion a los objetos asi como de posicionamiento y tamaño
+
+            Font nuevaFuente = new Font("Corbel", 16.2f, FontStyle.Bold);
+            Font nuevaFuente1 = new Font("Microsoft Sans Serif", 14.25f, FontStyle.Bold);
+            Font nuevaFuente2 = new Font("Corbel", 24f, FontStyle.Bold);
+
+            //boton avales
+            BtnAvalesEditar.Location = new Point(477, 581);
+            BtnAvalesEditar.Show();
+            //txtNombre
+            txtNombre.Location = new Point(268, 94);
+            txtNombre.Font = nuevaFuente1;
+            txtNombre.Size = new Size(458, 50);
+            //txtCredito
+            txtCredito.Location = new Point(268, 180);
+            txtCredito.Font = nuevaFuente1;
+            txtCredito.Size = new Size(458, 50);
+            //dateFechaInicio 
+            dateFechaInicio.Location = new Point(268, 267);
+            dateFechaInicio.Font = nuevaFuente;
+            dateFechaInicio.Size = new Size(458, 50);
+            //cmbPromotor
+            cmbPromotor.Location = new Point(268, 346);
+            cmbPromotor.Font = nuevaFuente;
+            cmbPromotor.Size = new Size(458, 50);
+            //ComBoBoxLiquidacion
+            ComBoBoxLiquidacion.Location = new Point(268, 452);
+            ComBoBoxLiquidacion.Font = nuevaFuente;
+            ComBoBoxLiquidacion.Size = new Size(458, 50);
+            //label Nombre
+            label1.Location = new Point(18, 103);
+            label1.Font = nuevaFuente;
+            label1.Text = "Nombre Completo:";
+            //txt Calle
+            txtCalle.Location = new Point(822, 66);
+            txtCalle.Font = nuevaFuente;
+            //label Calle
+            label10.Location = new Point(816, 25);
+            label10.Font = nuevaFuente;
+            label10.Text = "Calle:";
+            //txt Credito prestado
+            label2.Location = new Point(18, 190);
+            label2.Font = nuevaFuente;
+            label2.Text = "Credito Prestado:";
+            //txt Colonia
+            txtColonia.Location = new Point(822, 160);
+            txtColonia.Font = nuevaFuente;
+            //label Colonia
+            label11.Location = new Point(816, 116);
+            label11.Font = nuevaFuente;
+            label11.Text = "Colonia:";
+            //txt Num Int
+            txtNumInt.Location = new Point(822, 248);
+            txtNumInt.Size = new Size(115, 42);
+            txtNumInt.Font = nuevaFuente;
+            //label Num Int
+            label12.Location = new Point(816, 212);
+            label12.Font = nuevaFuente;
+            label12.Text = "Num. Int.:";
+            //txtNumExt
+            txtNumExt.Location = new Point(960, 248);
+            txtNumExt.Size = new Size(115, 42);
+            txtNumExt.Font = nuevaFuente;
+            //label Num Ext
+            label13.Location = new Point(960, 213);
+            label13.Font = nuevaFuente;
+            label13.Text = "Num. Ext.:";
+            //txt Telefono
+            txtTelefono.Location = new Point(822, 342);
+            txtTelefono.Font = nuevaFuente;
+            //label Telefono
+            label14.Location = new Point(816, 298);
+            label14.Font = nuevaFuente;
+            label14.Text = "Telefono:";
+            //txt Correo
+            txtCorreo.Location = new Point(822, 459);
+            txtCorreo.Font = nuevaFuente;
+            //label Correo
+            label15.Location = new Point(816, 418);
+            label15.Font = nuevaFuente;
+            label15.Text = "Correo:";
+            //label Titulo
+            label87.Location = new Point(18, 22);
+            label87.Text = "Lista de Origen: " + pertenece;
+            label87.Font = nuevaFuente2;
+            //label Fecha de Inicio
+            label65.Location = new Point(18, 269);
+            label65.Text = "Fecha del Prestamo:";
+            label65.Font = nuevaFuente;
+            //label Promotor
+            label6.Location = new Point(18, 365);
+            label6.Font = nuevaFuente;
+            label6.Text = "Promotor:";
+
+            //label Forma de Liquidacion
+            label3.Location = new Point(18, 472);
+            label3.Text = "Forma de Liquidacion:";
+            label3.Font = nuevaFuente;
+
+        }
+
+        #endregion
+
+        #endregion
+
+
     }
 }

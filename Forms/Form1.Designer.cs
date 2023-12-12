@@ -32,10 +32,10 @@ namespace FutureLending.Forms
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelMenu = new Panel();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -47,43 +47,13 @@ namespace FutureLending.Forms
             panel1 = new Panel();
             btnMenu = new FontAwesome.Sharp.IconButton();
             pictureBox1 = new PictureBox();
-            PnlEditar2 = new Panel();
-            rjButton9 = new RJButton();
-            btnEditarFechas2 = new RJButton();
-            btnGuardarC = new RJButton();
-            TextBoxQuita = new TextBoxPersonalizado();
-            label70 = new Label();
-            TextBoxLiquidacionIntencion = new TextBoxPersonalizado();
-            label68 = new Label();
-            TextBoxPagare = new TextBoxPersonalizado();
-            label67 = new Label();
-            TextBoxRestante = new TextBoxPersonalizado();
             label69 = new Label();
-            LabelPertenece = new Label();
-            label72 = new Label();
+            TextBoxRestante = new TextBoxPersonalizado();
+            TextBoxQuita = new TextBoxPersonalizado();
             groupBox2 = new GroupBox();
             btnMover3 = new RJButton();
             CmbLista2 = new ControlesPersonalizados.RJComboBox();
-            TextBoxCorreo = new TextBoxPersonalizado();
-            label73 = new Label();
-            TextBoxTelefono = new TextBoxPersonalizado();
-            label74 = new Label();
-            TextBoxNumExt = new TextBoxPersonalizado();
-            label75 = new Label();
-            TextBoxNumInt = new TextBoxPersonalizado();
-            label76 = new Label();
-            TextBoxColonia = new TextBoxPersonalizado();
-            label77 = new Label();
-            TextBoxCalle = new TextBoxPersonalizado();
-            label78 = new Label();
-            label79 = new Label();
-            rjComboBox7 = new ControlesPersonalizados.RJComboBox();
-            label80 = new Label();
-            TextBoxCredito = new TextBoxPersonalizado();
-            label83 = new Label();
-            TextBoxNombre = new TextBoxPersonalizado();
-            label84 = new Label();
-            rjComboBox8 = new ControlesPersonalizados.RJComboBox();
+            btnEditarFechas2 = new RJButton();
             panelTitleBar = new Panel();
             lblTitle = new Label();
             pnlRegPago = new Panel();
@@ -103,6 +73,18 @@ namespace FutureLending.Forms
             btnMarcarP = new RJButton();
             lblMonto = new Label();
             pnlClientes = new Panel();
+            groupBox3 = new GroupBox();
+            btnMover2 = new RJButton();
+            rjComboBox5 = new ControlesPersonalizados.RJComboBox();
+            ComboBoxResolucion3 = new ControlesPersonalizados.RJComboBox();
+            ResolucionDemanda = new ControlesPersonalizados.RJComboBox();
+            BottonLiq = new RJButton();
+            ComBoBoxLiquidacion = new ControlesPersonalizados.RJComboBox();
+            BtnGuardarCambio = new RJButton();
+            label66 = new Label();
+            groupBox1 = new GroupBox();
+            BtnMover = new RJButton();
+            cmbLista = new ControlesPersonalizados.RJComboBox();
             rjButton8 = new RJButton();
             label87 = new Label();
             btnCalcular1 = new RJButton();
@@ -138,40 +120,8 @@ namespace FutureLending.Forms
             txtNombre = new TextBoxPersonalizado();
             label1 = new Label();
             cmbPromotor = new ControlesPersonalizados.RJComboBox();
-            PanelEditar3 = new Panel();
-            rjButton10 = new RJButton();
-            btnGuardar2 = new RJButton();
-            ResolucionDemanda = new ControlesPersonalizados.RJComboBox();
-            groupBox3 = new GroupBox();
-            btnMover2 = new RJButton();
-            rjComboBox5 = new ControlesPersonalizados.RJComboBox();
-            TextImporte3 = new TextBoxPersonalizado();
-            label103 = new Label();
-            label92 = new Label();
-            TextBoxPagare3 = new TextBoxPersonalizado();
-            label81 = new Label();
-            LabelLista3 = new Label();
-            label94 = new Label();
-            TextBoxCorreo3 = new TextBoxPersonalizado();
-            label95 = new Label();
-            TextBoxTelefono3 = new TextBoxPersonalizado();
-            label96 = new Label();
-            TextBoxNumExt3 = new TextBoxPersonalizado();
-            label97 = new Label();
-            TextBoxNumInt3 = new TextBoxPersonalizado();
-            label98 = new Label();
-            TextBoxColonia3 = new TextBoxPersonalizado();
-            label99 = new Label();
-            TextBoxCalle3 = new TextBoxPersonalizado();
-            label100 = new Label();
-            label101 = new Label();
-            ComboBoxResolucion3 = new ControlesPersonalizados.RJComboBox();
-            label102 = new Label();
-            TextBoxCredito3 = new TextBoxPersonalizado();
-            label105 = new Label();
-            TextBoxNombre3 = new TextBoxPersonalizado();
-            LabelNombre3 = new Label();
-            ComboBoxPromotor3 = new ControlesPersonalizados.RJComboBox();
+            BtnAvalesEditar = new RJButton();
+            textBoxPersonalizado11 = new TextBoxPersonalizado();
             pnlListas = new Panel();
             BtnGraficar = new RJButton();
             BtnAgregarColumnas = new RJButton();
@@ -194,46 +144,6 @@ namespace FutureLending.Forms
             rjButton1 = new RJButton();
             gridListas = new DataGridView();
             label8 = new Label();
-            PanelEditar = new Panel();
-            BtnAvalesEditar = new RJButton();
-            BtnGuardarCambio = new RJButton();
-            textBoxPersonalizado11 = new TextBoxPersonalizado();
-            label66 = new Label();
-            dateTimeLimite = new DateTimePickerPersonalizado();
-            LabelLimite = new Label();
-            textBoxPersonalizado7 = new TextBoxPersonalizado();
-            label25 = new Label();
-            textBoxPersonalizado8 = new TextBoxPersonalizado();
-            label27 = new Label();
-            LblPerte = new Label();
-            label26 = new Label();
-            groupBox1 = new GroupBox();
-            BtnMover = new RJButton();
-            cmbLista = new ControlesPersonalizados.RJComboBox();
-            textBoxPersonalizado1 = new TextBoxPersonalizado();
-            label18 = new Label();
-            textBoxPersonalizado2 = new TextBoxPersonalizado();
-            label20 = new Label();
-            textBoxPersonalizado3 = new TextBoxPersonalizado();
-            label21 = new Label();
-            textBoxPersonalizado4 = new TextBoxPersonalizado();
-            label22 = new Label();
-            textBoxPersonalizado5 = new TextBoxPersonalizado();
-            label23 = new Label();
-            textBoxPersonalizado6 = new TextBoxPersonalizado();
-            label24 = new Label();
-            rjComboBox1 = new ControlesPersonalizados.RJComboBox();
-            label28 = new Label();
-            rjComboBox2 = new ControlesPersonalizados.RJComboBox();
-            label30 = new Label();
-            label31 = new Label();
-            dateTimePickerPersonalizado1 = new DateTimePickerPersonalizado();
-            label32 = new Label();
-            textBoxPersonalizado9 = new TextBoxPersonalizado();
-            label33 = new Label();
-            textBoxPersonalizado10 = new TextBoxPersonalizado();
-            label34 = new Label();
-            rjComboBox3 = new ControlesPersonalizados.RJComboBox();
             bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(components);
             PanelBien = new Panel();
             label58 = new Label();
@@ -320,33 +230,6 @@ namespace FutureLending.Forms
             ComboBoxDeFechas = new ControlesPersonalizados.RJComboBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            PanelEditarLiquidados = new Panel();
-            rjButton13 = new RJButton();
-            BottonLiq = new RJButton();
-            FechaInicioLiq = new DateTimePickerPersonalizado();
-            label91 = new Label();
-            label90 = new Label();
-            ComBoBoxLiquidacion = new ControlesPersonalizados.RJComboBox();
-            label104 = new Label();
-            label106 = new Label();
-            TextCorreoLiq = new TextBoxPersonalizado();
-            label107 = new Label();
-            TextTelefonoLiq = new TextBoxPersonalizado();
-            label108 = new Label();
-            TextNumExtLiq = new TextBoxPersonalizado();
-            label109 = new Label();
-            TextNumIntLiq = new TextBoxPersonalizado();
-            label110 = new Label();
-            TextColoniaLiq = new TextBoxPersonalizado();
-            label111 = new Label();
-            TextCalleLiq = new TextBoxPersonalizado();
-            label112 = new Label();
-            label113 = new Label();
-            TextCreditoLiq = new TextBoxPersonalizado();
-            label115 = new Label();
-            TextNombreLiq = new TextBoxPersonalizado();
-            label116 = new Label();
-            ComboBoxPromotorLiq = new ControlesPersonalizados.RJComboBox();
             PnlAvales = new Panel();
             LabelAvalCliente = new Label();
             rjButton14 = new RJButton();
@@ -385,21 +268,18 @@ namespace FutureLending.Forms
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            PnlEditar2.SuspendLayout();
             groupBox2.SuspendLayout();
             panelTitleBar.SuspendLayout();
             pnlRegPago.SuspendLayout();
             pnlClientes.SuspendLayout();
-            PanelEditar3.SuspendLayout();
             groupBox3.SuspendLayout();
+            groupBox1.SuspendLayout();
             pnlListas.SuspendLayout();
             flowLayoutPanel5.SuspendLayout();
             flowLayoutPanel3.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridListas).BeginInit();
-            PanelEditar.SuspendLayout();
-            groupBox1.SuspendLayout();
             PanelBien.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -411,7 +291,6 @@ namespace FutureLending.Forms
             Conexion_Sql.SuspendLayout();
             tabPage2.SuspendLayout();
             PanelEditar2_2.SuspendLayout();
-            PanelEditarLiquidados.SuspendLayout();
             PnlAvales.SuspendLayout();
             SuspendLayout();
             // 
@@ -545,156 +424,11 @@ namespace FutureLending.Forms
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 
-            // PnlEditar2
+            // label69
             // 
-            resources.ApplyResources(PnlEditar2, "PnlEditar2");
-            PnlEditar2.BackColor = SystemColors.ButtonHighlight;
-            PnlEditar2.Controls.Add(rjButton9);
-            PnlEditar2.Controls.Add(btnEditarFechas2);
-            PnlEditar2.Controls.Add(btnGuardarC);
-            PnlEditar2.Controls.Add(TextBoxQuita);
-            PnlEditar2.Controls.Add(label70);
-            PnlEditar2.Controls.Add(TextBoxLiquidacionIntencion);
-            PnlEditar2.Controls.Add(label68);
-            PnlEditar2.Controls.Add(TextBoxPagare);
-            PnlEditar2.Controls.Add(label67);
-            PnlEditar2.Controls.Add(TextBoxRestante);
-            PnlEditar2.Controls.Add(label69);
-            PnlEditar2.Controls.Add(LabelPertenece);
-            PnlEditar2.Controls.Add(label72);
-            PnlEditar2.Controls.Add(groupBox2);
-            PnlEditar2.Controls.Add(TextBoxCorreo);
-            PnlEditar2.Controls.Add(label73);
-            PnlEditar2.Controls.Add(TextBoxTelefono);
-            PnlEditar2.Controls.Add(label74);
-            PnlEditar2.Controls.Add(TextBoxNumExt);
-            PnlEditar2.Controls.Add(label75);
-            PnlEditar2.Controls.Add(TextBoxNumInt);
-            PnlEditar2.Controls.Add(label76);
-            PnlEditar2.Controls.Add(TextBoxColonia);
-            PnlEditar2.Controls.Add(label77);
-            PnlEditar2.Controls.Add(TextBoxCalle);
-            PnlEditar2.Controls.Add(label78);
-            PnlEditar2.Controls.Add(label79);
-            PnlEditar2.Controls.Add(rjComboBox7);
-            PnlEditar2.Controls.Add(label80);
-            PnlEditar2.Controls.Add(TextBoxCredito);
-            PnlEditar2.Controls.Add(label83);
-            PnlEditar2.Controls.Add(TextBoxNombre);
-            PnlEditar2.Controls.Add(label84);
-            PnlEditar2.Controls.Add(rjComboBox8);
-            PnlEditar2.Name = "PnlEditar2";
-            // 
-            // rjButton9
-            // 
-            resources.ApplyResources(rjButton9, "rjButton9");
-            rjButton9.BackColor = Color.Gray;
-            rjButton9.BackgroundColor = Color.Gray;
-            rjButton9.BorderColor = SystemColors.ActiveCaption;
-            rjButton9.BorderRadius = 15;
-            rjButton9.BorderSize = 2;
-            rjButton9.FlatAppearance.BorderSize = 0;
-            rjButton9.ForeColor = Color.Transparent;
-            rjButton9.Name = "rjButton9";
-            rjButton9.TextColor = Color.Transparent;
-            rjButton9.UseVisualStyleBackColor = false;
-            rjButton9.Click += rjButton9_Click;
-            // 
-            // btnEditarFechas2
-            // 
-            resources.ApplyResources(btnEditarFechas2, "btnEditarFechas2");
-            btnEditarFechas2.BackColor = SystemColors.ActiveCaption;
-            btnEditarFechas2.BackgroundColor = SystemColors.ActiveCaption;
-            btnEditarFechas2.BorderColor = SystemColors.ActiveCaption;
-            btnEditarFechas2.BorderRadius = 15;
-            btnEditarFechas2.BorderSize = 2;
-            btnEditarFechas2.FlatAppearance.BorderSize = 0;
-            btnEditarFechas2.ForeColor = Color.Transparent;
-            btnEditarFechas2.Name = "btnEditarFechas2";
-            btnEditarFechas2.TextColor = Color.Transparent;
-            btnEditarFechas2.UseVisualStyleBackColor = false;
-            btnEditarFechas2.Click += btnEditarFechas2_Click;
-            // 
-            // btnGuardarC
-            // 
-            resources.ApplyResources(btnGuardarC, "btnGuardarC");
-            btnGuardarC.BackColor = Color.SteelBlue;
-            btnGuardarC.BackgroundColor = Color.SteelBlue;
-            btnGuardarC.BorderColor = Color.SteelBlue;
-            btnGuardarC.BorderRadius = 15;
-            btnGuardarC.BorderSize = 2;
-            btnGuardarC.FlatAppearance.BorderSize = 0;
-            btnGuardarC.ForeColor = Color.Transparent;
-            btnGuardarC.Name = "btnGuardarC";
-            btnGuardarC.TextColor = Color.Transparent;
-            btnGuardarC.UseVisualStyleBackColor = false;
-            btnGuardarC.Click += btnGuardarC_Click;
-            // 
-            // TextBoxQuita
-            // 
-            resources.ApplyResources(TextBoxQuita, "TextBoxQuita");
-            TextBoxQuita.BorderColor = Color.DarkSlateGray;
-            TextBoxQuita.BorderFocusColor = SystemColors.Info;
-            TextBoxQuita.BorderRadius = 0;
-            TextBoxQuita.BorderSize = 2;
-            TextBoxQuita.Multiline = false;
-            TextBoxQuita.Name = "TextBoxQuita";
-            TextBoxQuita.PasswordChar = false;
-            TextBoxQuita.PlaceholderColor = Color.DimGray;
-            TextBoxQuita.PlaceholderText = "";
-            TextBoxQuita.Texts = "";
-            TextBoxQuita.UnderlinedStyle = true;
-            TextBoxQuita.KeyPress += TextBoxQuita_KeyPress;
-            // 
-            // label70
-            // 
-            resources.ApplyResources(label70, "label70");
-            label70.ForeColor = Color.DarkSlateGray;
-            label70.Name = "label70";
-            // 
-            // TextBoxLiquidacionIntencion
-            // 
-            resources.ApplyResources(TextBoxLiquidacionIntencion, "TextBoxLiquidacionIntencion");
-            TextBoxLiquidacionIntencion.BorderColor = Color.DarkSlateGray;
-            TextBoxLiquidacionIntencion.BorderFocusColor = SystemColors.Info;
-            TextBoxLiquidacionIntencion.BorderRadius = 0;
-            TextBoxLiquidacionIntencion.BorderSize = 2;
-            TextBoxLiquidacionIntencion.Multiline = false;
-            TextBoxLiquidacionIntencion.Name = "TextBoxLiquidacionIntencion";
-            TextBoxLiquidacionIntencion.PasswordChar = false;
-            TextBoxLiquidacionIntencion.PlaceholderColor = Color.DimGray;
-            TextBoxLiquidacionIntencion.PlaceholderText = "";
-            TextBoxLiquidacionIntencion.Texts = "";
-            TextBoxLiquidacionIntencion.UnderlinedStyle = true;
-            TextBoxLiquidacionIntencion.KeyPress += TextBoxLiquidacionIntencion_KeyPress;
-            // 
-            // label68
-            // 
-            resources.ApplyResources(label68, "label68");
-            label68.ForeColor = Color.DarkSlateGray;
-            label68.Name = "label68";
-            // 
-            // TextBoxPagare
-            // 
-            resources.ApplyResources(TextBoxPagare, "TextBoxPagare");
-            TextBoxPagare.BorderColor = Color.DarkSlateGray;
-            TextBoxPagare.BorderFocusColor = SystemColors.Info;
-            TextBoxPagare.BorderRadius = 0;
-            TextBoxPagare.BorderSize = 2;
-            TextBoxPagare.Multiline = false;
-            TextBoxPagare.Name = "TextBoxPagare";
-            TextBoxPagare.PasswordChar = false;
-            TextBoxPagare.PlaceholderColor = Color.DimGray;
-            TextBoxPagare.PlaceholderText = "";
-            TextBoxPagare.Texts = "";
-            TextBoxPagare.UnderlinedStyle = true;
-            TextBoxPagare.KeyPress += TextBoxPagare_KeyPress;
-            // 
-            // label67
-            // 
-            resources.ApplyResources(label67, "label67");
-            label67.ForeColor = Color.DarkSlateGray;
-            label67.Name = "label67";
+            resources.ApplyResources(label69, "label69");
+            label69.ForeColor = Color.DarkSlateGray;
+            label69.Name = "label69";
             // 
             // TextBoxRestante
             // 
@@ -712,23 +446,21 @@ namespace FutureLending.Forms
             TextBoxRestante.UnderlinedStyle = true;
             TextBoxRestante.KeyPress += TextBoxRestante_KeyPress;
             // 
-            // label69
+            // TextBoxQuita
             // 
-            resources.ApplyResources(label69, "label69");
-            label69.ForeColor = Color.DarkSlateGray;
-            label69.Name = "label69";
-            // 
-            // LabelPertenece
-            // 
-            resources.ApplyResources(LabelPertenece, "LabelPertenece");
-            LabelPertenece.ForeColor = Color.DarkSlateGray;
-            LabelPertenece.Name = "LabelPertenece";
-            // 
-            // label72
-            // 
-            resources.ApplyResources(label72, "label72");
-            label72.ForeColor = Color.DarkSlateGray;
-            label72.Name = "label72";
+            resources.ApplyResources(TextBoxQuita, "TextBoxQuita");
+            TextBoxQuita.BorderColor = Color.DarkSlateGray;
+            TextBoxQuita.BorderFocusColor = SystemColors.Info;
+            TextBoxQuita.BorderRadius = 0;
+            TextBoxQuita.BorderSize = 2;
+            TextBoxQuita.Multiline = false;
+            TextBoxQuita.Name = "TextBoxQuita";
+            TextBoxQuita.PasswordChar = false;
+            TextBoxQuita.PlaceholderColor = Color.DimGray;
+            TextBoxQuita.PlaceholderText = "";
+            TextBoxQuita.Texts = "";
+            TextBoxQuita.UnderlinedStyle = true;
+            TextBoxQuita.KeyPress += TextBoxQuita_KeyPress;
             // 
             // groupBox2
             // 
@@ -771,223 +503,20 @@ namespace FutureLending.Forms
             CmbLista2.Texts = "Seleccione una lista";
             CmbLista2.OnSelectedIndexChanged += CmbLista2_OnSelectedIndexChanged;
             // 
-            // TextBoxCorreo
+            // btnEditarFechas2
             // 
-            resources.ApplyResources(TextBoxCorreo, "TextBoxCorreo");
-            TextBoxCorreo.BorderColor = Color.DarkSlateGray;
-            TextBoxCorreo.BorderFocusColor = SystemColors.Info;
-            TextBoxCorreo.BorderRadius = 0;
-            TextBoxCorreo.BorderSize = 2;
-            TextBoxCorreo.Multiline = false;
-            TextBoxCorreo.Name = "TextBoxCorreo";
-            TextBoxCorreo.PasswordChar = false;
-            TextBoxCorreo.PlaceholderColor = Color.DimGray;
-            TextBoxCorreo.PlaceholderText = "";
-            TextBoxCorreo.Texts = "";
-            TextBoxCorreo.UnderlinedStyle = true;
-            // 
-            // label73
-            // 
-            resources.ApplyResources(label73, "label73");
-            label73.ForeColor = Color.DarkSlateGray;
-            label73.Name = "label73";
-            // 
-            // TextBoxTelefono
-            // 
-            resources.ApplyResources(TextBoxTelefono, "TextBoxTelefono");
-            TextBoxTelefono.BorderColor = Color.DarkSlateGray;
-            TextBoxTelefono.BorderFocusColor = SystemColors.Info;
-            TextBoxTelefono.BorderRadius = 0;
-            TextBoxTelefono.BorderSize = 2;
-            TextBoxTelefono.Multiline = false;
-            TextBoxTelefono.Name = "TextBoxTelefono";
-            TextBoxTelefono.PasswordChar = false;
-            TextBoxTelefono.PlaceholderColor = Color.DimGray;
-            TextBoxTelefono.PlaceholderText = "";
-            TextBoxTelefono.Texts = "";
-            TextBoxTelefono.UnderlinedStyle = true;
-            // 
-            // label74
-            // 
-            resources.ApplyResources(label74, "label74");
-            label74.ForeColor = Color.DarkSlateGray;
-            label74.Name = "label74";
-            // 
-            // TextBoxNumExt
-            // 
-            resources.ApplyResources(TextBoxNumExt, "TextBoxNumExt");
-            TextBoxNumExt.BorderColor = Color.DarkSlateGray;
-            TextBoxNumExt.BorderFocusColor = SystemColors.Info;
-            TextBoxNumExt.BorderRadius = 0;
-            TextBoxNumExt.BorderSize = 2;
-            TextBoxNumExt.Multiline = false;
-            TextBoxNumExt.Name = "TextBoxNumExt";
-            TextBoxNumExt.PasswordChar = false;
-            TextBoxNumExt.PlaceholderColor = Color.DimGray;
-            TextBoxNumExt.PlaceholderText = "";
-            TextBoxNumExt.Texts = "";
-            TextBoxNumExt.UnderlinedStyle = true;
-            // 
-            // label75
-            // 
-            resources.ApplyResources(label75, "label75");
-            label75.ForeColor = Color.DarkSlateGray;
-            label75.Name = "label75";
-            // 
-            // TextBoxNumInt
-            // 
-            resources.ApplyResources(TextBoxNumInt, "TextBoxNumInt");
-            TextBoxNumInt.BorderColor = Color.DarkSlateGray;
-            TextBoxNumInt.BorderFocusColor = SystemColors.Info;
-            TextBoxNumInt.BorderRadius = 0;
-            TextBoxNumInt.BorderSize = 2;
-            TextBoxNumInt.Multiline = false;
-            TextBoxNumInt.Name = "TextBoxNumInt";
-            TextBoxNumInt.PasswordChar = false;
-            TextBoxNumInt.PlaceholderColor = Color.DimGray;
-            TextBoxNumInt.PlaceholderText = "";
-            TextBoxNumInt.Texts = "";
-            TextBoxNumInt.UnderlinedStyle = true;
-            TextBoxNumInt.KeyPress += TextBoxNumInt_KeyPress;
-            // 
-            // label76
-            // 
-            resources.ApplyResources(label76, "label76");
-            label76.ForeColor = Color.DarkSlateGray;
-            label76.Name = "label76";
-            // 
-            // TextBoxColonia
-            // 
-            resources.ApplyResources(TextBoxColonia, "TextBoxColonia");
-            TextBoxColonia.BorderColor = Color.DarkSlateGray;
-            TextBoxColonia.BorderFocusColor = SystemColors.Info;
-            TextBoxColonia.BorderRadius = 0;
-            TextBoxColonia.BorderSize = 2;
-            TextBoxColonia.Multiline = false;
-            TextBoxColonia.Name = "TextBoxColonia";
-            TextBoxColonia.PasswordChar = false;
-            TextBoxColonia.PlaceholderColor = Color.DimGray;
-            TextBoxColonia.PlaceholderText = "";
-            TextBoxColonia.Texts = "";
-            TextBoxColonia.UnderlinedStyle = true;
-            // 
-            // label77
-            // 
-            resources.ApplyResources(label77, "label77");
-            label77.ForeColor = Color.DarkSlateGray;
-            label77.Name = "label77";
-            // 
-            // TextBoxCalle
-            // 
-            resources.ApplyResources(TextBoxCalle, "TextBoxCalle");
-            TextBoxCalle.BorderColor = Color.DarkSlateGray;
-            TextBoxCalle.BorderFocusColor = SystemColors.Info;
-            TextBoxCalle.BorderRadius = 0;
-            TextBoxCalle.BorderSize = 2;
-            TextBoxCalle.Multiline = false;
-            TextBoxCalle.Name = "TextBoxCalle";
-            TextBoxCalle.PasswordChar = false;
-            TextBoxCalle.PlaceholderColor = Color.DimGray;
-            TextBoxCalle.PlaceholderText = "";
-            TextBoxCalle.Texts = "";
-            TextBoxCalle.UnderlinedStyle = true;
-            // 
-            // label78
-            // 
-            resources.ApplyResources(label78, "label78");
-            label78.ForeColor = Color.DarkSlateGray;
-            label78.Name = "label78";
-            // 
-            // label79
-            // 
-            resources.ApplyResources(label79, "label79");
-            label79.ForeColor = Color.DarkSlateGray;
-            label79.Name = "label79";
-            // 
-            // rjComboBox7
-            // 
-            resources.ApplyResources(rjComboBox7, "rjComboBox7");
-            rjComboBox7.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox7.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox7.BackColor = SystemColors.ButtonHighlight;
-            rjComboBox7.BorderColor = Color.DarkSlateGray;
-            rjComboBox7.BorderSize = 3;
-            rjComboBox7.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox7.ForeColor = Color.Black;
-            rjComboBox7.IconColor = Color.DarkSlateGray;
-            rjComboBox7.Items.AddRange(new object[] { resources.GetString("rjComboBox7.Items"), resources.GetString("rjComboBox7.Items1") });
-            rjComboBox7.ListBackColor = SystemColors.ButtonHighlight;
-            rjComboBox7.ListTextColor = Color.DimGray;
-            rjComboBox7.Name = "rjComboBox7";
-            rjComboBox7.Tag = "Selecciones un tipo de pago";
-            rjComboBox7.Texts = "Seleccione un tipo de pago";
-            // 
-            // label80
-            // 
-            resources.ApplyResources(label80, "label80");
-            label80.ForeColor = Color.DarkSlateGray;
-            label80.Name = "label80";
-            // 
-            // TextBoxCredito
-            // 
-            resources.ApplyResources(TextBoxCredito, "TextBoxCredito");
-            TextBoxCredito.BorderColor = Color.DarkSlateGray;
-            TextBoxCredito.BorderFocusColor = SystemColors.Info;
-            TextBoxCredito.BorderRadius = 0;
-            TextBoxCredito.BorderSize = 2;
-            TextBoxCredito.Multiline = false;
-            TextBoxCredito.Name = "TextBoxCredito";
-            TextBoxCredito.PasswordChar = false;
-            TextBoxCredito.PlaceholderColor = Color.DimGray;
-            TextBoxCredito.PlaceholderText = "";
-            TextBoxCredito.Texts = "";
-            TextBoxCredito.UnderlinedStyle = true;
-            TextBoxCredito.KeyPress += TextBoxCredito_KeyPress;
-            // 
-            // label83
-            // 
-            resources.ApplyResources(label83, "label83");
-            label83.ForeColor = Color.DarkSlateGray;
-            label83.Name = "label83";
-            // 
-            // TextBoxNombre
-            // 
-            resources.ApplyResources(TextBoxNombre, "TextBoxNombre");
-            TextBoxNombre.BorderColor = Color.DarkSlateGray;
-            TextBoxNombre.BorderFocusColor = SystemColors.Info;
-            TextBoxNombre.BorderRadius = 0;
-            TextBoxNombre.BorderSize = 2;
-            TextBoxNombre.Multiline = false;
-            TextBoxNombre.Name = "TextBoxNombre";
-            TextBoxNombre.PasswordChar = false;
-            TextBoxNombre.PlaceholderColor = Color.DimGray;
-            TextBoxNombre.PlaceholderText = "";
-            TextBoxNombre.Texts = "";
-            TextBoxNombre.UnderlinedStyle = true;
-            // 
-            // label84
-            // 
-            resources.ApplyResources(label84, "label84");
-            label84.ForeColor = Color.DarkSlateGray;
-            label84.Name = "label84";
-            // 
-            // rjComboBox8
-            // 
-            resources.ApplyResources(rjComboBox8, "rjComboBox8");
-            rjComboBox8.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("rjComboBox8.AutoCompleteCustomSource"), resources.GetString("rjComboBox8.AutoCompleteCustomSource1"), resources.GetString("rjComboBox8.AutoCompleteCustomSource2") });
-            rjComboBox8.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox8.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox8.BackColor = SystemColors.ButtonHighlight;
-            rjComboBox8.BorderColor = Color.DarkSlateGray;
-            rjComboBox8.BorderSize = 3;
-            rjComboBox8.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox8.ForeColor = Color.Black;
-            rjComboBox8.IconColor = Color.DarkSlateGray;
-            rjComboBox8.ListBackColor = SystemColors.ButtonHighlight;
-            rjComboBox8.ListTextColor = Color.DimGray;
-            rjComboBox8.Name = "rjComboBox8";
-            rjComboBox8.Tag = "Seleccione al promotor";
-            rjComboBox8.Texts = "Seleccione al promotor";
+            resources.ApplyResources(btnEditarFechas2, "btnEditarFechas2");
+            btnEditarFechas2.BackColor = SystemColors.ActiveCaption;
+            btnEditarFechas2.BackgroundColor = SystemColors.ActiveCaption;
+            btnEditarFechas2.BorderColor = SystemColors.ActiveCaption;
+            btnEditarFechas2.BorderRadius = 15;
+            btnEditarFechas2.BorderSize = 2;
+            btnEditarFechas2.FlatAppearance.BorderSize = 0;
+            btnEditarFechas2.ForeColor = Color.Transparent;
+            btnEditarFechas2.Name = "btnEditarFechas2";
+            btnEditarFechas2.TextColor = Color.Transparent;
+            btnEditarFechas2.UseVisualStyleBackColor = false;
+            btnEditarFechas2.Click += btnEditarFechas2_Click;
             // 
             // panelTitleBar
             // 
@@ -1198,6 +727,19 @@ namespace FutureLending.Forms
             // 
             resources.ApplyResources(pnlClientes, "pnlClientes");
             pnlClientes.BackColor = SystemColors.ButtonHighlight;
+            pnlClientes.Controls.Add(groupBox3);
+            pnlClientes.Controls.Add(ComboBoxResolucion3);
+            pnlClientes.Controls.Add(ResolucionDemanda);
+            pnlClientes.Controls.Add(label69);
+            pnlClientes.Controls.Add(TextBoxRestante);
+            pnlClientes.Controls.Add(TextBoxQuita);
+            pnlClientes.Controls.Add(groupBox2);
+            pnlClientes.Controls.Add(btnEditarFechas2);
+            pnlClientes.Controls.Add(BottonLiq);
+            pnlClientes.Controls.Add(ComBoBoxLiquidacion);
+            pnlClientes.Controls.Add(BtnGuardarCambio);
+            pnlClientes.Controls.Add(label66);
+            pnlClientes.Controls.Add(groupBox1);
             pnlClientes.Controls.Add(rjButton8);
             pnlClientes.Controls.Add(label87);
             pnlClientes.Controls.Add(btnCalcular1);
@@ -1233,7 +775,184 @@ namespace FutureLending.Forms
             pnlClientes.Controls.Add(txtNombre);
             pnlClientes.Controls.Add(label1);
             pnlClientes.Controls.Add(cmbPromotor);
+            pnlClientes.Controls.Add(BtnAvalesEditar);
+            pnlClientes.Controls.Add(textBoxPersonalizado11);
             pnlClientes.Name = "pnlClientes";
+            // 
+            // groupBox3
+            // 
+            resources.ApplyResources(groupBox3, "groupBox3");
+            groupBox3.Controls.Add(btnMover2);
+            groupBox3.Controls.Add(rjComboBox5);
+            groupBox3.ForeColor = Color.DarkSlateGray;
+            groupBox3.Name = "groupBox3";
+            groupBox3.TabStop = false;
+            // 
+            // btnMover2
+            // 
+            resources.ApplyResources(btnMover2, "btnMover2");
+            btnMover2.BackColor = SystemColors.ActiveCaption;
+            btnMover2.BackgroundColor = SystemColors.ActiveCaption;
+            btnMover2.BorderColor = SystemColors.ActiveCaption;
+            btnMover2.BorderRadius = 15;
+            btnMover2.BorderSize = 2;
+            btnMover2.FlatAppearance.BorderSize = 0;
+            btnMover2.ForeColor = Color.Transparent;
+            btnMover2.Name = "btnMover2";
+            btnMover2.TextColor = Color.Transparent;
+            btnMover2.UseVisualStyleBackColor = false;
+            btnMover2.Click += btnMover2_Click;
+            // 
+            // rjComboBox5
+            // 
+            resources.ApplyResources(rjComboBox5, "rjComboBox5");
+            rjComboBox5.AutoCompleteMode = AutoCompleteMode.Suggest;
+            rjComboBox5.AutoCompleteSource = AutoCompleteSource.ListItems;
+            rjComboBox5.BackColor = SystemColors.ButtonHighlight;
+            rjComboBox5.BorderColor = Color.DarkSlateGray;
+            rjComboBox5.BorderSize = 3;
+            rjComboBox5.DropDownStyle = ComboBoxStyle.DropDownList;
+            rjComboBox5.ForeColor = Color.Black;
+            rjComboBox5.IconColor = Color.DarkSlateGray;
+            rjComboBox5.ListBackColor = SystemColors.ButtonHighlight;
+            rjComboBox5.ListTextColor = Color.DimGray;
+            rjComboBox5.Name = "rjComboBox5";
+            rjComboBox5.Tag = "Selecciones un tipo de pago";
+            rjComboBox5.Texts = "Seleccione una lista";
+            rjComboBox5.OnSelectedIndexChanged += RjComboBox5_OnSelectedIndexChanged;
+            // 
+            // ComboBoxResolucion3
+            // 
+            resources.ApplyResources(ComboBoxResolucion3, "ComboBoxResolucion3");
+            ComboBoxResolucion3.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ComboBoxResolucion3.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ComboBoxResolucion3.BackColor = SystemColors.ButtonHighlight;
+            ComboBoxResolucion3.BorderColor = Color.DarkSlateGray;
+            ComboBoxResolucion3.BorderSize = 3;
+            ComboBoxResolucion3.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxResolucion3.ForeColor = Color.Black;
+            ComboBoxResolucion3.IconColor = Color.DarkSlateGray;
+            ComboBoxResolucion3.Items.AddRange(new object[] { resources.GetString("ComboBoxResolucion3.Items"), resources.GetString("ComboBoxResolucion3.Items1") });
+            ComboBoxResolucion3.ListBackColor = SystemColors.ButtonHighlight;
+            ComboBoxResolucion3.ListTextColor = Color.DimGray;
+            ComboBoxResolucion3.Name = "ComboBoxResolucion3";
+            ComboBoxResolucion3.Tag = "Selecciones un tipo de pago";
+            ComboBoxResolucion3.Texts = "Seleccione un tipo de pago";
+            // 
+            // ResolucionDemanda
+            // 
+            resources.ApplyResources(ResolucionDemanda, "ResolucionDemanda");
+            ResolucionDemanda.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("ResolucionDemanda.AutoCompleteCustomSource"), resources.GetString("ResolucionDemanda.AutoCompleteCustomSource1"), resources.GetString("ResolucionDemanda.AutoCompleteCustomSource2") });
+            ResolucionDemanda.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ResolucionDemanda.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ResolucionDemanda.BackColor = SystemColors.ButtonHighlight;
+            ResolucionDemanda.BorderColor = Color.DarkSlateGray;
+            ResolucionDemanda.BorderSize = 3;
+            ResolucionDemanda.DropDownStyle = ComboBoxStyle.DropDownList;
+            ResolucionDemanda.ForeColor = Color.Black;
+            ResolucionDemanda.IconColor = Color.DarkSlateGray;
+            ResolucionDemanda.Items.AddRange(new object[] { resources.GetString("ResolucionDemanda.Items"), resources.GetString("ResolucionDemanda.Items1") });
+            ResolucionDemanda.ListBackColor = SystemColors.ButtonHighlight;
+            ResolucionDemanda.ListTextColor = Color.DimGray;
+            ResolucionDemanda.Name = "ResolucionDemanda";
+            ResolucionDemanda.Tag = "Seleccione al promotor";
+            ResolucionDemanda.Texts = "Seleccione la resolucion";
+            // 
+            // BottonLiq
+            // 
+            resources.ApplyResources(BottonLiq, "BottonLiq");
+            BottonLiq.BackColor = Color.IndianRed;
+            BottonLiq.BackgroundColor = Color.IndianRed;
+            BottonLiq.BorderColor = Color.PaleVioletRed;
+            BottonLiq.BorderRadius = 20;
+            BottonLiq.BorderSize = 0;
+            BottonLiq.FlatAppearance.BorderSize = 0;
+            BottonLiq.ForeColor = Color.White;
+            BottonLiq.Name = "BottonLiq";
+            BottonLiq.TextColor = Color.White;
+            BottonLiq.UseVisualStyleBackColor = false;
+            BottonLiq.Click += BottonLiq_Click_1;
+            // 
+            // ComBoBoxLiquidacion
+            // 
+            resources.ApplyResources(ComBoBoxLiquidacion, "ComBoBoxLiquidacion");
+            ComBoBoxLiquidacion.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("ComBoBoxLiquidacion.AutoCompleteCustomSource"), resources.GetString("ComBoBoxLiquidacion.AutoCompleteCustomSource1"), resources.GetString("ComBoBoxLiquidacion.AutoCompleteCustomSource2") });
+            ComBoBoxLiquidacion.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ComBoBoxLiquidacion.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ComBoBoxLiquidacion.BackColor = SystemColors.HighlightText;
+            ComBoBoxLiquidacion.BorderColor = Color.DarkSlateGray;
+            ComBoBoxLiquidacion.BorderSize = 3;
+            ComBoBoxLiquidacion.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComBoBoxLiquidacion.ForeColor = Color.Black;
+            ComBoBoxLiquidacion.IconColor = Color.DarkSlateGray;
+            ComBoBoxLiquidacion.Items.AddRange(new object[] { resources.GetString("ComBoBoxLiquidacion.Items"), resources.GetString("ComBoBoxLiquidacion.Items1"), resources.GetString("ComBoBoxLiquidacion.Items2") });
+            ComBoBoxLiquidacion.ListBackColor = SystemColors.Info;
+            ComBoBoxLiquidacion.ListTextColor = Color.DimGray;
+            ComBoBoxLiquidacion.Name = "ComBoBoxLiquidacion";
+            ComBoBoxLiquidacion.Tag = "";
+            ComBoBoxLiquidacion.Texts = "Seleccione la lista ";
+            // 
+            // BtnGuardarCambio
+            // 
+            resources.ApplyResources(BtnGuardarCambio, "BtnGuardarCambio");
+            BtnGuardarCambio.BackColor = Color.IndianRed;
+            BtnGuardarCambio.BackgroundColor = Color.IndianRed;
+            BtnGuardarCambio.BorderColor = Color.PaleVioletRed;
+            BtnGuardarCambio.BorderRadius = 20;
+            BtnGuardarCambio.BorderSize = 0;
+            BtnGuardarCambio.FlatAppearance.BorderSize = 0;
+            BtnGuardarCambio.ForeColor = Color.White;
+            BtnGuardarCambio.Name = "BtnGuardarCambio";
+            BtnGuardarCambio.TextColor = Color.White;
+            BtnGuardarCambio.UseVisualStyleBackColor = false;
+            BtnGuardarCambio.Click += BtnGuardarCambio_Click;
+            // 
+            // label66
+            // 
+            resources.ApplyResources(label66, "label66");
+            label66.ForeColor = Color.DarkSlateGray;
+            label66.Name = "label66";
+            // 
+            // groupBox1
+            // 
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Controls.Add(BtnMover);
+            groupBox1.Controls.Add(cmbLista);
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
+            // 
+            // BtnMover
+            // 
+            resources.ApplyResources(BtnMover, "BtnMover");
+            BtnMover.BackColor = Color.SlateGray;
+            BtnMover.BackgroundColor = Color.SlateGray;
+            BtnMover.BorderColor = Color.PaleVioletRed;
+            BtnMover.BorderRadius = 20;
+            BtnMover.BorderSize = 0;
+            BtnMover.FlatAppearance.BorderSize = 0;
+            BtnMover.ForeColor = Color.White;
+            BtnMover.Name = "BtnMover";
+            BtnMover.TextColor = Color.White;
+            BtnMover.UseVisualStyleBackColor = false;
+            BtnMover.Click += BtnMover_Click_1;
+            // 
+            // cmbLista
+            // 
+            resources.ApplyResources(cmbLista, "cmbLista");
+            cmbLista.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbLista.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbLista.BackColor = SystemColors.HighlightText;
+            cmbLista.BorderColor = Color.DarkSlateGray;
+            cmbLista.BorderSize = 3;
+            cmbLista.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbLista.ForeColor = Color.Black;
+            cmbLista.IconColor = Color.DarkSlateGray;
+            cmbLista.ListBackColor = SystemColors.Info;
+            cmbLista.ListTextColor = Color.DimGray;
+            cmbLista.Name = "cmbLista";
+            cmbLista.Tag = "Selecciones un tipo de pago";
+            cmbLista.Texts = "Seleccione una lista";
+            cmbLista.OnSelectedIndexChanged += CmbLista_OnSelectedIndexChanged;
             // 
             // rjButton8
             // 
@@ -1370,7 +1089,7 @@ namespace FutureLending.Forms
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PasswordChar = false;
             txtCorreo.PlaceholderColor = Color.DimGray;
-            txtCorreo.PlaceholderText = "Introduzca el correo";
+            txtCorreo.PlaceholderText = "";
             txtCorreo.Texts = "";
             txtCorreo.UnderlinedStyle = true;
             txtCorreo._TextChanged += ActivarBtnGuardar;
@@ -1392,7 +1111,7 @@ namespace FutureLending.Forms
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PasswordChar = false;
             txtTelefono.PlaceholderColor = Color.DimGray;
-            txtTelefono.PlaceholderText = "Introduzca el número";
+            txtTelefono.PlaceholderText = "";
             txtTelefono.Texts = "";
             txtTelefono.UnderlinedStyle = true;
             txtTelefono._TextChanged += ActivarBtnGuardar;
@@ -1415,7 +1134,7 @@ namespace FutureLending.Forms
             txtNumExt.Name = "txtNumExt";
             txtNumExt.PasswordChar = false;
             txtNumExt.PlaceholderColor = Color.DimGray;
-            txtNumExt.PlaceholderText = "Num. ext.";
+            txtNumExt.PlaceholderText = "";
             txtNumExt.Texts = "";
             txtNumExt.UnderlinedStyle = true;
             txtNumExt._TextChanged += ActivarBtnGuardar;
@@ -1438,7 +1157,7 @@ namespace FutureLending.Forms
             txtNumInt.Name = "txtNumInt";
             txtNumInt.PasswordChar = false;
             txtNumInt.PlaceholderColor = Color.DimGray;
-            txtNumInt.PlaceholderText = "Num. int.";
+            txtNumInt.PlaceholderText = "";
             txtNumInt.Texts = "";
             txtNumInt.UnderlinedStyle = true;
             txtNumInt._TextChanged += ActivarBtnGuardar;
@@ -1461,7 +1180,7 @@ namespace FutureLending.Forms
             txtColonia.Name = "txtColonia";
             txtColonia.PasswordChar = false;
             txtColonia.PlaceholderColor = Color.DimGray;
-            txtColonia.PlaceholderText = "Introduzca la colonia";
+            txtColonia.PlaceholderText = "";
             txtColonia.Texts = "";
             txtColonia.UnderlinedStyle = true;
             txtColonia._TextChanged += ActivarBtnGuardar;
@@ -1483,7 +1202,7 @@ namespace FutureLending.Forms
             txtCalle.Name = "txtCalle";
             txtCalle.PasswordChar = false;
             txtCalle.PlaceholderColor = Color.DimGray;
-            txtCalle.PlaceholderText = "Introduzca la calle";
+            txtCalle.PlaceholderText = "";
             txtCalle.Texts = "";
             txtCalle.UnderlinedStyle = true;
             txtCalle._TextChanged += ActivarBtnGuardar;
@@ -1573,7 +1292,7 @@ namespace FutureLending.Forms
             txtCredito.Name = "txtCredito";
             txtCredito.PasswordChar = false;
             txtCredito.PlaceholderColor = Color.DimGray;
-            txtCredito.PlaceholderText = "Introduzca monto total";
+            txtCredito.PlaceholderText = "";
             txtCredito.Texts = "";
             txtCredito.UnderlinedStyle = true;
             txtCredito._TextChanged += ActivarBtnCalcular;
@@ -1597,7 +1316,7 @@ namespace FutureLending.Forms
             txtNombre.Name = "txtNombre";
             txtNombre.PasswordChar = false;
             txtNombre.PlaceholderColor = Color.DimGray;
-            txtNombre.PlaceholderText = "Introduzca el nombre";
+            txtNombre.PlaceholderText = "";
             txtNombre.Texts = "";
             txtNombre.UnderlinedStyle = true;
             txtNombre._TextChanged += ActivarBtnGuardar;
@@ -1628,414 +1347,36 @@ namespace FutureLending.Forms
             cmbPromotor.Texts = "Seleccione al promotor";
             cmbPromotor.OnSelectedIndexChanged += ActivarBtnGuardar;
             // 
-            // PanelEditar3
-            // 
-            resources.ApplyResources(PanelEditar3, "PanelEditar3");
-            PanelEditar3.BackColor = SystemColors.ButtonHighlight;
-            PanelEditar3.Controls.Add(rjButton10);
-            PanelEditar3.Controls.Add(btnGuardar2);
-            PanelEditar3.Controls.Add(ResolucionDemanda);
-            PanelEditar3.Controls.Add(groupBox3);
-            PanelEditar3.Controls.Add(TextImporte3);
-            PanelEditar3.Controls.Add(label103);
-            PanelEditar3.Controls.Add(label92);
-            PanelEditar3.Controls.Add(TextBoxPagare3);
-            PanelEditar3.Controls.Add(label81);
-            PanelEditar3.Controls.Add(LabelLista3);
-            PanelEditar3.Controls.Add(label94);
-            PanelEditar3.Controls.Add(TextBoxCorreo3);
-            PanelEditar3.Controls.Add(label95);
-            PanelEditar3.Controls.Add(TextBoxTelefono3);
-            PanelEditar3.Controls.Add(label96);
-            PanelEditar3.Controls.Add(TextBoxNumExt3);
-            PanelEditar3.Controls.Add(label97);
-            PanelEditar3.Controls.Add(TextBoxNumInt3);
-            PanelEditar3.Controls.Add(label98);
-            PanelEditar3.Controls.Add(TextBoxColonia3);
-            PanelEditar3.Controls.Add(label99);
-            PanelEditar3.Controls.Add(TextBoxCalle3);
-            PanelEditar3.Controls.Add(label100);
-            PanelEditar3.Controls.Add(label101);
-            PanelEditar3.Controls.Add(ComboBoxResolucion3);
-            PanelEditar3.Controls.Add(label102);
-            PanelEditar3.Controls.Add(TextBoxCredito3);
-            PanelEditar3.Controls.Add(label105);
-            PanelEditar3.Controls.Add(TextBoxNombre3);
-            PanelEditar3.Controls.Add(LabelNombre3);
-            PanelEditar3.Controls.Add(ComboBoxPromotor3);
-            PanelEditar3.Name = "PanelEditar3";
-            // 
-            // rjButton10
-            // 
-            resources.ApplyResources(rjButton10, "rjButton10");
-            rjButton10.BackColor = Color.Gray;
-            rjButton10.BackgroundColor = Color.Gray;
-            rjButton10.BorderColor = Color.SteelBlue;
-            rjButton10.BorderRadius = 15;
-            rjButton10.BorderSize = 2;
-            rjButton10.FlatAppearance.BorderSize = 0;
-            rjButton10.ForeColor = Color.Transparent;
-            rjButton10.Name = "rjButton10";
-            rjButton10.TextColor = Color.Transparent;
-            rjButton10.UseVisualStyleBackColor = false;
-            rjButton10.Click += rjButton10_Click;
-            // 
-            // btnGuardar2
-            // 
-            resources.ApplyResources(btnGuardar2, "btnGuardar2");
-            btnGuardar2.BackColor = Color.IndianRed;
-            btnGuardar2.BackgroundColor = Color.IndianRed;
-            btnGuardar2.BorderColor = Color.SteelBlue;
-            btnGuardar2.BorderRadius = 15;
-            btnGuardar2.BorderSize = 2;
-            btnGuardar2.FlatAppearance.BorderSize = 0;
-            btnGuardar2.ForeColor = Color.Transparent;
-            btnGuardar2.Name = "btnGuardar2";
-            btnGuardar2.TextColor = Color.Transparent;
-            btnGuardar2.UseVisualStyleBackColor = false;
-            btnGuardar2.Click += btnGuardar2_Click;
-            // 
-            // ResolucionDemanda
-            // 
-            resources.ApplyResources(ResolucionDemanda, "ResolucionDemanda");
-            ResolucionDemanda.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("ResolucionDemanda.AutoCompleteCustomSource"), resources.GetString("ResolucionDemanda.AutoCompleteCustomSource1"), resources.GetString("ResolucionDemanda.AutoCompleteCustomSource2") });
-            ResolucionDemanda.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ResolucionDemanda.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ResolucionDemanda.BackColor = SystemColors.ButtonHighlight;
-            ResolucionDemanda.BorderColor = Color.DarkSlateGray;
-            ResolucionDemanda.BorderSize = 3;
-            ResolucionDemanda.DropDownStyle = ComboBoxStyle.DropDownList;
-            ResolucionDemanda.ForeColor = Color.Black;
-            ResolucionDemanda.IconColor = Color.DarkSlateGray;
-            ResolucionDemanda.Items.AddRange(new object[] { resources.GetString("ResolucionDemanda.Items"), resources.GetString("ResolucionDemanda.Items1") });
-            ResolucionDemanda.ListBackColor = SystemColors.ButtonHighlight;
-            ResolucionDemanda.ListTextColor = Color.DimGray;
-            ResolucionDemanda.Name = "ResolucionDemanda";
-            ResolucionDemanda.Tag = "Seleccione al promotor";
-            ResolucionDemanda.Texts = "Seleccione la resolucion";
-            // 
-            // groupBox3
-            // 
-            resources.ApplyResources(groupBox3, "groupBox3");
-            groupBox3.Controls.Add(btnMover2);
-            groupBox3.Controls.Add(rjComboBox5);
-            groupBox3.ForeColor = Color.DarkSlateGray;
-            groupBox3.Name = "groupBox3";
-            groupBox3.TabStop = false;
-            // 
-            // btnMover2
-            // 
-            resources.ApplyResources(btnMover2, "btnMover2");
-            btnMover2.BackColor = SystemColors.ActiveCaption;
-            btnMover2.BackgroundColor = SystemColors.ActiveCaption;
-            btnMover2.BorderColor = SystemColors.ActiveCaption;
-            btnMover2.BorderRadius = 15;
-            btnMover2.BorderSize = 2;
-            btnMover2.FlatAppearance.BorderSize = 0;
-            btnMover2.ForeColor = Color.Transparent;
-            btnMover2.Name = "btnMover2";
-            btnMover2.TextColor = Color.Transparent;
-            btnMover2.UseVisualStyleBackColor = false;
-            btnMover2.Click += btnMover2_Click;
-            // 
-            // rjComboBox5
-            // 
-            resources.ApplyResources(rjComboBox5, "rjComboBox5");
-            rjComboBox5.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox5.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox5.BackColor = SystemColors.ButtonHighlight;
-            rjComboBox5.BorderColor = Color.DarkSlateGray;
-            rjComboBox5.BorderSize = 3;
-            rjComboBox5.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox5.ForeColor = Color.Black;
-            rjComboBox5.IconColor = Color.DarkSlateGray;
-            rjComboBox5.ListBackColor = SystemColors.ButtonHighlight;
-            rjComboBox5.ListTextColor = Color.DimGray;
-            rjComboBox5.Name = "rjComboBox5";
-            rjComboBox5.Tag = "Selecciones un tipo de pago";
-            rjComboBox5.Texts = "Seleccione una lista";
-            rjComboBox5.OnSelectedIndexChanged += RjComboBox5_OnSelectedIndexChanged;
-            // 
-            // TextImporte3
-            // 
-            resources.ApplyResources(TextImporte3, "TextImporte3");
-            TextImporte3.BorderColor = Color.DarkSlateGray;
-            TextImporte3.BorderFocusColor = SystemColors.Info;
-            TextImporte3.BorderRadius = 0;
-            TextImporte3.BorderSize = 2;
-            TextImporte3.Multiline = false;
-            TextImporte3.Name = "TextImporte3";
-            TextImporte3.PasswordChar = false;
-            TextImporte3.PlaceholderColor = Color.DimGray;
-            TextImporte3.PlaceholderText = "";
-            TextImporte3.Texts = "";
-            TextImporte3.UnderlinedStyle = true;
-            TextImporte3.KeyPress += TextImporte3_KeyPress;
-            // 
-            // label103
-            // 
-            resources.ApplyResources(label103, "label103");
-            label103.ForeColor = Color.DarkSlateGray;
-            label103.Name = "label103";
-            // 
-            // label92
-            // 
-            resources.ApplyResources(label92, "label92");
-            label92.ForeColor = Color.DarkSlateGray;
-            label92.Name = "label92";
-            // 
-            // TextBoxPagare3
-            // 
-            resources.ApplyResources(TextBoxPagare3, "TextBoxPagare3");
-            TextBoxPagare3.BorderColor = Color.DarkSlateGray;
-            TextBoxPagare3.BorderFocusColor = SystemColors.ButtonHighlight;
-            TextBoxPagare3.BorderRadius = 0;
-            TextBoxPagare3.BorderSize = 2;
-            TextBoxPagare3.Multiline = false;
-            TextBoxPagare3.Name = "TextBoxPagare3";
-            TextBoxPagare3.PasswordChar = false;
-            TextBoxPagare3.PlaceholderColor = Color.DimGray;
-            TextBoxPagare3.PlaceholderText = "";
-            TextBoxPagare3.Texts = "";
-            TextBoxPagare3.UnderlinedStyle = true;
-            TextBoxPagare3.KeyPress += TextBoxPagare3_KeyPress;
-            // 
-            // label81
-            // 
-            resources.ApplyResources(label81, "label81");
-            label81.ForeColor = Color.DarkSlateGray;
-            label81.Name = "label81";
-            // 
-            // LabelLista3
-            // 
-            resources.ApplyResources(LabelLista3, "LabelLista3");
-            LabelLista3.Name = "LabelLista3";
-            // 
-            // label94
-            // 
-            resources.ApplyResources(label94, "label94");
-            label94.Name = "label94";
-            // 
-            // TextBoxCorreo3
-            // 
-            resources.ApplyResources(TextBoxCorreo3, "TextBoxCorreo3");
-            TextBoxCorreo3.BorderColor = Color.DarkSlateGray;
-            TextBoxCorreo3.BorderFocusColor = SystemColors.Info;
-            TextBoxCorreo3.BorderRadius = 0;
-            TextBoxCorreo3.BorderSize = 2;
-            TextBoxCorreo3.Multiline = false;
-            TextBoxCorreo3.Name = "TextBoxCorreo3";
-            TextBoxCorreo3.PasswordChar = false;
-            TextBoxCorreo3.PlaceholderColor = Color.DimGray;
-            TextBoxCorreo3.PlaceholderText = "";
-            TextBoxCorreo3.Texts = "";
-            TextBoxCorreo3.UnderlinedStyle = true;
-            // 
-            // label95
-            // 
-            resources.ApplyResources(label95, "label95");
-            label95.ForeColor = Color.DarkSlateGray;
-            label95.Name = "label95";
-            // 
-            // TextBoxTelefono3
-            // 
-            resources.ApplyResources(TextBoxTelefono3, "TextBoxTelefono3");
-            TextBoxTelefono3.BorderColor = Color.DarkSlateGray;
-            TextBoxTelefono3.BorderFocusColor = SystemColors.Info;
-            TextBoxTelefono3.BorderRadius = 0;
-            TextBoxTelefono3.BorderSize = 2;
-            TextBoxTelefono3.Multiline = false;
-            TextBoxTelefono3.Name = "TextBoxTelefono3";
-            TextBoxTelefono3.PasswordChar = false;
-            TextBoxTelefono3.PlaceholderColor = Color.DimGray;
-            TextBoxTelefono3.PlaceholderText = "";
-            TextBoxTelefono3.Texts = "";
-            TextBoxTelefono3.UnderlinedStyle = true;
-            TextBoxTelefono3.KeyPress += TextBoxTelefono3_KeyPress;
-            // 
-            // label96
-            // 
-            resources.ApplyResources(label96, "label96");
-            label96.ForeColor = Color.DarkSlateGray;
-            label96.Name = "label96";
-            // 
-            // TextBoxNumExt3
-            // 
-            resources.ApplyResources(TextBoxNumExt3, "TextBoxNumExt3");
-            TextBoxNumExt3.BorderColor = Color.DarkSlateGray;
-            TextBoxNumExt3.BorderFocusColor = SystemColors.Info;
-            TextBoxNumExt3.BorderRadius = 0;
-            TextBoxNumExt3.BorderSize = 2;
-            TextBoxNumExt3.Multiline = false;
-            TextBoxNumExt3.Name = "TextBoxNumExt3";
-            TextBoxNumExt3.PasswordChar = false;
-            TextBoxNumExt3.PlaceholderColor = Color.DimGray;
-            TextBoxNumExt3.PlaceholderText = "";
-            TextBoxNumExt3.Texts = "";
-            TextBoxNumExt3.UnderlinedStyle = true;
-            TextBoxNumExt3.KeyPress += TextBoxNumExt3_KeyPress;
-            // 
-            // label97
-            // 
-            resources.ApplyResources(label97, "label97");
-            label97.ForeColor = Color.DarkSlateGray;
-            label97.Name = "label97";
-            // 
-            // TextBoxNumInt3
-            // 
-            resources.ApplyResources(TextBoxNumInt3, "TextBoxNumInt3");
-            TextBoxNumInt3.BorderColor = Color.DarkSlateGray;
-            TextBoxNumInt3.BorderFocusColor = SystemColors.Info;
-            TextBoxNumInt3.BorderRadius = 0;
-            TextBoxNumInt3.BorderSize = 2;
-            TextBoxNumInt3.Multiline = false;
-            TextBoxNumInt3.Name = "TextBoxNumInt3";
-            TextBoxNumInt3.PasswordChar = false;
-            TextBoxNumInt3.PlaceholderColor = Color.DimGray;
-            TextBoxNumInt3.PlaceholderText = "";
-            TextBoxNumInt3.Texts = "";
-            TextBoxNumInt3.UnderlinedStyle = true;
-            TextBoxNumInt3.KeyPress += TextBoxNumInt3_KeyPress;
-            // 
-            // label98
-            // 
-            resources.ApplyResources(label98, "label98");
-            label98.ForeColor = Color.DarkSlateGray;
-            label98.Name = "label98";
-            // 
-            // TextBoxColonia3
-            // 
-            resources.ApplyResources(TextBoxColonia3, "TextBoxColonia3");
-            TextBoxColonia3.BorderColor = Color.DarkSlateGray;
-            TextBoxColonia3.BorderFocusColor = SystemColors.Info;
-            TextBoxColonia3.BorderRadius = 0;
-            TextBoxColonia3.BorderSize = 2;
-            TextBoxColonia3.Multiline = false;
-            TextBoxColonia3.Name = "TextBoxColonia3";
-            TextBoxColonia3.PasswordChar = false;
-            TextBoxColonia3.PlaceholderColor = Color.DimGray;
-            TextBoxColonia3.PlaceholderText = "";
-            TextBoxColonia3.Texts = "";
-            TextBoxColonia3.UnderlinedStyle = true;
-            // 
-            // label99
-            // 
-            resources.ApplyResources(label99, "label99");
-            label99.ForeColor = Color.DarkSlateGray;
-            label99.Name = "label99";
-            // 
-            // TextBoxCalle3
-            // 
-            resources.ApplyResources(TextBoxCalle3, "TextBoxCalle3");
-            TextBoxCalle3.BorderColor = Color.DarkSlateGray;
-            TextBoxCalle3.BorderFocusColor = SystemColors.Info;
-            TextBoxCalle3.BorderRadius = 0;
-            TextBoxCalle3.BorderSize = 2;
-            TextBoxCalle3.Multiline = false;
-            TextBoxCalle3.Name = "TextBoxCalle3";
-            TextBoxCalle3.PasswordChar = false;
-            TextBoxCalle3.PlaceholderColor = Color.DimGray;
-            TextBoxCalle3.PlaceholderText = "";
-            TextBoxCalle3.Texts = "";
-            TextBoxCalle3.UnderlinedStyle = true;
-            // 
-            // label100
-            // 
-            resources.ApplyResources(label100, "label100");
-            label100.ForeColor = Color.DarkSlateGray;
-            label100.Name = "label100";
-            // 
-            // label101
-            // 
-            resources.ApplyResources(label101, "label101");
-            label101.ForeColor = Color.DarkSlateGray;
-            label101.Name = "label101";
-            // 
-            // ComboBoxResolucion3
-            // 
-            resources.ApplyResources(ComboBoxResolucion3, "ComboBoxResolucion3");
-            ComboBoxResolucion3.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComboBoxResolucion3.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ComboBoxResolucion3.BackColor = SystemColors.ButtonHighlight;
-            ComboBoxResolucion3.BorderColor = Color.DarkSlateGray;
-            ComboBoxResolucion3.BorderSize = 3;
-            ComboBoxResolucion3.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxResolucion3.ForeColor = Color.Black;
-            ComboBoxResolucion3.IconColor = Color.DarkSlateGray;
-            ComboBoxResolucion3.Items.AddRange(new object[] { resources.GetString("ComboBoxResolucion3.Items"), resources.GetString("ComboBoxResolucion3.Items1") });
-            ComboBoxResolucion3.ListBackColor = SystemColors.ButtonHighlight;
-            ComboBoxResolucion3.ListTextColor = Color.DimGray;
-            ComboBoxResolucion3.Name = "ComboBoxResolucion3";
-            ComboBoxResolucion3.Tag = "Selecciones un tipo de pago";
-            ComboBoxResolucion3.Texts = "Seleccione un tipo de pago";
-            // 
-            // label102
-            // 
-            resources.ApplyResources(label102, "label102");
-            label102.ForeColor = Color.DarkSlateGray;
-            label102.Name = "label102";
-            // 
-            // TextBoxCredito3
-            // 
-            resources.ApplyResources(TextBoxCredito3, "TextBoxCredito3");
-            TextBoxCredito3.BorderColor = Color.DarkSlateGray;
-            TextBoxCredito3.BorderFocusColor = SystemColors.ButtonHighlight;
-            TextBoxCredito3.BorderRadius = 0;
-            TextBoxCredito3.BorderSize = 2;
-            TextBoxCredito3.Multiline = false;
-            TextBoxCredito3.Name = "TextBoxCredito3";
-            TextBoxCredito3.PasswordChar = false;
-            TextBoxCredito3.PlaceholderColor = Color.DimGray;
-            TextBoxCredito3.PlaceholderText = "";
-            TextBoxCredito3.Texts = "";
-            TextBoxCredito3.UnderlinedStyle = true;
-            TextBoxCredito3._TextChanged += TextBoxCredito3__TextChanged;
-            TextBoxCredito3.KeyPress += TextBoxCredito3_KeyPress;
-            // 
-            // label105
-            // 
-            resources.ApplyResources(label105, "label105");
-            label105.ForeColor = Color.DarkSlateGray;
-            label105.Name = "label105";
-            // 
-            // TextBoxNombre3
-            // 
-            resources.ApplyResources(TextBoxNombre3, "TextBoxNombre3");
-            TextBoxNombre3.BorderColor = Color.DarkSlateGray;
-            TextBoxNombre3.BorderFocusColor = SystemColors.ButtonHighlight;
-            TextBoxNombre3.BorderRadius = 0;
-            TextBoxNombre3.BorderSize = 2;
-            TextBoxNombre3.Multiline = false;
-            TextBoxNombre3.Name = "TextBoxNombre3";
-            TextBoxNombre3.PasswordChar = false;
-            TextBoxNombre3.PlaceholderColor = Color.DimGray;
-            TextBoxNombre3.PlaceholderText = "";
-            TextBoxNombre3.Texts = "";
-            TextBoxNombre3.UnderlinedStyle = true;
-            // 
-            // LabelNombre3
-            // 
-            resources.ApplyResources(LabelNombre3, "LabelNombre3");
-            LabelNombre3.ForeColor = Color.DarkSlateGray;
-            LabelNombre3.Name = "LabelNombre3";
-            // 
-            // ComboBoxPromotor3
-            // 
-            resources.ApplyResources(ComboBoxPromotor3, "ComboBoxPromotor3");
-            ComboBoxPromotor3.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("ComboBoxPromotor3.AutoCompleteCustomSource"), resources.GetString("ComboBoxPromotor3.AutoCompleteCustomSource1"), resources.GetString("ComboBoxPromotor3.AutoCompleteCustomSource2") });
-            ComboBoxPromotor3.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComboBoxPromotor3.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ComboBoxPromotor3.BackColor = SystemColors.ButtonHighlight;
-            ComboBoxPromotor3.BorderColor = Color.DarkSlateGray;
-            ComboBoxPromotor3.BorderSize = 3;
-            ComboBoxPromotor3.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxPromotor3.ForeColor = Color.Black;
-            ComboBoxPromotor3.IconColor = Color.DarkSlateGray;
-            ComboBoxPromotor3.ListBackColor = SystemColors.ButtonHighlight;
-            ComboBoxPromotor3.ListTextColor = Color.DimGray;
-            ComboBoxPromotor3.Name = "ComboBoxPromotor3";
-            ComboBoxPromotor3.Tag = "Seleccione al promotor";
-            ComboBoxPromotor3.Texts = "Seleccione al promotor";
+            // BtnAvalesEditar
+            // 
+            resources.ApplyResources(BtnAvalesEditar, "BtnAvalesEditar");
+            BtnAvalesEditar.BackColor = Color.Gray;
+            BtnAvalesEditar.BackgroundColor = Color.Gray;
+            BtnAvalesEditar.BorderColor = Color.PaleVioletRed;
+            BtnAvalesEditar.BorderRadius = 20;
+            BtnAvalesEditar.BorderSize = 0;
+            BtnAvalesEditar.FlatAppearance.BorderSize = 0;
+            BtnAvalesEditar.ForeColor = Color.White;
+            BtnAvalesEditar.Name = "BtnAvalesEditar";
+            BtnAvalesEditar.TextColor = Color.White;
+            BtnAvalesEditar.UseVisualStyleBackColor = false;
+            BtnAvalesEditar.Click += BtnAvalesEditar_Click;
+            // 
+            // textBoxPersonalizado11
+            // 
+            resources.ApplyResources(textBoxPersonalizado11, "textBoxPersonalizado11");
+            textBoxPersonalizado11.BorderColor = Color.DarkSlateGray;
+            textBoxPersonalizado11.BorderFocusColor = SystemColors.Info;
+            textBoxPersonalizado11.BorderRadius = 0;
+            textBoxPersonalizado11.BorderSize = 2;
+            textBoxPersonalizado11.Multiline = false;
+            textBoxPersonalizado11.Name = "textBoxPersonalizado11";
+            textBoxPersonalizado11.PasswordChar = false;
+            textBoxPersonalizado11.PlaceholderColor = Color.DimGray;
+            textBoxPersonalizado11.PlaceholderText = "";
+            textBoxPersonalizado11.Texts = "";
+            textBoxPersonalizado11.UnderlinedStyle = true;
+            textBoxPersonalizado11.KeyPress += textBoxPersonalizado11_KeyPress;
             // 
             // pnlListas
             // 
@@ -2309,41 +1650,41 @@ namespace FutureLending.Forms
             gridListas.BackgroundColor = SystemColors.InactiveCaption;
             gridListas.BorderStyle = BorderStyle.None;
             gridListas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle5.Font = new Font("Dubai", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            gridListas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new Font("Dubai", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            gridListas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            gridListas.DefaultCellStyle = dataGridViewCellStyle2;
             gridListas.EnableHeadersVisualStyles = false;
             gridListas.GridColor = SystemColors.Desktop;
             gridListas.Name = "gridListas";
             gridListas.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle7.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.DarkSlateGray;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            gridListas.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Font = new Font("Corbel", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            gridListas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             gridListas.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle8.Font = new Font("Dubai", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.ControlLightLight;
-            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new Font("Dubai", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.ControlLightLight;
+            gridListas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             gridListas.RowTemplate.Height = 25;
             gridListas.SelectionMode = DataGridViewSelectionMode.CellSelect;
             gridListas.CellFormatting += gridListas_CellFormatting;
@@ -2354,474 +1695,6 @@ namespace FutureLending.Forms
             resources.ApplyResources(label8, "label8");
             label8.ForeColor = Color.DarkSlateGray;
             label8.Name = "label8";
-            // 
-            // PanelEditar
-            // 
-            resources.ApplyResources(PanelEditar, "PanelEditar");
-            PanelEditar.BackColor = SystemColors.HighlightText;
-            PanelEditar.Controls.Add(BtnAvalesEditar);
-            PanelEditar.Controls.Add(BtnGuardarCambio);
-            PanelEditar.Controls.Add(textBoxPersonalizado11);
-            PanelEditar.Controls.Add(label66);
-            PanelEditar.Controls.Add(dateTimeLimite);
-            PanelEditar.Controls.Add(LabelLimite);
-            PanelEditar.Controls.Add(textBoxPersonalizado7);
-            PanelEditar.Controls.Add(label25);
-            PanelEditar.Controls.Add(textBoxPersonalizado8);
-            PanelEditar.Controls.Add(label27);
-            PanelEditar.Controls.Add(LblPerte);
-            PanelEditar.Controls.Add(label26);
-            PanelEditar.Controls.Add(groupBox1);
-            PanelEditar.Controls.Add(textBoxPersonalizado1);
-            PanelEditar.Controls.Add(label18);
-            PanelEditar.Controls.Add(textBoxPersonalizado2);
-            PanelEditar.Controls.Add(label20);
-            PanelEditar.Controls.Add(textBoxPersonalizado3);
-            PanelEditar.Controls.Add(label21);
-            PanelEditar.Controls.Add(textBoxPersonalizado4);
-            PanelEditar.Controls.Add(label22);
-            PanelEditar.Controls.Add(textBoxPersonalizado5);
-            PanelEditar.Controls.Add(label23);
-            PanelEditar.Controls.Add(textBoxPersonalizado6);
-            PanelEditar.Controls.Add(label24);
-            PanelEditar.Controls.Add(rjComboBox1);
-            PanelEditar.Controls.Add(label28);
-            PanelEditar.Controls.Add(rjComboBox2);
-            PanelEditar.Controls.Add(label30);
-            PanelEditar.Controls.Add(label31);
-            PanelEditar.Controls.Add(dateTimePickerPersonalizado1);
-            PanelEditar.Controls.Add(label32);
-            PanelEditar.Controls.Add(textBoxPersonalizado9);
-            PanelEditar.Controls.Add(label33);
-            PanelEditar.Controls.Add(textBoxPersonalizado10);
-            PanelEditar.Controls.Add(label34);
-            PanelEditar.Controls.Add(rjComboBox3);
-            PanelEditar.Name = "PanelEditar";
-            // 
-            // BtnAvalesEditar
-            // 
-            resources.ApplyResources(BtnAvalesEditar, "BtnAvalesEditar");
-            BtnAvalesEditar.BackColor = Color.Gray;
-            BtnAvalesEditar.BackgroundColor = Color.Gray;
-            BtnAvalesEditar.BorderColor = Color.PaleVioletRed;
-            BtnAvalesEditar.BorderRadius = 20;
-            BtnAvalesEditar.BorderSize = 0;
-            BtnAvalesEditar.FlatAppearance.BorderSize = 0;
-            BtnAvalesEditar.ForeColor = Color.White;
-            BtnAvalesEditar.Name = "BtnAvalesEditar";
-            BtnAvalesEditar.TextColor = Color.White;
-            BtnAvalesEditar.UseVisualStyleBackColor = false;
-            BtnAvalesEditar.Click += BtnAvalesEditar_Click;
-            // 
-            // BtnGuardarCambio
-            // 
-            resources.ApplyResources(BtnGuardarCambio, "BtnGuardarCambio");
-            BtnGuardarCambio.BackColor = Color.IndianRed;
-            BtnGuardarCambio.BackgroundColor = Color.IndianRed;
-            BtnGuardarCambio.BorderColor = Color.PaleVioletRed;
-            BtnGuardarCambio.BorderRadius = 20;
-            BtnGuardarCambio.BorderSize = 0;
-            BtnGuardarCambio.FlatAppearance.BorderSize = 0;
-            BtnGuardarCambio.ForeColor = Color.White;
-            BtnGuardarCambio.Name = "BtnGuardarCambio";
-            BtnGuardarCambio.TextColor = Color.White;
-            BtnGuardarCambio.UseVisualStyleBackColor = false;
-            BtnGuardarCambio.Click += BtnGuardarCambio_Click;
-            // 
-            // textBoxPersonalizado11
-            // 
-            resources.ApplyResources(textBoxPersonalizado11, "textBoxPersonalizado11");
-            textBoxPersonalizado11.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado11.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado11.BorderRadius = 0;
-            textBoxPersonalizado11.BorderSize = 2;
-            textBoxPersonalizado11.Multiline = false;
-            textBoxPersonalizado11.Name = "textBoxPersonalizado11";
-            textBoxPersonalizado11.PasswordChar = false;
-            textBoxPersonalizado11.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado11.PlaceholderText = "";
-            textBoxPersonalizado11.Texts = "";
-            textBoxPersonalizado11.UnderlinedStyle = true;
-            textBoxPersonalizado11.KeyPress += textBoxPersonalizado11_KeyPress;
-            // 
-            // label66
-            // 
-            resources.ApplyResources(label66, "label66");
-            label66.ForeColor = Color.LightSlateGray;
-            label66.Name = "label66";
-            // 
-            // dateTimeLimite
-            // 
-            resources.ApplyResources(dateTimeLimite, "dateTimeLimite");
-            dateTimeLimite.BorderColor = Color.DarkSlateGray;
-            dateTimeLimite.BorderSize = 2;
-            dateTimeLimite.Name = "dateTimeLimite";
-            dateTimeLimite.SkinColor = SystemColors.Info;
-            dateTimeLimite.TextColor = Color.Black;
-            // 
-            // LabelLimite
-            // 
-            resources.ApplyResources(LabelLimite, "LabelLimite");
-            LabelLimite.ForeColor = Color.LightSlateGray;
-            LabelLimite.Name = "LabelLimite";
-            // 
-            // textBoxPersonalizado7
-            // 
-            resources.ApplyResources(textBoxPersonalizado7, "textBoxPersonalizado7");
-            textBoxPersonalizado7.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado7.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado7.BorderRadius = 0;
-            textBoxPersonalizado7.BorderSize = 2;
-            textBoxPersonalizado7.Multiline = false;
-            textBoxPersonalizado7.Name = "textBoxPersonalizado7";
-            textBoxPersonalizado7.PasswordChar = false;
-            textBoxPersonalizado7.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado7.PlaceholderText = "";
-            textBoxPersonalizado7.Texts = "";
-            textBoxPersonalizado7.UnderlinedStyle = true;
-            textBoxPersonalizado7.KeyPress += textBoxPersonalizado7_KeyPress;
-            // 
-            // label25
-            // 
-            resources.ApplyResources(label25, "label25");
-            label25.ForeColor = Color.LightSlateGray;
-            label25.Name = "label25";
-            // 
-            // textBoxPersonalizado8
-            // 
-            resources.ApplyResources(textBoxPersonalizado8, "textBoxPersonalizado8");
-            textBoxPersonalizado8.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado8.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado8.BorderRadius = 0;
-            textBoxPersonalizado8.BorderSize = 2;
-            textBoxPersonalizado8.Multiline = false;
-            textBoxPersonalizado8.Name = "textBoxPersonalizado8";
-            textBoxPersonalizado8.PasswordChar = false;
-            textBoxPersonalizado8.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado8.PlaceholderText = "";
-            textBoxPersonalizado8.Texts = "";
-            textBoxPersonalizado8.UnderlinedStyle = true;
-            textBoxPersonalizado8.KeyPress += textBoxPersonalizado8_KeyPress;
-            // 
-            // label27
-            // 
-            resources.ApplyResources(label27, "label27");
-            label27.ForeColor = Color.LightSlateGray;
-            label27.Name = "label27";
-            // 
-            // LblPerte
-            // 
-            resources.ApplyResources(LblPerte, "LblPerte");
-            LblPerte.ForeColor = Color.DarkSlateGray;
-            LblPerte.Name = "LblPerte";
-            // 
-            // label26
-            // 
-            resources.ApplyResources(label26, "label26");
-            label26.ForeColor = Color.DarkSlateGray;
-            label26.Name = "label26";
-            // 
-            // groupBox1
-            // 
-            resources.ApplyResources(groupBox1, "groupBox1");
-            groupBox1.Controls.Add(BtnMover);
-            groupBox1.Controls.Add(cmbLista);
-            groupBox1.Name = "groupBox1";
-            groupBox1.TabStop = false;
-            // 
-            // BtnMover
-            // 
-            resources.ApplyResources(BtnMover, "BtnMover");
-            BtnMover.BackColor = Color.SlateGray;
-            BtnMover.BackgroundColor = Color.SlateGray;
-            BtnMover.BorderColor = Color.PaleVioletRed;
-            BtnMover.BorderRadius = 20;
-            BtnMover.BorderSize = 0;
-            BtnMover.FlatAppearance.BorderSize = 0;
-            BtnMover.ForeColor = Color.White;
-            BtnMover.Name = "BtnMover";
-            BtnMover.TextColor = Color.White;
-            BtnMover.UseVisualStyleBackColor = false;
-            BtnMover.Click += BtnMover_Click_1;
-            // 
-            // cmbLista
-            // 
-            resources.ApplyResources(cmbLista, "cmbLista");
-            cmbLista.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmbLista.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cmbLista.BackColor = SystemColors.HighlightText;
-            cmbLista.BorderColor = Color.DarkSlateGray;
-            cmbLista.BorderSize = 3;
-            cmbLista.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbLista.ForeColor = Color.Black;
-            cmbLista.IconColor = Color.DarkSlateGray;
-            cmbLista.ListBackColor = SystemColors.Info;
-            cmbLista.ListTextColor = Color.DimGray;
-            cmbLista.Name = "cmbLista";
-            cmbLista.Tag = "Selecciones un tipo de pago";
-            cmbLista.Texts = "Seleccione una lista";
-            cmbLista.OnSelectedIndexChanged += CmbLista_OnSelectedIndexChanged;
-            // 
-            // textBoxPersonalizado1
-            // 
-            resources.ApplyResources(textBoxPersonalizado1, "textBoxPersonalizado1");
-            textBoxPersonalizado1.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado1.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado1.BorderRadius = 0;
-            textBoxPersonalizado1.BorderSize = 2;
-            textBoxPersonalizado1.Multiline = false;
-            textBoxPersonalizado1.Name = "textBoxPersonalizado1";
-            textBoxPersonalizado1.PasswordChar = false;
-            textBoxPersonalizado1.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado1.PlaceholderText = "";
-            textBoxPersonalizado1.Texts = "";
-            textBoxPersonalizado1.UnderlinedStyle = true;
-            // 
-            // label18
-            // 
-            resources.ApplyResources(label18, "label18");
-            label18.ForeColor = Color.LightSlateGray;
-            label18.Name = "label18";
-            // 
-            // textBoxPersonalizado2
-            // 
-            resources.ApplyResources(textBoxPersonalizado2, "textBoxPersonalizado2");
-            textBoxPersonalizado2.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado2.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado2.BorderRadius = 0;
-            textBoxPersonalizado2.BorderSize = 2;
-            textBoxPersonalizado2.Multiline = false;
-            textBoxPersonalizado2.Name = "textBoxPersonalizado2";
-            textBoxPersonalizado2.PasswordChar = false;
-            textBoxPersonalizado2.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado2.PlaceholderText = "";
-            textBoxPersonalizado2.Texts = "";
-            textBoxPersonalizado2.UnderlinedStyle = true;
-            textBoxPersonalizado2.KeyPress += textBoxPersonalizado2_KeyPress;
-            // 
-            // label20
-            // 
-            resources.ApplyResources(label20, "label20");
-            label20.ForeColor = Color.LightSlateGray;
-            label20.Name = "label20";
-            // 
-            // textBoxPersonalizado3
-            // 
-            resources.ApplyResources(textBoxPersonalizado3, "textBoxPersonalizado3");
-            textBoxPersonalizado3.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado3.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado3.BorderRadius = 0;
-            textBoxPersonalizado3.BorderSize = 2;
-            textBoxPersonalizado3.Multiline = false;
-            textBoxPersonalizado3.Name = "textBoxPersonalizado3";
-            textBoxPersonalizado3.PasswordChar = false;
-            textBoxPersonalizado3.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado3.PlaceholderText = "";
-            textBoxPersonalizado3.Texts = "";
-            textBoxPersonalizado3.UnderlinedStyle = true;
-            textBoxPersonalizado3.KeyPress += textBoxPersonalizado3_KeyPress;
-            // 
-            // label21
-            // 
-            resources.ApplyResources(label21, "label21");
-            label21.ForeColor = Color.LightSlateGray;
-            label21.Name = "label21";
-            // 
-            // textBoxPersonalizado4
-            // 
-            resources.ApplyResources(textBoxPersonalizado4, "textBoxPersonalizado4");
-            textBoxPersonalizado4.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado4.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado4.BorderRadius = 0;
-            textBoxPersonalizado4.BorderSize = 2;
-            textBoxPersonalizado4.Multiline = false;
-            textBoxPersonalizado4.Name = "textBoxPersonalizado4";
-            textBoxPersonalizado4.PasswordChar = false;
-            textBoxPersonalizado4.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado4.PlaceholderText = "";
-            textBoxPersonalizado4.Texts = "";
-            textBoxPersonalizado4.UnderlinedStyle = true;
-            textBoxPersonalizado4.KeyPress += textBoxPersonalizado4_KeyPress;
-            // 
-            // label22
-            // 
-            resources.ApplyResources(label22, "label22");
-            label22.ForeColor = Color.LightSlateGray;
-            label22.Name = "label22";
-            // 
-            // textBoxPersonalizado5
-            // 
-            resources.ApplyResources(textBoxPersonalizado5, "textBoxPersonalizado5");
-            textBoxPersonalizado5.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado5.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado5.BorderRadius = 0;
-            textBoxPersonalizado5.BorderSize = 2;
-            textBoxPersonalizado5.Multiline = false;
-            textBoxPersonalizado5.Name = "textBoxPersonalizado5";
-            textBoxPersonalizado5.PasswordChar = false;
-            textBoxPersonalizado5.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado5.PlaceholderText = "";
-            textBoxPersonalizado5.Texts = "";
-            textBoxPersonalizado5.UnderlinedStyle = true;
-            // 
-            // label23
-            // 
-            resources.ApplyResources(label23, "label23");
-            label23.ForeColor = Color.LightSlateGray;
-            label23.Name = "label23";
-            // 
-            // textBoxPersonalizado6
-            // 
-            resources.ApplyResources(textBoxPersonalizado6, "textBoxPersonalizado6");
-            textBoxPersonalizado6.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado6.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado6.BorderRadius = 0;
-            textBoxPersonalizado6.BorderSize = 2;
-            textBoxPersonalizado6.Multiline = false;
-            textBoxPersonalizado6.Name = "textBoxPersonalizado6";
-            textBoxPersonalizado6.PasswordChar = false;
-            textBoxPersonalizado6.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado6.PlaceholderText = "";
-            textBoxPersonalizado6.Texts = "";
-            textBoxPersonalizado6.UnderlinedStyle = true;
-            // 
-            // label24
-            // 
-            resources.ApplyResources(label24, "label24");
-            label24.ForeColor = Color.LightSlateGray;
-            label24.Name = "label24";
-            // 
-            // rjComboBox1
-            // 
-            resources.ApplyResources(rjComboBox1, "rjComboBox1");
-            rjComboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox1.BackColor = SystemColors.HighlightText;
-            rjComboBox1.BorderColor = Color.DarkSlateGray;
-            rjComboBox1.BorderSize = 3;
-            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox1.ForeColor = Color.Black;
-            rjComboBox1.IconColor = Color.DarkSlateGray;
-            rjComboBox1.Items.AddRange(new object[] { resources.GetString("rjComboBox1.Items"), resources.GetString("rjComboBox1.Items1"), resources.GetString("rjComboBox1.Items2") });
-            rjComboBox1.ListBackColor = SystemColors.Info;
-            rjComboBox1.ListTextColor = Color.DimGray;
-            rjComboBox1.Name = "rjComboBox1";
-            rjComboBox1.Tag = "Seleccione un interés";
-            rjComboBox1.Texts = "Seleccione un interés";
-            // 
-            // label28
-            // 
-            resources.ApplyResources(label28, "label28");
-            label28.ForeColor = Color.LightSlateGray;
-            label28.Name = "label28";
-            // 
-            // rjComboBox2
-            // 
-            resources.ApplyResources(rjComboBox2, "rjComboBox2");
-            rjComboBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox2.BackColor = SystemColors.HighlightText;
-            rjComboBox2.BorderColor = Color.DarkSlateGray;
-            rjComboBox2.BorderSize = 3;
-            rjComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox2.ForeColor = Color.Black;
-            rjComboBox2.IconColor = Color.DarkSlateGray;
-            rjComboBox2.Items.AddRange(new object[] { resources.GetString("rjComboBox2.Items"), resources.GetString("rjComboBox2.Items1") });
-            rjComboBox2.ListBackColor = SystemColors.Info;
-            rjComboBox2.ListTextColor = Color.DimGray;
-            rjComboBox2.Name = "rjComboBox2";
-            rjComboBox2.Tag = "Selecciones un tipo de pago";
-            rjComboBox2.Texts = "Seleccione un tipo de pago";
-            rjComboBox2.OnSelectedIndexChanged += rjComboBox2_OnSelectedIndexChanged;
-            // 
-            // label30
-            // 
-            resources.ApplyResources(label30, "label30");
-            label30.ForeColor = Color.LightSlateGray;
-            label30.Name = "label30";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(label31, "label31");
-            label31.ForeColor = Color.LightSlateGray;
-            label31.Name = "label31";
-            // 
-            // dateTimePickerPersonalizado1
-            // 
-            resources.ApplyResources(dateTimePickerPersonalizado1, "dateTimePickerPersonalizado1");
-            dateTimePickerPersonalizado1.BorderColor = Color.DarkSlateGray;
-            dateTimePickerPersonalizado1.BorderSize = 2;
-            dateTimePickerPersonalizado1.Name = "dateTimePickerPersonalizado1";
-            dateTimePickerPersonalizado1.SkinColor = SystemColors.Info;
-            dateTimePickerPersonalizado1.TextColor = Color.Black;
-            dateTimePickerPersonalizado1.ValueChanged += dateTimePickerPersonalizado1_ValueChanged;
-            // 
-            // label32
-            // 
-            resources.ApplyResources(label32, "label32");
-            label32.ForeColor = Color.LightSlateGray;
-            label32.Name = "label32";
-            // 
-            // textBoxPersonalizado9
-            // 
-            resources.ApplyResources(textBoxPersonalizado9, "textBoxPersonalizado9");
-            textBoxPersonalizado9.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado9.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado9.BorderRadius = 0;
-            textBoxPersonalizado9.BorderSize = 2;
-            textBoxPersonalizado9.Multiline = false;
-            textBoxPersonalizado9.Name = "textBoxPersonalizado9";
-            textBoxPersonalizado9.PasswordChar = false;
-            textBoxPersonalizado9.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado9.PlaceholderText = "";
-            textBoxPersonalizado9.Texts = "";
-            textBoxPersonalizado9.UnderlinedStyle = true;
-            textBoxPersonalizado9.KeyPress += textBoxPersonalizado9_KeyPress;
-            // 
-            // label33
-            // 
-            resources.ApplyResources(label33, "label33");
-            label33.ForeColor = Color.LightSlateGray;
-            label33.Name = "label33";
-            // 
-            // textBoxPersonalizado10
-            // 
-            resources.ApplyResources(textBoxPersonalizado10, "textBoxPersonalizado10");
-            textBoxPersonalizado10.BorderColor = Color.DarkSlateGray;
-            textBoxPersonalizado10.BorderFocusColor = SystemColors.Info;
-            textBoxPersonalizado10.BorderRadius = 0;
-            textBoxPersonalizado10.BorderSize = 2;
-            textBoxPersonalizado10.Multiline = false;
-            textBoxPersonalizado10.Name = "textBoxPersonalizado10";
-            textBoxPersonalizado10.PasswordChar = false;
-            textBoxPersonalizado10.PlaceholderColor = Color.DimGray;
-            textBoxPersonalizado10.PlaceholderText = "";
-            textBoxPersonalizado10.Texts = "";
-            textBoxPersonalizado10.UnderlinedStyle = true;
-            // 
-            // label34
-            // 
-            resources.ApplyResources(label34, "label34");
-            label34.ForeColor = Color.LightSlateGray;
-            label34.Name = "label34";
-            // 
-            // rjComboBox3
-            // 
-            resources.ApplyResources(rjComboBox3, "rjComboBox3");
-            rjComboBox3.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("rjComboBox3.AutoCompleteCustomSource"), resources.GetString("rjComboBox3.AutoCompleteCustomSource1"), resources.GetString("rjComboBox3.AutoCompleteCustomSource2") });
-            rjComboBox3.AutoCompleteMode = AutoCompleteMode.Suggest;
-            rjComboBox3.AutoCompleteSource = AutoCompleteSource.ListItems;
-            rjComboBox3.BackColor = SystemColors.HighlightText;
-            rjComboBox3.BorderColor = Color.DarkSlateGray;
-            rjComboBox3.BorderSize = 3;
-            rjComboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            rjComboBox3.ForeColor = Color.Black;
-            rjComboBox3.IconColor = Color.DarkSlateGray;
-            rjComboBox3.ListBackColor = SystemColors.Info;
-            rjComboBox3.ListTextColor = Color.DimGray;
-            rjComboBox3.Name = "rjComboBox3";
-            rjComboBox3.Tag = "Seleccione al promotor";
-            rjComboBox3.Texts = "Seleccione al promotor";
             // 
             // bunifuElipse1
             // 
@@ -3578,316 +2451,6 @@ namespace FutureLending.Forms
             ComboBoxDeFechas.Texts = "Seleccione la fecha";
             ComboBoxDeFechas.OnSelectedIndexChanged += ComboBoxDeFechas_OnSelectedIndexChanged;
             // 
-            // PanelEditarLiquidados
-            // 
-            resources.ApplyResources(PanelEditarLiquidados, "PanelEditarLiquidados");
-            PanelEditarLiquidados.BackColor = SystemColors.HighlightText;
-            PanelEditarLiquidados.Controls.Add(rjButton13);
-            PanelEditarLiquidados.Controls.Add(BottonLiq);
-            PanelEditarLiquidados.Controls.Add(FechaInicioLiq);
-            PanelEditarLiquidados.Controls.Add(label91);
-            PanelEditarLiquidados.Controls.Add(label90);
-            PanelEditarLiquidados.Controls.Add(ComBoBoxLiquidacion);
-            PanelEditarLiquidados.Controls.Add(label104);
-            PanelEditarLiquidados.Controls.Add(label106);
-            PanelEditarLiquidados.Controls.Add(TextCorreoLiq);
-            PanelEditarLiquidados.Controls.Add(label107);
-            PanelEditarLiquidados.Controls.Add(TextTelefonoLiq);
-            PanelEditarLiquidados.Controls.Add(label108);
-            PanelEditarLiquidados.Controls.Add(TextNumExtLiq);
-            PanelEditarLiquidados.Controls.Add(label109);
-            PanelEditarLiquidados.Controls.Add(TextNumIntLiq);
-            PanelEditarLiquidados.Controls.Add(label110);
-            PanelEditarLiquidados.Controls.Add(TextColoniaLiq);
-            PanelEditarLiquidados.Controls.Add(label111);
-            PanelEditarLiquidados.Controls.Add(TextCalleLiq);
-            PanelEditarLiquidados.Controls.Add(label112);
-            PanelEditarLiquidados.Controls.Add(label113);
-            PanelEditarLiquidados.Controls.Add(TextCreditoLiq);
-            PanelEditarLiquidados.Controls.Add(label115);
-            PanelEditarLiquidados.Controls.Add(TextNombreLiq);
-            PanelEditarLiquidados.Controls.Add(label116);
-            PanelEditarLiquidados.Controls.Add(ComboBoxPromotorLiq);
-            PanelEditarLiquidados.Name = "PanelEditarLiquidados";
-            // 
-            // rjButton13
-            // 
-            resources.ApplyResources(rjButton13, "rjButton13");
-            rjButton13.BackColor = Color.Gray;
-            rjButton13.BackgroundColor = Color.Gray;
-            rjButton13.BorderColor = Color.PaleVioletRed;
-            rjButton13.BorderRadius = 20;
-            rjButton13.BorderSize = 0;
-            rjButton13.FlatAppearance.BorderSize = 0;
-            rjButton13.ForeColor = Color.White;
-            rjButton13.Name = "rjButton13";
-            rjButton13.TextColor = Color.White;
-            rjButton13.UseVisualStyleBackColor = false;
-            rjButton13.Click += rjButton13_Click;
-            // 
-            // BottonLiq
-            // 
-            resources.ApplyResources(BottonLiq, "BottonLiq");
-            BottonLiq.BackColor = Color.IndianRed;
-            BottonLiq.BackgroundColor = Color.IndianRed;
-            BottonLiq.BorderColor = Color.PaleVioletRed;
-            BottonLiq.BorderRadius = 20;
-            BottonLiq.BorderSize = 0;
-            BottonLiq.FlatAppearance.BorderSize = 0;
-            BottonLiq.ForeColor = Color.White;
-            BottonLiq.Name = "BottonLiq";
-            BottonLiq.TextColor = Color.White;
-            BottonLiq.UseVisualStyleBackColor = false;
-            BottonLiq.Click += BottonLiq_Click_1;
-            // 
-            // FechaInicioLiq
-            // 
-            resources.ApplyResources(FechaInicioLiq, "FechaInicioLiq");
-            FechaInicioLiq.BorderColor = Color.DarkSlateGray;
-            FechaInicioLiq.BorderSize = 3;
-            FechaInicioLiq.Name = "FechaInicioLiq";
-            FechaInicioLiq.SkinColor = SystemColors.Info;
-            FechaInicioLiq.TextColor = Color.Black;
-            // 
-            // label91
-            // 
-            resources.ApplyResources(label91, "label91");
-            label91.ForeColor = Color.LightSlateGray;
-            label91.Name = "label91";
-            // 
-            // label90
-            // 
-            resources.ApplyResources(label90, "label90");
-            label90.ForeColor = Color.LightSlateGray;
-            label90.Name = "label90";
-            // 
-            // ComBoBoxLiquidacion
-            // 
-            resources.ApplyResources(ComBoBoxLiquidacion, "ComBoBoxLiquidacion");
-            ComBoBoxLiquidacion.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("ComBoBoxLiquidacion.AutoCompleteCustomSource"), resources.GetString("ComBoBoxLiquidacion.AutoCompleteCustomSource1"), resources.GetString("ComBoBoxLiquidacion.AutoCompleteCustomSource2") });
-            ComBoBoxLiquidacion.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComBoBoxLiquidacion.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ComBoBoxLiquidacion.BackColor = SystemColors.HighlightText;
-            ComBoBoxLiquidacion.BorderColor = Color.DarkSlateGray;
-            ComBoBoxLiquidacion.BorderSize = 3;
-            ComBoBoxLiquidacion.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComBoBoxLiquidacion.ForeColor = Color.Black;
-            ComBoBoxLiquidacion.IconColor = Color.DarkSlateGray;
-            ComBoBoxLiquidacion.Items.AddRange(new object[] { resources.GetString("ComBoBoxLiquidacion.Items"), resources.GetString("ComBoBoxLiquidacion.Items1"), resources.GetString("ComBoBoxLiquidacion.Items2") });
-            ComBoBoxLiquidacion.ListBackColor = SystemColors.Info;
-            ComBoBoxLiquidacion.ListTextColor = Color.DimGray;
-            ComBoBoxLiquidacion.Name = "ComBoBoxLiquidacion";
-            ComBoBoxLiquidacion.Tag = "";
-            ComBoBoxLiquidacion.Texts = "Seleccione la lista ";
-            // 
-            // label104
-            // 
-            resources.ApplyResources(label104, "label104");
-            label104.ForeColor = Color.DarkSlateGray;
-            label104.Name = "label104";
-            // 
-            // label106
-            // 
-            resources.ApplyResources(label106, "label106");
-            label106.ForeColor = Color.DarkSlateGray;
-            label106.Name = "label106";
-            // 
-            // TextCorreoLiq
-            // 
-            resources.ApplyResources(TextCorreoLiq, "TextCorreoLiq");
-            TextCorreoLiq.BorderColor = Color.DarkSlateGray;
-            TextCorreoLiq.BorderFocusColor = SystemColors.Info;
-            TextCorreoLiq.BorderRadius = 0;
-            TextCorreoLiq.BorderSize = 2;
-            TextCorreoLiq.Multiline = false;
-            TextCorreoLiq.Name = "TextCorreoLiq";
-            TextCorreoLiq.PasswordChar = false;
-            TextCorreoLiq.PlaceholderColor = Color.DimGray;
-            TextCorreoLiq.PlaceholderText = "";
-            TextCorreoLiq.Texts = "";
-            TextCorreoLiq.UnderlinedStyle = true;
-            // 
-            // label107
-            // 
-            resources.ApplyResources(label107, "label107");
-            label107.ForeColor = Color.LightSlateGray;
-            label107.Name = "label107";
-            // 
-            // TextTelefonoLiq
-            // 
-            resources.ApplyResources(TextTelefonoLiq, "TextTelefonoLiq");
-            TextTelefonoLiq.BorderColor = Color.DarkSlateGray;
-            TextTelefonoLiq.BorderFocusColor = SystemColors.Info;
-            TextTelefonoLiq.BorderRadius = 0;
-            TextTelefonoLiq.BorderSize = 2;
-            TextTelefonoLiq.Multiline = false;
-            TextTelefonoLiq.Name = "TextTelefonoLiq";
-            TextTelefonoLiq.PasswordChar = false;
-            TextTelefonoLiq.PlaceholderColor = Color.DimGray;
-            TextTelefonoLiq.PlaceholderText = "";
-            TextTelefonoLiq.Texts = "";
-            TextTelefonoLiq.UnderlinedStyle = true;
-            TextTelefonoLiq.KeyPress += TextTelefonoLiq_KeyPress;
-            // 
-            // label108
-            // 
-            resources.ApplyResources(label108, "label108");
-            label108.ForeColor = Color.LightSlateGray;
-            label108.Name = "label108";
-            // 
-            // TextNumExtLiq
-            // 
-            resources.ApplyResources(TextNumExtLiq, "TextNumExtLiq");
-            TextNumExtLiq.BorderColor = Color.DarkSlateGray;
-            TextNumExtLiq.BorderFocusColor = SystemColors.Info;
-            TextNumExtLiq.BorderRadius = 0;
-            TextNumExtLiq.BorderSize = 2;
-            TextNumExtLiq.Multiline = false;
-            TextNumExtLiq.Name = "TextNumExtLiq";
-            TextNumExtLiq.PasswordChar = false;
-            TextNumExtLiq.PlaceholderColor = Color.DimGray;
-            TextNumExtLiq.PlaceholderText = "";
-            TextNumExtLiq.Texts = "";
-            TextNumExtLiq.UnderlinedStyle = true;
-            TextNumExtLiq.KeyPress += TextNumExtLiq_KeyPress;
-            // 
-            // label109
-            // 
-            resources.ApplyResources(label109, "label109");
-            label109.ForeColor = Color.LightSlateGray;
-            label109.Name = "label109";
-            // 
-            // TextNumIntLiq
-            // 
-            resources.ApplyResources(TextNumIntLiq, "TextNumIntLiq");
-            TextNumIntLiq.BorderColor = Color.DarkSlateGray;
-            TextNumIntLiq.BorderFocusColor = SystemColors.Info;
-            TextNumIntLiq.BorderRadius = 0;
-            TextNumIntLiq.BorderSize = 2;
-            TextNumIntLiq.Multiline = false;
-            TextNumIntLiq.Name = "TextNumIntLiq";
-            TextNumIntLiq.PasswordChar = false;
-            TextNumIntLiq.PlaceholderColor = Color.DimGray;
-            TextNumIntLiq.PlaceholderText = "";
-            TextNumIntLiq.Texts = "";
-            TextNumIntLiq.UnderlinedStyle = true;
-            TextNumIntLiq.KeyPress += TextNumIntLiq_KeyPress;
-            // 
-            // label110
-            // 
-            resources.ApplyResources(label110, "label110");
-            label110.ForeColor = Color.LightSlateGray;
-            label110.Name = "label110";
-            // 
-            // TextColoniaLiq
-            // 
-            resources.ApplyResources(TextColoniaLiq, "TextColoniaLiq");
-            TextColoniaLiq.BorderColor = Color.DarkSlateGray;
-            TextColoniaLiq.BorderFocusColor = SystemColors.Info;
-            TextColoniaLiq.BorderRadius = 0;
-            TextColoniaLiq.BorderSize = 2;
-            TextColoniaLiq.Multiline = false;
-            TextColoniaLiq.Name = "TextColoniaLiq";
-            TextColoniaLiq.PasswordChar = false;
-            TextColoniaLiq.PlaceholderColor = Color.DimGray;
-            TextColoniaLiq.PlaceholderText = "";
-            TextColoniaLiq.Texts = "";
-            TextColoniaLiq.UnderlinedStyle = true;
-            // 
-            // label111
-            // 
-            resources.ApplyResources(label111, "label111");
-            label111.ForeColor = Color.LightSlateGray;
-            label111.Name = "label111";
-            // 
-            // TextCalleLiq
-            // 
-            resources.ApplyResources(TextCalleLiq, "TextCalleLiq");
-            TextCalleLiq.BorderColor = Color.DarkSlateGray;
-            TextCalleLiq.BorderFocusColor = SystemColors.Info;
-            TextCalleLiq.BorderRadius = 0;
-            TextCalleLiq.BorderSize = 2;
-            TextCalleLiq.Multiline = false;
-            TextCalleLiq.Name = "TextCalleLiq";
-            TextCalleLiq.PasswordChar = false;
-            TextCalleLiq.PlaceholderColor = Color.DimGray;
-            TextCalleLiq.PlaceholderText = "";
-            TextCalleLiq.Texts = "";
-            TextCalleLiq.UnderlinedStyle = true;
-            // 
-            // label112
-            // 
-            resources.ApplyResources(label112, "label112");
-            label112.ForeColor = Color.LightSlateGray;
-            label112.Name = "label112";
-            // 
-            // label113
-            // 
-            resources.ApplyResources(label113, "label113");
-            label113.ForeColor = Color.LightSlateGray;
-            label113.Name = "label113";
-            // 
-            // TextCreditoLiq
-            // 
-            resources.ApplyResources(TextCreditoLiq, "TextCreditoLiq");
-            TextCreditoLiq.BorderColor = Color.DarkSlateGray;
-            TextCreditoLiq.BorderFocusColor = SystemColors.Info;
-            TextCreditoLiq.BorderRadius = 0;
-            TextCreditoLiq.BorderSize = 2;
-            TextCreditoLiq.Multiline = false;
-            TextCreditoLiq.Name = "TextCreditoLiq";
-            TextCreditoLiq.PasswordChar = false;
-            TextCreditoLiq.PlaceholderColor = Color.DimGray;
-            TextCreditoLiq.PlaceholderText = "";
-            TextCreditoLiq.Texts = "";
-            TextCreditoLiq.UnderlinedStyle = true;
-            TextCreditoLiq.KeyPress += TextCreditoLiq_KeyPress;
-            // 
-            // label115
-            // 
-            resources.ApplyResources(label115, "label115");
-            label115.ForeColor = Color.LightSlateGray;
-            label115.Name = "label115";
-            // 
-            // TextNombreLiq
-            // 
-            resources.ApplyResources(TextNombreLiq, "TextNombreLiq");
-            TextNombreLiq.BorderColor = Color.DarkSlateGray;
-            TextNombreLiq.BorderFocusColor = SystemColors.Info;
-            TextNombreLiq.BorderRadius = 0;
-            TextNombreLiq.BorderSize = 2;
-            TextNombreLiq.Multiline = false;
-            TextNombreLiq.Name = "TextNombreLiq";
-            TextNombreLiq.PasswordChar = false;
-            TextNombreLiq.PlaceholderColor = Color.DimGray;
-            TextNombreLiq.PlaceholderText = "";
-            TextNombreLiq.Texts = "";
-            TextNombreLiq.UnderlinedStyle = true;
-            // 
-            // label116
-            // 
-            resources.ApplyResources(label116, "label116");
-            label116.ForeColor = Color.LightSlateGray;
-            label116.Name = "label116";
-            // 
-            // ComboBoxPromotorLiq
-            // 
-            resources.ApplyResources(ComboBoxPromotorLiq, "ComboBoxPromotorLiq");
-            ComboBoxPromotorLiq.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("ComboBoxPromotorLiq.AutoCompleteCustomSource"), resources.GetString("ComboBoxPromotorLiq.AutoCompleteCustomSource1"), resources.GetString("ComboBoxPromotorLiq.AutoCompleteCustomSource2") });
-            ComboBoxPromotorLiq.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComboBoxPromotorLiq.AutoCompleteSource = AutoCompleteSource.ListItems;
-            ComboBoxPromotorLiq.BackColor = SystemColors.HighlightText;
-            ComboBoxPromotorLiq.BorderColor = Color.DarkSlateGray;
-            ComboBoxPromotorLiq.BorderSize = 3;
-            ComboBoxPromotorLiq.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxPromotorLiq.ForeColor = Color.Black;
-            ComboBoxPromotorLiq.IconColor = Color.DarkSlateGray;
-            ComboBoxPromotorLiq.ListBackColor = SystemColors.Info;
-            ComboBoxPromotorLiq.ListTextColor = Color.DimGray;
-            ComboBoxPromotorLiq.Name = "ComboBoxPromotorLiq";
-            ComboBoxPromotorLiq.Tag = "Seleccione al promotor";
-            ComboBoxPromotorLiq.Texts = "Seleccione al promotor";
-            // 
             // PnlAvales
             // 
             resources.ApplyResources(PnlAvales, "PnlAvales");
@@ -4288,14 +2851,10 @@ namespace FutureLending.Forms
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelBien);
             Controls.Add(pnlClientes);
-            Controls.Add(PanelEditar);
             Controls.Add(pnlListas);
             Controls.Add(pnlRegPago);
-            Controls.Add(PnlEditar2);
             Controls.Add(PanelEditar2_2);
             Controls.Add(PnlAvales);
-            Controls.Add(PanelEditar3);
-            Controls.Add(PanelEditarLiquidados);
             Controls.Add(panel2);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
@@ -4306,8 +2865,6 @@ namespace FutureLending.Forms
             panelMenu.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            PnlEditar2.ResumeLayout(false);
-            PnlEditar2.PerformLayout();
             groupBox2.ResumeLayout(false);
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
@@ -4315,9 +2872,8 @@ namespace FutureLending.Forms
             pnlRegPago.PerformLayout();
             pnlClientes.ResumeLayout(false);
             pnlClientes.PerformLayout();
-            PanelEditar3.ResumeLayout(false);
-            PanelEditar3.PerformLayout();
             groupBox3.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
             pnlListas.ResumeLayout(false);
             pnlListas.PerformLayout();
             flowLayoutPanel5.ResumeLayout(false);
@@ -4325,9 +2881,6 @@ namespace FutureLending.Forms
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridListas).EndInit();
-            PanelEditar.ResumeLayout(false);
-            PanelEditar.PerformLayout();
-            groupBox1.ResumeLayout(false);
             PanelBien.ResumeLayout(false);
             PanelBien.PerformLayout();
             panel2.ResumeLayout(false);
@@ -4346,12 +2899,9 @@ namespace FutureLending.Forms
             tabPage2.PerformLayout();
             PanelEditar2_2.ResumeLayout(false);
             PanelEditar2_2.PerformLayout();
-            PanelEditarLiquidados.ResumeLayout(false);
-            PanelEditarLiquidados.PerformLayout();
             PnlAvales.ResumeLayout(false);
             PnlAvales.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -4424,42 +2974,9 @@ namespace FutureLending.Forms
         private Panel PanelBien;
         private Label label19;
         private Controles_personalizados.RJButton rjButton1;
-        private Panel PanelEditar;
         private GroupBox groupBox1;
         private Controles_personalizados.RJButton btnMover;
         private ControlesPersonalizados.RJComboBox cmbLista;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado1;
-        private Label label18;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado2;
-        private Label label20;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado3;
-        private Label label21;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado4;
-        private Label label22;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado5;
-        private Label label23;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado6;
-        private Label label24;
-        private ControlesPersonalizados.RJComboBox rjComboBox1;
-        private Label label28;
-        private ControlesPersonalizados.RJComboBox rjComboBox2;
-        private Label label30;
-        private Label label31;
-        private Controles_personalizados.DateTimePickerPersonalizado dateTimePickerPersonalizado1;
-        private Label label32;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado9;
-        private Label label33;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado10;
-        private Label label34;
-        private ControlesPersonalizados.RJComboBox rjComboBox3;
-        private Label LblPerte;
-        private Label label26;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado8;
-        private Label label27;
-        private Controles_personalizados.TextBoxPersonalizado textBoxPersonalizado7;
-        private Label label25;
-        private Controles_personalizados.DateTimePickerPersonalizado dateTimeLimite;
-        private Label LabelLimite;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Panel panel2;
         private TableLayoutPanel tableLayoutPanel1;
@@ -4517,40 +3034,11 @@ namespace FutureLending.Forms
         private DateTimePickerPersonalizado dateTimePickerPersonalizado2;
         private Label label65;
         private TextBoxPersonalizado textBoxPersonalizado11;
-        private Label label66;
-        private Panel PnlEditar2;
-        private TextBoxPersonalizado TextBoxPagare;
-        private Label label67;
-        private Label label68;
         private TextBoxPersonalizado TextBoxRestante;
         private Label label69;
-        private Label LabelPertenece;
-        private Label label72;
         private GroupBox groupBox2;
         private global::FutureLending.ControlesPersonalizados.RJComboBox CmbLista2;
-        private TextBoxPersonalizado TextBoxCorreo;
-        private Label label73;
-        private TextBoxPersonalizado TextBoxTelefono;
-        private Label label74;
-        private TextBoxPersonalizado TextBoxNumExt;
-        private Label label75;
-        private TextBoxPersonalizado TextBoxNumInt;
-        private Label label76;
-        private TextBoxPersonalizado TextBoxColonia;
-        private Label label77;
-        private TextBoxPersonalizado TextBoxCalle;
-        private Label label78;
-        private Label label79;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox7;
-        private Label label80;
         private Label LabelNombreEditar2_2;
-        private TextBoxPersonalizado TextBoxCredito;
-        private Label label83;
-        private TextBoxPersonalizado TextBoxNombre;
-        private Label label84;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox8;
-        private Label label70;
-        private TextBoxPersonalizado TextBoxLiquidacionIntencion;
         private TextBoxPersonalizado TextBoxQuita;
         private Panel PanelEditar2_2;
         private Label label89;
@@ -4562,62 +3050,11 @@ namespace FutureLending.Forms
         private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxDeFechas;
         private global::System.ComponentModel.BackgroundWorker backgroundWorker1;
         private global::System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private Panel PanelEditar3;
-        private TextBoxPersonalizado TextImporte3;
-        private Label label103;
-        private Label label92;
-        private TextBoxPersonalizado TextBoxPagare3;
-        private Label label81;
-        private Label LabelLista3;
-        private Label label94;
-        private TextBoxPersonalizado TextBoxCorreo3;
-        private Label label95;
-        private TextBoxPersonalizado TextBoxTelefono3;
-        private Label label96;
-        private TextBoxPersonalizado TextBoxNumExt3;
-        private Label label97;
-        private TextBoxPersonalizado TextBoxNumInt3;
-        private Label label98;
-        private TextBoxPersonalizado TextBoxColonia3;
-        private Label label99;
-        private TextBoxPersonalizado TextBoxCalle3;
-        private Label label100;
-        private Label label101;
         private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxResolucion3;
-        private Label label102;
-        private TextBoxPersonalizado TextBoxCredito3;
-        private Label label105;
-        private TextBoxPersonalizado TextBoxNombre3;
-        private Label LabelNombre3;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxPromotor3;
         private GroupBox groupBox3;
         private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox5;
-        private Panel PanelEditarLiquidados;
-        private DateTimePickerPersonalizado FechaInicioLiq;
-        private Label label91;
-        private Label label90;
         private global::FutureLending.ControlesPersonalizados.RJComboBox ComBoBoxLiquidacion;
-        private Label label104;
-        private Label label106;
         private RJButton BottonLiq;
-        private TextBoxPersonalizado TextCorreoLiq;
-        private Label label107;
-        private TextBoxPersonalizado TextTelefonoLiq;
-        private Label label108;
-        private TextBoxPersonalizado TextNumExtLiq;
-        private Label label109;
-        private TextBoxPersonalizado TextNumIntLiq;
-        private Label label110;
-        private TextBoxPersonalizado TextColoniaLiq;
-        private Label label111;
-        private TextBoxPersonalizado TextCalleLiq;
-        private Label label112;
-        private Label label113;
-        private TextBoxPersonalizado TextCreditoLiq;
-        private Label label115;
-        private TextBoxPersonalizado TextNombreLiq;
-        private Label label116;
-        private global::FutureLending.ControlesPersonalizados.RJComboBox ComboBoxPromotorLiq;
         private TextBoxPersonalizado TextBoxPagoExt;
         private Label label93;
         private global::FutureLending.ControlesPersonalizados.RJComboBox rjComboBox9;
@@ -4643,9 +3080,7 @@ namespace FutureLending.Forms
         private RJButton btnCalcular1;
         private RJButton btnGuardar1;
         private RJButton btnMover2;
-        private RJButton btnGuardar2;
         private RJButton btnMover3;
-        private RJButton btnGuardarC;
         private RJButton btnEditarFechas2;
         private RJButton Botoncambiodefechamomentaneo;
         private RJButton BotonVolverEditar2;
@@ -4696,13 +3131,11 @@ namespace FutureLending.Forms
         private Label label128;
         private RJButton rjButton8;
         private RJButton BtnAvalesEditar;
-        private RJButton rjButton9;
-        private RJButton rjButton10;
-        private RJButton rjButton13;
         private Label LabelAvalCliente;
         private RJButton rjButton14;
         private RJButton BtnAgregarColumnas;
         private DateTimePickerPersonalizado DateTimePago15;
         private RJButton BtnGraficar;
+        private Label label66;
     }
 }
